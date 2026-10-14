@@ -37,7 +37,12 @@ export async function render({ id }, app) {
       locked ? 'div' : 'a',
       { class: `lesson-row ${done ? 'done' : ''} ${locked ? 'disabled' : ''}`, href: locked ? null : `#/kapitel/${id}/${l.id}` },
       h('span', { class: 'node small', html: done ? icon('check', 18) : String(i + 1) }),
-      h('span', { class: 'lesson-body' }, h('strong', {}, l.titel), h('small', {}, `ca. ${l.minuten} min`)),
+      h(
+        'span',
+        { class: 'lesson-body' },
+        h('strong', {}, l.titel),
+        h('small', {}, `ca. ${l.minuten} min`, l.blocks.some((b) => b.typ === 'sim' || b.typ === 'spiel') ? h('span', { class: 'tag-live', html: `${icon('bolt', 11)} interaktiv` }) : null),
+      ),
       locked ? null : h('span', { class: 'chev', html: icon('chevron', 18) }),
     );
     return row;
@@ -70,7 +75,7 @@ export async function render({ id }, app) {
 
   return h(
     'div',
-    { class: 'page' },
+    { class: 'page', dataset: { stage: meta.stufe } },
     back(),
     h('p', { class: 'kicker' }, `${meta.id.toUpperCase()} · Stufe ${meta.stufe}`),
     h('h1', {}, chapter.titel),

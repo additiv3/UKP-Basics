@@ -13,6 +13,18 @@ const P = {
   up: '<path d="M6 15l6-6 6 6"/>',
   down: '<path d="M6 9l6 6 6-6"/>',
   bolt: '<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',
+  flask: '<path d="M9 3h6M10 3v6l-5 10a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-10V3"/><path d="M7.5 15h9"/>',
+  beam: '<path d="M3 4l8 7"/><circle cx="14" cy="14" r="3"/><path d="M14 8v2M14 18v2M20 14h-2M10 14H8"/>',
+  wave: '<path d="M2 12c2-6 4-6 6 0s4 6 6 0 4-6 6 0"/>',
+  pulse: '<path d="M2 12h5l2-7 4 14 2-7h7"/>',
+  stack: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
+  heat: '<path d="M12 3c2 3 5 5 5 9a5 5 0 0 1-10 0c0-2 1-3 2-4"/><path d="M12 14v3"/>',
+  band: '<path d="M4 6h16M4 12h16M4 18h16"/><path d="M12 18V6M9 9l3-3 3 3"/>',
+  crater: '<path d="M3 7h5l3 10 3-10h5"/>',
+  dots: '<circle cx="6" cy="12" r="3"/><circle cx="12" cy="12" r="3"/><circle cx="18" cy="12" r="3"/>',
+  play: '<path d="M8 5l11 7-11 7z"/>',
+  sigma: '<path d="M18 5H7l6 7-6 7h11"/>',
+  search: '<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/>',
 };
 
 export function icon(name, size = 22) {

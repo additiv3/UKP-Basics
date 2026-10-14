@@ -44,6 +44,7 @@ export async function render({ id, lektion }, app) {
             const before = levelInfo(totalXp(store.get())).level;
             store.mutate((s) => completeLesson(s, lesson.id, toDay()));
             const after = levelInfo(totalXp(store.get()));
+            finish.classList.add('celebrate');
             append(clear(finish), [
               h('p', { class: 'verdict ok' }, 'Geschafft!', h('span', { class: 'xp-chip' }, ` +${XP.lesson} XP`)),
               after.level > before ? h('p', { class: 'levelup' }, `Level ${after.level}: ${after.title}`) : null,

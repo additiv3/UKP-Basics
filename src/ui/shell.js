@@ -5,6 +5,7 @@ import { icon } from './icons.js';
 const TABS = [
   { id: 'pfad', href: '#/', label: 'Lernpfad', icon: 'path' },
   { id: 'wiederholen', href: '#/wiederholen', label: 'Wiederholen', icon: 'review' },
+  { id: 'labor', href: '#/labor', label: 'Labor', icon: 'flask' },
   { id: 'glossar', href: '#/glossar', label: 'Glossar', icon: 'book' },
   { id: 'profil', href: '#/einstellungen', label: 'Profil', icon: 'gear' },
 ];

@@ -1,45 +1,67 @@
-/* Design tokens. Light by default, dark via prefers-color-scheme. */
+/* Design tokens. Light by default, dark via prefers-color-scheme.
+   Brand: laser-physics cyan (crystal) + hot orange (laser) on deep navy. */
 :root {
   color-scheme: light dark;
-  --bg: #f4f6fb;
+  --bg: #eef3fa;
+  --bg-glow: radial-gradient(1200px 520px at 85% -10%, rgb(0 150 230 / 14%), transparent 60%), radial-gradient(900px 480px at -10% 8%, rgb(255 110 60 / 7%), transparent 55%);
   --surface: #ffffff;
-  --surface-2: #eceff7;
-  --text: #121826;
-  --muted: #566078;
-  --line: #d9dfec;
-  --accent: #0b7e9b;
+  --surface-2: #e7eef8;
+  --surface-3: #dbe5f3;
+  --text: #0d1630;
+  --muted: #55627f;
+  --line: #d5deec;
+  --accent: #0072bd;
+  --accent-bright: #12b0f2;
   --accent-ink: #ffffff;
-  --accent-soft: #dcf1f7;
+  --accent-soft: #dff0fb;
+  --laser: #ee4f1c;
+  --laser-soft: #ffe9df;
   --xp: #9a5b00;
   --xp-soft: #fff0d0;
-  --ok: #17784a;
-  --ok-soft: #e0f4e9;
-  --bad: #b9302a;
+  --ok: #14774a;
+  --ok-soft: #dff4e8;
+  --bad: #b8302a;
   --bad-soft: #fde6e3;
   --warn-soft: #fff3d1;
-  --shadow: 0 1px 2px rgb(16 24 40 / 6%), 0 4px 14px rgb(16 24 40 / 6%);
-  --radius: 16px;
-  --tabbar-h: 58px;
+  --shadow: 0 1px 2px rgb(13 22 48 / 6%), 0 6px 20px rgb(13 22 48 / 7%);
+  --shadow-lg: 0 2px 4px rgb(13 22 48 / 8%), 0 18px 40px rgb(13 22 48 / 14%);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --tabbar-h: 60px;
+  --font-display: ui-rounded, 'SF Pro Rounded', 'Nunito', 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
 
-  /* figure colors (SVG figures read these) */
-  --fig-line: #3a465f;
-  --fig-soft: #aab4cb;
-  --fig-accent: #0b7e9b;
-  --fig-warm: #d9822b;
-  --fig-fill: #dcf1f7;
+  /* stage colors (A fundament, B ultrakurzpulse, C abtrag, D praxis) */
+  --st-a: #0a8fd6;
+  --st-b: #6a5af0;
+  --st-c: #e2561f;
+  --st-d: #12a577;
+
+  /* figure colors (SVG figures and canvases read these) */
+  --fig-line: #34415e;
+  --fig-soft: #a6b2cb;
+  --fig-accent: #0072bd;
+  --fig-warm: #e2561f;
+  --fig-fill: #dff0fb;
+  --fig-grid: #dbe3f0;
+  --fig-laser: #ee4f1c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0a0f1e;
-    --surface: #131a2e;
-    --surface-2: #1b2442;
-    --text: #e9edf8;
-    --muted: #9aa5c0;
-    --line: #28325a;
-    --accent: #43cbe8;
-    --accent-ink: #04212b;
-    --accent-soft: #123644;
+    --bg: #060b18;
+    --bg-glow: radial-gradient(1000px 520px at 90% -12%, rgb(30 150 255 / 20%), transparent 60%), radial-gradient(800px 480px at -10% 6%, rgb(255 100 50 / 9%), transparent 55%);
+    --surface: #0f172b;
+    --surface-2: #172139;
+    --surface-3: #1f2c4b;
+    --text: #eaf0fb;
+    --muted: #94a3c4;
+    --line: #22305a;
+    --accent: #3cc4ff;
+    --accent-bright: #5ad0ff;
+    --accent-ink: #03182a;
+    --accent-soft: #0f2f45;
+    --laser: #ff7a4a;
+    --laser-soft: #3a1b10;
     --xp: #ffc24a;
     --xp-soft: #3a2c0c;
     --ok: #62d696;
@@ -47,12 +69,20 @@
     --bad: #ff8e84;
     --bad-soft: #3b1613;
     --warn-soft: #3a2f10;
-    --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 18px rgb(0 0 0 / 30%);
+    --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 8px 22px rgb(0 0 0 / 32%);
+    --shadow-lg: 0 2px 4px rgb(0 0 0 / 40%), 0 22px 50px rgb(0 0 0 / 50%);
 
-    --fig-line: #c3cde6;
+    --st-a: #3cc4ff;
+    --st-b: #9a8cff;
+    --st-c: #ff8a58;
+    --st-d: #3ee0b0;
+
+    --fig-line: #c9d3ea;
     --fig-soft: #4a5680;
-    --fig-accent: #43cbe8;
-    --fig-warm: #ffb15e;
-    --fig-fill: #123644;
+    --fig-accent: #3cc4ff;
+    --fig-warm: #ff8a58;
+    --fig-fill: #0f2f45;
+    --fig-grid: #1d2a4c;
+    --fig-laser: #ff7a4a;
   }
 }
