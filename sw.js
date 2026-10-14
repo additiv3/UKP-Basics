@@ -56,6 +56,7 @@ const PRECACHE = [
   'assets/icons/icon-512.png',
   'assets/icons/icon-maskable-512.png',
   'assets/icons/icon.svg',
+  'vendor/katex/LICENSE',
   'vendor/katex/fonts/KaTeX_AMS-Regular.woff2',
   'vendor/katex/fonts/KaTeX_Caligraphic-Bold.woff2',
   'vendor/katex/fonts/KaTeX_Caligraphic-Regular.woff2',
@@ -78,7 +79,6 @@ const PRECACHE = [
   'vendor/katex/fonts/KaTeX_Typewriter-Regular.woff2',
   'vendor/katex/katex.min.css',
   'vendor/katex/katex.min.js',
-  'vendor/katex/LICENSE',
 ];
 // END PRECACHE
 

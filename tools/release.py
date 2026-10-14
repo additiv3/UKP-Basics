@@ -35,7 +35,8 @@ def read_version():
 def precache_list():
     files = ["./"] + PRECACHE_FILES
     for d in PRECACHE_DIRS:
-        for p in sorted((ROOT / d).rglob("*")):
+        # sort by POSIX string so the list is identical on Windows and Linux
+        for p in sorted((ROOT / d).rglob("*"), key=lambda q: q.relative_to(ROOT).as_posix()):
             if p.is_file() and p.name not in SKIP_NAMES and not (set(p.relative_to(ROOT).parts) & SKIP_DIRS):
                 files.append(p.relative_to(ROOT).as_posix())
     return files
