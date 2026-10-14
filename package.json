@@ -1,0 +1,9 @@
+{
+  "name": "ukp-basics",
+  "private": true,
+  "type": "module",
+  "description": "UKP-Basics: Lern-App zur Ultrakurzpuls-Laserablation (statische PWA)",
+  "scripts": {
+    "test": "node --test"
+  }
+}

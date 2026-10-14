@@ -20,7 +20,7 @@ Dann `http://localhost:8080/` öffnen. Mit `?nosw` am URL-Ende läuft die App oh
 ## Tests und Prüfungen
 
 ```bash
-node --test tests/
+node --test
 python tools/validate_content.py
 ```
 
