@@ -47,6 +47,10 @@ export function mergeStates(local, incoming) {
     if (!cur || l.done < cur.done) out.lessons[id] = l;
   }
   out.unlocked = [...new Set([...out.unlocked, ...incoming.unlocked])];
+  for (const [id, g] of Object.entries(incoming.games ?? {})) {
+    const cur = out.games[id];
+    out.games[id] = cur ? { best: Math.max(cur.best ?? 0, g.best ?? 0), plays: Math.max(cur.plays ?? 0, g.plays ?? 0) } : g;
+  }
   const created = [local.profile.created, incoming.profile.created].filter(isDay).sort();
   if (created.length) out.profile.created = created[0];
   return out;

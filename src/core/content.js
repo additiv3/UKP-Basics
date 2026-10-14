@@ -12,7 +12,7 @@ let cache = null;
 export async function loadAll() {
   if (cache) return cache;
   const index = await getJson('content/index.json');
-  const [glossar, quellen] = await Promise.all([getJson('content/glossar.json'), getJson('content/quellen.json')]);
+  const [glossar, quellen, labor] = await Promise.all([getJson('content/glossar.json'), getJson('content/quellen.json'), getJson('content/labor.json')]);
   const chapters = new Map();
   await Promise.all(
     index.kapitel
@@ -39,7 +39,7 @@ export async function loadAll() {
   const terms = new Map(glossar.begriffe.map((b) => [b.id, b]));
   setGlossary(new Map(glossar.begriffe.map((b) => [b.id, b.begriff])));
   const sources = new Map(quellen.quellen.map((q) => [q.id, q]));
-  cache = { index, chapters, items, terms, termChapters, sources };
+  cache = { index, chapters, items, terms, termChapters, sources, labor };
   return cache;
 }
 

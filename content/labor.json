@@ -1,0 +1,78 @@
+{
+  "sims": [
+    {
+      "id": "gauss",
+      "kapitel": "k02",
+      "stufe": "a",
+      "icon": "beam"
+    },
+    {
+      "id": "absorption",
+      "kapitel": "k03",
+      "stufe": "a",
+      "icon": "wave"
+    },
+    {
+      "id": "puls",
+      "kapitel": "k04",
+      "stufe": "b",
+      "icon": "pulse"
+    },
+    {
+      "id": "cpa",
+      "kapitel": "k04",
+      "stufe": "b",
+      "icon": "stack"
+    },
+    {
+      "id": "diffusion",
+      "kapitel": "k05",
+      "stufe": "b",
+      "icon": "heat"
+    },
+    {
+      "id": "ttm",
+      "kapitel": "k05",
+      "stufe": "b",
+      "icon": "heat"
+    },
+    {
+      "id": "mpa",
+      "kapitel": "k06",
+      "stufe": "b",
+      "icon": "band"
+    },
+    {
+      "id": "schwelle",
+      "kapitel": "k07",
+      "stufe": "c",
+      "icon": "crater"
+    },
+    {
+      "id": "effizienz",
+      "kapitel": "k07",
+      "stufe": "c",
+      "icon": "crater"
+    },
+    {
+      "id": "inkubation",
+      "kapitel": "k07",
+      "stufe": "c",
+      "icon": "stack"
+    },
+    {
+      "id": "ueberlapp",
+      "kapitel": "k09",
+      "stufe": "d",
+      "icon": "dots"
+    }
+  ],
+  "spiele": [
+    {
+      "id": "zahlenblitz"
+    },
+    {
+      "id": "schwellenjaeger"
+    }
+  ]
+}

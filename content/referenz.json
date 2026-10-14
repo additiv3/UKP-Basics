@@ -1,0 +1,33 @@
+{
+  "konstanten": [
+    { "symbol": "c", "name": "Lichtgeschwindigkeit (Vakuum)", "wert": "299\\,792\\,458\\ \\mathrm{m/s}" },
+    { "symbol": "h", "name": "Planck-Konstante", "wert": "6{,}626\\,070\\,15\\cdot10^{-34}\\ \\mathrm{J\\,s}" },
+    { "symbol": "\\hbar", "name": "reduzierte Planck-Konstante h/2π", "wert": "1{,}054\\,571\\,817\\cdot10^{-34}\\ \\mathrm{J\\,s}" },
+    { "symbol": "e", "name": "Elementarladung", "wert": "1{,}602\\,176\\,634\\cdot10^{-19}\\ \\mathrm{C}" },
+    { "symbol": "k_\\mathrm{B}", "name": "Boltzmann-Konstante", "wert": "1{,}380\\,649\\cdot10^{-23}\\ \\mathrm{J/K}" },
+    { "symbol": "\\varepsilon_0", "name": "elektrische Feldkonstante", "wert": "8{,}854\\,187\\,81\\cdot10^{-12}\\ \\mathrm{F/m}" },
+    { "symbol": "m_\\mathrm{e}", "name": "Elektronenmasse", "wert": "9{,}109\\,383\\,70\\cdot10^{-31}\\ \\mathrm{kg}" },
+    { "symbol": "1\\,\\mathrm{eV}", "name": "Elektronenvolt", "wert": "1{,}602\\,176\\,634\\cdot10^{-19}\\ \\mathrm{J}" },
+    { "symbol": "hc", "name": "Photonen-Umrechnung", "wert": "1239{,}84\\ \\mathrm{eV\\,nm}" }
+  ],
+  "faustformeln": [
+    { "titel": "Photonenenergie aus der Wellenlänge", "latex": "E_\\mathrm{Ph}\\,[\\mathrm{eV}]\\approx\\frac{1240}{\\lambda\\,[\\mathrm{nm}]}", "hinweis": "1030 nm ≈ 1,2 eV, 515 nm ≈ 2,4 eV, 343 nm ≈ 3,6 eV." },
+    { "titel": "Lichtweg in der Pulsdauer", "latex": "\\Delta s\\approx 0{,}3\\,\\mu\\mathrm{m}\\cdot\\frac{\\tau}{1\\,\\mathrm{fs}}", "hinweis": "100 fs entsprechen 30 µm, 1 ps entspricht 0,3 mm." },
+    { "titel": "Mittlere Leistung in Milliwatt", "latex": "P_\\mathrm{avg}\\,[\\mathrm{mW}]=E_\\mathrm{p}\\,[\\mu\\mathrm{J}]\\cdot f\\,[\\mathrm{kHz}]", "hinweis": "10 µJ bei 100 kHz sind 1000 mW = 1 W." },
+    { "titel": "Fluenz aus Pulsenergie und Strahlradius", "latex": "F_0\\,[\\mathrm{J/cm^2}]\\approx 63{,}7\\cdot\\frac{E_\\mathrm{p}\\,[\\mu\\mathrm{J}]}{w_0^2\\,[\\mu\\mathrm{m}^2]}", "hinweis": "Kurz: F₀ = 2E_p/(πw₀²); mit E_p in µJ und w₀ in µm ergibt sich F₀ ≈ 63,7 · E_p / w₀² in J/cm²." },
+    { "titel": "Frequenz und Wellenlänge", "latex": "\\nu=\\frac{c}{\\lambda},\\quad \\lambda=1030\\,\\mathrm{nm}\\Rightarrow\\nu\\approx291\\,\\mathrm{THz}", "hinweis": "Die optische Periode beträgt dann etwa 3,4 fs." }
+  ],
+  "normen": [
+    { "nummer": "ISO 11145", "titel": "Optik und Photonik – Laser und Laseranlagen – Begriffe und Formelzeichen", "bereich": "Begriffe", "wozu": "Einheitliche Definitionen und Formelzeichen für Laserstrahl-Größen. Erster Anlaufpunkt, wenn ein Begriff in Papern und Datenblättern unterschiedlich benutzt wird." },
+    { "nummer": "ISO 11146-1", "titel": "Laser und Laseranlagen – Prüfverfahren für Laserstrahlabmessungen, Divergenzwinkel und Beugungsmaßzahlen – Teil 1: Stigmatische und einfach astigmatische Strahlen", "bereich": "Strahlcharakterisierung", "wozu": "Definiert Strahlradius über **zweite Momente** und das Messverfahren für $M^2$. Damit sind $w_0$, $z_\\mathrm{R}$ und $\\theta$ vergleichbar messbar." },
+    { "nummer": "ISO 11146-2", "titel": "Laser und Laseranlagen – Prüfverfahren für Laserstrahlabmessungen, Divergenzwinkel und Beugungsmaßzahlen – Teil 2: Allgemeine astigmatische Strahlen", "bereich": "Strahlcharakterisierung", "wozu": "Erweitert Teil 1 auf Strahlen mit allgemeinem Astigmatismus (z. B. verdrehte Strahlachsen)." },
+    { "nummer": "ISO 11146-3", "titel": "Laser und Laseranlagen – Prüfverfahren für Laserstrahlabmessungen, Divergenzwinkel und Beugungsmaßzahlen – Teil 3: Intrinsische und geometrische Laserstrahlklassifizierung, Ausbreitung und Einzelheiten der Prüfverfahren", "bereich": "Strahlcharakterisierung", "wozu": "Hintergrund zur Strahlklassifizierung und Ausbreitung; ergänzt die Messverfahren aus Teil 1 und 2." },
+    { "nummer": "ISO 13694", "titel": "Optik und Photonik – Laser und Laseranlagen – Prüfverfahren für die Leistungs-(Energie-)Dichteverteilung von Laserstrahlen", "bereich": "Strahlcharakterisierung", "wozu": "Messung der Verteilung der Leistungs- bzw. Energiedichte im Strahlquerschnitt, also der Fluenzprofile, die für Schwellenversuche wichtig sind." },
+    { "nummer": "ISO 11554", "titel": "Optik und Photonik – Laser und Laseranlagen – Prüfverfahren für Laserleistung, Pulsenergie und zeitliche Eigenschaften", "bereich": "Leistung und Energie", "wozu": "Messung von mittlerer Leistung, Pulsenergie, Pulsdauer und deren Stabilität, also der Größen aus Kapitel K01." },
+    { "nummer": "ISO 21254-1 bis -4", "titel": "Laser und Laseranlagen – Prüfverfahren für die laserinduzierte Zerstörschwelle (Teile 1 bis 4)", "bereich": "Schwelle", "wozu": "Rahmen für Zerstör- und Abtragschwellen: Begriffe, Ermittlung der Schwelle (z. B. 1-on-1 und S-on-1), Leistungsfestigkeit und Schadensdetektion. Wichtig, wenn Schwellfluenzen vergleichbar berichtet werden sollen." },
+    { "nummer": "ISO 21920-2 / -3", "titel": "Geometrische Produktspezifikation (GPS) – Oberflächenbeschaffenheit: Profile – Teil 2: Begriffe und Kenngrößen, Teil 3: Spezifikationsoperatoren", "bereich": "Oberfläche", "wozu": "Rauheitskenngrößen im Profilschnitt (z. B. $Ra$, $Rz$) und Filter. Löst die früheren Normen ISO 4287 und ISO 4288 ab." },
+    { "nummer": "ISO 25178-2", "titel": "Geometrische Produktspezifikation (GPS) – Oberflächenbeschaffenheit: Flächenhaft – Teil 2: Begriffe und Kenngrößen", "bereich": "Oberfläche", "wozu": "Flächenhafte Kenngrößen wie $Sa$ und $Sz$ für Ablationsflächen und Strukturen, wenn Profilschnitte nicht reichen." },
+    { "nummer": "DIN EN 60825-1 (IEC 60825-1)", "titel": "Sicherheit von Lasereinrichtungen – Teil 1: Klassifizierung von Anlagen und Anforderungen", "bereich": "Sicherheit", "wozu": "Laserklassen (1, 1M, 2, 2M, 3R, 3B, 4) und Anforderungen an Hersteller. Eingehauste Anlagen werden häufig in Klasse 1 eingestuft, der offene Strahlengang im Labor fällt meist in Klasse 4 (am Typenschild bzw. an der Gefährdungsbeurteilung prüfen)." },
+    { "nummer": "OStrV und TROS Laserstrahlung", "titel": "Arbeitsschutzverordnung zu künstlicher optischer Strahlung und Technische Regeln", "bereich": "Sicherheit", "wozu": "Pflichten des Arbeitgebers beim Betrieb von Lasern in Deutschland: Gefährdungsbeurteilung, Laserschutzbeauftragter, Schutzmaßnahmen." }
+  ]
+}

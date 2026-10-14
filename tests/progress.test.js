@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { defaultState } from '../src/core/store.js';
-import { addXp, completeLesson, levelInfo, scoreItem, streak, totalXp, dueIds, chapterStatus, XP } from '../src/core/progress.js';
+import { addXp, completeLesson, levelInfo, scoreItem, streak, totalXp, dueIds, chapterStatus, recordGame, XP } from '../src/core/progress.js';
 import { buildExport, mergeStates, parseImport } from '../src/core/exportimport.js';
 
 test('level thresholds follow 1 + floor(sqrt(xp/40))', () => {
@@ -83,4 +83,29 @@ test('merge keeps the more recently reviewed item and the larger day totals', ()
   assert.ok(m.items.q2);
   assert.equal(m.days['2026-10-10'].xp, 10);
   assert.equal(m.days['2026-10-12'].xp, 20);
+});
+
+test('game results pay XP only for points above the previous best', () => {
+  const s = defaultState();
+  const first = recordGame(s, 'zahlenblitz', 10, '2026-10-14', 2);
+  assert.deepEqual([first.best, first.newBest, first.xp], [10, true, 20]);
+  const worse = recordGame(s, 'zahlenblitz', 6, '2026-10-14', 2);
+  assert.deepEqual([worse.best, worse.newBest, worse.xp], [10, false, 0]);
+  const better = recordGame(s, 'zahlenblitz', 12, '2026-10-14', 2);
+  assert.equal(better.xp, 4);
+  assert.equal(s.games.zahlenblitz.plays, 3);
+  assert.equal(totalXp(s), 24);
+});
+
+test('game bests survive export, import and merge', () => {
+  const a = defaultState();
+  recordGame(a, 'schwellenjaeger', 15, '2026-10-14');
+  const b = defaultState();
+  recordGame(b, 'schwellenjaeger', 20, '2026-10-13');
+  recordGame(b, 'zahlenblitz', 7, '2026-10-13');
+  const restored = parseImport(JSON.stringify(buildExport(b, '0.2.0')));
+  assert.equal(restored.games.schwellenjaeger.best, 20);
+  const merged = mergeStates(a, restored);
+  assert.equal(merged.games.schwellenjaeger.best, 20);
+  assert.equal(merged.games.zahlenblitz.best, 7);
 });

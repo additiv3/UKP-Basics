@@ -12,6 +12,7 @@ export function defaultState() {
     items: {}, // item id -> SM-2 state
     lessons: {}, // lesson id -> { done: 'YYYY-MM-DD' }
     unlocked: [], // chapter ids opened manually
+    games: {}, // game id -> { best, plays }
     settings: { dailyGoal: 40, reviewBatch: 15 },
   };
 }
@@ -27,6 +28,7 @@ export function migrate(raw) {
     items: raw.items && typeof raw.items === 'object' ? raw.items : {},
     lessons: raw.lessons && typeof raw.lessons === 'object' ? raw.lessons : {},
     unlocked: Array.isArray(raw.unlocked) ? raw.unlocked : [],
+    games: raw.games && typeof raw.games === 'object' ? raw.games : {},
     settings: { ...base.settings, ...(raw.settings ?? {}) },
   };
 }

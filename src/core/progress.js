@@ -69,6 +69,19 @@ export function completeLesson(state, lessonId, today) {
   return true;
 }
 
+/**
+ * Record a game result. XP are paid only for points above the previous best (no farming by replaying).
+ * Returns { best, newBest, xp }. Mutates state.
+ */
+export function recordGame(state, id, score, today, xpPerPoint = 2) {
+  const cur = state.games[id] ?? { best: 0, plays: 0 };
+  const newBest = score > cur.best;
+  const xp = newBest ? Math.round((score - cur.best) * xpPerPoint) : 0;
+  state.games[id] = { best: Math.max(cur.best, score), plays: cur.plays + 1 };
+  addXp(state, today, xp, 1);
+  return { best: state.games[id].best, newBest, xp };
+}
+
 export const lessonDone = (state, lessonId) => Boolean(state.lessons[lessonId]);
 
 export function dueIds(state, today) {

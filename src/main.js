@@ -13,6 +13,7 @@ import * as lesson from './ui/views/lesson.js';
 import * as review from './ui/views/review.js';
 import * as glossary from './ui/views/glossary.js';
 import * as settings from './ui/views/settings.js';
+import * as labor from './ui/views/labor.js';
 
 const root = document.getElementById('app');
 
@@ -38,6 +39,10 @@ async function boot() {
   route('/kapitel/:id', chapter.render, 'pfad');
   route('/kapitel/:id/:lektion', lesson.render, 'pfad');
   route('/wiederholen', review.render, 'wiederholen');
+  route('/labor', labor.render, 'labor');
+  route('/labor/sim/:id', labor.renderSimPage, 'labor');
+  route('/labor/spiel/:id', labor.renderGamePage, 'labor');
+  route('/labor/:bereich', labor.render, 'labor');
   route('/glossar', glossary.renderList, 'glossar');
   route('/glossar/:id', glossary.renderTerm, 'glossar');
   route('/einstellungen', settings.render, 'profil');
