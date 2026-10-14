@@ -5,3 +5,8 @@ __pycache__/
 *.pyc
 .vscode/
 .claude/settings.local.json
+
+# lokale, persönliche Projektnotizen (nicht veröffentlichen)
+CLAUDE.md
+docs/fachkontext.md
+docs/referenz/

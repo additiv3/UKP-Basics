@@ -7,7 +7,7 @@ Persönliche Lern-App für den Einstieg in die **Ultrakurzpuls-(UKP-)Laserablati
 - Fortschritt lokal im Browser, Export/Import als JSON
 - Inhalte sind reine JSON-Dateien in `content/`; unverifizierte Aussagen tragen das Badge „ungeprüft"
 
-Ziel, Architektur und Regeln: [CLAUDE.md](CLAUDE.md). Lernpfad und Kapitelplan: [docs/lernpfad.md](docs/lernpfad.md). Roadmap: [docs/roadmap.md](docs/roadmap.md).
+Architekturentscheidungen: [docs/adr/](docs/adr/). Autorenleitfaden: [docs/inhalte-schreiben.md](docs/inhalte-schreiben.md). Lernpfad und Kapitelplan: [docs/lernpfad.md](docs/lernpfad.md). Roadmap: [docs/roadmap.md](docs/roadmap.md).
 
 ## Lokal starten
 

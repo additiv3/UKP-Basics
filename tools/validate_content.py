@@ -3,7 +3,7 @@
   python tools/validate_content.py            # check (exit 1 on errors)
   python tools/validate_content.py --update   # also append new quiz/karte IDs to content/id-registry.json
 
-Question/card IDs are stable and never reassigned (CLAUDE.md): every ID that was ever registered must still exist.
+Question/card IDs are stable and never reassigned (Projektregel): every ID that was ever registered must still exist.
 """
 import json
 import re

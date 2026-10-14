@@ -1,6 +1,6 @@
 # Roadmap
 
-Abweichung von CLAUDE.md Abschnitt 7: Die Wiederholungslogik (SM-2) und der Lernpfad mit Spielmechanik ziehen in **Phase 1** vor, weil sie den Kern der App ausmachen. Karteikarten-Ansicht, Mini-Spiele und Diagramme bleiben später.
+Abweichung vom ursprünglichen Projektentwurf: Die Wiederholungslogik (SM-2) und der Lernpfad mit Spielmechanik ziehen in **Phase 1** vor, weil sie den Kern der App ausmachen. Karteikarten-Ansicht, Mini-Spiele und Diagramme bleiben später.
 
 ## Phase 1 · Gerüst und Lernkern (jetzt)
 

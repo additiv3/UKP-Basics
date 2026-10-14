@@ -1,11 +1,11 @@
 # Offene Punkte
 
-## Von Fabio zu liefern oder zu entscheiden
+## Zu liefern oder zu entscheiden
 
 | Thema | Stand |
 |---|---|
 | **alp-Logo** | Logo und Seite der AG ließen sich nicht abrufen. Das Icon ist eine eigene Gestaltung (Gauß-Puls als Bergsilhouette, passend zu „alp"). Wenn du das Logo als Datei in `assets/referenz/` legst, passe ich die Formensprache an. Das Original selbst verwende ich nicht (Marken-/Nutzungsrechte der Hochschule). |
-| **GitHub Pages** | Das Repo ist **privat**. Pages aus privaten Repos braucht einen bezahlten GitHub-Plan; im Free-Plan muss das Repo öffentlich sein. `docs/fachkontext.md` enthält persönliche Angaben zu Stelle und Promotion. Vorschlag: erst klären, ob öffentlich (dann Fachkontext aus dem Repo nehmen) oder anderer Weg. |
+| **GitHub Pages** | Repo ist öffentlich, Pages aus `main`. Persönliche Projektnotizen (Stelle, Betreuung, Vorwissen) liegen nur lokal und sind nicht im Repo. |
 | **Grafiken** | Alle Grafiken in Phase 1 entstehen als selbst erzeugte SVGs (`tools/gen_figures.py`). Wenn später Fotos oder Mikroskopaufnahmen (Ablationsstrukturen, Anlage) gewünscht sind, brauche ich diese von dir bzw. mit klarer Lizenz. |
 
 ## Fachlich zu prüfen

@@ -1,6 +1,6 @@
 # Lernpfad und Kapitelplan
 
-Stand: Oktober 2026. Dieser Plan ersetzt den ersten Entwurf aus CLAUDE.md Abschnitt 4 (dort fehlten Strahloptik und „Licht trifft Materie" als eigene Bausteine, und die Abhängigkeiten waren nicht ausgewiesen). Alle Fachinhalte sind **nicht gegen Primärliteratur geprüft**, siehe Abschnitt „Quellenlage".
+Stand: Oktober 2026. Dieser Plan ersetzt den ersten Entwurf aus dem ursprünglichen Projektentwurf (dort fehlten Strahloptik und „Licht trifft Materie" als eigene Bausteine, und die Abhängigkeiten waren nicht ausgewiesen). Alle Fachinhalte sind **nicht gegen Primärliteratur geprüft**, siehe Abschnitt „Quellenlage".
 
 ## 1. Didaktische Leitlinien
 
