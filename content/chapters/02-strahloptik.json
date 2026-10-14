@@ -1,0 +1,462 @@
+{
+  "id": "k02",
+  "titel": "Strahloptik: vom Laser zum Fokus",
+  "einleitung": "Die Fluenz am Werkstück entscheidet über den Abtrag, und sie hängt vom Fokus ab. Hier lernst du, wie sich ein Gauß-Strahl im Raum verhält, wie groß der Fokus wird, wie scharf er ist und was $M^2$ über deine Strahlquelle verrät.",
+  "ziele": [
+    "Strahlradius, Spitzenfluenz und Leistungsanteil eines Gauß-Strahls berechnen",
+    "Taille $w_0$, Rayleighlänge $z_\\mathrm{R}$ und Divergenz $\\theta$ bestimmen und die Abhängigkeiten von $\\lambda$, $w_0$ und $M^2$ erklären",
+    "Den Fokusradius hinter einer Linse abschätzen ($w_0 \\approx M^2\\lambda f/\\pi w_\\mathrm{in}$)",
+    "Strahlparameterprodukt und $M^2$ als Qualitätsmaß einordnen",
+    "Wellenlänge und Polarisation als Prozessparameter verstehen"
+  ],
+  "weiterlesen": [
+    "saleh2019",
+    "siegman1986",
+    "iso11146"
+  ],
+  "lektionen": [
+    {
+      "id": "k02.l01",
+      "titel": "Gauß-Strahl und Spitzenfluenz",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k02.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Fast jeder Laser strahlt im Grundmodus ein **gaußsches** Intensitätsprofil ab ([[gauss-strahl]]): in der Mitte am hellsten, nach außen glockenförmig abfallend. Als Strahlradius $w$ gilt der Abstand von der Achse, bei dem die Intensität auf $1/e^2\\approx 13{,}5\\,\\%$ des Maximums gefallen ist.",
+            "Beim Gauß-Profil lässt sich vieles exakt ausrechnen. Dafür brauchst du nur das Integral über die Glockenfläche."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.l01.b02",
+          "typ": "formel",
+          "latex": "I(r)=I_0\\,\\exp\\!\\left(-\\frac{2r^2}{w^2}\\right)",
+          "titel": "Gauß-Profil",
+          "sammlung": "Strahloptik",
+          "erklaerung": "Intensitätsprofil mit Strahlradius $w$ (Abstand, bei dem $I=I_0/e^2$ ist).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.l01.b03",
+          "typ": "bild",
+          "src": "assets/figures/gauss-profil.svg",
+          "alt": "Gaußsches Fluenzprofil mit Spitzenfluenz, Strahlradius und Beispielschwelle",
+          "unterschrift": "Das Gauß-Profil: Spitzenwert $F_0$, Radius $w_0$ bei $F_0/e^2$ und eine Beispielschwelle.",
+          "quelle": "selbst erzeugt"
+        },
+        {
+          "id": "k02.l01.b04",
+          "typ": "formel",
+          "latex": "P(r<w)=P_\\mathrm{ges}\\left(1-e^{-2}\\right)\\approx 0{,}865\\,P_\\mathrm{ges}",
+          "titel": "Leistung innerhalb des Strahlradius",
+          "sammlung": "Strahloptik",
+          "erklaerung": "Anteil der Gesamtleistung innerhalb des $1/e^2$-Radius: 86,5 %.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.l01.b05",
+          "typ": "formel",
+          "latex": "\\begin{gathered}F_0=\\frac{2E_\\mathrm{p}}{\\pi w_0^2}=2\\,\\bar F,\\\\ I_0\\approx\\frac{F_0}{\\tau}\\end{gathered}",
+          "titel": "Spitzenfluenz",
+          "sammlung": "Strahloptik",
+          "einheit": "J/cm^2",
+          "erklaerung": "Spitzenfluenz $F_0$ in der Strahlmitte. Die mittlere Fluenz über die Kreisfläche $\\pi w_0^2$ ist nur $\\bar F=E_\\mathrm{p}/\\pi w_0^2$, also die Hälfte.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.l01.b06",
+          "typ": "merke",
+          "inhalt": "Die Spitzenfluenz eines Gauß-Strahls ist **doppelt** so groß wie der Quotient aus Pulsenergie und Kreisfläche $\\pi w_0^2$. Wer das vergisst, verschätzt sich bei jeder Fluenz um den Faktor 2, und damit bei der Schwelle.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.l01.b07",
+          "typ": "text",
+          "inhalt": [
+            "Die oft angegebene Halbwertsbreite (FWHM, [[halbwertsbreite]]) ist kleiner als der $1/e^2$-Durchmesser. Aus $I(r)=I_0/2$ folgt $r=w\\sqrt{\\ln 2/2}$, also gilt für den Durchmesser $d_\\mathrm{FWHM}=w\\sqrt{2\\ln 2}\\approx 1{,}18\\,w$ und $d_{1/e^2}=2w$. Prüfe bei Literaturwerten immer, welche Definition verwendet wurde."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.l01.b08",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Welche Pulsenergie brauchst du, um bei $w_0=12\\,\\mu\\mathrm{m}$ eine Spitzenfluenz von $F_0=2\\,\\mathrm{J/cm^2}$ zu erreichen?",
+          "schritte": [
+            "Umstellen: $E_\\mathrm{p}=F_0\\,\\pi w_0^2/2$",
+            "Radius in cm: $w_0=12\\cdot10^{-4}\\,\\mathrm{cm}$, also $w_0^2=1{,}44\\cdot10^{-6}\\,\\mathrm{cm^2}$",
+            "$E_\\mathrm{p}=2\\,\\mathrm{J/cm^2}\\cdot\\pi\\cdot1{,}44\\cdot10^{-6}\\,\\mathrm{cm^2}/2=4{,}52\\cdot10^{-6}\\,\\mathrm{J}$"
+          ],
+          "ergebnis": "Etwa 4,5 µJ. Die Pulsenergie ist so klein, weil der Fokus winzig ist.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k02.q01",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welcher Anteil der Strahlleistung liegt innerhalb des $1/e^2$-Radius $w$?",
+          "optionen": [
+            "50 %",
+            "63 %",
+            "86,5 %",
+            "99 %"
+          ],
+          "richtig": 2,
+          "fest": true,
+          "erklaerung": "$1-e^{-2}\\approx 0{,}865$. (Die 63 % gehören zum Radius $w/\\sqrt2$, bei dem $1-e^{-1}$ erreicht wird.)"
+        },
+        {
+          "id": "k02.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Puls mit $E_\\mathrm{p}=40\\,\\mu\\mathrm{J}$ trifft mit $w_0=25\\,\\mu\\mathrm{m}$. Wie groß ist die Spitzenfluenz in $\\mathrm{J/cm^2}$?",
+          "antwort": 4.07,
+          "einheit": "J/cm²",
+          "toleranz": 0.05,
+          "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)=2\\cdot40\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot6{,}25\\cdot10^{-6}\\,\\mathrm{cm^2})\\approx4{,}07\\,\\mathrm{J/cm^2}$."
+        },
+        {
+          "id": "k02.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie verhält sich die Spitzenfluenz $F_0$ eines Gauß-Strahls zur mittleren Fluenz $E_\\mathrm{p}/(\\pi w_0^2)$?",
+          "optionen": [
+            "Beide sind gleich",
+            "$F_0$ ist doppelt so groß",
+            "$F_0$ ist halb so groß",
+            "$F_0$ ist $e^2$-mal so groß"
+          ],
+          "richtig": 1,
+          "erklaerung": "Die Glockenform bündelt Energie in der Mitte: $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$."
+        },
+        {
+          "id": "k02.c01",
+          "typ": "karte",
+          "vorne": "Wie groß ist die Spitzenfluenz eines Gauß-Strahls?",
+          "hinten": "$F_0=\\dfrac{2E_\\mathrm{p}}{\\pi w_0^2}$, das Doppelte der mittleren Fluenz auf der Fläche $\\pi w_0^2$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.c02",
+          "typ": "karte",
+          "vorne": "Wie hängen FWHM-Durchmesser und $1/e^2$-Radius zusammen?",
+          "hinten": "$d_\\mathrm{FWHM}=w\\sqrt{2\\ln2}\\approx1{,}18\\,w$ (bei Intensität). Der $1/e^2$-Durchmesser ist $2w$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k02.l02",
+      "titel": "Fokussierung, Rayleighlänge, Spotgröße",
+      "minuten": 11,
+      "blocks": [
+        {
+          "id": "k02.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Gauß-Strahl hat eine engste Stelle, die **Strahltaille** (Fokus) mit Radius $w_0$. Von dort weitet er sich auf, zuerst langsam, dann linear. Die Strecke, über die sich der Strahlquerschnitt verdoppelt (Radius $\\times\\sqrt2$), heißt **Rayleighlänge** ([[rayleighlaenge]]) $z_\\mathrm{R}$."
+          ]
+        },
+        {
+          "id": "k02.l02.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}w(z)=w_0\\sqrt{1+\\left(\\frac{z}{z_\\mathrm{R}}\\right)^2},\\\\ z_\\mathrm{R}=\\frac{\\pi w_0^2}{M^2\\lambda}\\end{gathered}",
+          "titel": "Strahlaufweitung und Rayleighlänge",
+          "sammlung": "Strahloptik",
+          "erklaerung": "Aufweitung des Strahls entlang der Achse. Bei $z=\\pm z_\\mathrm{R}$ ist der Radius $\\sqrt2\\,w_0$ und die Spitzenfluenz auf die Hälfte gefallen.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        },
+        {
+          "id": "k02.l02.b03",
+          "typ": "formel",
+          "latex": "\\theta=\\frac{M^2\\lambda}{\\pi w_0}",
+          "titel": "Divergenz",
+          "sammlung": "Strahloptik",
+          "erklaerung": "Divergenz-Halbwinkel im Fernfeld. Kleiner Fokus bedeutet große Divergenz, denn das Produkt $w_0\\theta$ ist konstant.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        },
+        {
+          "id": "k02.l02.b04",
+          "typ": "sim",
+          "modell": "gauss"
+        },
+        {
+          "id": "k02.l02.b05",
+          "typ": "text",
+          "inhalt": [
+            "Hinter einer Linse mit Brennweite $f$ entsteht der Fokus. Trifft ein kollimierter Strahl mit Radius $w_\\mathrm{in}$ auf die Linse (und ist $f$ viel kleiner als die Rayleighlänge des Eingangsstrahls), gilt:"
+          ]
+        },
+        {
+          "id": "k02.l02.b06",
+          "typ": "formel",
+          "latex": "w_0\\approx\\frac{M^2\\lambda f}{\\pi\\,w_\\mathrm{in}}",
+          "titel": "Fokusradius hinter einer Linse",
+          "sammlung": "Strahloptik",
+          "erklaerung": "Fokusradius hinter der Linse. Kürzere Brennweite, größerer Strahl auf der Linse und kürzere Wellenlänge liefern einen kleineren Fokus.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        },
+        {
+          "id": "k02.l02.b07",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Laser mit $\\lambda=1030\\,\\mathrm{nm}$ und $M^2=1{,}2$ wird mit $f=100\\,\\mathrm{mm}$ fokussiert. Der Strahlradius auf der Linse ist $w_\\mathrm{in}=3\\,\\mathrm{mm}$. Bestimme $w_0$ und $z_\\mathrm{R}$.",
+          "schritte": [
+            "$w_0=\\dfrac{1{,}2\\cdot1{,}03\\cdot10^{-6}\\,\\mathrm{m}\\cdot0{,}1\\,\\mathrm{m}}{\\pi\\cdot3\\cdot10^{-3}\\,\\mathrm{m}}\\approx1{,}31\\cdot10^{-5}\\,\\mathrm{m}=13{,}1\\,\\mu\\mathrm{m}$",
+            "$z_\\mathrm{R}=\\dfrac{\\pi w_0^2}{M^2\\lambda}=\\dfrac{\\pi\\,(1{,}31\\cdot10^{-5}\\,\\mathrm{m})^2}{1{,}2\\cdot1{,}03\\cdot10^{-6}\\,\\mathrm{m}}\\approx4{,}4\\cdot10^{-4}\\,\\mathrm{m}$"
+          ],
+          "ergebnis": "Fokusradius etwa 13 µm, Rayleighlänge etwa 0,44 mm. Die Probe muss also auf wenige zehntel Millimeter genau in den Fokus.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k02.l02.b08",
+          "typ": "merke",
+          "inhalt": "Die Rayleighlänge wächst mit dem **Quadrat** des Fokusradius. Ein kleinerer Fokus ist nicht nur kleiner, er ist auch viel weniger tolerant gegenüber Abstandsfehlern. Das ist der Grund, warum die Fokuslage bei UKP-Prozessen ein eigener Parameter ist.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Strahl mit $\\lambda=515\\,\\mathrm{nm}$, $M^2=1$ und $w_0=10\\,\\mu\\mathrm{m}$: Wie groß ist die Rayleighlänge in $\\mu\\mathrm{m}$?",
+          "antwort": 610,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)=\\pi\\cdot(10\\,\\mu\\mathrm{m})^2/0{,}515\\,\\mu\\mathrm{m}\\approx610\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k02.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du halbierst den Fokusradius $w_0$ (alles andere gleich). Was passiert mit der Rayleighlänge?",
+          "optionen": [
+            "Sie halbiert sich",
+            "Sie wird auf ein Viertel reduziert",
+            "Sie bleibt gleich",
+            "Sie verdoppelt sich"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$z_\\mathrm{R}\\propto w_0^2$, also $(1/2)^2=1/4$."
+        },
+        {
+          "id": "k02.q06",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die Abhängigkeiten.",
+          "text": "Eine kürzere Wellenlänge liefert einen ___ Fokus. Eine größere Brennweite liefert einen ___ Fokus.",
+          "luecken": [
+            {
+              "optionen": [
+                "kleineren",
+                "größeren"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "kleineren",
+                "größeren"
+              ],
+              "richtig": 1
+            }
+          ],
+          "erklaerung": "Aus $w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})$: $w_0\\propto\\lambda$ und $w_0\\propto f$."
+        },
+        {
+          "id": "k02.c03",
+          "typ": "karte",
+          "vorne": "Was ist die Rayleighlänge?",
+          "hinten": "Strecke vom Fokus, nach der sich der Strahlradius um $\\sqrt2$ vergrößert hat: $z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)$.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        },
+        {
+          "id": "k02.c04",
+          "typ": "karte",
+          "vorne": "Wie groß wird der Fokus hinter einer Linse?",
+          "hinten": "$w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})$ mit Brennweite $f$ und Strahlradius $w_\\mathrm{in}$ auf der Linse.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        }
+      ]
+    },
+    {
+      "id": "k02.l03",
+      "titel": "Strahlqualität M²",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k02.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Der Fokus eines realen Lasers ist nie ganz so klein wie der eines perfekten Gauß-Strahls. Die Beugungsmaßzahl $M^2$ ([[m2]]) sagt dir, um wie viel schlechter er ist. Ein idealer Gauß-Strahl hat $M^2=1$; je größer $M^2$, desto mehr Modenanteile und desto schlechter fokussierbar.",
+            "Anschaulicher ist das **Strahlparameterprodukt** (BPP, [[bpp]]): Taillenradius mal Divergenz-Halbwinkel. Es ist entlang des Strahls erhalten, solange nichts Aberrationen erzeugt, und bei Optiken kann es nicht verkleinert werden."
+          ]
+        },
+        {
+          "id": "k02.l03.b02",
+          "typ": "formel",
+          "latex": "\\mathrm{BPP}=w_0\\,\\theta=\\frac{M^2\\lambda}{\\pi}",
+          "titel": "Strahlparameterprodukt",
+          "sammlung": "Strahloptik",
+          "erklaerung": "Der ideale Gauß-Strahl hat $\\mathrm{BPP}=\\lambda/\\pi$. Typische Einheit: mm·mrad.",
+          "verifiziert": true,
+          "quelle": "siegman1986"
+        },
+        {
+          "id": "k02.l03.b03",
+          "typ": "text",
+          "inhalt": [
+            "Bei $\\lambda=1030\\,\\mathrm{nm}$ ist $\\lambda/\\pi\\approx0{,}33\\,\\mathrm{mm\\,mrad}$. Ein Laser mit $M^2=1{,}3$ hat also ein BPP von etwa $0{,}43\\,\\mathrm{mm\\,mrad}$."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.l03.b04",
+          "typ": "text",
+          "inhalt": [
+            "Wie $w_0$ und $M^2$ gemessen werden, regelt die Normenreihe ISO 11146 (Strahlradius aus den **zweiten Momenten** der Intensitätsverteilung, $M^2$ aus mehreren Messungen entlang der Strahlachse). Nur so sind Angaben verschiedener Hersteller vergleichbar. Siehe Labor → Normen."
+          ],
+          "verifiziert": false,
+          "quelle": "iso11146"
+        },
+        {
+          "id": "k02.l03.b05",
+          "typ": "merke",
+          "inhalt": "Eine schlechtere Strahlqualität kostet dich direkt Fokusgröße oder Schärfentiefe: Bei gleicher Optik wird $w_0$ mit $M^2$ größer, bei gleichem $w_0$ wird $z_\\mathrm{R}$ mit $M^2$ kleiner."
+        },
+        {
+          "id": "k02.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Aussage über $M^2$ stimmt?",
+          "optionen": [
+            "$M^2<1$ ist bei guten Lasern üblich",
+            "$M^2=1$ beschreibt den idealen Gauß-Strahl",
+            "$M^2$ gibt die Pulsdauer an",
+            "$M^2$ hängt nur von der Linse ab"
+          ],
+          "richtig": 1,
+          "erklaerung": "$M^2\\ge1$ gilt immer. Für den Grundmodus (Gauß) ist $M^2=1$; größere Werte stehen für schlechtere Fokussierbarkeit."
+        },
+        {
+          "id": "k02.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist das BPP eines idealen Gauß-Strahls mit $\\lambda=1064\\,\\mathrm{nm}$ in mm·mrad?",
+          "antwort": 0.339,
+          "einheit": "mm·mrad",
+          "toleranz": 0.05,
+          "erklaerung": "$\\lambda/\\pi=1{,}064\\cdot10^{-3}\\,\\mathrm{mm}/\\pi=3{,}39\\cdot10^{-4}\\,\\mathrm{mm}=0{,}339\\,\\mathrm{mm\\,mrad}$ (mit 1 mrad = $10^{-3}$ rad)."
+        },
+        {
+          "id": "k02.c05",
+          "typ": "karte",
+          "vorne": "Was bedeutet $M^2$?",
+          "hinten": "Beugungsmaßzahl: Verhältnis von BPP des realen Strahls zum BPP des idealen Gauß-Strahls, $M^2=\\pi\\,w_0\\theta/\\lambda\\ge1$.",
+          "verifiziert": true,
+          "quelle": "siegman1986"
+        }
+      ]
+    },
+    {
+      "id": "k02.l04",
+      "titel": "Polarisation und Wellenlänge",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k02.l04.b01",
+          "typ": "text",
+          "titel": "Wellenlänge",
+          "inhalt": [
+            "Zwei Eigenschaften des Lichts neben der Geometrie wirken direkt auf den Prozess: die **Wellenlänge** und die **Polarisation**."
+          ]
+        },
+        {
+          "id": "k02.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "Die Grundwellenlänge hängt vom Lasermedium ab. Frequenzvervielfachung in nichtlinearen Kristallen erzeugt kürzere Wellenlängen: Aus einer Grundwelle von 1030 nm werden durch Verdopplung (SHG) 515 nm und durch Verdreifachung (THG) etwa 343 nm. Rechnerisch ist das $\\lambda/2$ bzw. $\\lambda/3$.",
+            "Kürzere Wellenlänge heißt (a) kleinerer Fokus ($w_0\\propto\\lambda$), (b) höhere Photonenenergie und damit weniger Photonen für die Bandlücke eines Dielektrikums, (c) oft bessere Absorption. Der Preis sind geringere Pulsenergie und Aufwand beim Frequenzwandeln."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung (λ/n), Skalierungsregeln aus den Formeln"
+        },
+        {
+          "id": "k02.l04.b03",
+          "typ": "text",
+          "inhalt": [
+            "Die Polarisation beschreibt, in welche Richtung das elektrische Feld schwingt. Bei **linearer** Polarisation schwingt es in einer festen Richtung, bei **zirkularer** dreht es sich.",
+            "Wo die Polarisation sichtbar wird: Bei schrägem Lichteinfall absorbieren Metalle senkrecht und parallel polarisiertes Licht unterschiedlich (Fresnel-Gleichungen). Beim Schneiden mit linear polarisiertem Licht kann die Schnittqualität von der Vorschubrichtung relativ zur Polarisation abhängen, deshalb wird oft zirkular polarisiert. Und die Ausrichtung von LIPSS ([[lipss]]) folgt der Polarisationsrichtung."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k02.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du frequenzverdoppelst einen Laser mit 1030 nm. Welche Wellenlänge erhältst du?",
+          "optionen": [
+            "343 nm",
+            "515 nm",
+            "800 nm",
+            "2060 nm"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "Verdopplung der Frequenz halbiert die Wellenlänge: $1030\\,\\mathrm{nm}/2=515\\,\\mathrm{nm}$."
+        },
+        {
+          "id": "k02.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie wirkt sich eine kürzere Wellenlänge bei gleicher Optik auf den Fokus aus?",
+          "optionen": [
+            "Er wird größer",
+            "Er wird kleiner",
+            "Nichts",
+            "Er verschwindet"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})\\propto\\lambda$."
+        },
+        {
+          "id": "k02.c06",
+          "typ": "karte",
+          "vorne": "Warum wird oft zirkular polarisiert geschnitten?",
+          "hinten": "Bei linearer Polarisation hängt die Schnittqualität von der Vorschubrichtung ab; zirkular ist richtungsunabhängig.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k02.c07",
+          "typ": "karte",
+          "vorne": "Wie lassen sich aus 1030 nm kürzere Wellenlängen erzeugen?",
+          "hinten": "Frequenzvervielfachung: SHG gibt 515 nm, THG etwa 343 nm.",
+          "verifiziert": true,
+          "quelle": "Herleitung (λ/n)"
+        }
+      ]
+    }
+  ]
+}

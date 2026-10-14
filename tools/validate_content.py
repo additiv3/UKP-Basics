@@ -13,6 +13,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 BLOCKS = ROOT / "src" / "blocks"
+SIMS = ROOT / "src" / "sims"
+GAMES = ROOT / "src" / "games"
 
 QUIZ_ARTEN = {"multiple-choice", "zuordnung", "luecke", "sortieren", "zahl"}
 # Unit-bearing numbers that must carry a source or verifiziert flag (heuristic).
@@ -180,6 +182,12 @@ def main():
                         err(f"{where}: image needs 'alt'")
                 elif typ == "rechner" and b.get("modell") not in rechner_models:
                     err(f"{where}: unknown calculator model {b.get('modell')!r}")
+                elif typ == "sim" and not (SIMS / f"{b.get('modell')}.js").exists():
+                    err(f"{where}: unknown simulation {b.get('modell')!r}")
+                elif typ == "spiel" and not (GAMES / f"{b.get('spiel')}.js").exists():
+                    err(f"{where}: unknown game {b.get('spiel')!r}")
+                elif typ == "formel" and b.get("sammlung") and not b.get("titel"):
+                    err(f"{where}: formula in the collection needs a 'titel'")
                 elif typ == "quelle":
                     for ref in b.get("refs", []):
                         if ref not in source_ids:
@@ -193,6 +201,27 @@ def main():
                     if any(QUANTITY_RE.search(b.get(f, "") if isinstance(b.get(f, ""), str) else " ".join(b.get(f, []))) for f in TEXT_FIELDS):
                         err(f"{where}: quantity without 'quelle' or 'verifiziert'")
         texts.extend(strings(ch))
+
+    # lab configuration: every listed simulation / game must exist, every sim needs a chapter
+    labor = load(CONTENT / "labor.json") or {"sims": [], "spiele": []}
+    for sim in labor["sims"]:
+        if not (SIMS / f"{sim['id']}.js").exists():
+            err(f"labor.json: simulation {sim['id']} missing in src/sims")
+        if sim["kapitel"] not in ids:
+            err(f"labor.json: unknown chapter {sim['kapitel']}")
+    for g in labor["spiele"]:
+        if not (GAMES / f"{g['id']}.js").exists():
+            err(f"labor.json: game {g['id']} missing in src/games")
+    listed = {s["id"] for s in labor["sims"]}
+    for f in SIMS.glob("*.js"):
+        if f.stem != "kit" and f.stem not in listed:
+            warnings.append(f"simulation {f.stem} is not listed in labor.json")
+    referenz = load(CONTENT / "referenz.json")
+    if referenz:
+        for n in referenz.get("normen", []):
+            for key in ("nummer", "titel", "bereich", "wozu"):
+                if not n.get(key):
+                    err(f"referenz.json: standard missing '{key}': {n}")
 
     # glossary references
     for t in texts:

@@ -40,6 +40,150 @@
       "jahr": "Ausgaben ab 1996",
       "titel": "Ultrashort Laser Pulse Phenomena",
       "ort": "Academic Press (Lehrbuch zu Erzeugung, Ausbreitung und Messung von Ultrakurzpulsen)"
+    },
+    {
+      "id": "saleh2019",
+      "kurz": "Saleh & Teich 2019",
+      "autoren": "B. E. A. Saleh, M. C. Teich",
+      "jahr": "2019",
+      "titel": "Fundamentals of Photonics, 3. Auflage",
+      "ort": "Wiley (Lehrbuch: Strahloptik, Gauß-Strahlen, Wechselwirkung Licht–Materie)"
+    },
+    {
+      "id": "siegman1986",
+      "kurz": "Siegman 1986",
+      "autoren": "A. E. Siegman",
+      "jahr": "1986",
+      "titel": "Lasers",
+      "ort": "University Science Books (Lehrbuch zu Resonatoren, Gauß-Strahlen, BPP und M²)"
+    },
+    {
+      "id": "svelto2010",
+      "kurz": "Svelto 2010",
+      "autoren": "O. Svelto",
+      "jahr": "2010",
+      "titel": "Principles of Lasers, 5. Auflage",
+      "ort": "Springer (Lehrbuch zur Laserphysik)"
+    },
+    {
+      "id": "iso11146",
+      "kurz": "ISO 11146-1/-2/-3",
+      "autoren": "ISO",
+      "jahr": "laufend",
+      "titel": "Laser und Laseranlagen – Prüfverfahren für Laserstrahlabmessungen, Divergenzwinkel und Beugungsmaßzahlen",
+      "ort": "Normenreihe (Titel sinngemäß, Ausgabestand prüfen)"
+    },
+    {
+      "id": "iso21254",
+      "kurz": "ISO 21254-1 bis -4",
+      "autoren": "ISO",
+      "jahr": "laufend",
+      "titel": "Laser und Laseranlagen – Prüfverfahren für die laserinduzierte Zerstörschwelle",
+      "ort": "Normenreihe (Titel sinngemäß, Ausgabestand prüfen)"
+    },
+    {
+      "id": "iso21920",
+      "kurz": "ISO 21920 / ISO 25178",
+      "autoren": "ISO",
+      "jahr": "laufend",
+      "titel": "Geometrische Produktspezifikation (GPS) – Oberflächenbeschaffenheit: Profil (21920) und flächenhaft (25178)",
+      "ort": "Normenreihen (Titel sinngemäß, Ausgabestand prüfen)"
+    },
+    {
+      "id": "strickland1985",
+      "kurz": "Strickland & Mourou 1985",
+      "autoren": "D. Strickland, G. Mourou",
+      "jahr": "1985",
+      "titel": "Compression of amplified chirped optical pulses",
+      "ort": "Optics Communications 56, 219–221"
+    },
+    {
+      "id": "spence1991",
+      "kurz": "Spence et al. 1991",
+      "autoren": "D. E. Spence, P. N. Kean, W. Sibbett",
+      "jahr": "1991",
+      "titel": "60-fsec pulse generation from a self-mode-locked Ti:sapphire laser",
+      "ort": "Optics Letters 16, 42–44"
+    },
+    {
+      "id": "anisimov1974",
+      "kurz": "Anisimov et al. 1974",
+      "autoren": "S. I. Anisimov, B. L. Kapeliovich, T. L. Perel'man",
+      "jahr": "1974",
+      "titel": "Electron emission from metal surfaces exposed to ultrashort laser pulses",
+      "ort": "Soviet Physics JETP 39, 375–377"
+    },
+    {
+      "id": "rethfeld2004",
+      "kurz": "Rethfeld et al. 2004",
+      "autoren": "B. Rethfeld, K. Sokolowski-Tinten, D. von der Linde, S. I. Anisimov",
+      "jahr": "2004",
+      "titel": "Timescales in the response of materials to femtosecond laser excitation",
+      "ort": "Applied Physics A 79, 767–769"
+    },
+    {
+      "id": "keldysh1965",
+      "kurz": "Keldysh 1965",
+      "autoren": "L. V. Keldysh",
+      "jahr": "1965",
+      "titel": "Ionization in the field of a strong electromagnetic wave",
+      "ort": "Soviet Physics JETP 20, 1307–1314"
+    },
+    {
+      "id": "gattass2008",
+      "kurz": "Gattass & Mazur 2008",
+      "autoren": "R. R. Gattass, E. Mazur",
+      "jahr": "2008",
+      "titel": "Femtosecond laser micromachining in transparent materials",
+      "ort": "Nature Photonics 2, 219–225"
+    },
+    {
+      "id": "nolte1997",
+      "kurz": "Nolte et al. 1997",
+      "autoren": "S. Nolte, C. Momma, H. Jacobs, A. Tünnermann, B. N. Chichkov, B. Wellegehausen, H. Welling",
+      "jahr": "1997",
+      "titel": "Ablation of metals by ultrashort laser pulses",
+      "ort": "Journal of the Optical Society of America B 14, 2716–2722"
+    },
+    {
+      "id": "gamaly2002",
+      "kurz": "Gamaly et al. 2002",
+      "autoren": "E. G. Gamaly, A. V. Rode, B. Luther-Davies, V. T. Tikhonchuk",
+      "jahr": "2002",
+      "titel": "Ablation of solids by femtosecond lasers: Ablation mechanism and ablation thresholds for metals and dielectrics",
+      "ort": "Physics of Plasmas 9, 949–957"
+    },
+    {
+      "id": "liu1982",
+      "kurz": "Liu 1982",
+      "autoren": "J. M. Liu",
+      "jahr": "1982",
+      "titel": "Simple technique for measurements of pulsed Gaussian-beam spot sizes",
+      "ort": "Optics Letters 7, 196–198"
+    },
+    {
+      "id": "kerse2016",
+      "kurz": "Kerse et al. 2016",
+      "autoren": "C. Kerse et al.",
+      "jahr": "2016",
+      "titel": "Ablation-cooled material removal with ultrafast bursts of pulses",
+      "ort": "Nature 537, 84–88"
+    },
+    {
+      "id": "jee1988",
+      "kurz": "Jee et al. 1988",
+      "autoren": "Y. Jee, M. F. Becker, R. M. Walser",
+      "jahr": "1988",
+      "titel": "Laser-induced damage on single-crystal metal surfaces",
+      "ort": "Journal of the Optical Society of America B 5, 648–659"
+    },
+    {
+      "id": "codata2018",
+      "kurz": "Tiesinga et al. 2021",
+      "autoren": "E. Tiesinga, P. J. Mohr, D. B. Newell, B. N. Taylor",
+      "jahr": "2021",
+      "titel": "CODATA recommended values of the fundamental physical constants: 2018",
+      "ort": "Reviews of Modern Physics 93, 025010"
     }
   ]
 }

@@ -1,0 +1,455 @@
+{
+  "id": "k04",
+  "titel": "Ultrakurzpulse erzeugen",
+  "einleitung": "Ein Femtosekundenpuls ist kein Zufallsprodukt: Er entsteht, wenn viele Lichtfrequenzen phasenrichtig überlagert werden. Hier lernst du, warum kurze Pulse breite Spektren brauchen, wie ein Laser dazu gebracht wird, und wie man Pulse verstärkt, ohne den Verstärker zu zerstören.",
+  "ziele": [
+    "Zeit-Bandbreite-Produkt anwenden: aus Pulsdauer Spektralbreite berechnen und umgekehrt",
+    "Modenkopplung und Repetitionsrate über die Resonatorlänge erklären",
+    "Dispersion, GDD und Chirp beschreiben und die Pulsverbreiterung berechnen",
+    "Das CPA-Prinzip (Strecken, Verstärken, Komprimieren) begründen",
+    "Repetitionsrate, Pulsenergie und mittlere Leistung gegeneinander abwägen"
+  ],
+  "weiterlesen": [
+    "diels",
+    "strickland1985",
+    "svelto2010"
+  ],
+  "lektionen": [
+    {
+      "id": "k04.l01",
+      "titel": "Bandbreite und Pulsdauer",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k04.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Lichtpuls ist eine Überlagerung von Wellen verschiedener Frequenzen. Je kürzer der Puls, desto mehr Frequenzen müssen beteiligt sein: Zeit und Frequenz sind über die Fourier-Transformation gekoppelt ([[zeit-bandbreite-produkt]])."
+          ]
+        },
+        {
+          "id": "k04.l01.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}\\tau\\cdot\\Delta\\nu\\ge K,\\\\ K_\\text{Gauß}\\approx0{,}441,\\quad K_{\\mathrm{sech}^2}\\approx0{,}315\\end{gathered}",
+          "titel": "Zeit-Bandbreite-Produkt",
+          "sammlung": "Pulse",
+          "erklaerung": "Pulsdauer $\\tau$ (FWHM der Intensität) mal spektrale Breite $\\Delta\\nu$ (FWHM). Gleichheit gilt für einen **fourierlimitierten** Puls ohne Chirp; reale Pulse liegen darüber.",
+          "verifiziert": true,
+          "quelle": "diels"
+        },
+        {
+          "id": "k04.l01.b03",
+          "typ": "formel",
+          "latex": "\\Delta\\lambda=\\frac{\\lambda_0^2}{c}\\,\\Delta\\nu",
+          "titel": "Spektrale Breite in Wellenlänge",
+          "sammlung": "Pulse",
+          "erklaerung": "Umrechnung der Frequenzbreite in eine Wellenlängenbreite bei Zentralwellenlänge $\\lambda_0$ (für $\\Delta\\nu\\ll\\nu_0$).",
+          "verifiziert": true,
+          "quelle": "Herleitung aus ν = c/λ"
+        },
+        {
+          "id": "k04.l01.b04",
+          "typ": "sim",
+          "modell": "puls"
+        },
+        {
+          "id": "k04.l01.b05",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Wie breit muss das Spektrum eines Gauß-Pulses mit $\\tau=100\\,\\mathrm{fs}$ bei $\\lambda_0=1030\\,\\mathrm{nm}$ mindestens sein?",
+          "schritte": [
+            "$\\Delta\\nu=0{,}441/\\tau=0{,}441/(100\\cdot10^{-15}\\,\\mathrm{s})=4{,}41\\cdot10^{12}\\,\\mathrm{Hz}$",
+            "$\\Delta\\lambda=\\lambda_0^2\\Delta\\nu/c=(1{,}03\\cdot10^{-6}\\,\\mathrm{m})^2\\cdot4{,}41\\cdot10^{12}\\,\\mathrm{Hz}/(3\\cdot10^{8}\\,\\mathrm{m/s})\\approx1{,}56\\cdot10^{-8}\\,\\mathrm{m}$"
+          ],
+          "ergebnis": "Mindestens etwa 4,4 THz, entsprechend rund 16 nm Wellenlängenbreite. Für 10 fs wären es schon 160 nm.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k04.l01.b06",
+          "typ": "merke",
+          "inhalt": "Halbe Pulsdauer bedeutet doppelte Bandbreite. Ein Laser, dessen Verstärkungsmedium nur schmale Bandbreite liefert, kann physikalisch keine sehr kurzen Pulse erzeugen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k04.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist die minimale Frequenzbreite eines Gauß-Pulses mit $\\tau=30\\,\\mathrm{fs}$, in THz?",
+          "antwort": 14.7,
+          "einheit": "THz",
+          "toleranz": 0.05,
+          "erklaerung": "$\\Delta\\nu=0{,}441/30\\,\\mathrm{fs}=1{,}47\\cdot10^{13}\\,\\mathrm{Hz}=14{,}7\\,\\mathrm{THz}$."
+        },
+        {
+          "id": "k04.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Gauß-Puls hat $\\tau=30\\,\\mathrm{fs}$ bei $\\lambda_0=800\\,\\mathrm{nm}$. Wie breit ist das Spektrum mindestens in nm?",
+          "antwort": 31.4,
+          "einheit": "nm",
+          "toleranz": 0.06,
+          "erklaerung": "$\\Delta\\lambda=\\lambda_0^2\\Delta\\nu/c=(800\\,\\mathrm{nm})^2\\cdot1{,}47\\cdot10^{13}\\,\\mathrm{Hz}/(3\\cdot10^{17}\\,\\mathrm{nm/s})\\approx31\\,\\mathrm{nm}$."
+        },
+        {
+          "id": "k04.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du halbierst die Pulsdauer eines fourierlimitierten Pulses. Was passiert mit der Spektralbreite?",
+          "optionen": [
+            "Sie halbiert sich",
+            "Sie bleibt gleich",
+            "Sie verdoppelt sich",
+            "Sie vervierfacht sich"
+          ],
+          "richtig": 2,
+          "fest": true,
+          "erklaerung": "$\\Delta\\nu=K/\\tau$: Halbe Pulsdauer, doppelte Bandbreite."
+        },
+        {
+          "id": "k04.c01",
+          "typ": "karte",
+          "vorne": "Wie lautet das Zeit-Bandbreite-Produkt eines Gauß-Pulses?",
+          "hinten": "$\\tau\\,\\Delta\\nu\\ge0{,}441$ (beides FWHM, Intensität/Spektrum).",
+          "verifiziert": true,
+          "quelle": "diels"
+        }
+      ]
+    },
+    {
+      "id": "k04.l02",
+      "titel": "Modenkopplung",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k04.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Laserresonator der Länge $L$ lässt nur bestimmte Frequenzen zu, die **longitudinalen Moden**. Ihr Abstand beträgt $\\Delta\\nu_\\mathrm{FSR}=c/(2L)$ (linearer Resonator). Normalerweise schwingen sie mit zufälligen Phasen: Das Ergebnis ist Dauerstrich oder Rauschen.",
+            "Bei der **Modenkopplung** ([[modenkopplung]]) werden alle Phasen aneinander gekoppelt. Dann überlagern sich die Moden konstruktiv nur zu bestimmten Zeitpunkten, und es entsteht ein Puls, der im Resonator umläuft. Pro Umlauf koppelt ein Teil aus: Das ist der Pulszug."
+          ],
+          "verifiziert": true,
+          "quelle": "diels"
+        },
+        {
+          "id": "k04.l02.b02",
+          "typ": "formel",
+          "latex": "f_\\mathrm{rep}=\\frac{c}{2L}",
+          "titel": "Repetitionsrate des Oszillators",
+          "sammlung": "Pulse",
+          "einheit": "Hz",
+          "erklaerung": "Repetitionsrate eines Oszillators mit linearem Resonator der Länge $L$ (Umlaufzeit $2L/c$).",
+          "verifiziert": true,
+          "quelle": "diels"
+        },
+        {
+          "id": "k04.l02.b03",
+          "typ": "text",
+          "inhalt": [
+            "Je mehr Moden gekoppelt sind (also je größer die Bandbreite), desto kürzer wird der Puls, das ist wieder das Zeit-Bandbreite-Produkt. Als Koppelmechanismen werden verbreitet **Kerr-Linsen-Modenkopplung** (z. B. in Titan-Saphir-Oszillatoren) und sättigbare Halbleiter-Absorberspiegel (**SESAM**) eingesetzt."
+          ],
+          "verifiziert": false,
+          "quelle": "spence1991"
+        },
+        {
+          "id": "k04.l02.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Oszillator hat einen linearen Resonator von $L=1{,}5\\,\\mathrm{m}$. Welche Repetitionsrate hat er?",
+          "schritte": [
+            "$f_\\mathrm{rep}=c/(2L)=3\\cdot10^{8}\\,\\mathrm{m/s}/(2\\cdot1{,}5\\,\\mathrm{m})=1\\cdot10^{8}\\,\\mathrm{Hz}$"
+          ],
+          "ergebnis": "Etwa 100 MHz, also ein Puls alle 10 ns. Die Pulsenergie ist dabei klein, ein Verstärker (CPA, Lektion 4) und ein Pulspicker senken die Rate wieder.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k04.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Resonator ist $L=0{,}75\\,\\mathrm{m}$ lang. Welche Repetitionsrate (linearer Resonator) hat der Oszillator in MHz?",
+          "antwort": 200,
+          "einheit": "MHz",
+          "toleranz": 0.05,
+          "erklaerung": "$f=c/(2L)=3\\cdot10^{8}/(1{,}5)=2\\cdot10^{8}\\,\\mathrm{Hz}=200\\,\\mathrm{MHz}$."
+        },
+        {
+          "id": "k04.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was passiert bei der Modenkopplung mit den Phasen der Resonatormoden?",
+          "optionen": [
+            "Sie sind zufällig verteilt",
+            "Sie werden fest aneinander gekoppelt",
+            "Sie werden zu null gesetzt",
+            "Sie werden ausgelöscht"
+          ],
+          "richtig": 1,
+          "erklaerung": "Nur bei fester Phasenbeziehung überlagern sich die Moden zu einem kurzen Puls."
+        },
+        {
+          "id": "k04.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Größe bestimmt hauptsächlich, wie kurz der Puls werden kann?",
+          "optionen": [
+            "Die Spiegelfarbe",
+            "Die Bandbreite der gekoppelten Moden",
+            "Die Kühlwassertemperatur",
+            "Die Länge des Netzkabels"
+          ],
+          "richtig": 1,
+          "erklaerung": "Mehr gekoppelte Moden bedeuten mehr Bandbreite und über $\\tau\\Delta\\nu\\ge K$ kürzere Pulse."
+        },
+        {
+          "id": "k04.c02",
+          "typ": "karte",
+          "vorne": "Wie hängt die Repetitionsrate eines Oszillators mit der Resonatorlänge zusammen?",
+          "hinten": "$f_\\mathrm{rep}=c/(2L)$ (linearer Resonator): Länger heißt langsamer.",
+          "verifiziert": true,
+          "quelle": "diels"
+        }
+      ]
+    },
+    {
+      "id": "k04.l03",
+      "titel": "Dispersion und Chirp",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k04.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "In jedem Material ist der Brechungsindex wellenlängenabhängig (**Dispersion**, [[dispersion]]). Die Frequenzanteile eines Pulses laufen unterschiedlich schnell, der Puls wird zeitlich auseinandergezogen und die Frequenz ändert sich entlang des Pulses: Er ist **gechirpt** ([[chirp]]).",
+            "Die Dispersion zweiter Ordnung beschreibt man als **Gruppenverzögerungsdispersion** (GDD, $\\varphi_2$, Einheit fs²). Für einen Gauß-Puls gilt:"
+          ]
+        },
+        {
+          "id": "k04.l03.b02",
+          "typ": "formel",
+          "latex": "\\tau_\\mathrm{out}=\\tau_0\\sqrt{1+\\left(\\frac{4\\ln2\\;\\varphi_2}{\\tau_0^{2}}\\right)^{2}}",
+          "titel": "Pulsverbreiterung durch GDD",
+          "sammlung": "Pulse",
+          "erklaerung": "Pulsdauer nach der Dispersion $\\varphi_2$ bei ursprünglicher Dauer $\\tau_0$ (Gauß-Puls, fourierlimitiert am Eingang). Die Pulsenergie bleibt, die Spitzenleistung sinkt etwa im Verhältnis $\\tau_0/\\tau_\\mathrm{out}$.",
+          "verifiziert": true,
+          "quelle": "diels"
+        },
+        {
+          "id": "k04.l03.b03",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein fourierlimitierter Gauß-Puls mit $\\tau_0=100\\,\\mathrm{fs}$ durchläuft ein Material mit $\\varphi_2=10^{5}\\,\\mathrm{fs^2}$. Wie lang ist er danach?",
+          "schritte": [
+            "$4\\ln2\\cdot\\varphi_2/\\tau_0^2=2{,}77\\cdot10^{5}\\,\\mathrm{fs^2}/10^{4}\\,\\mathrm{fs^2}=27{,}7$",
+            "$\\tau_\\mathrm{out}=100\\,\\mathrm{fs}\\cdot\\sqrt{1+27{,}7^2}\\approx100\\,\\mathrm{fs}\\cdot27{,}7\\approx2{,}8\\,\\mathrm{ps}$"
+          ],
+          "ergebnis": "Aus 100 fs werden etwa 2,8 ps; die Spitzenleistung fällt auf ca. 3,6 %.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k04.l03.b04",
+          "typ": "text",
+          "inhalt": [
+            "Positive GDD (normale Dispersion in den meisten transparenten Materialien) lässt rote Anteile früher und blaue später laufen (positiver Chirp). Um einen Puls wieder zu verkürzen, braucht man **negative GDD**, etwa von Gitter- oder Prismenpaaren und speziellen Spiegeln (chirped mirrors). Das ist die Grundlage von Strecker und Kompressor im CPA-System."
+          ],
+          "verifiziert": false,
+          "quelle": "diels"
+        },
+        {
+          "id": "k04.l03.b05",
+          "typ": "merke",
+          "inhalt": "Ein Puls kann nur so kurz bleiben, wie die Dispersion auf dem Weg zum Werkstück kompensiert ist. Jede Linse, jedes Fenster und jede Luftstrecke fügt GDD hinzu, und das ist bei sehr kurzen Pulsen kritisch.",
+          "verifiziert": true,
+          "quelle": "Folgerung aus der GDD-Formel"
+        },
+        {
+          "id": "k04.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie lang ist ein Gauß-Puls von $\\tau_0=50\\,\\mathrm{fs}$ nach $\\varphi_2=2{,}5\\cdot10^{4}\\,\\mathrm{fs^2}$ in fs? (Faustformel: bei starker Verbreiterung $\\tau_\\mathrm{out}\\approx4\\ln2\\,\\varphi_2/\\tau_0$)",
+          "antwort": 1388,
+          "einheit": "fs",
+          "toleranz": 0.05,
+          "erklaerung": "$4\\ln2\\cdot\\varphi_2/\\tau_0^2=2{,}77\\cdot2{,}5\\cdot10^{4}/2500=27{,}7$; $\\tau_\\mathrm{out}=50\\,\\mathrm{fs}\\sqrt{1+27{,}7^2}\\approx1{,}39\\,\\mathrm{ps}$."
+        },
+        {
+          "id": "k04.q08",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was passiert mit der Spitzenleistung, wenn ein Puls bei gleicher Energie dispersiv auf das 10-Fache gestreckt wird?",
+          "optionen": [
+            "Sie steigt auf das 10-Fache",
+            "Sie bleibt gleich",
+            "Sie sinkt auf ein Zehntel",
+            "Sie sinkt auf 1/100"
+          ],
+          "richtig": 2,
+          "erklaerung": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$: zehnfache Dauer, ein Zehntel der Spitzenleistung."
+        },
+        {
+          "id": "k04.c03",
+          "typ": "karte",
+          "vorne": "Was ist ein Chirp?",
+          "hinten": "Zeitliche Änderung der Momentanfrequenz im Puls, entsteht z. B. durch Dispersion; der Puls wird dabei länger.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k04.l04",
+      "titel": "CPA und Verstärkerarchitekturen",
+      "minuten": 11,
+      "blocks": [
+        {
+          "id": "k04.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Oszillator liefert Pulse im Nanojoule-Bereich. Zum Abtragen braucht man Mikro- bis Millijoule. Direktes Verstärken eines Femtosekundenpulses würde das Verstärkermedium wegen der hohen Spitzenleistung und Nichtlinearitäten (Selbstfokussierung) zerstören.",
+            "Die Lösung heißt **Chirped Pulse Amplification** (CPA, [[cpa]]; Strickland & Mourou 1985, Nobelpreis 2018). Drei Schritte: Der Puls wird zeitlich **gestreckt** (Faktor $10^3$ bis $10^5$), im Verstärker bei niedriger Spitzenleistung **verstärkt** und danach wieder **komprimiert**."
+          ],
+          "verifiziert": false,
+          "quelle": "strickland1985"
+        },
+        {
+          "id": "k04.l04.b02",
+          "typ": "sim",
+          "modell": "cpa"
+        },
+        {
+          "id": "k04.l04.b03",
+          "typ": "merke",
+          "inhalt": "CPA entkoppelt Energie und Spitzenleistung: Der Verstärker sieht eine lange, leistungsarme Version des Pulses, erst der Kompressor stellt die kurze, leistungsstarke wieder her.",
+          "verifiziert": true,
+          "quelle": "Herleitung (P ≈ E/τ)"
+        },
+        {
+          "id": "k04.l04.b04",
+          "typ": "text",
+          "inhalt": [
+            "**Verstärkerarchitekturen** (Überblick): regenerative Verstärker (der Puls läuft viele Male durch das Medium), Multipass-Verstärker, Faserverstärker (hohe Verstärkung, kompakt) und Scheibenlaser (Thin Disk, hohe mittlere Leistung). Welche Architektur gewählt wird, hängt von gewünschter Pulsenergie, Repetitionsrate und mittlerer Leistung ab."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k04.q09",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Stationen eines CPA-Systems in die richtige Reihenfolge.",
+          "items": [
+            "Oszillator (kurzer Puls, wenig Energie)",
+            "Strecker (Puls wird verlängert)",
+            "Verstärker (Energie wächst)",
+            "Kompressor (Puls wird wieder kurz)"
+          ],
+          "erklaerung": "Strecken vor dem Verstärken schützt das Medium; komprimiert wird erst am Ende."
+        },
+        {
+          "id": "k04.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum streckt man den Puls vor dem Verstärken?",
+          "optionen": [
+            "Um die Wellenlänge zu ändern",
+            "Um die Spitzenleistung im Verstärker zu senken",
+            "Um die Pulsenergie zu verringern",
+            "Um den Chirp zu vermeiden"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "Bei gleicher Energie sinkt $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$ mit der Streckung und bleibt unter der Zerstörgrenze des Verstärkers."
+        },
+        {
+          "id": "k04.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Seed-Puls mit $\\tau_0=200\\,\\mathrm{fs}$ wird um den Faktor $10^{4}$ gestreckt. Wie lang ist er dann in ns?",
+          "antwort": 2,
+          "einheit": "ns",
+          "toleranz": 0.05,
+          "erklaerung": "$200\\,\\mathrm{fs}\\cdot10^{4}=2\\cdot10^{6}\\,\\mathrm{fs}=2\\,\\mathrm{ns}$."
+        },
+        {
+          "id": "k04.c04",
+          "typ": "karte",
+          "vorne": "Was bedeutet CPA?",
+          "hinten": "Chirped Pulse Amplification: Puls strecken, verstärken, komprimieren.",
+          "verifiziert": false,
+          "quelle": "strickland1985"
+        }
+      ]
+    },
+    {
+      "id": "k04.l05",
+      "titel": "Repetitionsrate, Pulsenergie, Leistung",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k04.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "Drei Größen hängen zusammen: $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$. Bei begrenzter mittlerer Leistung $P_\\mathrm{avg}$ (Kühlung, Pumpleistung) bedeutet eine hohe Repetitionsrate niedrige Pulsenergie, und umgekehrt.",
+            "Der Prozess verlangt meist eine **Mindestfluenz** (Schwelle, Kapitel 7) pro Puls. Daraus ergibt sich die minimale Pulsenergie für einen gegebenen Fokus; die maximal nutzbare Repetitionsrate folgt aus $f_\\mathrm{max}=P_\\mathrm{avg}/E_\\mathrm{p}$."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k04.l05.b02",
+          "typ": "sim",
+          "modell": "ueberlapp",
+          "titel": "Schnelles Scannen verlangt hohe Rate"
+        },
+        {
+          "id": "k04.l05.b03",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Laser liefert $P_\\mathrm{avg}=20\\,\\mathrm{W}$. Du brauchst $E_\\mathrm{p}=50\\,\\mu\\mathrm{J}$ pro Puls. Welche Repetitionsrate ist maximal möglich, und welche Spitzenleistung ergibt sich bei $\\tau=400\\,\\mathrm{fs}$?",
+          "schritte": [
+            "$f_\\mathrm{max}=P_\\mathrm{avg}/E_\\mathrm{p}=20\\,\\mathrm{W}/(50\\cdot10^{-6}\\,\\mathrm{J})=4\\cdot10^{5}\\,\\mathrm{Hz}$",
+            "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau=50\\cdot10^{-6}/(400\\cdot10^{-15})=1{,}25\\cdot10^{8}\\,\\mathrm{W}$"
+          ],
+          "ergebnis": "400 kHz und eine Spitzenleistung von etwa 125 MW.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k04.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei $P_\\mathrm{avg}=10\\,\\mathrm{W}$ und $f=1\\,\\mathrm{MHz}$: Welche Pulsenergie in µJ?",
+          "antwort": 10,
+          "einheit": "µJ",
+          "toleranz": 0.05,
+          "erklaerung": "$E_\\mathrm{p}=P_\\mathrm{avg}/f=10\\,\\mathrm{W}/10^{6}\\,\\mathrm{Hz}=10\\,\\mu\\mathrm{J}$."
+        },
+        {
+          "id": "k04.q13",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du verdoppelst die Repetitionsrate bei gleicher mittlerer Leistung. Was passiert mit der Pulsenergie?",
+          "optionen": [
+            "Sie verdoppelt sich",
+            "Sie halbiert sich",
+            "Sie bleibt gleich",
+            "Sie vervierfacht sich"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$E_\\mathrm{p}=P_\\mathrm{avg}/f$."
+        },
+        {
+          "id": "k04.c05",
+          "typ": "karte",
+          "vorne": "Wie hängen $P_\\mathrm{avg}$, $E_\\mathrm{p}$ und $f$ zusammen?",
+          "hinten": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$; bei fester mittlerer Leistung bedeutet hohe Rate niedrige Pulsenergie.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    }
+  ]
+}

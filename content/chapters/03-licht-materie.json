@@ -1,0 +1,384 @@
+{
+  "id": "k03",
+  "titel": "Licht trifft Materie",
+  "einleitung": "Warum lässt sich Glas mit einem Laser durchleuchten und trotzdem im Inneren bearbeiten, während Metall schon an der Oberfläche absorbiert? Hier klärst du die Grundlagen der Absorption: Bänder, Reflexion, Eindringtiefe und der Unterschied zwischen linearer und nichtlinearer Absorption.",
+  "ziele": [
+    "Metalle, Halbleiter und Dielektrika über das Bändermodell unterscheiden",
+    "Absorption und Reflexion mit Lambert-Beer und Fresnel quantitativ abschätzen",
+    "Erklären, warum lineare Absorption an der Oberfläche und nichtlineare im Fokus stattfindet",
+    "Den Unterschied zum PBF-LB/M-Prozess benennen (Pulsdauer, Absorption, Abtrag statt Schmelzen)"
+  ],
+  "weiterlesen": [
+    "saleh2019",
+    "schaffer2001"
+  ],
+  "lektionen": [
+    {
+      "id": "k03.l01",
+      "titel": "Bänder: Metall, Halbleiter, Dielektrikum",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k03.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "In einem Festkörper verschmelzen die Energieniveaus der Atome zu **Bändern**. Zwei Bänder sind für die Absorption entscheidend: das **Valenzband** (energetisch tief, bei tiefen Temperaturen mit Elektronen gefüllt) und das **Leitungsband** (darüber, im Grundzustand leer). Dazwischen liegt die **Bandlücke** ([[bandluecke]]) $E_\\mathrm{g}$, in der es keine erlaubten Zustände gibt.",
+            "Ein Photon kann ein Elektron nur anregen, wenn die Photonenenergie ausreicht, um einen freien Zielzustand zu erreichen. Das erklärt den Unterschied der drei Materialklassen."
+          ]
+        },
+        {
+          "id": "k03.l01.b02",
+          "typ": "bild",
+          "src": "assets/figures/baender.svg",
+          "alt": "Bänderschema für Metall, Halbleiter und Dielektrikum mit unterschiedlicher Bandlücke",
+          "unterschrift": "Bänderschema (nicht maßstäblich): Metall ohne Lücke, Halbleiter mit kleiner, Dielektrikum mit großer Bandlücke.",
+          "quelle": "selbst erzeugt"
+        },
+        {
+          "id": "k03.l01.b03",
+          "typ": "text",
+          "inhalt": [
+            "- **Metall:** Das Leitungsband ist teilweise gefüllt, es gibt keine Bandlücke. Freie Elektronen nehmen Photonenenergie praktisch jeder Wellenlänge auf. Absorption passiert in einer dünnen Schicht an der Oberfläche.",
+            "- **Halbleiter:** Kleine Bandlücke. Photonen mit $h\\nu\\ge E_\\mathrm{g}$ werden stark absorbiert, mit $h\\nu<E_\\mathrm{g}$ ist das Material (fast) transparent.",
+            "- **Dielektrikum (Isolator):** Große Bandlücke. Bei Photonenenergien unter der Lücke bleibt das Material im sichtbaren und nahen Infrarot transparent. Quarzglas und Saphir gehören dazu."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k03.l01.b04",
+          "typ": "merke",
+          "inhalt": "**Transparenz ist eine Frage von $h\\nu$ gegen $E_\\mathrm{g}$.** Ist ein Photon energieärmer als die Bandlücke, kann es einzeln nichts anregen, das Licht geht hindurch. Ultrakurzpulse ändern das, weil bei hoher Intensität mehrere Photonen gleichzeitig wirken (Lektion 3).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k03.l01.b05",
+          "typ": "sim",
+          "modell": "mpa",
+          "titel": "Wie viele Photonen für die Bandlücke?"
+        },
+        {
+          "id": "k03.q01",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Materialklasse hat **keine** Bandlücke?",
+          "optionen": [
+            "Halbleiter",
+            "Dielektrikum",
+            "Metall",
+            "Alle drei"
+          ],
+          "richtig": 2,
+          "fest": true,
+          "erklaerung": "Beim Metall ist das Leitungsband teilweise gefüllt: Elektronen können schon mit kleinen Energien in freie Zustände wechseln."
+        },
+        {
+          "id": "k03.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Ein Photon hat weniger Energie als die Bandlücke des Materials. Was passiert bei niedriger Intensität?",
+          "optionen": [
+            "Das Material absorbiert stark",
+            "Das Material ist weitgehend transparent",
+            "Das Material schmilzt sofort",
+            "Das Photon wird in zwei Photonen geteilt"
+          ],
+          "richtig": 1,
+          "erklaerung": "Ein einzelnes Photon kann kein Elektron über die Lücke heben, das Licht wird nicht (linear) absorbiert."
+        },
+        {
+          "id": "k03.q03",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Eigenschaft der Materialklasse zu.",
+          "paare": [
+            [
+              "Teilweise gefülltes Leitungsband",
+              "Metall"
+            ],
+            [
+              "Kleine Bandlücke",
+              "Halbleiter"
+            ],
+            [
+              "Große Bandlücke, im Sichtbaren transparent",
+              "Dielektrikum"
+            ]
+          ],
+          "erklaerung": "Die Größe der Bandlücke bestimmt, ob ein Photon ein Elektron anregen kann."
+        },
+        {
+          "id": "k03.c01",
+          "typ": "karte",
+          "vorne": "Was ist die Bandlücke?",
+          "hinten": "Energiebereich zwischen Valenz- und Leitungsband ohne erlaubte Elektronenzustände, Formelzeichen $E_\\mathrm{g}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k03.l02",
+      "titel": "Absorption, Reflexion, Eindringtiefe",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k03.l02.b01",
+          "typ": "text",
+          "titel": "Zwei Schritte: Reflexion, dann Abschwächung",
+          "inhalt": [
+            "Trifft Licht auf eine Oberfläche, wird ein Teil reflektiert, der Rest dringt ein und wird entlang seines Weges abgeschwächt. Beide Anteile lassen sich mit einfachen Formeln beschreiben."
+          ]
+        },
+        {
+          "id": "k03.l02.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}I(z)=I_0\\,(1-R)\\,e^{-\\alpha z},\\\\ \\delta=\\frac{1}{\\alpha}\\end{gathered}",
+          "titel": "Lambert-Beer",
+          "sammlung": "Licht und Materie",
+          "erklaerung": "Lambert-Beer: Intensität in der Tiefe $z$ nach der Reflexion ($R$ = Reflexionsgrad). Der Absorptionskoeffizient $\\alpha$ hat die Einheit 1/m; die Eindringtiefe $\\delta=1/\\alpha$ ist die Tiefe, bei der die Intensität auf $1/e$ gefallen ist.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        },
+        {
+          "id": "k03.l02.b03",
+          "typ": "formel",
+          "latex": "\\begin{gathered}R=\\frac{(n-1)^2+\\kappa^2}{(n+1)^2+\\kappa^2},\\\\ \\alpha=\\frac{4\\pi\\kappa}{\\lambda}\\end{gathered}",
+          "titel": "Fresnel (senkrecht) und Absorptionskoeffizient",
+          "sammlung": "Licht und Materie",
+          "erklaerung": "Reflexionsgrad bei senkrechtem Einfall aus komplexem Brechungsindex $\\tilde n=n+\\mathrm{i}\\kappa$. Beim transparenten Dielektrikum ist $\\kappa\\approx0$ und $R=\\left(\\frac{n-1}{n+1}\\right)^2$.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        },
+        {
+          "id": "k03.l02.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein transparentes Dielektrikum hat $n=1{,}5$ (und $\\kappa\\approx0$). Welcher Anteil wird an einer Oberfläche reflektiert? Und: Ein Metall hat bei einer Wellenlänge $\\alpha=5\\cdot10^{5}\\,\\mathrm{cm^{-1}}$. Wie groß ist die Eindringtiefe?",
+          "schritte": [
+            "$R=\\left(\\dfrac{1{,}5-1}{1{,}5+1}\\right)^2=0{,}2^2=0{,}04$",
+            "$\\delta=1/\\alpha=1/(5\\cdot10^{5}\\,\\mathrm{cm^{-1}})=2\\cdot10^{-6}\\,\\mathrm{cm}=20\\,\\mathrm{nm}$"
+          ],
+          "ergebnis": "Etwa 4 % Reflexion beim Glas, und das Licht dringt beim Metall nur rund 20 nm tief ein.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k03.l02.b05",
+          "typ": "text",
+          "inhalt": [
+            "Du kennst aus dem PBF-LB/M, dass der Absorptionsgrad vom Werkstoff, von der Wellenlänge, von der Oberflächenrauheit und vom Pulverbett abhängt. Bei metallischen Oberflächen kommt zur Absorption die Reflexion als große Verlustgröße, bei Dielektrika sind es Reflexion (klein) und Transmission (groß)."
+          ]
+        },
+        {
+          "id": "k03.l02.b06",
+          "typ": "merke",
+          "inhalt": "Die Eindringtiefe $\\delta=1/\\alpha$ entscheidet, in **wie viel Material** die Energie landet. Eine kleine Tiefe bedeutet hohe Energiedichte im Absorptionsvolumen, und damit eine niedrige Schwellfluenz.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k03.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist der Reflexionsgrad einer Glasoberfläche mit $n=1{,}5$ in Prozent (senkrechter Einfall)?",
+          "antwort": 4,
+          "einheit": "%",
+          "toleranz": 0.05,
+          "erklaerung": "$R=((n-1)/(n+1))^2=(0{,}5/2{,}5)^2=0{,}04=4\\,\\%$."
+        },
+        {
+          "id": "k03.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Material hat $\\alpha=2\\cdot10^{4}\\,\\mathrm{cm^{-1}}$. Wie groß ist die Eindringtiefe in Mikrometern?",
+          "antwort": 0.5,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$\\delta=1/\\alpha=1/(2\\cdot10^{4}\\,\\mathrm{cm^{-1}})=5\\cdot10^{-5}\\,\\mathrm{cm}=0{,}5\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k03.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Bei welchem Absorptionskoeffizienten dringt Licht am tiefsten ein?",
+          "optionen": [
+            "$10^{6}\\,\\mathrm{cm^{-1}}$",
+            "$10^{4}\\,\\mathrm{cm^{-1}}$",
+            "$10^{2}\\,\\mathrm{cm^{-1}}$",
+            "$10^{0}\\,\\mathrm{cm^{-1}}$"
+          ],
+          "richtig": 3,
+          "fest": true,
+          "erklaerung": "$\\delta=1/\\alpha$: das kleinste $\\alpha$ liefert die größte Eindringtiefe (hier 1 cm)."
+        },
+        {
+          "id": "k03.c02",
+          "typ": "karte",
+          "vorne": "Wie lautet das Lambert-Beer-Gesetz?",
+          "hinten": "$I(z)=I_0(1-R)\\,e^{-\\alpha z}$ mit Eindringtiefe $\\delta=1/\\alpha$.",
+          "verifiziert": true,
+          "quelle": "saleh2019"
+        }
+      ]
+    },
+    {
+      "id": "k03.l03",
+      "titel": "Lineare vs. nichtlineare Absorption",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k03.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "**Lineare Absorption** heißt: Ein Photon wird von einem Elektron aufgenommen, die Absorptionsrate wächst proportional zur Intensität. $\\alpha$ ist dann eine Materialkonstante, das Lambert-Beer-Gesetz gilt wie oben.",
+            "Bei sehr hoher Intensität, wie sie nur Ultrakurzpulse im Fokus erreichen, werden **mehrere Photonen gleichzeitig** von einem Elektron aufgenommen ([[multiphotonenabsorption]]). Die Absorptionsrate wächst dann mit $I^n$, wobei $n$ die Zahl der beteiligten Photonen ist. Der effektive Absorptionskoeffizient $\\alpha_n\\propto I^{\\,n-1}$ steigt mit der Intensität selbst."
+          ]
+        },
+        {
+          "id": "k03.l03.b02",
+          "typ": "sim",
+          "modell": "absorption"
+        },
+        {
+          "id": "k03.l03.b03",
+          "typ": "merke",
+          "inhalt": "Weil die nichtlineare Absorption mit $I^n$ steigt, passiert sie praktisch nur dort, wo die Intensität hoch genug ist, also im **Fokus**. Das Material davor und dahinter bleibt unbeeinflusst. Dadurch ist Bearbeitung *im Inneren* eines transparenten Werkstoffs möglich, und der wirksame Fokus ist kleiner als der Strahl ($w_\\mathrm{eff}=w_0/\\sqrt{n}$).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k03.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum lässt sich ein Fs-Laser in Quarzglas im Inneren fokussieren, ohne die Oberfläche zu beschädigen?",
+          "optionen": [
+            "Die Oberfläche reflektiert alles",
+            "Außerhalb des Fokus ist die Intensität zu niedrig für nichtlineare Absorption",
+            "Quarzglas absorbiert linear nur im Inneren",
+            "Fs-Pulse haben keine Energie"
+          ],
+          "richtig": 1,
+          "erklaerung": "Die Rate steigt mit $I^n$; nur im Fokus ist die Intensität hoch genug."
+        },
+        {
+          "id": "k03.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Die Absorptionsrate wächst mit $I^{n}$ und $n=4$. Um welchen Faktor steigt sie, wenn du die Intensität verdoppelst?",
+          "antwort": 16,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$2^4=16$."
+        },
+        {
+          "id": "k03.q09",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei $n=4$ gilt $w_\\mathrm{eff}=w_0/\\sqrt{n}$. Wie groß ist $w_\\mathrm{eff}$ in Vielfachen von $w_0$?",
+          "antwort": 0.5,
+          "einheit": "· w₀",
+          "toleranz": 0.05,
+          "erklaerung": "$1/\\sqrt4=0{,}5$: der absorbierende Bereich ist nur halb so breit wie der Strahl."
+        },
+        {
+          "id": "k03.c03",
+          "typ": "karte",
+          "vorne": "Wie hängt die Rate der $n$-Photonen-Absorption von der Intensität ab?",
+          "hinten": "Proportional zu $I^{\\,n}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k03.c04",
+          "typ": "karte",
+          "vorne": "Was ist der Vorteil nichtlinearer Absorption?",
+          "hinten": "Die Energie wird nur im Fokus absorbiert (hohe Intensität); das Material davor bleibt unberührt und der wirksame Bereich ist kleiner als der Strahl.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k03.l04",
+      "titel": "Brücke: PBF-LB/M vs. UKP-Ablation",
+      "minuten": 7,
+      "blocks": [
+        {
+          "id": "k03.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Du kennst die Wechselwirkung Laser–Metall aus dem Pulverbettschmelzen. Hier der Vergleich, damit du die Intuition aus dem PBF-LB/M gezielt umstellen kannst:"
+          ]
+        },
+        {
+          "id": "k03.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "- **Zeitskala:** Beim PBF-LB/M wirkt der Laser über Mikrosekunden bis Millisekunden. Bei UKP dauert der Puls Pikosekunden bis Femtosekunden. Das ist Faktor $10^{6}$ bis $10^{12}$ kürzer.",
+            "- **Ziel:** PBF-LB/M will ein **Schmelzbad**, das erstarrt. UKP will **Material entfernen**, ohne dass Schmelze zurückbleibt.",
+            "- **Wärme:** Im PBF-LB/M ist die Wärmeleitung die Regelgröße. Bei UKP ist die Energie weg, bevor die Wärme abfließen kann (Kapitel 5).",
+            "- **Absorption:** Im Metall linear über freie Elektronen; im Dielektrikum nur nichtlinear, wenn die Intensität hoch genug ist.",
+            "- **Messgröße:** Statt Laserleistung und Scangeschwindigkeit (Energiedichte pro Länge/Volumen) zählt die **Fluenz** pro Puls gegenüber der Schwelle."
+          ],
+          "verifiziert": true,
+          "quelle": "Gegenüberstellung aus den Definitionen (Faktor 10^6 bis 10^12 aus ms…µs vs ps…fs)"
+        },
+        {
+          "id": "k03.l04.b03",
+          "typ": "merke",
+          "inhalt": "Beim PBF-LB/M fragst du: „Wie viel Energie pro Länge?“ Bei UKP fragst du: „Liegt die Fluenz über der Schwelle, und wie viele Pulse treffen dieselbe Stelle?“"
+        },
+        {
+          "id": "k03.q10",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Eigenschaft dem Verfahren zu.",
+          "paare": [
+            [
+              "Wirkdauer beim PBF-LB/M",
+              "Mikro- bis Millisekunden"
+            ],
+            [
+              "Wirkdauer bei UKP",
+              "Pikosekunden bis Femtosekunden"
+            ],
+            [
+              "Zielgröße beim PBF-LB/M",
+              "Erstarrtes Schmelzbad"
+            ],
+            [
+              "Zielgröße bei UKP",
+              "Abgetragenes Material ohne Schmelze"
+            ]
+          ],
+          "erklaerung": "UKP-Prozesse werden über Fluenz, Pulsüberlapp und Schwelle beschrieben; PBF-LB/M über Linienenergie bzw. Energiedichte."
+        },
+        {
+          "id": "k03.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Um welchen Faktor ist ein 1-ps-Puls kürzer als ein 1-µs-Laserpuls?",
+          "optionen": [
+            "$10^{3}$",
+            "$10^{6}$",
+            "$10^{9}$",
+            "$10^{12}$"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "1 µs $=10^{-6}$ s, 1 ps $=10^{-12}$ s, Verhältnis $10^{6}$."
+        },
+        {
+          "id": "k03.c05",
+          "typ": "karte",
+          "vorne": "Was fragst du bei UKP statt „Linienenergie“?",
+          "hinten": "Fluenz pro Puls gegenüber der Ablationsschwelle und die Anzahl der Pulse pro Stelle.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,421 @@
+{
+  "id": "k11",
+  "titel": "Messtechnik, Normen und Diagnostik",
+  "einleitung": "Was du nicht misst, kannst du nicht reproduzieren. Hier lernst du, wie Pulsdauer, Strahlprofil und Leistung gemessen werden, wie sich Messunsicherheiten auf die Fluenz übertragen, wie Oberflächen nach Norm beschrieben werden und welche Normen du im Alltag brauchst.",
+  "ziele": [
+    "Die Pulsdauer aus einer Autokorrelationsmessung bestimmen",
+    "Strahlradius per Messerschneidenverfahren auswerten und die Fluenzunsicherheit fortpflanzen",
+    "Rauheitskenngrößen $Ra$ und $Sa$ unterscheiden und berechnen",
+    "Die wichtigsten Normen der Laserbearbeitung zuordnen",
+    "Verfahren der In-situ-Überwachung benennen"
+  ],
+  "weiterlesen": [
+    "diels",
+    "iso11146",
+    "iso21254",
+    "iso21920"
+  ],
+  "lektionen": [
+    {
+      "id": "k11.l01",
+      "titel": "Pulsdauer messen (Autokorrelation)",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k11.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Kein Detektor ist schnell genug, um einen Femtosekundenpuls direkt zu messen. Die Lösung: Der Puls misst sich selbst. In der **Autokorrelation** ([[autokorrelation]]) wird der Puls in zwei Teile geteilt, einer gegen den anderen zeitlich verschoben und in einem nichtlinearen Kristall überlagert. Die erzeugte Frequenzverdopplung (SHG) ist nur dort stark, wo sich beide Pulse zeitlich überlappen. Die gemessene Kurve gegen die Verzögerung hat die Breite $\\tau_\\mathrm{AC}$."
+          ],
+          "verifiziert": true,
+          "quelle": "diels"
+        },
+        {
+          "id": "k11.l01.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}\\tau=\\frac{\\tau_\\mathrm{AC}}{\\kappa},\\\\ \\kappa_\\text{Gauß}=\\sqrt2\\approx1{,}414,\\quad \\kappa_{\\mathrm{sech}^2}\\approx1{,}543\\end{gathered}",
+          "titel": "Pulsdauer aus der Autokorrelation",
+          "sammlung": "Messtechnik",
+          "erklaerung": "Dekonvolutionsfaktor $\\kappa$: Er hängt von der Pulsform ab, die man annehmen muss. Die Autokorrelation allein liefert die Pulsform nicht.",
+          "verifiziert": true,
+          "quelle": "diels"
+        },
+        {
+          "id": "k11.l01.b03",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Die Autokorrelation (Intensität, FWHM) hat $\\tau_\\mathrm{AC}=212\\,\\mathrm{fs}$. Wie lang ist der Puls bei Gauß- bzw. sech²-Form?",
+          "schritte": [
+            "Gauß: $\\tau=212/1{,}414\\,\\mathrm{fs}=150\\,\\mathrm{fs}$",
+            "sech²: $\\tau=212/1{,}543\\,\\mathrm{fs}=137{,}4\\,\\mathrm{fs}$"
+          ],
+          "ergebnis": "150 fs (Gauß) bzw. etwa 137 fs (sech²). Die Annahme zur Pulsform ändert das Ergebnis um knapp 10 %.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k11.l01.b04",
+          "typ": "text",
+          "inhalt": [
+            "Für die vollständige Charakterisierung (Phase, Chirp) werden Verfahren wie **FROG** und **SPIDER** eingesetzt, die Amplitude und Phase des Pulses rekonstruieren. Das ist wichtig, wenn du Dispersion kompensieren oder Pulsformen gezielt einstellen willst."
+          ],
+          "verifiziert": false,
+          "quelle": "diels"
+        },
+        {
+          "id": "k11.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Autokorrelationsbreite $\\tau_\\mathrm{AC}=420\\,\\mathrm{fs}$ bei sech²-Puls: Wie lang ist der Puls in fs?",
+          "antwort": 272,
+          "einheit": "fs",
+          "toleranz": 0.03,
+          "erklaerung": "$\\tau=420/1{,}543\\approx272\\,\\mathrm{fs}$."
+        },
+        {
+          "id": "k11.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was misst die Autokorrelation **nicht** direkt?",
+          "optionen": [
+            "Die Breite des Korrelationssignals",
+            "Die Pulsform und die Phase",
+            "Die Verzögerungsabhängigkeit der SHG",
+            "Das Zeitverhalten des Pulses nur gemittelt"
+          ],
+          "richtig": 1,
+          "erklaerung": "Die Intensitäts-Autokorrelation liefert nur die Breite; die Pulsform muss angenommen werden. Für Phase braucht man FROG oder SPIDER."
+        },
+        {
+          "id": "k11.c01",
+          "typ": "karte",
+          "vorne": "Wie bestimmst du die Pulsdauer aus einer Autokorrelation?",
+          "hinten": "$\\tau=\\tau_\\mathrm{AC}/\\kappa$ mit $\\kappa=\\sqrt2$ (Gauß) bzw. 1,543 (sech²).",
+          "verifiziert": true,
+          "quelle": "diels"
+        }
+      ]
+    },
+    {
+      "id": "k11.l02",
+      "titel": "Strahlprofil, Leistung und Messunsicherheit",
+      "minuten": 11,
+      "blocks": [
+        {
+          "id": "k11.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Zwei Messgrößen bestimmen jede Fluenzangabe: die **Pulsenergie** (aus mittlerer Leistung durch $E_\\mathrm{p}=P_\\mathrm{avg}/f$, mit einem thermischen Leistungsmessgerät am Werkstückort) und der **Strahlradius** $w_0$ im Fokus (mit Strahlprofilkamera oder Messerschneidenverfahren, nach ISO 11146 über die zweiten Momente)."
+          ]
+        },
+        {
+          "id": "k11.l02.b02",
+          "typ": "text",
+          "inhalt": [
+            "Beim **Messerschneidenverfahren** (Knife-Edge) schiebt man eine scharfe Kante durch den Strahl und misst die durchgelassene Leistung. Für einen Gauß-Strahl folgt $P(x)/P_0=\\tfrac12\\,\\mathrm{erfc}(\\sqrt2\\,x/w)$. Der Abstand zwischen 10 %- und 90 %-Punkt ist dann $\\Delta x_{10\\text{–}90}=1{,}28\\,w$:"
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung aus erfc"
+        },
+        {
+          "id": "k11.l02.b03",
+          "typ": "formel",
+          "latex": "w=\\frac{\\Delta x_{10\\text{–}90}}{1{,}28}",
+          "titel": "Knife-Edge: Strahlradius",
+          "sammlung": "Messtechnik",
+          "erklaerung": "Strahlradius aus dem 10–90-%-Abstand des Messerschneidenverfahrens (Gauß-Strahl).",
+          "verifiziert": true,
+          "quelle": "Herleitung aus erfc"
+        },
+        {
+          "id": "k11.l02.b04",
+          "typ": "formel",
+          "latex": "\\frac{\\delta F_0}{F_0}=\\sqrt{\\left(\\frac{\\delta E_\\mathrm{p}}{E_\\mathrm{p}}\\right)^2+\\left(2\\,\\frac{\\delta w_0}{w_0}\\right)^2}",
+          "titel": "Unsicherheit der Fluenz",
+          "sammlung": "Messtechnik",
+          "erklaerung": "Fortpflanzung der relativen Messunsicherheiten auf die Spitzenfluenz $F_0\\propto E_\\mathrm{p}/w_0^2$ (unkorrelierte Fehler). Der Strahlradius geht **doppelt** ein.",
+          "verifiziert": true,
+          "quelle": "Gaußsche Fehlerfortpflanzung"
+        },
+        {
+          "id": "k11.l02.b05",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Die Pulsenergie ist mit 3 % Unsicherheit bekannt, der Strahlradius mit 5 %. Wie genau ist die Spitzenfluenz?",
+          "schritte": [
+            "$2\\cdot5\\,\\%=10\\,\\%$ vom Radius",
+            "$\\sqrt{(3\\,\\%)^2+(10\\,\\%)^2}=\\sqrt{9+100}\\,\\%\\approx10{,}4\\,\\%$"
+          ],
+          "ergebnis": "Rund 10 %. Die Fluenzunsicherheit wird fast vollständig vom Strahlradius bestimmt.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k11.l02.b06",
+          "typ": "merke",
+          "inhalt": "Eine Schwellfluenz ist nur so genau wie dein Strahlradius. Wer $w_0$ mit 5 % Unsicherheit misst, kann $F_\\mathrm{th}$ nicht auf besser als etwa 10 % angeben (D²-Methode: Radius aus der Steigung, kein Extra-Messfehler).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k11.q03",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Knife-Edge: Der 10–90-%-Abstand beträgt $\\Delta x=19{,}2\\,\\mu\\mathrm{m}$. Wie groß ist der Strahlradius $w$ in µm?",
+          "antwort": 15,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$w=19{,}2/1{,}28=15\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k11.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Pulsenergie 2 % und Strahlradius 3 % Unsicherheit: Wie groß ist die relative Unsicherheit der Spitzenfluenz in Prozent?",
+          "antwort": 6.3,
+          "einheit": "%",
+          "toleranz": 0.03,
+          "erklaerung": "$\\sqrt{2^2+(2\\cdot3)^2}=\\sqrt{4+36}=\\sqrt{40}=6{,}3\\,\\%$."
+        },
+        {
+          "id": "k11.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum geht der Strahlradius quadratisch in die Fluenz ein?",
+          "optionen": [
+            "Weil die Fläche mit $w_0^2$ wächst",
+            "Weil die Wellenlänge quadratisch eingeht",
+            "Weil die Pulsdauer quadratisch eingeht",
+            "Gar nicht quadratisch"
+          ],
+          "richtig": 0,
+          "fest": true,
+          "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)$: Energie wird auf eine Fläche $\\propto w_0^2$ verteilt."
+        },
+        {
+          "id": "k11.c02",
+          "typ": "karte",
+          "vorne": "Wie wirkt sich ein Fehler im Strahlradius auf die Fluenz aus?",
+          "hinten": "Doppelt: $\\delta F/F=2\\,\\delta w/w$ (zusätzlich zum Energiefehler, im Quadrat addiert).",
+          "verifiziert": true,
+          "quelle": "Gaußsche Fehlerfortpflanzung"
+        }
+      ]
+    },
+    {
+      "id": "k11.l03",
+      "titel": "Oberflächencharakterisierung (ISO 21920, ISO 25178)",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k11.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Abgetragene Oberflächen werden mit **Rauheitskenngrößen** beschrieben. Zwei Systeme sind zu unterscheiden: Profilkenngrößen ($R$-Werte, ISO 21920) aus einem Linienschnitt und flächenhafte Kenngrößen ($S$-Werte, ISO 25178) aus einer 3D-Messung."
+          ],
+          "verifiziert": false,
+          "quelle": "iso21920"
+        },
+        {
+          "id": "k11.l03.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}Ra=\\frac{1}{l}\\int_0^{l}\\lvert z(x)\\rvert\\,\\mathrm{d}x,\\\\ Rq=\\sqrt{\\frac{1}{l}\\int_0^{l}z^2(x)\\,\\mathrm{d}x},\\\\ Sa=\\frac{1}{A}\\iint_A\\lvert z(x,y)\\rvert\\,\\mathrm{d}x\\,\\mathrm{d}y\\end{gathered}",
+          "titel": "Rauheitskenngrößen",
+          "sammlung": "Messtechnik",
+          "erklaerung": "Arithmetische Mittenrauheit $Ra$ (Linie), quadratische Rauheit $Rq$ und flächenhafte $Sa$, jeweils bezogen auf die mittlere Linie bzw. Fläche ($z=0$ als Mittelwert). $Rz$ bzw. $Sz$ sind Höhenunterschiede (Spitze-Tal).",
+          "verifiziert": true,
+          "quelle": "Definition der Kenngrößen"
+        },
+        {
+          "id": "k11.l03.b03",
+          "typ": "text",
+          "inhalt": [
+            "Gemessen wird mit Tastschnittgeräten, konfokaler Mikroskopie, Weißlichtinterferometrie oder dem Laser-Scanning-Mikroskop. Wichtig sind **Filter** und **Grenzwellenlängen** ($\\lambda_\\mathrm{s}$, $\\lambda_\\mathrm{c}$ bzw. S-/L-Filter): Ohne sie sind Rauheitswerte nicht vergleichbar. Ablationsflächen haben oft Rauheit auf mehreren Skalen (LIPSS, Schmelztröpfchen, Welligkeit)."
+          ],
+          "verifiziert": false,
+          "quelle": "iso21920"
+        },
+        {
+          "id": "k11.l03.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Profilschnitt liefert fünf Höhenwerte (bezogen auf die Mittellinie): $z=(2,\\,-1,\\,-3,\\,1,\\,1)\\,\\mu\\mathrm{m}$. Berechne $Ra$ und $Rq$.",
+          "schritte": [
+            "$Ra=(|2|+|{-1}|+|{-3}|+|1|+|1|)/5\\,\\mu\\mathrm{m}=8/5\\,\\mu\\mathrm{m}=1{,}6\\,\\mu\\mathrm{m}$",
+            "$Rq=\\sqrt{(4+1+9+1+1)/5}\\,\\mu\\mathrm{m}=\\sqrt{3{,}2}\\,\\mu\\mathrm{m}=1{,}79\\,\\mu\\mathrm{m}$"
+          ],
+          "ergebnis": "$Ra=1{,}6\\,\\mu\\mathrm{m}$ und $Rq\\approx1{,}79\\,\\mu\\mathrm{m}$. $Rq$ ist größer als $Ra$, weil es Ausreißer stärker gewichtet.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k11.q06",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Kenngröße der richtigen Beschreibung zu.",
+          "paare": [
+            [
+              "Ra",
+              "Mittlere absolute Abweichung im Profil"
+            ],
+            [
+              "Sa",
+              "Mittlere absolute Abweichung über eine Fläche"
+            ],
+            [
+              "Rz",
+              "Höhenunterschied Spitze-Tal im Profil"
+            ]
+          ],
+          "erklaerung": "R-Werte stammen aus Profilen, S-Werte aus Flächenmessungen; z-Werte beschreiben Extremwerte."
+        },
+        {
+          "id": "k11.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Profil hat $z=(1,\\,-2,\\,3,\\,-1,\\,-1)\\,\\mu\\mathrm{m}$. Wie groß ist $Ra$ in µm?",
+          "antwort": 1.6,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$Ra=(1+2+3+1+1)/5=1{,}6\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k11.q08",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Aussage zu $Sa$ stimmt?",
+          "optionen": [
+            "Es ist eine Profilkenngröße",
+            "Es ist eine flächenhafte Kenngröße nach ISO 25178",
+            "Es beschreibt die Pulsdauer",
+            "Es ist die Schwellfluenz"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$Sa$ ist die flächenhafte arithmetische Mittenrauheit nach ISO 25178."
+        },
+        {
+          "id": "k11.c03",
+          "typ": "karte",
+          "vorne": "Was ist der Unterschied zwischen $Ra$ und $Sa$?",
+          "hinten": "$Ra$ ist die Profilrauheit (Linie, ISO 21920), $Sa$ die flächenhafte (3D, ISO 25178).",
+          "verifiziert": false,
+          "quelle": "iso21920"
+        }
+      ]
+    },
+    {
+      "id": "k11.l04",
+      "titel": "Normen und In-situ-Überwachung",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k11.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Normen sorgen dafür, dass Messwerte über Labore hinweg vergleichbar sind. Die wichtigsten für dich (vollständige Liste: Labor → Normen):"
+          ]
+        },
+        {
+          "id": "k11.q09",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Norm dem Thema zu.",
+          "paare": [
+            [
+              "ISO 11146",
+              "Strahlradius und M² messen"
+            ],
+            [
+              "ISO 21254",
+              "Laserinduzierte Zerstörschwelle"
+            ],
+            [
+              "ISO 21920 / 25178",
+              "Oberflächenrauheit"
+            ],
+            [
+              "IEC 60825-1",
+              "Laserklassen und Sicherheit"
+            ],
+            [
+              "ISO 11554",
+              "Leistung, Energie, Pulsdauer messen"
+            ]
+          ],
+          "erklaerung": "Die Normenreihen decken Strahlcharakterisierung, Schwelle, Oberfläche, Sicherheit und Leistungsmessung ab."
+        },
+        {
+          "id": "k11.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "**Schwellenbestimmung nach Norm:** ISO 21254 beschreibt Prüfverfahren für laserinduzierte Zerstörschwellen (z. B. Messung mit einem Puls pro Stelle, 1-on-1, oder mit vielen Pulsen pro Stelle, S-on-1). Gib bei Schwellfluenzen immer an, welches Verfahren und welche Pulszahl du verwendet hast, sonst sind Werte nicht vergleichbar (siehe Inkubation, Kapitel 7)."
+          ],
+          "verifiziert": false,
+          "quelle": "iso21254"
+        },
+        {
+          "id": "k11.l04.b03",
+          "typ": "text",
+          "inhalt": [
+            "**In-situ-Überwachung:** Während des Prozesses können gemessen werden: Plasmaemission (Spektroskopie, LIBS), akustische Signale, Hochgeschwindigkeitskamera, Reflexion und Streulicht sowie optische Kohärenztomographie (OCT) zur Tiefenmessung. Sie dienen dazu, Fokuslage, Abtragtiefe oder Prozessstörungen zu erkennen."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k11.l04.b04",
+          "typ": "merke",
+          "inhalt": "Dokumentiere bei jedem Versuch: Pulsenergie **am Werkstück**, Strahlradius mit Methode, Pulsdauer mit Methode, Pulszahl, Fokuslage. Ohne diese Angaben lässt sich ein Ergebnis später nicht einordnen.",
+          "verifiziert": true,
+          "quelle": "Praxisregel"
+        },
+        {
+          "id": "k11.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Norm nutzt du, um $M^2$ eines Laserstrahls zu messen?",
+          "optionen": [
+            "IEC 60825-1",
+            "ISO 11146",
+            "ISO 25178",
+            "ISO 21254"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "ISO 11146 beschreibt Prüfverfahren für Strahlabmessungen, Divergenz und Beugungsmaßzahl."
+        },
+        {
+          "id": "k11.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wozu dient eine In-situ-Überwachung?",
+          "optionen": [
+            "Um die Normen zu ersetzen",
+            "Um Prozessgrößen wie Fokuslage und Abtragtiefe während der Bearbeitung zu erkennen",
+            "Um die Pulsdauer zu ändern",
+            "Um die Wellenlänge zu messen"
+          ],
+          "richtig": 1,
+          "erklaerung": "Sie liefert Signale (Plasma, Akustik, Kamera, OCT), aus denen Prozesszustand und Störungen abgeleitet werden."
+        },
+        {
+          "id": "k11.c04",
+          "typ": "karte",
+          "vorne": "Welche Normenreihe regelt die Messung von Strahlradius und $M^2$?",
+          "hinten": "ISO 11146 (Teile 1 bis 3).",
+          "verifiziert": false,
+          "quelle": "iso11146"
+        },
+        {
+          "id": "k11.c05",
+          "typ": "karte",
+          "vorne": "Warum muss man bei Schwellfluenzen die Pulszahl angeben?",
+          "hinten": "Wegen Inkubation sinkt die Schwelle mit der Pulszahl: $F_\\mathrm{th}(N)$ ist nicht konstant.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    }
+  ]
+}

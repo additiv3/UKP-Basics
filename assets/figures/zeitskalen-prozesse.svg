@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 262" role="img" aria-label="Zeitachse von Femtosekunden bis Nanosekunden mit Balken für Absorption, Elektronenthermalisierung, Elektron-Gitter-Kopplung, Wärmeleitung und Materialabtrag"><title>Zeitachse von Femtosekunden bis Nanosekunden mit Balken für Absorption, Elektronenthermalisierung, Elektron-Gitter-Kopplung, Wärmeleitung und Materialabtrag</title><style>
+.fg-line{stroke:var(--fig-line,#3a465f);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fg-soft{stroke:var(--fig-soft,#aab4cb);fill:none;stroke-width:1.5}
+.fg-accent{stroke:var(--fig-accent,#0b7e9b);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-warm{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-dasharray:6 5}
+.fg-fill{fill:var(--fig-fill,#dcf1f7);stroke:none}
+.fg-bar-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-bar-w{fill:var(--fig-warm,#d9822b)}
+.fg-bar-s{fill:var(--fig-soft,#aab4cb)}
+.fg-text{fill:var(--fig-line,#3a465f);font:13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-muted{fill:var(--muted,#566078);font:12px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-bold{font-weight:700}
+.fg-pill{fill:var(--fig-fill,#dcf1f7)}
+.fg-pilltext{fill:var(--fig-accent,#0b7e9b);font:700 11px -apple-system,system-ui,sans-serif}
+.fg-laser{stroke:var(--fig-laser,#ee4f1c);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-laser-f{fill:var(--fig-laser,#ee4f1c)}
+.fg-band{fill:var(--fig-accent,#0b7e9b);fill-opacity:.35;stroke:var(--fig-accent,#0b7e9b);stroke-width:2}
+.fg-empty{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:2;stroke-dasharray:5 4}
+</style><text class="fg-text" x="30" y="34">Laserpuls und Absorption</text><rect class="fg-bar-a" x="70.0" y="40" width="90.0" height="10" rx="5"/><text class="fg-text" x="30" y="72">Elektronen thermalisieren</text><rect class="fg-bar-a" x="80.0" y="78" width="80.0" height="10" rx="5"/><text class="fg-text" x="30" y="110">Energie an das Gitter (Elektron-Phonon)</text><rect class="fg-bar-w" x="160.0" y="116" width="70.0" height="10" rx="5"/><text class="fg-text" x="30" y="148">Wärmeleitung ins Material</text><rect class="fg-bar-s" x="190.0" y="154" width="140.0" height="10" rx="5"/><text class="fg-text" x="30" y="186">Materialabtrag</text><rect class="fg-bar-w" x="205.0" y="192" width="125.0" height="10" rx="5"/><line class="fg-soft" x1="30" y1="218" x2="340.0" y2="218"/><line class="fg-soft" x1="30.0" y1="218" x2="30.0" y2="223"/><text class="fg-muted" x="30.0" y="236" text-anchor="middle" font-size="10">1 fs</text><line class="fg-soft" x1="80.0" y1="218" x2="80.0" y2="223"/><text class="fg-muted" x="80.0" y="236" text-anchor="middle" font-size="10">10 fs</text><line class="fg-soft" x1="130.0" y1="218" x2="130.0" y2="223"/><text class="fg-muted" x="130.0" y="236" text-anchor="middle" font-size="10">100 fs</text><line class="fg-soft" x1="180.0" y1="218" x2="180.0" y2="223"/><text class="fg-muted" x="180.0" y="236" text-anchor="middle" font-size="10">1 ps</text><line class="fg-soft" x1="230.0" y1="218" x2="230.0" y2="223"/><text class="fg-muted" x="230.0" y="236" text-anchor="middle" font-size="10">10 ps</text><line class="fg-soft" x1="280.0" y1="218" x2="280.0" y2="223"/><text class="fg-muted" x="280.0" y="236" text-anchor="middle" font-size="10">100 ps</text><line class="fg-soft" x1="330.0" y1="218" x2="330.0" y2="223"/><text class="fg-muted" x="330.0" y="236" text-anchor="middle" font-size="10">1 ns</text><text class="fg-muted" x="340.0" y="252" text-anchor="end">Zeit nach dem Puls (logarithmisch)</text><text class="fg-pilltext" x="30" y="252">Größenordnungen, material- und fluenzabhängig</text></svg>

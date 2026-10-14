@@ -1,144 +1,30 @@
 {
   "begriffe": [
     {
-      "id": "ukp",
-      "begriff": "Ultrakurzpuls (UKP)",
-      "englisch": "ultra-short pulse, USP",
-      "kurz": "Laserpuls im Bereich von Pikosekunden bis Femtosekunden.",
-      "definition": "Ein Ultrakurzpuls (UKP, engl. USP) hat eine Dauer im Pikosekunden- bis Femtosekundenbereich. Die Energie kommt schneller ins Material, als Wärme abfließen kann (siehe [[ttm]]).",
-      "siehe": ["pulsdauer", "ttm", "cpa"],
-      "verifiziert": false,
-      "quelle": "Projektnotizen"
-    },
-    {
-      "id": "pulsenergie",
-      "begriff": "Pulsenergie",
-      "englisch": "pulse energy",
-      "kurz": "Energie eines einzelnen Laserpulses, Formelzeichen $E_\\mathrm{p}$, in Joule.",
-      "definition": "Die Pulsenergie $E_\\mathrm{p}$ ist die Energie eines einzelnen Pulses, gemessen in Joule (bei UKP-Systemen meist Mikrojoule). Zusammen mit [[pulsdauer]] und [[repetitionsrate]] legt sie [[spitzenleistung]] und [[mittlere-leistung]] fest.",
-      "siehe": ["fluenz", "spitzenleistung"],
-      "verifiziert": true,
-      "quelle": "Definition"
-    },
-    {
-      "id": "pulsdauer",
-      "begriff": "Pulsdauer",
-      "englisch": "pulse duration",
-      "kurz": "Zeitliche Breite des Pulses (üblicherweise Halbwertsbreite), Formelzeichen $\\tau$.",
-      "definition": "Die Pulsdauer $\\tau$ ist die zeitliche Breite eines Pulses, üblicherweise als volle Breite bei halber Höhe (FWHM) angegeben.",
-      "siehe": ["spitzenleistung", "ukp"],
-      "verifiziert": true,
-      "quelle": "Definition"
-    },
-    {
-      "id": "repetitionsrate",
-      "begriff": "Repetitionsrate",
-      "englisch": "repetition rate",
-      "kurz": "Pulse pro Sekunde in Hertz, Formelzeichen $f$.",
-      "definition": "Die Repetitionsrate $f$ gibt an, wie viele Pulse pro Sekunde emittiert werden. Der Pulsabstand ist $1/f$; die [[mittlere-leistung]] ist $E_\\mathrm{p}\\cdot f$.",
-      "siehe": ["mittlere-leistung", "burst-mode"],
-      "verifiziert": true,
-      "quelle": "Definition"
-    },
-    {
-      "id": "spitzenleistung",
-      "begriff": "Spitzenleistung",
-      "englisch": "peak power",
-      "kurz": "Maximale optische Leistung während des Pulses, näherungsweise $E_\\mathrm{p}/\\tau$.",
-      "definition": "Die Spitzenleistung $P_\\mathrm{peak}$ ist die Leistung am Maximum des Pulses. Näherungsweise gilt $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$; ein pulsformabhängiger Faktor in der Größenordnung von 1 ist dabei vernachlässigt.",
-      "siehe": ["pulsenergie", "pulsdauer", "intensitaet"],
-      "verifiziert": true,
-      "quelle": "Definition, Näherung"
-    },
-    {
-      "id": "mittlere-leistung",
-      "begriff": "Mittlere Leistung",
-      "englisch": "average power",
-      "kurz": "Zeitlich gemittelte Leistung, $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$.",
-      "definition": "Die mittlere Leistung $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ ist die Pulsenergie mal Repetitionsrate. Sie bestimmt die Wärmelast und den Durchsatz, nicht die Spitzenbelastung des Materials.",
-      "siehe": ["pulsenergie", "repetitionsrate"],
-      "verifiziert": true,
-      "quelle": "Definition"
-    },
-    {
-      "id": "fluenz",
-      "begriff": "Fluenz",
-      "englisch": "fluence",
-      "kurz": "Pulsenergie pro Fläche in J/cm², zentrale Prozessgröße.",
-      "definition": "Die Fluenz $F=E_\\mathrm{p}/A$ ist die pro Fläche eingebrachte Pulsenergie, hier in J/cm². Sie ist die zentrale Prozessgröße; ab der [[ablationsschwelle]] setzt Abtrag ein. Beim [[gauss-strahl]] unterscheidet man die Spitzenfluenz $F_0$ von der mittleren Fluenz.",
-      "siehe": ["intensitaet", "ablationsschwelle", "gauss-strahl"],
-      "verifiziert": true,
-      "quelle": "Definition"
-    },
-    {
-      "id": "intensitaet",
-      "begriff": "Intensität",
-      "englisch": "intensity, irradiance",
-      "kurz": "Leistung pro Fläche in W/cm²; für Pulse näherungsweise $F/\\tau$.",
-      "definition": "Die Intensität $I$ ist die Leistung pro Fläche (hier W/cm²). Für einen Puls gilt näherungsweise $I\\approx F/\\tau$. Nichtlineare Effekte wie [[multiphotonenabsorption]] hängen von der Intensität ab, nicht von der Fluenz.",
-      "siehe": ["fluenz", "spitzenleistung"],
-      "verifiziert": true,
-      "quelle": "Definition, Näherung"
-    },
-    {
-      "id": "gauss-strahl",
-      "begriff": "Gauß-Strahl",
-      "englisch": "Gaussian beam",
-      "kurz": "Strahl mit gaußförmigem Intensitätsprofil, beschrieben durch den Strahlradius $w_0$.",
-      "definition": "Ein Gauß-Strahl hat radial das Intensitätsprofil $I(r)=I_0\\,e^{-2r^2/w_0^2}$. Der [[strahlradius]] $w_0$ ist der Radius, bei dem die Intensität auf $1/e^2$ des Maximums gefallen ist.",
-      "siehe": ["strahlradius", "fluenz"],
-      "verifiziert": true,
-      "quelle": "Definition"
-    },
-    {
-      "id": "strahlradius",
-      "begriff": "Strahlradius",
-      "englisch": "beam radius",
-      "kurz": "Radius $w_0$, bei dem die Intensität auf $1/e^2$ gefallen ist.",
-      "definition": "Der Strahlradius $w_0$ (auf Basis des $1/e^2$-Kriteriums) ist der Abstand von der Strahlachse, bei dem die Intensität auf $1/e^2\\approx 13{,}5\\,\\%$ des Maximalwerts abgefallen ist. Im Fokus ist er der Fokusradius.",
-      "siehe": ["gauss-strahl"],
-      "verifiziert": true,
-      "quelle": "Definition"
-    },
-    {
-      "id": "photonenenergie",
-      "begriff": "Photonenenergie",
-      "englisch": "photon energy",
-      "kurz": "Energie eines Lichtquants, $h\\nu=hc/\\lambda$.",
-      "definition": "Ein Photon der Wellenlänge $\\lambda$ trägt die Energie $h\\nu=hc/\\lambda\\approx 1239{,}84\\ \\mathrm{eV\\,nm}/\\lambda$. Ob ein einzelnes Photon die Bandlücke eines Werkstoffs überwinden kann, entscheidet über lineare oder [[multiphotonenabsorption]].",
-      "siehe": ["multiphotonenabsorption"],
-      "verifiziert": true,
-      "quelle": "Definition, Naturkonstanten"
-    },
-    {
       "id": "ablationsschwelle",
       "begriff": "Ablationsschwelle",
       "englisch": "ablation threshold",
       "kurz": "Fluenz, ab der Materialabtrag einsetzt (materialspezifisch).",
       "definition": "Die Ablationsschwelle ist die [[fluenz]], ab der Materialabtrag einsetzt. Sie ist materialspezifisch. Herleitung und Bestimmung folgen in Kapitel K07.",
-      "siehe": ["fluenz", "inkubation"],
+      "siehe": [
+        "fluenz",
+        "inkubation"
+      ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
     },
     {
-      "id": "ttm",
-      "begriff": "Zwei-Temperatur-Modell (TTM)",
-      "englisch": "two-temperature model",
-      "kurz": "Modell mit getrennten Temperaturen für Elektronen- und Gittersystem.",
-      "definition": "Das Zwei-Temperatur-Modell (TTM) beschreibt Elektronen- und Gittersystem mit getrennten Temperaturen, die über eine Kopplung Energie austauschen. Es ist das Standardmodell für die Wechselwirkung von Ultrakurzpulsen mit Metallen.",
-      "siehe": ["ukp"],
-      "verifiziert": false,
-      "quelle": "Projektnotizen"
-    },
-    {
-      "id": "multiphotonenabsorption",
-      "begriff": "Multiphotonenabsorption",
-      "englisch": "multiphoton absorption",
-      "kurz": "Gleichzeitige Absorption mehrerer Photonen in transparenten Medien.",
-      "definition": "Bei der Multiphotonenabsorption nehmen mehrere Photonen gleichzeitig Energie auf, obwohl jedes einzelne [[photonenenergie|Photon]] zu wenig Energie für die Bandlücke hat. Sie ist ein nichtlinearer Prozess und erst bei hoher [[intensitaet]] relevant (Keldysh-Theorie).",
-      "siehe": ["avalanche-ionisation", "intensitaet", "photonenenergie"],
-      "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "id": "autokorrelation",
+      "begriff": "Autokorrelation",
+      "englisch": "autocorrelation",
+      "kurz": "Pulsdauermessung, bei der der Puls mit einer zeitlich verzögerten Kopie von sich selbst überlagert wird.",
+      "definition": "In einer Intensitäts-Autokorrelation wird ein Puls geteilt, zeitlich verschoben und in einem nichtlinearen Kristall überlagert (SHG). Die Breite des Signals über der Verzögerung ist $\\tau_\\mathrm{AC}=\\kappa\\,\\tau$, mit $\\kappa=\\sqrt2$ für Gauß-Pulse. Die Pulsform muss angenommen werden.",
+      "siehe": [
+        "pulsdauer",
+        "zeit-bandbreite-produkt"
+      ],
+      "verifiziert": true,
+      "quelle": "diels"
     },
     {
       "id": "avalanche-ionisation",
@@ -146,7 +32,203 @@
       "englisch": "avalanche ionization",
       "kurz": "Lawinenartige Vervielfachung freier Ladungsträger.",
       "definition": "Bei der Avalanche-Ionisation (Lawinenionisation) nimmt ein freies Elektron Laserenergie auf und erzeugt per Stoß weitere freie Elektronen, so dass deren Zahl lawinenartig wächst. Als Startelektronen dienen z. B. Elektronen aus der [[multiphotonenabsorption]].",
-      "siehe": ["multiphotonenabsorption"],
+      "siehe": [
+        "multiphotonenabsorption"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "bandluecke",
+      "begriff": "Bandlücke",
+      "englisch": "band gap",
+      "kurz": "Energiebereich ohne Elektronenzustände zwischen Valenz- und Leitungsband, $E_\\mathrm{g}$.",
+      "definition": "Die Bandlücke $E_\\mathrm{g}$ trennt das Valenzband vom Leitungsband. Photonen mit weniger Energie können das Material nicht über eine einzelne Absorption anregen; Dielektrika sind deshalb im sichtbaren und nahen Infraroten transparent. Metalle haben keine Bandlücke.",
+      "siehe": [
+        "photonenenergie",
+        "multiphotonenabsorption"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "bessel-strahl",
+      "begriff": "Bessel-Strahl / Filamentation",
+      "englisch": "Bessel beam, filamentation",
+      "kurz": "Strahlformung für Glasschneiden über die gesamte Dicke.",
+      "definition": "Bessel-Strahl und Filamentation sind Strahlformungskonzepte, mit denen Glas über die gesamte Dicke geschnitten werden kann.",
+      "siehe": [],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "bpp",
+      "begriff": "Strahlparameterprodukt (BPP)",
+      "englisch": "beam parameter product",
+      "kurz": "Produkt aus Taillenradius und Divergenz-Halbwinkel, $\\mathrm{BPP}=w_0\\theta=M^2\\lambda/\\pi$.",
+      "definition": "Das Strahlparameterprodukt $\\mathrm{BPP}=w_0\\theta$ bleibt bei verlustfreier Strahlformung mit idealen Optiken erhalten und kennzeichnet die Strahlqualität. Für den idealen Gauß-Strahl ist $\\mathrm{BPP}=\\lambda/\\pi$. Üblich in mm·mrad.",
+      "siehe": [
+        "m2",
+        "rayleighlaenge"
+      ],
+      "verifiziert": true,
+      "quelle": "siegman1986"
+    },
+    {
+      "id": "burst-mode",
+      "begriff": "Burst-Mode / GHz-Burst",
+      "englisch": "burst mode",
+      "kurz": "Pulspakete statt Einzelpulse.",
+      "definition": "Im Burst-Mode werden statt einzelner Pulse Pulspakete ausgesendet; bis in den GHz-Bereich der Pulsabstände. Laut Projektnotizen erhöht das Abtragrate und Effizienz.",
+      "siehe": [
+        "repetitionsrate",
+        "inkubation"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "chirp",
+      "begriff": "Chirp",
+      "englisch": "chirp",
+      "kurz": "Zeitliche Änderung der Momentanfrequenz innerhalb eines Pulses.",
+      "definition": "Ein Puls ist gechirpt, wenn seine Momentanfrequenz entlang des Pulses steigt oder fällt, z. B. nach Dispersion. Ein gechirpter Puls ist bei gleicher Bandbreite länger als der fourierlimitierte Puls.",
+      "siehe": [
+        "dispersion",
+        "zeit-bandbreite-produkt"
+      ],
+      "verifiziert": true,
+      "quelle": "diels"
+    },
+    {
+      "id": "coulomb-explosion",
+      "begriff": "Coulomb-Explosion",
+      "englisch": "Coulomb explosion",
+      "kurz": "Ionen werden von einer positiv aufgeladenen Oberfläche abgestoßen und herausgeschleudert.",
+      "definition": "Verlassen viele Elektronen die Oberfläche, bleibt sie positiv geladen; die elektrostatische Abstoßung kann Ionen und kleine Cluster herausschleudern. Wird für Dielektrika und Halbleiter nahe der Schwelle diskutiert.",
+      "siehe": [
+        "spallation",
+        "phasenexplosion"
+      ],
+      "verifiziert": false,
+      "quelle": "gamaly2002"
+    },
+    {
+      "id": "cpa",
+      "begriff": "CPA",
+      "englisch": "chirped pulse amplification",
+      "kurz": "Verstärkung gestreckter Pulse, Grundlage aller Hochleistungs-UKP-Systeme.",
+      "definition": "Bei der Chirped Pulse Amplification (CPA) wird der Puls zeitlich gestreckt, verstärkt und wieder komprimiert. Sie ist laut Projektnotizen die Grundlage aller Hochleistungs-UKP-Systeme. Details folgen in Kapitel K04.",
+      "siehe": [
+        "ukp"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "d2-methode",
+      "begriff": "D²-Methode",
+      "englisch": "D² method",
+      "kurz": "Bestimmung von Schwelle und Strahlradius aus dem Quadrat des Kraterdurchmessers über $\\ln E_\\mathrm{p}$.",
+      "definition": "Nach Liu (1982) gilt $D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$. Eine Gerade im $D^2$–$\\ln E_\\mathrm{p}$-Diagramm liefert aus der Steigung $w_0$ und aus dem Nulldurchgang die Schwellenenergie.",
+      "siehe": [
+        "ablationsschwelle",
+        "fluenz",
+        "strahlradius"
+      ],
+      "verifiziert": true,
+      "quelle": "liu1982"
+    },
+    {
+      "id": "dispersion",
+      "begriff": "Dispersion",
+      "englisch": "dispersion",
+      "kurz": "Abhängigkeit des Brechungsindex von der Wellenlänge, die Pulse zeitlich auseinanderzieht.",
+      "definition": "Wegen der Dispersion laufen verschiedene Frequenzanteile eines Pulses unterschiedlich schnell. Die Gruppenverzögerungsdispersion (GDD, $\\varphi_2$ in fs²) beschreibt den Effekt zweiter Ordnung. Positive GDD streckt einen Puls, negative kann ihn wieder verkürzen.",
+      "siehe": [
+        "chirp",
+        "cpa",
+        "gdd"
+      ],
+      "verifiziert": true,
+      "quelle": "diels"
+    },
+    {
+      "id": "fluenz",
+      "begriff": "Fluenz",
+      "englisch": "fluence",
+      "kurz": "Pulsenergie pro Fläche in J/cm², zentrale Prozessgröße.",
+      "definition": "Die Fluenz $F=E_\\mathrm{p}/A$ ist die pro Fläche eingebrachte Pulsenergie, hier in J/cm². Sie ist die zentrale Prozessgröße; ab der [[ablationsschwelle]] setzt Abtrag ein. Beim [[gauss-strahl]] unterscheidet man die Spitzenfluenz $F_0$ von der mittleren Fluenz.",
+      "siehe": [
+        "intensitaet",
+        "ablationsschwelle",
+        "gauss-strahl"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "gauss-strahl",
+      "begriff": "Gauß-Strahl",
+      "englisch": "Gaussian beam",
+      "kurz": "Strahl mit gaußförmigem Intensitätsprofil, beschrieben durch den Strahlradius $w_0$.",
+      "definition": "Ein Gauß-Strahl hat radial das Intensitätsprofil $I(r)=I_0\\,e^{-2r^2/w_0^2}$. Der [[strahlradius]] $w_0$ ist der Radius, bei dem die Intensität auf $1/e^2$ des Maximums gefallen ist.",
+      "siehe": [
+        "strahlradius",
+        "fluenz"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "gdd",
+      "begriff": "Gruppenverzögerungsdispersion (GDD)",
+      "englisch": "group delay dispersion",
+      "kurz": "Dispersion zweiter Ordnung, $\\varphi_2$ in fs².",
+      "definition": "Die GDD $\\varphi_2$ beschreibt, wie sich die Gruppenlaufzeit mit der Frequenz ändert. Sie bestimmt, wie stark ein Puls durch ein Material zeitlich gestreckt wird.",
+      "siehe": [
+        "dispersion",
+        "chirp"
+      ],
+      "verifiziert": true,
+      "quelle": "diels"
+    },
+    {
+      "id": "halbwertsbreite",
+      "begriff": "Halbwertsbreite (FWHM)",
+      "englisch": "full width at half maximum",
+      "kurz": "Breite einer Kurve bei der Hälfte ihres Maximalwerts.",
+      "definition": "Die Halbwertsbreite (FWHM) ist die volle Breite einer Verteilung bei halber Höhe. Für Pulse gibt man meist die FWHM der Intensität an, für den Strahldurchmesser dagegen oft den $1/e^2$-Durchmesser. Bei einem Gauß-Profil gilt $d_\\mathrm{FWHM}=w\\sqrt{2\\ln2}\\approx1{,}18\\,w$.",
+      "siehe": [
+        "pulsdauer",
+        "strahlradius"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "hatch",
+      "begriff": "Hatch (Spurabstand)",
+      "englisch": "hatch distance",
+      "kurz": "Abstand benachbarter Scanspuren beim Flächenabtrag.",
+      "definition": "Der Hatch $h$ ist der Abstand der Scanlinien beim Flächenabtrag. Zusammen mit dem Pulsabstand bestimmt er die Pulszahl pro Fläche, die kumulierte Fluenz und die Flächenrate $\\dot A=v\\,h$.",
+      "siehe": [
+        "pulsabstand",
+        "fluenz"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "haz",
+      "begriff": "Wärmeeinflusszone (WEZ / HAZ)",
+      "englisch": "heat affected zone",
+      "kurz": "Durch Wärme veränderter Randbereich; bei UKP minimal.",
+      "definition": "Die Wärmeeinflusszone (WEZ, engl. HAZ) ist der Bereich neben der bearbeiteten Stelle, dessen Gefüge oder Eigenschaften durch Wärme verändert wurden. Bei UKP gilt sie als minimal.",
+      "siehe": [
+        "ukp",
+        "ttm"
+      ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
     },
@@ -156,9 +238,52 @@
       "englisch": "incubation",
       "kurz": "Absenkung der Ablationsschwelle durch vorangegangene Pulse.",
       "definition": "Beim Inkubationseffekt sinkt die [[ablationsschwelle]], wenn dieselbe Stelle bereits von Vorpulsen getroffen wurde.",
-      "siehe": ["ablationsschwelle", "burst-mode"],
+      "siehe": [
+        "ablationsschwelle",
+        "burst-mode"
+      ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
+    },
+    {
+      "id": "intensitaet",
+      "begriff": "Intensität",
+      "englisch": "intensity, irradiance",
+      "kurz": "Leistung pro Fläche in W/cm²; für Pulse näherungsweise $F/\\tau$.",
+      "definition": "Die Intensität $I$ ist die Leistung pro Fläche (hier W/cm²). Für einen Puls gilt näherungsweise $I\\approx F/\\tau$. Nichtlineare Effekte wie [[multiphotonenabsorption]] hängen von der Intensität ab, nicht von der Fluenz.",
+      "siehe": [
+        "fluenz",
+        "spitzenleistung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition, Näherung"
+    },
+    {
+      "id": "keldysh-parameter",
+      "begriff": "Keldysh-Parameter",
+      "englisch": "Keldysh parameter",
+      "kurz": "Kennzahl $\\gamma$, die Mehrphotonen- ($\\gamma\\gg1$) von Tunnelionisation ($\\gamma\\ll1$) unterscheidet.",
+      "definition": "Der Keldysh-Parameter $\\gamma$ vergleicht die Laserfrequenz mit der Tunnelfrequenz eines Elektrons in der verformten Potenzialbarriere. Bei $\\gamma\\gg1$ dominiert die Mehrphotonenionisation, bei $\\gamma\\ll1$ die Tunnelionisation. Der Übergangsbereich liegt bei $\\gamma$ nahe $1$ bis $2$.",
+      "siehe": [
+        "multiphotonenabsorption",
+        "avalanche-ionisation",
+        "kritische-dichte"
+      ],
+      "verifiziert": false,
+      "quelle": "keldysh1965"
+    },
+    {
+      "id": "kritische-dichte",
+      "begriff": "Kritische Plasmadichte",
+      "englisch": "critical plasma density",
+      "kurz": "Elektronendichte, bei der die Plasmafrequenz gleich der Laserfrequenz ist: $n_\\mathrm{c}=\\varepsilon_0m_\\mathrm{e}\\omega^2/e^2$.",
+      "definition": "Erreicht ein Plasma die kritische Dichte $n_\\mathrm{c}$, schirmt es das Laserlicht ab und absorbiert bzw. reflektiert stark. Für $\\lambda=1030\\,\\mathrm{nm}$ ist $n_\\mathrm{c}\\approx1\\cdot10^{21}\\,\\mathrm{cm^{-3}}$.",
+      "siehe": [
+        "keldysh-parameter",
+        "avalanche-ionisation"
+      ],
+      "verifiziert": true,
+      "quelle": "Herleitung (ε(ω) = 1 − ω_p²/ω²)"
     },
     {
       "id": "lipss",
@@ -171,34 +296,162 @@
       "quelle": "Projektnotizen"
     },
     {
-      "id": "burst-mode",
-      "begriff": "Burst-Mode / GHz-Burst",
-      "englisch": "burst mode",
-      "kurz": "Pulspakete statt Einzelpulse.",
-      "definition": "Im Burst-Mode werden statt einzelner Pulse Pulspakete ausgesendet; bis in den GHz-Bereich der Pulsabstände. Laut Projektnotizen erhöht das Abtragrate und Effizienz.",
-      "siehe": ["repetitionsrate", "inkubation"],
+      "id": "m2",
+      "begriff": "Beugungsmaßzahl M²",
+      "englisch": "beam propagation factor M²",
+      "kurz": "Maß der Strahlqualität: $M^2=1$ ist ideal gaußsch, größere Werte fokussieren schlechter.",
+      "definition": "Die Beugungsmaßzahl $M^2\\ge1$ ist das Verhältnis des Strahlparameterprodukts (BPP) eines realen Strahls zum idealen Gauß-Strahl. Sie wird nach ISO 11146 aus den zweiten Momenten der Intensitätsverteilung bestimmt. Hohe $M^2$ vergrößern bei gleicher Optik den Fokus oder verkleinern die Rayleighlänge.",
+      "siehe": [
+        "bpp",
+        "rayleighlaenge"
+      ],
+      "verifiziert": true,
+      "quelle": "siegman1986"
+    },
+    {
+      "id": "mittlere-leistung",
+      "begriff": "Mittlere Leistung",
+      "englisch": "average power",
+      "kurz": "Zeitlich gemittelte Leistung, $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$.",
+      "definition": "Die mittlere Leistung $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ ist die Pulsenergie mal Repetitionsrate. Sie bestimmt die Wärmelast und den Durchsatz, nicht die Spitzenbelastung des Materials.",
+      "siehe": [
+        "pulsenergie",
+        "repetitionsrate"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "modenkopplung",
+      "begriff": "Modenkopplung",
+      "englisch": "mode locking",
+      "kurz": "Feste Phasenkopplung der Resonatormoden, wodurch ein kurzer Puls im Resonator umläuft.",
+      "definition": "Bei der Modenkopplung schwingen alle longitudinalen Resonatormoden mit fester Phasenbeziehung. Ihre Überlagerung ist ein Puls, der mit der Umlaufzeit $2L/c$ den Resonator durchläuft. Je mehr Moden (Bandbreite), desto kürzer der Puls.",
+      "siehe": [
+        "zeit-bandbreite-produkt",
+        "cpa"
+      ],
+      "verifiziert": true,
+      "quelle": "diels"
+    },
+    {
+      "id": "multiphotonenabsorption",
+      "begriff": "Multiphotonenabsorption",
+      "englisch": "multiphoton absorption",
+      "kurz": "Gleichzeitige Absorption mehrerer Photonen in transparenten Medien.",
+      "definition": "Bei der Multiphotonenabsorption nehmen mehrere Photonen gleichzeitig Energie auf, obwohl jedes einzelne [[photonenenergie|Photon]] zu wenig Energie für die Bandlücke hat. Sie ist ein nichtlinearer Prozess und erst bei hoher [[intensitaet]] relevant (Keldysh-Theorie).",
+      "siehe": [
+        "avalanche-ionisation",
+        "intensitaet",
+        "photonenenergie"
+      ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
     },
     {
-      "id": "haz",
-      "begriff": "Wärmeeinflusszone (WEZ / HAZ)",
-      "englisch": "heat affected zone",
-      "kurz": "Durch Wärme veränderter Randbereich; bei UKP minimal.",
-      "definition": "Die Wärmeeinflusszone (WEZ, engl. HAZ) ist der Bereich neben der bearbeiteten Stelle, dessen Gefüge oder Eigenschaften durch Wärme verändert wurden. Bei UKP gilt sie als minimal.",
-      "siehe": ["ukp", "ttm"],
+      "id": "phasenexplosion",
+      "begriff": "Phasenexplosion",
+      "englisch": "phase explosion (explosive boiling)",
+      "kurz": "Schlagartiger Zerfall überhitzter Schmelze in Dampf und Tröpfchen.",
+      "definition": "Bei der Phasenexplosion (explosives Sieden) wird die Schmelze auf Temperaturen nahe der kritischen Temperatur überhitzt und zerfällt in ein Gemisch aus Dampf und Tröpfchen. Typisch bei Fluenzen deutlich über der Schwelle.",
+      "siehe": [
+        "spallation",
+        "coulomb-explosion"
+      ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "gamaly2002"
     },
     {
-      "id": "cpa",
-      "begriff": "CPA",
-      "englisch": "chirped pulse amplification",
-      "kurz": "Verstärkung gestreckter Pulse, Grundlage aller Hochleistungs-UKP-Systeme.",
-      "definition": "Bei der Chirped Pulse Amplification (CPA) wird der Puls zeitlich gestreckt, verstärkt und wieder komprimiert. Sie ist laut Projektnotizen die Grundlage aller Hochleistungs-UKP-Systeme. Details folgen in Kapitel K04.",
-      "siehe": ["ukp"],
-      "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "id": "photonenenergie",
+      "begriff": "Photonenenergie",
+      "englisch": "photon energy",
+      "kurz": "Energie eines Lichtquants, $h\\nu=hc/\\lambda$.",
+      "definition": "Ein Photon der Wellenlänge $\\lambda$ trägt die Energie $h\\nu=hc/\\lambda\\approx 1239{,}84\\ \\mathrm{eV\\,nm}/\\lambda$. Ob ein einzelnes Photon die Bandlücke eines Werkstoffs überwinden kann, entscheidet über lineare oder [[multiphotonenabsorption]].",
+      "siehe": [
+        "multiphotonenabsorption"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition, Naturkonstanten"
+    },
+    {
+      "id": "plasma",
+      "begriff": "Plasma",
+      "englisch": "plasma",
+      "kurz": "Ionisiertes Gas bzw. Elektronengas hoher Dichte, das sich wie ein Metall verhält.",
+      "definition": "Bei hoher Elektronendichte (nach Mehrphotonenionisation und Lawine) verhält sich das angeregte Material wie ein Plasma: Es absorbiert und reflektiert Licht anders als das Ausgangsmaterial.",
+      "siehe": [
+        "kritische-dichte",
+        "avalanche-ionisation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "pulsabstand",
+      "begriff": "Pulsabstand",
+      "englisch": "pulse spacing",
+      "kurz": "Strecke zwischen zwei aufeinanderfolgenden Pulsen auf dem Werkstück, $d=v/f$.",
+      "definition": "Der Pulsabstand $d=v/f$ ergibt sich aus Scangeschwindigkeit $v$ und Repetitionsrate $f$. Verglichen mit dem Spotdurchmesser $2w_0$ legt er den Pulsüberlapp fest.",
+      "siehe": [
+        "hatch",
+        "repetitionsrate",
+        "ueberlapp"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "pulsdauer",
+      "begriff": "Pulsdauer",
+      "englisch": "pulse duration",
+      "kurz": "Zeitliche Breite des Pulses (üblicherweise Halbwertsbreite), Formelzeichen $\\tau$.",
+      "definition": "Die Pulsdauer $\\tau$ ist die zeitliche Breite eines Pulses, üblicherweise als volle Breite bei halber Höhe (FWHM) angegeben.",
+      "siehe": [
+        "spitzenleistung",
+        "ukp"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "pulsenergie",
+      "begriff": "Pulsenergie",
+      "englisch": "pulse energy",
+      "kurz": "Energie eines einzelnen Laserpulses, Formelzeichen $E_\\mathrm{p}$, in Joule.",
+      "definition": "Die Pulsenergie $E_\\mathrm{p}$ ist die Energie eines einzelnen Pulses, gemessen in Joule (bei UKP-Systemen meist Mikrojoule). Zusammen mit [[pulsdauer]] und [[repetitionsrate]] legt sie [[spitzenleistung]] und [[mittlere-leistung]] fest.",
+      "siehe": [
+        "fluenz",
+        "spitzenleistung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "rayleighlaenge",
+      "begriff": "Rayleighlänge",
+      "englisch": "Rayleigh length",
+      "kurz": "Strecke vom Fokus, nach der sich der Strahlquerschnitt verdoppelt: $z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)$.",
+      "definition": "Die Rayleighlänge $z_\\mathrm{R}$ ist der Abstand von der Strahltaille, bei dem der Strahlradius auf $\\sqrt2\\,w_0$ angewachsen ist (Querschnittsfläche verdoppelt, Spitzenfluenz halbiert). Sie bestimmt die Schärfentiefe des Fokus: $z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)$.",
+      "siehe": [
+        "gauss-strahl",
+        "strahlradius",
+        "m2"
+      ],
+      "verifiziert": true,
+      "quelle": "saleh2019"
+    },
+    {
+      "id": "repetitionsrate",
+      "begriff": "Repetitionsrate",
+      "englisch": "repetition rate",
+      "kurz": "Pulse pro Sekunde in Hertz, Formelzeichen $f$.",
+      "definition": "Die Repetitionsrate $f$ gibt an, wie viele Pulse pro Sekunde emittiert werden. Der Pulsabstand ist $1/f$; die [[mittlere-leistung]] ist $E_\\mathrm{p}\\cdot f$.",
+      "siehe": [
+        "mittlere-leistung",
+        "burst-mode"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     },
     {
       "id": "sle",
@@ -211,14 +464,96 @@
       "quelle": "Projektnotizen"
     },
     {
-      "id": "bessel-strahl",
-      "begriff": "Bessel-Strahl / Filamentation",
-      "englisch": "Bessel beam, filamentation",
-      "kurz": "Strahlformung für Glasschneiden über die gesamte Dicke.",
-      "definition": "Bessel-Strahl und Filamentation sind Strahlformungskonzepte, mit denen Glas über die gesamte Dicke geschnitten werden kann.",
-      "siehe": [],
+      "id": "spallation",
+      "begriff": "Spallation",
+      "englisch": "spallation",
+      "kurz": "Schichtweises Abplatzen durch Zugspannungen nach schnellem Energieeintrag.",
+      "definition": "Bei der Spallation erzeugt der ultraschnelle Energieeintrag eine Druckwelle, die als Zugwelle reflektiert wird und Material schichtweise ablöst. Sie wird vor allem nahe der Ablationsschwelle diskutiert.",
+      "siehe": [
+        "phasenexplosion",
+        "ablationsschwelle"
+      ],
+      "verifiziert": false,
+      "quelle": "gamaly2002"
+    },
+    {
+      "id": "spitzenleistung",
+      "begriff": "Spitzenleistung",
+      "englisch": "peak power",
+      "kurz": "Maximale optische Leistung während des Pulses, näherungsweise $E_\\mathrm{p}/\\tau$.",
+      "definition": "Die Spitzenleistung $P_\\mathrm{peak}$ ist die Leistung am Maximum des Pulses. Näherungsweise gilt $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$; ein pulsformabhängiger Faktor in der Größenordnung von 1 ist dabei vernachlässigt.",
+      "siehe": [
+        "pulsenergie",
+        "pulsdauer",
+        "intensitaet"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition, Näherung"
+    },
+    {
+      "id": "strahlradius",
+      "begriff": "Strahlradius",
+      "englisch": "beam radius",
+      "kurz": "Radius $w_0$, bei dem die Intensität auf $1/e^2$ gefallen ist.",
+      "definition": "Der Strahlradius $w_0$ (auf Basis des $1/e^2$-Kriteriums) ist der Abstand von der Strahlachse, bei dem die Intensität auf $1/e^2\\approx 13{,}5\\,\\%$ des Maximalwerts abgefallen ist. Im Fokus ist er der Fokusradius.",
+      "siehe": [
+        "gauss-strahl"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "ttm",
+      "begriff": "Zwei-Temperatur-Modell (TTM)",
+      "englisch": "two-temperature model",
+      "kurz": "Modell mit getrennten Temperaturen für Elektronen- und Gittersystem.",
+      "definition": "Das Zwei-Temperatur-Modell (TTM) beschreibt Elektronen- und Gittersystem mit getrennten Temperaturen, die über eine Kopplung Energie austauschen. Es ist das Standardmodell für die Wechselwirkung von Ultrakurzpulsen mit Metallen.",
+      "siehe": [
+        "ukp"
+      ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
+    },
+    {
+      "id": "ueberlapp",
+      "begriff": "Pulsüberlapp",
+      "englisch": "pulse overlap",
+      "kurz": "Anteil des Spotdurchmessers, den aufeinanderfolgende Pulse gemeinsam bedecken.",
+      "definition": "Der lineare Überlapp $O=1-d/(2w_0)$ beschreibt, wie weit aufeinanderfolgende Spots übereinanderliegen. Hoher Überlapp bedeutet viele Pulse pro Stelle und damit Inkubation und Wärmeakkumulation.",
+      "siehe": [
+        "pulsabstand",
+        "inkubation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "ukp",
+      "begriff": "Ultrakurzpuls (UKP)",
+      "englisch": "ultra-short pulse, USP",
+      "kurz": "Laserpuls im Bereich von Pikosekunden bis Femtosekunden.",
+      "definition": "Ein Ultrakurzpuls (UKP, engl. USP) hat eine Dauer im Pikosekunden- bis Femtosekundenbereich. Die Energie kommt schneller ins Material, als Wärme abfließen kann (siehe [[ttm]]).",
+      "siehe": [
+        "pulsdauer",
+        "ttm",
+        "cpa"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "zeit-bandbreite-produkt",
+      "begriff": "Zeit-Bandbreite-Produkt",
+      "englisch": "time-bandwidth product",
+      "kurz": "$\\tau\\Delta\\nu\\ge K$, mit $K\\approx0{,}441$ für Gauß-Pulse.",
+      "definition": "Pulsdauer und spektrale Breite sind über die Fourier-Transformation gekoppelt: $\\tau\\,\\Delta\\nu\\ge K$, wobei $K$ von der Pulsform abhängt (Gauß: $0{,}441$; sech²: $0{,}315$). Gleichheit gilt für fourierlimitierte Pulse ohne Chirp.",
+      "siehe": [
+        "pulsdauer",
+        "chirp",
+        "modenkopplung"
+      ],
+      "verifiziert": true,
+      "quelle": "diels"
     }
   ]
 }

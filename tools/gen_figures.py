@@ -22,6 +22,10 @@ STYLE = """<style>
 .fg-bold{font-weight:700}
 .fg-pill{fill:var(--fig-fill,#dcf1f7)}
 .fg-pilltext{fill:var(--fig-accent,#0b7e9b);font:700 11px -apple-system,system-ui,sans-serif}
+.fg-laser{stroke:var(--fig-laser,#ee4f1c);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-laser-f{fill:var(--fig-laser,#ee4f1c)}
+.fg-band{fill:var(--fig-accent,#0b7e9b);fill-opacity:.35;stroke:var(--fig-accent,#0b7e9b);stroke-width:2}
+.fg-empty{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:2;stroke-dasharray:5 4}
 </style>"""
 
 
@@ -144,8 +148,72 @@ def gauss_profil():
     return svg(360, 216, "".join(p), "Gaußsches Fluenzprofil mit Spitzenfluenz, Strahlradius und Beispielschwelle")
 
 
+def baender():
+    cols = [(70, "Metall"), (180, "Halbleiter"), (290, "Dielektrikum")]
+    w = 84
+    p = []
+    p.append('<text class="fg-muted" x="12" y="18">Energie</text>')
+    p.append('<path class="fg-soft" d="M16 200 L16 26 M11 33 L16 24 L21 33"/>')
+    # metal: one partly filled band
+    cx = cols[0][0]
+    p.append(f'<rect class="fg-empty" x="{cx - w / 2}" y="40" width="{w}" height="80" rx="6"/>')
+    p.append(f'<rect class="fg-band" x="{cx - w / 2}" y="120" width="{w}" height="80" rx="6"/>')
+    p.append(f'<text class="fg-muted" x="{cx}" y="85" text-anchor="middle">frei</text>')
+    p.append(f'<text class="fg-muted" x="{cx}" y="165" text-anchor="middle">besetzt</text>')
+    p.append(f'<line class="fg-laser" x1="{cx - 22}" y1="170" x2="{cx - 22}" y2="132"/><path class="fg-laser" d="M{cx - 28} 140 L{cx - 22} 130 L{cx - 16} 140"/>')
+    # semiconductor
+    cx = cols[1][0]
+    p.append(f'<rect class="fg-empty" x="{cx - w / 2}" y="40" width="{w}" height="48" rx="6"/>')
+    p.append(f'<rect class="fg-band" x="{cx - w / 2}" y="140" width="{w}" height="60" rx="6"/>')
+    p.append(f'<text class="fg-pilltext" x="{cx}" y="119" text-anchor="middle">E_g klein</text>')
+    p.append(f'<line class="fg-laser" x1="{cx - 22}" y1="138" x2="{cx - 22}" y2="94"/><path class="fg-laser" d="M{cx - 28} 102 L{cx - 22} 92 L{cx - 16} 102"/>')
+    # dielectric
+    cx = cols[2][0]
+    p.append(f'<rect class="fg-empty" x="{cx - w / 2}" y="40" width="{w}" height="36" rx="6"/>')
+    p.append(f'<rect class="fg-band" x="{cx - w / 2}" y="158" width="{w}" height="42" rx="6"/>')
+    p.append(f'<text class="fg-pilltext" x="{cx}" y="121" text-anchor="middle">E_g groß</text>')
+    p.append(f'<line class="fg-laser" x1="{cx - 22}" y1="156" x2="{cx - 22}" y2="118"/><path class="fg-laser" d="M{cx - 28} 126 L{cx - 22} 116 L{cx - 16} 126"/>')
+    p.append(f'<text class="fg-laser-f" x="{cx - 22}" y="108" text-anchor="middle" font-size="14" font-weight="700">×</text>')
+    for cx, name in cols:
+        p.append(f'<text class="fg-text fg-bold" x="{cx}" y="222" text-anchor="middle">{name}</text>')
+    p.append('<text class="fg-muted" x="344" y="40" text-anchor="end">Leitungsband</text>')
+    p.append('<text class="fg-muted" x="344" y="196" text-anchor="end">Valenzband</text>')
+    return svg(360, 232, "".join(p), "Bänderschema für Metall, Halbleiter und Dielektrikum mit unterschiedlicher Bandlücke")
+
+
+def zeitskalen_prozesse():
+    # log time axis: 1 fs ... 1 ns (6 decades)
+    x0, per = 30, 50.0
+    ticks = [(0, "1 fs"), (1, "10 fs"), (2, "100 fs"), (3, "1 ps"), (4, "10 ps"), (5, "100 ps"), (6, "1 ns")]
+
+    def X(e):
+        return x0 + per * e
+
+    rows = [
+        ("Laserpuls und Absorption", 0.8, 2.6, "a"),
+        ("Elektronen thermalisieren", 1.0, 2.6, "a"),
+        ("Energie an das Gitter (Elektron-Phonon)", 2.6, 4.0, "w"),
+        ("Wärmeleitung ins Material", 3.2, 6.0, "s"),
+        ("Materialabtrag", 3.5, 6.0, "w"),
+    ]
+    p = []
+    top = 24
+    for i, (name, a, b, kind) in enumerate(rows):
+        y = top + i * 38
+        p.append(f'<text class="fg-text" x="{x0}" y="{y + 10}">{name}</text>')
+        p.append(f'<rect class="fg-bar-{kind}" x="{X(a):.1f}" y="{y + 16}" width="{X(b) - X(a):.1f}" height="10" rx="5"/>')
+    base = top + len(rows) * 38 + 4
+    p.append(f'<line class="fg-soft" x1="{x0}" y1="{base}" x2="{X(6) + 10}" y2="{base}"/>')
+    for e, lab in ticks:
+        p.append(f'<line class="fg-soft" x1="{X(e):.1f}" y1="{base}" x2="{X(e):.1f}" y2="{base + 5}"/>')
+        p.append(f'<text class="fg-muted" x="{X(e):.1f}" y="{base + 18}" text-anchor="middle" font-size="10">{lab}</text>')
+    p.append(f'<text class="fg-muted" x="{X(6) + 10}" y="{base + 34}" text-anchor="end">Zeit nach dem Puls (logarithmisch)</text>')
+    p.append('<text class="fg-pilltext" x="30" y="%d">Größenordnungen, material- und fluenzabhängig</text>' % (base + 34))
+    return svg(360, base + 44, "".join(p), "Zeitachse von Femtosekunden bis Nanosekunden mit Balken für Absorption, Elektronenthermalisierung, Elektron-Gitter-Kopplung, Wärmeleitung und Materialabtrag")
+
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, fn in [("zeitleiter", zeitleiter), ("pulszug", pulszug), ("gauss-profil", gauss_profil)]:
+    for name, fn in [("zeitleiter", zeitleiter), ("pulszug", pulszug), ("gauss-profil", gauss_profil), ("baender", baender), ("zeitskalen-prozesse", zeitskalen_prozesse)]:
         (OUT / f"{name}.svg").write_text(fn(), encoding="utf-8", newline="\n")
         print("wrote", OUT / f"{name}.svg")

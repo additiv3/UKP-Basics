@@ -1,0 +1,460 @@
+{
+  "id": "k09",
+  "titel": "Prozessparameter und Anlagentechnik",
+  "einleitung": "Vom Einzelpuls zum Bauteil: Wie verteilst du Pulse auf der Fläche, wie schnell darfst du scannen, wie bleibt der Fokus an der richtigen Stelle, und wie planst du Versuche so, dass du aus wenigen Messungen viel lernst? Dieses Kapitel baut die Brücke zu deiner DoE-Erfahrung aus der Masterarbeit.",
+  "ziele": [
+    "Pulsabstand, Überlapp und Pulszahl aus Scangeschwindigkeit, Rate und Fokus berechnen",
+    "Hatch, kumulierte Fluenz und Flächenrate für den Flächenabtrag bestimmen",
+    "Scanner, f-Theta-Optik und Fokuslage einordnen",
+    "Strahlführung und Pulsformung kennen",
+    "Einen DoE-Plan für UKP-Prozesse mit sinnvollen Faktoren und Antworten aufstellen"
+  ],
+  "weiterlesen": [
+    "sugioka2014",
+    "chichkov1996"
+  ],
+  "lektionen": [
+    {
+      "id": "k09.l01",
+      "titel": "Pulsabstand und Überlapp",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k09.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Beim Linienabtrag bewegt sich der Fokus mit der Geschwindigkeit $v$, während der Laser mit der Rate $f$ pulst. Der **Pulsabstand** ([[pulsabstand]]) ist $d=v/f$. Verglichen mit dem Spotdurchmesser $2w_0$ ergibt sich der **Überlapp** und die Zahl der Pulse, die jede Stelle der Spur trifft."
+          ]
+        },
+        {
+          "id": "k09.l01.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}d=\\frac{v}{f},\\\\ O=1-\\frac{d}{2w_0},\\\\ N_\\mathrm{Spur}\\approx\\frac{2w_0}{d}\\end{gathered}",
+          "titel": "Pulsabstand, Überlapp, Pulszahl",
+          "sammlung": "Prozess",
+          "erklaerung": "Pulsabstand $d$, linearer Überlapp $O$ (zwischen 0 und 1) und mittlere Pulszahl pro Stelle bei der Spurbreite $2w_0$. Beziehe dich auf den Spotdurchmesser bei $1/e^2$; der abgetragene Durchmesser ist kleiner.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k09.l01.b03",
+          "typ": "sim",
+          "modell": "ueberlapp"
+        },
+        {
+          "id": "k09.l01.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Scanner fährt mit $v=2\\,\\mathrm{m/s}$, der Laser pulst mit $f=500\\,\\mathrm{kHz}$, der Strahlradius beträgt $w_0=10\\,\\mu\\mathrm{m}$. Bestimme Pulsabstand, Überlapp und Pulszahl.",
+          "schritte": [
+            "$d=v/f=2\\,\\mathrm{m/s}/(5\\cdot10^{5}\\,\\mathrm{s^{-1}})=4\\cdot10^{-6}\\,\\mathrm{m}=4\\,\\mu\\mathrm{m}$",
+            "$O=1-4/20=0{,}8$",
+            "$N\\approx2w_0/d=20/4=5$"
+          ],
+          "ergebnis": "4 µm Pulsabstand, 80 % Überlapp, etwa 5 Pulse pro Stelle in der Spur.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k09.l01.b05",
+          "typ": "merke",
+          "inhalt": "Bei gleichem $v$ **halbiert** eine doppelte Rate den Pulsabstand und verdoppelt die Pulszahl pro Stelle. Pulsenergie, Rate und Geschwindigkeit sind deshalb gekoppelt: Willst du schneller scannen, ohne den Überlapp zu verändern, musst du die Rate erhöhen, und dafür sinkt (bei fester mittlerer Leistung) die Pulsenergie.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k09.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "$v=1\\,\\mathrm{m/s}$, $f=250\\,\\mathrm{kHz}$: Wie groß ist der Pulsabstand in µm?",
+          "antwort": 4,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$d=v/f=1/(2{,}5\\cdot10^{5})\\,\\mathrm{m}=4\\cdot10^{-6}\\,\\mathrm{m}=4\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k09.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei $w_0=12\\,\\mu\\mathrm{m}$ und $d=6\\,\\mu\\mathrm{m}$: Wie groß ist der Überlapp in Prozent?",
+          "antwort": 75,
+          "einheit": "%",
+          "toleranz": 0.05,
+          "erklaerung": "$O=1-d/(2w_0)=1-6/24=0{,}75$."
+        },
+        {
+          "id": "k09.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du verdoppelst die Scangeschwindigkeit, alles andere gleich. Was passiert mit der Pulszahl pro Stelle?",
+          "optionen": [
+            "Sie verdoppelt sich",
+            "Sie halbiert sich",
+            "Sie bleibt gleich",
+            "Sie vervierfacht sich"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$d=v/f$ verdoppelt sich, $N\\propto1/d$ halbiert sich."
+        },
+        {
+          "id": "k09.c01",
+          "typ": "karte",
+          "vorne": "Wie berechnest du Pulsabstand und Überlapp?",
+          "hinten": "$d=v/f$ und $O=1-d/(2w_0)$; Pulszahl in der Spur $N\\approx2w_0/d$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k09.l02",
+      "titel": "Hatch, Spurabstand und kumulierte Fluenz",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k09.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Flächen werden aus nebeneinanderliegenden Spuren aufgebaut. Der Abstand der Spuren ist der **Hatch** ([[hatch]]) $h$. Zusammen mit dem Pulsabstand legt er fest, wie viele Pulse jeden Punkt der Fläche treffen und wie viel Energie pro Fläche eingebracht wird."
+          ]
+        },
+        {
+          "id": "k09.l02.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}N_\\mathrm{Fl}\\approx\\frac{\\pi w_0^2}{d\\,h},\\\\ \\Phi=\\frac{E_\\mathrm{p}}{d\\,h},\\\\ \\dot A=v\\,h\\end{gathered}",
+          "titel": "Flächenabtrag: Pulszahl, Dosis, Flächenrate",
+          "sammlung": "Prozess",
+          "einheit": "J/cm^2",
+          "erklaerung": "Mittlere Pulszahl pro Flächenpunkt, **kumulierte Fluenz** (Dosis) $\\Phi$ und Flächenrate $\\dot A$. $\\Phi=P_\\mathrm{avg}/(v\\,h)$ ist dasselbe, aus der mittleren Leistung berechnet.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Energie pro Fläche)"
+        },
+        {
+          "id": "k09.l02.b03",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Prozess nutzt $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$, $d=5\\,\\mu\\mathrm{m}$ und $h=10\\,\\mu\\mathrm{m}$. Berechne die kumulierte Fluenz und die Flächenrate bei $v=1\\,\\mathrm{m/s}$.",
+          "schritte": [
+            "$\\Phi=E_\\mathrm{p}/(d\\,h)=10\\cdot10^{-6}\\,\\mathrm{J}/(5\\cdot10^{-4}\\,\\mathrm{cm}\\cdot10^{-3}\\,\\mathrm{cm})=10^{-5}/(5\\cdot10^{-7})\\,\\mathrm{J/cm^2}=20\\,\\mathrm{J/cm^2}$",
+            "$\\dot A=v\\,h=1000\\,\\mathrm{mm/s}\\cdot0{,}01\\,\\mathrm{mm}=10\\,\\mathrm{mm^2/s}$"
+          ],
+          "ergebnis": "Rund 20 J/cm² Gesamtdosis und 10 mm²/s Flächenrate. Beachte: Das ist ein Vielfaches der Fluenz eines einzelnen Pulses, wegen des Überlapps.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k09.l02.b04",
+          "typ": "merke",
+          "inhalt": "Die kumulierte Fluenz $\\Phi$ ist **keine** Prozessfluenz im Sinne der Schwelle. Abgetragen wird pro Puls mit der Spitzenfluenz $F_0$. $\\Phi$ sagt nur, wie viel Energie insgesamt pro Fläche eingeht, und ist ein guter Vergleichswert für Wärmeeintrag.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k09.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie ändert sich die Flächenrate $\\dot A=v\\,h$, wenn du den Hatch verdoppelst (bei gleichem $v$)?",
+          "optionen": [
+            "Sie halbiert sich",
+            "Sie bleibt gleich",
+            "Sie verdoppelt sich",
+            "Sie vervierfacht sich"
+          ],
+          "richtig": 2,
+          "fest": true,
+          "erklaerung": "$\\dot A=v\\,h$ wächst linear mit dem Spurabstand, solange die Spuren sich noch überlappen (sonst bleiben Stege stehen)."
+        },
+        {
+          "id": "k09.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Mit $P_\\mathrm{avg}=20\\,\\mathrm{W}$, $v=4\\,\\mathrm{m/s}$ und $h=20\\,\\mu\\mathrm{m}$: Wie groß ist die kumulierte Fluenz $\\Phi=P_\\mathrm{avg}/(v\\,h)$ in J/cm²?",
+          "antwort": 25,
+          "einheit": "J/cm²",
+          "toleranz": 0.05,
+          "erklaerung": "$\\Phi=20\\,\\mathrm{W}/(400\\,\\mathrm{cm/s}\\cdot2\\cdot10^{-3}\\,\\mathrm{cm})=20/0{,}8\\,\\mathrm{J/cm^2}=25\\,\\mathrm{J/cm^2}$."
+        },
+        {
+          "id": "k09.c02",
+          "typ": "karte",
+          "vorne": "Wie berechnest du die kumulierte Fluenz beim Flächenabtrag?",
+          "hinten": "$\\Phi=E_\\mathrm{p}/(d\\,h)=P_\\mathrm{avg}/(v\\,h)$, Energie pro Fläche.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k09.l03",
+      "titel": "Scanner, f-Theta und Fokuslage",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k09.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Schnelles Bewegen des Fokus übernimmt meist ein **Galvanometer-Scanner**: zwei Spiegel lenken den Strahl, eine **f-Theta-Linse** fokussiert ihn so, dass der Fokus auf einer Ebene wandert und die Position proportional zum Ablenkwinkel ist: $x=f\\cdot\\theta$. Das erlaubt Geschwindigkeiten im m/s-Bereich.",
+            "Die Brennweite bestimmt zugleich Fokusgröße ($w_0\\propto f$) und Arbeitsfeld. Eine längere Brennweite ergibt ein größeres Feld, aber größeren Fokus. Der Kompromiss ist ein zentrales Auslegungsthema."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k09.l03.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}x=f\\,\\theta,\\\\ w_0\\approx\\frac{M^2\\lambda f}{\\pi w_\\mathrm{in}}\\end{gathered}",
+          "titel": "f-Theta: Position und Fokus",
+          "sammlung": "Prozess",
+          "erklaerung": "Position in der Arbeitsebene bei optischem Ablenkwinkel $\\theta$ (Bogenmaß) und Fokusradius, beide $\\propto f$.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Strahlpropagation, K02)"
+        },
+        {
+          "id": "k09.l03.b03",
+          "typ": "text",
+          "inhalt": [
+            "**Fokuslage:** Wegen der kleinen Rayleighlänge (Kapitel 2) ändert sich Spitzenfluenz und Abtrag schon bei kleinen Abstandsfehlern merklich. Beim Abtragen tiefer Strukturen wandert die Oberfläche aus dem Fokus. Deshalb wird die Fokuslage nachgeführt (z-Achse) oder schichtweise abgetragen und der Fokus nach jeder Schicht nachgestellt."
+          ],
+          "verifiziert": true,
+          "quelle": "Folgerung aus der Rayleighlänge (K02)"
+        },
+        {
+          "id": "k09.l03.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Eine f-Theta-Linse mit $f=160\\,\\mathrm{mm}$ lenkt um $\\pm10^{\\circ}$ (optisch) ab. Wie groß ist das Arbeitsfeld? Und wie groß wird $w_0$ bei $\\lambda=1030\\,\\mathrm{nm}$, $M^2=1{,}2$ und $w_\\mathrm{in}=5\\,\\mathrm{mm}$?",
+          "schritte": [
+            "$\\theta=10^{\\circ}=0{,}1745\\,\\mathrm{rad}$, $x=\\pm f\\theta=\\pm160\\,\\mathrm{mm}\\cdot0{,}1745\\approx\\pm27{,}9\\,\\mathrm{mm}$",
+            "$w_0=\\dfrac{1{,}2\\cdot1{,}03\\cdot10^{-6}\\cdot0{,}16}{\\pi\\cdot5\\cdot10^{-3}}\\,\\mathrm{m}=\\dfrac{1{,}98\\cdot10^{-7}}{1{,}57\\cdot10^{-2}}\\,\\mathrm{m}\\approx12{,}6\\,\\mu\\mathrm{m}$"
+          ],
+          "ergebnis": "Feld etwa 56 mm × 56 mm bei einem Fokusradius von etwa 12,6 µm.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k09.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was passiert, wenn du bei gleichem Eingangsstrahl die Brennweite der f-Theta-Linse verdoppelst?",
+          "optionen": [
+            "Das Feld wird kleiner, der Fokus kleiner",
+            "Das Feld wird größer, der Fokus größer",
+            "Beides bleibt gleich",
+            "Der Fokus wird kleiner, das Feld größer"
+          ],
+          "richtig": 1,
+          "erklaerung": "Feld $x=f\\theta$ und $w_0\\propto f$ wachsen beide mit $f$."
+        },
+        {
+          "id": "k09.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "$f=100\\,\\mathrm{mm}$, optischer Ablenkwinkel $\\theta=0{,}1\\,\\mathrm{rad}$: Welche Auslenkung $x$ in der Arbeitsebene in mm?",
+          "antwort": 10,
+          "einheit": "mm",
+          "toleranz": 0.05,
+          "erklaerung": "$x=f\\theta=100\\,\\mathrm{mm}\\cdot0{,}1=10\\,\\mathrm{mm}$."
+        },
+        {
+          "id": "k09.c03",
+          "typ": "karte",
+          "vorne": "Was macht eine f-Theta-Linse?",
+          "hinten": "Sie fokussiert so, dass die Position in der Arbeitsebene proportional zum Ablenkwinkel ist ($x=f\\theta$) und der Fokus auf einer Ebene liegt.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Definition)"
+        }
+      ]
+    },
+    {
+      "id": "k09.l04",
+      "titel": "Strahlführung und Pulsformung",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k09.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Zwischen Laser und Werkstück liegt ein **Strahlengang** mit mehreren Aufgaben. Typische Bausteine:"
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k09.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "- **Abschwächer** (z. B. Lambda-Halbe-Platte mit Polarisator): stellt die Pulsenergie stufenlos ein, ohne den Laser zu verändern.",
+            "- **Strahlaufweiter** (Teleskop): vergrößert den Strahlradius vor der Fokussierung und legt damit $w_\\mathrm{in}$ und den Fokus fest.",
+            "- **Pulspicker oder akustooptischer Modulator:** wählt einzelne Pulse oder Bursts aus (Repetitionsrate, Pulse on Demand).",
+            "- **Spiegel, Fenster, Optiken:** fügen Dispersion hinzu und verlängern kurze Pulse (Kapitel 4). Beschichtungen müssen für die Spitzenintensität ausgelegt sein.",
+            "- **Strahlformung:** diffraktive optische Elemente, Axicon (Bessel-Strahl, Kapitel 10), räumliche Lichtmodulatoren (SLM) für Top-Hat- oder Mehrfachstrahlen."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k09.l04.b03",
+          "typ": "text",
+          "inhalt": [
+            "**Pulsformung** ändert das *zeitliche* Profil: Doppel- und Mehrfachpulse oder Bursts (Kapitel 7), Chirp einstellen. Ziel ist, Energiekopplung und Abtragsmechanismus gezielt zu steuern, zum Beispiel weniger Schmelze oder höhere Abtragrate."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k09.l04.b04",
+          "typ": "merke",
+          "inhalt": "Jede Komponente im Strahlengang kann Fluenz, Pulsdauer und Fokus verändern. Wenn ein Ergebnis nicht reproduzierbar ist, prüfe zuerst **Pulsenergie am Werkstück** (nicht am Laser!), Strahlprofil und Fokuslage.",
+          "verifiziert": true,
+          "quelle": "Praxisregel aus den Größen F₀ ∝ E/w²"
+        },
+        {
+          "id": "k09.q08",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne das Bauteil seiner Aufgabe zu.",
+          "paare": [
+            [
+              "Lambda-Halbe-Platte + Polarisator",
+              "Pulsenergie einstellen"
+            ],
+            [
+              "Teleskop / Strahlaufweiter",
+              "Strahlradius auf der Linse einstellen"
+            ],
+            [
+              "Akustooptischer Modulator",
+              "Einzelne Pulse auswählen"
+            ],
+            [
+              "Diffraktives optisches Element",
+              "Strahlprofil formen"
+            ]
+          ],
+          "erklaerung": "Jedes Bauteil adressiert einen der Parameter Energie, Größe, Rate oder Profil."
+        },
+        {
+          "id": "k09.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum misst man die Pulsenergie möglichst am Werkstück statt am Laseraustritt?",
+          "optionen": [
+            "Weil der Laser keine Energie hat",
+            "Weil Optiken im Strahlengang Verluste verursachen",
+            "Weil es billiger ist",
+            "Weil das nach Norm verboten ist"
+          ],
+          "richtig": 1,
+          "erklaerung": "Reflexionen, Absorption und Beschnitt im Strahlengang senken die Energie am Werkstück."
+        },
+        {
+          "id": "k09.c04",
+          "typ": "karte",
+          "vorne": "Wie stellt man die Pulsenergie stufenlos ein?",
+          "hinten": "Mit einem Abschwächer aus drehbarer Lambda-Halbe-Platte und Polarisator.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    },
+    {
+      "id": "k09.l05",
+      "titel": "DoE für UKP-Prozesse",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k09.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "Du kennst Versuchsplanung (DoE) aus der Masterarbeit. Für UKP-Prozesse lohnt sich ein physikalischer Zugang: statt Maschineneinstellgrößen sollten die Faktoren **dimensionslose Kenngrößen** sein, sonst wächst die Zahl der Versuche unnötig und die Ergebnisse sind nicht übertragbar."
+          ]
+        },
+        {
+          "id": "k09.l05.b02",
+          "typ": "text",
+          "inhalt": [
+            "**Faktoren (Einstellgrößen):** Pulsenergie $E_\\mathrm{p}$ oder Spitzenfluenz $F_0$ (besser: $F_0/F_\\mathrm{th}$), Pulsüberlapp $O$ bzw. $d$, Hatch $h$, Rate $f$, Fokuslage $z$, Pulsdauer $\\tau$, Wellenlänge, Burst-Parameter.",
+            "**Antworten:** Abtragtiefe, Abtragrate (mm³/min), Rauheit $Sa$ (ISO 25178), Wärmeeinflusszone, Rissdichte (bei Keramik und Glas), Kantenqualität, Prozesszeit."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k09.l05.b03",
+          "typ": "formel",
+          "latex": "\\dot V=f\\cdot V_\\mathrm{p}\\approx f\\cdot\\frac{\\pi}{4}\\,\\ell\\,w_0^2\\,\\ln^2\\frac{F_0}{F_\\mathrm{th}}",
+          "titel": "Abtragrate (Modell)",
+          "sammlung": "Prozess",
+          "erklaerung": "Modell der Abtragrate aus dem logarithmischen Abtraggesetz (Kapitel 7), ideal und ohne Überlapp-Effekte. $V_\\mathrm{p}$ ist das Volumen pro Puls.",
+          "verifiziert": true,
+          "quelle": "Herleitung aus dem log. Abtraggesetz (K07)"
+        },
+        {
+          "id": "k09.l05.b04",
+          "typ": "text",
+          "inhalt": [
+            "Plan-Skizze für den Einstieg: Ein **Faktorstufenplan** ($2^k$) mit den Faktoren $F_0/F_\\mathrm{th}$, $O$ und $h/(2w_0)$ erkennt Haupteffekte und Wechselwirkungen mit wenigen Versuchen. Ein zusammengesetzter Plan (CCD) oder Box-Behnken ergänzt später quadratische Terme, wie sie wegen des Logarithmus und der Optimumsstelle bei $F_\\mathrm{opt}$ zu erwarten sind.",
+            "Wie bei deinen Gitterstrukturen zahlt sich Wiederholung aus: **Mehrfachmessung** je Parametersatz (Streuung), Randomisierung der Reihenfolge (Drift des Lasers) und ein Mittelpunktsversuch zur Kontrolle von Krümmung und Reproduzierbarkeit."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k09.l05.b05",
+          "typ": "merke",
+          "inhalt": "Wähle Faktoren so, dass sie **entkoppelt** sind: Fluenzverhältnis $F_0/F_\\mathrm{th}$, Überlapp $O$, Hatchüberlapp. Wenn du stattdessen $v$, $f$ und $E_\\mathrm{p}$ variierst, verändern sich mehrere physikalische Größen gleichzeitig, und die Effekte lassen sich nicht trennen.",
+          "verifiziert": true,
+          "quelle": "Folgerung aus d = v/f und F₀ ∝ E_p"
+        },
+        {
+          "id": "k09.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum sind $v$, $f$ und $E_\\mathrm{p}$ als DoE-Faktoren ungünstig?",
+          "optionen": [
+            "Weil sie nicht einstellbar sind",
+            "Weil sie Fluenz, Überlapp und mittlere Leistung gleichzeitig verändern",
+            "Weil sie immer konstant sind",
+            "Weil sie keinen Einfluss haben"
+          ],
+          "richtig": 1,
+          "erklaerung": "Besser sind entkoppelte Größen: $F_0/F_\\mathrm{th}$ (Energie), $O$ (Überlapp), Hatch."
+        },
+        {
+          "id": "k09.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Antwortgröße beschreibt die Flächenrauheit eines Abtragsbodens nach ISO 25178?",
+          "optionen": [
+            "$Ra$",
+            "$Sa$",
+            "$\\tau$",
+            "$M^2$"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$Sa$ ist die flächenhafte arithmetische Mittenrauheit; $Ra$ gilt für Profilschnitte (ISO 21920)."
+        },
+        {
+          "id": "k09.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Du fährst einen $2^3$-Plan mit 3 Wiederholungen je Parametersatz. Wie viele Versuche sind das insgesamt?",
+          "antwort": 24,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$2^3=8$ Parametersätze, mal 3 Wiederholungen: 24."
+        },
+        {
+          "id": "k09.c05",
+          "typ": "karte",
+          "vorne": "Welche DoE-Faktoren sind bei UKP physikalisch sinnvoll?",
+          "hinten": "Dimensionslose Kenngrößen: $F_0/F_\\mathrm{th}$, Überlapp $O$, Hatch relativ zu $2w_0$, Fokuslage relativ zu $z_\\mathrm{R}$.",
+          "verifiziert": true,
+          "quelle": "Folgerung aus den Kapiteln K02, K07, K09"
+        }
+      ]
+    }
+  ]
+}

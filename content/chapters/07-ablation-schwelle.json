@@ -1,0 +1,468 @@
+{
+  "id": "k07",
+  "titel": "Ablationsmechanismen und Schwelle",
+  "einleitung": "Das Herz des Themas: Ab welcher Fluenz trägt ein Puls Material ab, wie tief, und mit welchem Mechanismus? Hier lernst du die Schwelle, die logarithmische Abtragtiefe, die D²-Methode, die wichtigsten Mechanismen und zwei Effekte, die in der Praxis alles verschieben: Inkubation und Wärmeakkumulation.",
+  "ziele": [
+    "Die Ablationsschwelle definieren und Abtragtiefe und Effizienz über der Fluenz deuten",
+    "Schwelle und Strahlradius mit der D²-Methode aus Kraterdurchmessern bestimmen",
+    "Spallation, Phasenexplosion und Coulomb-Explosion unterscheiden",
+    "Inkubation quantitativ mit dem Potenzgesetz beschreiben",
+    "Wärmeakkumulation und Burst-Mode einordnen"
+  ],
+  "weiterlesen": [
+    "chichkov1996",
+    "nolte1997",
+    "gamaly2002",
+    "liu1982",
+    "kerse2016"
+  ],
+  "lektionen": [
+    {
+      "id": "k07.l01",
+      "titel": "Ablationsschwelle und Abtragtiefe",
+      "minuten": 11,
+      "blocks": [
+        {
+          "id": "k07.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die [[ablationsschwelle]] $F_\\mathrm{th}$ ist die Fluenz, unterhalb der ein Puls kein Material dauerhaft entfernt. Oberhalb trägt er eine Schicht ab, deren Tiefe $\\delta$ mit der Fluenz wächst, aber **nicht linear**.",
+            "Eine häufige Näherung für den Einzelpuls im mittleren Fluenzbereich ist ein logarithmisches Gesetz mit der charakteristischen Länge $\\ell$ (Größenordnung der Energieeindringtiefe, abhängig von Material und Wellenlänge):"
+          ]
+        },
+        {
+          "id": "k07.l01.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}\\delta(F)=\\ell\\,\\ln\\frac{F}{F_\\mathrm{th}}\\\\(F>F_\\mathrm{th})\\end{gathered}",
+          "titel": "Logarithmisches Abtraggesetz",
+          "sammlung": "Ablation",
+          "erklaerung": "Abtragtiefe pro Puls. Bei $F=F_\\mathrm{th}$ ist die Tiefe null, bei $F=e\\,F_\\mathrm{th}$ gerade $\\ell$. Für große Fluenzbereiche werden in der Literatur oft **zwei** Regime mit verschiedenen $\\ell$ beobachtet (Nolte et al. 1997, an Metallen).",
+          "verifiziert": false,
+          "quelle": "nolte1997"
+        },
+        {
+          "id": "k07.l01.b03",
+          "typ": "text",
+          "inhalt": [
+            "Bei einem Gauß-Strahl liegt in der Mitte die Spitzenfluenz $F_0$; außen fällt die Fluenz ab. Es wird nur dort abgetragen, wo $F(r)>F_\\mathrm{th}$, also auf einer Kreisfläche mit Radius $r_\\mathrm{abl}=w_0\\sqrt{\\tfrac12\\ln(F_0/F_\\mathrm{th})}$. Der Krater ist daher flacher und schmaler als der Strahl, und bei steigender Energie wächst er langsam."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k07.l01.b04",
+          "typ": "sim",
+          "modell": "effizienz"
+        },
+        {
+          "id": "k07.l01.b05",
+          "typ": "formel",
+          "latex": "\\frac{V}{E_\\mathrm{p}}\\propto\\frac{\\ln^2(F_0/F_\\mathrm{th})}{F_0/F_\\mathrm{th}}\\ \\Rightarrow\\ F_\\mathrm{opt}=e^{2}F_\\mathrm{th}\\approx7{,}4\\,F_\\mathrm{th}",
+          "titel": "Energieeffizienteste Fluenz",
+          "sammlung": "Ablation",
+          "erklaerung": "Abgetragenes Volumen pro Pulsenergie für einen Gauß-Strahl mit dem logarithmischen Gesetz: Das Maximum liegt bei $F_0=e^2F_\\mathrm{th}$. Herleitung: $V=\\tfrac{\\pi}{4}\\ell w_0^2\\ln^2(F_0/F_\\mathrm{th})$, $E_\\mathrm{p}=\\tfrac{\\pi}{2}w_0^2F_0$.",
+          "verifiziert": true,
+          "quelle": "Herleitung (log. Gesetz, Gauß-Profil)"
+        },
+        {
+          "id": "k07.l01.b06",
+          "typ": "merke",
+          "inhalt": "Mehr Energie pro Puls ist nicht automatisch effizienter. Im Modell liegt die energieeffizienteste Spitzenfluenz bei etwa $7{,}4\\,F_\\mathrm{th}$. Darüber nimmt die Tiefe nur noch logarithmisch zu, die Energie aber linear, und die Qualität leidet oft (mehr Schmelze, Plasmaabschirmung). Die Aussage gilt für dieses Modell; reale Prozesse weichen ab.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k07.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei $F=3\\,F_\\mathrm{th}$ ist die Tiefe $\\ell\\ln3$. Bei welcher Fluenz (in Vielfachen von $F_\\mathrm{th}$) erreichst du die **doppelte** Tiefe?",
+          "antwort": 9,
+          "einheit": "· F_th",
+          "toleranz": 0.02,
+          "erklaerung": "Doppelte Tiefe: $\\ln x=2\\ln3=\\ln9\\Rightarrow x=9$."
+        },
+        {
+          "id": "k07.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum trägt ein Gauß-Strahl mit $F_0$ knapp über der Schwelle nur im Zentrum ab?",
+          "optionen": [
+            "Weil das Material dort dünner ist",
+            "Weil nur im Zentrum die lokale Fluenz über $F_\\mathrm{th}$ liegt",
+            "Weil die Wellenlänge außen größer ist",
+            "Weil die Randbereiche reflektieren"
+          ],
+          "richtig": 1,
+          "erklaerung": "$F(r)=F_0\\,e^{-2r^2/w_0^2}$ fällt nach außen ab und unterschreitet die Schwelle bei $r_\\mathrm{abl}$."
+        },
+        {
+          "id": "k07.c01",
+          "typ": "karte",
+          "vorne": "Wie hängt die Abtragtiefe pro Puls von der Fluenz ab?",
+          "hinten": "Im einfachsten Modell logarithmisch: $\\delta=\\ell\\ln(F/F_\\mathrm{th})$.",
+          "verifiziert": false,
+          "quelle": "nolte1997"
+        },
+        {
+          "id": "k07.c02",
+          "typ": "karte",
+          "vorne": "Bei welcher Spitzenfluenz ist das Gauß-Strahl-Modell am energieeffizientesten?",
+          "hinten": "Bei $F_0=e^{2}F_\\mathrm{th}\\approx7{,}4\\,F_\\mathrm{th}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k07.l02",
+      "titel": "Schwellenbestimmung (D²-Methode)",
+      "minuten": 11,
+      "blocks": [
+        {
+          "id": "k07.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die Schwelle misst man nicht direkt, sondern über **Kraterdurchmesser** bei verschiedenen Pulsenergien. Die Methode ([[d2-methode]]) geht auf Liu (1982) zurück und ist heute Standard, wenn der Strahl gaußsch ist.",
+            "Idee: Der Kraterrand liegt dort, wo die lokale Fluenz gleich $F_\\mathrm{th}$ ist, also $F_0\\,e^{-2r^2/w_0^2}=F_\\mathrm{th}$. Mit $D=2r$:"
+          ],
+          "verifiziert": true,
+          "quelle": "liu1982"
+        },
+        {
+          "id": "k07.l02.b02",
+          "typ": "formel",
+          "latex": "D^2=2w_0^2\\,\\ln\\frac{F_0}{F_\\mathrm{th}}=2w_0^2\\,\\ln\\frac{E_\\mathrm{p}}{E_\\mathrm{th}}",
+          "titel": "D²-Methode",
+          "sammlung": "Ablation",
+          "erklaerung": "$D^2$ steigt **linear** mit $\\ln E_\\mathrm{p}$. Die Steigung ist $2w_0^2$ (liefert den Strahlradius), der Schnittpunkt mit $D^2=0$ liegt bei $E_\\mathrm{th}$.",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        },
+        {
+          "id": "k07.l02.b03",
+          "typ": "formel",
+          "latex": "F_\\mathrm{th}=\\frac{2E_\\mathrm{th}}{\\pi w_0^2}",
+          "titel": "Schwellfluenz aus E_th",
+          "sammlung": "Ablation",
+          "einheit": "J/cm^2",
+          "erklaerung": "Schwellfluenz aus der Schwellenenergie $E_\\mathrm{th}$ und dem aus der Steigung bestimmten $w_0$.",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        },
+        {
+          "id": "k07.l02.b04",
+          "typ": "sim",
+          "modell": "schwelle"
+        },
+        {
+          "id": "k07.l02.b05",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Eine Auswertung von $D^2$ gegen $\\ln E_\\mathrm{p}$ ergibt die Steigung $a=450\\,\\mu\\mathrm{m}^2$ und den Nulldurchgang bei $E_\\mathrm{th}=1{,}2\\,\\mu\\mathrm{J}$. Bestimme $w_0$ und $F_\\mathrm{th}$.",
+          "schritte": [
+            "$a=2w_0^2\\Rightarrow w_0=\\sqrt{225}\\,\\mu\\mathrm{m}=15\\,\\mu\\mathrm{m}$",
+            "$F_\\mathrm{th}=2E_\\mathrm{th}/(\\pi w_0^2)=2\\cdot1{,}2\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot(15\\cdot10^{-4}\\,\\mathrm{cm})^2)=2{,}4\\cdot10^{-6}/(7{,}07\\cdot10^{-6})\\,\\mathrm{J/cm^2}$"
+          ],
+          "ergebnis": "$w_0=15\\,\\mu\\mathrm{m}$ und $F_\\mathrm{th}\\approx0{,}34\\,\\mathrm{J/cm^2}$ (Zahlenbeispiel).",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k07.l02.b06",
+          "typ": "merke",
+          "inhalt": "Auswertung in drei Schritten: (1) Krater bei mehreren $E_\\mathrm{p}$ messen, (2) $D^2$ über $\\ln E_\\mathrm{p}$ auftragen und eine Gerade anpassen, (3) $w_0$ aus der Steigung und $E_\\mathrm{th}$ aus dem Nulldurchgang bestimmen. Die Schwelle hängt von der **Pulszahl** ab (Inkubation, nächste Lektion), sie muss also zu jeder Pulszahl $N$ angegeben werden.",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        },
+        {
+          "id": "k07.q03",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Die Geradensteigung im $D^2$–$\\ln E_\\mathrm{p}$-Diagramm beträgt $a=288\\,\\mu\\mathrm{m}^2$. Wie groß ist $w_0$ in µm?",
+          "antwort": 12,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$a=2w_0^2\\Rightarrow w_0=\\sqrt{144}=12\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k07.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was liefert der Nulldurchgang der $D^2$-Geraden?",
+          "optionen": [
+            "Den Strahlradius",
+            "Die Schwellenenergie $E_\\mathrm{th}$",
+            "Die Pulsdauer",
+            "Die Wellenlänge"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "Bei $D^2=0$ ist $E_\\mathrm{p}=E_\\mathrm{th}$."
+        },
+        {
+          "id": "k07.c03",
+          "typ": "karte",
+          "vorne": "Wie lautet die D²-Methode?",
+          "hinten": "$D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$: Steigung gibt $w_0$, Nulldurchgang gibt $E_\\mathrm{th}$.",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        }
+      ]
+    },
+    {
+      "id": "k07.l03",
+      "titel": "Mechanismen: Spallation, Phasenexplosion, Coulomb-Explosion",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k07.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Wie genau Material den Festkörper verlässt, hängt von Material, Fluenz und Pulsdauer ab. Übersichtsarbeiten unterscheiden vor allem diese Mechanismen:"
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k07.l03.b02",
+          "typ": "text",
+          "inhalt": [
+            "- **Spallation** ([[spallation]]): Der schnelle Energieeintrag erzeugt eine Druckwelle, die an der Rückseite oder an Grenzflächen als Zugwelle reflektiert wird. Material platzt in Schichten ab. Bevorzugt nahe der Schwelle.",
+            "- **Phasenexplosion** ([[phasenexplosion]], explosives Sieden): Die Schmelze wird auf Temperaturen nahe der kritischen Temperatur überhitzt und zerfällt schlagartig in Dampf und Tröpfchen. Typisch bei höherer Fluenz.",
+            "- **Coulomb-Explosion** ([[coulomb-explosion]]): Die Oberfläche lädt sich durch ausgetretene Elektronen positiv auf, die Ionen stoßen sich ab und werden herausgeschleudert. Wird vor allem für Dielektrika und Halbleiter nahe der Schwelle diskutiert.",
+            "- **Nichtthermisches Schmelzen:** Starke Elektronenanregung schwächt die Bindungen so, dass das Gitter in unter einer Pikosekunde ohne klassischen Wärmeübertrag schmilzt (v. a. bei Halbleitern)."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k07.l03.b03",
+          "typ": "merke",
+          "inhalt": "Es gibt **keinen** einzelnen UKP-Mechanismus. Mit steigender Fluenz verändert sich oft das Bild: von sanfter, schichtweiser Ablösung nahe der Schwelle zu heftigerem Auswurf (Phasenexplosion) bei hoher Fluenz. Welcher Mechanismus tatsächlich wirkt, ist material- und prozessabhängig.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k07.q05",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Beschreibung dem Mechanismus zu.",
+          "paare": [
+            [
+              "Zugwelle löst Schichten ab",
+              "Spallation"
+            ],
+            [
+              "Überhitzte Schmelze zerfällt schlagartig in Dampf und Tröpfchen",
+              "Phasenexplosion"
+            ],
+            [
+              "Oberfläche lädt sich positiv auf, Ionen stoßen sich ab",
+              "Coulomb-Explosion"
+            ]
+          ],
+          "erklaerung": "Die Namen beschreiben die Physik: Abplatzen durch Spannungswellen, explosives Sieden, elektrostatische Abstoßung."
+        },
+        {
+          "id": "k07.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welcher Mechanismus wird bei hoher Fluenz in Metallen typischerweise diskutiert?",
+          "optionen": [
+            "Spallation",
+            "Phasenexplosion",
+            "Radioaktiver Zerfall",
+            "Schmelzfreie Verdunstung"
+          ],
+          "richtig": 1,
+          "erklaerung": "Hohe Fluenz heizt die Schmelze bis in die Nähe der kritischen Temperatur: explosives Sieden."
+        },
+        {
+          "id": "k07.c04",
+          "typ": "karte",
+          "vorne": "Was ist Spallation?",
+          "hinten": "Schichtweises Abplatzen durch Zugspannung, die nach einer schnellen Energiedeposition aus reflektierten Druckwellen entsteht.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k07.c05",
+          "typ": "karte",
+          "vorne": "Was ist Coulomb-Explosion?",
+          "hinten": "Ionen werden aus einer positiv aufgeladenen Oberfläche herausgeschleudert, nachdem Elektronen den Festkörper verlassen haben.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    },
+    {
+      "id": "k07.l04",
+      "titel": "Inkubation",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k07.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Der zweite Puls an der gleichen Stelle trifft ein verändertes Material: Defekte, Farbzentren, Rauheit und Spannungen haben sich gebildet. Die Schwelle sinkt mit der Pulszahl. Dieses Phänomen heißt **Inkubation** ([[inkubation]]) und wird oft mit einem Potenzgesetz beschrieben (Jee et al. 1988):"
+          ],
+          "verifiziert": false,
+          "quelle": "jee1988"
+        },
+        {
+          "id": "k07.l04.b02",
+          "typ": "formel",
+          "latex": "F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{\\,S-1}",
+          "titel": "Inkubation (Potenzgesetz)",
+          "sammlung": "Ablation",
+          "erklaerung": "Schwelle nach $N$ Pulsen am selben Ort. $S\\le1$ ist der Inkubationskoeffizient; $S=1$ bedeutet keine Inkubation. $S$ ist materialabhängig.",
+          "verifiziert": false,
+          "quelle": "jee1988"
+        },
+        {
+          "id": "k07.l04.b03",
+          "typ": "sim",
+          "modell": "inkubation"
+        },
+        {
+          "id": "k07.l04.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Für ein Material gelte (als Zahlenbeispiel) $S=0{,}85$. Wie stark sinkt die Schwelle nach $N=100$ Pulsen, und wie viele Pulse braucht es bei $F_0=0{,}6\\,F_\\mathrm{th}(1)$ bis Abtrag einsetzt?",
+          "schritte": [
+            "$F_\\mathrm{th}(100)/F_\\mathrm{th}(1)=100^{-0{,}15}=e^{-0{,}15\\ln100}=e^{-0{,}69}\\approx0{,}50$",
+            "$N^\\ast=(1/0{,}6)^{1/0{,}15}=1{,}667^{6{,}67}\\approx30$"
+          ],
+          "ergebnis": "Nach 100 Pulsen ist die Schwelle auf etwa die Hälfte gesunken; bei $0{,}6\\,F_\\mathrm{th}(1)$ setzt Abtrag nach rund 30 Pulsen ein.",
+          "quelle": "Rechnung; S nur Zahlenbeispiel",
+          "verifiziert": false
+        },
+        {
+          "id": "k07.l04.b05",
+          "typ": "merke",
+          "inhalt": "Beim Flächenabtrag mit hohem Pulsüberlapp trifft jede Stelle viele Pulse. Dann zählt nicht die Einzelpuls-Schwelle, sondern $F_\\mathrm{th}(N)$, die deutlich niedriger sein kann. Nach der Prozessplanung mit der Einzelpuls-Schwelle ist die effektive Fluenz relativ zur Schwelle also oft höher als gedacht.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k07.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was bedeutet $S=1$ im Inkubationsgesetz?",
+          "optionen": [
+            "Maximale Inkubation",
+            "Keine Inkubation, die Schwelle bleibt konstant",
+            "Die Schwelle steigt mit $N$",
+            "Der Puls ist 1 ps lang"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$N^{S-1}=N^{0}=1$: die Schwelle ändert sich nicht."
+        },
+        {
+          "id": "k07.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "$S=0{,}8$: Auf welchen Bruchteil der Einzelpuls-Schwelle ($\\times100\\,\\%$) sinkt die Schwelle nach $N=1000$ Pulsen, in Prozent?",
+          "antwort": 25.1,
+          "einheit": "%",
+          "toleranz": 0.04,
+          "erklaerung": "$1000^{-0{,}2}=10^{-0{,}6}=0{,}251\\Rightarrow25\\,\\%$."
+        },
+        {
+          "id": "k07.c06",
+          "typ": "karte",
+          "vorne": "Wie beschreibt man Inkubation?",
+          "hinten": "$F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{S-1}$ mit Inkubationskoeffizient $S\\le1$.",
+          "verifiziert": false,
+          "quelle": "jee1988"
+        }
+      ]
+    },
+    {
+      "id": "k07.l05",
+      "titel": "Burst-Mode und Wärmeakkumulation",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k07.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "Bei hohen Repetitionsraten kommt der nächste Puls, bevor die Wärme des vorigen abgeflossen ist: Die Temperatur der Zone steigt von Puls zu Puls, die **Wärmeakkumulation**. Eine einfache Abschätzung: Wärme bleibt relevant, wenn die Diffusionslänge im Pulsabstand die Größenordnung des Strahlradius erreicht."
+          ]
+        },
+        {
+          "id": "k07.l05.b02",
+          "typ": "formel",
+          "latex": "\\sqrt{\\frac{D}{f}}\\gtrsim w_0\\ \\Rightarrow\\ \\text{Wärmeakkumulation wahrscheinlich}",
+          "titel": "Kriterium für Wärmeakkumulation",
+          "sammlung": "Ablation",
+          "erklaerung": "Abschätzung: $L_\\mathrm{th}(1/f)=\\sqrt{D/f}$ verglichen mit dem Strahlradius. Heuristik; Fluenz, Überlapp und Material verschieben die Grenze.",
+          "verifiziert": true,
+          "quelle": "Abschätzung aus L_th = √(Dτ) mit τ = 1/f"
+        },
+        {
+          "id": "k07.l05.b03",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Für $D=1\\,\\mathrm{cm^2/s}$ (Zahlenbeispiel) und $w_0=10\\,\\mu\\mathrm{m}$: Ab welcher Repetitionsrate wird Wärmeakkumulation wahrscheinlich?",
+          "schritte": [
+            "Bedingung $\\sqrt{D/f}\\ge w_0\\Rightarrow f\\le D/w_0^2$",
+            "$f_\\mathrm{krit}=10^{-4}\\,\\mathrm{m^2/s}/(10^{-5}\\,\\mathrm{m})^2=10^{-4}/10^{-10}\\,\\mathrm{s^{-1}}=10^{6}\\,\\mathrm{s^{-1}}$"
+          ],
+          "ergebnis": "Bei Repetitionsraten um 1 MHz und darüber liegt die Wärme im Strahlbereich. Je kleiner der Fokus, desto höher liegt diese Grenze.",
+          "quelle": "Rechnung; D nur Zahlenbeispiel",
+          "verifiziert": true
+        },
+        {
+          "id": "k07.l05.b04",
+          "typ": "text",
+          "inhalt": [
+            "Im **Burst-Mode** ([[burst-mode]]) wird die Pulsenergie auf eine Gruppe von Pulsen verteilt, die im Abstand von Nanosekunden aufeinander folgen. Eine Burst-Gruppe wird dann mit niedriger Rate wiederholt. Aus der Literatur: Eine Untersuchung berichtet vom Ablationskühlungs-Effekt bei Bursts im GHz-Bereich (Kerse et al. 2016); andere Arbeiten zeigen, dass Bursts je nach Material und Parametern die Effizienz verbessern oder verschlechtern können. Die Ergebnislage ist nicht einheitlich."
+          ],
+          "verifiziert": false,
+          "quelle": "kerse2016"
+        },
+        {
+          "id": "k07.l05.b05",
+          "typ": "merke",
+          "inhalt": "Burst ist kein Allheilmittel: Er ändert die **Energie pro Einzelpuls**, den Zeitabstand und die Wärmebilanz gleichzeitig. Ob er hilft, zeigt nur der Versuch am eigenen Material.",
+          "verifiziert": false,
+          "quelle": "kerse2016"
+        },
+        {
+          "id": "k07.q09",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Laser hat $f=100\\,\\mathrm{kHz}$ und $D=0{,}1\\,\\mathrm{cm^2/s}$ (Zahlenbeispiel). Wie groß ist die Diffusionslänge $\\sqrt{D/f}$ im Pulsabstand, in µm?",
+          "antwort": 10,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$D=0{,}1\\,\\mathrm{cm^2/s}=10^{-5}\\,\\mathrm{m^2/s}$; $\\sqrt{10^{-5}/10^{5}}\\,\\mathrm{m}=\\sqrt{10^{-10}}\\,\\mathrm{m}=10^{-5}\\,\\mathrm{m}=10\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k07.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was begünstigt Wärmeakkumulation?",
+          "optionen": [
+            "Niedrige Repetitionsrate",
+            "Hohe Repetitionsrate und hoher Überlapp",
+            "Große Pulsabstände",
+            "Sehr niedrige mittlere Leistung"
+          ],
+          "richtig": 1,
+          "erklaerung": "Kurze Zeit zwischen den Pulsen und viele Pulse pro Stelle halten die Wärme im Material."
+        },
+        {
+          "id": "k07.c07",
+          "typ": "karte",
+          "vorne": "Was ist Burst-Mode?",
+          "hinten": "Aufteilung der Energie auf eine Gruppe von Pulsen im Nanosekunden-Abstand, die mit niedriger Rate wiederholt wird.",
+          "verifiziert": false,
+          "quelle": "kerse2016"
+        }
+      ]
+    }
+  ]
+}

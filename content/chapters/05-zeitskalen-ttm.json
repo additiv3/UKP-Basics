@@ -1,0 +1,348 @@
+{
+  "id": "k05",
+  "titel": "Zeitskalen und Zwei-Temperatur-Modell",
+  "einleitung": "Was heißt „nichtthermisch“ eigentlich? Hier lernst du die Zeitskalen, auf denen Licht, Elektronen und Gitter miteinander reden, und ein einfaches Modell, das den Unterschied zwischen fs-, ps- und ns-Pulsen anschaulich macht.",
+  "ziele": [
+    "Wärmediffusionslänge aus Pulsdauer und Temperaturleitfähigkeit abschätzen",
+    "Die Abfolge Absorption, Elektronenthermalisierung, Elektron-Gitter-Kopplung, Wärmeleitung einordnen",
+    "Das Zwei-Temperatur-Modell (TTM) aufstellen und qualitativ lesen",
+    "Verstehen, warum „kalter Abtrag“ nur relativ ist und wann Wärme doch eine Rolle spielt"
+  ],
+  "weiterlesen": [
+    "anisimov1974",
+    "rethfeld2004",
+    "chichkov1996"
+  ],
+  "lektionen": [
+    {
+      "id": "k05.l01",
+      "titel": "Wärmediffusion vs. Pulsdauer",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k05.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Aus dem PBF-LB/M weißt du: Wärme breitet sich aus, sobald sie eingebracht ist. Die Frage bei UKP lautet, **wie weit** sie in der Pulsdauer kommt. Eine Abschätzung liefert die thermische Diffusionslänge."
+          ]
+        },
+        {
+          "id": "k05.l01.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}L_\\mathrm{th}\\approx\\sqrt{D\\,\\tau},\\\\ D=\\frac{\\lambda_\\mathrm{th}}{\\rho\\,c_p}\\end{gathered}",
+          "titel": "Wärmediffusionslänge",
+          "sammlung": "Zeitskalen",
+          "einheit": "m",
+          "erklaerung": "Diffusionslänge $L_\\mathrm{th}$ in der Zeit $\\tau$ bei Temperaturleitfähigkeit $D$ (Wärmeleitfähigkeit $\\lambda_\\mathrm{th}$, Dichte $\\rho$, spezifische Wärmekapazität $c_p$). Der Vorfaktor hängt von der Definition ab (z. B. $\\sqrt{4D\\tau}$); die Skalierung $\\propto\\sqrt\\tau$ ist entscheidend.",
+          "verifiziert": true,
+          "quelle": "Standard-Wärmeleitung (Abschätzung)"
+        },
+        {
+          "id": "k05.l01.b03",
+          "typ": "sim",
+          "modell": "diffusion"
+        },
+        {
+          "id": "k05.l01.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Material hat die (frei gewählte) Temperaturleitfähigkeit $D=1\\,\\mathrm{cm^2/s}$. Wie weit diffundiert Wärme in 100 fs und in 1 ns?",
+          "schritte": [
+            "$D=10^{-4}\\,\\mathrm{m^2/s}$",
+            "$\\tau=100\\,\\mathrm{fs}$: $L_\\mathrm{th}=\\sqrt{10^{-4}\\cdot10^{-13}}\\,\\mathrm{m}=\\sqrt{10^{-17}}\\,\\mathrm{m}\\approx3{,}2\\,\\mathrm{nm}$",
+            "$\\tau=1\\,\\mathrm{ns}$: $L_\\mathrm{th}=\\sqrt{10^{-4}\\cdot10^{-9}}\\,\\mathrm{m}=\\sqrt{10^{-13}}\\,\\mathrm{m}\\approx316\\,\\mathrm{nm}$"
+          ],
+          "ergebnis": "Wärme kommt in 100 fs nur etwa 3 nm weit, in 1 ns aber rund 316 nm. Der Faktor $10^{4}$ in der Zeit ergibt den Faktor $10^{2}$ in der Länge.",
+          "quelle": "Rechnung aus der Definition; D nur als Zahlenbeispiel",
+          "verifiziert": true
+        },
+        {
+          "id": "k05.l01.b05",
+          "typ": "merke",
+          "inhalt": "Wärme fließt nur $\\sqrt\\tau$-schnell. Wird die Diffusionslänge kleiner als die Eindringtiefe $\\delta$, bleibt die Energie im Absorptionsvolumen, und es bildet sich kaum eine Wärmeeinflusszone ([[haz]]).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k05.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Mit $D=1\\,\\mathrm{cm^2/s}$: Wie groß ist $L_\\mathrm{th}$ für $\\tau=10\\,\\mathrm{ps}$ in nm?",
+          "antwort": 31.6,
+          "einheit": "nm",
+          "toleranz": 0.05,
+          "erklaerung": "$L_\\mathrm{th}=\\sqrt{10^{-4}\\,\\mathrm{m^2/s}\\cdot10^{-11}\\,\\mathrm{s}}=\\sqrt{10^{-15}}\\,\\mathrm{m}=3{,}16\\cdot10^{-8}\\,\\mathrm{m}\\approx32\\,\\mathrm{nm}$."
+        },
+        {
+          "id": "k05.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du verlängerst die Pulsdauer um den Faktor 100. Um welchen Faktor wächst die Diffusionslänge?",
+          "optionen": [
+            "10",
+            "100",
+            "1000",
+            "10 000"
+          ],
+          "richtig": 0,
+          "fest": true,
+          "erklaerung": "$L_\\mathrm{th}\\propto\\sqrt\\tau$, also $\\sqrt{100}=10$."
+        },
+        {
+          "id": "k05.c01",
+          "typ": "karte",
+          "vorne": "Wie wächst die Wärmediffusionslänge mit der Pulsdauer?",
+          "hinten": "$L_\\mathrm{th}\\approx\\sqrt{D\\tau}$, also proportional zur Wurzel der Zeit.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k05.l02",
+      "titel": "Elektronen- und Gittersystem",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k05.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Das Licht trifft nicht das Gitter, sondern die **Elektronen**. Sie haben eine winzige Wärmekapazität im Vergleich zum Gitter, nehmen die Energie in Femtosekunden auf und werden sehr heiß, während das Gitter noch kalt ist. Erst danach geben die Elektronen ihre Energie über Stöße mit dem Gitter (Elektron-Phonon-Kopplung) ab.",
+            "Es gibt also **zwei Systeme mit eigener Temperatur**: Elektronen ($T_\\mathrm{e}$) und Gitter ($T_\\mathrm{l}$). Typische zeitliche Reihenfolge (Größenordnungen, abhängig vom Material):"
+          ]
+        },
+        {
+          "id": "k05.l02.b02",
+          "typ": "bild",
+          "src": "assets/figures/zeitskalen-prozesse.svg",
+          "alt": "Zeitachse von Femtosekunden bis Nanosekunden mit Balken für Absorption, Elektronenthermalisierung, Elektron-Gitter-Kopplung, Wärmeleitung und Materialabtrag",
+          "unterschrift": "Qualitative Abfolge der Prozesse nach dem Puls (logarithmische Zeitachse, Größenordnungen). Die Zeitfenster hängen stark von Material und Fluenz ab.",
+          "verifiziert": false,
+          "quelle": "rethfeld2004"
+        },
+        {
+          "id": "k05.l02.b03",
+          "typ": "text",
+          "inhalt": [
+            "- **Absorption:** während des Pulses (fs).",
+            "- **Elektronenthermalisierung:** die angeregten Elektronen verteilen ihre Energie untereinander und bilden eine heiße Fermi-Verteilung (Zeitskala von zehn bis einigen hundert fs).",
+            "- **Elektron-Gitter-Kopplung:** das Gitter erwärmt sich (etwa 1 bis 10 ps).",
+            "- **Wärmeleitung und Abtrag:** Wärme fließt, Material wird ausgeworfen (ps bis ns)."
+          ],
+          "verifiziert": false,
+          "quelle": "rethfeld2004"
+        },
+        {
+          "id": "k05.l02.b04",
+          "typ": "merke",
+          "inhalt": "Ist der Puls kürzer als die Kopplungszeit, ist die Energie in den Elektronen „zwischengespeichert“, bevor das Gitter reagiert. Genau das macht UKP-Abtrag so anders als ns-Abtrag, bei dem Elektronen und Gitter im Gleichgewicht bleiben.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k05.q03",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Ordne die Prozesse nach ihrer typischen Zeitskala (schnell zu langsam).",
+          "items": [
+            "Absorption des Photons durch Elektronen",
+            "Thermalisierung der Elektronen untereinander",
+            "Energieübertrag an das Gitter (Elektron-Phonon)",
+            "Wärmeleitung ins Material"
+          ],
+          "oben": "schnellste",
+          "unten": "langsamste",
+          "erklaerung": "Die Prozesse laufen nacheinander mit wachsender Zeitskala ab, vom Photon zum Gitter und zuletzt zur Wärmeleitung."
+        },
+        {
+          "id": "k05.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum werden die Elektronen bei einem UKP-Puls viel heißer als das Gitter?",
+          "optionen": [
+            "Weil die Elektronen schwerer sind",
+            "Weil ihre Wärmekapazität klein ist und die Kopplung zum Gitter langsam gegenüber dem Puls",
+            "Weil das Gitter Wärme abstrahlt",
+            "Weil der Laser nur die Gitteratome anregt"
+          ],
+          "richtig": 1,
+          "erklaerung": "Kleine Wärmekapazität der Elektronen und eine Kopplungszeit im ps-Bereich: Die Energie bleibt kurz in den Elektronen."
+        },
+        {
+          "id": "k05.c02",
+          "typ": "karte",
+          "vorne": "Welche zwei Systeme beschreibt das Zwei-Temperatur-Modell?",
+          "hinten": "Das Elektronensystem ($T_\\mathrm{e}$) und das Gitter ($T_\\mathrm{l}$), gekoppelt über Elektron-Phonon-Wechselwirkung.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k05.l03",
+      "titel": "Das Zwei-Temperatur-Modell",
+      "minuten": 11,
+      "blocks": [
+        {
+          "id": "k05.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Das **Zwei-Temperatur-Modell** ([[ttm]], Anisimov 1974) beschreibt diese Situation mit zwei gekoppelten Energiebilanzen: Elektronen werden vom Laser aufgeheizt und geben Energie über die Kopplungskonstante $G$ an das Gitter ab."
+          ]
+        },
+        {
+          "id": "k05.l03.b02",
+          "typ": "formel",
+          "latex": "C_\\mathrm{e}(T_\\mathrm{e})\\frac{\\partial T_\\mathrm{e}}{\\partial t}=\\nabla\\!\\cdot\\!\\left(\\kappa_\\mathrm{e}\\nabla T_\\mathrm{e}\\right)-G\\,(T_\\mathrm{e}-T_\\mathrm{l})+S(t)",
+          "titel": "TTM: Elektronensystem",
+          "sammlung": "Zeitskalen",
+          "erklaerung": "Elektronen: Wärmekapazität $C_\\mathrm{e}=\\gamma T_\\mathrm{e}$, Wärmeleitung $\\kappa_\\mathrm{e}$, Kopplung $G$ und Laserquelle $S(t)$.",
+          "verifiziert": true,
+          "quelle": "anisimov1974"
+        },
+        {
+          "id": "k05.l03.b03",
+          "typ": "formel",
+          "latex": "C_\\mathrm{l}\\frac{\\partial T_\\mathrm{l}}{\\partial t}=G\\,(T_\\mathrm{e}-T_\\mathrm{l})",
+          "titel": "TTM: Gittersystem",
+          "sammlung": "Zeitskalen",
+          "erklaerung": "Gitter: Wärmekapazität $C_\\mathrm{l}$, Energiezufuhr nur über die Kopplung zu den Elektronen.",
+          "verifiziert": true,
+          "quelle": "anisimov1974"
+        },
+        {
+          "id": "k05.l03.b04",
+          "typ": "sim",
+          "modell": "ttm"
+        },
+        {
+          "id": "k05.l03.b05",
+          "typ": "text",
+          "inhalt": [
+            "Lies den Graphen so: Während der Puls läuft, steigt $T_\\mathrm{e}$ stark an. Dann gleichen sich Elektronen und Gitter in der Kopplungszeit an. Bei sehr kurzen Pulsen bleibt das Gitter lange kühl; bei langen Pulsen laufen beide nahezu gemeinsam.",
+            "Das Modell ist ein Werkzeug, kein Naturgesetz: Es ignoriert (in der vereinfachten Version) die Temperaturabhängigkeit der Kopplung, nichtthermische Elektronenverteilungen und Phasenübergänge. Für Dielektrika gilt es nicht direkt; dort entsteht erst ein Elektronenplasma (Kapitel 6)."
+          ]
+        },
+        {
+          "id": "k05.l03.b06",
+          "typ": "merke",
+          "inhalt": "TTM = zwei Wärmebäder mit sehr verschiedener Wärmekapazität. Das kleine (Elektronen) heizt sich auf, das große (Gitter) hinkt zeitlich hinterher.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k05.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Bei welcher Pulsdauer bleiben Elektronen und Gitter nahezu im Gleichgewicht?",
+          "optionen": [
+            "Pulsdauer viel kürzer als die Kopplungszeit",
+            "Pulsdauer viel länger als die Kopplungszeit",
+            "Nie",
+            "Nur bei Dauerstrich"
+          ],
+          "richtig": 1,
+          "erklaerung": "Ist der Puls lang gegen die Kopplungszeit, geben die Elektronen ihre Energie schon während des Pulses ans Gitter ab."
+        },
+        {
+          "id": "k05.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Größe koppelt im TTM die beiden Systeme?",
+          "optionen": [
+            "Die Temperaturleitfähigkeit $D$",
+            "Die Elektron-Phonon-Kopplungskonstante $G$",
+            "Die Pulsenergie",
+            "Der Strahlradius"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "Der Term $-G(T_\\mathrm{e}-T_\\mathrm{l})$ beschreibt den Energieübertrag."
+        },
+        {
+          "id": "k05.c03",
+          "typ": "karte",
+          "vorne": "Was beschreibt $G$ im Zwei-Temperatur-Modell?",
+          "hinten": "Die Elektron-Gitter-Kopplungskonstante: Energieübertrag pro Volumen, Zeit und Temperaturunterschied.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k05.l04",
+      "titel": "Warum „kalt“ nur relativ ist",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k05.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Oft wird UKP-Abtrag „kalt“ genannt. Genauer: **kälter als bei ns-Pulsen**, nicht temperaturlos. Auch bei Femtosekundenpulsen wird die Energie am Ende zu Wärme im Gitter, nur mit viel weniger Zeit zum Wärmeabfluss. Die Wärmeeinflusszone ist deshalb klein, aber nicht Null.",
+            "Wann Wärme wieder wichtig wird:"
+          ]
+        },
+        {
+          "id": "k05.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "- **Hohe Fluenz:** Zu viel Energie über der Schwelle bleibt als Restwärme im Material.",
+            "- **Hohe Repetitionsrate:** Wenn der Pulsabstand kürzer als die Abkühlzeit ist, **akkumuliert** sich die Wärme (Wärmeakkumulation, Kapitel 7).",
+            "- **Längere Pulse (ps):** Mehr Zeit zum Abfließen, andere Mechanismen werden möglich.",
+            "- **Material:** Gute Wärmeleiter und schlechte Wärmeleiter verhalten sich sehr verschieden."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k05.l04.b03",
+          "typ": "merke",
+          "inhalt": "„Nichtthermisch“ ist ein Grenzfall. In der Praxis ist die Frage nicht *ob*, sondern *wie viel* Wärme zurückbleibt, und das steuerst du über Fluenz, Pulsdauer und Repetitionsrate."
+        },
+        {
+          "id": "k05.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Aussage zum „kalten Abtrag“ stimmt?",
+          "optionen": [
+            "Es wird nie Wärme im Gitter frei",
+            "Die Wärme bleibt in der kurzen Zeit weitgehend lokal, ist aber nicht null",
+            "Es gibt keine Wärmeeinflusszone bei beliebiger Fluenz",
+            "Wärmeakkumulation tritt nur bei ns-Pulsen auf"
+          ],
+          "richtig": 1,
+          "erklaerung": "Die Energie landet als Wärme im Gitter; die kurze Dauer begrenzt aber die Diffusion."
+        },
+        {
+          "id": "k05.q08",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne zu: Was verstärkt Wärmeeffekte?",
+          "paare": [
+            [
+              "Hohe Repetitionsrate bei kurzem Pulsabstand",
+              "Wärmeakkumulation"
+            ],
+            [
+              "Viel höhere Fluenz als nötig",
+              "Restwärme im Material"
+            ],
+            [
+              "Sehr kurze Pulsdauer",
+              "Weniger Wärmediffusion"
+            ]
+          ],
+          "erklaerung": "Wärmeakkumulation und Restwärme erhöhen die thermische Last; kürzere Pulse reduzieren die Diffusion."
+        },
+        {
+          "id": "k05.c04",
+          "typ": "karte",
+          "vorne": "Wann akkumuliert sich Wärme bei UKP-Prozessen?",
+          "hinten": "Wenn der Pulsabstand kürzer ist als die Zeit, die die Wärme zum Abfließen braucht (hohe Repetitionsrate, hoher Überlapp).",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    }
+  ]
+}

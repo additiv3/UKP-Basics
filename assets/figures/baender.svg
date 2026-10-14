@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 232" role="img" aria-label="Bänderschema für Metall, Halbleiter und Dielektrikum mit unterschiedlicher Bandlücke"><title>Bänderschema für Metall, Halbleiter und Dielektrikum mit unterschiedlicher Bandlücke</title><style>
+.fg-line{stroke:var(--fig-line,#3a465f);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fg-soft{stroke:var(--fig-soft,#aab4cb);fill:none;stroke-width:1.5}
+.fg-accent{stroke:var(--fig-accent,#0b7e9b);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-warm{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-dasharray:6 5}
+.fg-fill{fill:var(--fig-fill,#dcf1f7);stroke:none}
+.fg-bar-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-bar-w{fill:var(--fig-warm,#d9822b)}
+.fg-bar-s{fill:var(--fig-soft,#aab4cb)}
+.fg-text{fill:var(--fig-line,#3a465f);font:13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-muted{fill:var(--muted,#566078);font:12px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-bold{font-weight:700}
+.fg-pill{fill:var(--fig-fill,#dcf1f7)}
+.fg-pilltext{fill:var(--fig-accent,#0b7e9b);font:700 11px -apple-system,system-ui,sans-serif}
+.fg-laser{stroke:var(--fig-laser,#ee4f1c);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-laser-f{fill:var(--fig-laser,#ee4f1c)}
+.fg-band{fill:var(--fig-accent,#0b7e9b);fill-opacity:.35;stroke:var(--fig-accent,#0b7e9b);stroke-width:2}
+.fg-empty{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:2;stroke-dasharray:5 4}
+</style><text class="fg-muted" x="12" y="18">Energie</text><path class="fg-soft" d="M16 200 L16 26 M11 33 L16 24 L21 33"/><rect class="fg-empty" x="28.0" y="40" width="84" height="80" rx="6"/><rect class="fg-band" x="28.0" y="120" width="84" height="80" rx="6"/><text class="fg-muted" x="70" y="85" text-anchor="middle">frei</text><text class="fg-muted" x="70" y="165" text-anchor="middle">besetzt</text><line class="fg-laser" x1="48" y1="170" x2="48" y2="132"/><path class="fg-laser" d="M42 140 L48 130 L54 140"/><rect class="fg-empty" x="138.0" y="40" width="84" height="48" rx="6"/><rect class="fg-band" x="138.0" y="140" width="84" height="60" rx="6"/><text class="fg-pilltext" x="180" y="119" text-anchor="middle">E_g klein</text><line class="fg-laser" x1="158" y1="138" x2="158" y2="94"/><path class="fg-laser" d="M152 102 L158 92 L164 102"/><rect class="fg-empty" x="248.0" y="40" width="84" height="36" rx="6"/><rect class="fg-band" x="248.0" y="158" width="84" height="42" rx="6"/><text class="fg-pilltext" x="290" y="121" text-anchor="middle">E_g groß</text><line class="fg-laser" x1="268" y1="156" x2="268" y2="118"/><path class="fg-laser" d="M262 126 L268 116 L274 126"/><text class="fg-laser-f" x="268" y="108" text-anchor="middle" font-size="14" font-weight="700">×</text><text class="fg-text fg-bold" x="70" y="222" text-anchor="middle">Metall</text><text class="fg-text fg-bold" x="180" y="222" text-anchor="middle">Halbleiter</text><text class="fg-text fg-bold" x="290" y="222" text-anchor="middle">Dielektrikum</text><text class="fg-muted" x="344" y="40" text-anchor="end">Leitungsband</text><text class="fg-muted" x="344" y="196" text-anchor="end">Valenzband</text></svg>

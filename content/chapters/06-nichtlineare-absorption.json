@@ -1,0 +1,369 @@
+{
+  "id": "k06",
+  "titel": "Nichtlineare Absorption in Dielektrika",
+  "einleitung": "Wie bringt man Energie in ein Material, das für das Laserlicht eigentlich durchsichtig ist? Mit extremer Intensität: Mehrere Photonen wirken gleichzeitig, Elektronen werden aus dem Valenzband gerissen, und eine Lawine aus freien Ladungsträgern macht aus dem Glas ein Plasma.",
+  "ziele": [
+    "Die Mindestzahl von Photonen für eine Bandlücke berechnen und die Rate $\\propto I^n$ deuten",
+    "Den Keldysh-Parameter berechnen und Mehrphotonen- von Tunnelionisation unterscheiden",
+    "Avalanche-Ionisation als Verstärkung freier Ladungsträger erklären",
+    "Die kritische Plasmadichte berechnen und ihre Bedeutung für die Absorption einordnen"
+  ],
+  "weiterlesen": [
+    "schaffer2001",
+    "stuart1996",
+    "keldysh1965",
+    "gattass2008"
+  ],
+  "lektionen": [
+    {
+      "id": "k06.l01",
+      "titel": "Mehrphotonenabsorption",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k06.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Elektron im Valenzband eines Dielektrikums braucht mindestens die Energie $E_\\mathrm{g}$, um ins Leitungsband zu gelangen. Ein einzelnes Photon im nahen Infrarot hat viel weniger. Bei hoher Intensität absorbiert das Elektron **gleichzeitig $n$ Photonen**, so viele, bis die Summe die Bandlücke übersteigt ([[multiphotonenabsorption]])."
+          ]
+        },
+        {
+          "id": "k06.l01.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}n=\\left\\lceil\\frac{E_\\mathrm{g}}{h\\nu}\\right\\rceil,\\\\ \\text{Rate}\\propto I^{\\,n}\\end{gathered}",
+          "titel": "Mehrphotonenabsorption",
+          "sammlung": "Nichtlineare Absorption",
+          "erklaerung": "$\\lceil\\cdot\\rceil$ rundet auf die nächste ganze Zahl auf. Photonenenergie $h\\nu=hc/\\lambda\\approx1239{,}84\\,\\mathrm{eV\\,nm}/\\lambda$.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Energieerhaltung)"
+        },
+        {
+          "id": "k06.l01.b03",
+          "typ": "sim",
+          "modell": "mpa"
+        },
+        {
+          "id": "k06.l01.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Dielektrikum hat (als Zahlenbeispiel) $E_\\mathrm{g}=9\\,\\mathrm{eV}$. Wie viele Photonen sind bei 1030 nm bzw. 343 nm nötig?",
+          "schritte": [
+            "1030 nm: $h\\nu=1239{,}84/1030\\,\\mathrm{eV}\\approx1{,}20\\,\\mathrm{eV}$, $9/1{,}20=7{,}5\\Rightarrow n=8$",
+            "343 nm: $h\\nu=1239{,}84/343\\,\\mathrm{eV}\\approx3{,}61\\,\\mathrm{eV}$, $9/3{,}61=2{,}5\\Rightarrow n=3$"
+          ],
+          "ergebnis": "8 Photonen bei 1030 nm, aber nur 3 bei 343 nm. Wegen $I^n$ ist die Absorption bei kurzer Wellenlänge bei gleicher Intensität um viele Größenordnungen wahrscheinlicher.",
+          "quelle": "Rechnung; E_g ist ein frei gewähltes Zahlenbeispiel, kein Materialwert",
+          "verifiziert": true
+        },
+        {
+          "id": "k06.l01.b05",
+          "typ": "merke",
+          "inhalt": "Je höher die Ordnung $n$, desto steiler hängt die Absorption von der Intensität ab (Verdopplung der Intensität: Faktor $2^n$). Deshalb gibt es bei Mehrphotonenprozessen eine **scharfe Schwelle** und eine sehr lokalisierte Wirkung.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k06.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei $E_\\mathrm{g}=6\\,\\mathrm{eV}$ und $\\lambda=515\\,\\mathrm{nm}$ ($h\\nu\\approx2{,}41\\,\\mathrm{eV}$): Wie viele Photonen sind mindestens nötig?",
+          "antwort": 3,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$6/2{,}41=2{,}49\\Rightarrow n=3$ (aufrunden, 2 Photonen reichen nicht)."
+        },
+        {
+          "id": "k06.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Die Rate steigt mit $I^{5}$. Du erhöhst die Intensität um 20 %. Um welchen Faktor steigt die Rate?",
+          "antwort": 2.49,
+          "einheit": "",
+          "toleranz": 0.04,
+          "erklaerung": "$1{,}2^5=2{,}49$."
+        },
+        {
+          "id": "k06.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum ist die Mehrphotonenabsorption erst bei Ultrakurzpulsen praktisch relevant?",
+          "optionen": [
+            "Weil UKP-Laser eine andere Wellenlänge haben",
+            "Weil bei gleicher Pulsenergie die Spitzenintensität sehr hoch ist",
+            "Weil Photonen bei kurzen Pulsen mehr Energie haben",
+            "Weil das Material bei kurzen Pulsen dünner ist"
+          ],
+          "richtig": 1,
+          "erklaerung": "$I\\approx F/\\tau$: kurze Pulse erreichen sehr hohe Intensitäten, bei denen $I^n$ relevant wird."
+        },
+        {
+          "id": "k06.c01",
+          "typ": "karte",
+          "vorne": "Wie viele Photonen braucht ein $n$-Photonen-Prozess mindestens?",
+          "hinten": "$n=\\lceil E_\\mathrm{g}/h\\nu\\rceil$, die Rate wächst $\\propto I^n$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k06.l02",
+      "titel": "Tunnelionisation und Keldysh-Parameter",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k06.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Bei sehr starken Feldern verformt das elektrische Feld des Lasers die Potenzialbarriere, die das Elektron im Atom bzw. Valenzband hält. Das Elektron kann dann hindurch**tunneln**. Welcher Mechanismus überwiegt, sagt der **Keldysh-Parameter** ([[keldysh-parameter]]) $\\gamma$."
+          ],
+          "verifiziert": false,
+          "quelle": "keldysh1965"
+        },
+        {
+          "id": "k06.l02.b02",
+          "typ": "formel",
+          "latex": "\\gamma=\\frac{\\omega}{e}\\sqrt{\\frac{m^\\ast c\\,n_0\\varepsilon_0E_\\mathrm{g}}{I}}",
+          "titel": "Keldysh-Parameter",
+          "sammlung": "Nichtlineare Absorption",
+          "erklaerung": "Kreisfrequenz $\\omega$, reduzierte Elektronen-Loch-Masse $m^\\ast$, Brechungsindex $n_0$, Intensität $I$, Bandlücke $E_\\mathrm{g}$. In der Literatur wird die Form häufig mit diesen Größen angegeben (nicht an der Primärquelle geprüft).",
+          "verifiziert": false,
+          "quelle": "schaffer2001"
+        },
+        {
+          "id": "k06.l02.b03",
+          "typ": "text",
+          "inhalt": [
+            "$\\gamma\\gg1$: Mehrphotonenionisation dominiert (niedrige Intensität, hohe Frequenz). $\\gamma\\ll1$: Tunnelionisation dominiert (hohe Intensität, niedrige Frequenz). Dazwischen ist ein Übergang, in der Literatur wird der Bereich um $\\gamma\\approx1{,}5$ genannt."
+          ],
+          "verifiziert": false,
+          "quelle": "schaffer2001"
+        },
+        {
+          "id": "k06.l02.b04",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Berechne $\\gamma$ für $\\lambda=1030\\,\\mathrm{nm}$, $I=10^{13}\\,\\mathrm{W/cm^2}$, $E_\\mathrm{g}=9\\,\\mathrm{eV}$, $m^\\ast=0{,}5\\,m_\\mathrm{e}$ und $n_0=1{,}5$ (alles Zahlenbeispiele).",
+          "schritte": [
+            "$\\omega=2\\pi c/\\lambda=1{,}83\\cdot10^{15}\\,\\mathrm{s^{-1}}$, $E_\\mathrm{g}=1{,}44\\cdot10^{-18}\\,\\mathrm{J}$, $I=10^{17}\\,\\mathrm{W/m^2}$, $m^\\ast=4{,}55\\cdot10^{-31}\\,\\mathrm{kg}$",
+            "Radikand: $m^\\ast c\\,n_0\\varepsilon_0E_\\mathrm{g}/I=2{,}6\\cdot10^{-68}$, Wurzel: $1{,}6\\cdot10^{-34}$",
+            "$\\gamma=(1{,}83\\cdot10^{15}/1{,}6\\cdot10^{-19})\\cdot1{,}6\\cdot10^{-34}\\approx1{,}8$"
+          ],
+          "ergebnis": "$\\gamma\\approx1{,}8$: Du bist im Übergangsbereich zwischen Mehrphotonen- und Tunnelionisation. Bei $10^{12}\\,\\mathrm{W/cm^2}$ wäre $\\gamma\\approx5{,}8$, bei $10^{14}\\,\\mathrm{W/cm^2}$ etwa $0{,}6$.",
+          "quelle": "Rechnung nach der Formel oben; Zahlenwerte frei gewählt",
+          "verifiziert": false
+        },
+        {
+          "id": "k06.l02.b05",
+          "typ": "merke",
+          "inhalt": "Mit steigender Intensität sinkt $\\gamma\\propto I^{-1/2}$, der Prozess verschiebt sich von Mehrphotonen- zu Tunnelionisation. Mit längerer Wellenlänge sinkt $\\omega$, und damit auch $\\gamma$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k06.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie verändert sich $\\gamma$, wenn du die Intensität vervierfachst?",
+          "optionen": [
+            "Er vervierfacht sich",
+            "Er halbiert sich",
+            "Er bleibt gleich",
+            "Er verdoppelt sich"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$\\gamma\\propto I^{-1/2}$: vierfache Intensität, halber Wert."
+        },
+        {
+          "id": "k06.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Bei welchem Wert des Keldysh-Parameters dominiert Tunnelionisation?",
+          "optionen": [
+            "$\\gamma\\gg1$",
+            "$\\gamma\\ll1$",
+            "$\\gamma=100$",
+            "$\\gamma$ ist unabhängig davon"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "Kleines $\\gamma$ steht für sehr starke, langsam variierende Felder: Tunneln."
+        },
+        {
+          "id": "k06.c02",
+          "typ": "karte",
+          "vorne": "Was sagt der Keldysh-Parameter aus?",
+          "hinten": "Verhältnis von Photonenfrequenz zur Tunnelfrequenz: $\\gamma\\gg1$ Mehrphotonen, $\\gamma\\ll1$ Tunneln, $\\gamma\\propto1/\\sqrt I$.",
+          "verifiziert": false,
+          "quelle": "keldysh1965"
+        }
+      ]
+    },
+    {
+      "id": "k06.l03",
+      "titel": "Avalanche-Ionisation",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k06.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die Mehrphotonenionisation erzeugt zuerst nur wenige freie Elektronen. Diese **Startelektronen** (Seed-Elektronen) absorbieren nun im Leitungsband weitere Photonen (**Freie-Ladungsträger-Absorption**, inverse Bremsstrahlung). Sobald ein Elektron mehr Energie als ungefähr $E_\\mathrm{g}$ hat, kann es durch einen Stoß ein weiteres Valenzelektron ins Leitungsband befördern ([[avalanche-ionisation]], Stoßionisation). Aus einem werden zwei, aus zwei vier, und so weiter: eine Lawine.",
+            "Vereinfacht beschreibt eine Ratengleichung beide Beiträge:"
+          ],
+          "verifiziert": false,
+          "quelle": "schaffer2001"
+        },
+        {
+          "id": "k06.l03.b02",
+          "typ": "formel",
+          "latex": "\\frac{\\mathrm{d}n_\\mathrm{e}}{\\mathrm{d}t}=\\underbrace{\\sigma_n I^{\\,n}}_{\\text{Photoionisation}}+\\underbrace{\\eta\\,I\\,n_\\mathrm{e}}_{\\text{Lawine}}-\\underbrace{\\frac{n_\\mathrm{e}}{\\tau_\\mathrm{r}}}_{\\text{Rekombination}}",
+          "titel": "Ratengleichung der Elektronendichte (vereinfacht)",
+          "sammlung": "Nichtlineare Absorption",
+          "erklaerung": "Elektronendichte $n_\\mathrm{e}$; $\\sigma_n$ Mehrphotonen-Koeffizient, $\\eta$ Lawinenkoeffizient, $\\tau_\\mathrm{r}$ Rekombinationszeit. Vereinfachte Form (Rate-Equation-Modell, Parameter materialabhängig).",
+          "verifiziert": false,
+          "quelle": "stuart1996"
+        },
+        {
+          "id": "k06.l03.b03",
+          "typ": "text",
+          "inhalt": [
+            "Die Lawine braucht Zeit (mehrere Verdopplungen, jede mit einer gewissen Stoßzeit). Bei ns-Pulsen läuft sie ausgiebig und dominiert; bei Femtosekundenpulsen ist die Zeit knapp, und die Photoionisation übernimmt einen großen Teil der Ladungsträgererzeugung. Das ist ein Grund, warum die Schwelle bei sehr kurzen Pulsen anders skaliert als bei längeren (Stuart et al. 1996)."
+          ],
+          "verifiziert": false,
+          "quelle": "stuart1996"
+        },
+        {
+          "id": "k06.l03.b04",
+          "typ": "merke",
+          "inhalt": "Lawine = exponentielles Wachstum $n_\\mathrm{e}\\propto\\mathrm{e}^{\\eta I t}$, sofern Startelektronen da sind. Ohne Startelektronen (aus Mehrphotonen oder Defekten) startet keine Lawine.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k06.q06",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Schritte der Plasmabildung in die richtige Reihenfolge.",
+          "items": [
+            "Mehrphotonen- oder Tunnelionisation erzeugt Startelektronen",
+            "Startelektronen absorbieren weitere Photonen (Freie-Ladungsträger-Absorption)",
+            "Heiße Elektronen ionisieren per Stoß weitere Atome (Lawine)",
+            "Die Elektronendichte erreicht die kritische Dichte, ein Plasma entsteht"
+          ],
+          "erklaerung": "Erst das Seeding, dann Heizen, dann Stoßionisation, zuletzt Plasma."
+        },
+        {
+          "id": "k06.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Rolle spielt die Photoionisation bei der Avalanche-Ionisation?",
+          "optionen": [
+            "Sie ersetzt die Lawine",
+            "Sie liefert die Startelektronen",
+            "Sie kühlt die Elektronen",
+            "Sie hemmt die Lawine"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "Ohne Startelektronen gibt es nichts, was durch Stöße vervielfacht werden könnte."
+        },
+        {
+          "id": "k06.c03",
+          "typ": "karte",
+          "vorne": "Wie funktioniert Avalanche-Ionisation?",
+          "hinten": "Freie Elektronen absorbieren Photonen, ionisieren per Stoß weitere Valenzelektronen, die Elektronendichte wächst exponentiell.",
+          "verifiziert": false,
+          "quelle": "stuart1996"
+        }
+      ]
+    },
+    {
+      "id": "k06.l04",
+      "titel": "Plasma und kritische Dichte",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k06.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Je mehr freie Elektronen, desto mehr verhält sich das Material wie ein Metall: Das Elektronengas kann dem Lichtfeld folgen und es abschirmen. Die **Plasmafrequenz** $\\omega_\\mathrm{p}$ hängt von der Elektronendichte $n_\\mathrm{e}$ ab. Erreicht sie die Laserfrequenz $\\omega$, erreicht das Plasma die **kritische Dichte** ([[kritische-dichte]]) $n_\\mathrm{c}$."
+          ]
+        },
+        {
+          "id": "k06.l04.b02",
+          "typ": "formel",
+          "latex": "\\begin{gathered}\\omega_\\mathrm{p}^2=\\frac{n_\\mathrm{e}e^2}{\\varepsilon_0m_\\mathrm{e}},\\\\ n_\\mathrm{c}=\\frac{\\varepsilon_0m_\\mathrm{e}\\,\\omega^2}{e^2}\\end{gathered}",
+          "titel": "Plasmafrequenz und kritische Dichte",
+          "sammlung": "Nichtlineare Absorption",
+          "erklaerung": "Plasmafrequenz und kritische Dichte (bei $\\omega_\\mathrm{p}=\\omega$). Oberhalb von $n_\\mathrm{c}$ wird das Plasma für das Laserlicht stark reflektierend bzw. absorbierend.",
+          "verifiziert": true,
+          "quelle": "Lehrbuch Plasmaphysik, aus ε(ω) = 1 − ω_p²/ω²"
+        },
+        {
+          "id": "k06.l04.b03",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Wie groß ist die kritische Dichte für $\\lambda=1030\\,\\mathrm{nm}$?",
+          "schritte": [
+            "$\\omega=2\\pi c/\\lambda=1{,}83\\cdot10^{15}\\,\\mathrm{s^{-1}}$",
+            "$n_\\mathrm{c}=\\dfrac{8{,}854\\cdot10^{-12}\\cdot9{,}109\\cdot10^{-31}\\cdot(1{,}83\\cdot10^{15})^2}{(1{,}602\\cdot10^{-19})^2}\\,\\mathrm{m^{-3}}\\approx1{,}05\\cdot10^{27}\\,\\mathrm{m^{-3}}$"
+          ],
+          "ergebnis": "$n_\\mathrm{c}\\approx1{,}05\\cdot10^{21}\\,\\mathrm{cm^{-3}}$. Die Faustformel $n_\\mathrm{c}\\approx1{,}1\\cdot10^{21}\\,\\mathrm{cm^{-3}}/\\lambda^2[\\mu\\mathrm{m}]$ liefert fast dasselbe.",
+          "quelle": "Rechnung mit CODATA-Konstanten",
+          "verifiziert": true
+        },
+        {
+          "id": "k06.l04.b04",
+          "typ": "text",
+          "inhalt": [
+            "Die Dichte freier Elektronen kann in Dielektrika bei UKP-Bestrahlung die Größenordnung der kritischen Dichte erreichen. In der Literatur wird das Erreichen von $n_\\mathrm{c}$ in Modellen als Schadens- bzw. Ablationskriterium verwendet (Stuart et al. 1996; Schaffer et al. 2001). Das gilt als Modellannahme, nicht als allgemeine Regel."
+          ],
+          "verifiziert": false,
+          "quelle": "schaffer2001"
+        },
+        {
+          "id": "k06.l04.b05",
+          "typ": "merke",
+          "inhalt": "Das Plasma bestimmt, **wie viel Energie** tatsächlich ins Material geht: Unterhalb $n_\\mathrm{c}$ wird weiter absorbiert, oberhalb wird abgeschirmt. Das begrenzt die Eindringtiefe und prägt die Abtragtiefe pro Puls.",
+          "verifiziert": true,
+          "quelle": "Folgerung aus ε(ω)"
+        },
+        {
+          "id": "k06.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist die kritische Dichte bei $\\lambda=515\\,\\mathrm{nm}$ in Einheiten von $10^{21}\\,\\mathrm{cm^{-3}}$? (Faustformel $1{,}1\\cdot10^{21}/\\lambda^2[\\mu\\mathrm{m}]$)",
+          "antwort": 4.2,
+          "einheit": "· 10²¹ cm⁻³",
+          "toleranz": 0.05,
+          "erklaerung": "$\\lambda=0{,}515\\,\\mu\\mathrm{m}$: $1{,}1/0{,}265\\approx4{,}2$. Die halbe Wellenlänge liefert die vierfache kritische Dichte."
+        },
+        {
+          "id": "k06.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du halbierst die Wellenlänge. Was passiert mit der kritischen Dichte?",
+          "optionen": [
+            "Sie halbiert sich",
+            "Sie vervierfacht sich",
+            "Sie bleibt gleich",
+            "Sie verdoppelt sich"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "$n_\\mathrm{c}\\propto\\omega^2\\propto1/\\lambda^2$."
+        },
+        {
+          "id": "k06.c04",
+          "typ": "karte",
+          "vorne": "Was ist die kritische Plasmadichte?",
+          "hinten": "$n_\\mathrm{c}=\\varepsilon_0m_\\mathrm{e}\\omega^2/e^2$: Bei dieser Elektronendichte ist die Plasmafrequenz gleich der Laserfrequenz; das Plasma wird stark reflektierend.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    }
+  ]
+}
