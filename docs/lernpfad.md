@@ -68,7 +68,7 @@ graph LR
 
 Dazu: **Glossar** (durchsuchbar, aus allen Kapiteln verlinkt) und **Wiederholen** (SM-2-Sitzung über alle bisher gesehenen Fragen und Karten).
 
-Für Phase 1 ist **K01 vollständig** ausgearbeitet; K02 bis K12 stehen als Gliederung in `content/index.json` („bald verfügbar").
+Stand Version 0.2: **K01 bis K07, K09 und K11 sind ausgearbeitet**; K08, K10 und K12 stehen als Gliederung in `content/index.json` („bald verfügbar"). K08 wartet auf belegte Materialkennwerte aus der Literatur.
 
 ## 3. Spielmechanik
 

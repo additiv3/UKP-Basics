@@ -6,10 +6,13 @@
 
 Persönliche Lern-App für den Einstieg in die **Ultrakurzpuls-(UKP-)Laserablation harter Werkstoffe** (Keramik, Quarzglas, Halbleiter). Statische PWA ohne Backend, offline-fähig, iPhone-first.
 
-- Lernpfad mit aufeinander aufbauenden Kapiteln, Lektionen, Quizfragen, Karteikarten und Rechnern
+- Lernpfad mit aufeinander aufbauenden Kapiteln (K01 bis K07, K09, K11 ausgearbeitet), Lektionen, Quizfragen, Karteikarten und Rechnern
+- **Labor-Tab:** 11 interaktive Simulationen (Gauß-Strahl, Zwei-Temperatur-Modell, Keldysh-Parameter, D²-Methode, CPA …), Formelsammlung, Konstanten, Normen und zwei Spiele
 - Schlaue Wiederholung nach dem SM-2-Verfahren (Abstände wachsen, wenn du etwas sicher kannst)
 - Fortschritt lokal im Browser, Export/Import als JSON
 - Inhalte sind reine JSON-Dateien in `content/`; unverifizierte Aussagen tragen das Badge „ungeprüft"
+
+Die App-Version steht unter Profil → Über die App.
 
 Architekturentscheidungen: [docs/adr/](docs/adr/). Autorenleitfaden: [docs/inhalte-schreiben.md](docs/inhalte-schreiben.md). Lernpfad und Kapitelplan: [docs/lernpfad.md](docs/lernpfad.md). Roadmap: [docs/roadmap.md](docs/roadmap.md).
 

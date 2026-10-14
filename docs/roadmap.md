@@ -16,21 +16,24 @@ Abweichung vom ursprünglichen Projektentwurf: Die Wiederholungslogik (SM-2) und
 - [x] Kapitel K01 komplett, K02 bis K12 als Gliederung
 - [x] Icon, Manifest, Service Worker (offline), Release-Skript, Inhaltsvalidierung
 - [x] CI-Prüfung (GitHub Actions)
-- [ ] GitHub Pages aktivieren (Entscheidung offen, siehe [offene Punkte](offene-punkte.md))
+- [x] GitHub Pages aktiv (https://additiv3.github.io/UKP-Basics/)
 
-## Phase 2 · Inhalte und Spiele
+## Phase 2 · Inhalte, Labor und Spiele (Version 0.2, erledigt)
 
-- K02 bis K05 ausarbeiten, danach nach Lernpfad weiter
-- Erste Mini-Spiele (Modul pro Spiel in `src/games/`): Größenordnungen, Begriffe den Mechanismen zuordnen
-- Karteikarten-Ansicht pro Kapitel (Blättern ohne SM-2)
-- Statistik-Ansicht (Aktivität, gefestigte Fragen je Kapitel)
+- [x] Neues Erscheinungsbild und neues Icon (Kristall mit fokussiertem Pulszug), animierte Startseite, Stufenfarben
+- [x] Blocktypen `sim` und `spiel`, Baukasten `src/sims/kit.js` ([ADR 0005](adr/0005-labor-simulationen-spiele.md))
+- [x] 11 interaktive Simulationen: Gauß-Strahl, Absorption, Puls und Chirp, CPA, Wärmediffusion, Zwei-Temperatur-Modell, Mehrphotonen und Keldysh, Schwelle (D²-Methode), Effizienz, Inkubation, Überlapp und Hatch
+- [x] Labor-Tab mit Formelsammlung (aus den Kapiteln), Konstanten, Faustformeln, Normen und Spielen
+- [x] Spiele: Zahlen-Blitz, Schwellenjäger (Bestwerte im Fortschritt, Export/Import)
+- [x] Kapitel K02 bis K07, K09 und K11 ausgearbeitet (insgesamt rund 150 Fragen und Karten)
 
-## Phase 3 · Interaktive Diagramme
+Offen aus Phase 2: Karteikarten-Ansicht pro Kapitel (Blättern ohne SM-2), Statistik-Ansicht, K08/K10/K12.
 
-- Fluenz-Regler mit Ablationsschwelle und Abtragtiefe
-- Wärmediffusionslänge vs. Pulsdauer
-- Gauß-Strahl und Spitzenfluenz
-- Suche, Notizen, Literaturverzeichnis mit Quellenverweisen
+## Phase 3 · Vertiefung
+
+- Weitere Simulationen: Bessel-Strahl und Filamentation, LIPSS-Periode, Wärmeakkumulation über Pulsfolgen
+- Suche über Kapitel, Notizen, Literaturverzeichnis mit Quellenverweisen
+- K08 (Werkstoffe), K10 (Sonderverfahren), K12 (wissenschaftliche Praxis)
 
 ## Phase 4 · Eigene Literatur und Experimente
 

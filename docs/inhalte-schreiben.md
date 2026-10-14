@@ -24,11 +24,13 @@ Jeder Block braucht eine **global eindeutige `id`** und einen `typ`. Frage- und 
 | typ | Felder |
 |---|---|
 | `text` | `inhalt`, optional `titel` |
-| `formel` | `latex`, optional `einheit` (LaTeX), `erklaerung` |
+| `formel` | `latex`, optional `einheit` (LaTeX), `erklaerung`; mit `sammlung` (Kategorie) und `titel` landet die Formel in der Formelsammlung im Labor-Tab |
 | `bild` | `src` (SVG unter `assets/`), `alt`, optional `unterschrift` |
 | `merke` | `inhalt`, optional `titel` |
 | `beispiel` | `aufgabe`, `schritte[]`, `ergebnis`; Lösung wird erst auf Tippen gezeigt |
 | `rechner` | `modell` (`fluenz`, `photon`), optional `titel` |
+| `sim` | `modell` = Dateiname in `src/sims/` (z. B. `gauss`, `ttm`), optional `titel`; Formel und „Experimentier-Aufgaben“ kommen aus dem Modul |
+| `spiel` | `spiel` = Dateiname in `src/games/` |
 | `quiz` | `art` und Felder siehe unten, immer `frage` und `erklaerung` |
 | `karte` | `vorne`, `hinten` |
 | `quelle` | `refs[]` (Quellen-IDs aus `content/quellen.json`) |
@@ -48,6 +50,11 @@ Jede quantitative Aussage braucht `"quelle"` oder `"verifiziert": false`. Der Va
 ## Grafiken
 
 SVGs entstehen per Skript (`tools/gen_figures.py`) und nutzen die CSS-Variablen `--fig-*`, damit sie Hell/Dunkel folgen. Fotos oder Fremdgrafiken nur mit klarer Lizenz und Quellenangabe.
+
+## Labor, Simulationen und Spiele
+
+Neue Simulation: Modul `src/sims/<id>.js` (siehe `kit.js` und eine vorhandene Simulation als Vorlage), Eintrag in `content/labor.json` (`id`, `kapitel`, `stufe`, `icon`), dann in einer Lektion als `{"typ": "sim", "modell": "<id>"}` einbinden. Parameter sind frei wählbar, es dürfen keine Materialdaten ohne Quelle hinein.
+Normen, Konstanten und Faustformeln stehen in `content/referenz.json`.
 
 ## Glossar
 
