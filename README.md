@@ -1,5 +1,9 @@
 # UKP-Basics
 
+**App öffnen:** https://additiv3.github.io/UKP-Basics/
+
+**Auf dem iPhone installieren:** Link in **Safari** öffnen, auf das Teilen-Symbol tippen, „Zum Home-Bildschirm" wählen. Danach startet die App wie eine normale App und läuft offline. Neue Versionen erscheinen beim Öffnen als Hinweis „Aktualisieren" (oder unter Profil → „Nach Update suchen"). Den Fortschritt unter Profil → „Backup exportieren" regelmäßig sichern.
+
 Persönliche Lern-App für den Einstieg in die **Ultrakurzpuls-(UKP-)Laserablation harter Werkstoffe** (Keramik, Quarzglas, Halbleiter). Statische PWA ohne Backend, offline-fähig, iPhone-first.
 
 - Lernpfad mit aufeinander aufbauenden Kapiteln, Lektionen, Quizfragen, Karteikarten und Rechnern
