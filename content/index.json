@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "stufen": [
+    { "id": "A", "titel": "Fundament", "beschreibung": "Größen, Strahloptik und die Grundlagen der Licht-Materie-Wechselwirkung." },
+    { "id": "B", "titel": "Ultrakurzpulse", "beschreibung": "Wie Ultrakurzpulse entstehen und warum Zeitskalen den Abtrag verändern." },
+    { "id": "C", "titel": "Abtrag", "beschreibung": "Ablationsschwelle, Mechanismen und das Verhalten der Werkstoffe." },
+    { "id": "D", "titel": "Prozess und Praxis", "beschreibung": "Anlagentechnik, Sonderverfahren, Messtechnik und wissenschaftliches Arbeiten." }
+  ],
+  "kapitel": [
+    {
+      "id": "k01",
+      "datei": "chapters/01-pulsgroessen.json",
+      "stufe": "A",
+      "titel": "Pulsgrößen und Zahlengefühl",
+      "kurz": "Zeitskalen, Pulsenergie, Spitzenleistung, Fluenz, Intensität, Photonenenergie",
+      "voraussetzungen": []
+    },
+    {
+      "id": "k02",
+      "stufe": "A",
+      "titel": "Strahloptik: vom Laser zum Fokus",
+      "kurz": "Gauß-Strahl, Fokussierung, Rayleighlänge, Strahlqualität M²",
+      "voraussetzungen": ["k01"],
+      "lektionen_geplant": ["Gauß-Strahl und Spitzenfluenz", "Fokussierung, Rayleighlänge, Spotgröße", "Strahlqualität M²", "Polarisation und Wellenlänge"]
+    },
+    {
+      "id": "k03",
+      "stufe": "A",
+      "titel": "Licht trifft Materie",
+      "kurz": "Bänder, Absorption, Reflexion, lineare und nichtlineare Absorption",
+      "voraussetzungen": ["k01"],
+      "lektionen_geplant": ["Bänder: Metall, Halbleiter, Isolator", "Absorption, Reflexion, Eindringtiefe", "Lineare vs. nichtlineare Absorption", "Brücke: Laser-Metall im PBF-LB/M vs. Dielektrikum"]
+    },
+    {
+      "id": "k04",
+      "stufe": "B",
+      "titel": "Ultrakurzpulse erzeugen",
+      "kurz": "Bandbreite, Modenkopplung, Chirp, CPA, Verstärkerarchitekturen",
+      "voraussetzungen": ["k01", "k02"],
+      "lektionen_geplant": ["Bandbreite und Pulsdauer", "Modenkopplung", "Dispersion und Chirp", "CPA und Verstärkerarchitekturen", "Repetitionsrate, Pulsenergie, Leistung"]
+    },
+    {
+      "id": "k05",
+      "stufe": "B",
+      "titel": "Zeitskalen und Zwei-Temperatur-Modell",
+      "kurz": "Wärmediffusion vs. Pulsdauer, Elektronen- und Gittersystem, TTM",
+      "voraussetzungen": ["k03"],
+      "lektionen_geplant": ["Wärmediffusion vs. Pulsdauer", "Elektronen- und Gittersystem", "Zwei-Temperatur-Modell", "Warum „kalt“ nur relativ ist"]
+    },
+    {
+      "id": "k06",
+      "stufe": "B",
+      "titel": "Nichtlineare Absorption in Dielektrika",
+      "kurz": "Mehrphotonen- und Tunnelionisation, Keldysh, Avalanche, Plasma",
+      "voraussetzungen": ["k03"],
+      "lektionen_geplant": ["Mehrphotonenabsorption", "Tunnelionisation und Keldysh-Parameter", "Avalanche-Ionisation", "Plasma und kritische Dichte"]
+    },
+    {
+      "id": "k07",
+      "stufe": "C",
+      "titel": "Ablationsmechanismen und Schwelle",
+      "kurz": "Schwelle, Abtragtiefe, Spallation, Phasenexplosion, Inkubation, Burst",
+      "voraussetzungen": ["k02", "k05", "k06"],
+      "lektionen_geplant": ["Ablationsschwelle und Abtragtiefe vs. Fluenz", "Schwellenbestimmung (D²-Methode)", "Mechanismen: Spallation, Phasenexplosion, Coulomb-Explosion", "Inkubation", "Burst-Mode und Wärmeakkumulation"]
+    },
+    {
+      "id": "k08",
+      "stufe": "C",
+      "titel": "Werkstoffe: Quarzglas, Keramik, Halbleiter",
+      "kurz": "Werkstoffverhalten, Rissbildung, Eigenspannung",
+      "voraussetzungen": ["k03", "k07"],
+      "lektionen_geplant": ["Quarzglas", "Oxid- und Nichtoxidkeramik", "Silizium und Verbindungshalbleiter", "Rissbildung und Eigenspannung"]
+    },
+    {
+      "id": "k09",
+      "stufe": "D",
+      "titel": "Prozessparameter und Anlagentechnik",
+      "kurz": "Pulsabstand, Hatch, Scanner, Strahlführung, Pulsformung, DoE",
+      "voraussetzungen": ["k04", "k07"],
+      "lektionen_geplant": ["Pulsabstand und Überlapp", "Hatch, Spurabstand, Linienabtrag", "Scanner, f-Theta, Fokuslage", "Strahlführung, Pulsformung, Burst", "DoE für UKP-Prozesse (Brücke zur Masterarbeit)"]
+    },
+    {
+      "id": "k10",
+      "stufe": "D",
+      "titel": "Sonderverfahren",
+      "kurz": "LIPSS, Selective Laser Etching, Bessel-Strahl, Volumenmodifikation",
+      "voraussetzungen": ["k06", "k08"],
+      "lektionen_geplant": ["LIPSS", "Selective Laser Etching", "Bessel-Strahl und Filamentation", "Wellenleiter und Volumenmodifikation"]
+    },
+    {
+      "id": "k11",
+      "stufe": "D",
+      "titel": "Messtechnik und Prozessdiagnostik",
+      "kurz": "Pulsdauer, Strahlprofil, Oberflächencharakterisierung, In-situ-Überwachung",
+      "voraussetzungen": ["k09"],
+      "lektionen_geplant": ["Pulsdauer messen (Autokorrelation)", "Strahlprofil und Leistung", "Oberflächencharakterisierung (ISO 21920)", "In-situ-Überwachung"]
+    },
+    {
+      "id": "k12",
+      "stufe": "D",
+      "titel": "Wissenschaftliche Praxis in der Photonik",
+      "kurz": "Journals, Konferenzen, Paper lesen, Literaturverwaltung",
+      "voraussetzungen": ["k09"],
+      "lektionen_geplant": ["Journals und Konferenzen", "Paper lesen und einordnen", "Literaturverwaltung", "Einordnung der eigenen Arbeit"]
+    }
+  ]
+}

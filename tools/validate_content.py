@@ -1,0 +1,230 @@
+"""Validate content/*.json: structure, references, stable IDs and the 'quantity needs a source' rule.
+
+  python tools/validate_content.py            # check (exit 1 on errors)
+  python tools/validate_content.py --update   # also append new quiz/karte IDs to content/id-registry.json
+
+Question/card IDs are stable and never reassigned (CLAUDE.md): every ID that was ever registered must still exist.
+"""
+import json
+import re
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+CONTENT = ROOT / "content"
+BLOCKS = ROOT / "src" / "blocks"
+
+QUIZ_ARTEN = {"multiple-choice", "zuordnung", "luecke", "sortieren", "zahl"}
+# Unit-bearing numbers that must carry a source or verifiziert flag (heuristic).
+QUANTITY_RE = re.compile(r"\d[\d.,]*\s*(?:fs|ps|ns|µs|ms|µm|nm|mm|eV|J/cm|W/cm|MW|GW|kW|TW|GHz|MHz|kHz|%)(?![A-Za-z])")
+TEXT_FIELDS = ("inhalt", "vorne", "hinten", "erklaerung", "aufgabe", "ergebnis", "frage")
+
+errors, warnings = [], []
+
+
+def err(msg):
+    errors.append(msg)
+
+
+def load(path):
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except Exception as e:  # noqa: BLE001
+        err(f"{path.relative_to(ROOT)}: invalid JSON ({e})")
+        return None
+
+
+def strings(obj):
+    if isinstance(obj, str):
+        yield obj
+    elif isinstance(obj, dict):
+        for v in obj.values():
+            yield from strings(v)
+    elif isinstance(obj, list):
+        for v in obj:
+            yield from strings(v)
+
+
+def check_quiz(b, where):
+    art = b.get("art")
+    if art not in QUIZ_ARTEN:
+        return err(f"{where}: unknown quiz art {art!r}")
+    if "frage" not in b:
+        err(f"{where}: missing 'frage'")
+    if art == "multiple-choice":
+        opts, ok = b.get("optionen", []), b.get("richtig")
+        if len(opts) < 2:
+            err(f"{where}: needs >= 2 options")
+        idx = ok if isinstance(ok, list) else [ok]
+        if not idx or not all(isinstance(i, int) and 0 <= i < len(opts) for i in idx):
+            err(f"{where}: 'richtig' out of range")
+    elif art == "zuordnung":
+        paare = b.get("paare", [])
+        if len(paare) < 2 or not all(isinstance(p, list) and len(p) == 2 for p in paare):
+            err(f"{where}: 'paare' must be a list of >= 2 [left, right] pairs")
+        elif len({p[1] for p in paare}) != len(paare):
+            err(f"{where}: right-hand values must be unique")
+    elif art == "luecke":
+        gaps = b.get("luecken", [])
+        if b.get("text", "").count("___") != len(gaps):
+            err(f"{where}: number of '___' does not match 'luecken'")
+        for g in gaps:
+            if not (0 <= g.get("richtig", -1) < len(g.get("optionen", []))):
+                err(f"{where}: gap 'richtig' out of range")
+    elif art == "sortieren":
+        if len(b.get("items", [])) < 2:
+            err(f"{where}: needs >= 2 items")
+    elif art == "zahl":
+        if not isinstance(b.get("antwort"), (int, float)):
+            err(f"{where}: 'antwort' must be a number")
+
+
+def main():
+    update = "--update" in sys.argv
+    index = load(CONTENT / "index.json")
+    glossar = load(CONTENT / "glossar.json")
+    quellen = load(CONTENT / "quellen.json")
+    if not (index and glossar and quellen):
+        return finish()
+
+    block_modules = {p.stem for p in BLOCKS.glob("*.js")} - {"registry", "scoring"}
+    rechner_src = (BLOCKS / "rechner.js").read_text(encoding="utf-8")
+    rechner_models = set(re.findall(r"^  (\w+): \{\n    titel:", rechner_src, re.M))
+
+    stufen = {s["id"] for s in index["stufen"]}
+    ids = [k["id"] for k in index["kapitel"]]
+    if len(ids) != len(set(ids)):
+        err("index.json: duplicate chapter ids")
+    graph = {}
+    for k in index["kapitel"]:
+        graph[k["id"]] = k.get("voraussetzungen", [])
+        if k["stufe"] not in stufen:
+            err(f"{k['id']}: unknown stufe {k['stufe']}")
+        for p in graph[k["id"]]:
+            if p not in ids:
+                err(f"{k['id']}: unknown prerequisite {p}")
+        if "datei" in k:
+            if not (CONTENT / k["datei"]).exists():
+                err(f"{k['id']}: file {k['datei']} missing")
+        elif not k.get("lektionen_geplant"):
+            err(f"{k['id']}: planned chapter needs 'lektionen_geplant'")
+
+    # prerequisite graph must be acyclic
+    state = {}
+
+    def visit(n, path):
+        if state.get(n) == 1:
+            err("prerequisite cycle: " + " -> ".join(path + [n]))
+            return
+        if state.get(n) == 2:
+            return
+        state[n] = 1
+        for m in graph.get(n, []):
+            visit(m, path + [n])
+        state[n] = 2
+
+    for n in graph:
+        visit(n, [])
+
+    term_ids = [t["id"] for t in glossar["begriffe"]]
+    if len(term_ids) != len(set(term_ids)):
+        err("glossar.json: duplicate term ids")
+    source_ids = {q["id"] for q in quellen["quellen"]}
+    for t in glossar["begriffe"]:
+        for s in t.get("siehe", []):
+            if s not in term_ids:
+                err(f"glossar {t['id']}: unknown 'siehe' {s}")
+        if t.get("verifiziert") is not True and t.get("verifiziert") is not False:
+            err(f"glossar {t['id']}: needs 'verifiziert' true/false")
+
+    seen_blocks, item_ids, texts = set(), [], list(strings(glossar))
+    for k in index["kapitel"]:
+        if "datei" not in k:
+            continue
+        ch = load(CONTENT / k["datei"])
+        if not ch:
+            continue
+        if ch.get("id") != k["id"]:
+            err(f"{k['datei']}: id {ch.get('id')} != index id {k['id']}")
+        for ref in ch.get("weiterlesen", []):
+            if ref not in source_ids:
+                err(f"{k['id']}: unknown source in weiterlesen: {ref}")
+        lesson_ids = set()
+        for lesson in ch["lektionen"]:
+            if lesson["id"] in lesson_ids:
+                err(f"{k['id']}: duplicate lesson id {lesson['id']}")
+            lesson_ids.add(lesson["id"])
+            for b in lesson["blocks"]:
+                where = f"{lesson['id']}/{b.get('id')}"
+                bid = b.get("id")
+                if not bid:
+                    err(f"{where}: block without id")
+                elif bid in seen_blocks:
+                    err(f"{where}: duplicate block id")
+                seen_blocks.add(bid)
+                typ = b.get("typ")
+                if typ not in block_modules:
+                    err(f"{where}: unknown block type {typ!r}")
+                    continue
+                if typ == "quiz":
+                    check_quiz(b, where)
+                    item_ids.append(bid)
+                elif typ == "karte":
+                    item_ids.append(bid)
+                    if "vorne" not in b or "hinten" not in b:
+                        err(f"{where}: karte needs 'vorne' and 'hinten'")
+                elif typ == "bild":
+                    if not (ROOT / b.get("src", "")).exists():
+                        err(f"{where}: image {b.get('src')} missing")
+                    if not b.get("alt"):
+                        err(f"{where}: image needs 'alt'")
+                elif typ == "rechner" and b.get("modell") not in rechner_models:
+                    err(f"{where}: unknown calculator model {b.get('modell')!r}")
+                elif typ == "quelle":
+                    for ref in b.get("refs", []):
+                        if ref not in source_ids:
+                            err(f"{where}: unknown source {ref}")
+                if "verifiziert" in b and not isinstance(b["verifiziert"], bool):
+                    err(f"{where}: 'verifiziert' must be true/false")
+                if b.get("quelle") in source_ids:
+                    pass
+                # Rule: quantities need a source or an explicit verifiziert flag.
+                if typ in {"text", "merke", "karte"} and "verifiziert" not in b and "quelle" not in b:
+                    if any(QUANTITY_RE.search(b.get(f, "") if isinstance(b.get(f, ""), str) else " ".join(b.get(f, []))) for f in TEXT_FIELDS):
+                        err(f"{where}: quantity without 'quelle' or 'verifiziert'")
+        texts.extend(strings(ch))
+
+    # glossary references
+    for t in texts:
+        for ref in re.findall(r"\[\[([a-z0-9-]+)", t):
+            if ref not in term_ids:
+                err(f"unknown glossary reference [[{ref}]]")
+
+    # stable IDs
+    reg_path = CONTENT / "id-registry.json"
+    registry = json.loads(reg_path.read_text(encoding="utf-8"))["ids"] if reg_path.exists() else []
+    for rid in registry:
+        if rid not in item_ids:
+            err(f"registered ID {rid} no longer exists (IDs are stable and must never be removed or renamed)")
+    new = [i for i in item_ids if i not in registry]
+    if new and update:
+        reg_path.write_text(json.dumps({"ids": registry + new}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8", newline="\n")
+        print(f"registered {len(new)} new IDs")
+    elif new:
+        warnings.append(f"{len(new)} IDs not yet in id-registry.json (run with --update): {', '.join(new[:5])}{' ...' if len(new) > 5 else ''}")
+
+    print(f"{len(seen_blocks)} blocks, {len(item_ids)} quiz/card items, {len(term_ids)} glossary terms")
+    finish()
+
+
+def finish():
+    for w in warnings:
+        print("warning:", w)
+    for e in errors:
+        print("ERROR:", e)
+    print("content OK" if not errors else f"{len(errors)} error(s)")
+    sys.exit(1 if errors else 0)
+
+
+if __name__ == "__main__":
+    main()

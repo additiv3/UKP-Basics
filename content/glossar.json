@@ -1,0 +1,224 @@
+{
+  "begriffe": [
+    {
+      "id": "ukp",
+      "begriff": "Ultrakurzpuls (UKP)",
+      "englisch": "ultra-short pulse, USP",
+      "kurz": "Laserpuls im Bereich von Pikosekunden bis Femtosekunden.",
+      "definition": "Ein Ultrakurzpuls (UKP, engl. USP) hat eine Dauer im Pikosekunden- bis Femtosekundenbereich. Die Energie kommt schneller ins Material, als Wärme abfließen kann (siehe [[ttm]]).",
+      "siehe": ["pulsdauer", "ttm", "cpa"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "pulsenergie",
+      "begriff": "Pulsenergie",
+      "englisch": "pulse energy",
+      "kurz": "Energie eines einzelnen Laserpulses, Formelzeichen $E_\\mathrm{p}$, in Joule.",
+      "definition": "Die Pulsenergie $E_\\mathrm{p}$ ist die Energie eines einzelnen Pulses, gemessen in Joule (bei UKP-Systemen meist Mikrojoule). Zusammen mit [[pulsdauer]] und [[repetitionsrate]] legt sie [[spitzenleistung]] und [[mittlere-leistung]] fest.",
+      "siehe": ["fluenz", "spitzenleistung"],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "pulsdauer",
+      "begriff": "Pulsdauer",
+      "englisch": "pulse duration",
+      "kurz": "Zeitliche Breite des Pulses (üblicherweise Halbwertsbreite), Formelzeichen $\\tau$.",
+      "definition": "Die Pulsdauer $\\tau$ ist die zeitliche Breite eines Pulses, üblicherweise als volle Breite bei halber Höhe (FWHM) angegeben.",
+      "siehe": ["spitzenleistung", "ukp"],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "repetitionsrate",
+      "begriff": "Repetitionsrate",
+      "englisch": "repetition rate",
+      "kurz": "Pulse pro Sekunde in Hertz, Formelzeichen $f$.",
+      "definition": "Die Repetitionsrate $f$ gibt an, wie viele Pulse pro Sekunde emittiert werden. Der Pulsabstand ist $1/f$; die [[mittlere-leistung]] ist $E_\\mathrm{p}\\cdot f$.",
+      "siehe": ["mittlere-leistung", "burst-mode"],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "spitzenleistung",
+      "begriff": "Spitzenleistung",
+      "englisch": "peak power",
+      "kurz": "Maximale optische Leistung während des Pulses, näherungsweise $E_\\mathrm{p}/\\tau$.",
+      "definition": "Die Spitzenleistung $P_\\mathrm{peak}$ ist die Leistung am Maximum des Pulses. Näherungsweise gilt $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$; ein pulsformabhängiger Faktor in der Größenordnung von 1 ist dabei vernachlässigt.",
+      "siehe": ["pulsenergie", "pulsdauer", "intensitaet"],
+      "verifiziert": true,
+      "quelle": "Definition, Näherung"
+    },
+    {
+      "id": "mittlere-leistung",
+      "begriff": "Mittlere Leistung",
+      "englisch": "average power",
+      "kurz": "Zeitlich gemittelte Leistung, $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$.",
+      "definition": "Die mittlere Leistung $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ ist die Pulsenergie mal Repetitionsrate. Sie bestimmt die Wärmelast und den Durchsatz, nicht die Spitzenbelastung des Materials.",
+      "siehe": ["pulsenergie", "repetitionsrate"],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "fluenz",
+      "begriff": "Fluenz",
+      "englisch": "fluence",
+      "kurz": "Pulsenergie pro Fläche in J/cm², zentrale Prozessgröße.",
+      "definition": "Die Fluenz $F=E_\\mathrm{p}/A$ ist die pro Fläche eingebrachte Pulsenergie, hier in J/cm². Sie ist die zentrale Prozessgröße; ab der [[ablationsschwelle]] setzt Abtrag ein. Beim [[gauss-strahl]] unterscheidet man die Spitzenfluenz $F_0$ von der mittleren Fluenz.",
+      "siehe": ["intensitaet", "ablationsschwelle", "gauss-strahl"],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "intensitaet",
+      "begriff": "Intensität",
+      "englisch": "intensity, irradiance",
+      "kurz": "Leistung pro Fläche in W/cm²; für Pulse näherungsweise $F/\\tau$.",
+      "definition": "Die Intensität $I$ ist die Leistung pro Fläche (hier W/cm²). Für einen Puls gilt näherungsweise $I\\approx F/\\tau$. Nichtlineare Effekte wie [[multiphotonenabsorption]] hängen von der Intensität ab, nicht von der Fluenz.",
+      "siehe": ["fluenz", "spitzenleistung"],
+      "verifiziert": true,
+      "quelle": "Definition, Näherung"
+    },
+    {
+      "id": "gauss-strahl",
+      "begriff": "Gauß-Strahl",
+      "englisch": "Gaussian beam",
+      "kurz": "Strahl mit gaußförmigem Intensitätsprofil, beschrieben durch den Strahlradius $w_0$.",
+      "definition": "Ein Gauß-Strahl hat radial das Intensitätsprofil $I(r)=I_0\\,e^{-2r^2/w_0^2}$. Der [[strahlradius]] $w_0$ ist der Radius, bei dem die Intensität auf $1/e^2$ des Maximums gefallen ist.",
+      "siehe": ["strahlradius", "fluenz"],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "strahlradius",
+      "begriff": "Strahlradius",
+      "englisch": "beam radius",
+      "kurz": "Radius $w_0$, bei dem die Intensität auf $1/e^2$ gefallen ist.",
+      "definition": "Der Strahlradius $w_0$ (auf Basis des $1/e^2$-Kriteriums) ist der Abstand von der Strahlachse, bei dem die Intensität auf $1/e^2\\approx 13{,}5\\,\\%$ des Maximalwerts abgefallen ist. Im Fokus ist er der Fokusradius.",
+      "siehe": ["gauss-strahl"],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "photonenenergie",
+      "begriff": "Photonenenergie",
+      "englisch": "photon energy",
+      "kurz": "Energie eines Lichtquants, $h\\nu=hc/\\lambda$.",
+      "definition": "Ein Photon der Wellenlänge $\\lambda$ trägt die Energie $h\\nu=hc/\\lambda\\approx 1239{,}84\\ \\mathrm{eV\\,nm}/\\lambda$. Ob ein einzelnes Photon die Bandlücke eines Werkstoffs überwinden kann, entscheidet über lineare oder [[multiphotonenabsorption]].",
+      "siehe": ["multiphotonenabsorption"],
+      "verifiziert": true,
+      "quelle": "Definition, Naturkonstanten"
+    },
+    {
+      "id": "ablationsschwelle",
+      "begriff": "Ablationsschwelle",
+      "englisch": "ablation threshold",
+      "kurz": "Fluenz, ab der Materialabtrag einsetzt (materialspezifisch).",
+      "definition": "Die Ablationsschwelle ist die [[fluenz]], ab der Materialabtrag einsetzt. Sie ist materialspezifisch. Herleitung und Bestimmung folgen in Kapitel K07.",
+      "siehe": ["fluenz", "inkubation"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "ttm",
+      "begriff": "Zwei-Temperatur-Modell (TTM)",
+      "englisch": "two-temperature model",
+      "kurz": "Modell mit getrennten Temperaturen für Elektronen- und Gittersystem.",
+      "definition": "Das Zwei-Temperatur-Modell (TTM) beschreibt Elektronen- und Gittersystem mit getrennten Temperaturen, die über eine Kopplung Energie austauschen. Es ist das Standardmodell für die Wechselwirkung von Ultrakurzpulsen mit Metallen.",
+      "siehe": ["ukp"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "multiphotonenabsorption",
+      "begriff": "Multiphotonenabsorption",
+      "englisch": "multiphoton absorption",
+      "kurz": "Gleichzeitige Absorption mehrerer Photonen in transparenten Medien.",
+      "definition": "Bei der Multiphotonenabsorption nehmen mehrere Photonen gleichzeitig Energie auf, obwohl jedes einzelne [[photonenenergie|Photon]] zu wenig Energie für die Bandlücke hat. Sie ist ein nichtlinearer Prozess und erst bei hoher [[intensitaet]] relevant (Keldysh-Theorie).",
+      "siehe": ["avalanche-ionisation", "intensitaet", "photonenenergie"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "avalanche-ionisation",
+      "begriff": "Avalanche-Ionisation",
+      "englisch": "avalanche ionization",
+      "kurz": "Lawinenartige Vervielfachung freier Ladungsträger.",
+      "definition": "Bei der Avalanche-Ionisation (Lawinenionisation) nimmt ein freies Elektron Laserenergie auf und erzeugt per Stoß weitere freie Elektronen, so dass deren Zahl lawinenartig wächst. Als Startelektronen dienen z. B. Elektronen aus der [[multiphotonenabsorption]].",
+      "siehe": ["multiphotonenabsorption"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "inkubation",
+      "begriff": "Inkubationseffekt",
+      "englisch": "incubation",
+      "kurz": "Absenkung der Ablationsschwelle durch vorangegangene Pulse.",
+      "definition": "Beim Inkubationseffekt sinkt die [[ablationsschwelle]], wenn dieselbe Stelle bereits von Vorpulsen getroffen wurde.",
+      "siehe": ["ablationsschwelle", "burst-mode"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "lipss",
+      "begriff": "LIPSS",
+      "englisch": "laser-induced periodic surface structures",
+      "kurz": "Selbstorganisierte periodische Nanostrukturen auf der Oberfläche.",
+      "definition": "LIPSS (Laser-Induced Periodic Surface Structures) sind selbstorganisierte, periodische Nanostrukturen, die bei Laserbestrahlung auf der Oberfläche entstehen.",
+      "siehe": [],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "burst-mode",
+      "begriff": "Burst-Mode / GHz-Burst",
+      "englisch": "burst mode",
+      "kurz": "Pulspakete statt Einzelpulse.",
+      "definition": "Im Burst-Mode werden statt einzelner Pulse Pulspakete ausgesendet; bis in den GHz-Bereich der Pulsabstände. Laut Projektnotizen erhöht das Abtragrate und Effizienz.",
+      "siehe": ["repetitionsrate", "inkubation"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "haz",
+      "begriff": "Wärmeeinflusszone (WEZ / HAZ)",
+      "englisch": "heat affected zone",
+      "kurz": "Durch Wärme veränderter Randbereich; bei UKP minimal.",
+      "definition": "Die Wärmeeinflusszone (WEZ, engl. HAZ) ist der Bereich neben der bearbeiteten Stelle, dessen Gefüge oder Eigenschaften durch Wärme verändert wurden. Bei UKP gilt sie als minimal.",
+      "siehe": ["ukp", "ttm"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "cpa",
+      "begriff": "CPA",
+      "englisch": "chirped pulse amplification",
+      "kurz": "Verstärkung gestreckter Pulse, Grundlage aller Hochleistungs-UKP-Systeme.",
+      "definition": "Bei der Chirped Pulse Amplification (CPA) wird der Puls zeitlich gestreckt, verstärkt und wieder komprimiert. Sie ist laut Projektnotizen die Grundlage aller Hochleistungs-UKP-Systeme. Details folgen in Kapitel K04.",
+      "siehe": ["ukp"],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "sle",
+      "begriff": "SLE",
+      "englisch": "selective laser etching",
+      "kurz": "fs-Modifikation im Volumen plus nasschemisches Ätzen.",
+      "definition": "Beim Selective Laser Etching (SLE) wird das Material zuerst mit Femtosekundenpulsen modifiziert und anschließend nasschemisch geätzt; vor allem in Quarzglas.",
+      "siehe": [],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "bessel-strahl",
+      "begriff": "Bessel-Strahl / Filamentation",
+      "englisch": "Bessel beam, filamentation",
+      "kurz": "Strahlformung für Glasschneiden über die gesamte Dicke.",
+      "definition": "Bessel-Strahl und Filamentation sind Strahlformungskonzepte, mit denen Glas über die gesamte Dicke geschnitten werden kann.",
+      "siehe": [],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    }
+  ]
+}

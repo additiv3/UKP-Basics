@@ -1,0 +1,45 @@
+{
+  "quellen": [
+    {
+      "id": "chichkov1996",
+      "kurz": "Chichkov et al. 1996",
+      "autoren": "B. N. Chichkov, C. Momma, S. Nolte et al.",
+      "jahr": "1996",
+      "titel": "Femtosecond, picosecond and nanosecond laser ablation of solids",
+      "ort": "Applied Physics A 63, 109–115",
+      "doi": "10.1007/BF01567637"
+    },
+    {
+      "id": "stuart1996",
+      "kurz": "Stuart et al. 1996",
+      "autoren": "B. C. Stuart, M. D. Feit, S. Herman, A. M. Rubenchik, B. W. Shore, M. D. Perry",
+      "jahr": "1996",
+      "titel": "Nanosecond-to-femtosecond laser-induced breakdown in dielectrics",
+      "ort": "Physical Review B 53, 1749"
+    },
+    {
+      "id": "schaffer2001",
+      "kurz": "Schaffer et al. 2001",
+      "autoren": "C. B. Schaffer, A. Brodeur, E. Mazur",
+      "jahr": "2001",
+      "titel": "Laser-induced breakdown and damage in bulk transparent materials induced by tightly focused femtosecond laser pulses",
+      "ort": "Measurement Science and Technology 12, 1784–1794"
+    },
+    {
+      "id": "sugioka2014",
+      "kurz": "Sugioka & Cheng 2014",
+      "autoren": "K. Sugioka, Y. Cheng",
+      "jahr": "2014",
+      "titel": "Ultrafast lasers – reliable tools for advanced materials processing",
+      "ort": "Light: Science & Applications 3, e149"
+    },
+    {
+      "id": "diels",
+      "kurz": "Diels & Rudolph",
+      "autoren": "J.-C. Diels, W. Rudolph",
+      "jahr": "Ausgaben ab 1996",
+      "titel": "Ultrashort Laser Pulse Phenomena",
+      "ort": "Academic Press (Lehrbuch zu Erzeugung, Ausbreitung und Messung von Ultrakurzpulsen)"
+    }
+  ]
+}

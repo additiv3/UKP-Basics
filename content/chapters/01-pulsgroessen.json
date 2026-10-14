@@ -1,0 +1,513 @@
+{
+  "id": "k01",
+  "titel": "Pulsgrößen und Zahlengefühl",
+  "einleitung": "Bevor es um Mechanismen geht, brauchst du ein sicheres Gefühl für die Größen, mit denen jeder UKP-Prozess beschrieben wird: Zeit, Energie, Leistung, Fluenz und Intensität.",
+  "ziele": [
+    "Pulsdauern von ns bis fs einordnen und in Längen umrechnen",
+    "Pulsenergie, mittlere Leistung und Spitzenleistung sicher berechnen",
+    "Fluenz und Intensität eines Gauß-Strahls bestimmen ($F_0=2E_\\mathrm{p}/\\pi w_0^2$)",
+    "Photonenenergie aus der Wellenlänge bestimmen und verstehen, warum sie später wichtig wird"
+  ],
+  "weiterlesen": [
+    "sugioka2014",
+    "chichkov1996"
+  ],
+  "lektionen": [
+    {
+      "id": "k01.l01",
+      "titel": "Zeitskalen: von Nanosekunden zu Femtosekunden",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k01.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Ultrakurzpuls ([[ukp]]) dauert Pikosekunden bis Femtosekunden. Das ist nicht nur „kürzer“: Es ist so kurz, dass sich Material und Licht in völlig anderen Zeitfenstern begegnen als im PBF-LB/M, wo das Schmelzbad Zeit hat zu entstehen, zu fließen und zu erstarren.",
+            "Zuerst brauchst du ein Gefühl für die Zahlen:",
+            "- 1 ns $=10^{-9}$ s\n- 1 ps $=10^{-12}$ s\n- 1 fs $=10^{-15}$ s",
+            "Zwischen den Stufen liegt jeweils der Faktor $10^3$."
+          ],
+          "verifiziert": true,
+          "quelle": "Definition (SI-Vorsätze)"
+        },
+        {
+          "id": "k01.l01.b02",
+          "typ": "bild",
+          "src": "assets/figures/zeitleiter.svg",
+          "alt": "Zeitleiter von Femtosekunden bis Millisekunden mit der Strecke, die Licht in dieser Zeit zurücklegt",
+          "unterschrift": "Zeitleiter: Jede Stufe ist ein Faktor $10^3$. Rechts steht jeweils der Lichtweg im Vakuum.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
+          "id": "k01.l01.b03",
+          "typ": "formel",
+          "latex": "\\Delta s = c \\cdot \\tau",
+          "erklaerung": "Strecke $\\Delta s$, die Licht (Vakuumlichtgeschwindigkeit $c\\approx 3\\cdot 10^{8}$ m/s) in der Zeit $\\tau$ zurücklegt. Damit entspricht 1 fs etwa 0,3 µm, 1 ps etwa 0,3 mm und 1 ns etwa 30 cm.",
+          "verifiziert": true,
+          "quelle": "Herleitung (c = 299 792 458 m/s)"
+        },
+        {
+          "id": "k01.l01.b04",
+          "typ": "merke",
+          "inhalt": "Ein Puls von 300 fs ist im Vakuum nur etwa $90\\,\\mu\\mathrm{m}$ lang. Ein Puls von 5 ns ist dagegen etwa 1,5 m lang.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Δs = c·τ)"
+        },
+        {
+          "id": "k01.q01",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Ordne die Zeitspannen von kurz nach lang.",
+          "items": [
+            "300 fs",
+            "10 ps",
+            "5 ns",
+            "100 µs"
+          ],
+          "oben": "kürzeste",
+          "unten": "längste",
+          "erklaerung": "Jede Stufe fs → ps → ns → µs ist ein Faktor $10^3$; 300 fs $=0{,}3$ ps, also deutlich kürzer als 10 ps."
+        },
+        {
+          "id": "k01.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie viele Femtosekunden hat eine Nanosekunde?",
+          "optionen": [
+            "$10^{3}$",
+            "$10^{6}$",
+            "$10^{9}$",
+            "$10^{12}$"
+          ],
+          "richtig": 1,
+          "fest": true,
+          "erklaerung": "1 ns $=10^{-9}$ s und 1 fs $=10^{-15}$ s, also $10^{-9}/10^{-15}=10^{6}$."
+        },
+        {
+          "id": "k01.q03",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie lang ist ein Puls von 100 fs im Vakuum? Gib die Länge in Mikrometern an.",
+          "antwort": 30,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$\\Delta s = c\\,\\tau = 3\\cdot10^{8}\\,\\mathrm{m/s}\\cdot 100\\cdot10^{-15}\\,\\mathrm{s}=3\\cdot10^{-5}\\,\\mathrm{m}=30\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k01.c01",
+          "typ": "karte",
+          "vorne": "Welche Strecke legt Licht im Vakuum in 1 fs zurück?",
+          "hinten": "$c\\cdot 1\\,\\mathrm{fs}\\approx 0{,}3\\,\\mu\\mathrm{m}$ (300 nm).",
+          "verifiziert": true,
+          "quelle": "Herleitung (Δs = c·τ)"
+        },
+        {
+          "id": "k01.c02",
+          "typ": "karte",
+          "vorne": "Welche Pulsdauern nennt man ultrakurz?",
+          "hinten": "Pikosekunden bis Femtosekunden (ps, fs).",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    },
+    {
+      "id": "k01.l02",
+      "titel": "Pulsenergie, mittlere Leistung und Spitzenleistung",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k01.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein gepulster Laser wird durch drei Größen beschrieben: die [[pulsenergie]] $E_\\mathrm{p}$ (Joule), die [[pulsdauer]] $\\tau$ (Sekunden) und die [[repetitionsrate]] $f$ (Hertz, Pulse pro Sekunde).",
+            "Daraus folgen zwei sehr verschiedene Leistungen. Die **mittlere Leistung** sagt dir, wie viel Energie pro Sekunde ankommt (Wärmelast, Durchsatz). Die **Spitzenleistung** sagt dir, wie stark es während des Pulses wirklich wird. Beim PBF-LB/M zählt praktisch nur die mittlere Leistung; bei UKP entscheidet die Spitzenleistung."
+          ]
+        },
+        {
+          "id": "k01.l02.b02",
+          "typ": "formel",
+          "latex": "P_\\mathrm{avg} = E_\\mathrm{p}\\cdot f",
+          "einheit": "W",
+          "erklaerung": "Mittlere Leistung: Energie pro Puls mal Pulse pro Sekunde.",
+          "verifiziert": true,
+          "quelle": "Definition"
+        },
+        {
+          "id": "k01.l02.b03",
+          "typ": "formel",
+          "latex": "P_\\mathrm{peak} \\approx \\frac{E_\\mathrm{p}}{\\tau}",
+          "einheit": "W",
+          "erklaerung": "Spitzenleistung als Näherung. Ein von der Pulsform abhängiger Faktor in der Größenordnung von 1 (z. B. ≈ 0,94 für einen sech²-Puls) ist hier vernachlässigt.",
+          "verifiziert": true,
+          "quelle": "Definition, Näherung"
+        },
+        {
+          "id": "k01.l02.b04",
+          "typ": "bild",
+          "src": "assets/figures/pulszug.svg",
+          "alt": "Pulszug: schmale hohe Pulse im Abstand 1/f, darunter die niedrige mittlere Leistung als gestrichelte Linie",
+          "unterschrift": "Pulszug (nicht maßstäblich). Die gleiche Energie pro Sekunde ist in schmale, sehr hohe Spitzen gepackt.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
+          "id": "k01.l02.b05",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Laser liefert $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ bei $\\tau=300\\,\\mathrm{fs}$ und $f=100\\,\\mathrm{kHz}$. Bestimme mittlere Leistung, Spitzenleistung und den Anteil der Zeit, in dem tatsächlich Leistung fließt.",
+          "schritte": [
+            "Mittlere Leistung: $P_\\mathrm{avg}=10\\,\\mu\\mathrm{J}\\cdot 100\\,\\mathrm{kHz}=10\\cdot10^{-6}\\,\\mathrm{J}\\cdot10^{5}\\,\\mathrm{s^{-1}}=1\\,\\mathrm{W}$",
+            "Spitzenleistung: $P_\\mathrm{peak}\\approx 10\\cdot10^{-6}\\,\\mathrm{J}/(300\\cdot10^{-15}\\,\\mathrm{s})\\approx 3{,}3\\cdot10^{7}\\,\\mathrm{W}$",
+            "Tastverhältnis: $\\tau\\cdot f=300\\cdot10^{-15}\\,\\mathrm{s}\\cdot10^{5}\\,\\mathrm{s^{-1}}=3\\cdot10^{-8}$"
+          ],
+          "ergebnis": "1 W mittlere Leistung, aber etwa 33 MW Spitzenleistung, weil die Energie nur in $3\\cdot10^{-8}$ der Zeit fließt.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k01.l02.b06",
+          "typ": "merke",
+          "inhalt": "Bei gleicher Pulsenergie steigt die Spitzenleistung umgekehrt proportional zur Pulsdauer. Halbe Pulsdauer bedeutet doppelte Spitzenleistung, bei unveränderter mittlerer Leistung."
+        },
+        {
+          "id": "k01.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Laser liefert 20 µJ Pulsenergie bei 400 fs. Wie hoch ist die Spitzenleistung (Näherung $E_\\mathrm{p}/\\tau$) in Megawatt?",
+          "antwort": 50,
+          "einheit": "MW",
+          "toleranz": 0.05,
+          "erklaerung": "$P_\\mathrm{peak}\\approx 20\\cdot10^{-6}\\,\\mathrm{J}/(400\\cdot10^{-15}\\,\\mathrm{s})=5\\cdot10^{7}\\,\\mathrm{W}=50\\,\\mathrm{MW}$."
+        },
+        {
+          "id": "k01.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Derselbe Laser (20 µJ) läuft mit 250 kHz. Wie hoch ist die mittlere Leistung in Watt?",
+          "antwort": 5,
+          "einheit": "W",
+          "toleranz": 0.05,
+          "erklaerung": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f=20\\cdot10^{-6}\\,\\mathrm{J}\\cdot 2{,}5\\cdot10^{5}\\,\\mathrm{s^{-1}}=5\\,\\mathrm{W}$."
+        },
+        {
+          "id": "k01.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du halbierst bei gleicher Pulsenergie die Pulsdauer. Was passiert mit der Spitzenleistung?",
+          "optionen": [
+            "Sie verdoppelt sich.",
+            "Sie halbiert sich.",
+            "Sie bleibt gleich.",
+            "Sie vervierfacht sich."
+          ],
+          "richtig": 0,
+          "erklaerung": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$: Halbes $\\tau$ gibt doppeltes $P_\\mathrm{peak}$."
+        },
+        {
+          "id": "k01.q07",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die beiden Leistungsformeln.",
+          "text": "Die mittlere Leistung ist das Produkt aus ___ und ___. Die Spitzenleistung ist näherungsweise der Quotient aus ___ und ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "Pulsenergie",
+                "Pulsdauer",
+                "Strahlradius"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Repetitionsrate",
+                "Wellenlänge",
+                "Fluenz"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Pulsenergie",
+                "Repetitionsrate",
+                "Fluenz"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Pulsdauer",
+                "Repetitionsrate",
+                "Strahlradius"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ und $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$."
+        },
+        {
+          "id": "k01.c03",
+          "typ": "karte",
+          "vorne": "Wie berechnest du die mittlere Leistung eines gepulsten Lasers?",
+          "hinten": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ (Pulsenergie mal Repetitionsrate)."
+        },
+        {
+          "id": "k01.c04",
+          "typ": "karte",
+          "vorne": "Wie berechnest du näherungsweise die Spitzenleistung?",
+          "hinten": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$ (Pulsenergie durch Pulsdauer)."
+        }
+      ]
+    },
+    {
+      "id": "k01.l03",
+      "titel": "Fluenz und Intensität",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k01.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Leistung und Energie allein sagen wenig, solange die Fläche fehlt, auf die sie trifft. Zwei Größen beziehen sie auf die Fläche:",
+            "- Die [[fluenz]] $F=E_\\mathrm{p}/A$ in J/cm² ist die pro Fläche eingebrachte Energie. Sie entscheidet, ob [[ablationsschwelle|Abtrag]] einsetzt.\n- Die [[intensitaet]] $I$ in W/cm² ist die Leistung pro Fläche; für einen Puls gilt $I\\approx F/\\tau$. Sie entscheidet, ob nichtlineare Absorption möglich wird (Kapitel K06)."
+          ]
+        },
+        {
+          "id": "k01.l03.b02",
+          "typ": "text",
+          "titel": "Der Gauß-Strahl",
+          "inhalt": [
+            "Reale Laserstrahlen sind keine Zylinder mit konstantem Profil. Im Idealfall hat der Strahl ein gaußförmiges Profil ([[gauss-strahl]]): in der Mitte am stärksten, nach außen exponentiell abfallend. Als Strahlradius $w_0$ gilt der Abstand von der Achse, bei dem die Intensität auf $1/e^2\\approx 13{,}5\\,\\%$ gefallen ist ([[strahlradius]])."
+          ]
+        },
+        {
+          "id": "k01.l03.b03",
+          "typ": "bild",
+          "src": "assets/figures/gauss-profil.svg",
+          "alt": "Gaußsches Fluenzprofil über dem Radius mit Spitzenfluenz F0, Strahlradius w0 beim Wert 1/e² und einer eingezeichneten Beispielschwelle",
+          "unterschrift": "Fluenzprofil eines Gauß-Strahls. Wo das Profil über einer (hier beispielhaft gewählten) Schwelle liegt, würde abgetragen.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
+          "id": "k01.l03.b04",
+          "typ": "formel",
+          "latex": "F_0 = \\frac{2E_\\mathrm{p}}{\\pi w_0^{2}}",
+          "einheit": "J/cm^2",
+          "erklaerung": "Spitzenfluenz in der Strahlmitte. Herleitung: Integriert man das Profil $F(r)=F_0\\,e^{-2r^2/w_0^2}$ über die Fläche, ergibt sich $E_\\mathrm{p}=F_0\\,\\pi w_0^2/2$.",
+          "verifiziert": true,
+          "quelle": "Herleitung durch Integration des Gauß-Profils"
+        },
+        {
+          "id": "k01.l03.b05",
+          "typ": "merke",
+          "inhalt": "Die Spitzenfluenz ist doppelt so hoch wie die mittlere Fluenz $E_\\mathrm{p}/(\\pi w_0^2)$ über die Kreisfläche mit Radius $w_0$. Wer mit der mittleren Fluenz rechnet, unterschätzt den Spitzenwert um den Faktor 2."
+        },
+        {
+          "id": "k01.l03.b06",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Ein Puls mit $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ und $\\tau=300\\,\\mathrm{fs}$ wird auf einen Fleck mit $w_0=15\\,\\mu\\mathrm{m}$ fokussiert. Bestimme Spitzenfluenz und Spitzenintensität.",
+          "schritte": [
+            "Fläche: $\\pi w_0^2=\\pi\\,(15\\cdot10^{-4}\\,\\mathrm{cm})^2\\approx 7{,}07\\cdot10^{-6}\\,\\mathrm{cm^2}$",
+            "Spitzenfluenz: $F_0=2\\cdot 10\\cdot10^{-6}\\,\\mathrm{J}/7{,}07\\cdot10^{-6}\\,\\mathrm{cm^2}\\approx 2{,}83\\,\\mathrm{J/cm^2}$",
+            "Spitzenintensität: $I_0\\approx F_0/\\tau=2{,}83\\,\\mathrm{J/cm^2}/(3\\cdot10^{-13}\\,\\mathrm{s})\\approx 9{,}4\\cdot10^{12}\\,\\mathrm{W/cm^2}$"
+          ],
+          "ergebnis": "$F_0\\approx 2{,}8\\,\\mathrm{J/cm^2}$ und $I_0\\approx 9\\cdot10^{12}\\,\\mathrm{W/cm^2}$.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus den Definitionen"
+        },
+        {
+          "id": "k01.l03.b07",
+          "typ": "rechner",
+          "modell": "fluenz",
+          "titel": "Probiere es selbst: Fluenz und Intensität"
+        },
+        {
+          "id": "k01.l03.b08",
+          "typ": "text",
+          "inhalt": "Orientierung zur Größenordnung: In der Literatur werden für die Ablation transparenter Werkstoffe Intensitäten im Bereich von etwa $10^{13}$ bis $10^{14}\\,\\mathrm{W/cm^2}$ genannt. Die Projektnotizen sprechen von mehr als $10^{15}\\,\\mathrm{W/cm^2}$; das passt nicht zu dieser Größenordnung und ist zu verifizieren. Wie weit die Rechnung oben davon entfernt ist, zeigt dir der Rechner.",
+          "verifiziert": false,
+          "quelle": "Websuche-Treffer zu Rate-Equation-Modellen, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k01.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Puls mit $E_\\mathrm{p}=5\\,\\mu\\mathrm{J}$ trifft einen Gauß-Fleck mit $w_0=10\\,\\mu\\mathrm{m}$. Wie hoch ist die Spitzenfluenz in J/cm²?",
+          "antwort": 3.18,
+          "einheit": "J/cm²",
+          "toleranz": 0.03,
+          "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)=2\\cdot5\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot(10^{-3}\\,\\mathrm{cm})^2)\\approx 3{,}18\\,\\mathrm{J/cm^2}$."
+        },
+        {
+          "id": "k01.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du verdoppelst bei gleicher Pulsenergie den Strahlradius. Wie ändert sich die Spitzenfluenz?",
+          "optionen": [
+            "Sie sinkt auf ein Viertel.",
+            "Sie sinkt auf die Hälfte.",
+            "Sie bleibt gleich.",
+            "Sie verdoppelt sich."
+          ],
+          "richtig": 0,
+          "erklaerung": "$F_0\\propto 1/w_0^2$. Doppelter Radius heißt vierfache Fläche, also ein Viertel der Fluenz."
+        },
+        {
+          "id": "k01.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Aussagen zum Gauß-Strahl stimmen?",
+          "optionen": [
+            "$w_0$ ist der Radius, bei dem die Intensität auf $1/e^2$ des Maximums gefallen ist.",
+            "Die Spitzenfluenz ist doppelt so groß wie $E_\\mathrm{p}/(\\pi w_0^2)$.",
+            "Die Fluenz ist über den gesamten Fleck konstant.",
+            "Am Radius $w_0$ beträgt die Intensität noch 50 % des Maximums."
+          ],
+          "richtig": [
+            0,
+            1
+          ],
+          "erklaerung": "Der Gauß-Strahl hat kein konstantes Profil. Bei $r=w_0$ ist die Intensität auf $1/e^2\\approx 13{,}5\\,\\%$ gefallen, nicht auf 50 %."
+        },
+        {
+          "id": "k01.q11",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jeder Größe ihre Einheit zu.",
+          "paare": [
+            [
+              "Fluenz",
+              "J/cm²"
+            ],
+            [
+              "Intensität",
+              "W/cm²"
+            ],
+            [
+              "Pulsenergie",
+              "J"
+            ],
+            [
+              "Spitzenleistung",
+              "W"
+            ],
+            [
+              "Repetitionsrate",
+              "Hz (1/s)"
+            ]
+          ],
+          "erklaerung": "Energie pro Fläche → J/cm²; Leistung pro Fläche → W/cm²."
+        },
+        {
+          "id": "k01.c05",
+          "typ": "karte",
+          "vorne": "Spitzenfluenz eines Gauß-Strahls aus $E_\\mathrm{p}$ und $w_0$?",
+          "hinten": "$F_0=\\dfrac{2E_\\mathrm{p}}{\\pi w_0^2}$ (doppelt so hoch wie die mittlere Fluenz über $\\pi w_0^2$)."
+        },
+        {
+          "id": "k01.c06",
+          "typ": "karte",
+          "vorne": "Welche Einheiten haben Fluenz und Intensität hier im Projekt?",
+          "hinten": "Fluenz in J/cm², Intensität in W/cm²."
+        },
+        {
+          "id": "k01.c07",
+          "typ": "karte",
+          "vorne": "Wie hängen Intensität und Fluenz bei einem Puls zusammen?",
+          "hinten": "$I\\approx F/\\tau$ (Fluenz durch Pulsdauer)."
+        }
+      ]
+    },
+    {
+      "id": "k01.l04",
+      "titel": "Photonen und Wellenlänge",
+      "minuten": 9,
+      "blocks": [
+        {
+          "id": "k01.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Licht besteht aus Photonen. Jedes trägt die Energie $h\\nu=hc/\\lambda$ ([[photonenenergie]]). Das klingt nach Schulphysik, entscheidet aber später darüber, wie ein Werkstoff Laserlicht aufnimmt: Reicht die Energie eines einzelnen Photons, um ein Elektron über die Bandlücke zu heben, oder müssen mehrere Photonen gleichzeitig mitwirken?"
+          ]
+        },
+        {
+          "id": "k01.l04.b02",
+          "typ": "formel",
+          "latex": "h\\nu=\\frac{hc}{\\lambda}\\approx\\frac{1239{,}84\\ \\mathrm{eV\\,nm}}{\\lambda}",
+          "erklaerung": "Mit der Wellenlänge in Nanometern erhältst du die Photonenenergie direkt in Elektronenvolt.",
+          "verifiziert": true,
+          "quelle": "Naturkonstanten (CODATA), Herleitung"
+        },
+        {
+          "id": "k01.l04.b03",
+          "typ": "beispiel",
+          "titel": "Rechenbeispiel",
+          "aufgabe": "Bestimme die Photonenenergie bei 1030 nm und bei den Wellenlängen, die bei Frequenzverdopplung und -verdreifachung entstehen.",
+          "schritte": [
+            "1030 nm: $1239{,}84/1030\\approx 1{,}20\\,\\mathrm{eV}$",
+            "Verdopplung (halbe Wellenlänge, 515 nm): $1239{,}84/515\\approx 2{,}41\\,\\mathrm{eV}$",
+            "Verdreifachung (ein Drittel, ca. 343 nm): $1239{,}84/343\\approx 3{,}61\\,\\mathrm{eV}$"
+          ],
+          "ergebnis": "Halbe Wellenlänge bedeutet doppelte Photonenenergie.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus der Formel"
+        },
+        {
+          "id": "k01.l04.b04",
+          "typ": "rechner",
+          "modell": "photon",
+          "titel": "Probiere es selbst: Wie viele Photonen braucht es?"
+        },
+        {
+          "id": "k01.l04.b05",
+          "typ": "text",
+          "inhalt": "Ein Ausblick auf Kapitel K06: Für Quarzglas werden in der Literatur Bandlücken um etwa 9 eV genannt. Bei 1030 nm (≈ 1,2 eV je Photon) wären dann mindestens 8 Photonen gleichzeitig nötig. Das ist der Grund, warum UKP-Pulse mit ihrer hohen Intensität transparente Werkstoffe überhaupt bearbeiten können. Beide Zahlen sind noch zu verifizieren.",
+          "verifiziert": false,
+          "quelle": "gängiger Literaturwert, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k01.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Welche Photonenenergie hat Licht der Wellenlänge 515 nm? Angabe in eV.",
+          "antwort": 2.41,
+          "einheit": "eV",
+          "toleranz": 0.02,
+          "erklaerung": "$h\\nu\\approx1239{,}84\\,\\mathrm{eV\\,nm}/515\\,\\mathrm{nm}\\approx 2{,}41\\,\\mathrm{eV}$."
+        },
+        {
+          "id": "k01.q13",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du halbierst die Wellenlänge (Frequenzverdopplung). Wie ändert sich die Photonenenergie?",
+          "optionen": [
+            "Sie verdoppelt sich.",
+            "Sie halbiert sich.",
+            "Sie bleibt gleich.",
+            "Sie vervierfacht sich."
+          ],
+          "richtig": 0,
+          "erklaerung": "$h\\nu\\propto 1/\\lambda$: Halbe Wellenlänge heißt doppelte Photonenenergie."
+        },
+        {
+          "id": "k01.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Werkstoff hat (frei gewählt) eine Bandlücke von 7 eV. Wie viele Photonen der Wellenlänge 1030 nm braucht es mindestens, um sie in einem Schritt zu überwinden?",
+          "antwort": 6,
+          "toleranz": 0,
+          "erklaerung": "Ein Photon trägt $\\approx1{,}20$ eV. Es gilt $7/1{,}20\\approx5{,}8$; aufgerundet sind es mindestens 6 Photonen: $n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$."
+        },
+        {
+          "id": "k01.c08",
+          "typ": "karte",
+          "vorne": "Wie berechnest du die Photonenenergie in eV aus der Wellenlänge in nm?",
+          "hinten": "$h\\nu\\approx 1239{,}84\\ \\mathrm{eV\\,nm}/\\lambda$. Beispiel: 1030 nm entspricht etwa 1,2 eV.",
+          "verifiziert": true,
+          "quelle": "Rechnung aus der Formel"
+        }
+      ]
+    }
+  ]
+}
