@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 268" role="img" aria-label="Zeitleiter von Femtosekunden bis Millisekunden"><title>Zeitleiter von Femtosekunden bis Millisekunden</title><style>
+.fg-line{stroke:var(--fig-line,#3a465f);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fg-soft{stroke:var(--fig-soft,#aab4cb);fill:none;stroke-width:1.5}
+.fg-accent{stroke:var(--fig-accent,#0b7e9b);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-warm{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-dasharray:6 5}
+.fg-fill{fill:var(--fig-fill,#dcf1f7);stroke:none}
+.fg-bar-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-bar-w{fill:var(--fig-warm,#d9822b)}
+.fg-bar-s{fill:var(--fig-soft,#aab4cb)}
+.fg-text{fill:var(--fig-line,#3a465f);font:13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-muted{fill:var(--muted,#566078);font:12px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-bold{font-weight:700}
+.fg-pill{fill:var(--fig-fill,#dcf1f7)}
+.fg-pilltext{fill:var(--fig-accent,#0b7e9b);font:700 11px -apple-system,system-ui,sans-serif}
+</style><text class="fg-muted" x="12" y="20">Zeitspanne</text><text class="fg-muted" x="348" y="20" text-anchor="end">Lichtweg im Vakuum</text><text class="fg-text fg-bold" x="12" y="48">1 fs</text><text class="fg-muted" x="52" y="48">10⁻¹⁵ s</text><text class="fg-text" x="348" y="48" text-anchor="end">≈ 0,3 µm</text><rect class="fg-bar-a" x="12" y="56" width="40" height="10" rx="5"/><rect class="fg-pill" x="60" y="54" width="40" height="14" rx="7"/><text class="fg-pilltext" x="80" y="65" text-anchor="middle">UKP</text><text class="fg-text fg-bold" x="12" y="94">1 ps</text><text class="fg-muted" x="52" y="94">10⁻¹² s</text><text class="fg-text" x="348" y="94" text-anchor="end">≈ 0,3 mm</text><rect class="fg-bar-a" x="12" y="102" width="102" height="10" rx="5"/><rect class="fg-pill" x="122" y="100" width="40" height="14" rx="7"/><text class="fg-pilltext" x="142" y="111" text-anchor="middle">UKP</text><text class="fg-text fg-bold" x="12" y="140">1 ns</text><text class="fg-muted" x="52" y="140">10⁻⁹ s</text><text class="fg-text" x="348" y="140" text-anchor="end">≈ 30 cm</text><rect class="fg-bar-w" x="12" y="148" width="164" height="10" rx="5"/><text class="fg-text fg-bold" x="12" y="186">1 µs</text><text class="fg-muted" x="52" y="186">10⁻⁶ s</text><text class="fg-text" x="348" y="186" text-anchor="end">≈ 300 m</text><rect class="fg-bar-s" x="12" y="194" width="226" height="10" rx="5"/><text class="fg-text fg-bold" x="12" y="232">1 ms</text><text class="fg-muted" x="52" y="232">10⁻³ s</text><text class="fg-text" x="348" y="232" text-anchor="end">≈ 300 km</text><rect class="fg-bar-s" x="12" y="240" width="288" height="10" rx="5"/></svg>
