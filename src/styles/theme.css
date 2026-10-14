@@ -1,0 +1,58 @@
+/* Design tokens. Light by default, dark via prefers-color-scheme. */
+:root {
+  color-scheme: light dark;
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #eceff7;
+  --text: #121826;
+  --muted: #566078;
+  --line: #d9dfec;
+  --accent: #0b7e9b;
+  --accent-ink: #ffffff;
+  --accent-soft: #dcf1f7;
+  --xp: #9a5b00;
+  --xp-soft: #fff0d0;
+  --ok: #17784a;
+  --ok-soft: #e0f4e9;
+  --bad: #b9302a;
+  --bad-soft: #fde6e3;
+  --warn-soft: #fff3d1;
+  --shadow: 0 1px 2px rgb(16 24 40 / 6%), 0 4px 14px rgb(16 24 40 / 6%);
+  --radius: 16px;
+  --tabbar-h: 58px;
+
+  /* figure colors (SVG figures read these) */
+  --fig-line: #3a465f;
+  --fig-soft: #aab4cb;
+  --fig-accent: #0b7e9b;
+  --fig-warm: #d9822b;
+  --fig-fill: #dcf1f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0f1e;
+    --surface: #131a2e;
+    --surface-2: #1b2442;
+    --text: #e9edf8;
+    --muted: #9aa5c0;
+    --line: #28325a;
+    --accent: #43cbe8;
+    --accent-ink: #04212b;
+    --accent-soft: #123644;
+    --xp: #ffc24a;
+    --xp-soft: #3a2c0c;
+    --ok: #62d696;
+    --ok-soft: #10301f;
+    --bad: #ff8e84;
+    --bad-soft: #3b1613;
+    --warn-soft: #3a2f10;
+    --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 6px 18px rgb(0 0 0 / 30%);
+
+    --fig-line: #c3cde6;
+    --fig-soft: #4a5680;
+    --fig-accent: #43cbe8;
+    --fig-warm: #ffb15e;
+    --fig-fill: #123644;
+  }
+}
