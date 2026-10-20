@@ -1,13 +1,14 @@
-// German number formatting for physics values.
+// Number formatting for physics values (separators follow the UI language).
+import { locale } from './i18n.js';
 const SUP = { 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹', '-': '⁻' };
 const sup = (n) => String(n).replace(/[0-9-]/g, (c) => SUP[c]);
 
-/** Plain number with significant digits, de-DE separators. */
+/** Plain number with significant digits, locale separators. */
 export function plainNum(x, sig = 3) {
-  return Number(x).toLocaleString('de-DE', { maximumSignificantDigits: sig });
+  return Number(x).toLocaleString(locale(), { maximumSignificantDigits: sig });
 }
 
-/** Scientific notation: 9,43 · 10¹³ */
+/** Scientific notation: 9,43 · 10¹³ (de) / 9.43 · 10¹³ (en) */
 export function sci(x, sig = 3) {
   if (!Number.isFinite(x) || x === 0) return '0';
   const e = Math.floor(Math.log10(Math.abs(x)));

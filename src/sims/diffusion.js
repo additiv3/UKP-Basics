@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num, si } from '../core/format.js';
 import { canvasView, control, readouts, Plot, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Wärmediffusion vs. Pulsdauer', kurz: 'Wann bleibt die Wärme im Absorptionsvolumen?' };
 export const formel = 'L_\\mathrm{th}\\approx\\sqrt{D\\,\\tau},\\qquad \\tau^\\ast=\\frac{\\delta^2}{D}';
@@ -46,7 +47,7 @@ export function mount(root) {
       p.text('L_th = √(D·τ)', p.X(3e3), p.Y(Lth(3e3)) + 18, { color: pal.laser, bold: true, size: 12 });
     },
   });
-  view.canvas.setAttribute('aria-label', 'Wärmediffusionslänge über der Pulsdauer im Vergleich zur Absorptionstiefe, doppelt logarithmisch');
+  view.canvas.setAttribute('aria-label', t('Wärmediffusionslänge über der Pulsdauer im Vergleich zur Absorptionstiefe, doppelt logarithmisch'));
 
   const verdict = h('p', { class: 'sim-verdict', 'aria-live': 'polite' });
   function update() {
@@ -60,13 +61,13 @@ export function mount(root) {
     ]);
     verdict.textContent =
       L / delta < 0.5
-        ? 'Wärme bleibt im Absorptionsvolumen: Die Energie ist weg, bevor sie abfließen kann (keine nennenswerte Wärmeeinflusszone).'
+        ? t('Wärme bleibt im Absorptionsvolumen: Die Energie ist weg, bevor sie abfließen kann (keine nennenswerte Wärmeeinflusszone).')
         : L / delta < 2
-          ? 'Grenzbereich: Wärmeleitung und Absorption sind vergleichbar.'
-          : 'Wärme diffundiert deutlich über das Absorptionsvolumen hinaus: schmelzdominierter, thermischer Abtrag wird wahrscheinlich.';
+          ? t('Grenzbereich: Wärmeleitung und Absorption sind vergleichbar.')
+          : t('Wärme diffundiert deutlich über das Absorptionsvolumen hinaus: schmelzdominierter, thermischer Abtrag wird wahrscheinlich.');
     view.redraw();
   }
   update();
 
-  root.append(box, ...ctrls.map((c) => c.el), out.el, verdict, h('p', { class: 'hint sim-note' }, 'Vereinfachung: Die Diffusionslänge hängt von der Definition ab (√(Dτ), √(4Dτ) …), und für Dielektrika ist die Energiekopplung ins Gitter ein eigener Schritt. Gewählte Werte sind keine Materialangaben.'));
+  root.append(box, ...ctrls.map((c) => c.el), out.el, verdict, h('p', { class: 'hint sim-note' }, t('Vereinfachung: Die Diffusionslänge hängt von der Definition ab (√(Dτ), √(4Dτ) …), und für Dielektrika ist die Energiekopplung ins Gitter ein eigener Schritt. Gewählte Werte sind keine Materialangaben.')));
 }

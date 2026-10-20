@@ -3,6 +3,7 @@
 import { h } from '../ui/dom.js';
 import { num } from '../core/format.js';
 import { canvasView, control, alpha } from '../sims/kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Schwellenjäger', kurz: 'Triff den Kraterdurchmesser mit der richtigen Pulsenergie', max: 24 };
 
@@ -52,9 +53,9 @@ export function mount(root, ctx) {
 
   function draw() {
     const blind = round > 4;
-    const head = h('div', { class: 'game-head' }, h('span', { class: 'chip' }, `Runde ${round}/${ROUNDS}`), h('span', { class: 'chip' }, `${total} ★`), blind ? h('span', { class: 'chip warn' }, 'Blindflug') : null);
-    const task = h('p', { class: 'game-task' }, 'Erzeuge einen Krater mit ', h('strong', {}, `D = ${num(r.D, 3)} µm`), '.');
-    const given = h('p', { class: 'hint' }, `Probe: Schwelle F_th = ${num(r.Fth, 3)} J/cm², Strahlradius w₀ = ${r.w0} µm. Es gilt D² = 2w₀² ln(F₀/F_th) mit F₀ = 2E_p/(πw₀²).`);
+    const head = h('div', { class: 'game-head' }, h('span', { class: 'chip' }, t('Runde {r}/{n}', { r: round, n: ROUNDS })), h('span', { class: 'chip' }, `${total} ★`), blind ? h('span', { class: 'chip warn' }, t('Blindflug')) : null);
+    const task = h('p', { class: 'game-task' }, t('Erzeuge einen Krater mit'), ' ', h('strong', {}, `D = ${num(r.D, 3)} µm`), '.');
+    const given = h('p', { class: 'hint' }, t('Probe: Schwelle F_th = {f} J/cm², Strahlradius w₀ = {w} µm. Es gilt D² = 2w₀² ln(F₀/F_th) mit F₀ = 2E_p/(πw₀²).', { f: num(r.Fth, 3), w: r.w0 }));
 
     const box = h('div', { class: 'sim-canvas-box' });
     const view = canvasView(box, {
@@ -74,7 +75,7 @@ export function mount(root, ctx) {
         c.fillStyle = pal.muted;
         c.font = '600 11px system-ui, sans-serif';
         c.textAlign = 'left';
-        c.fillText('w₀', cx + r.w0 * s * 0.72 + 4, cy - r.w0 * s * 0.72 - 4);
+        c.fillText(t('w₀'), cx + r.w0 * s * 0.72 + 4, cy - r.w0 * s * 0.72 - 4);
         const d = fired || !blind ? craterD(Ep, r.w0, r.Fth) : 0;
         if (d > 0) {
           const grad = c.createRadialGradient(cx, cy, 0, cx, cy, (d / 2) * s);
@@ -95,14 +96,14 @@ export function mount(root, ctx) {
         c.fillStyle = pal.accent;
         c.font = '700 11.5px system-ui, sans-serif';
         c.textAlign = 'center';
-        c.fillText('Ziel', cx, cy - (r.D / 2) * s - 6);
+        c.fillText(t('Ziel'), cx, cy - (r.D / 2) * s - 6);
         if (blind && !fired) {
           c.fillStyle = pal.muted;
-          c.fillText('Blindflug: Rechne, dann „Feuer"', cx, H - 10);
+          c.fillText(t('Blindflug: Rechne, dann „Feuer“'), cx, H - 10);
         }
       },
     });
-    view.canvas.setAttribute('aria-label', 'Draufsicht auf die Probe mit Zielkreis und erzeugtem Krater');
+    view.canvas.setAttribute('aria-label', t('Draufsicht auf die Probe mit Zielkreis und erzeugtem Krater'));
 
     const ctl = control({
       label: 'Pulsenergie E_p',
@@ -117,7 +118,7 @@ export function mount(root, ctx) {
         view.redraw();
       },
     });
-    const liveText = () => (blind ? 'Kein Live-Feedback in dieser Runde.' : `F₀/F_th = ${num(((2 * Ep * 1e-6) / (Math.PI * (r.w0 * 1e-4) ** 2)) / r.Fth, 3)} · aktueller Krater: ${craterD(Ep, r.w0, r.Fth) ? `${num(craterD(Ep, r.w0, r.Fth), 3)} µm` : 'keiner'}`);
+    const liveText = () => (blind ? t('Kein Live-Feedback in dieser Runde.') : t('F₀/F_th = {x} · aktueller Krater: {c}', { x: num(((2 * Ep * 1e-6) / (Math.PI * (r.w0 * 1e-4) ** 2)) / r.Fth, 3), c: craterD(Ep, r.w0, r.Fth) ? `${num(craterD(Ep, r.w0, r.Fth), 3)} µm` : t('keiner') }));
     const live = h('p', { class: 'game-live' }, liveText());
 
     const result = h('div', { class: 'game-result', 'aria-live': 'polite' });
@@ -136,13 +137,13 @@ export function mount(root, ctx) {
           total += stars;
           view.redraw();
           result.replaceChildren(
-            h('p', { class: `verdict ${stars ? 'ok' : 'bad'}` }, `${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}  D = ${d ? num(d, 3) : '0'} µm (Ziel ${num(r.D, 3)} µm, Abweichung ${num(err * 100, 2)} %)`),
-            h('p', { class: 'hint' }, `Ideal wären E_p ≈ ${num(idealEp(r), 3)} µJ gewesen.`),
-            h('button', { type: 'button', class: 'btn btn-primary btn-wide', onClick: next }, round === ROUNDS ? 'Auswertung' : 'Nächste Runde'),
+            h('p', { class: `verdict ${stars ? 'ok' : 'bad'}` }, `${'★'.repeat(stars)}${'☆'.repeat(3 - stars)}  ` + t('D = {d} µm (Ziel {z} µm, Abweichung {e} %)', { d: d ? num(d, 3) : '0', z: num(r.D, 3), e: num(err * 100, 2) })),
+            h('p', { class: 'hint' }, t('Ideal wären E_p ≈ {e} µJ gewesen.', { e: num(idealEp(r), 3) })),
+            h('button', { type: 'button', class: 'btn btn-primary btn-wide', onClick: next }, round === ROUNDS ? t('Auswertung') : t('Nächste Runde')),
           );
         },
       },
-      'Feuer!',
+      t('Feuer!'),
     );
 
     stage.replaceChildren(head, task, given, box, ctl.el, live, fire, result);
@@ -154,10 +155,10 @@ export function mount(root, ctx) {
       h(
         'div',
         { class: 'empty' },
-        h('h2', {}, `${total} von ${ROUNDS * 3} Sternen`),
-        h('p', {}, res.newBest ? 'Neuer Bestwert!' : `Bestwert: ${res.best} ★`, res.xp ? h('span', { class: 'xp-chip' }, ` +${res.xp} XP`) : null),
-        h('p', { class: 'hint' }, 'Merke: Der Krater wächst nur logarithmisch mit der Pulsenergie. Für doppelte Fläche brauchst du viel mehr als doppelte Energie.'),
-        h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, 'Nochmal spielen'),
+        h('h2', {}, t('{a} von {b} Sternen', { a: total, b: ROUNDS * 3 })),
+        h('p', {}, res.newBest ? t('Neuer Bestwert!') : t('Bestwert: {n} ★', { n: res.best }), res.xp ? h('span', { class: 'xp-chip' }, ` +${res.xp} XP`) : null),
+        h('p', { class: 'hint' }, t('Merke: Der Krater wächst nur logarithmisch mit der Pulsenergie. Für doppelte Fläche brauchst du viel mehr als doppelte Energie.')),
+        h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, t('Nochmal spielen')),
       ),
     );
   }
@@ -166,8 +167,8 @@ export function mount(root, ctx) {
     h(
       'div',
       { class: 'empty' },
-      h('p', {}, '8 Runden. In den ersten vier siehst du den Krater live, danach fliegst du blind. Pro Runde bis zu 3 Sterne.'),
-      h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, 'Spiel starten'),
+      h('p', {}, t('8 Runden. In den ersten vier siehst du den Krater live, danach fliegst du blind. Pro Runde bis zu 3 Sterne.')),
+      h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, t('Spiel starten')),
     ),
   );
 }

@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num } from '../core/format.js';
 import { canvasView, control, readouts, Plot, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Mehrphotonen und Keldysh-Parameter', kurz: 'Wie viele Photonen brauchst du für die Bandlücke?' };
 export const formel = [
@@ -71,10 +72,10 @@ export function mount(root) {
       ctx.fillStyle = pal.muted;
       ctx.font = '600 11.5px system-ui, sans-serif';
       ctx.textAlign = 'left';
-      ctx.fillText('Valenzband', x0 + 8, bottom - 8);
-      ctx.fillText('Leitungsband', x0 + 8, top + 16);
+      ctx.fillText(t('Valenzband'), x0 + 8, bottom - 8);
+      ctx.fillText(t('Leitungsband'), x0 + 8, top + 16);
       ctx.textAlign = 'right';
-      ctx.fillText('Bandlücke', x1 - 8, (Y(0) + Y(Eg)) / 2 - 4);
+      ctx.fillText(t('Bandlücke'), x1 - 8, (Y(0) + Y(Eg)) / 2 - 4);
       // gap bracket
       ctx.strokeStyle = pal.soft;
       ctx.lineWidth = 1.5;
@@ -127,7 +128,7 @@ export function mount(root) {
       ctx.fillText(`${n} × hν (${num(e, 3)} eV) = ${num(n * e, 3)} eV ≥ E_g`, x0 + 8, top + 38);
     },
   });
-  band.canvas.setAttribute('aria-label', 'Banddiagramm mit gestapelten Photonen, die zusammen die Bandlücke überwinden');
+  band.canvas.setAttribute('aria-label', t('Banddiagramm mit gestapelten Photonen, die zusammen die Bandlücke überwinden'));
 
   const gBox = h('div', { class: 'sim-canvas-box' });
   const gView = canvasView(gBox, {
@@ -148,7 +149,7 @@ export function mount(root) {
       p.dot(I, gamma(), { color: pal.laser, r: 6.5 });
     },
   });
-  gView.canvas.setAttribute('aria-label', 'Keldysh-Parameter über der Intensität, logarithmisch');
+  gView.canvas.setAttribute('aria-label', t('Keldysh-Parameter über der Intensität, logarithmisch'));
 
   function update() {
     const g = gamma();
@@ -165,5 +166,5 @@ export function mount(root) {
   }
   update();
 
-  root.append(bandBox, ...ctrls.map((c) => c.el), out.el, gBox, h('p', { class: 'hint sim-note' }, 'Die Formel für γ folgt der in der Literatur üblichen Schreibweise (Keldysh 1965; Schaffer et al. 2001) und ist hier noch nicht an der Primärquelle geprüft. Alle Eingabewerte sind frei gewählt.'));
+  root.append(bandBox, ...ctrls.map((c) => c.el), out.el, gBox, h('p', { class: 'hint sim-note' }, t('Die Formel für γ folgt der in der Literatur üblichen Schreibweise (Keldysh 1965; Schaffer et al. 2001) und ist hier noch nicht an der Primärquelle geprüft. Alle Eingabewerte sind frei gewählt.')));
 }

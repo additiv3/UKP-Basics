@@ -1,0 +1,144 @@
+{
+  "konstanten": [
+    {
+      "symbol": "c",
+      "name": "Speed of light (vacuum)",
+      "wert": "299\\,792\\,458\\ \\mathrm{m/s}"
+    },
+    {
+      "symbol": "h",
+      "name": "Planck constant",
+      "wert": "6.626\\,070\\,15\\cdot10^{-34}\\ \\mathrm{J\\,s}"
+    },
+    {
+      "symbol": "\\hbar",
+      "name": "Reduced Planck constant h/2π",
+      "wert": "1.054\\,571\\,817\\cdot10^{-34}\\ \\mathrm{J\\,s}"
+    },
+    {
+      "symbol": "e",
+      "name": "Elementary charge",
+      "wert": "1.602\\,176\\,634\\cdot10^{-19}\\ \\mathrm{C}"
+    },
+    {
+      "symbol": "k_\\mathrm{B}",
+      "name": "Boltzmann constant",
+      "wert": "1.380\\,649\\cdot10^{-23}\\ \\mathrm{J/K}"
+    },
+    {
+      "symbol": "\\varepsilon_0",
+      "name": "Vacuum permittivity",
+      "wert": "8.854\\,187\\,81\\cdot10^{-12}\\ \\mathrm{F/m}"
+    },
+    {
+      "symbol": "m_\\mathrm{e}",
+      "name": "Electron mass",
+      "wert": "9.109\\,383\\,70\\cdot10^{-31}\\ \\mathrm{kg}"
+    },
+    {
+      "symbol": "1\\,\\mathrm{eV}",
+      "name": "Electronvolt",
+      "wert": "1.602\\,176\\,634\\cdot10^{-19}\\ \\mathrm{J}"
+    },
+    {
+      "symbol": "hc",
+      "name": "Photon conversion",
+      "wert": "1239.84\\ \\mathrm{eV\\,nm}"
+    }
+  ],
+  "faustformeln": [
+    {
+      "titel": "Photon energy from the wavelength",
+      "latex": "E_\\mathrm{Ph}\\,[\\mathrm{eV}]\\approx\\frac{1240}{\\lambda\\,[\\mathrm{nm}]}",
+      "hinweis": "1030 nm ≈ 1.2 eV, 515 nm ≈ 2.4 eV, 343 nm ≈ 3.6 eV."
+    },
+    {
+      "titel": "Light path within the pulse duration",
+      "latex": "\\Delta s\\approx 0.3\\,\\mu\\mathrm{m}\\cdot\\frac{\\tau}{1\\,\\mathrm{fs}}",
+      "hinweis": "100 fs correspond to 30 µm, 1 ps to 0.3 mm."
+    },
+    {
+      "titel": "Average power in milliwatts",
+      "latex": "P_\\mathrm{avg}\\,[\\mathrm{mW}]=E_\\mathrm{p}\\,[\\mu\\mathrm{J}]\\cdot f\\,[\\mathrm{kHz}]",
+      "hinweis": "10 µJ at 100 kHz is 1000 mW = 1 W."
+    },
+    {
+      "titel": "Fluence from pulse energy and beam radius",
+      "latex": "F_0\\,[\\mathrm{J/cm^2}]\\approx 63.7\\cdot\\frac{E_\\mathrm{p}\\,[\\mu\\mathrm{J}]}{w_0^2\\,[\\mu\\mathrm{m}^2]}",
+      "hinweis": "In short: F₀ = 2E_p/(πw₀²); with E_p in µJ and w₀ in µm this gives F₀ ≈ 63.7 · E_p / w₀² in J/cm²."
+    },
+    {
+      "titel": "Frequency and wavelength",
+      "latex": "\\nu=\\frac{c}{\\lambda},\\quad \\lambda=1030\\,\\mathrm{nm}\\Rightarrow\\nu\\approx291\\,\\mathrm{THz}",
+      "hinweis": "The optical period is then about 3.4 fs."
+    }
+  ],
+  "normen": [
+    {
+      "nummer": "ISO 11145",
+      "titel": "Optics and photonics – Lasers and laser-related equipment – Vocabulary and symbols",
+      "bereich": "Terminology",
+      "wozu": "Uniform definitions and symbols for laser beam quantities. First port of call when a term is used differently in papers and data sheets."
+    },
+    {
+      "nummer": "ISO 11146-1",
+      "titel": "Lasers and laser-related equipment – Test methods for laser beam widths, divergence angles and beam propagation ratios – Part 1: Stigmatic and simple astigmatic beams",
+      "bereich": "Beam characterization",
+      "wozu": "Defines the beam radius via **second moments** and the measurement method for $M^2$. This makes $w_0$, $z_\\mathrm{R}$ and $\\theta$ comparably measurable."
+    },
+    {
+      "nummer": "ISO 11146-2",
+      "titel": "Lasers and laser-related equipment – Test methods for laser beam widths, divergence angles and beam propagation ratios – Part 2: General astigmatic beams",
+      "bereich": "Beam characterization",
+      "wozu": "Extends part 1 to beams with general astigmatism (e.g. twisted beam axes)."
+    },
+    {
+      "nummer": "ISO 11146-3",
+      "titel": "Lasers and laser-related equipment – Test methods for laser beam widths, divergence angles and beam propagation ratios – Part 3: Intrinsic and geometrical laser beam classification, propagation and details of test methods",
+      "bereich": "Beam characterization",
+      "wozu": "Background on beam classification and propagation; complements the measurement methods of parts 1 and 2."
+    },
+    {
+      "nummer": "ISO 13694",
+      "titel": "Optics and photonics – Lasers and laser-related equipment – Test methods for laser beam power (energy) density distribution",
+      "bereich": "Beam characterization",
+      "wozu": "Measurement of the power or energy density distribution over the beam cross-section, i.e. the fluence profiles that matter for threshold experiments."
+    },
+    {
+      "nummer": "ISO 11554",
+      "titel": "Optics and photonics – Lasers and laser-related equipment – Test methods for laser beam power, energy and temporal characteristics",
+      "bereich": "Power and energy",
+      "wozu": "Measurement of average power, pulse energy, pulse duration and their stability, i.e. the quantities from chapter K01."
+    },
+    {
+      "nummer": "ISO 21254-1 bis -4",
+      "titel": "Lasers and laser-related equipment – Test methods for laser-induced damage threshold (parts 1 to 4)",
+      "bereich": "Threshold",
+      "wozu": "Framework for damage and ablation thresholds: terms, determination of the threshold (e.g. 1-on-1 and S-on-1), power handling and damage detection. Important if threshold fluences are to be reported comparably."
+    },
+    {
+      "nummer": "ISO 21920-2 / -3",
+      "titel": "Geometrical product specifications (GPS) – Surface texture: Profile – Part 2: Terms and parameters, Part 3: Specification operators",
+      "bereich": "Surface",
+      "wozu": "Roughness parameters in the profile section (e.g. $Ra$, $Rz$) and filters. Replaces the former standards ISO 4287 and ISO 4288."
+    },
+    {
+      "nummer": "ISO 25178-2",
+      "titel": "Geometrical product specifications (GPS) – Surface texture: Areal – Part 2: Terms, definitions and surface texture parameters",
+      "bereich": "Surface",
+      "wozu": "Areal parameters such as $Sa$ and $Sz$ for ablation surfaces and structures when profile sections are not enough."
+    },
+    {
+      "nummer": "DIN EN 60825-1 (IEC 60825-1)",
+      "titel": "Safety of laser products – Part 1: Equipment classification and requirements",
+      "bereich": "Safety",
+      "wozu": "Laser classes (1, 1M, 2, 2M, 3R, 3B, 4) and requirements for manufacturers. Enclosed systems are often classified as class 1; the open beam path in the lab usually falls into class 4 (check the type plate or the risk assessment)."
+    },
+    {
+      "nummer": "OStrV und TROS Laserstrahlung",
+      "titel": "German ordinance on artificial optical radiation and technical rules",
+      "bereich": "Safety",
+      "wozu": "Duties of the employer when operating lasers in Germany: risk assessment, laser safety officer, protective measures."
+    }
+  ]
+}

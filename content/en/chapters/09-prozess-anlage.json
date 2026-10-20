@@ -1,0 +1,304 @@
+{
+  "titel": "Process parameters and equipment",
+  "einleitung": "From the single pulse to the component: how do you distribute pulses over the area, how fast may you scan, how does the focus stay in the right place, and how do you plan experiments so that you learn a lot from few measurements? This chapter builds the bridge to your DoE experience from the master's thesis.",
+  "ziele": [
+    "Calculate pulse spacing, overlap and pulse number from scan speed, rate and focus",
+    "Determine hatch, accumulated fluence and area rate for area ablation",
+    "Place scanner, f-theta optics and focus position",
+    "Know beam delivery and pulse shaping",
+    "Set up a DoE plan for UKP processes with sensible factors and responses"
+  ],
+  "lektionen": {
+    "k09.l01": "Pulse spacing and overlap",
+    "k09.l02": "Hatch, track spacing and accumulated fluence",
+    "k09.l03": "Scanner, f-theta and focus position",
+    "k09.l04": "Beam delivery and pulse shaping",
+    "k09.l05": "DoE for UKP processes",
+    "k09.l06": "Calculation training: scanning and area ablation"
+  },
+  "blocks": {
+    "k09.l01.b01": {
+      "inhalt": [
+        "In line ablation the focus moves at the speed $v$ while the laser pulses at the rate $f$. The **pulse spacing** ([[pulsabstand]]) is $d=v/f$. Compared with the spot diameter $2w_0$ it gives the **overlap** and the number of pulses that hit each spot of the track."
+      ]
+    },
+    "k09.l01.b02": {
+      "titel": "Pulse spacing, overlap, pulse number",
+      "sammlung": "Process",
+      "erklaerung": "Pulse spacing $d$, linear overlap $O$ (between 0 and 1) and mean pulse number per spot for track width $2w_0$. Refer to the spot diameter at $1/e^2$; the ablated diameter is smaller."
+    },
+    "k09.l01.b04": {
+      "titel": "Worked example",
+      "aufgabe": "A scanner moves at $v=2\\,\\mathrm{m/s}$, the laser pulses at $f=500\\,\\mathrm{kHz}$, the beam radius is $w_0=10\\,\\mu\\mathrm{m}$. Determine pulse spacing, overlap and pulse number.",
+      "schritte": [
+        "$d=v/f=2\\,\\mathrm{m/s}/(5\\cdot10^{5}\\,\\mathrm{s^{-1}})=4\\cdot10^{-6}\\,\\mathrm{m}=4\\,\\mu\\mathrm{m}$",
+        "$O=1-4/20=0.8$",
+        "$N\\approx2w_0/d=20/4=5$"
+      ],
+      "ergebnis": "4 µm pulse spacing, 80 % overlap, about 5 pulses per spot in the track."
+    },
+    "k09.l01.b05": {
+      "inhalt": "At the same $v$, doubling the rate **halves** the pulse spacing and doubles the number of pulses per spot. Pulse energy, rate and speed are therefore coupled: if you want to scan faster without changing the overlap, you have to raise the rate, and for that the pulse energy falls (at fixed average power)."
+    },
+    "k09.q01": {
+      "frage": "$v=1\\,\\mathrm{m/s}$, $f=250\\,\\mathrm{kHz}$: what is the pulse spacing in µm?",
+      "erklaerung": "$d=v/f=1/(2.5\\cdot10^{5})\\,\\mathrm{m}=4\\cdot10^{-6}\\,\\mathrm{m}=4\\,\\mu\\mathrm{m}$."
+    },
+    "k09.q02": {
+      "frage": "At $w_0=12\\,\\mu\\mathrm{m}$ and $d=6\\,\\mu\\mathrm{m}$: what is the overlap in percent?",
+      "erklaerung": "$O=1-d/(2w_0)=1-6/24=0.75$."
+    },
+    "k09.q03": {
+      "frage": "You double the scan speed, everything else equal. What happens to the number of pulses per spot?",
+      "optionen": [
+        "It doubles",
+        "It halves",
+        "It stays the same",
+        "It quadruples"
+      ],
+      "erklaerung": "$d=v/f$ doubles, $N\\propto1/d$ halves."
+    },
+    "k09.c01": {
+      "vorne": "How do you calculate pulse spacing and overlap?",
+      "hinten": "$d=v/f$ and $O=1-d/(2w_0)$; pulse number in the track $N\\approx2w_0/d$."
+    },
+    "k09.l02.b01": {
+      "inhalt": [
+        "Areas are built up from adjacent tracks. The spacing of the tracks is the **hatch** ([[hatch]]) $h$. Together with the pulse spacing it determines how many pulses hit each point of the area and how much energy per area is delivered."
+      ]
+    },
+    "k09.l02.b02": {
+      "titel": "Area ablation: pulse number, dose, area rate",
+      "sammlung": "Process",
+      "erklaerung": "Mean pulse number per area point, **accumulated fluence** (dose) $\\Phi$ and area rate $\\dot A$. $\\Phi=P_\\mathrm{avg}/(v\\,h)$ is the same, calculated from the average power."
+    },
+    "k09.l02.b03": {
+      "titel": "Worked example",
+      "aufgabe": "A process uses $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$, $d=5\\,\\mu\\mathrm{m}$ and $h=10\\,\\mu\\mathrm{m}$. Calculate the accumulated fluence and the area rate at $v=1\\,\\mathrm{m/s}$.",
+      "schritte": [
+        "$\\Phi=E_\\mathrm{p}/(d\\,h)=10\\cdot10^{-6}\\,\\mathrm{J}/(5\\cdot10^{-4}\\,\\mathrm{cm}\\cdot10^{-3}\\,\\mathrm{cm})=10^{-5}/(5\\cdot10^{-7})\\,\\mathrm{J/cm^2}=20\\,\\mathrm{J/cm^2}$",
+        "$\\dot A=v\\,h=1000\\,\\mathrm{mm/s}\\cdot0.01\\,\\mathrm{mm}=10\\,\\mathrm{mm^2/s}$"
+      ],
+      "ergebnis": "Around 20 J/cm² total dose and 10 mm²/s area rate. Note: that is a multiple of the fluence of a single pulse, because of the overlap."
+    },
+    "k09.l02.b04": {
+      "inhalt": "The accumulated fluence $\\Phi$ is **not** a process fluence in the sense of the threshold. Ablation per pulse happens with the peak fluence $F_0$. $\\Phi$ only says how much energy in total goes in per area and is a good comparison value for heat input."
+    },
+    "k09.q04": {
+      "frage": "How does the area rate $\\dot A=v\\,h$ change if you double the hatch (at the same $v$)?",
+      "optionen": [
+        "It halves",
+        "It stays the same",
+        "It doubles",
+        "It quadruples"
+      ],
+      "erklaerung": "$\\dot A=v\\,h$ grows linearly with the track spacing, as long as the tracks still overlap (otherwise ridges remain)."
+    },
+    "k09.q05": {
+      "frage": "With $P_\\mathrm{avg}=20\\,\\mathrm{W}$, $v=4\\,\\mathrm{m/s}$ and $h=20\\,\\mu\\mathrm{m}$: what is the accumulated fluence $\\Phi=P_\\mathrm{avg}/(v\\,h)$ in J/cm²?",
+      "erklaerung": "$\\Phi=20\\,\\mathrm{W}/(400\\,\\mathrm{cm/s}\\cdot2\\cdot10^{-3}\\,\\mathrm{cm})=20/0.8\\,\\mathrm{J/cm^2}=25\\,\\mathrm{J/cm^2}$."
+    },
+    "k09.c02": {
+      "vorne": "How do you calculate the accumulated fluence in area ablation?",
+      "hinten": "$\\Phi=E_\\mathrm{p}/(d\\,h)=P_\\mathrm{avg}/(v\\,h)$, energy per area."
+    },
+    "k09.l03.b01": {
+      "inhalt": [
+        "Fast movement of the focus is usually handled by a **galvanometer scanner**: two mirrors deflect the beam, an **f-theta lens** focuses it so that the focus moves on a plane and the position is proportional to the deflection angle: $x=f\\cdot\\theta$. That allows speeds in the m/s range.",
+        "The focal length determines both the focus size ($w_0\\propto f$) and the working field. A longer focal length gives a larger field but a larger focus. The compromise is a central design topic."
+      ]
+    },
+    "k09.l03.b02": {
+      "titel": "f-theta: position and focus",
+      "sammlung": "Process",
+      "erklaerung": "Position in the working plane at optical deflection angle $\\theta$ (radians) and focus radius, both $\\propto f$."
+    },
+    "k09.l03.b03": {
+      "inhalt": [
+        "**Focus position:** Because of the small Rayleigh length (chapter 2), peak fluence and ablation change noticeably even with small distance errors. When ablating deep structures the surface moves out of the focus. That is why the focus position is tracked (z axis) or material is removed layer by layer and the focus is readjusted after each layer."
+      ]
+    },
+    "k09.l03.b04": {
+      "titel": "Worked example",
+      "aufgabe": "An f-theta lens with $f=160\\,\\mathrm{mm}$ deflects by $\\pm10^{\\circ}$ (optical). How large is the working field? And how large does $w_0$ become at $\\lambda=1030\\,\\mathrm{nm}$, $M^2=1.2$ and $w_\\mathrm{in}=5\\,\\mathrm{mm}$?",
+      "schritte": [
+        "$\\theta=10^{\\circ}=0.1745\\,\\mathrm{rad}$, $x=\\pm f\\theta=\\pm160\\,\\mathrm{mm}\\cdot0.1745\\approx\\pm27.9\\,\\mathrm{mm}$",
+        "$w_0=\\dfrac{1.2\\cdot1.03\\cdot10^{-6}\\cdot0.16}{\\pi\\cdot5\\cdot10^{-3}}\\,\\mathrm{m}=\\dfrac{1.98\\cdot10^{-7}}{1.57\\cdot10^{-2}}\\,\\mathrm{m}\\approx12.6\\,\\mu\\mathrm{m}$"
+      ],
+      "ergebnis": "Field about 56 mm × 56 mm at a focus radius of about 12.6 µm."
+    },
+    "k09.q06": {
+      "frage": "What happens if you double the focal length of the f-theta lens with the same input beam?",
+      "optionen": [
+        "The field gets smaller, the focus smaller",
+        "The field gets larger, the focus larger",
+        "Both stay the same",
+        "The focus gets smaller, the field larger"
+      ],
+      "erklaerung": "Field $x=f\\theta$ and $w_0\\propto f$ both grow with $f$."
+    },
+    "k09.q07": {
+      "frage": "$f=100\\,\\mathrm{mm}$, optical deflection angle $\\theta=0.1\\,\\mathrm{rad}$: what is the displacement $x$ in the working plane in mm?",
+      "erklaerung": "$x=f\\theta=100\\,\\mathrm{mm}\\cdot0.1=10\\,\\mathrm{mm}$."
+    },
+    "k09.c03": {
+      "vorne": "What does an f-theta lens do?",
+      "hinten": "It focuses so that the position in the working plane is proportional to the deflection angle ($x=f\\theta$) and the focus lies on a plane."
+    },
+    "k09.l04.b01": {
+      "inhalt": [
+        "Between laser and workpiece lies a **beam path** with several tasks. Typical building blocks:"
+      ]
+    },
+    "k09.l04.b02": {
+      "inhalt": [
+        "- **Attenuator** (e.g. half-wave plate with polarizer): sets the pulse energy continuously without changing the laser.",
+        "- **Beam expander** (telescope): enlarges the beam radius before focusing and thereby fixes $w_\\mathrm{in}$ and the focus.",
+        "- **Pulse picker or acousto-optic modulator:** selects single pulses or bursts (repetition rate, pulse on demand).",
+        "- **Mirrors, windows, optics:** add dispersion and lengthen short pulses (chapter 4). Coatings must be designed for the peak intensity.",
+        "- **Beam shaping:** diffractive optical elements, axicon (Bessel beam, chapter 10), spatial light modulators (SLM) for top-hat or multiple beams."
+      ]
+    },
+    "k09.l04.b03": {
+      "inhalt": [
+        "**Pulse shaping** changes the *temporal* profile: double and multiple pulses or bursts (chapter 7), setting the chirp. The aim is to steer energy coupling and ablation mechanism deliberately, for example less melt or a higher removal rate."
+      ]
+    },
+    "k09.l04.b04": {
+      "inhalt": "Every component in the beam path can change fluence, pulse duration and focus. If a result is not reproducible, first check the **pulse energy at the workpiece** (not at the laser!), the beam profile and the focus position."
+    },
+    "k09.q08": {
+      "frage": "Match the component to its task.",
+      "paare": [
+        [
+          "Half-wave plate + polarizer",
+          "Set the pulse energy"
+        ],
+        [
+          "Telescope / beam expander",
+          "Set the beam radius on the lens"
+        ],
+        [
+          "Acousto-optic modulator",
+          "Select individual pulses"
+        ],
+        [
+          "Diffractive optical element",
+          "Shape the beam profile"
+        ]
+      ],
+      "erklaerung": "Each component addresses one of the parameters energy, size, rate or profile."
+    },
+    "k09.q09": {
+      "frage": "Why is the pulse energy preferably measured at the workpiece rather than at the laser output?",
+      "optionen": [
+        "Because the laser has no energy",
+        "Because optics in the beam path cause losses",
+        "Because it is cheaper",
+        "Because it is forbidden by the standard"
+      ],
+      "erklaerung": "Reflections, absorption and clipping in the beam path lower the energy at the workpiece."
+    },
+    "k09.c04": {
+      "vorne": "How do you set the pulse energy continuously?",
+      "hinten": "With an attenuator made of a rotatable half-wave plate and a polarizer."
+    },
+    "k09.l05.b01": {
+      "inhalt": [
+        "You know design of experiments (DoE) from the master's thesis. For UKP processes a physical approach pays off: instead of machine settings the factors should be **dimensionless characteristic quantities**, otherwise the number of experiments grows unnecessarily and the results are not transferable."
+      ]
+    },
+    "k09.l05.b02": {
+      "inhalt": [
+        "**Factors (settings):** pulse energy $E_\\mathrm{p}$ or peak fluence $F_0$ (better: $F_0/F_\\mathrm{th}$), pulse overlap $O$ or $d$, hatch $h$, rate $f$, focus position $z$, pulse duration $\\tau$, wavelength, burst parameters.",
+        "**Responses:** ablation depth, removal rate (mm³/min), roughness $Sa$ (ISO 25178), heat-affected zone, crack density (for ceramics and glass), edge quality, process time."
+      ]
+    },
+    "k09.l05.b03": {
+      "titel": "Removal rate (model)",
+      "sammlung": "Process",
+      "erklaerung": "Model of the removal rate from the logarithmic ablation law (chapter 7), ideal and without overlap effects. $V_\\mathrm{p}$ is the volume per pulse."
+    },
+    "k09.l05.b04": {
+      "inhalt": [
+        "Sketch of a plan to start with: a **factorial design** ($2^k$) with the factors $F_0/F_\\mathrm{th}$, $O$ and $h/(2w_0)$ detects main effects and interactions with few experiments. A central composite design (CCD) or Box–Behnken design later adds quadratic terms, as are to be expected because of the logarithm and the optimum at $F_\\mathrm{opt}$.",
+        "As with your lattice structures, repetition pays off: **replicate measurements** per parameter set (scatter), randomization of the run order (laser drift) and a centre-point experiment to check curvature and reproducibility."
+      ]
+    },
+    "k09.l05.b05": {
+      "inhalt": "Choose factors so that they are **decoupled**: fluence ratio $F_0/F_\\mathrm{th}$, overlap $O$, hatch overlap. If you vary $v$, $f$ and $E_\\mathrm{p}$ instead, several physical quantities change at the same time and the effects cannot be separated."
+    },
+    "k09.q10": {
+      "frage": "Why are $v$, $f$ and $E_\\mathrm{p}$ unfavourable as DoE factors?",
+      "optionen": [
+        "Because they cannot be set",
+        "Because they change fluence, overlap and average power at the same time",
+        "Because they are always constant",
+        "Because they have no influence"
+      ],
+      "erklaerung": "Better are decoupled quantities: $F_0/F_\\mathrm{th}$ (energy), $O$ (overlap), hatch."
+    },
+    "k09.q11": {
+      "frage": "Which response quantity describes the areal roughness of an ablated floor according to ISO 25178?",
+      "erklaerung": "$Sa$ is the areal arithmetic mean roughness; $Ra$ applies to profile sections (ISO 21920)."
+    },
+    "k09.q12": {
+      "frage": "You run a $2^3$ design with 3 replicates per parameter set. How many experiments is that in total?",
+      "erklaerung": "$2^3=8$ parameter sets, times 3 replicates: 24."
+    },
+    "k09.c05": {
+      "vorne": "Which DoE factors make physical sense for UKP?",
+      "hinten": "Dimensionless characteristic quantities: $F_0/F_\\mathrm{th}$, overlap $O$, hatch relative to $2w_0$, focus position relative to $z_\\mathrm{R}$."
+    },
+    "k09.l06.b01": {
+      "inhalt": "Process calculations consist of many unit conversions. It is best to calculate everything in m and s, only the **dose** in J/cm² (then lengths in cm). The pocket calculator knows the prefixes under “Constants and prefixes”."
+    },
+    "k09.q13": {
+      "frage": "Build the formula for the pulse spacing and calculate it for $v=3\\,\\mathrm{m/s}$ and $f=300\\,\\mathrm{kHz}$. Answer in µm.",
+      "erklaerung": "$d=v/f=3\\,\\mathrm{m/s}/(3\\cdot10^{5}\\,\\mathrm{s^{-1}})=10^{-5}\\,\\mathrm{m}=10\\,\\mu\\mathrm{m}$."
+    },
+    "k09.q14": {
+      "frage": "Build the formula for the linear overlap and calculate it for $d=6\\,\\mu\\mathrm{m}$ and $w_0=10\\,\\mu\\mathrm{m}$. Answer in %.",
+      "erklaerung": "$O=1-d/(2w_0)=1-6/20=0.7=70\\,\\%$. The denominator holds the spot diameter $2w_0$, not the radius."
+    },
+    "k09.q15": {
+      "frage": "Build the formula for the accumulated fluence and calculate it for $E_\\mathrm{p}=20\\,\\mu\\mathrm{J}$, $d=4\\,\\mu\\mathrm{m}$ and $h=10\\,\\mu\\mathrm{m}$. Answer in J/cm².",
+      "erklaerung": "$\\Phi=\\dfrac{E_\\mathrm{p}}{d\\,h}=\\dfrac{2\\cdot10^{-5}\\,\\mathrm{J}}{4\\cdot10^{-4}\\,\\mathrm{cm}\\cdot10^{-3}\\,\\mathrm{cm}}=50\\,\\mathrm{J/cm^2}$.",
+      "tipp": "Lengths in cm: 4 µm $=4\\cdot10^{-4}$ cm, 10 µm $=10^{-3}$ cm."
+    },
+    "k09.q16": {
+      "frage": "What repetition rate do you need to reach a pulse spacing of $5\\,\\mu\\mathrm{m}$ at $v=5\\,\\mathrm{m/s}$? Answer in MHz.",
+      "erklaerung": "$f=v/d=5\\,\\mathrm{m/s}/(5\\cdot10^{-6}\\,\\mathrm{m})=10^{6}\\,\\mathrm{Hz}=1\\,\\mathrm{MHz}$."
+    },
+    "k09.q17": {
+      "frage": "What is the area rate $\\dot A=v\\,h$ at $v=2\\,\\mathrm{m/s}$ and $h=15\\,\\mu\\mathrm{m}$ in mm²/s?",
+      "erklaerung": "$\\dot A=2000\\,\\mathrm{mm/s}\\cdot0.015\\,\\mathrm{mm}=30\\,\\mathrm{mm^2/s}$."
+    },
+    "k09.q18": {
+      "frage": "An area of $20\\,\\mathrm{mm}\\times15\\,\\mathrm{mm}$ is ablated in 8 layers at an area rate of $12\\,\\mathrm{mm^2/s}$. How long does that take (scan time only) in seconds?",
+      "erklaerung": "$300\\,\\mathrm{mm^2}/(12\\,\\mathrm{mm^2/s})=25\\,\\mathrm{s}$ per layer, times 8 gives $200\\,\\mathrm{s}$."
+    },
+    "k09.q19": {
+      "frage": "A $2^4$ design is run with 2 replicates per parameter set plus 3 centre-point experiments. How many experiments is that?",
+      "erklaerung": "$2^4=16$, times 2 gives 32, plus 3 centre points: 35."
+    },
+    "k09.q20": {
+      "frage": "An f-theta lens has $f=254\\,\\mathrm{mm}$. What displacement $x=f\\theta$ results from $\\theta=0.2\\,\\mathrm{rad}$? Answer in mm.",
+      "erklaerung": "$x=254\\,\\mathrm{mm}\\cdot0.2=50.8\\,\\mathrm{mm}$."
+    },
+    "k09.q21": {
+      "frage": "You want less heat accumulation at the same area rate. What usually helps?",
+      "optionen": [
+        "Raise the rate and lower the pulse energy",
+        "Lower the rate and raise the pulse energy with a larger spot",
+        "Leave everything unchanged",
+        "Double the wavelength"
+      ],
+      "erklaerung": "Fewer pulses per second give the heat more time to flow away; more energy per pulse with a larger spot keeps the fluence."
+    },
+    "k09.c06": {
+      "vorne": "How do you reliably calculate pulse spacing, overlap and dose?",
+      "hinten": "$d=v/f$ (m), $O=1-d/(2w_0)$, $\\Phi=E_\\mathrm{p}/(d\\,h)$ (lengths in cm for J/cm²), $\\dot A=v\\,h$."
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "titel": "Special processes",
+  "einleitung": "Four processes that go beyond simple ablation: self-organized LIPSS, selective laser etching (SLE), Bessel beams and filamentation for long focal lines, and waveguides and volume modification. Qualitative statements reflect the state of the literature and are marked as unchecked; calculations use freely chosen numerical examples.",
+  "ziele": [
+    "Classify LIPSS types and their formation",
+    "Explain the SLE principle and calculate the selectivity",
+    "Estimate core radius and length of a Bessel beam",
+    "Distinguish modification types and calculate NA and single-mode condition of a waveguide"
+  ],
+  "lektionen": {
+    "k10.l01": "LIPSS: self-organized nanostructures",
+    "k10.l02": "Selective laser etching (SLE)",
+    "k10.l03": "Bessel beam and filamentation",
+    "k10.l04": "Waveguides and volume modification"
+  },
+  "blocks": {
+    "k10.l01.b01": {
+      "inhalt": [
+        "At fluences near the threshold, **periodic ripples** ([[lipss]], laser-induced periodic surface structures) form on many surfaces. They arise by themselves, without the structure being in the beam. Roughly one distinguishes:",
+        "- **LSFL** (low spatial frequency LIPSS): period of the order of the wavelength, for metals and semiconductors usually **perpendicular** to the polarization direction.\n- **HSFL** (high spatial frequency LIPSS): period well below half the wavelength.",
+        "The cause discussed most is the **interference** of the incident light with scattered waves or surface plasmons (Sipe model). Feedback over many pulses (incubation) reinforces the structure."
+      ]
+    },
+    "k10.l01.b02": {
+      "inhalt": [
+        "Applications named in the literature: modified wettability, friction and wear, structural colours, adhesion of coatings and cells. They are interesting when you want to provide **large areas** with nanostructure, because LIPSS form while scanning with suitable overlap.",
+        "The counterpart: in ablation LIPSS is often **unwanted** because it raises the roughness. Fluence, pulse number and polarization decide whether it grows."
+      ]
+    },
+    "k10.q01": {
+      "frage": "In which direction relative to the linear polarization do LSFL typically lie for metals and semiconductors?",
+      "optionen": [
+        "Perpendicular",
+        "Parallel",
+        "At 45°",
+        "Random"
+      ],
+      "erklaerung": "Typically perpendicular to the polarization (literature statement, unchecked); other orientations are also reported for dielectrics."
+    },
+    "k10.q02": {
+      "frage": "LSFL with the period $\\Lambda\\approx\\lambda=1030\\,\\mathrm{nm}$: how many lines lie across a width of $100\\,\\mu\\mathrm{m}$?",
+      "erklaerung": "$100\\,\\mu\\mathrm{m}/1.03\\,\\mu\\mathrm{m}\\approx97$."
+    },
+    "k10.q03": {
+      "frage": "Match the LIPSS type to its property.",
+      "paare": [
+        [
+          "LSFL",
+          "Period of the order of $\\lambda$"
+        ],
+        [
+          "HSFL",
+          "Period well below $\\lambda/2$"
+        ]
+      ],
+      "erklaerung": "Two families; the exact period depends on material, wavelength, pulse number and fluence."
+    },
+    "k10.c01": {
+      "vorne": "What are LIPSS?",
+      "hinten": "Self-organized periodic nanostructures that form at fluences near the threshold through interference and feedback over many pulses."
+    },
+    "k10.l02.b01": {
+      "inhalt": [
+        "[[sle]] is a **two-step process** for fused silica: (1) A fs laser writes a modification in the volume along a 3D path. (2) In an etching bath (e.g. KOH or HF) the modified material is removed much faster than the unmodified one. What remains are cavities and channels that you designed in 3D.",
+        "The quality of the process is described by the **selectivity** $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$ (etch rate modified to unmodified). In the literature values of several hundred and more are reported (unchecked). Advantages: no thermal damage, smooth walls after etching, true 3D geometries. Limits: the etchant has to reach the channel, and long channels etch more slowly."
+      ]
+    },
+    "k10.l02.b02": {
+      "erklaerung": "Selectivity from the etch rates, and etch length $\\ell$ at constant etch rate after the time $t$ (idealization: the etch rate falls in long channels).",
+      "titel": "SLE: selectivity and etch length",
+      "sammlung": "Special processes"
+    },
+    "k10.q04": {
+      "frage": "Numerical example: $r_\\mathrm{mod}=12\\,\\mu\\mathrm{m/h}$ and $r_\\mathrm{unmod}=0.04\\,\\mu\\mathrm{m/h}$. What is the selectivity $S$?",
+      "erklaerung": "$S=12/0.04=300$."
+    },
+    "k10.q05": {
+      "frage": "Numerical example: constant etch rate $r_\\mathrm{mod}=50\\,\\mu\\mathrm{m/min}$. How long in minutes does it take to etch a channel of $5\\,\\mathrm{mm}$ length? (In practice the rate falls with the length.)",
+      "erklaerung": "$t=\\ell/r=5000\\,\\mu\\mathrm{m}/(50\\,\\mu\\mathrm{m/min})=100\\,\\mathrm{min}$."
+    },
+    "k10.q06": {
+      "frage": "Put the SLE steps in the right order.",
+      "items": [
+        "Design the 3D geometry",
+        "Modify in the volume with fs pulses",
+        "Etch selectively in the etching bath",
+        "Rinse and inspect"
+      ],
+      "erklaerung": "First laser, then chemistry: the modification determines where etching takes place."
+    },
+    "k10.q07": {
+      "frage": "What does a high selectivity mean?",
+      "optionen": [
+        "Modified material is etched much faster than unmodified material",
+        "The etching bath is hotter",
+        "The laser is faster",
+        "The glass is more transparent"
+      ],
+      "erklaerung": "$S=r_\\mathrm{mod}/r_\\mathrm{unmod}$: the larger it is, the sharper edges and walls remain."
+    },
+    "k10.c02": {
+      "vorne": "What is SLE?",
+      "hinten": "Two-step process: fs modification in the volume, followed by wet-chemical etching. Selectivity $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$."
+    },
+    "k10.l03.b01": {
+      "inhalt": [
+        "A Gaussian focus has only a short depth of focus because $z_\\mathrm{R}\\propto w_0^2$. For glass that you want to separate over its **full thickness** (e.g. 0.5 to 2 mm) in one pass, that is too little. Two ways to a **long focal line**:",
+        "- **Bessel beam** ([[bessel-strahl]]): an [[axicon]] (conical lens) superimposes beam parts at an angle $\\theta$. The interference produces a long, narrow line with a constant core.\n- **Filamentation:** self-focusing (Kerr effect) and plasma defocusing balance each other; the pulse forms a long channel."
+      ]
+    },
+    "k10.l03.b02": {
+      "erklaerung": "Radius $r_0$ of the central core (first zero of $J_0$ at 2.405) and length $L$ of the focal line for the cone angle $\\theta$ and the beam radius $w_\\mathrm{in}$ at the axicon. Geometrical approximation.",
+      "titel": "Bessel beam: core and length",
+      "sammlung": "Special processes"
+    },
+    "k10.l03.b03": {
+      "aufgabe": "A Bessel beam at $\\lambda=1030\\,\\mathrm{nm}$ has the cone angle $\\theta=10^{\\circ}$ and $w_\\mathrm{in}=2\\,\\mathrm{mm}$ (numerical examples). Determine core radius and line length and compare with the Rayleigh length of a Gaussian focus of the same radius.",
+      "schritte": [
+        "$r_0=0.383\\cdot1.03\\,\\mu\\mathrm{m}/\\sin10^{\\circ}=2.27\\,\\mu\\mathrm{m}$",
+        "$L=2\\,\\mathrm{mm}/\\tan10^{\\circ}=11.3\\,\\mathrm{mm}$",
+        "Gaussian ($M^2=1$): $z_\\mathrm{R}=\\pi r_0^2/\\lambda=\\pi\\,(2.27)^2/1.03\\,\\mu\\mathrm{m}\\approx15.7\\,\\mu\\mathrm{m}$"
+      ],
+      "ergebnis": "At about 11 mm the Bessel line is roughly 700 times longer than the Rayleigh length (16 µm) of an equally narrow Gaussian focus.",
+      "titel": "Worked example"
+    },
+    "k10.l03.b04": {
+      "inhalt": "A Bessel beam is not a free lunch: a large part of the energy lies in the **rings** around the core, not in the core itself. That is why more pulse energy is needed than for an equally narrow Gaussian focus."
+    },
+    "k10.q08": {
+      "frage": "Core radius $r_0=0.383\\,\\lambda/\\sin\\theta$ for $\\lambda=515\\,\\mathrm{nm}$ and $\\theta=15^{\\circ}$. Answer in µm (calculator in DEG mode).",
+      "erklaerung": "$r_0=0.383\\cdot0.515\\,\\mu\\mathrm{m}/\\sin15^{\\circ}=0.197/0.2588=0.762\\,\\mu\\mathrm{m}$."
+    },
+    "k10.q09": {
+      "frage": "Line length $L=w_\\mathrm{in}/\\tan\\theta$ for $w_\\mathrm{in}=1.5\\,\\mathrm{mm}$ and $\\theta=5^{\\circ}$. Answer in mm.",
+      "erklaerung": "$L=1.5/\\tan5^{\\circ}=1.5/0.0875=17.1\\,\\mathrm{mm}$."
+    },
+    "k10.q10": {
+      "frage": "Why use a Bessel beam instead of a Gaussian focus to separate thick glass in one pass?",
+      "optionen": [
+        "It has a long, narrow focal line",
+        "It is brighter",
+        "It needs no pulses",
+        "It changes the wavelength"
+      ],
+      "erklaerung": "The long focal line modifies the entire thickness simultaneously."
+    },
+    "k10.q11": {
+      "frage": "Match concept and mechanism.",
+      "paare": [
+        [
+          "Bessel-Strahl",
+          "Axicon superimposes beam parts at an angle"
+        ],
+        [
+          "Filamentation",
+          "Self-focusing balances plasma defocusing"
+        ],
+        [
+          "Gaussian focus",
+          "Short depth of focus $z_\\mathrm{R}\\propto w_0^2$"
+        ]
+      ],
+      "erklaerung": "All three are ways to distribute or maintain energy along the beam axis."
+    },
+    "k10.c03": {
+      "vorne": "How large is the core radius of a Bessel beam?",
+      "hinten": "$r_0\\approx0.383\\,\\lambda/\\sin\\theta$ (cone angle $\\theta$); length $L\\approx w_\\mathrm{in}/\\tan\\theta$."
+    },
+    "k10.l04.b01": {
+      "inhalt": [
+        "In the volume of glass the fs focus changes the structure depending on pulse energy and pulse number. The literature roughly distinguishes three types:",
+        "- **Type I:** smooth, local change of the refractive index (mostly a slight increase): suited for **waveguides**.\n- **Type II:** birefringent nanogratings whose orientation depends on the polarization; they raise the etch rate (basis of [[sle]]).\n- **Type III:** cavities (voids) from micro-explosions, e.g. for optical storage.",
+        "Waveguides are written by moving the focus through the glass at low speed. Along the path a track with slightly **raised refractive index** remains (first description: Davis et al. 1996, check the literature)."
+      ]
+    },
+    "k10.l04.b02": {
+      "erklaerung": "Numerical aperture $\\mathrm{NA}$ of a waveguide with core–cladding index difference $\\Delta n$ and maximum core radius $a_\\mathrm{max}$ for single-mode operation ($V=2\\pi a\\,\\mathrm{NA}/\\lambda<2.405$, step-index approximation).",
+      "titel": "Waveguide: NA and single-mode condition",
+      "sammlung": "Special processes"
+    },
+    "k10.l04.b03": {
+      "aufgabe": "Numerical example: a waveguide in glass with $n=1.45$ and $\\Delta n=10^{-3}$ is designed for $\\lambda=1550\\,\\mathrm{nm}$. Determine NA and the maximum core radius for single-mode operation.",
+      "schritte": [
+        "$\\mathrm{NA}\\approx\\sqrt{2\\cdot1.45\\cdot10^{-3}}=0.0539$",
+        "$a_\\mathrm{max}=2.405\\cdot1.55\\,\\mu\\mathrm{m}/(2\\pi\\cdot0.0539)=11.0\\,\\mu\\mathrm{m}$"
+      ],
+      "ergebnis": "NA ≈ 0.054 and a core radius up to about 11 µm. The written waveguide is thus well comparable with standard fibres.",
+      "titel": "Worked example"
+    },
+    "k10.q12": {
+      "frage": "Calculate $\\mathrm{NA}\\approx\\sqrt{2n\\Delta n}$ for $n=1.46$ and $\\Delta n=2\\cdot10^{-3}$ (numerical examples).",
+      "erklaerung": "$\\sqrt{2\\cdot1.46\\cdot2\\cdot10^{-3}}=\\sqrt{5.84\\cdot10^{-3}}=0.0764$."
+    },
+    "k10.q13": {
+      "frage": "Maximum single-mode core radius $a_\\mathrm{max}=2.405\\,\\lambda/(2\\pi\\,\\mathrm{NA})$ for $\\lambda=1550\\,\\mathrm{nm}$ and $\\mathrm{NA}=0.0764$. Answer in µm.",
+      "erklaerung": "$a_\\mathrm{max}=2.405\\cdot1.55/(2\\pi\\cdot0.0764)=3.728/0.480=7.77\\,\\mu\\mathrm{m}$."
+    },
+    "k10.q14": {
+      "frage": "Match the modification type to its description.",
+      "paare": [
+        [
+          "Type I",
+          "Smooth refractive index change (waveguides)"
+        ],
+        [
+          "Type II",
+          "Birefringent nanogratings (raised etch rate)"
+        ],
+        [
+          "Type III",
+          "Voids from micro-explosions"
+        ]
+      ],
+      "erklaerung": "Common classification from the literature; the boundaries depend on material and parameters."
+    },
+    "k10.q15": {
+      "frage": "How is a waveguide written into glass?",
+      "optionen": [
+        "Move the focus through the volume at low speed: a track with slightly raised refractive index",
+        "Ablate the surface",
+        "Melt the glass",
+        "Draw a fibre with the laser"
+      ],
+      "erklaerung": "The fs focus locally changes the structure and with it the refractive index; the path becomes the core."
+    },
+    "k10.c04": {
+      "vorne": "Which three modification types are distinguished in the glass volume?",
+      "hinten": "Type I: smooth index change (waveguides), type II: nanogratings (birefringent), type III: cavities (voids)."
+    }
+  }
+}

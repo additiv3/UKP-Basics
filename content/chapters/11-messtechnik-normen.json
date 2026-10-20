@@ -416,6 +416,135 @@
           "quelle": "Herleitung"
         }
       ]
+    },
+    {
+      "id": "k11.l05",
+      "titel": "Rechentraining: Messwerte auswerten",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k11.l05.b01",
+          "typ": "text",
+          "inhalt": "Messwerte auszuwerten heißt rechnen **und** Unsicherheiten mitführen. Bei der Fortpflanzung unkorrelierter relativer Unsicherheiten addierst du die Quadrate und ziehst die Wurzel.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k11.q12",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Pulsdauer aus der Autokorrelation und berechne sie für $\\tau_\\mathrm{AC}=300\\,\\mathrm{fs}$ und einen Gauß-Puls ($\\kappa=\\sqrt2$). Antwort in fs.",
+          "vorlage": "$\\tau=$ {{ [] // [] }}",
+          "richtig": [
+            "$\\tau_\\mathrm{AC}$",
+            "$\\kappa$"
+          ],
+          "erklaerung": "$\\tau=\\tau_\\mathrm{AC}/\\kappa=300/1{,}414=212\\,\\mathrm{fs}$.",
+          "ablenker": [
+            "$\\Delta\\nu$",
+            "$w_0$"
+          ],
+          "antwort": 212,
+          "einheit": "fs",
+          "toleranz": 0.02
+        },
+        {
+          "id": "k11.q13",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für den Strahlradius aus dem 10–90-%-Abstand des Messerschneidenverfahrens und berechne ihn für $\\Delta x=25{,}6\\,\\mu\\mathrm{m}$. Antwort in µm.",
+          "vorlage": "$w=$ {{ [] // [] }}",
+          "richtig": [
+            "$\\Delta x_{10\\text{–}90}$",
+            "$1{,}28$"
+          ],
+          "erklaerung": "$w=\\Delta x_{10\\text{–}90}/1{,}28=25{,}6/1{,}28=20\\,\\mu\\mathrm{m}$.",
+          "ablenker": [
+            "$\\tau$",
+            "$f$"
+          ],
+          "antwort": 20,
+          "einheit": "µm",
+          "toleranz": 0.02
+        },
+        {
+          "id": "k11.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Pulsenergie 4 % und Strahlradius 2 % Unsicherheit: Wie groß ist die relative Unsicherheit der Spitzenfluenz in Prozent?",
+          "antwort": 5.66,
+          "einheit": "%",
+          "toleranz": 0.02,
+          "erklaerung": "$\\sqrt{4^2+(2\\cdot2)^2}=\\sqrt{16+16}=\\sqrt{32}=5{,}66\\,\\%$."
+        },
+        {
+          "id": "k11.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein sech²-Puls hat $\\tau_\\mathrm{AC}=280\\,\\mathrm{fs}$ ($\\kappa=1{,}543$). Wie lang ist der Puls in fs?",
+          "antwort": 181.5,
+          "einheit": "fs",
+          "toleranz": 0.02,
+          "erklaerung": "$\\tau=280/1{,}543=181{,}5\\,\\mathrm{fs}$."
+        },
+        {
+          "id": "k11.q16",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Profilschnitt hat die Höhenwerte $z=(3,\\,-2,\\,-1,\\,2,\\,-2)\\,\\mu\\mathrm{m}$ (Mittellinie bei 0). Wie groß ist $Rq$ in µm?",
+          "antwort": 2.1,
+          "einheit": "µm",
+          "toleranz": 0.02,
+          "erklaerung": "$Rq=\\sqrt{(9+4+1+4+4)/5}=\\sqrt{4{,}4}=2{,}10\\,\\mu\\mathrm{m}$ (und $Ra=2{,}0\\,\\mu\\mathrm{m}$)."
+        },
+        {
+          "id": "k11.q17",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jedes Messverfahren seiner Messgröße zu.",
+          "paare": [
+            [
+              "Autokorrelation",
+              "Pulsbreite (Pulsform angenommen)"
+            ],
+            [
+              "FROG / SPIDER",
+              "Amplitude und Phase des Pulses"
+            ],
+            [
+              "Messerschneidenverfahren",
+              "Strahlradius"
+            ],
+            [
+              "Thermisches Leistungsmessgerät",
+              "Mittlere Leistung"
+            ]
+          ],
+          "erklaerung": "Jede Methode liefert eine andere Größe; für Fluenz brauchst du Energie (Leistung) und Strahlradius."
+        },
+        {
+          "id": "k11.q18",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du willst die Fluenz genauer angeben. Welche Messgröße verbesserst du zuerst?",
+          "optionen": [
+            "Die Pulsenergie, weil sie quadratisch eingeht",
+            "Den Strahlradius, weil er quadratisch eingeht",
+            "Die Wellenlänge",
+            "Keine, sie sind gleich wichtig"
+          ],
+          "richtig": 1,
+          "erklaerung": "$F_0\\propto E_\\mathrm{p}/w_0^2$: ein Radiusfehler wirkt doppelt."
+        },
+        {
+          "id": "k11.c06",
+          "typ": "karte",
+          "vorne": "Wie pflanzt du unkorrelierte relative Unsicherheiten fort?",
+          "hinten": "Quadrate addieren, Wurzel ziehen; Potenzen als Faktoren: $F_0\\propto E_\\mathrm{p}/w_0^2$ gibt $\\sqrt{(\\delta E/E)^2+(2\\,\\delta w/w)^2}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

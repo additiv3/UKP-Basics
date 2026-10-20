@@ -1,0 +1,309 @@
+{
+  "titel": "Ablation mechanisms and threshold",
+  "einleitung": "The heart of the topic: above which fluence does a pulse remove material, how deep, and by which mechanism? Here you learn the threshold, the logarithmic ablation depth, the D² method, the most important mechanisms and two effects that shift everything in practice: incubation and heat accumulation.",
+  "ziele": [
+    "Define the ablation threshold and interpret ablation depth and efficiency versus fluence",
+    "Determine threshold and beam radius from crater diameters with the D² method",
+    "Distinguish spallation, phase explosion and Coulomb explosion",
+    "Describe incubation quantitatively with the power law",
+    "Place heat accumulation and burst mode"
+  ],
+  "lektionen": {
+    "k07.l01": "Ablation threshold and ablation depth",
+    "k07.l02": "Determining the threshold (D² method)",
+    "k07.l03": "Mechanisms: spallation, phase explosion, Coulomb explosion",
+    "k07.l04": "Incubation",
+    "k07.l05": "Burst mode and heat accumulation",
+    "k07.l06": "Calculation training: threshold, craters, incubation"
+  },
+  "blocks": {
+    "k07.l01.b01": {
+      "inhalt": [
+        "The [[ablationsschwelle|ablation threshold]] $F_\\mathrm{th}$ is the fluence below which a pulse does not permanently remove material. Above it, the pulse removes a layer whose depth $\\delta$ grows with fluence, but **not linearly**.",
+        "A common approximation for a single pulse in the medium fluence range is a logarithmic law with the characteristic length $\\ell$ (order of magnitude of the energy penetration depth, depending on material and wavelength):"
+      ]
+    },
+    "k07.l01.b02": {
+      "titel": "Logarithmic ablation law",
+      "sammlung": "Ablation",
+      "erklaerung": "Ablation depth per pulse. At $F=F_\\mathrm{th}$ the depth is zero, at $F=e\\,F_\\mathrm{th}$ it is exactly $\\ell$. Over large fluence ranges the literature often observes **two** regimes with different $\\ell$ (Nolte et al. 1997, on metals)."
+    },
+    "k07.l01.b03": {
+      "inhalt": [
+        "For a Gaussian beam the peak fluence $F_0$ is in the middle; the fluence falls off towards the outside. Material is only removed where $F(r)>F_\\mathrm{th}$, i.e. on a circle of radius $r_\\mathrm{abl}=w_0\\sqrt{\\tfrac12\\ln(F_0/F_\\mathrm{th})}$. The crater is therefore shallower and narrower than the beam, and it grows slowly with rising energy."
+      ]
+    },
+    "k07.l01.b05": {
+      "titel": "Most energy-efficient fluence",
+      "sammlung": "Ablation",
+      "erklaerung": "Removed volume per pulse energy for a Gaussian beam with the logarithmic law: the maximum is at $F_0=e^2F_\\mathrm{th}$. Derivation: $V=\\tfrac{\\pi}{4}\\ell w_0^2\\ln^2(F_0/F_\\mathrm{th})$, $E_\\mathrm{p}=\\tfrac{\\pi}{2}w_0^2F_0$."
+    },
+    "k07.l01.b06": {
+      "inhalt": "More energy per pulse is not automatically more efficient. In the model the most energy-efficient peak fluence is about $7.4\\,F_\\mathrm{th}$. Above it the depth only increases logarithmically while the energy increases linearly, and quality often suffers (more melt, plasma shielding). The statement holds for this model; real processes deviate."
+    },
+    "k07.q01": {
+      "frage": "At $F=3\\,F_\\mathrm{th}$ the depth is $\\ell\\ln3$. At what fluence (in multiples of $F_\\mathrm{th}$) do you reach **double** the depth?",
+      "erklaerung": "Double depth: $\\ln x=2\\ln3=\\ln9\\Rightarrow x=9$."
+    },
+    "k07.q02": {
+      "frage": "Why does a Gaussian beam with $F_0$ just above the threshold ablate only in the centre?",
+      "optionen": [
+        "Because the material is thinner there",
+        "Because only in the centre is the local fluence above $F_\\mathrm{th}$",
+        "Because the wavelength is larger at the edge",
+        "Because the edge regions reflect"
+      ],
+      "erklaerung": "$F(r)=F_0\\,e^{-2r^2/w_0^2}$ falls off outwards and drops below the threshold at $r_\\mathrm{abl}$."
+    },
+    "k07.c01": {
+      "vorne": "How does the ablation depth per pulse depend on the fluence?",
+      "hinten": "In the simplest model logarithmically: $\\delta=\\ell\\ln(F/F_\\mathrm{th})$."
+    },
+    "k07.c02": {
+      "vorne": "At which peak fluence is the Gaussian beam model most energy-efficient?",
+      "hinten": "At $F_0=e^{2}F_\\mathrm{th}\\approx7.4\\,F_\\mathrm{th}$."
+    },
+    "k07.l02.b01": {
+      "inhalt": [
+        "The threshold is not measured directly but via **crater diameters** at different pulse energies. The method ([[d2-methode]]) goes back to Liu (1982) and is standard today when the beam is Gaussian.",
+        "Idea: the crater rim lies where the local fluence equals $F_\\mathrm{th}$, i.e. $F_0\\,e^{-2r^2/w_0^2}=F_\\mathrm{th}$. With $D=2r$:"
+      ]
+    },
+    "k07.l02.b02": {
+      "titel": "D² method",
+      "sammlung": "Ablation",
+      "erklaerung": "$D^2$ rises **linearly** with $\\ln E_\\mathrm{p}$. The slope is $2w_0^2$ (gives the beam radius), the intercept with $D^2=0$ is at $E_\\mathrm{th}$."
+    },
+    "k07.l02.b03": {
+      "titel": "Threshold fluence from E_th",
+      "sammlung": "Ablation",
+      "erklaerung": "Threshold fluence from the threshold energy $E_\\mathrm{th}$ and the $w_0$ determined from the slope."
+    },
+    "k07.l02.b05": {
+      "titel": "Worked example",
+      "aufgabe": "An evaluation of $D^2$ versus $\\ln E_\\mathrm{p}$ gives the slope $a=450\\,\\mu\\mathrm{m}^2$ and the zero crossing at $E_\\mathrm{th}=1.2\\,\\mu\\mathrm{J}$. Determine $w_0$ and $F_\\mathrm{th}$.",
+      "schritte": [
+        "$a=2w_0^2\\Rightarrow w_0=\\sqrt{225}\\,\\mu\\mathrm{m}=15\\,\\mu\\mathrm{m}$",
+        "$F_\\mathrm{th}=2E_\\mathrm{th}/(\\pi w_0^2)=2\\cdot1.2\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot(15\\cdot10^{-4}\\,\\mathrm{cm})^2)=2.4\\cdot10^{-6}/(7.07\\cdot10^{-6})\\,\\mathrm{J/cm^2}$"
+      ],
+      "ergebnis": "$w_0=15\\,\\mu\\mathrm{m}$ and $F_\\mathrm{th}\\approx0.34\\,\\mathrm{J/cm^2}$ (numerical example)."
+    },
+    "k07.l02.b06": {
+      "inhalt": "Evaluation in three steps: (1) measure craters at several $E_\\mathrm{p}$, (2) plot $D^2$ against $\\ln E_\\mathrm{p}$ and fit a straight line, (3) determine $w_0$ from the slope and $E_\\mathrm{th}$ from the zero crossing. The threshold depends on the **number of pulses** (incubation, next lesson), so it has to be stated for each pulse number $N$."
+    },
+    "k07.q03": {
+      "frage": "The slope of the line in the $D^2$–$\\ln E_\\mathrm{p}$ diagram is $a=288\\,\\mu\\mathrm{m}^2$. What is $w_0$ in µm?",
+      "erklaerung": "$a=2w_0^2\\Rightarrow w_0=\\sqrt{144}=12\\,\\mu\\mathrm{m}$."
+    },
+    "k07.q04": {
+      "frage": "What does the zero crossing of the $D^2$ line give?",
+      "optionen": [
+        "The beam radius",
+        "The threshold energy $E_\\mathrm{th}$",
+        "The pulse duration",
+        "The wavelength"
+      ],
+      "erklaerung": "At $D^2=0$, $E_\\mathrm{p}=E_\\mathrm{th}$."
+    },
+    "k07.c03": {
+      "vorne": "What is the D² method?",
+      "hinten": "$D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$: the slope gives $w_0$, the zero crossing gives $E_\\mathrm{th}$."
+    },
+    "k07.l03.b01": {
+      "inhalt": [
+        "How exactly material leaves the solid depends on material, fluence and pulse duration. Review papers mainly distinguish these mechanisms:"
+      ]
+    },
+    "k07.l03.b02": {
+      "inhalt": [
+        "- **Spallation** ([[spallation]]): The fast energy deposition creates a pressure wave that is reflected as a tensile wave at the rear surface or at interfaces. Material flakes off in layers. Preferred near the threshold.",
+        "- **Phase explosion** ([[phasenexplosion]], explosive boiling): The melt is superheated to temperatures near the critical temperature and suddenly decays into vapour and droplets. Typical at higher fluence.",
+        "- **Coulomb explosion** ([[coulomb-explosion]]): The surface charges up positively through emitted electrons, the ions repel each other and are ejected. Mainly discussed for dielectrics and semiconductors near the threshold.",
+        "- **Non-thermal melting:** Strong electronic excitation weakens the bonds so that the lattice melts in under a picosecond without classical heat transfer (mainly in semiconductors)."
+      ]
+    },
+    "k07.l03.b03": {
+      "inhalt": "There is **no** single UKP mechanism. With rising fluence the picture often changes: from gentle, layer-by-layer detachment near the threshold to more violent ejection (phase explosion) at high fluence. Which mechanism actually acts depends on the material and the process."
+    },
+    "k07.q05": {
+      "frage": "Match the description to the mechanism.",
+      "paare": [
+        [
+          "A tensile wave detaches layers",
+          "Spallation"
+        ],
+        [
+          "Superheated melt suddenly decays into vapour and droplets",
+          "Phase explosion"
+        ],
+        [
+          "Surface charges up positively, ions repel each other",
+          "Coulomb explosion"
+        ]
+      ],
+      "erklaerung": "The names describe the physics: spalling through stress waves, explosive boiling, electrostatic repulsion."
+    },
+    "k07.q06": {
+      "frage": "Which mechanism is typically discussed at high fluence in metals?",
+      "optionen": [
+        "Spallation",
+        "Phase explosion",
+        "Radioactive decay",
+        "Melt-free evaporation"
+      ],
+      "erklaerung": "High fluence heats the melt to near the critical temperature: explosive boiling."
+    },
+    "k07.c04": {
+      "vorne": "What is spallation?",
+      "hinten": "Layer-by-layer flaking caused by tensile stress that arises from reflected pressure waves after a fast energy deposition."
+    },
+    "k07.c05": {
+      "vorne": "What is Coulomb explosion?",
+      "hinten": "Ions are ejected from a positively charged surface after electrons have left the solid."
+    },
+    "k07.l04.b01": {
+      "inhalt": [
+        "The second pulse at the same spot hits a modified material: defects, colour centres, roughness and stresses have formed. The threshold falls with the number of pulses. This phenomenon is called **incubation** ([[inkubation]]) and is often described with a power law (Jee et al. 1988):"
+      ]
+    },
+    "k07.l04.b02": {
+      "titel": "Incubation (power law)",
+      "sammlung": "Ablation",
+      "erklaerung": "Threshold after $N$ pulses at the same location. $S\\le1$ is the incubation coefficient; $S=1$ means no incubation. $S$ depends on the material."
+    },
+    "k07.l04.b04": {
+      "titel": "Worked example",
+      "aufgabe": "Assume for a material (as a numerical example) $S=0.85$. How much does the threshold fall after $N=100$ pulses, and how many pulses does it take at $F_0=0.6\\,F_\\mathrm{th}(1)$ until ablation sets in?",
+      "schritte": [
+        "$F_\\mathrm{th}(100)/F_\\mathrm{th}(1)=100^{-0.15}=e^{-0.15\\ln100}=e^{-0.69}\\approx0.50$",
+        "$N^\\ast=(1/0.6)^{1/0.15}=1.667^{6.67}\\approx30$"
+      ],
+      "ergebnis": "After 100 pulses the threshold has dropped to about half; at $0.6\\,F_\\mathrm{th}(1)$ ablation starts after around 30 pulses."
+    },
+    "k07.l04.b05": {
+      "inhalt": "In area ablation with high pulse overlap every spot is hit by many pulses. Then it is not the single-pulse threshold that counts but $F_\\mathrm{th}(N)$, which can be considerably lower. If you planned the process with the single-pulse threshold, the effective fluence relative to the threshold is therefore often higher than expected."
+    },
+    "k07.q07": {
+      "frage": "What does $S=1$ mean in the incubation law?",
+      "optionen": [
+        "Maximum incubation",
+        "No incubation, the threshold stays constant",
+        "The threshold rises with $N$",
+        "The pulse is 1 ps long"
+      ],
+      "erklaerung": "$N^{S-1}=N^{0}=1$: the threshold does not change."
+    },
+    "k07.q08": {
+      "frage": "$S=0.8$: to what fraction of the single-pulse threshold ($\\times100\\,\\%$) does the threshold fall after $N=1000$ pulses, in percent?",
+      "erklaerung": "$1000^{-0.2}=10^{-0.6}=0.251\\Rightarrow25\\,\\%$."
+    },
+    "k07.c06": {
+      "vorne": "How is incubation described?",
+      "hinten": "$F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{S-1}$ with incubation coefficient $S\\le1$."
+    },
+    "k07.l05.b01": {
+      "inhalt": [
+        "At high repetition rates the next pulse arrives before the heat of the previous one has flowed away: the temperature of the zone rises from pulse to pulse, the **heat accumulation**. A simple estimate: heat stays relevant if the diffusion length within the pulse spacing reaches the order of magnitude of the beam radius."
+      ]
+    },
+    "k07.l05.b02": {
+      "titel": "Criterion for heat accumulation",
+      "sammlung": "Ablation",
+      "erklaerung": "Estimate: $L_\\mathrm{th}(1/f)=\\sqrt{D/f}$ compared with the beam radius. Heuristic; fluence, overlap and material shift the limit."
+    },
+    "k07.l05.b03": {
+      "titel": "Worked example",
+      "aufgabe": "For $D=1\\,\\mathrm{cm^2/s}$ (numerical example) and $w_0=10\\,\\mu\\mathrm{m}$: from which repetition rate does heat accumulation become likely?",
+      "schritte": [
+        "Condition $\\sqrt{D/f}\\ge w_0\\Rightarrow f\\le D/w_0^2$",
+        "$f_\\mathrm{crit}=10^{-4}\\,\\mathrm{m^2/s}/(10^{-5}\\,\\mathrm{m})^2=10^{-4}/10^{-10}\\,\\mathrm{s^{-1}}=10^{6}\\,\\mathrm{s^{-1}}$"
+      ],
+      "ergebnis": "At repetition rates around 1 MHz and above, the heat lies within the beam region. The smaller the focus, the higher this limit."
+    },
+    "k07.l05.b04": {
+      "inhalt": [
+        "In **burst mode** ([[burst-mode]]) the pulse energy is split over a group of pulses that follow one another at nanosecond spacing. A burst group is then repeated at a low rate. From the literature: one study reports an ablation-cooling effect for bursts in the GHz range (Kerse et al. 2016); other works show that bursts can improve or worsen the efficiency depending on material and parameters. The results are not uniform."
+      ]
+    },
+    "k07.l05.b05": {
+      "inhalt": "Burst is not a cure-all: it changes the **energy per individual pulse**, the time spacing and the heat balance at once. Only an experiment on your own material shows whether it helps."
+    },
+    "k07.q09": {
+      "frage": "A laser has $f=100\\,\\mathrm{kHz}$ and $D=0.1\\,\\mathrm{cm^2/s}$ (numerical example). What is the diffusion length $\\sqrt{D/f}$ within the pulse spacing, in µm?",
+      "erklaerung": "$D=0.1\\,\\mathrm{cm^2/s}=10^{-5}\\,\\mathrm{m^2/s}$; $\\sqrt{10^{-5}/10^{5}}\\,\\mathrm{m}=\\sqrt{10^{-10}}\\,\\mathrm{m}=10^{-5}\\,\\mathrm{m}=10\\,\\mu\\mathrm{m}$."
+    },
+    "k07.q10": {
+      "frage": "What favours heat accumulation?",
+      "optionen": [
+        "Low repetition rate",
+        "High repetition rate and high overlap",
+        "Large pulse spacings",
+        "Very low average power"
+      ],
+      "erklaerung": "A short time between pulses and many pulses per spot keep the heat in the material."
+    },
+    "k07.c07": {
+      "vorne": "What is burst mode?",
+      "hinten": "Splitting the energy over a group of pulses at nanosecond spacing, which is repeated at a low rate."
+    },
+    "k07.l06.b01": {
+      "inhalt": "The numbers in this lesson are **numerical examples**, not material values. You find the natural logarithm on the calculator as **ln**, the power with **xʸ**."
+    },
+    "k07.q11": {
+      "frage": "Build the D² equation and use it to calculate the crater diameter $D$ for $w_0=12\\,\\mu\\mathrm{m}$ and $F_0/F_\\mathrm{th}=5$. Answer in µm (do not forget the root).",
+      "erklaerung": "$D^2=2w_0^2\\ln(F_0/F_\\mathrm{th})=2\\cdot144\\cdot\\ln5=463.5\\,\\mu\\mathrm{m}^2\\Rightarrow D=21.5\\,\\mu\\mathrm{m}$.",
+      "tipp": "$\\ln5\\approx1.609$. First calculate $D^2$, then take the root with the √ key."
+    },
+    "k07.q12": {
+      "frage": "What is the crater diameter $D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$ for $w_0=15\\,\\mu\\mathrm{m}$ and $F_0=4\\,F_\\mathrm{th}$, in µm?",
+      "erklaerung": "$D=15\\,\\mu\\mathrm{m}\\cdot\\sqrt{2\\ln4}=15\\cdot\\sqrt{2.77}=15\\cdot1.665=25\\,\\mu\\mathrm{m}$."
+    },
+    "k07.q13": {
+      "frage": "Build the formula for the threshold fluence from the threshold energy and calculate it for $E_\\mathrm{th}=0.8\\,\\mu\\mathrm{J}$ and $w_0=10\\,\\mu\\mathrm{m}$. Answer in J/cm².",
+      "erklaerung": "$F_\\mathrm{th}=\\dfrac{2E_\\mathrm{th}}{\\pi w_0^2}=\\dfrac{2\\cdot0.8\\cdot10^{-6}\\,\\mathrm{J}}{\\pi\\,(10^{-3}\\,\\mathrm{cm})^2}\\approx0.509\\,\\mathrm{J/cm^2}$."
+    },
+    "k07.q14": {
+      "frage": "Let the threshold be $F_\\mathrm{th}=0.4\\,\\mathrm{J/cm^2}$. At which peak fluence is the ablation most energy-efficient in the Gaussian model ($F_\\mathrm{opt}=e^2F_\\mathrm{th}$)? Answer in J/cm².",
+      "erklaerung": "$F_\\mathrm{opt}=e^2\\cdot0.4=7.389\\cdot0.4\\approx2.96\\,\\mathrm{J/cm^2}$."
+    },
+    "k07.q15": {
+      "frage": "Incubation with $S=0.9$: to how many percent of the single-pulse threshold does the threshold fall after $N=500$ pulses?",
+      "erklaerung": "$500^{-0.1}=e^{-0.1\\ln500}=e^{-0.6215}=0.537\\Rightarrow53.7\\,\\%$."
+    },
+    "k07.q16": {
+      "frage": "$S=0.8$ and $F_0=0.5\\,F_\\mathrm{th}(1)$: after how many pulses $N^\\ast=(F_\\mathrm{th}(1)/F_0)^{1/(1-S)}$ does ablation start?",
+      "erklaerung": "$N^\\ast=2^{1/0.2}=2^5=32$."
+    },
+    "k07.q17": {
+      "frage": "Heat-accumulation limit $f_\\mathrm{crit}=D/w_0^2$ for $D=0.5\\,\\mathrm{cm^2/s}$ and $w_0=20\\,\\mu\\mathrm{m}$. Answer in kHz.",
+      "erklaerung": "$f=5\\cdot10^{-5}\\,\\mathrm{m^2/s}/(2\\cdot10^{-5}\\,\\mathrm{m})^2=5\\cdot10^{-5}/4\\cdot10^{-10}=1.25\\cdot10^{5}\\,\\mathrm{Hz}=125\\,\\mathrm{kHz}$.",
+      "tipp": "$D$ in m²/s: 0.5 cm²/s $=5\\cdot10^{-5}$ m²/s; $w_0=2\\cdot10^{-5}$ m."
+    },
+    "k07.q18": {
+      "frage": "Match equation and statement.",
+      "paare": [
+        [
+          "$\\delta=\\ell\\ln(F/F_\\mathrm{th})$",
+          "Ablation depth per pulse"
+        ],
+        [
+          "$D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$",
+          "Threshold determination from craters"
+        ],
+        [
+          "$F_\\mathrm{th}(N)=F_\\mathrm{th}(1)N^{S-1}$",
+          "Incubation"
+        ],
+        [
+          "$F_\\mathrm{opt}=e^2F_\\mathrm{th}$",
+          "Most efficient fluence in the model"
+        ]
+      ],
+      "erklaerung": "Four core equations of K07."
+    },
+    "k07.c08": {
+      "vorne": "How do you calculate the crater diameter from fluence ratio and beam radius?",
+      "hinten": "$D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$ (Gaussian beam): no ablation for $F_0\\le F_\\mathrm{th}$."
+    }
+  }
+}

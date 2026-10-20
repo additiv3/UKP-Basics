@@ -20,9 +20,22 @@
       "id": "D",
       "titel": "Prozess und Praxis",
       "beschreibung": "Anlagentechnik, Sonderverfahren, Messtechnik und wissenschaftliches Arbeiten."
+    },
+    {
+      "id": "E",
+      "titel": "Englisch",
+      "beschreibung": "Wissenschaftliches Englisch: sprechen, schreiben, lesen."
     }
   ],
   "kapitel": [
+    {
+      "id": "k00",
+      "datei": "chapters/00-werkzeugkasten.json",
+      "stufe": "A",
+      "titel": "Werkzeugkasten: Zahlen, Einheiten, Rechnen",
+      "kurz": "Zehnerpotenzen, Einheiten, Logarithmus, Abschätzen, Taschenrechner",
+      "voraussetzungen": []
+    },
     {
       "id": "k01",
       "datei": "chapters/01-pulsgroessen.json",
@@ -98,17 +111,12 @@
       "id": "k08",
       "stufe": "C",
       "titel": "Werkstoffe: Quarzglas, Keramik, Halbleiter",
-      "kurz": "Werkstoffverhalten, Rissbildung, Eigenspannung",
+      "kurz": "Bandlücke, Absorptionsregime, Rissbildung, Eigenspannung",
       "voraussetzungen": [
         "k03",
         "k07"
       ],
-      "lektionen_geplant": [
-        "Quarzglas",
-        "Oxid- und Nichtoxidkeramik",
-        "Silizium und Verbindungshalbleiter",
-        "Rissbildung und Eigenspannung"
-      ]
+      "datei": "chapters/08-werkstoffe.json"
     },
     {
       "id": "k09",
@@ -125,17 +133,12 @@
       "id": "k10",
       "stufe": "D",
       "titel": "Sonderverfahren",
-      "kurz": "LIPSS, Selective Laser Etching, Bessel-Strahl, Volumenmodifikation",
+      "kurz": "LIPSS, Selective Laser Etching, Bessel-Strahl, Wellenleiter",
       "voraussetzungen": [
         "k06",
         "k08"
       ],
-      "lektionen_geplant": [
-        "LIPSS",
-        "Selective Laser Etching",
-        "Bessel-Strahl und Filamentation",
-        "Wellenleiter und Volumenmodifikation"
-      ]
+      "datei": "chapters/10-sonderverfahren.json"
     },
     {
       "id": "k11",
@@ -151,16 +154,19 @@
       "id": "k12",
       "stufe": "D",
       "titel": "Wissenschaftliche Praxis in der Photonik",
-      "kurz": "Journals, Konferenzen, Paper lesen, Literaturverwaltung",
+      "kurz": "Journals, Konferenzen, Paper lesen, Literaturverwaltung, Vortrag",
       "voraussetzungen": [
         "k09"
       ],
-      "lektionen_geplant": [
-        "Journals und Konferenzen",
-        "Paper lesen und einordnen",
-        "Literaturverwaltung",
-        "Einordnung der eigenen Arbeit"
-      ]
+      "datei": "chapters/12-wissenschaftliche-praxis.json"
+    },
+    {
+      "id": "k13",
+      "datei": "chapters/13-englisch.json",
+      "stufe": "E",
+      "titel": "Wissenschaftliches Englisch für die Photonik",
+      "kurz": "Zahlen aussprechen, Aufbauten und Diagramme beschreiben, Abstracts, Gespräche",
+      "voraussetzungen": []
     }
   ]
 }

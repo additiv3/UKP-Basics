@@ -29,11 +29,21 @@ Abweichung vom ursprünglichen Projektentwurf: Die Wiederholungslogik (SM-2) und
 
 Offen aus Phase 2: Karteikarten-Ansicht pro Kapitel (Blättern ohne SM-2), Statistik-Ansicht, K08/K10/K12.
 
+## Phase 2b · Version 0.3 (erledigt)
+
+- [x] DE/EN-Schalter mit Overlay-Dateien für alle Inhalte ([ADR 0006](adr/0006-zweisprachigkeit.md)), Glossar von 43 auf 131 Begriffe, zweisprachig
+- [x] Vokabeltrainer: 262 SM-2-Karten (DE → EN, EN → DE) aus dem Glossar
+- [x] Taschenrechner, Rechenweg-Quizart, Kacheln und Ziehen für Zuordnung und Sortieren, Lösung zeigen, Tipps ([ADR 0007](adr/0007-rechnen-am-handy.md)), Rechenwerkstatt
+- [x] Neue Kapitel: K00 Werkzeugkasten, K08 Werkstoffe, K10 Sonderverfahren, K12 Wissenschaftliche Praxis, K13 Wissenschaftliches Englisch (neue Stufe E)
+- [x] Rechentraining-Lektion in K01 bis K07, K09 und K11 (über 100 neue Fragen)
+- [x] Neue Startseite (Wochenstreifen, Weiter-Karte, Schnellzugriffe, Lernpfad als Zeitleiste)
+
 ## Phase 3 · Vertiefung
 
 - Weitere Simulationen: Bessel-Strahl und Filamentation, LIPSS-Periode, Wärmeakkumulation über Pulsfolgen
 - Suche über Kapitel, Notizen, Literaturverzeichnis mit Quellenverweisen
-- K08 (Werkstoffe), K10 (Sonderverfahren), K12 (wissenschaftliche Praxis)
+- Belegte Materialkennwerte in K08 (Zahlen sind noch als „ungeprüft“ markiert)
+- Karteikarten-Ansicht pro Kapitel, Statistik-Ansicht
 
 ## Phase 4 · Eigene Literatur und Experimente
 

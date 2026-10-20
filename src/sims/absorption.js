@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num } from '../core/format.js';
 import { canvasView, control, readouts, Plot, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Linear vs. nichtlinear absorbieren', kurz: 'Warum nichtlineare Absorption den Fokus „schärft"' };
 export const formel = [
@@ -36,7 +37,7 @@ export function mount(root) {
       p.text('nichtlinear (2 Photonen)', p.X(1.2), p.Y(1 / (1 + a * 1.2)) - 12, { color: pal.laser, bold: true, size: 12 });
     },
   });
-  depth.canvas.setAttribute('aria-label', 'Intensität über der Eindringtiefe: exponentieller Abfall bei linearer, hyperbolischer bei Zwei-Photonen-Absorption');
+  depth.canvas.setAttribute('aria-label', t('Intensität über der Eindringtiefe: exponentieller Abfall bei linearer, hyperbolischer bei Zwei-Photonen-Absorption'));
 
   const radBox = h('div', { class: 'sim-canvas-box' });
   const rad = canvasView(radBox, {
@@ -53,7 +54,7 @@ export function mount(root) {
       p.vline(weff, { color: pal.ok, dash: [4, 4], label: 'w_eff', });
     },
   });
-  rad.canvas.setAttribute('aria-label', 'Radiale Intensität des Strahls und Absorptionsrate proportional I hoch n');
+  rad.canvas.setAttribute('aria-label', t('Radiale Intensität des Strahls und Absorptionsrate proportional I hoch n'));
 
   function update() {
     out.update([
@@ -67,5 +68,5 @@ export function mount(root) {
   }
   update();
 
-  root.append(depthBox, ctrls[0].el, radBox, ctrls[1].el, out.el, h('p', { class: 'hint sim-note' }, 'Vereinfachte Modelle ohne Erschöpfung, Plasmaabschirmung oder Fokusverschiebung. Der Fokuspfeil w_eff = w₀/√n gilt für eine reine I^n-Rate und einen Gauß-Strahl.'));
+  root.append(depthBox, ctrls[0].el, radBox, ctrls[1].el, out.el, h('p', { class: 'hint sim-note' }, t('Vereinfachte Modelle ohne Erschöpfung, Plasmaabschirmung oder Fokusverschiebung. Der Fokuspfeil w_eff = w₀/√n gilt für eine reine I^n-Rate und einen Gauß-Strahl.')));
 }

@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { si, num } from '../core/format.js';
 import { canvasView, control, readouts, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Gauß-Strahl im Fokus', kurz: 'Taille, Rayleighlänge und Divergenz live verändern' };
 export const formel = [
@@ -105,9 +106,9 @@ export function mount(root) {
         ctx.setLineDash([]);
         ctx.fillText(z > 0 ? '+z_R' : '−z_R', X(z), cy + R(wz(z)) + 15);
       }
-      ctx.fillText('Fokus', X(0), cy + R(1) + 15);
+      ctx.fillText(t('Fokus'), X(0), cy + R(1) + 15);
       ctx.textAlign = 'left';
-      ctx.fillText('w₀', X(0) + 5, cy - R(1) - 5);
+      ctx.fillText(t('w₀'), X(0) + 5, cy - R(1) - 5);
 
       // marker with transverse intensity profile
       const mz = zr_rel;
@@ -140,7 +141,7 @@ export function mount(root) {
       ctx.fillText(`w(z)=${num(mw, 3)}·w₀`, mx + (ctx.textAlign === 'left' ? 8 : -8), cy - R(mw) - 10);
     },
   });
-  view.canvas.setAttribute('aria-label', 'Strahlverlauf eines Gauß-Strahls mit Taille, Rayleighlänge und Intensitätsprofil an einer wählbaren Position');
+  view.canvas.setAttribute('aria-label', t('Strahlverlauf eines Gauß-Strahls mit Taille, Rayleighlänge und Intensitätsprofil an einer wählbaren Position'));
 
   function update() {
     const w = w0 * 1e-6;

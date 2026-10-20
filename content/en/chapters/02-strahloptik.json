@@ -1,0 +1,340 @@
+{
+  "titel": "Beam optics: from the laser to the focus",
+  "einleitung": "The fluence at the workpiece decides the ablation, and it depends on the focus. Here you learn how a Gaussian beam behaves in space, how large the focus gets, how sharp it is and what $M^2$ tells you about your beam source.",
+  "ziele": [
+    "Calculate beam radius, peak fluence and power fraction of a Gaussian beam",
+    "Determine the waist $w_0$, Rayleigh length $z_\\mathrm{R}$ and divergence $\\theta$ and explain their dependence on $\\lambda$, $w_0$ and $M^2$",
+    "Estimate the focus radius behind a lens ($w_0 \\approx M^2\\lambda f/\\pi w_\\mathrm{in}$)",
+    "Classify the beam parameter product and $M^2$ as quality measures",
+    "Understand wavelength and polarization as process parameters"
+  ],
+  "lektionen": {
+    "k02.l01": "Gaussian beam and peak fluence",
+    "k02.l02": "Focusing, Rayleigh length, spot size",
+    "k02.l03": "Beam quality M²",
+    "k02.l04": "Polarization and wavelength",
+    "k02.l05": "Calculation training: focus and beam quality"
+  },
+  "blocks": {
+    "k02.l01.b01": {
+      "inhalt": [
+        "Almost every laser emits a **Gaussian** intensity profile in its fundamental mode ([[gauss-strahl]]): brightest in the middle, falling off bell-shaped towards the edge. The beam radius $w$ is the distance from the axis at which the intensity has dropped to $1/e^2\\approx 13.5\\,\\%$ of the maximum.",
+        "With the Gaussian profile a lot can be calculated exactly. All you need is the integral over the area of the bell."
+      ]
+    },
+    "k02.l01.b02": {
+      "titel": "Gaussian profile",
+      "sammlung": "Beam optics",
+      "erklaerung": "Intensity profile with beam radius $w$ (the distance at which $I=I_0/e^2$)."
+    },
+    "k02.l01.b03": {
+      "alt": "Gaussian fluence profile with peak fluence, beam radius and example threshold",
+      "unterschrift": "The Gaussian profile: peak value $F_0$, radius $w_0$ at $F_0/e^2$ and an example threshold."
+    },
+    "k02.l01.b04": {
+      "titel": "Power inside the beam radius",
+      "sammlung": "Beam optics",
+      "erklaerung": "Fraction of the total power inside the $1/e^2$ radius: 86.5 %."
+    },
+    "k02.l01.b05": {
+      "titel": "Peak fluence",
+      "sammlung": "Beam optics",
+      "erklaerung": "Peak fluence $F_0$ at the beam centre. The mean fluence over the circle $\\pi w_0^2$ is only $\\bar F=E_\\mathrm{p}/\\pi w_0^2$, i.e. half."
+    },
+    "k02.l01.b06": {
+      "inhalt": "The peak fluence of a Gaussian beam is **twice** the quotient of pulse energy and circle area $\\pi w_0^2$. Anyone who forgets this misjudges every fluence by a factor of 2, and with it the threshold."
+    },
+    "k02.l01.b07": {
+      "inhalt": [
+        "The frequently quoted full width at half maximum (FWHM, [[halbwertsbreite]]) is smaller than the $1/e^2$ diameter. From $I(r)=I_0/2$ follows $r=w\\sqrt{\\ln 2/2}$, so the diameters are $d_\\mathrm{FWHM}=w\\sqrt{2\\ln 2}\\approx 1.18\\,w$ and $d_{1/e^2}=2w$. With literature values always check which definition was used."
+      ]
+    },
+    "k02.l01.b08": {
+      "titel": "Worked example",
+      "aufgabe": "What pulse energy do you need to reach a peak fluence of $F_0=2\\,\\mathrm{J/cm^2}$ at $w_0=12\\,\\mu\\mathrm{m}$?",
+      "schritte": [
+        "Rearrange: $E_\\mathrm{p}=F_0\\,\\pi w_0^2/2$",
+        "Radius in cm: $w_0=12\\cdot10^{-4}\\,\\mathrm{cm}$, so $w_0^2=1.44\\cdot10^{-6}\\,\\mathrm{cm^2}$",
+        "$E_\\mathrm{p}=2\\,\\mathrm{J/cm^2}\\cdot\\pi\\cdot1.44\\cdot10^{-6}\\,\\mathrm{cm^2}/2=4.52\\cdot10^{-6}\\,\\mathrm{J}$"
+      ],
+      "ergebnis": "About 4.5 µJ. The pulse energy is so small because the focus is tiny."
+    },
+    "k02.q01": {
+      "frage": "What fraction of the beam power lies inside the $1/e^2$ radius $w$?",
+      "optionen": [
+        "50 %",
+        "63 %",
+        "86.5 %",
+        "99 %"
+      ],
+      "erklaerung": "$1-e^{-2}\\approx 0.865$. (The 63 % belong to the radius $w/\\sqrt2$, where $1-e^{-1}$ is reached.)"
+    },
+    "k02.q02": {
+      "frage": "A pulse with $E_\\mathrm{p}=40\\,\\mu\\mathrm{J}$ hits with $w_0=25\\,\\mu\\mathrm{m}$. What is the peak fluence in $\\mathrm{J/cm^2}$?",
+      "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)=2\\cdot40\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot6.25\\cdot10^{-6}\\,\\mathrm{cm^2})\\approx4.07\\,\\mathrm{J/cm^2}$."
+    },
+    "k02.q03": {
+      "frage": "How does the peak fluence $F_0$ of a Gaussian beam relate to the mean fluence $E_\\mathrm{p}/(\\pi w_0^2)$?",
+      "optionen": [
+        "They are equal",
+        "$F_0$ is twice as large",
+        "$F_0$ is half as large",
+        "$F_0$ is $e^2$ times as large"
+      ],
+      "erklaerung": "The bell shape concentrates energy in the middle: $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$."
+    },
+    "k02.c01": {
+      "vorne": "What is the peak fluence of a Gaussian beam?",
+      "hinten": "$F_0=\\dfrac{2E_\\mathrm{p}}{\\pi w_0^2}$, twice the mean fluence over the area $\\pi w_0^2$."
+    },
+    "k02.c02": {
+      "vorne": "How are the FWHM diameter and the $1/e^2$ radius related?",
+      "hinten": "$d_\\mathrm{FWHM}=w\\sqrt{2\\ln2}\\approx1.18\\,w$ (for intensity). The $1/e^2$ diameter is $2w$."
+    },
+    "k02.l02.b01": {
+      "inhalt": [
+        "A Gaussian beam has a narrowest point, the **beam waist** (focus) with radius $w_0$. From there it widens, first slowly, then linearly. The distance over which the beam cross-section doubles (radius $\\times\\sqrt2$) is called the **Rayleigh length** ([[rayleighlaenge]]) $z_\\mathrm{R}$."
+      ]
+    },
+    "k02.l02.b02": {
+      "titel": "Beam expansion and Rayleigh length",
+      "sammlung": "Beam optics",
+      "erklaerung": "Widening of the beam along the axis. At $z=\\pm z_\\mathrm{R}$ the radius is $\\sqrt2\\,w_0$ and the peak fluence has dropped to half."
+    },
+    "k02.l02.b03": {
+      "titel": "Divergence",
+      "sammlung": "Beam optics",
+      "erklaerung": "Far-field divergence half-angle. A small focus means large divergence, because the product $w_0\\theta$ is constant."
+    },
+    "k02.l02.b05": {
+      "inhalt": [
+        "The focus forms behind a lens of focal length $f$. If a collimated beam with radius $w_\\mathrm{in}$ hits the lens (and $f$ is much smaller than the Rayleigh length of the input beam), the following holds:"
+      ]
+    },
+    "k02.l02.b06": {
+      "titel": "Focus radius behind a lens",
+      "sammlung": "Beam optics",
+      "erklaerung": "Focus radius behind the lens. A shorter focal length, a larger beam on the lens and a shorter wavelength give a smaller focus."
+    },
+    "k02.l02.b07": {
+      "titel": "Worked example",
+      "aufgabe": "A laser with $\\lambda=1030\\,\\mathrm{nm}$ and $M^2=1.2$ is focused with $f=100\\,\\mathrm{mm}$. The beam radius on the lens is $w_\\mathrm{in}=3\\,\\mathrm{mm}$. Determine $w_0$ and $z_\\mathrm{R}$.",
+      "schritte": [
+        "$w_0=\\dfrac{1.2\\cdot1.03\\cdot10^{-6}\\,\\mathrm{m}\\cdot0.1\\,\\mathrm{m}}{\\pi\\cdot3\\cdot10^{-3}\\,\\mathrm{m}}\\approx1.31\\cdot10^{-5}\\,\\mathrm{m}=13.1\\,\\mu\\mathrm{m}$",
+        "$z_\\mathrm{R}=\\dfrac{\\pi w_0^2}{M^2\\lambda}=\\dfrac{\\pi\\,(1.31\\cdot10^{-5}\\,\\mathrm{m})^2}{1.2\\cdot1.03\\cdot10^{-6}\\,\\mathrm{m}}\\approx4.4\\cdot10^{-4}\\,\\mathrm{m}$"
+      ],
+      "ergebnis": "Focus radius about 13 µm, Rayleigh length about 0.44 mm. So the sample has to be placed in the focus to within a few tenths of a millimetre."
+    },
+    "k02.l02.b08": {
+      "inhalt": "The Rayleigh length grows with the **square** of the focus radius. A smaller focus is not only smaller, it is also far less tolerant of distance errors. That is why the focus position is a parameter of its own in UKP processes."
+    },
+    "k02.q04": {
+      "frage": "A beam with $\\lambda=515\\,\\mathrm{nm}$, $M^2=1$ and $w_0=10\\,\\mu\\mathrm{m}$: what is the Rayleigh length in $\\mu\\mathrm{m}$?",
+      "erklaerung": "$z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)=\\pi\\cdot(10\\,\\mu\\mathrm{m})^2/0.515\\,\\mu\\mathrm{m}\\approx610\\,\\mu\\mathrm{m}$."
+    },
+    "k02.q05": {
+      "frage": "You halve the focus radius $w_0$ (everything else equal). What happens to the Rayleigh length?",
+      "optionen": [
+        "It halves",
+        "It is reduced to a quarter",
+        "It stays the same",
+        "It doubles"
+      ],
+      "erklaerung": "$z_\\mathrm{R}\\propto w_0^2$, so $(1/2)^2=1/4$."
+    },
+    "k02.q06": {
+      "frage": "Complete the dependences.",
+      "text": "A shorter wavelength gives a ___ focus. A longer focal length gives a ___ focus.",
+      "luecken": [
+        {
+          "optionen": [
+            "smaller",
+            "larger"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "smaller",
+            "larger"
+          ],
+          "richtig": 1
+        }
+      ],
+      "erklaerung": "From $w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})$: $w_0\\propto\\lambda$ and $w_0\\propto f$."
+    },
+    "k02.c03": {
+      "vorne": "What is the Rayleigh length?",
+      "hinten": "Distance from the focus after which the beam radius has grown by $\\sqrt2$: $z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)$."
+    },
+    "k02.c04": {
+      "vorne": "How large is the focus behind a lens?",
+      "hinten": "$w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})$ with focal length $f$ and beam radius $w_\\mathrm{in}$ on the lens."
+    },
+    "k02.l03.b01": {
+      "inhalt": [
+        "The focus of a real laser is never quite as small as that of a perfect Gaussian beam. The beam propagation factor $M^2$ ([[m2]]) tells you how much worse it is. An ideal Gaussian beam has $M^2=1$; the larger $M^2$, the more mode content and the worse the focusability.",
+        "More intuitive is the **beam parameter product** (BPP, [[bpp]]): waist radius times divergence half-angle. It is conserved along the beam as long as nothing creates aberrations, and optics cannot reduce it."
+      ]
+    },
+    "k02.l03.b02": {
+      "titel": "Beam parameter product",
+      "sammlung": "Beam optics",
+      "erklaerung": "The ideal Gaussian beam has $\\mathrm{BPP}=\\lambda/\\pi$. Typical unit: mm·mrad."
+    },
+    "k02.l03.b03": {
+      "inhalt": [
+        "At $\\lambda=1030\\,\\mathrm{nm}$, $\\lambda/\\pi\\approx0.33\\,\\mathrm{mm\\,mrad}$. A laser with $M^2=1.3$ therefore has a BPP of about $0.43\\,\\mathrm{mm\\,mrad}$."
+      ]
+    },
+    "k02.l03.b04": {
+      "inhalt": [
+        "How $w_0$ and $M^2$ are measured is regulated by the ISO 11146 series of standards (beam radius from the **second moments** of the intensity distribution, $M^2$ from several measurements along the beam axis). Only then are figures from different manufacturers comparable. See Lab → Standards."
+      ]
+    },
+    "k02.l03.b05": {
+      "inhalt": "A poorer beam quality directly costs you focus size or depth of focus: with the same optics $w_0$ grows with $M^2$, and at the same $w_0$ the Rayleigh length $z_\\mathrm{R}$ shrinks with $M^2$."
+    },
+    "k02.q07": {
+      "frage": "Which statement about $M^2$ is true?",
+      "optionen": [
+        "$M^2<1$ is common for good lasers",
+        "$M^2=1$ describes the ideal Gaussian beam",
+        "$M^2$ gives the pulse duration",
+        "$M^2$ depends only on the lens"
+      ],
+      "erklaerung": "$M^2\\ge1$ always holds. For the fundamental (Gaussian) mode $M^2=1$; larger values stand for poorer focusability."
+    },
+    "k02.q08": {
+      "frage": "What is the BPP of an ideal Gaussian beam with $\\lambda=1064\\,\\mathrm{nm}$ in mm·mrad?",
+      "erklaerung": "$\\lambda/\\pi=1.064\\cdot10^{-3}\\,\\mathrm{mm}/\\pi=3.39\\cdot10^{-4}\\,\\mathrm{mm}=0.339\\,\\mathrm{mm\\,mrad}$ (with 1 mrad = $10^{-3}$ rad)."
+    },
+    "k02.c05": {
+      "vorne": "What does $M^2$ mean?",
+      "hinten": "Beam propagation factor: ratio of the BPP of the real beam to the BPP of the ideal Gaussian beam, $M^2=\\pi\\,w_0\\theta/\\lambda\\ge1$."
+    },
+    "k02.l04.b01": {
+      "titel": "Wavelength",
+      "inhalt": [
+        "Two properties of light besides the geometry act directly on the process: the **wavelength** and the **polarization**."
+      ]
+    },
+    "k02.l04.b02": {
+      "inhalt": [
+        "The fundamental wavelength depends on the laser medium. Frequency multiplication in nonlinear crystals produces shorter wavelengths: from a fundamental of 1030 nm you get 515 nm by doubling (SHG) and about 343 nm by tripling (THG). Mathematically that is $\\lambda/2$ and $\\lambda/3$.",
+        "A shorter wavelength means (a) a smaller focus ($w_0\\propto\\lambda$), (b) a higher photon energy and therefore fewer photons for the band gap of a dielectric, (c) often better absorption. The price is lower pulse energy and the effort of frequency conversion."
+      ]
+    },
+    "k02.l04.b03": {
+      "inhalt": [
+        "Polarization describes the direction in which the electric field oscillates. With **linear** polarization it oscillates in a fixed direction, with **circular** polarization it rotates.",
+        "Where polarization shows up: at oblique incidence metals absorb perpendicular and parallel polarized light differently (Fresnel equations). When cutting with linearly polarized light the cut quality can depend on the feed direction relative to the polarization, which is why circular polarization is often used. And the orientation of LIPSS ([[lipss]]) follows the polarization direction."
+      ]
+    },
+    "k02.q09": {
+      "frage": "You frequency-double a laser at 1030 nm. Which wavelength do you get?",
+      "optionen": [
+        "343 nm",
+        "515 nm",
+        "800 nm",
+        "2060 nm"
+      ],
+      "erklaerung": "Doubling the frequency halves the wavelength: $1030\\,\\mathrm{nm}/2=515\\,\\mathrm{nm}$."
+    },
+    "k02.q10": {
+      "frage": "How does a shorter wavelength affect the focus with the same optics?",
+      "optionen": [
+        "It gets larger",
+        "It gets smaller",
+        "Nothing",
+        "It disappears"
+      ],
+      "erklaerung": "$w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})\\propto\\lambda$."
+    },
+    "k02.c06": {
+      "vorne": "Why is cutting often done with circular polarization?",
+      "hinten": "With linear polarization the cut quality depends on the feed direction; circular polarization is direction-independent."
+    },
+    "k02.c07": {
+      "vorne": "How can shorter wavelengths be generated from 1030 nm?",
+      "hinten": "Frequency multiplication: SHG gives 515 nm, THG about 343 nm."
+    },
+    "k02.l05.b01": {
+      "inhalt": "Here you apply the formulas of K02. Follow the pattern: **build the formula, insert the quantities in SI units (or µm), evaluate with the pocket calculator.** For $z_\\mathrm{R}$ and $w_0$ it is easiest to use µm for all wavelengths and radii."
+    },
+    "k02.q11": {
+      "frage": "Build the formula for the Rayleigh length and calculate it for $\\lambda=1030\\,\\mathrm{nm}$, $w_0=15\\,\\mu\\mathrm{m}$ and $M^2=1.2$. Answer in µm.",
+      "erklaerung": "$z_\\mathrm{R}=\\dfrac{\\pi w_0^2}{M^2\\lambda}=\\dfrac{\\pi\\,(15\\,\\mu\\mathrm{m})^2}{1.2\\cdot1.03\\,\\mu\\mathrm{m}}\\approx572\\,\\mu\\mathrm{m}$.",
+      "tipp": "1030 nm is 1.03 µm. The denominator holds $M^2$ and $\\lambda$, the numerator $\\pi$ and the square of the radius."
+    },
+    "k02.q12": {
+      "frage": "Build the formula for the focus radius behind a lens and calculate it for $M^2=1.1$, $\\lambda=515\\,\\mathrm{nm}$, $f=160\\,\\mathrm{mm}$ and $w_\\mathrm{in}=4\\,\\mathrm{mm}$. Answer in µm.",
+      "erklaerung": "$w_0\\approx\\dfrac{M^2\\lambda f}{\\pi w_\\mathrm{in}}=\\dfrac{1.1\\cdot0.515\\cdot10^{-6}\\,\\mathrm{m}\\cdot0.16\\,\\mathrm{m}}{\\pi\\cdot4\\cdot10^{-3}\\,\\mathrm{m}}\\approx7.2\\,\\mu\\mathrm{m}$.",
+      "tipp": "Use metres for all lengths: 515 nm $=0.515\\cdot10^{-6}$ m, 160 mm $=0.16$ m, 4 mm $=4\\cdot10^{-3}$ m. The result comes out in m; times $10^6$ gives µm."
+    },
+    "k02.q13": {
+      "frage": "What is the divergence half-angle $\\theta=M^2\\lambda/(\\pi w_0)$ for $\\lambda=1030\\,\\mathrm{nm}$, $w_0=10\\,\\mu\\mathrm{m}$ and $M^2=1.2$? Answer in mrad.",
+      "erklaerung": "$\\theta=\\dfrac{1.2\\cdot1.03\\,\\mu\\mathrm{m}}{\\pi\\cdot10\\,\\mu\\mathrm{m}}=0.0393\\,\\mathrm{rad}=39.3\\,\\mathrm{mrad}$. Wavelength and radius in the same unit (µm) cancel."
+    },
+    "k02.q14": {
+      "frage": "How high is the peak fluence at the distance $z=z_\\mathrm{R}$ from the focus, in percent of the peak fluence in the focus?",
+      "erklaerung": "At $z=z_\\mathrm{R}$, $w=\\sqrt2\\,w_0$ and the area doubles, so $F_0(z)=F_0/2=50\\,\\%$."
+    },
+    "k02.q15": {
+      "frage": "You insert a beam expander that doubles the beam radius on the lens. What happens to the focus radius $w_0$?",
+      "optionen": [
+        "It halves",
+        "It doubles",
+        "It stays the same",
+        "It quadruples"
+      ],
+      "erklaerung": "$w_0\\propto1/w_\\mathrm{in}$: a larger beam on the lens gives a smaller focus."
+    },
+    "k02.q16": {
+      "frage": "A laser has twice the $M^2$ value at the same $w_0$. How does the Rayleigh length change?",
+      "optionen": [
+        "It halves",
+        "It doubles",
+        "It stays the same",
+        "It quadruples"
+      ],
+      "erklaerung": "$z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)\\propto1/M^2$."
+    },
+    "k02.q17": {
+      "frage": "Match each symbol to its meaning.",
+      "paare": [
+        [
+          "$w_0$",
+          "Beam waist radius"
+        ],
+        [
+          "$z_\\mathrm{R}$",
+          "Rayleigh length"
+        ],
+        [
+          "$\\theta$",
+          "Divergence half-angle"
+        ],
+        [
+          "$M^2$",
+          "Beam propagation factor"
+        ],
+        [
+          "$\\mathrm{BPP}$",
+          "Beam parameter product"
+        ]
+      ],
+      "erklaerung": "Remember: $w_0\\theta=\\mathrm{BPP}=M^2\\lambda/\\pi$ ties the quantities together."
+    },
+    "k02.q18": {
+      "frage": "Sort the wavelengths by the focus radius they give with the same optics and the same $M^2$, from smallest to largest.",
+      "erklaerung": "$w_0\\propto\\lambda$: shorter wavelength, smaller focus.",
+      "oben": "smallest focus",
+      "unten": "largest focus"
+    },
+    "k02.c08": {
+      "vorne": "What is the divergence half-angle?",
+      "hinten": "$\\theta=\\dfrac{M^2\\lambda}{\\pi w_0}$; a small focus means large divergence ($w_0\\theta$ is constant)."
+    }
+  }
+}

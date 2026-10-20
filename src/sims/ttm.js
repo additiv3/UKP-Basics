@@ -3,6 +3,7 @@
 import { h } from '../ui/dom.js';
 import { num, si } from '../core/format.js';
 import { canvasView, control, readouts, Plot, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Zwei-Temperatur-Modell', kurz: 'Elektronen heizen sich auf, das Gitter hinkt hinterher' };
 export const formel = [
@@ -99,7 +100,7 @@ export function mount(root) {
       if (teq) p.vline(teq, { color: pal.ok, label: 'Angleichung', dash: [4, 4], labelBelow: true });
     },
   });
-  view.canvas.setAttribute('aria-label', 'Zeitverlauf von Elektronen- und Gittertemperatur auf logarithmischer Zeitachse');
+  view.canvas.setAttribute('aria-label', t('Zeitverlauf von Elektronen- und Gittertemperatur auf logarithmischer Zeitachse'));
 
   function equil() {
     const tail = sim.rows.filter((r) => r.t > sim.tc);
@@ -122,13 +123,13 @@ export function mount(root) {
     view.redraw();
     verdict.textContent =
       ratio < 0.1
-        ? 'Der Puls ist viel kürzer als die Kopplungszeit: Erst heizen sich die Elektronen auf, danach erst reagiert das Gitter.'
+        ? t('Der Puls ist viel kürzer als die Kopplungszeit: Erst heizen sich die Elektronen auf, danach erst reagiert das Gitter.')
         : ratio < 1
-          ? 'Übergangsbereich: Elektronen und Gitter laufen teilweise auseinander.'
-          : 'Der Puls ist länger als die Kopplungszeit: Elektronen und Gitter bleiben nahezu im Gleichgewicht, es wird thermisch.';
+          ? t('Übergangsbereich: Elektronen und Gitter laufen teilweise auseinander.')
+          : t('Der Puls ist länger als die Kopplungszeit: Elektronen und Gitter bleiben nahezu im Gleichgewicht, es wird thermisch.');
   }
   const verdict = h('p', { class: 'sim-verdict', 'aria-live': 'polite' });
   update();
 
-  root.append(box, ...ctrls.map((c) => c.el), out.el, verdict, h('p', { class: 'hint sim-note' }, 'Qualitatives Modell: Parameter sind frei gewählt, es sind keine Materialwerte. Wärmeleitung, Temperaturabhängigkeit der Kopplung und Phasenübergänge sind ignoriert.'));
+  root.append(box, ...ctrls.map((c) => c.el), out.el, verdict, h('p', { class: 'hint sim-note' }, t('Qualitatives Modell: Parameter sind frei gewählt, es sind keine Materialwerte. Wärmeleitung, Temperaturabhängigkeit der Kopplung und Phasenübergänge sind ignoriert.')));
 }

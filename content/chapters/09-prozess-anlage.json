@@ -455,6 +455,157 @@
           "quelle": "Folgerung aus den Kapiteln K02, K07, K09"
         }
       ]
+    },
+    {
+      "id": "k09.l06",
+      "titel": "Rechentraining: Scannen und Flächenabtrag",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k09.l06.b01",
+          "typ": "text",
+          "inhalt": "Prozessrechnungen bestehen aus vielen Einheitenumrechnungen. Rechne am besten alles in m und s, nur die **Dosis** in J/cm² (dann Längen in cm). Der Taschenrechner kennt die Vorsätze unter „Konstanten und Vorsätze“.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k09.q13",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für den Pulsabstand und berechne ihn für $v=3\\,\\mathrm{m/s}$ und $f=300\\,\\mathrm{kHz}$. Antwort in µm.",
+          "vorlage": "$d=$ {{ [] // [] }}",
+          "richtig": [
+            "$v$",
+            "$f$"
+          ],
+          "erklaerung": "$d=v/f=3\\,\\mathrm{m/s}/(3\\cdot10^{5}\\,\\mathrm{s^{-1}})=10^{-5}\\,\\mathrm{m}=10\\,\\mu\\mathrm{m}$.",
+          "ablenker": [
+            "$w_0$",
+            "$h$"
+          ],
+          "antwort": 10,
+          "einheit": "µm",
+          "toleranz": 0.05
+        },
+        {
+          "id": "k09.q14",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für den linearen Überlapp und berechne ihn für $d=6\\,\\mu\\mathrm{m}$ und $w_0=10\\,\\mu\\mathrm{m}$. Antwort in %.",
+          "vorlage": "$O=1-$ {{ [] // [] }}",
+          "richtig": [
+            "$d$",
+            "$2w_0$"
+          ],
+          "erklaerung": "$O=1-d/(2w_0)=1-6/20=0{,}7=70\\,\\%$. Im Nenner steht der Spotdurchmesser $2w_0$, nicht der Radius.",
+          "ablenker": [
+            "$w_0$",
+            "$h$"
+          ],
+          "antwort": 70,
+          "einheit": "%",
+          "toleranz": 0.03
+        },
+        {
+          "id": "k09.q15",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die kumulierte Fluenz und berechne sie für $E_\\mathrm{p}=20\\,\\mu\\mathrm{J}$, $d=4\\,\\mu\\mathrm{m}$ und $h=10\\,\\mu\\mathrm{m}$. Antwort in J/cm².",
+          "vorlage": "$\\Phi=$ {{ [] // [] $\\cdot$ [] }}",
+          "richtig": [
+            "$E_\\mathrm{p}$",
+            "$d$",
+            "$h$"
+          ],
+          "erklaerung": "$\\Phi=\\dfrac{E_\\mathrm{p}}{d\\,h}=\\dfrac{2\\cdot10^{-5}\\,\\mathrm{J}}{4\\cdot10^{-4}\\,\\mathrm{cm}\\cdot10^{-3}\\,\\mathrm{cm}}=50\\,\\mathrm{J/cm^2}$.",
+          "ablenker": [
+            "$\\tau$",
+            "$w_0^2$"
+          ],
+          "tausch": [
+            [
+              1,
+              2
+            ]
+          ],
+          "antwort": 50,
+          "einheit": "J/cm²",
+          "toleranz": 0.05,
+          "tipp": "Längen in cm: 4 µm $=4\\cdot10^{-4}$ cm, 10 µm $=10^{-3}$ cm."
+        },
+        {
+          "id": "k09.q16",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Welche Repetitionsrate brauchst du, um bei $v=5\\,\\mathrm{m/s}$ einen Pulsabstand von $5\\,\\mu\\mathrm{m}$ zu erreichen? Antwort in MHz.",
+          "antwort": 1,
+          "einheit": "MHz",
+          "toleranz": 0.05,
+          "erklaerung": "$f=v/d=5\\,\\mathrm{m/s}/(5\\cdot10^{-6}\\,\\mathrm{m})=10^{6}\\,\\mathrm{Hz}=1\\,\\mathrm{MHz}$."
+        },
+        {
+          "id": "k09.q17",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist die Flächenrate $\\dot A=v\\,h$ bei $v=2\\,\\mathrm{m/s}$ und $h=15\\,\\mu\\mathrm{m}$ in mm²/s?",
+          "antwort": 30,
+          "einheit": "mm²/s",
+          "toleranz": 0.05,
+          "erklaerung": "$\\dot A=2000\\,\\mathrm{mm/s}\\cdot0{,}015\\,\\mathrm{mm}=30\\,\\mathrm{mm^2/s}$."
+        },
+        {
+          "id": "k09.q18",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Eine Fläche von $20\\,\\mathrm{mm}\\times15\\,\\mathrm{mm}$ wird in 8 Schichten mit einer Flächenrate von $12\\,\\mathrm{mm^2/s}$ abgetragen. Wie lange dauert das (nur Scanzeit) in Sekunden?",
+          "antwort": 200,
+          "einheit": "s",
+          "toleranz": 0.05,
+          "erklaerung": "$300\\,\\mathrm{mm^2}/(12\\,\\mathrm{mm^2/s})=25\\,\\mathrm{s}$ je Schicht, mal 8 ergibt $200\\,\\mathrm{s}$."
+        },
+        {
+          "id": "k09.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein $2^4$-Plan wird mit 2 Wiederholungen je Parametersatz und zusätzlich 3 Mittelpunktsversuchen gefahren. Wie viele Versuche sind das?",
+          "antwort": 35,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$2^4=16$, mal 2 ergibt 32, plus 3 Mittelpunkte: 35."
+        },
+        {
+          "id": "k09.q20",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Eine f-Theta-Linse hat $f=254\\,\\mathrm{mm}$. Welche Auslenkung $x=f\\theta$ ergibt $\\theta=0{,}2\\,\\mathrm{rad}$? Antwort in mm.",
+          "antwort": 50.8,
+          "einheit": "mm",
+          "toleranz": 0.02,
+          "erklaerung": "$x=254\\,\\mathrm{mm}\\cdot0{,}2=50{,}8\\,\\mathrm{mm}$."
+        },
+        {
+          "id": "k09.q21",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du willst weniger Wärmeakkumulation bei gleicher Flächenrate. Was hilft meist?",
+          "optionen": [
+            "Rate erhöhen und Pulsenergie senken",
+            "Rate senken und Pulsenergie bei größerem Spot erhöhen",
+            "Alles unverändert lassen",
+            "Die Wellenlänge verdoppeln"
+          ],
+          "richtig": 1,
+          "erklaerung": "Weniger Pulse pro Sekunde geben der Wärme mehr Zeit zum Abfließen; mehr Energie pro Puls bei größerem Spot hält die Fluenz."
+        },
+        {
+          "id": "k09.c06",
+          "typ": "karte",
+          "vorne": "Wie rechnest du Pulsabstand, Überlapp und Dosis sicher?",
+          "hinten": "$d=v/f$ (m), $O=1-d/(2w_0)$, $\\Phi=E_\\mathrm{p}/(d\\,h)$ (Längen in cm für J/cm²), $\\dot A=v\\,h$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

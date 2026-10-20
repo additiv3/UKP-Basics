@@ -1,0 +1,262 @@
+{
+  "titel": "Time scales and the two-temperature model",
+  "einleitung": "What does “non-thermal” actually mean? Here you learn the time scales on which light, electrons and lattice talk to each other, and a simple model that makes the difference between fs, ps and ns pulses tangible.",
+  "ziele": [
+    "Estimate the heat diffusion length from pulse duration and thermal diffusivity",
+    "Place the sequence absorption, electron thermalization, electron–lattice coupling, heat conduction",
+    "Set up the two-temperature model (TTM) and read it qualitatively",
+    "Understand why “cold ablation” is only relative and when heat does matter"
+  ],
+  "lektionen": {
+    "k05.l01": "Heat diffusion vs. pulse duration",
+    "k05.l02": "Electron and lattice systems",
+    "k05.l03": "The two-temperature model",
+    "k05.l04": "Why “cold” is only relative",
+    "k05.l05": "Calculation training: diffusion and time scales"
+  },
+  "blocks": {
+    "k05.l01.b01": {
+      "inhalt": [
+        "From PBF-LB/M you know: heat spreads as soon as it has been deposited. The question for UKP is **how far** it gets within the pulse duration. An estimate is given by the thermal diffusion length."
+      ]
+    },
+    "k05.l01.b02": {
+      "titel": "Heat diffusion length",
+      "sammlung": "Time scales",
+      "erklaerung": "Diffusion length $L_\\mathrm{th}$ in the time $\\tau$ for thermal diffusivity $D$ (thermal conductivity $\\lambda_\\mathrm{th}$, density $\\rho$, specific heat capacity $c_p$). The prefactor depends on the definition (e.g. $\\sqrt{4D\\tau}$); the scaling $\\propto\\sqrt\\tau$ is what matters."
+    },
+    "k05.l01.b04": {
+      "titel": "Worked example",
+      "aufgabe": "A material has the (freely chosen) thermal diffusivity $D=1\\,\\mathrm{cm^2/s}$. How far does heat diffuse in 100 fs and in 1 ns?",
+      "schritte": [
+        "$D=10^{-4}\\,\\mathrm{m^2/s}$",
+        "$\\tau=100\\,\\mathrm{fs}$: $L_\\mathrm{th}=\\sqrt{10^{-4}\\cdot10^{-13}}\\,\\mathrm{m}=\\sqrt{10^{-17}}\\,\\mathrm{m}\\approx3.2\\,\\mathrm{nm}$",
+        "$\\tau=1\\,\\mathrm{ns}$: $L_\\mathrm{th}=\\sqrt{10^{-4}\\cdot10^{-9}}\\,\\mathrm{m}=\\sqrt{10^{-13}}\\,\\mathrm{m}\\approx316\\,\\mathrm{nm}$"
+      ],
+      "ergebnis": "In 100 fs heat gets only about 3 nm, but in 1 ns around 316 nm. The factor $10^{4}$ in time gives the factor $10^{2}$ in length."
+    },
+    "k05.l01.b05": {
+      "inhalt": "Heat flows only $\\sqrt\\tau$ fast. If the diffusion length becomes smaller than the penetration depth $\\delta$, the energy stays in the absorption volume and hardly any heat-affected zone ([[haz]]) forms."
+    },
+    "k05.q01": {
+      "frage": "With $D=1\\,\\mathrm{cm^2/s}$: what is $L_\\mathrm{th}$ for $\\tau=10\\,\\mathrm{ps}$, in nm?",
+      "erklaerung": "$L_\\mathrm{th}=\\sqrt{10^{-4}\\,\\mathrm{m^2/s}\\cdot10^{-11}\\,\\mathrm{s}}=\\sqrt{10^{-15}}\\,\\mathrm{m}=3.16\\cdot10^{-8}\\,\\mathrm{m}\\approx32\\,\\mathrm{nm}$."
+    },
+    "k05.q02": {
+      "frage": "You lengthen the pulse duration by a factor of 100. By what factor does the diffusion length grow?",
+      "erklaerung": "$L_\\mathrm{th}\\propto\\sqrt\\tau$, so $\\sqrt{100}=10$."
+    },
+    "k05.c01": {
+      "vorne": "How does the heat diffusion length grow with the pulse duration?",
+      "hinten": "$L_\\mathrm{th}\\approx\\sqrt{D\\tau}$, i.e. proportional to the square root of time."
+    },
+    "k05.l02.b01": {
+      "inhalt": [
+        "The light does not hit the lattice but the **electrons**. They have a tiny heat capacity compared with the lattice, take up the energy within femtoseconds and become very hot while the lattice is still cold. Only afterwards do the electrons release their energy through collisions with the lattice (electron–phonon coupling).",
+        "So there are **two systems with their own temperature**: electrons ($T_\\mathrm{e}$) and lattice ($T_\\mathrm{l}$). Typical order in time (orders of magnitude, depending on the material):"
+      ]
+    },
+    "k05.l02.b02": {
+      "alt": "Time axis from femtoseconds to nanoseconds with bars for absorption, electron thermalization, electron–lattice coupling, heat conduction and material removal",
+      "unterschrift": "Qualitative sequence of the processes after the pulse (logarithmic time axis, orders of magnitude). The time windows depend strongly on material and fluence."
+    },
+    "k05.l02.b03": {
+      "inhalt": [
+        "- **Absorption:** during the pulse (fs).",
+        "- **Electron thermalization:** the excited electrons share their energy among themselves and form a hot Fermi distribution (time scale of ten to a few hundred fs).",
+        "- **Electron–lattice coupling:** the lattice heats up (roughly 1 to 10 ps).",
+        "- **Heat conduction and ablation:** heat flows, material is ejected (ps to ns)."
+      ]
+    },
+    "k05.l02.b04": {
+      "inhalt": "If the pulse is shorter than the coupling time, the energy is “buffered” in the electrons before the lattice reacts. This is exactly what makes UKP ablation so different from ns ablation, where electrons and lattice stay in equilibrium."
+    },
+    "k05.q03": {
+      "frage": "Sort the processes by their typical time scale (fast to slow).",
+      "items": [
+        "Absorption of the photon by electrons",
+        "Thermalization of the electrons among themselves",
+        "Energy transfer to the lattice (electron–phonon)",
+        "Heat conduction into the material"
+      ],
+      "oben": "fastest",
+      "unten": "slowest",
+      "erklaerung": "The processes follow one another with growing time scale, from the photon to the lattice and finally to heat conduction."
+    },
+    "k05.q04": {
+      "frage": "Why do the electrons become much hotter than the lattice in a UKP pulse?",
+      "optionen": [
+        "Because the electrons are heavier",
+        "Because their heat capacity is small and the coupling to the lattice is slow compared with the pulse",
+        "Because the lattice radiates heat away",
+        "Because the laser only excites the lattice atoms"
+      ],
+      "erklaerung": "Small heat capacity of the electrons and a coupling time in the ps range: the energy stays briefly in the electrons."
+    },
+    "k05.c02": {
+      "vorne": "Which two systems does the two-temperature model describe?",
+      "hinten": "The electron system ($T_\\mathrm{e}$) and the lattice ($T_\\mathrm{l}$), coupled via electron–phonon interaction."
+    },
+    "k05.l03.b01": {
+      "inhalt": [
+        "The **two-temperature model** ([[ttm]], Anisimov 1974) describes this situation with two coupled energy balances: electrons are heated by the laser and release energy to the lattice via the coupling constant $G$."
+      ]
+    },
+    "k05.l03.b02": {
+      "titel": "TTM: electron system",
+      "sammlung": "Time scales",
+      "erklaerung": "Electrons: heat capacity $C_\\mathrm{e}=\\gamma T_\\mathrm{e}$, heat conduction $\\kappa_\\mathrm{e}$, coupling $G$ and laser source $S(t)$."
+    },
+    "k05.l03.b03": {
+      "titel": "TTM: lattice system",
+      "sammlung": "Time scales",
+      "erklaerung": "Lattice: heat capacity $C_\\mathrm{l}$, energy supply only via the coupling to the electrons."
+    },
+    "k05.l03.b05": {
+      "inhalt": [
+        "Read the graph like this: while the pulse runs, $T_\\mathrm{e}$ rises strongly. Then electrons and lattice equalize within the coupling time. With very short pulses the lattice stays cool for a long time; with long pulses both run almost together.",
+        "The model is a tool, not a law of nature: in its simplified version it ignores the temperature dependence of the coupling, non-thermal electron distributions and phase transitions. It does not apply directly to dielectrics; there an electron plasma forms first (chapter 6)."
+      ]
+    },
+    "k05.l03.b06": {
+      "inhalt": "TTM = two heat baths with very different heat capacity. The small one (electrons) heats up, the large one (lattice) lags behind in time."
+    },
+    "k05.q05": {
+      "frage": "At which pulse duration do electrons and lattice stay almost in equilibrium?",
+      "optionen": [
+        "Pulse duration much shorter than the coupling time",
+        "Pulse duration much longer than the coupling time",
+        "Never",
+        "Only for continuous wave"
+      ],
+      "erklaerung": "If the pulse is long compared with the coupling time, the electrons pass their energy on to the lattice during the pulse."
+    },
+    "k05.q06": {
+      "frage": "Which quantity couples the two systems in the TTM?",
+      "optionen": [
+        "The thermal diffusivity $D$",
+        "The electron–phonon coupling constant $G$",
+        "The pulse energy",
+        "The beam radius"
+      ],
+      "erklaerung": "The term $-G(T_\\mathrm{e}-T_\\mathrm{l})$ describes the energy transfer."
+    },
+    "k05.c03": {
+      "vorne": "What does $G$ describe in the two-temperature model?",
+      "hinten": "The electron–lattice coupling constant: energy transfer per volume, time and temperature difference."
+    },
+    "k05.l04.b01": {
+      "inhalt": [
+        "UKP ablation is often called “cold”. More precisely: **colder than with ns pulses**, not temperature-free. Even with femtosecond pulses the energy ends up as heat in the lattice, only with much less time for heat to flow away. The heat-affected zone is therefore small, but not zero.",
+        "When heat becomes important again:"
+      ]
+    },
+    "k05.l04.b02": {
+      "inhalt": [
+        "- **High fluence:** Too much energy above the threshold remains as residual heat in the material.",
+        "- **High repetition rate:** If the pulse spacing is shorter than the cooling time, the heat **accumulates** (heat accumulation, chapter 7).",
+        "- **Longer pulses (ps):** More time to flow away, other mechanisms become possible.",
+        "- **Material:** Good and poor heat conductors behave very differently."
+      ]
+    },
+    "k05.l04.b03": {
+      "inhalt": "“Non-thermal” is a limiting case. In practice the question is not *whether* but *how much* heat remains, and you control that through fluence, pulse duration and repetition rate."
+    },
+    "k05.q07": {
+      "frage": "Which statement about “cold ablation” is true?",
+      "optionen": [
+        "No heat is ever released in the lattice",
+        "The heat stays largely local in the short time, but it is not zero",
+        "There is no heat-affected zone at any fluence",
+        "Heat accumulation only occurs with ns pulses"
+      ],
+      "erklaerung": "The energy ends up as heat in the lattice; the short duration, however, limits the diffusion."
+    },
+    "k05.q08": {
+      "frage": "Match: what amplifies heat effects?",
+      "paare": [
+        [
+          "High repetition rate at short pulse spacing",
+          "Heat accumulation"
+        ],
+        [
+          "Much higher fluence than necessary",
+          "Residual heat in the material"
+        ],
+        [
+          "Very short pulse duration",
+          "Less heat diffusion"
+        ]
+      ],
+      "erklaerung": "Heat accumulation and residual heat increase the thermal load; shorter pulses reduce the diffusion."
+    },
+    "k05.c04": {
+      "vorne": "When does heat accumulate in UKP processes?",
+      "hinten": "When the pulse spacing is shorter than the time the heat needs to flow away (high repetition rate, high overlap)."
+    },
+    "k05.l05.b01": {
+      "inhalt": "In all tasks the thermal diffusivity $D$ is **chosen freely**, not a material value. Convert $D$ to $\\mathrm{m^2/s}$: $1\\,\\mathrm{cm^2/s}=10^{-4}\\,\\mathrm{m^2/s}$."
+    },
+    "k05.q09": {
+      "frage": "Choose the correct formula for the heat diffusion length and calculate it for $D=0.5\\,\\mathrm{cm^2/s}$ and $\\tau=1\\,\\mathrm{ps}$. Answer in nm.",
+      "erklaerung": "$L_\\mathrm{th}\\approx\\sqrt{D\\tau}=\\sqrt{5\\cdot10^{-5}\\,\\mathrm{m^2/s}\\cdot10^{-12}\\,\\mathrm{s}}\\approx7.07\\cdot10^{-9}\\,\\mathrm{m}=7.07\\,\\mathrm{nm}$.",
+      "tipp": "First form $D\\cdot\\tau$ in m², then take the root (√ key), then convert to nm ($\\times10^{9}$)."
+    },
+    "k05.q10": {
+      "frage": "With $D=2\\,\\mathrm{cm^2/s}$ and $\\tau=200\\,\\mathrm{fs}$: what is $L_\\mathrm{th}$ in nm?",
+      "erklaerung": "$L_\\mathrm{th}=\\sqrt{2\\cdot10^{-4}\\cdot2\\cdot10^{-13}}\\,\\mathrm{m}=\\sqrt{4\\cdot10^{-17}}\\,\\mathrm{m}=6.32\\,\\mathrm{nm}$."
+    },
+    "k05.q11": {
+      "frage": "After what time (in ps) has the heat reached a diffusion length of 100 nm at $D=1\\,\\mathrm{cm^2/s}$? Rearrange $L_\\mathrm{th}=\\sqrt{D\\tau}$ for $\\tau$.",
+      "erklaerung": "$\\tau=L_\\mathrm{th}^2/D=(10^{-7}\\,\\mathrm{m})^2/10^{-4}\\,\\mathrm{m^2/s}=10^{-10}\\,\\mathrm{s}=100\\,\\mathrm{ps}$."
+    },
+    "k05.q12": {
+      "frage": "At $\\tau=100\\,\\mathrm{fs}$ and $D=1\\,\\mathrm{cm^2/s}$, $L_\\mathrm{th}\\approx3.16\\,\\mathrm{nm}$. Let the penetration depth be $\\delta=10\\,\\mathrm{nm}$. What is the ratio $L_\\mathrm{th}/\\delta$?",
+      "erklaerung": "$3.16/10=0.316<1$: the heat stays in the absorption volume, hardly any heat-affected zone."
+    },
+    "k05.q13": {
+      "frage": "At the repetition rate $f=500\\,\\mathrm{kHz}$ the pulse spacing is $1/f$. How large is it, in µs?",
+      "erklaerung": "$1/f=1/(5\\cdot10^{5}\\,\\mathrm{s^{-1}})=2\\cdot10^{-6}\\,\\mathrm{s}=2\\,\\mu\\mathrm{s}$."
+    },
+    "k05.q14": {
+      "frage": "Match each symbol of the two-temperature model to its meaning.",
+      "paare": [
+        [
+          "$T_\\mathrm{e}$",
+          "Electron temperature"
+        ],
+        [
+          "$T_\\mathrm{l}$",
+          "Lattice temperature"
+        ],
+        [
+          "$G$",
+          "Electron–phonon coupling constant"
+        ],
+        [
+          "$C_\\mathrm{e}$",
+          "Heat capacity of the electrons"
+        ],
+        [
+          "$D$",
+          "Thermal diffusivity"
+        ]
+      ],
+      "erklaerung": "Remember: $C_\\mathrm{e}\\ll C_\\mathrm{l}$, which is why the electrons get so hot."
+    },
+    "k05.q15": {
+      "frage": "Which case favours heat accumulation most?",
+      "optionen": [
+        "Pulse spacing 100 µs at low fluence",
+        "Pulse spacing 1 µs at high fluence",
+        "Single pulses seconds apart",
+        "Very short pulse duration at low rate"
+      ],
+      "erklaerung": "A short pulse spacing (high rate) and a lot of energy leave no time for the heat to flow away."
+    },
+    "k05.c05": {
+      "vorne": "How do you reliably calculate the heat diffusion length?",
+      "hinten": "$D$ in m²/s (1 cm²/s $=10^{-4}$ m²/s), $\\tau$ in s, then $L_\\mathrm{th}=\\sqrt{D\\tau}$; give the result in nm ($\\times10^{9}$)."
+    }
+  }
+}

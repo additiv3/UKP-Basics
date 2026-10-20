@@ -364,6 +364,137 @@
           "quelle": "Herleitung"
         }
       ]
+    },
+    {
+      "id": "k06.l05",
+      "titel": "Rechentraining: Photonen, Keldysh, Plasma",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k06.l05.b01",
+          "typ": "text",
+          "inhalt": "Alle Bandlücken und Intensitäten sind **Zahlenbeispiele**, keine Materialwerte. Für die Photonenzahl rechnest du erst $h\\nu=1239{,}84\\,\\mathrm{eV\\,nm}/\\lambda$ und rundest $E_\\mathrm{g}/h\\nu$ **auf**.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k06.q10",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die minimale Photonenzahl und berechne sie für $E_\\mathrm{g}=8\\,\\mathrm{eV}$ bei $\\lambda=1030\\,\\mathrm{nm}$ ($h\\nu=1{,}20\\,\\mathrm{eV}$).",
+          "vorlage": "$n_\\mathrm{min}=\\left\\lceil\\right.$ {{ [] // [] }} $\\left.\\right\\rceil$",
+          "richtig": [
+            "$E_\\mathrm{g}$",
+            "$h\\nu$"
+          ],
+          "erklaerung": "$n_\\mathrm{min}=\\lceil8/1{,}20\\rceil=\\lceil6{,}67\\rceil=7$.",
+          "ablenker": [
+            "$\\tau$",
+            "$I$"
+          ],
+          "antwort": 7,
+          "einheit": "",
+          "toleranz": 0,
+          "tipp": "Teile die Bandlücke durch die Photonenenergie und **runde auf**: 6,67 wird 7."
+        },
+        {
+          "id": "k06.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie viele Photonen sind bei $E_\\mathrm{g}=5\\,\\mathrm{eV}$ und $\\lambda=343\\,\\mathrm{nm}$ ($h\\nu\\approx3{,}61\\,\\mathrm{eV}$) mindestens nötig?",
+          "antwort": 2,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$5/3{,}61=1{,}38\\Rightarrow n=2$."
+        },
+        {
+          "id": "k06.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein $n=6$-Photonen-Prozess: Du verdoppelst die Intensität. Um welchen Faktor steigt die Rate?",
+          "antwort": 64,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$2^6=64$."
+        },
+        {
+          "id": "k06.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Der Keldysh-Parameter ist bei $I=10^{13}\\,\\mathrm{W/cm^2}$ gleich $\\gamma=1{,}8$. Wie groß ist er bei $4\\cdot10^{13}\\,\\mathrm{W/cm^2}$? ($\\gamma\\propto I^{-1/2}$)",
+          "antwort": 0.9,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$\\gamma\\propto1/\\sqrt I$: vierfache Intensität, halber Wert: $1{,}8/2=0{,}9$ (Übergangsbereich unterschritten, Tunneln gewinnt an Bedeutung)."
+        },
+        {
+          "id": "k06.q14",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die kritische Dichte (in der Faustform) und berechne sie für $\\lambda=800\\,\\mathrm{nm}$. Antwort in $10^{21}\\,\\mathrm{cm^{-3}}$.",
+          "vorlage": "$n_\\mathrm{c}\\approx$ {{ $1{,}1\\cdot10^{21}\\,\\mathrm{cm^{-3}}$ // [] }}",
+          "richtig": [
+            "$\\lambda^2$"
+          ],
+          "erklaerung": "$n_\\mathrm{c}\\approx1{,}1\\cdot10^{21}\\,\\mathrm{cm^{-3}}/\\lambda^2[\\mu\\mathrm{m}]=1{,}1/0{,}64\\approx1{,}72\\cdot10^{21}\\,\\mathrm{cm^{-3}}$.",
+          "ablenker": [
+            "$\\lambda$",
+            "$1/\\lambda^2$",
+            "$\\sqrt\\lambda$"
+          ],
+          "antwort": 1.72,
+          "einheit": "·10²¹ cm⁻³",
+          "toleranz": 0.03,
+          "tipp": "$\\lambda$ in µm einsetzen: 800 nm $=0{,}8\\,\\mu\\mathrm{m}$, Quadrat $0{,}64$."
+        },
+        {
+          "id": "k06.q15",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Wellenlänge erreicht bei gleicher Elektronendichte **eher** die kritische Dichte?",
+          "optionen": [
+            "343 nm",
+            "515 nm",
+            "1030 nm",
+            "Alle gleich"
+          ],
+          "richtig": 2,
+          "erklaerung": "$n_\\mathrm{c}\\propto1/\\lambda^2$: Je länger die Wellenlänge, desto kleiner $n_\\mathrm{c}$, desto früher wird sie erreicht."
+        },
+        {
+          "id": "k06.q16",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne Prozess und Bedingung zu.",
+          "paare": [
+            [
+              "Mehrphotonenionisation",
+              "$\\gamma\\gg1$"
+            ],
+            [
+              "Tunnelionisation",
+              "$\\gamma\\ll1$"
+            ],
+            [
+              "Lawinenionisation",
+              "Startelektronen plus Stoßionisation"
+            ],
+            [
+              "Plasmaabschirmung",
+              "$n_\\mathrm{e}\\ge n_\\mathrm{c}$"
+            ]
+          ],
+          "erklaerung": "Der Keldysh-Parameter ordnet Mehrphotonen und Tunneln; die Lawine braucht Startelektronen; ab $n_\\mathrm{c}$ wird abgeschirmt."
+        },
+        {
+          "id": "k06.c05",
+          "typ": "karte",
+          "vorne": "Wie berechnest du die minimale Photonenzahl?",
+          "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$, mit $h\\nu=1239{,}84\\,\\mathrm{eV\\,nm}/\\lambda$. Immer aufrunden.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

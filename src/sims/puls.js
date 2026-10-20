@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num, si } from '../core/format.js';
 import { canvasView, control, readouts, Plot, segmented, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Puls, Spektrum und Chirp', kurz: 'Kurze Pulse brauchen Bandbreite; Dispersion zieht sie auseinander' };
 export const formel = [
@@ -51,7 +52,7 @@ export function mount(root) {
       let div = 1;
       if (half > 3e6) { unit = 'ns'; div = 1e6; } else if (half > 3000) { unit = 'ps'; div = 1e3; }
       const p = new Plot(ctx, pal, { x: 46, y: 22, w: W - 62, h: H - 58 }, { xmin: -half / div, xmax: half / div, ymin: -1.1, ymax: 1.1 });
-      p.axes({ xlabel: `Zeit t in ${unit}`, ylabel: 'Feld E(t), Intensität I(t)', yticks: [-1, -0.5, 0, 0.5, 1], yfmt: (v) => num(v, 2), xfmt: (v) => num(v, 3) });
+      p.axes({ xlabel: t('Zeit t in {u}', { u: unit }), ylabel: 'Feld E(t), Intensität I(t)', yticks: [-1, -0.5, 0, 0.5, 1], yfmt: (v) => num(v, 2), xfmt: (v) => num(v, 3) });
       const env = (t, tauW, peak) => peak * Math.exp((-4 * Math.LN2 * t * t) / (tauW * tauW));
       const peakOut = tau0 / s.tauOut;
       if (chirp) {
@@ -71,13 +72,13 @@ export function mount(root) {
           },
           { color: pal.accent, width: 1.7, steps: Math.min(4000, Math.round(W * 3)) },
         );
-        p.text(`${num(cyclesInView, 3)} Schwingungen im Fenster`, p.X(-half / div) + 6, p.Y(-0.9), { color: pal.muted, size: 11 });
+        p.text(t('{n} Schwingungen im Fenster', { n: num(cyclesInView, 3) }), p.X(-half / div) + 6, p.Y(-0.9), { color: pal.muted, size: 11 });
       } else {
-        p.text(`Trägerwelle nicht aufgelöst (${num(tau0 / s.T, 3)} Zyklen im Puls)`, p.X(-half / div) + 6, p.Y(-0.9), { color: pal.muted, size: 11 });
+        p.text(t('Trägerwelle nicht aufgelöst ({n} Zyklen im Puls)', { n: num(tau0 / s.T, 3) }), p.X(-half / div) + 6, p.Y(-0.9), { color: pal.muted, size: 11 });
       }
     },
   });
-  timeView.canvas.setAttribute('aria-label', 'Zeitverlauf des Laserpulses mit Einhüllender und Trägerwelle, bei Dispersion verbreitert');
+  timeView.canvas.setAttribute('aria-label', t('Zeitverlauf des Laserpulses mit Einhüllender und Trägerwelle, bei Dispersion verbreitert'));
 
   const specBox = h('div', { class: 'sim-canvas-box' });
   const specView = canvasView(specBox, {
@@ -94,7 +95,7 @@ export function mount(root) {
       p.text(`Δλ = ${num(s.dlam, 3)} nm`, p.X(lam0), p.Y(0.5) - 6, { color: pal.text, bold: true, align: 'center' });
     },
   });
-  specView.canvas.setAttribute('aria-label', 'Spektrum des Pulses als Funktion der Wellenlänge');
+  specView.canvas.setAttribute('aria-label', t('Spektrum des Pulses als Funktion der Wellenlänge'));
 
   function update() {
     const s = state();

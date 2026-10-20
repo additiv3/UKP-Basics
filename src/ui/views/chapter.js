@@ -6,13 +6,14 @@ import * as store from '../../core/store.js';
 import { chapterStatus, chapterStats, lessonDone } from '../../core/progress.js';
 import { chapterMeta } from '../../core/content.js';
 import { renderBlock } from '../../blocks/registry.js';
+import { t } from '../../core/i18n.js';
 
-const back = () => h('a', { class: 'back', href: '#/' }, h('span', { html: icon('back', 18) }), 'Lernpfad');
+const back = () => h('a', { class: 'back', href: '#/' }, h('span', { html: icon('back', 18) }), t('Lernpfad'));
 
 export async function render({ id }, app) {
   const { data } = app;
   const meta = chapterMeta(data, id);
-  if (!meta) return h('div', { class: 'page' }, back(), h('p', {}, 'Kapitel nicht gefunden.'));
+  if (!meta) return h('div', { class: 'page' }, back(), h('p', {}, t('Kapitel nicht gefunden.')));
   const chapter = data.chapters.get(id);
   const state = store.get();
   const status = chapterStatus(state, meta, data.chapters);
@@ -24,7 +25,7 @@ export async function render({ id }, app) {
       back(),
       h('h1', {}, meta.titel),
       h('p', { class: 'lead' }, meta.kurz),
-      h('div', { class: 'callout' }, h('strong', { class: 'callout-title' }, 'Bald verfügbar'), h('p', {}, 'Dieses Kapitel ist geplant. Geplante Lektionen:'), h('ul', {}, (meta.lektionen_geplant ?? []).map((t) => h('li', {}, t)))),
+      h('div', { class: 'callout' }, h('strong', { class: 'callout-title' }, t('Bald verfügbar')), h('p', {}, t('Dieses Kapitel ist geplant. Geplante Lektionen:')), h('ul', {}, (meta.lektionen_geplant ?? []).map((t) => h('li', {}, t)))),
       prereqNote(meta, data),
     );
   }
@@ -41,7 +42,7 @@ export async function render({ id }, app) {
         'span',
         { class: 'lesson-body' },
         h('strong', {}, l.titel),
-        h('small', {}, `ca. ${l.minuten} min`, l.blocks.some((b) => b.typ === 'sim' || b.typ === 'spiel') ? h('span', { class: 'tag-live', html: `${icon('bolt', 11)} interaktiv` }) : null),
+        h('small', {}, t('ca. {m} min', { m: l.minuten }), l.blocks.some((b) => b.typ === 'sim' || b.typ === 'spiel') ? h('span', { class: 'tag-live', html: `${icon('bolt', 11)} ${t('interaktiv')}` }) : null),
       ),
       locked ? null : h('span', { class: 'chev', html: icon('chevron', 18) }),
     );
@@ -52,7 +53,7 @@ export async function render({ id }, app) {
     ? h(
         'div',
         { class: 'callout warn' },
-        h('strong', { class: 'callout-title' }, 'Empfohlene Reihenfolge'),
+        h('strong', { class: 'callout-title' }, t('Empfohlene Reihenfolge')),
         prereqNote(meta, data),
         h(
           'button',
@@ -66,7 +67,7 @@ export async function render({ id }, app) {
               app.rerender();
             },
           },
-          'Trotzdem freischalten',
+          t('Trotzdem freischalten'),
         ),
       )
     : null;
@@ -77,13 +78,13 @@ export async function render({ id }, app) {
     'div',
     { class: 'page', dataset: { stage: meta.stufe } },
     back(),
-    h('p', { class: 'kicker' }, `${meta.id.toUpperCase()} · Stufe ${meta.stufe}`),
+    h('p', { class: 'kicker' }, `${meta.id.toUpperCase()} · ${t('Stufe')} ${meta.stufe}`),
     h('h1', {}, chapter.titel),
     h('p', { class: 'lead', html: inline(chapter.einleitung ?? meta.kurz) }),
-    h('div', { class: 'chips' }, h('span', { class: 'chip' }, `${stats.done}/${stats.lessons} Lektionen`), h('span', { class: 'chip' }, `${stats.mature}/${stats.items} gefestigt`)),
+    h('div', { class: 'chips' }, h('span', { class: 'chip' }, t('{d}/{n} Lektionen', { d: stats.done, n: stats.lessons })), h('span', { class: 'chip' }, t('{d}/{n} gefestigt', { d: stats.mature, n: stats.items }))),
     unlock,
-    h('section', {}, h('h2', {}, 'Lernziele'), h('ul', { class: 'goals' }, chapter.ziele.map((z) => h('li', { html: inline(z) })))),
-    h('section', {}, h('h2', {}, 'Lektionen'), h('div', { class: 'lesson-list' }, lessons)),
+    h('section', {}, h('h2', {}, t('Lernziele')), h('ul', { class: 'goals' }, chapter.ziele.map((z) => h('li', { html: inline(z) })))),
+    h('section', {}, h('h2', {}, t('Lektionen')), h('div', { class: 'lesson-list' }, lessons)),
     further,
   );
 }
@@ -91,5 +92,5 @@ export async function render({ id }, app) {
 function prereqNote(meta, data) {
   const pre = (meta.voraussetzungen ?? []).map((pid) => chapterMeta(data, pid)).filter(Boolean);
   if (!pre.length) return null;
-  return h('p', { class: 'prereq' }, 'Baut auf auf: ', pre.flatMap((p, i) => [i ? ', ' : '', h('a', { href: `#/kapitel/${p.id}` }, `${p.id.toUpperCase()} ${p.titel}`)]));
+  return h('p', { class: 'prereq' }, t('Baut auf auf:') + ' ', pre.flatMap((p, i) => [i ? ', ' : '', h('a', { href: `#/kapitel/${p.id}` }, `${p.id.toUpperCase()} ${p.titel}`)]));
 }

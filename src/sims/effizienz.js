@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num } from '../core/format.js';
 import { canvasView, control, readouts, Plot, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Abtragtiefe und Effizienz', kurz: 'Warum mehr Fluenz nicht mehr Effizienz bedeutet' };
 export const formel = [
@@ -32,7 +33,7 @@ export function mount(root) {
       p.dot(x, Math.log(x), { color: pal.laser, r: 6.5 });
     },
   });
-  a.canvas.setAttribute('aria-label', 'Abtragtiefe im Zentrum über dem Fluenzverhältnis, logarithmisch');
+  a.canvas.setAttribute('aria-label', t('Abtragtiefe im Zentrum über dem Fluenzverhältnis, logarithmisch'));
 
   const boxB = h('div', { class: 'sim-canvas-box' });
   const b = canvasView(boxB, {
@@ -46,7 +47,7 @@ export function mount(root) {
       p.dot(x, eta(x) / ETA_MAX, { color: pal.laser, r: 6.5 });
     },
   });
-  b.canvas.setAttribute('aria-label', 'Normierte Energieeffizienz über dem Fluenzverhältnis mit Maximum bei e Quadrat');
+  b.canvas.setAttribute('aria-label', t('Normierte Energieeffizienz über dem Fluenzverhältnis mit Maximum bei e Quadrat'));
 
   const jump = h('button', { type: 'button', class: 'btn btn-ghost', onClick: () => { x = E2; ctl.set(x); update(); } }, 'Zum Optimum springen');
 

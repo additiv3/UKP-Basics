@@ -1,11 +1,29 @@
 # Inhalte schreiben
 
+Die App ist zweisprachig. **Deutsch ist die Quelle** (`content/*.json`), **Englisch ein Overlay** in `content/en/` mit gleichen Dateinamen (siehe [ADR 0006](adr/0006-zweisprachigkeit.md)). Zu jedem neuen Block gehört also ein Eintrag im Overlay.
+
 Inhalte sind reine JSON-Dateien in `content/`. Für neue Kapitel ist keine Codeänderung nötig. Nach jeder Änderung:
 
 ```bash
 python tools/validate_content.py --update   # prüft und registriert neue Frage-IDs
 python tools/release.py --bump patch         # neue Cache-Version, sonst sieht der Homescreen die alte App
 ```
+
+## Englisches Overlay
+
+`content/en/chapters/<datei>.json`:
+
+```json
+{
+  "titel": "…", "einleitung": "…", "ziele": ["…"],
+  "lektionen": { "k01.l01": "Lesson title" },
+  "blocks": { "k01.q02": { "frage": "…", "optionen": ["…", "…"], "erklaerung": "…" } }
+}
+```
+
+Übersetzbare Felder: `inhalt`, `titel`, `erklaerung`, `alt`, `unterschrift`, `aufgabe`, `schritte`, `ergebnis`, `frage`, `optionen`, `paare`, `text`, `luecken`, `items`, `oben`, `unten`, `vorne`, `hinten`, `tipp`, `gegeben`, `sammlung` sowie bei `rechenweg` auch `vorlage`, `richtig`, `ablenker`. Reihenfolge und Anzahl von `optionen`, `items`, `paare`, `luecken` müssen dem deutschen Block entsprechen (der Validator prüft das). Dezimalzahlen schreibst du im Englischen mit Punkt (`0.3`, in LaTeX ohne `{,}`).
+
+`content/en/index.json` übersetzt Stufen und Kapiteltitel, `content/en/glossar.json` die Begriffe (`kurz`, `definition`), `content/en/referenz.json` Konstanten, Faustformeln und Normen. UI-Texte stehen in `src/i18n/en.js` (Schlüssel ist der deutsche Text).
 
 ## Kapitel anlegen
 
@@ -33,6 +51,7 @@ Jeder Block braucht eine **global eindeutige `id`** und einen `typ`. Frage- und 
 | `spiel` | `spiel` = Dateiname in `src/games/` |
 | `quiz` | `art` und Felder siehe unten, immer `frage` und `erklaerung` |
 | `karte` | `vorne`, `hinten` |
+| `quiz` mit `art: "rechenweg"` | siehe unten |
 | `quelle` | `refs[]` (Quellen-IDs aus `content/quellen.json`) |
 
 Quizarten:
@@ -41,7 +60,9 @@ Quizarten:
 - `zuordnung`: `paare[[links, rechts], ...]` (rechte Werte eindeutig, nur Klartext, keine Formeln)
 - `luecke`: `text` mit `___` je Lücke, `luecken[{optionen[], richtig}]`
 - `sortieren`: `items[]` in richtiger Reihenfolge, optional `oben`, `unten` (Beschriftung der Enden)
-- `zahl`: `antwort` (Zahl), `einheit`, `toleranz` (relativ, Standard 0,05; 0 = exakt). Eingaben wie `12,5`, `1.2e13`, `1,2 x 10^13` werden akzeptiert
+- `zahl`: `antwort` (Zahl), `einheit`, `toleranz` (relativ, Standard 0,05; 0 = exakt). Eingaben wie `12,5`, `1.2e13`, `1,2 x 10^13` werden akzeptiert. Bei Einheiten wie `MW`, `µm` oder `·10⁻¹⁹ J` gilt auch der reine SI-Wert als richtig. Das Antwortfeld hat einen Taschenrechner-Knopf.
+- `rechenweg`: Formel aus Kacheln bauen, optional danach rechnen. Felder: `vorlage` (`[]` = Feld, `{{ oben // unten }}` = Bruch, `$latex$` erlaubt), `richtig` (Kacheltexte in Feldreihenfolge), `ablenker` (falsche Kacheln), `tausch` (Gruppen vertauschbarer Felder, z. B. `[[0,1]]`), `gegeben` (Liste angezeigter Größen), optional `antwort`, `einheit`, `toleranz` für den Zahlenteil.
+- Für alle Arten: optional `tipp` (Hinweis, einblendbar). „Lösung zeigen“ ist immer vorhanden.
 
 ## Faktenregel (wichtig)
 

@@ -457,6 +457,176 @@
           "quelle": "Herleitung (λ/n)"
         }
       ]
+    },
+    {
+      "id": "k02.l05",
+      "titel": "Rechentraining: Fokus und Strahlqualität",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k02.l05.b01",
+          "typ": "text",
+          "inhalt": "Hier wendest du die Formeln aus K02 an. Rechne nach dem Muster: **Formel bauen, Größen in SI (oder µm) einsetzen, mit dem Taschenrechner auswerten.** Bei $z_\\mathrm{R}$ und $w_0$ ist es am einfachsten, Wellenlängen und Radien alle in µm zu rechnen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.q11",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Rayleighlänge und berechne sie für $\\lambda=1030\\,\\mathrm{nm}$, $w_0=15\\,\\mu\\mathrm{m}$ und $M^2=1{,}2$. Antwort in µm.",
+          "vorlage": "$z_\\mathrm{R}=$ {{ $\\pi$ $\\cdot$ [] // [] $\\cdot$ [] }}",
+          "richtig": [
+            "$w_0^2$",
+            "$M^2$",
+            "$\\lambda$"
+          ],
+          "erklaerung": "$z_\\mathrm{R}=\\dfrac{\\pi w_0^2}{M^2\\lambda}=\\dfrac{\\pi\\,(15\\,\\mu\\mathrm{m})^2}{1{,}2\\cdot1{,}03\\,\\mu\\mathrm{m}}\\approx572\\,\\mu\\mathrm{m}$.",
+          "ablenker": [
+            "$w_0$",
+            "$f$"
+          ],
+          "tausch": [
+            [
+              1,
+              2
+            ]
+          ],
+          "antwort": 572,
+          "einheit": "µm",
+          "toleranz": 0.03,
+          "tipp": "1030 nm sind 1,03 µm. Im Nenner stehen $M^2$ und $\\lambda$, im Zähler $\\pi$ und das Quadrat des Radius."
+        },
+        {
+          "id": "k02.q12",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für den Fokusradius hinter einer Linse und berechne ihn für $M^2=1{,}1$, $\\lambda=515\\,\\mathrm{nm}$, $f=160\\,\\mathrm{mm}$ und $w_\\mathrm{in}=4\\,\\mathrm{mm}$. Antwort in µm.",
+          "vorlage": "$w_0\\approx$ {{ [] $\\cdot$ [] $\\cdot$ [] // $\\pi$ $\\cdot$ [] }}",
+          "richtig": [
+            "$M^2$",
+            "$\\lambda$",
+            "$f$",
+            "$w_\\mathrm{in}$"
+          ],
+          "erklaerung": "$w_0\\approx\\dfrac{M^2\\lambda f}{\\pi w_\\mathrm{in}}=\\dfrac{1{,}1\\cdot0{,}515\\cdot10^{-6}\\,\\mathrm{m}\\cdot0{,}16\\,\\mathrm{m}}{\\pi\\cdot4\\cdot10^{-3}\\,\\mathrm{m}}\\approx7{,}2\\,\\mu\\mathrm{m}$.",
+          "ablenker": [
+            "$w_0$",
+            "$\\tau$"
+          ],
+          "tausch": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "antwort": 7.21,
+          "einheit": "µm",
+          "toleranz": 0.03,
+          "tipp": "Rechne alle Längen in Meter: 515 nm $=0{,}515\\cdot10^{-6}$ m, 160 mm $=0{,}16$ m, 4 mm $=4\\cdot10^{-3}$ m. Das Ergebnis kommt in m heraus; mal $10^6$ ergibt µm."
+        },
+        {
+          "id": "k02.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist der Divergenz-Halbwinkel $\\theta=M^2\\lambda/(\\pi w_0)$ für $\\lambda=1030\\,\\mathrm{nm}$, $w_0=10\\,\\mu\\mathrm{m}$ und $M^2=1{,}2$? Antwort in mrad.",
+          "antwort": 39.3,
+          "einheit": "mrad",
+          "toleranz": 0.03,
+          "erklaerung": "$\\theta=\\dfrac{1{,}2\\cdot1{,}03\\,\\mu\\mathrm{m}}{\\pi\\cdot10\\,\\mu\\mathrm{m}}=0{,}0393\\,\\mathrm{rad}=39{,}3\\,\\mathrm{mrad}$. Wellenlänge und Radius in derselben Einheit (µm) kürzen sich."
+        },
+        {
+          "id": "k02.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie hoch ist die Spitzenfluenz im Abstand $z=z_\\mathrm{R}$ vom Fokus, in Prozent der Spitzenfluenz im Fokus?",
+          "antwort": 50,
+          "einheit": "%",
+          "toleranz": 0.02,
+          "erklaerung": "Bei $z=z_\\mathrm{R}$ ist $w=\\sqrt2\\,w_0$, die Fläche verdoppelt sich, also ist $F_0(z)=F_0/2=50\\,\\%$."
+        },
+        {
+          "id": "k02.q15",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du setzt einen Strahlaufweiter ein, der den Strahlradius auf der Linse verdoppelt. Was passiert mit dem Fokusradius $w_0$?",
+          "optionen": [
+            "Er halbiert sich",
+            "Er verdoppelt sich",
+            "Er bleibt gleich",
+            "Er vervierfacht sich"
+          ],
+          "richtig": 0,
+          "erklaerung": "$w_0\\propto1/w_\\mathrm{in}$: ein größerer Strahl auf der Linse ergibt einen kleineren Fokus."
+        },
+        {
+          "id": "k02.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Ein Laser hat bei gleichem $w_0$ den doppelten $M^2$-Wert. Wie ändert sich die Rayleighlänge?",
+          "optionen": [
+            "Sie halbiert sich",
+            "Sie verdoppelt sich",
+            "Sie bleibt gleich",
+            "Sie vervierfacht sich"
+          ],
+          "richtig": 0,
+          "erklaerung": "$z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)\\propto1/M^2$."
+        },
+        {
+          "id": "k02.q17",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jedes Symbol seiner Bedeutung zu.",
+          "paare": [
+            [
+              "$w_0$",
+              "Radius der Strahltaille"
+            ],
+            [
+              "$z_\\mathrm{R}$",
+              "Rayleighlänge"
+            ],
+            [
+              "$\\theta$",
+              "Divergenz-Halbwinkel"
+            ],
+            [
+              "$M^2$",
+              "Beugungsmaßzahl"
+            ],
+            [
+              "$\\mathrm{BPP}$",
+              "Strahlparameterprodukt"
+            ]
+          ],
+          "erklaerung": "Merke: $w_0\\theta=\\mathrm{BPP}=M^2\\lambda/\\pi$ verbindet die Größen."
+        },
+        {
+          "id": "k02.q18",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Ordne die Wellenlängen nach dem Fokusradius, den sie bei gleicher Optik und gleichem $M^2$ ergeben, vom kleinsten zum größten.",
+          "items": [
+            "343 nm",
+            "515 nm",
+            "1030 nm",
+            "1064 nm"
+          ],
+          "erklaerung": "$w_0\\propto\\lambda$: Kürzere Wellenlänge, kleinerer Fokus.",
+          "oben": "kleinster Fokus",
+          "unten": "größter Fokus"
+        },
+        {
+          "id": "k02.c08",
+          "typ": "karte",
+          "vorne": "Wie groß ist der Divergenz-Halbwinkel?",
+          "hinten": "$\\theta=\\dfrac{M^2\\lambda}{\\pi w_0}$; kleiner Fokus bedeutet große Divergenz ($w_0\\theta$ ist konstant).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

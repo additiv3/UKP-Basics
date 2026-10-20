@@ -13,6 +13,8 @@ Stand: Oktober 2026. Dieser Plan ersetzt den ersten Entwurf aus dem ursprünglic
 
 ## 2. Stufen und Kapitel
 
+Ergänzung in Version 0.3: **K00 Werkzeugkasten** (Zehnerpotenzen, Einheiten, Logarithmus, Abschätzen, Taschenrechner) als Start von Stufe A, die Kapitel K08, K10 und K12 sind ausgearbeitet, und die neue **Stufe E** enthält **K13 Wissenschaftliches Englisch**. Jedes Kapitel von K01 bis K11 hat am Ende eine Rechentraining-Lektion.
+
 ```mermaid
 graph LR
   K01[K01 Pulsgrößen] --> K02[K02 Strahloptik]

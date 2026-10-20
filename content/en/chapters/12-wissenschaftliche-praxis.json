@@ -1,0 +1,183 @@
+{
+  "titel": "Scientific practice in photonics",
+  "einleitung": "How do you find the relevant literature, how do you read a paper critically, how do you manage sources and how do you present your own results? This chapter gives you working methods for the PhD, with calculation tasks that expose typical comparison errors when reading papers.",
+  "ziele": [
+    "Know the relevant journals and conferences",
+    "Read papers in a structured way and compare definitions",
+    "Manage literature with Zotero and citekeys",
+    "Build a research question and a talk"
+  ],
+  "lektionen": {
+    "k12.l01": "Journals and conferences",
+    "k12.l02": "Reading and classifying papers",
+    "k12.l03": "Reference management and notes",
+    "k12.l04": "Placing and presenting your own work"
+  },
+  "blocks": {
+    "k12.l01.b01": {
+      "inhalt": [
+        "Ultrashort-pulse processing sits between **laser physics**, **materials science** and **manufacturing engineering**. The important publications are spread accordingly. An orientation (compiled from general knowledge of the literature, without ranking and not checked):",
+        "- *Applied Physics A: Materials Science & Processing* (Springer) and *Applied Surface Science* (Elsevier): interaction and surfaces.\n- *Optics Express* and *Optics Letters* (Optica): lasers, optics, beam shaping; letters are short rapid communications.\n- *Optics & Laser Technology*, *Optics and Lasers in Engineering* and *Journal of Laser Applications*: applications and processes.\n- *Light: Science & Applications* (open access) and *Physical Review B*: fundamentals and materials physics.",
+        "Important conferences (also without ranking): **CLEO**, **SPIE Photonics West (LASE)**, **LiM** (Lasers in Manufacturing, Munich), **ICALEO** and the **LPM** (Laser Precision Microprocessing)."
+      ]
+    },
+    "k12.l01.b02": {
+      "inhalt": "To get started, a **mix** pays off: a review for the overall picture, a few foundational papers (Chichkov, Stuart, Schaffer) and the most recent works on your material. Start with the review and go from there into its reference list."
+    },
+    "k12.q01": {
+      "frage": "Match the conference or journal to its role (rough classification, unchecked).",
+      "paare": [
+        [
+          "Optics Letters",
+          "Short rapid communications"
+        ],
+        [
+          "Applied Physics A",
+          "Materials science and processing"
+        ],
+        [
+          "Light: Science & Applications",
+          "Open-access journal"
+        ],
+        [
+          "LiM",
+          "Conference on laser technology in manufacturing"
+        ]
+      ],
+      "erklaerung": "The classification is rough; check the aims and scope of the journal on its website."
+    },
+    "k12.q02": {
+      "frage": "Where do you look first when getting into a new subtopic?",
+      "optionen": [
+        "In a recent review article",
+        "In an arbitrary preprint",
+        "In the oldest paper on the topic",
+        "On social networks"
+      ],
+      "erklaerung": "A review organizes the field and leads to the key papers."
+    },
+    "k12.c01": {
+      "vorne": "How do you start a literature search?",
+      "hinten": "Read a review, identify key papers, follow their references and the papers citing them (forward and backward search)."
+    },
+    "k12.l02.b01": {
+      "inhalt": [
+        "A scientific article usually follows the **IMRaD** scheme: Introduction, Methods, Results, and Discussion. Read in **three passes**:",
+        "1. **Skim** (5 minutes): title, abstract, figures, conclusion. Question: is it relevant?\n2. **Understand** (30 minutes): methods and results, figures in detail. Question: what was measured and how?\n3. **Check:** do definitions, numbers and conclusions hold? What is missing?",
+        "Write down a **parameter table** for every paper: wavelength, pulse duration, rate, pulse energy, beam radius (which definition?), pulse number, material, threshold fluence (peak or mean? pulse number $N$?)."
+      ]
+    },
+    "k12.l02.b02": {
+      "inhalt": "**Compare numbers from different papers only if the definitions match:** $1/e^2$ radius or FWHM, peak or mean fluence, single pulse or $N$ pulses, intensity or fluence. A factor of 2 (peak/mean) or 1.18 (FWHM/$1/e^2$) otherwise becomes an apparent contradiction."
+    },
+    "k12.q03": {
+      "frage": "A paper states the **mean** fluence $\\bar F=1.5\\,\\mathrm{J/cm^2}$ ($\\bar F=E_\\mathrm{p}/\\pi w_0^2$). What is the peak fluence $F_0$ in J/cm²?",
+      "erklaerung": "$F_0=2\\bar F=3\\,\\mathrm{J/cm^2}$ (chapters 1 and 2)."
+    },
+    "k12.q04": {
+      "frage": "A paper gives a beam diameter of $d_\\mathrm{FWHM}=20\\,\\mu\\mathrm{m}$ (FWHM of the intensity). What is the $1/e^2$ radius $w$ in µm? ($d_\\mathrm{FWHM}=1.177\\,w$)",
+      "erklaerung": "$w=d_\\mathrm{FWHM}/1.177=17.0\\,\\mu\\mathrm{m}$."
+    },
+    "k12.q05": {
+      "frage": "A paper describes pulses with $E_\\mathrm{p}=8\\,\\mu\\mathrm{J}$ and $w_0=12\\,\\mu\\mathrm{m}$ ($1/e^2$) and gives a threshold of $0.9\\,\\mathrm{J/cm^2}$ as **peak fluence** $F_\\mathrm{th}$. How many times above the threshold does it work, i.e. what is $F_0/F_\\mathrm{th}$?",
+      "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)=2\\cdot8\\cdot10^{-6}/(\\pi\\cdot1.44\\cdot10^{-6})=3.54\\,\\mathrm{J/cm^2}$; $F_0/F_\\mathrm{th}=3.54/0.9=3.93$."
+    },
+    "k12.q06": {
+      "frage": "Put the three reading passes in the right order.",
+      "items": [
+        "Skim title, abstract, figures and conclusion",
+        "Understand methods and results in detail",
+        "Critically check definitions, numbers and conclusions"
+      ],
+      "erklaerung": "First decide relevance, then understand, then check."
+    },
+    "k12.q07": {
+      "frage": "Two papers give threshold fluences of 1 and 2 J/cm² for the same material. What do you check first?",
+      "optionen": [
+        "Whether both use peak or mean fluence, the same pulse number and the same beam radius definition",
+        "Which paper is newer",
+        "Which paper is longer",
+        "Whether the laser has the same colour"
+      ],
+      "erklaerung": "A factor of 2 arises already from peak instead of mean fluence."
+    },
+    "k12.c02": {
+      "vorne": "What belongs in the parameter table for a paper?",
+      "hinten": "Wavelength, pulse duration, rate, pulse energy, beam radius (definition), pulse number, material, threshold fluence (peak/mean, $N$)."
+    },
+    "k12.l03.b01": {
+      "inhalt": [
+        "With a reference manager such as **Zotero** (which you already use) you keep everything together: sources, PDFs, annotations and citations. Proven habits:",
+        "- **Import immediately:** with the browser connector or via DOI. Check the metadata (title, authors, DOI) afterwards.\n- **Collections and tags:** one collection per chapter of the thesis, tags for material, method, wavelength.\n- **Citation key (citekey):** a uniform scheme, e.g. `author2024short`; that way BibLaTeX entries match `\\parencite{}`.\n- **Annotations directly on the PDF**, plus a note with the parameter table and your own conclusion in two sentences.\n- **Merge duplicates regularly**, back up the library."
+      ]
+    },
+    "k12.q08": {
+      "frage": "What is a DOI in a reference entry used for?",
+      "optionen": [
+        "As a persistent identifier to find the article again unambiguously",
+        "As a page number",
+        "As the name of the publisher",
+        "As a table of contents"
+      ],
+      "erklaerung": "With doi.org/DOI you land at the article even if the website changes."
+    },
+    "k12.q09": {
+      "frage": "Match the task to the right tool.",
+      "paare": [
+        [
+          "Import a source via DOI",
+          "Reference manager (Zotero)"
+        ],
+        [
+          "Insert a citation in the text",
+          "\\parencite{citekey}"
+        ],
+        [
+          "Clean up duplicates",
+          "Merge duplicates"
+        ]
+      ],
+      "erklaerung": "The manager supplies the entries, BibLaTeX sets the citations."
+    },
+    "k12.c03": {
+      "vorne": "How do you name citation keys?",
+      "hinten": "A uniform scheme, e.g. first author, year, keyword (`schaffer2001laser`); then they are unique in the text and in the database."
+    },
+    "k12.l04.b01": {
+      "inhalt": [
+        "A good research question has four parts: **gap** (what is not known?), **question**, **method**, **expected benefit**. Formulate it in two sentences and test it against every new paper: is the gap already closed?",
+        "For a **10-minute talk** roughly one slide per minute applies: motivation (1), state of the art and gap (1 to 2), method and setup (2), results (3 to 4), conclusion and outlook (1). Every figure needs **axis labels with units** and a key message as title.",
+        "**Reproducibility:** document pulse energy at the workpiece, beam radius with method, pulse duration with method, pulse number and focus position (chapter 11)."
+      ]
+    },
+    "k12.q10": {
+      "frage": "Order the parts of a 10-minute talk.",
+      "items": [
+        "Motivation",
+        "State of the art and gap",
+        "Method and setup",
+        "Results",
+        "Conclusion and outlook"
+      ],
+      "erklaerung": "From the why via the how to the results and back to the overall message."
+    },
+    "k12.q11": {
+      "frage": "A talk lasts 10 minutes. With about one slide per minute: roughly how many slides do you plan?",
+      "erklaerung": "About 10 slides; better fewer and clear."
+    },
+    "k12.q12": {
+      "frage": "What must every figure in a talk have?",
+      "optionen": [
+        "Axis labels with units and a key message",
+        "A caption as long as possible",
+        "At least three colours",
+        "The company logo"
+      ],
+      "erklaerung": "Without units a chart is unreadable; the key message guides the audience."
+    },
+    "k12.c04": {
+      "vorne": "What parts make up a research question?",
+      "hinten": "Gap, question, method, expected benefit; can be formulated in two sentences."
+    }
+  }
+}

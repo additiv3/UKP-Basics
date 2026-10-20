@@ -343,6 +343,131 @@
           "quelle": "Projektnotizen"
         }
       ]
+    },
+    {
+      "id": "k05.l05",
+      "titel": "Rechentraining: Diffusion und Zeitskalen",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k05.l05.b01",
+          "typ": "text",
+          "inhalt": "Die Temperaturleitfähigkeit $D$ ist hier in allen Aufgaben **frei gewählt**, keine Materialangabe. Rechne $D$ in $\\mathrm{m^2/s}$ um: $1\\,\\mathrm{cm^2/s}=10^{-4}\\,\\mathrm{m^2/s}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k05.q09",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Wähle die richtige Formel für die Wärmediffusionslänge und berechne sie für $D=0{,}5\\,\\mathrm{cm^2/s}$ und $\\tau=1\\,\\mathrm{ps}$. Antwort in nm.",
+          "vorlage": "$L_\\mathrm{th}\\approx$ []",
+          "richtig": [
+            "$\\sqrt{D\\,\\tau}$"
+          ],
+          "erklaerung": "$L_\\mathrm{th}\\approx\\sqrt{D\\tau}=\\sqrt{5\\cdot10^{-5}\\,\\mathrm{m^2/s}\\cdot10^{-12}\\,\\mathrm{s}}\\approx7{,}07\\cdot10^{-9}\\,\\mathrm{m}=7{,}07\\,\\mathrm{nm}$.",
+          "ablenker": [
+            "$\\sqrt{D/\\tau}$",
+            "$D\\,\\tau$",
+            "$D\\,\\sqrt{\\tau}$"
+          ],
+          "antwort": 7.07,
+          "einheit": "nm",
+          "toleranz": 0.03,
+          "tipp": "Zuerst $D\\cdot\\tau$ in m² bilden, dann die Wurzel ziehen (√-Taste), dann in nm umrechnen ($\\times10^{9}$)."
+        },
+        {
+          "id": "k05.q10",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Mit $D=2\\,\\mathrm{cm^2/s}$ und $\\tau=200\\,\\mathrm{fs}$: Wie groß ist $L_\\mathrm{th}$ in nm?",
+          "antwort": 6.32,
+          "einheit": "nm",
+          "toleranz": 0.03,
+          "erklaerung": "$L_\\mathrm{th}=\\sqrt{2\\cdot10^{-4}\\cdot2\\cdot10^{-13}}\\,\\mathrm{m}=\\sqrt{4\\cdot10^{-17}}\\,\\mathrm{m}=6{,}32\\,\\mathrm{nm}$."
+        },
+        {
+          "id": "k05.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Nach welcher Zeit (in ps) hat die Wärme bei $D=1\\,\\mathrm{cm^2/s}$ eine Diffusionslänge von 100 nm erreicht? Stelle $L_\\mathrm{th}=\\sqrt{D\\tau}$ nach $\\tau$ um.",
+          "antwort": 100,
+          "einheit": "ps",
+          "toleranz": 0.05,
+          "erklaerung": "$\\tau=L_\\mathrm{th}^2/D=(10^{-7}\\,\\mathrm{m})^2/10^{-4}\\,\\mathrm{m^2/s}=10^{-10}\\,\\mathrm{s}=100\\,\\mathrm{ps}$."
+        },
+        {
+          "id": "k05.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei $\\tau=100\\,\\mathrm{fs}$ und $D=1\\,\\mathrm{cm^2/s}$ ist $L_\\mathrm{th}\\approx3{,}16\\,\\mathrm{nm}$. Die Eindringtiefe sei $\\delta=10\\,\\mathrm{nm}$. Wie groß ist das Verhältnis $L_\\mathrm{th}/\\delta$?",
+          "antwort": 0.316,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$3{,}16/10=0{,}316<1$: Die Wärme bleibt im Absorptionsvolumen, kaum Wärmeeinflusszone."
+        },
+        {
+          "id": "k05.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei der Repetitionsrate $f=500\\,\\mathrm{kHz}$ ist der Pulsabstand $1/f$. Wie groß ist er in µs?",
+          "antwort": 2,
+          "einheit": "µs",
+          "toleranz": 0.05,
+          "erklaerung": "$1/f=1/(5\\cdot10^{5}\\,\\mathrm{s^{-1}})=2\\cdot10^{-6}\\,\\mathrm{s}=2\\,\\mu\\mathrm{s}$."
+        },
+        {
+          "id": "k05.q14",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jedes Symbol des Zwei-Temperatur-Modells seiner Bedeutung zu.",
+          "paare": [
+            [
+              "$T_\\mathrm{e}$",
+              "Elektronentemperatur"
+            ],
+            [
+              "$T_\\mathrm{l}$",
+              "Gittertemperatur"
+            ],
+            [
+              "$G$",
+              "Elektron-Phonon-Kopplungskonstante"
+            ],
+            [
+              "$C_\\mathrm{e}$",
+              "Wärmekapazität der Elektronen"
+            ],
+            [
+              "$D$",
+              "Temperaturleitfähigkeit"
+            ]
+          ],
+          "erklaerung": "Merke: $C_\\mathrm{e}\\ll C_\\mathrm{l}$, deshalb werden die Elektronen so heiß."
+        },
+        {
+          "id": "k05.q15",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welcher Fall begünstigt Wärmeakkumulation am meisten?",
+          "optionen": [
+            "Pulsabstand 100 µs bei niedriger Fluenz",
+            "Pulsabstand 1 µs bei hoher Fluenz",
+            "Einzelpulse im Abstand von Sekunden",
+            "Sehr kurze Pulsdauer bei niedriger Rate"
+          ],
+          "richtig": 1,
+          "erklaerung": "Kurzer Pulsabstand (hohe Rate) und viel Energie lassen der Wärme keine Zeit zum Abfließen."
+        },
+        {
+          "id": "k05.c05",
+          "typ": "karte",
+          "vorne": "Wie rechnest du die Wärmediffusionslänge sicher aus?",
+          "hinten": "$D$ in m²/s (1 cm²/s $=10^{-4}$ m²/s), $\\tau$ in s, dann $L_\\mathrm{th}=\\sqrt{D\\tau}$; das Ergebnis in nm ($\\times10^{9}$).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

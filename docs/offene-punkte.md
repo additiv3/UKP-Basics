@@ -7,7 +7,8 @@
 | **alp-Logo** | Die Formensprache des Logos der AG alp (facettierter, abgerundeter Kristall in Cyan, Laserstrahl mit Lichtpunkt) diente als Anregung für das neue App-Icon (Version 0.2). Das Original wird nicht verwendet (Marken- und Nutzungsrechte der Hochschule); Kristall, Strahl, Pulse und Plume sind eine eigene Zeichnung (`tools/gen_icons.py`). Wenn die Hochschule eine offizielle Nutzung erlaubt, kann das Original ergänzt werden. |
 | **GitHub Pages** | Repo ist öffentlich, Pages aus `main`. Persönliche Projektnotizen (Stelle, Betreuung, Vorwissen) liegen nur lokal und sind nicht im Repo. |
 | **Grafiken** | Alle Grafiken entstehen als selbst erzeugte SVGs (`tools/gen_figures.py`) oder Canvas-Simulationen (`src/sims/`). Fotos oder Mikroskopaufnahmen (Ablationsstrukturen, Anlage) brauchen eine klare Lizenz bzw. deine eigenen Bilder. |
-| **Kapitel K08, K10, K12** | Noch Gliederung. K08 (Werkstoffe) braucht belegte Materialkennwerte aus der Literatur, deshalb bewusst zurückgestellt. |
+| **Kapitel K08, K10, K12** | Seit Version 0.3 ausgearbeitet. K08 und K10 nennen Größenordnungen (Bandlücken, LIPSS, SLE-Selektivität, Wellenleiter) aus allgemeiner Literaturkenntnis; alle diese Aussagen tragen das Badge „ungeprüft“ und sollten aus der Literatur belegt werden. Gerechnet wird mit frei gewählten Zahlenbeispielen. |
+| **Englische Texte** | Die Übersetzungen sind Fachübersetzungen (Fachbegriffe nach Glossar). Auffällige Formulierungen bitte direkt in `content/en/` korrigieren. |
 
 ## Fachlich zu prüfen
 

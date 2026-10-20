@@ -1,0 +1,369 @@
+{
+  "titel": "Pulse quantities and a feel for numbers",
+  "einleitung": "Before we get to mechanisms you need a reliable feel for the quantities that describe every ultrashort-pulse process: time, energy, power, fluence and intensity.",
+  "ziele": [
+    "Place pulse durations from ns to fs and convert them into lengths",
+    "Calculate pulse energy, average power and peak power reliably",
+    "Determine the fluence and intensity of a Gaussian beam ($F_0=2E_\\mathrm{p}/\\pi w_0^2$)",
+    "Get the photon energy from the wavelength and understand why it matters later"
+  ],
+  "lektionen": {
+    "k01.l01": "Time scales: from nanoseconds to femtoseconds",
+    "k01.l02": "Pulse energy, average power and peak power",
+    "k01.l03": "Fluence and intensity",
+    "k01.l04": "Photons and wavelength",
+    "k01.l05": "Calculation training: getting the quantities right"
+  },
+  "blocks": {
+    "k01.l01.b01": {
+      "inhalt": [
+        "An ultrashort pulse ([[ukp]]) lasts picoseconds to femtoseconds. That is not just “shorter”: it is so short that material and light meet in completely different time windows than in PBF-LB/M, where the melt pool has time to form, flow and solidify.",
+        "First you need a feel for the numbers:",
+        "- 1 ns $=10^{-9}$ s\n- 1 ps $=10^{-12}$ s\n- 1 fs $=10^{-15}$ s",
+        "Each step is a factor of $10^3$."
+      ]
+    },
+    "k01.l01.b02": {
+      "alt": "Time ladder from femtoseconds to milliseconds with the distance light travels in that time",
+      "unterschrift": "Time ladder: every step is a factor of $10^3$. On the right: the distance light travels in vacuum."
+    },
+    "k01.l01.b03": {
+      "erklaerung": "Distance $\\Delta s$ that light (vacuum speed of light $c\\approx 3\\cdot 10^{8}$ m/s) travels in the time $\\tau$. So 1 fs corresponds to about 0.3 µm, 1 ps to about 0.3 mm and 1 ns to about 30 cm."
+    },
+    "k01.l01.b04": {
+      "inhalt": "A 300 fs pulse is only about $90\\,\\mu\\mathrm{m}$ long in vacuum. A 5 ns pulse, by contrast, is about 1.5 m long."
+    },
+    "k01.q01": {
+      "frage": "Sort the time spans from short to long.",
+      "items": [
+        "300 fs",
+        "10 ps",
+        "5 ns",
+        "100 µs"
+      ],
+      "oben": "shortest",
+      "unten": "longest",
+      "erklaerung": "Each step fs → ps → ns → µs is a factor of $10^3$; 300 fs $=0.3$ ps, so clearly shorter than 10 ps."
+    },
+    "k01.q02": {
+      "frage": "How many femtoseconds are in one nanosecond?",
+      "erklaerung": "1 ns $=10^{-9}$ s and 1 fs $=10^{-15}$ s, so $10^{-9}/10^{-15}=10^{6}$."
+    },
+    "k01.q03": {
+      "frage": "How long is a 100 fs pulse in vacuum? Give the length in micrometres.",
+      "erklaerung": "$\\Delta s = c\\,\\tau = 3\\cdot10^{8}\\,\\mathrm{m/s}\\cdot 100\\cdot10^{-15}\\,\\mathrm{s}=3\\cdot10^{-5}\\,\\mathrm{m}=30\\,\\mu\\mathrm{m}$."
+    },
+    "k01.c01": {
+      "vorne": "What distance does light travel in vacuum in 1 fs?",
+      "hinten": "$c\\cdot 1\\,\\mathrm{fs}\\approx 0.3\\,\\mu\\mathrm{m}$ (300 nm)."
+    },
+    "k01.c02": {
+      "vorne": "Which pulse durations are called ultrashort?",
+      "hinten": "Picoseconds to femtoseconds (ps, fs)."
+    },
+    "k01.l02.b01": {
+      "inhalt": [
+        "A pulsed laser is described by three quantities: the [[pulsenergie]] $E_\\mathrm{p}$ (joules), the [[pulsdauer]] $\\tau$ (seconds) and the [[repetitionsrate]] $f$ (hertz, pulses per second).",
+        "Two very different powers follow from them. The **average power** tells you how much energy arrives per second (heat load, throughput). The **peak power** tells you how intense it really gets during the pulse. In PBF-LB/M practically only the average power counts; for UKP the peak power decides."
+      ]
+    },
+    "k01.l02.b02": {
+      "erklaerung": "Average power: energy per pulse times pulses per second."
+    },
+    "k01.l02.b03": {
+      "erklaerung": "Peak power as an approximation. A pulse-shape factor of order 1 (e.g. ≈ 0.94 for a sech² pulse) is neglected here."
+    },
+    "k01.l02.b04": {
+      "alt": "Pulse train: narrow tall pulses spaced 1/f apart, with the low average power as a dashed line below",
+      "unterschrift": "Pulse train (not to scale). The same energy per second is packed into narrow, very tall peaks."
+    },
+    "k01.l02.b05": {
+      "titel": "Worked example",
+      "aufgabe": "A laser delivers $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ at $\\tau=300\\,\\mathrm{fs}$ and $f=100\\,\\mathrm{kHz}$. Determine the average power, the peak power and the fraction of time in which power actually flows.",
+      "schritte": [
+        "Average power: $P_\\mathrm{avg}=10\\,\\mu\\mathrm{J}\\cdot 100\\,\\mathrm{kHz}=10\\cdot10^{-6}\\,\\mathrm{J}\\cdot10^{5}\\,\\mathrm{s^{-1}}=1\\,\\mathrm{W}$",
+        "Peak power: $P_\\mathrm{peak}\\approx 10\\cdot10^{-6}\\,\\mathrm{J}/(300\\cdot10^{-15}\\,\\mathrm{s})\\approx 3.3\\cdot10^{7}\\,\\mathrm{W}$",
+        "Duty cycle: $\\tau\\cdot f=300\\cdot10^{-15}\\,\\mathrm{s}\\cdot10^{5}\\,\\mathrm{s^{-1}}=3\\cdot10^{-8}$"
+      ],
+      "ergebnis": "1 W average power, but about 33 MW peak power, because the energy flows during only $3\\cdot10^{-8}$ of the time."
+    },
+    "k01.l02.b06": {
+      "inhalt": "At constant pulse energy the peak power is inversely proportional to the pulse duration. Half the pulse duration means twice the peak power at unchanged average power."
+    },
+    "k01.q04": {
+      "frage": "A laser delivers 20 µJ pulse energy at 400 fs. What is the peak power (approximation $E_\\mathrm{p}/\\tau$) in megawatts?",
+      "erklaerung": "$P_\\mathrm{peak}\\approx 20\\cdot10^{-6}\\,\\mathrm{J}/(400\\cdot10^{-15}\\,\\mathrm{s})=5\\cdot10^{7}\\,\\mathrm{W}=50\\,\\mathrm{MW}$."
+    },
+    "k01.q05": {
+      "frage": "The same laser (20 µJ) runs at 250 kHz. What is the average power in watts?",
+      "erklaerung": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f=20\\cdot10^{-6}\\,\\mathrm{J}\\cdot 2.5\\cdot10^{5}\\,\\mathrm{s^{-1}}=5\\,\\mathrm{W}$."
+    },
+    "k01.q06": {
+      "frage": "You halve the pulse duration at constant pulse energy. What happens to the peak power?",
+      "optionen": [
+        "It doubles.",
+        "It halves.",
+        "It stays the same.",
+        "It quadruples."
+      ],
+      "erklaerung": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$: half $\\tau$ gives double $P_\\mathrm{peak}$."
+    },
+    "k01.q07": {
+      "frage": "Complete the two power formulas.",
+      "text": "The average power is the product of ___ and ___. The peak power is approximately the quotient of ___ and ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "pulse energy",
+            "pulse duration",
+            "beam radius"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "repetition rate",
+            "wavelength",
+            "fluence"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "pulse energy",
+            "repetition rate",
+            "fluence"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "pulse duration",
+            "repetition rate",
+            "beam radius"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ and $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$."
+    },
+    "k01.c03": {
+      "vorne": "How do you calculate the average power of a pulsed laser?",
+      "hinten": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ (pulse energy times repetition rate)."
+    },
+    "k01.c04": {
+      "vorne": "How do you approximate the peak power?",
+      "hinten": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$ (pulse energy divided by pulse duration)."
+    },
+    "k01.l03.b01": {
+      "inhalt": [
+        "Power and energy alone say little as long as the area they hit is missing. Two quantities relate them to the area:",
+        "- The [[fluenz]] $F=E_\\mathrm{p}/A$ in J/cm² is the energy delivered per area. It decides whether [[ablationsschwelle|ablation]] sets in.\n- The [[intensitaet]] $I$ in W/cm² is the power per area; for a pulse $I\\approx F/\\tau$ holds. It decides whether nonlinear absorption becomes possible (chapter K06)."
+      ]
+    },
+    "k01.l03.b02": {
+      "titel": "The Gaussian beam",
+      "inhalt": [
+        "Real laser beams are not cylinders with a constant profile. Ideally the beam has a Gaussian profile ([[gauss-strahl]]): strongest in the middle, falling off exponentially outwards. The beam radius $w_0$ is the distance from the axis at which the intensity has dropped to $1/e^2\\approx 13.5\\,\\%$ ([[strahlradius]])."
+      ]
+    },
+    "k01.l03.b03": {
+      "alt": "Gaussian fluence profile over the radius with peak fluence F0, beam radius w0 at the 1/e² value and an example threshold drawn in",
+      "unterschrift": "Fluence profile of a Gaussian beam. Where the profile lies above a threshold (chosen here as an example), material would be removed."
+    },
+    "k01.l03.b04": {
+      "erklaerung": "Peak fluence at the beam centre. Derivation: integrating the profile $F(r)=F_0\\,e^{-2r^2/w_0^2}$ over the area gives $E_\\mathrm{p}=F_0\\,\\pi w_0^2/2$."
+    },
+    "k01.l03.b05": {
+      "inhalt": "The peak fluence is twice the mean fluence $E_\\mathrm{p}/(\\pi w_0^2)$ over the circle of radius $w_0$. Anyone who calculates with the mean fluence underestimates the peak value by a factor of 2."
+    },
+    "k01.l03.b06": {
+      "titel": "Worked example",
+      "aufgabe": "A pulse with $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ and $\\tau=300\\,\\mathrm{fs}$ is focused to a spot with $w_0=15\\,\\mu\\mathrm{m}$. Determine the peak fluence and the peak intensity.",
+      "schritte": [
+        "Area: $\\pi w_0^2=\\pi\\,(15\\cdot10^{-4}\\,\\mathrm{cm})^2\\approx 7.07\\cdot10^{-6}\\,\\mathrm{cm^2}$",
+        "Peak fluence: $F_0=2\\cdot 10\\cdot10^{-6}\\,\\mathrm{J}/7.07\\cdot10^{-6}\\,\\mathrm{cm^2}\\approx 2.83\\,\\mathrm{J/cm^2}$",
+        "Peak intensity: $I_0\\approx F_0/\\tau=2.83\\,\\mathrm{J/cm^2}/(3\\cdot10^{-13}\\,\\mathrm{s})\\approx 9.4\\cdot10^{12}\\,\\mathrm{W/cm^2}$"
+      ],
+      "ergebnis": "$F_0\\approx 2.8\\,\\mathrm{J/cm^2}$ and $I_0\\approx 9\\cdot10^{12}\\,\\mathrm{W/cm^2}$."
+    },
+    "k01.l03.b07": {
+      "titel": "Try it yourself: fluence and intensity"
+    },
+    "k01.l03.b08": {
+      "inhalt": "For orientation: the literature quotes intensities of roughly $10^{13}$ to $10^{14}\\,\\mathrm{W/cm^2}$ for the ablation of transparent materials. The project notes speak of more than $10^{15}\\,\\mathrm{W/cm^2}$; that does not fit this order of magnitude and has to be verified. The calculator shows how far the calculation above is from it."
+    },
+    "k01.q08": {
+      "frage": "A pulse with $E_\\mathrm{p}=5\\,\\mu\\mathrm{J}$ hits a Gaussian spot with $w_0=10\\,\\mu\\mathrm{m}$. What is the peak fluence in J/cm²?",
+      "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)=2\\cdot5\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot(10^{-3}\\,\\mathrm{cm})^2)\\approx 3.18\\,\\mathrm{J/cm^2}$."
+    },
+    "k01.q09": {
+      "frage": "You double the beam radius at constant pulse energy. How does the peak fluence change?",
+      "optionen": [
+        "It drops to a quarter.",
+        "It drops to half.",
+        "It stays the same.",
+        "It doubles."
+      ],
+      "erklaerung": "$F_0\\propto 1/w_0^2$. Double the radius means four times the area, so a quarter of the fluence."
+    },
+    "k01.q10": {
+      "frage": "Which statements about the Gaussian beam are true?",
+      "optionen": [
+        "$w_0$ is the radius at which the intensity has dropped to $1/e^2$ of the maximum.",
+        "The peak fluence is twice as large as $E_\\mathrm{p}/(\\pi w_0^2)$.",
+        "The fluence is constant across the whole spot.",
+        "At the radius $w_0$ the intensity is still 50 % of the maximum."
+      ],
+      "erklaerung": "The Gaussian beam has no constant profile. At $r=w_0$ the intensity has dropped to $1/e^2\\approx 13.5\\,\\%$, not to 50 %."
+    },
+    "k01.q11": {
+      "frage": "Match each quantity to its unit.",
+      "paare": [
+        [
+          "Fluence",
+          "J/cm²"
+        ],
+        [
+          "Intensity",
+          "W/cm²"
+        ],
+        [
+          "Pulse energy",
+          "J"
+        ],
+        [
+          "Peak power",
+          "W"
+        ],
+        [
+          "Repetition rate",
+          "Hz (1/s)"
+        ]
+      ],
+      "erklaerung": "Energy per area → J/cm²; power per area → W/cm²."
+    },
+    "k01.c05": {
+      "vorne": "Peak fluence of a Gaussian beam from $E_\\mathrm{p}$ and $w_0$?",
+      "hinten": "$F_0=\\dfrac{2E_\\mathrm{p}}{\\pi w_0^2}$ (twice the mean fluence over $\\pi w_0^2$)."
+    },
+    "k01.c06": {
+      "vorne": "Which units do fluence and intensity have in this project?",
+      "hinten": "Fluence in J/cm², intensity in W/cm²."
+    },
+    "k01.c07": {
+      "vorne": "How are intensity and fluence related for a pulse?",
+      "hinten": "$I\\approx F/\\tau$ (fluence divided by pulse duration)."
+    },
+    "k01.l04.b01": {
+      "inhalt": [
+        "Light consists of photons. Each carries the energy $h\\nu=hc/\\lambda$ ([[photonenenergie]]). That sounds like school physics, but later it decides how a material takes up laser light: is the energy of a single photon enough to lift an electron across the band gap, or do several photons have to act together?"
+      ]
+    },
+    "k01.l04.b02": {
+      "erklaerung": "With the wavelength in nanometres you get the photon energy directly in electronvolts."
+    },
+    "k01.l04.b03": {
+      "titel": "Worked example",
+      "aufgabe": "Determine the photon energy at 1030 nm and at the wavelengths that result from frequency doubling and tripling.",
+      "schritte": [
+        "1030 nm: $1239.84/1030\\approx 1.20\\,\\mathrm{eV}$",
+        "Doubling (half the wavelength, 515 nm): $1239.84/515\\approx 2.41\\,\\mathrm{eV}$",
+        "Tripling (one third, about 343 nm): $1239.84/343\\approx 3.61\\,\\mathrm{eV}$"
+      ],
+      "ergebnis": "Half the wavelength means double the photon energy."
+    },
+    "k01.l04.b04": {
+      "titel": "Try it yourself: how many photons are needed?"
+    },
+    "k01.l04.b05": {
+      "inhalt": "A preview of chapter K06: for fused silica the literature quotes band gaps of about 9 eV. At 1030 nm (≈ 1.2 eV per photon) at least 8 photons would then have to act at the same time. This is why UKP pulses, with their high intensity, can process transparent materials at all. Both numbers still have to be verified."
+    },
+    "k01.q12": {
+      "frage": "What photon energy does light of wavelength 515 nm have? Give it in eV.",
+      "erklaerung": "$h\\nu\\approx1239.84\\,\\mathrm{eV\\,nm}/515\\,\\mathrm{nm}\\approx 2.41\\,\\mathrm{eV}$."
+    },
+    "k01.q13": {
+      "frage": "You halve the wavelength (frequency doubling). How does the photon energy change?",
+      "optionen": [
+        "It doubles.",
+        "It halves.",
+        "It stays the same.",
+        "It quadruples."
+      ],
+      "erklaerung": "$h\\nu\\propto 1/\\lambda$: half the wavelength means double the photon energy."
+    },
+    "k01.q14": {
+      "frage": "A material has (chosen freely) a band gap of 7 eV. At least how many photons of wavelength 1030 nm does it take to bridge it in one step?",
+      "erklaerung": "One photon carries $\\approx1.20$ eV. $7/1.20\\approx5.8$; rounded up that is at least 6 photons: $n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$."
+    },
+    "k01.c08": {
+      "vorne": "How do you calculate the photon energy in eV from the wavelength in nm?",
+      "hinten": "$h\\nu\\approx 1239.84\\ \\mathrm{eV\\,nm}/\\lambda$. Example: 1030 nm corresponds to about 1.2 eV."
+    },
+    "k01.l05.b01": {
+      "inhalt": [
+        "Here you calculate the quantities from lessons 1 to 4 yourself. You do not have to calculate in your head: every task has the **pocket calculator** (button under the answer field). It knows powers of ten (EE key), brackets, roots and the constants.",
+        "In the **formula-builder tasks** you first assemble the formula from tiles: tap them or drag them into the slots. Then you insert the numbers and calculate. Tip: convert all quantities to SI units (or J/cm² and cm) before typing, otherwise powers of ten slip."
+      ]
+    },
+    "k01.q15": {
+      "frage": "Build the formula for the peak power (approximation) and calculate it for $E_\\mathrm{p}=12\\,\\mu\\mathrm{J}$ and $\\tau=250\\,\\mathrm{fs}$. Answer in MW.",
+      "erklaerung": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau=12\\cdot10^{-6}\\,\\mathrm{J}/(250\\cdot10^{-15}\\,\\mathrm{s})=4.8\\cdot10^{7}\\,\\mathrm{W}=48\\,\\mathrm{MW}$.",
+      "tipp": "Pulse energy divided by pulse duration. Insert µJ as $10^{-6}$ J and fs as $10^{-15}$ s; divide the result in W by $10^6$ to get MW."
+    },
+    "k01.q16": {
+      "frage": "Build the formula for the average power and calculate it for $E_\\mathrm{p}=8\\,\\mu\\mathrm{J}$ and $f=250\\,\\mathrm{kHz}$. Answer in W.",
+      "erklaerung": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f=8\\cdot10^{-6}\\,\\mathrm{J}\\cdot2.5\\cdot10^{5}\\,\\mathrm{s^{-1}}=2\\,\\mathrm{W}$. For a product the order does not matter."
+    },
+    "k01.q17": {
+      "frage": "Build the formula for the peak fluence of the Gaussian beam and calculate it for $E_\\mathrm{p}=8\\,\\mu\\mathrm{J}$ and $w_0=20\\,\\mu\\mathrm{m}$. Answer in J/cm².",
+      "erklaerung": "$F_0=\\dfrac{2E_\\mathrm{p}}{\\pi w_0^2}=\\dfrac{2\\cdot8\\cdot10^{-6}\\,\\mathrm{J}}{\\pi\\,(2\\cdot10^{-3}\\,\\mathrm{cm})^2}\\approx1.27\\,\\mathrm{J/cm^2}$. $w_0=20\\,\\mu\\mathrm{m}=2\\cdot10^{-3}$ cm.",
+      "tipp": "The radius has to go into the formula in cm: 1 µm $=10^{-4}$ cm. Do not forget the square: $(2\\cdot10^{-3})^2$."
+    },
+    "k01.q18": {
+      "frage": "A pulse has the peak fluence $F_0=2\\,\\mathrm{J/cm^2}$ and lasts $\\tau=500\\,\\mathrm{fs}$. What is the peak intensity (approximation $F_0/\\tau$)? Answer in $10^{12}\\,\\mathrm{W/cm^2}$.",
+      "erklaerung": "$I_0\\approx F_0/\\tau=2\\,\\mathrm{J/cm^2}/(5\\cdot10^{-13}\\,\\mathrm{s})=4\\cdot10^{12}\\,\\mathrm{W/cm^2}$."
+    },
+    "k01.q19": {
+      "frage": "Build the formula for the photon energy and calculate it for $\\lambda=343\\,\\mathrm{nm}$. Answer in eV.",
+      "erklaerung": "$h\\nu=hc/\\lambda\\approx1239.84\\,\\mathrm{eV\\,nm}/343\\,\\mathrm{nm}\\approx3.61\\,\\mathrm{eV}$."
+    },
+    "k01.q20": {
+      "frage": "Match each quantity to its formula.",
+      "paare": [
+        [
+          "Average power",
+          "$E_\\mathrm{p}\\cdot f$"
+        ],
+        [
+          "Peak power",
+          "$E_\\mathrm{p}/\\tau$"
+        ],
+        [
+          "Peak fluence",
+          "$2E_\\mathrm{p}/(\\pi w_0^2)$"
+        ],
+        [
+          "Peak intensity",
+          "$F_0/\\tau$"
+        ],
+        [
+          "Photon energy",
+          "$hc/\\lambda$"
+        ]
+      ],
+      "erklaerung": "All five formulas come from lessons 2 to 4. Check the units: W, W, J/cm², W/cm², eV."
+    },
+    "k01.q21": {
+      "frage": "At **equal pulse energy**, sort the pulse durations by peak power, from low to high.",
+      "erklaerung": "The peak power is $E_\\mathrm{p}/\\tau$: the shorter the pulse, the higher the peak power.",
+      "oben": "lowest peak power",
+      "unten": "highest peak power"
+    },
+    "k01.c09": {
+      "vorne": "How do you reliably insert µJ, fs and µm into the formulas?",
+      "hinten": "Everything in SI (J, s, m), or for fluence in J and cm: 1 µJ $=10^{-6}$ J, 1 fs $=10^{-15}$ s, 1 µm $=10^{-4}$ cm. Convert the result to the requested unit at the end."
+    }
+  }
+}

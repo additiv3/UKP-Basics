@@ -1,0 +1,302 @@
+{
+  "id": "k12",
+  "titel": "Wissenschaftliche Praxis in der Photonik",
+  "einleitung": "Wie findest du die relevante Literatur, wie liest du ein Paper kritisch, wie verwaltest du Quellen und wie stellst du eigene Ergebnisse vor? Dieses Kapitel gibt dir Arbeitsmethoden für die Promotion, mit Rechenaufgaben, die typische Vergleichsfehler beim Lesen von Papern aufdecken.",
+  "ziele": [
+    "Relevante Zeitschriften und Konferenzen kennen",
+    "Paper strukturiert lesen und Definitionen vergleichen",
+    "Literatur mit Zotero und Citekeys verwalten",
+    "Forschungsfrage und Vortrag aufbauen"
+  ],
+  "weiterlesen": [
+    "sugioka2014",
+    "liu1982"
+  ],
+  "lektionen": [
+    {
+      "id": "k12.l01",
+      "titel": "Journals und Konferenzen",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k12.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die UKP-Bearbeitung liegt zwischen **Laserphysik**, **Werkstoffwissenschaft** und **Fertigungstechnik**. Entsprechend verteilen sich die wichtigen Veröffentlichungen. Eine Orientierung (Zusammenstellung aus allgemeiner Kenntnis der Literatur, ohne Rangfolge und nicht geprüft):",
+            "- *Applied Physics A: Materials Science & Processing* (Springer) und *Applied Surface Science* (Elsevier): Wechselwirkung und Oberflächen.\n- *Optics Express* und *Optics Letters* (Optica): Laser, Optik, Strahlformung; Letters sind kurze Eilmitteilungen.\n- *Optics & Laser Technology*, *Optics and Lasers in Engineering* und *Journal of Laser Applications*: Anwendung und Prozesse.\n- *Light: Science & Applications* (Open Access) und *Physical Review B*: Grundlagen und Materialphysik.",
+            "Wichtige Konferenzen (ebenfalls ohne Rangfolge): **CLEO**, **SPIE Photonics West (LASE)**, **LiM** (Lasers in Manufacturing, München), **ICALEO** und die **LPM** (Laser Precision Microprocessing)."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Praxis, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k12.l01.b02",
+          "typ": "merke",
+          "inhalt": "Für den Einstieg lohnt sich eine **Mischung**: ein Review (Übersicht) für das Gesamtbild, ein paar Grundlagenarbeiten (Chichkov, Stuart, Schaffer) und die jüngsten Arbeiten zu deinem Werkstoff. Starte mit dem Review und gehe von dort in dessen Literaturliste.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k12.q01",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Konferenz oder Zeitschrift ihrer Rolle zu (grobe Einordnung, ungeprüft).",
+          "paare": [
+            [
+              "Optics Letters",
+              "Kurze Eilmitteilungen"
+            ],
+            [
+              "Applied Physics A",
+              "Materialwissenschaft und Prozesse"
+            ],
+            [
+              "Light: Science & Applications",
+              "Open-Access-Zeitschrift"
+            ],
+            [
+              "LiM",
+              "Tagung zur Lasertechnik in der Fertigung"
+            ]
+          ],
+          "erklaerung": "Die Einordnung ist grob; prüfe Aims & Scope der Zeitschrift auf der jeweiligen Webseite."
+        },
+        {
+          "id": "k12.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wo suchst du zuerst, wenn du dich in ein neues Teilthema einarbeitest?",
+          "optionen": [
+            "In einem aktuellen Review-Artikel",
+            "In einem beliebigen Preprint",
+            "Im ältesten Paper zum Thema",
+            "In sozialen Netzwerken"
+          ],
+          "richtig": 0,
+          "erklaerung": "Ein Review ordnet das Feld und führt zu den Schlüsselarbeiten."
+        },
+        {
+          "id": "k12.c01",
+          "typ": "karte",
+          "vorne": "Wie startest du eine Literaturrecherche?",
+          "hinten": "Review lesen, Schlüsselarbeiten identifizieren, deren Literatur und die Zitierenden verfolgen (Vorwärts- und Rückwärtssuche).",
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Praxis, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k12.l02",
+      "titel": "Paper lesen und einordnen",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k12.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Fachartikel folgt meist dem Schema **IMRaD**: Introduction, Methods, Results, and Discussion. Lies in **drei Durchgängen**:",
+            "1. **Überfliegen** (5 Minuten): Titel, Abstract, Abbildungen, Schlussfolgerung. Frage: Ist das relevant?\n2. **Verstehen** (30 Minuten): Methoden und Ergebnisse, Abbildungen im Detail. Frage: Was wurde gemessen und wie?\n3. **Prüfen:** Stimmen Definitionen, Zahlen und Schlüsse? Was fehlt?",
+            "Notiere dir für jedes Paper eine **Parametertabelle**: Wellenlänge, Pulsdauer, Rate, Pulsenergie, Strahlradius (welche Definition?), Pulszahl, Werkstoff, Schwellfluenz (Spitze oder Mittel? Pulszahl $N$?)."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k12.l02.b02",
+          "typ": "merke",
+          "inhalt": "**Vergleiche Zahlen aus verschiedenen Papern nur, wenn die Definitionen passen:** $1/e^2$-Radius oder FWHM, Spitzen- oder mittlere Fluenz, Einzelpuls oder $N$ Pulse, Intensität oder Fluenz. Ein Faktor 2 (Spitze/Mittel) oder 1,18 (FWHM/$1/e^2$) wird sonst zum scheinbaren Widerspruch.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k12.q03",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Paper gibt die **mittlere** Fluenz $\\bar F=1{,}5\\,\\mathrm{J/cm^2}$ an ($\\bar F=E_\\mathrm{p}/\\pi w_0^2$). Wie hoch ist die Spitzenfluenz $F_0$ in J/cm²?",
+          "antwort": 3,
+          "einheit": "J/cm²",
+          "toleranz": 0.05,
+          "erklaerung": "$F_0=2\\bar F=3\\,\\mathrm{J/cm^2}$ (Kapitel 1 und 2)."
+        },
+        {
+          "id": "k12.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Paper nennt einen Strahldurchmesser von $d_\\mathrm{FWHM}=20\\,\\mu\\mathrm{m}$ (FWHM der Intensität). Wie groß ist der $1/e^2$-Radius $w$ in µm? ($d_\\mathrm{FWHM}=1{,}177\\,w$)",
+          "antwort": 17,
+          "einheit": "µm",
+          "toleranz": 0.02,
+          "erklaerung": "$w=d_\\mathrm{FWHM}/1{,}177=17{,}0\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k12.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Paper beschreibt die Pulse mit $E_\\mathrm{p}=8\\,\\mu\\mathrm{J}$ und $w_0=12\\,\\mu\\mathrm{m}$ ($1/e^2$) und nennt eine Schwellfluenz von $0{,}9\\,\\mathrm{J/cm^2}$ als **Spitzenfluenz** $F_\\mathrm{th}$. Wie viel Mal über der Schwelle arbeitet es, also wie groß ist $F_0/F_\\mathrm{th}$?",
+          "antwort": 3.93,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)=2\\cdot8\\cdot10^{-6}/(\\pi\\cdot1{,}44\\cdot10^{-6})=3{,}54\\,\\mathrm{J/cm^2}$; $F_0/F_\\mathrm{th}=3{,}54/0{,}9=3{,}93$."
+        },
+        {
+          "id": "k12.q06",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die drei Lese-Durchgänge in die richtige Reihenfolge.",
+          "items": [
+            "Titel, Abstract, Abbildungen und Schluss überfliegen",
+            "Methoden und Ergebnisse im Detail verstehen",
+            "Definitionen, Zahlen und Schlüsse kritisch prüfen"
+          ],
+          "erklaerung": "Erst Relevanz klären, dann verstehen, dann prüfen."
+        },
+        {
+          "id": "k12.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Zwei Paper nennen für dasselbe Material Schwellfluenzen von 1 und 2 J/cm². Was prüfst du zuerst?",
+          "optionen": [
+            "Ob beide Spitzen- oder mittlere Fluenz, gleiche Pulszahl und gleiche Strahlradius-Definition verwenden",
+            "Welches Paper neuer ist",
+            "Welches Paper länger ist",
+            "Ob der Laser dieselbe Farbe hat"
+          ],
+          "richtig": 0,
+          "erklaerung": "Ein Faktor 2 entsteht schon durch Spitzen- statt mittlere Fluenz."
+        },
+        {
+          "id": "k12.c02",
+          "typ": "karte",
+          "vorne": "Was gehört in die Parametertabelle zu einem Paper?",
+          "hinten": "Wellenlänge, Pulsdauer, Rate, Pulsenergie, Strahlradius (Definition), Pulszahl, Werkstoff, Schwellfluenz (Spitze/Mittel, $N$).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k12.l03",
+      "titel": "Literaturverwaltung und Notizen",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k12.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Mit einem Literaturverwaltungsprogramm wie **Zotero** (du nutzt es bereits) hältst du alles zusammen: Quellen, PDFs, Anmerkungen und Zitate. Bewährte Gewohnheiten:",
+            "- **Sofort importieren:** Mit dem Browser-Connector oder per DOI. Metadaten (Titel, Autoren, DOI) danach prüfen.\n- **Sammlungen und Tags:** Eine Sammlung pro Kapitel der Arbeit, Tags für Werkstoff, Methode, Wellenlänge.\n- **Zitierschlüssel (Citekey):** einheitliches Schema, z. B. `autor2024kurz`; so passen BibLaTeX-Einträge zu `\\parencite{}`.\n- **Anmerkungen direkt am PDF**, dazu eine Notiz mit Parametertabelle und eigenem Fazit in zwei Sätzen.\n- **Duplikate regelmäßig zusammenführen**, Backups des Verzeichnisses anlegen."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k12.q08",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wozu dient ein DOI in einem Literatureintrag?",
+          "optionen": [
+            "Als dauerhafte Kennung, um den Artikel eindeutig wiederzufinden",
+            "Als Seitenzahl",
+            "Als Name des Verlags",
+            "Als Seitenverzeichnis"
+          ],
+          "richtig": 0,
+          "erklaerung": "Mit doi.org/DOI landest du beim Artikel, auch wenn sich die Webseite ändert."
+        },
+        {
+          "id": "k12.q09",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Aufgabe dem passenden Werkzeug zu.",
+          "paare": [
+            [
+              "Quelle per DOI importieren",
+              "Literaturverwaltung (Zotero)"
+            ],
+            [
+              "Zitat im Text einfügen",
+              "\\parencite{citekey}"
+            ],
+            [
+              "Duplikate aufräumen",
+              "Duplikate zusammenführen"
+            ]
+          ],
+          "erklaerung": "Die Verwaltung liefert die Einträge, BibLaTeX setzt die Zitate."
+        },
+        {
+          "id": "k12.c03",
+          "typ": "karte",
+          "vorne": "Wie benennst du Zitierschlüssel?",
+          "hinten": "Einheitliches Schema, z. B. Erstautor, Jahr, Stichwort (`schaffer2001laser`); dann sind sie im Text und in der Datenbank eindeutig.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    },
+    {
+      "id": "k12.l04",
+      "titel": "Eigene Arbeit einordnen und vorstellen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k12.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Eine gute Forschungsfrage hat vier Teile: **Lücke** (was ist nicht bekannt?), **Frage**, **Methode**, **erwarteter Nutzen**. Formuliere sie in zwei Sätzen und prüfe sie an jedem neuen Paper: Wird die Lücke schon geschlossen?",
+            "Für einen **10-Minuten-Vortrag** gilt grob eine Folie pro Minute: Motivation (1), Stand der Technik und Lücke (1 bis 2), Methode und Aufbau (2), Ergebnisse (3 bis 4), Schluss und Ausblick (1). Jede Abbildung braucht **Achsenbeschriftung mit Einheiten** und eine Kernaussage als Überschrift.",
+            "**Reproduzierbarkeit:** Dokumentiere Pulsenergie am Werkstück, Strahlradius mit Methode, Pulsdauer mit Methode, Pulszahl und Fokuslage (Kapitel 11)."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k12.q10",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Ordne die Teile eines 10-Minuten-Vortrags.",
+          "items": [
+            "Motivation",
+            "Stand der Technik und Lücke",
+            "Methode und Aufbau",
+            "Ergebnisse",
+            "Schluss und Ausblick"
+          ],
+          "erklaerung": "Vom Warum über das Wie zu den Ergebnissen und zurück zur Gesamtaussage."
+        },
+        {
+          "id": "k12.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Vortrag dauert 10 Minuten. Mit etwa einer Folie pro Minute: Wie viele Folien planst du ungefähr?",
+          "antwort": 10,
+          "einheit": "",
+          "toleranz": 0.2,
+          "erklaerung": "Etwa 10 Folien; lieber weniger und klar."
+        },
+        {
+          "id": "k12.q12",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was gehört unbedingt zu jeder Abbildung im Vortrag?",
+          "optionen": [
+            "Achsenbeschriftung mit Einheiten und eine Kernaussage",
+            "Eine möglichst lange Bildunterschrift",
+            "Mindestens drei Farben",
+            "Das Logo der Firma"
+          ],
+          "richtig": 0,
+          "erklaerung": "Ohne Einheiten ist ein Diagramm nicht lesbar; die Kernaussage führt das Publikum."
+        },
+        {
+          "id": "k12.c04",
+          "typ": "karte",
+          "vorne": "Aus welchen Teilen besteht eine Forschungsfrage?",
+          "hinten": "Lücke, Frage, Methode, erwarteter Nutzen; in zwei Sätzen formulierbar.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    }
+  ]
+}

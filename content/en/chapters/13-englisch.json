@@ -1,0 +1,302 @@
+{
+  "titel": "Scientific English for photonics",
+  "einleitung": "You have to read, write and speak scientific English. This chapter trains the tools for that: saying numbers, units and formulas aloud, describing setups and processes, putting graphs into words, reading abstracts and holding conversations at conferences. The examples are English, the explanations follow the selected language.",
+  "ziele": [
+    "Pronounce numbers, units and formulas correctly",
+    "Describe setups and methods in the passive",
+    "Express trends and comparisons in graphs precisely",
+    "Read abstracts, formulate cautiously and hold conversations"
+  ],
+  "lektionen": {
+    "k13.l01": "Saying numbers, units and formulas aloud",
+    "k13.l02": "Describing setups and processes",
+    "k13.l03": "Describing graphs and results",
+    "k13.l04": "Reading papers: abstracts and typical phrases",
+    "k13.l05": "Conversations, questions and emails"
+  },
+  "blocks": {
+    "k13.l01.b01": {
+      "inhalt": [
+        "At conferences and in meetings you have to say numbers and formulas **aloud and unambiguously**. The most important patterns:",
+        "- Decimal point: 2.5 → *two point five*; 0.3 → *zero point three*.\n- Powers of ten: $3\\cdot10^{8}$ → *three times ten to the eight*; $10^{-15}$ s → *ten to the minus fifteen seconds* or simply *one femtosecond*.\n- Units: J/cm² → *joules per square centimetre* (US: centimeter); W/cm² → *watts per square centimetre*; µm → *micrometres* (also *microns*); nm → *nanometres*.\n- Factor and order of magnitude: *by a factor of ten*, *an order of magnitude higher*.",
+        "You read formulas piece by piece: $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$ → *F zero equals two E p over pi w zero squared*. Symbols: ≈ *is approximately*, ∝ *is proportional to*, ≥ *is greater than or equal to*, √ *square root of*, ln *natural log*."
+      ]
+    },
+    "k13.q01": {
+      "frage": "How do you read “2.5 J/cm²” in English?",
+      "erklaerung": "Decimal point as *point*, unit with *per* and *square*."
+    },
+    "k13.q02": {
+      "frage": "How do you say $3\\cdot10^{8}$ m/s?",
+      "erklaerung": "*times ten to the* followed by the exponent."
+    },
+    "k13.q03": {
+      "frage": "Match each Greek letter to its English name.",
+      "erklaerung": "Typical use: $\\lambda$ wavelength, $\\tau$ pulse duration, $\\nu$ frequency, $\\theta$ divergence angle, $\\omega$ angular frequency."
+    },
+    "k13.q04": {
+      "frage": "Complete the spoken formula for $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$.",
+      "erklaerung": "*equals*, *over* for the fraction, *squared* for the power 2."
+    },
+    "k13.q05": {
+      "frage": "Match the symbol to its spoken form.",
+      "erklaerung": "You need these phrases for every formula in a talk."
+    },
+    "k13.q06": {
+      "frage": "“The intensity is ten times higher” is ambiguous. Which wording is clearer?",
+      "erklaerung": "*by a factor of ten* states the factor unambiguously."
+    },
+    "k13.c01": {
+      "vorne": "How do you say 10⁻¹⁵ s?",
+      "hinten": "*ten to the minus fifteen seconds* or *one femtosecond*."
+    },
+    "k13.c02": {
+      "vorne": "How do you read the formula P_peak ≈ E_p/τ?",
+      "hinten": "*P peak is approximately E p over tau.*"
+    },
+    "k13.l02.b01": {
+      "inhalt": [
+        "In the methods description you use the **passive** and the **past tense** for what you did, and the **present tense** for general relations:",
+        "- *The beam was expanded by a telescope and focused onto the sample by a lens with a focal length of 100 mm.*\n- *The sample was mounted on a motorized stage and scanned at a speed of 2 m/s.*\n- *The pulse energy was measured with a thermal power meter.*\n- *The Rayleigh length scales with the square of the beam waist.* (general statement, present tense)",
+        "Typical prepositions: *focus **onto** the sample*, *scan **across** the surface*, *irradiate **with** pulses*, *at a repetition rate **of** 100 kHz*, *with a pulse duration **of** 300 fs*, *at a wavelength **of** 1030 nm*, *energy **per** pulse*."
+      ]
+    },
+    "k13.q07": {
+      "frage": "Match the German verb to the fitting English one.",
+      "paare": [
+        [
+          "to focus",
+          "focus"
+        ],
+        [
+          "to ablate / remove",
+          "ablate"
+        ],
+        [
+          "to irradiate",
+          "irradiate"
+        ],
+        [
+          "to expand",
+          "expand"
+        ],
+        [
+          "to attenuate",
+          "attenuate"
+        ],
+        [
+          "to translate (move the sample)",
+          "translate"
+        ]
+      ],
+      "erklaerung": "Active verbs for methods: focus, ablate, irradiate, expand, attenuate, translate, scan, measure."
+    },
+    "k13.q08": {
+      "frage": "Complete the methods description.",
+      "erklaerung": "Past passive: *was focused*, *was measured*; *focused onto*, *measured with*."
+    },
+    "k13.q09": {
+      "frage": "Put the sentence parts in the right order.",
+      "erklaerung": "Subject, passive, means, condition: *The sample was irradiated with 300 fs pulses at a repetition rate of 100 kHz.*"
+    },
+    "k13.q10": {
+      "frage": "What does the English word *eventually* mean?",
+      "optionen": [
+        "finally, in the end",
+        "possibly (German “eventuell”)",
+        "occasionally",
+        "immediately"
+      ],
+      "erklaerung": "False friend: *eventually* = in the end; *possibly* or *perhaps* is the German “eventuell”."
+    },
+    "k13.q11": {
+      "frage": "Which word is the physical term for pulse energy per area?",
+      "erklaerung": "*fluence* (J/cm²) is the fluence; *fluency* means language skill."
+    },
+    "k13.q12": {
+      "frage": "*actually* in English means…",
+      "optionen": [
+        "in fact, in reality",
+        "currently (German “aktuell”)",
+        "immediately",
+        "exactly"
+      ],
+      "erklaerung": "False friend: *actually* = in fact; *currently* means “aktuell”."
+    },
+    "k13.c03": {
+      "vorne": "How do you describe the setup in one sentence?",
+      "hinten": "*The beam was focused onto the sample by a lens with a focal length of 100 mm.*"
+    },
+    "k13.c04": {
+      "vorne": "False friends: *eventually* and *actually*",
+      "hinten": "*eventually* = in the end (not “eventuell”); *actually* = in fact (not “aktuell”)."
+    },
+    "k13.l03.b01": {
+      "inhalt": [
+        "You describe results with precise **verbs for trends** and **comparisons**:",
+        "- Rise: *increase*, *rise*, *grow*; fall: *decrease*, *drop*, *decline*, *fall*; constant: *remain constant*, *stay unchanged*.\n- Saturation: *level off*, *saturate*, *approach a plateau*; maximum: *peak at*, *reach a maximum at*.\n- Shape of the trend: *scale linearly / quadratically / exponentially / logarithmically*; *is proportional to*, *is inversely proportional to*.",
+        "Comparisons: *twice as high as*, *half as large as*, *by a factor of three*, *an increase of 20 %* (or *by 20 %*), *an order of magnitude lower*. Strength: *slightly*, *noticeably*, *significantly*, *markedly*. Approximately: *approximately*, *roughly*, *about*."
+      ]
+    },
+    "k13.q13": {
+      "frage": "Complete the sentences on ablation behaviour.",
+      "erklaerung": "Depth increases logarithmically (chapter 7); the threshold falls because of incubation."
+    },
+    "k13.q14": {
+      "frage": "The rate rises from 2 to 6. Which sentence is correct?",
+      "erklaerung": "$6/2=3$: *by a factor of three*. *increased by 4* would be the additive statement."
+    },
+    "k13.q15": {
+      "frage": "Match the term to its description.",
+      "paare": [
+        [
+          "levels off",
+          "approaches a constant value"
+        ],
+        [
+          "peaks at",
+          "reaches a maximum at"
+        ],
+        [
+          "scales quadratically",
+          "doubling gives four times the value"
+        ],
+        [
+          "is inversely proportional to",
+          "doubling one quantity halves the other"
+        ]
+      ],
+      "erklaerung": "Typical phrases: $z_\\mathrm{R}\\propto w_0^2$ scales quadratically; $P_\\mathrm{peak}\\propto1/\\tau$ is inversely proportional."
+    },
+    "k13.q16": {
+      "frage": "How do you describe $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$ in words?",
+      "erklaerung": "Half the pulse duration, double the peak power."
+    },
+    "k13.q17": {
+      "frage": "Which sentence correctly describes a maximum at 7.4 times the threshold?",
+      "erklaerung": "*peaks at* + value; soften numbers with *about / roughly*."
+    },
+    "k13.c05": {
+      "vorne": "How do you describe saturation?",
+      "hinten": "*The signal levels off at high fluence.* / *The depth approaches a plateau.*"
+    },
+    "k13.c06": {
+      "vorne": "*by a factor of* vs. *by*",
+      "hinten": "*by a factor of 3* means times three; *by 3* means plus three (or *by 3 %* if percent)."
+    },
+    "k13.l04.b01": {
+      "inhalt": [
+        "An **abstract** often follows this pattern: background, aim, method, result, conclusion. Typical phrases:",
+        "- Aim: *In this work we investigate…*, *Here we demonstrate that…*, *The aim of this study is…*\n- Result: *The results show / indicate / suggest…*, *We observe that…*\n- Cautious wording (**hedging**): *may*, *might*, *appears to*, *is likely to*, *suggests that* (instead of *proves*).\n- Linking: *however*, *whereas*, *moreover*, *therefore*, *in contrast to*, *in agreement with*, *consistent with*, *is attributed to*, *owing to*, *as a result*."
+      ]
+    },
+    "k13.q18": {
+      "frage": "Put the sentences of an abstract in the usual order.",
+      "erklaerung": "Background, aim, method, result, conclusion."
+    },
+    "k13.q19": {
+      "frage": "Which concluding sentence is appropriately cautious for a scientific text?",
+      "erklaerung": "*suggest* instead of *prove*, and no absolute statements."
+    },
+    "k13.q20": {
+      "frage": "Complete the linking words.",
+      "erklaerung": "*because* gives the reason; *However* introduces the contrast."
+    },
+    "k13.q21": {
+      "frage": "Match the linking word to its function.",
+      "paare": [
+        [
+          "however",
+          "contrast"
+        ],
+        [
+          "therefore",
+          "consequence"
+        ],
+        [
+          "moreover",
+          "addition"
+        ],
+        [
+          "owing to",
+          "cause"
+        ],
+        [
+          "consistent with",
+          "agreement"
+        ]
+      ],
+      "erklaerung": "With these words you connect statements logically."
+    },
+    "k13.q22": {
+      "frage": "What does *The effect is attributed to incubation* mean?",
+      "optionen": [
+        "The effect is explained by (traced back to) incubation.",
+        "The effect is incubation.",
+        "The effect destroys incubation.",
+        "The effect is measured later."
+      ],
+      "erklaerung": "*be attributed to* = traced back to / explained by."
+    },
+    "k13.c07": {
+      "vorne": "Hedging: *suggest* instead of *prove*",
+      "hinten": "Scientifically cautious: *The data suggest…*, *appears to*, *may*, *is likely to*."
+    },
+    "k13.c08": {
+      "vorne": "Expressing contrast",
+      "hinten": "*However,*, *In contrast to…*, *whereas*, *on the other hand*."
+    },
+    "k13.l05.b01": {
+      "inhalt": [
+        "At conferences and in the group you need fixed **conversation building blocks**:",
+        "- **Introducing yourself:** *I am a PhD student at TH Aschaffenburg. I work on ultrashort pulse laser ablation of hard materials such as ceramics, fused silica and semiconductors.*\n- **Asking a question:** *Could you say a bit more about…?*, *What was the pulse duration?*, *Did you observe heat accumulation?*\n- **Answering:** *That is a good question.*, *I would expect…, but we have not tested that yet.*, *I am not sure, but…*\n- **Clarifying:** *Sorry, could you repeat that?*, *Do you mean…?*\n- **Email:** *Dear Professor …, I am writing to ask about…* / *Thank you for your time. Best regards,*"
+      ]
+    },
+    "k13.q23": {
+      "frage": "Match the situation to the fitting phrase.",
+      "paare": [
+        [
+          "You want to ask for more details",
+          "Could you say a bit more about the focusing?"
+        ],
+        [
+          "You did not understand something",
+          "Sorry, could you repeat that?"
+        ],
+        [
+          "You do not know the answer",
+          "I am not sure, but I would expect a weaker effect."
+        ],
+        [
+          "You introduce yourself",
+          "I am a PhD student working on laser ablation."
+        ]
+      ],
+      "erklaerung": "Fixed phrases make you more confident in conversation."
+    },
+    "k13.q24": {
+      "frage": "Which question sounds polite and precise in a discussion?",
+      "erklaerung": "*Could you clarify…?* is polite and concrete."
+    },
+    "k13.q25": {
+      "frage": "How do you begin an email to a professor you do not know?",
+      "erklaerung": "Formal salutation and a clear reason in the first sentence."
+    },
+    "k13.q26": {
+      "frage": "Put the parts of a short self-introduction in a sensible order.",
+      "erklaerung": "Who, what, focus, question."
+    },
+    "k13.q27": {
+      "frage": "Complete the polite answer to a question about the rate.",
+      "erklaerung": "*a good question*; *a rate of*; *have not tested … yet*."
+    },
+    "k13.c09": {
+      "vorne": "How do you introduce yourself in one sentence?",
+      "hinten": "*I am a PhD student at TH Aschaffenburg working on ultrashort pulse laser ablation of hard materials.*"
+    },
+    "k13.c10": {
+      "vorne": "Asking politely for clarification",
+      "hinten": "*Sorry, could you repeat that?* / *Could you clarify…?* / *Do you mean…?*"
+    }
+  }
+}

@@ -3,6 +3,7 @@
 import { h } from '../ui/dom.js';
 import { math } from '../core/richtext.js';
 import { num, si, sci } from '../core/format.js';
+import { t } from '../core/i18n.js';
 
 const HC_EV_NM = 1239.84; // h*c in eV*nm (CODATA, rounded)
 
@@ -45,7 +46,7 @@ const MODELS = {
       return [
         { label: 'Photonenenergie hν', value: `${num(E)} eV` },
         { label: 'Mindestzahl Photonen ⌈E_g / hν⌉', value: String(n) },
-        { label: 'Photonen pro Elektron-Loch-Paar', value: n === 1 ? 'lineare Absorption möglich' : `${n}-Photonen-Prozess nötig` },
+        { label: 'Photonen pro Elektron-Loch-Paar', value: n === 1 ? t('lineare Absorption möglich') : t('{n}-Photonen-Prozess nötig', { n }) },
       ];
     },
     formel: 'h\\nu=\\frac{hc}{\\lambda}\\approx\\frac{1239{,}84\\ \\mathrm{eV\\,nm}}{\\lambda},\\quad n_\\mathrm{min}=\\left\\lceil \\frac{E_\\mathrm{g}}{h\\nu}\\right\\rceil',
@@ -72,7 +73,7 @@ export function render(block) {
       max: 1,
       step: 0.001,
       value: toT(inp, inp.value),
-      'aria-label': `${inp.label} in ${inp.unit}`,
+      'aria-label': `${t(inp.label)} (${inp.unit})`,
       onInput: () => {
         values[inp.id] = round2(fromT(inp, Number(slider.value)));
         update();
@@ -81,7 +82,7 @@ export function render(block) {
     const update1 = () => {
       readout.textContent = `${num(values[inp.id], 3)} ${inp.unit}`;
     };
-    return { el: h('label', { class: 'calc-row' }, h('span', { class: 'calc-label' }, inp.label), slider, readout), update1 };
+    return { el: h('label', { class: 'calc-row' }, h('span', { class: 'calc-label' }, t(inp.label)), slider, readout), update1 };
   });
 
   function update() {
@@ -91,15 +92,15 @@ export function render(block) {
         h(
           'div',
           { class: 'calc-item' },
-          h('span', { class: 'calc-item-label' }, o.label),
+          h('span', { class: 'calc-item-label' }, t(o.label)),
           h('strong', {}, o.value),
           o.bar === undefined
             ? null
             : h(
                 'div',
-                { class: `calc-bar ${o.bar >= 1 ? 'over' : 'under'}`, role: 'img', 'aria-label': o.bar >= 1 ? 'über der gewählten Schwelle' : 'unter der gewählten Schwelle' },
+                { class: `calc-bar ${o.bar >= 1 ? 'over' : 'under'}`, role: 'img', 'aria-label': o.bar >= 1 ? t('über der gewählten Schwelle') : t('unter der gewählten Schwelle') },
                 h('div', { class: 'calc-bar-fill', style: `width:${Math.min(100, (Math.log10(Math.max(o.bar, 0.01)) + 2) * 25)}%` }),
-                h('div', { class: 'calc-bar-mark', title: 'Schwelle (Verhältnis 1)' }),
+                h('div', { class: 'calc-bar-mark', title: t('Schwelle (Verhältnis 1)') }),
               ),
         ),
       ),
@@ -107,5 +108,5 @@ export function render(block) {
   }
   update();
 
-  return h('div', {}, h('strong', { class: 'callout-title' }, block.titel ?? model.titel), h('div', { class: 'formula small', html: math(model.formel, true) }), ...rows.map((r) => r.el), outputs, h('p', { class: 'hint' }, model.hinweis));
+  return h('div', {}, h('strong', { class: 'callout-title' }, block.titel ?? t(model.titel)), h('div', { class: 'formula small', html: math(model.formel, true) }), ...rows.map((r) => r.el), outputs, h('p', { class: 'hint' }, t(model.hinweis)));
 }

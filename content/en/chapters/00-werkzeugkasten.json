@@ -1,0 +1,268 @@
+{
+  "titel": "Toolkit: numbers, units, calculating",
+  "einleitung": "All chapters of this app work with extreme numbers. Here you train the tools: powers of ten and prefixes, unit conversion, logarithm and exponential function, estimating orders of magnitude and secure use of the app’s pocket calculator.",
+  "ziele": [
+    "Apply powers of ten and SI prefixes confidently",
+    "Convert units (especially areas and fluence) without errors",
+    "Read and calculate with logarithms, exponentials and power laws",
+    "Check results for their order of magnitude before calculating",
+    "Use the app’s pocket calculator for typical expressions"
+  ],
+  "lektionen": {
+    "k00.l01": "Powers of ten and SI prefixes",
+    "k00.l02": "Converting units reliably",
+    "k00.l03": "Logarithm, exponential function and roots",
+    "k00.l04": "Estimating orders of magnitude",
+    "k00.l05": "Pocket calculator training"
+  },
+  "blocks": {
+    "k00.l01.b01": {
+      "inhalt": [
+        "In ultrashort-pulse physics you work with numbers that span roughly thirty orders of magnitude: pulse durations of $10^{-15}$ s, intensities of $10^{13}$ W/cm², electron densities of $10^{21}$ cm⁻³. Without a secure handle on **powers of ten** and **prefixes** you keep making mistakes.",
+        "The prefixes you need all the time (a factor of $10^3$ between steps):",
+        "- f (femto) $=10^{-15}$, p (pico) $=10^{-12}$, n (nano) $=10^{-9}$, µ (micro) $=10^{-6}$, m (milli) $=10^{-3}$\n- k (kilo) $=10^{3}$, M (mega) $=10^{6}$, G (giga) $=10^{9}$, T (tera) $=10^{12}$"
+      ]
+    },
+    "k00.l01.b02": {
+      "inhalt": "Rules: $10^a\\cdot10^b=10^{a+b}$, $10^a/10^b=10^{a-b}$, $(10^a)^n=10^{an}$. For numbers in scientific notation $m\\cdot10^e$ you calculate mantissas and exponents **separately**: $(3\\cdot10^{8})\\cdot(4\\cdot10^{-13})=12\\cdot10^{-5}=1.2\\cdot10^{-4}$."
+    },
+    "k00.q01": {
+      "frage": "Match each prefix to its power of ten.",
+      "paare": [
+        [
+          "Femto (f)",
+          "$10^{-15}$"
+        ],
+        [
+          "Pico (p)",
+          "$10^{-12}$"
+        ],
+        [
+          "Nano (n)",
+          "$10^{-9}$"
+        ],
+        [
+          "Micro (µ)",
+          "$10^{-6}$"
+        ],
+        [
+          "Milli (m)",
+          "$10^{-3}$"
+        ],
+        [
+          "Kilo (k)",
+          "$10^{3}$"
+        ]
+      ],
+      "erklaerung": "Between the steps there is always a factor of $10^3$ (milli to kilo too: $10^{-3}$, $10^{3}$)."
+    },
+    "k00.q02": {
+      "frage": "Sort from short to long.",
+      "erklaerung": "ps $=10^{-12}$ s, ns $=10^{-9}$ s, µs $=10^{-6}$ s, ms $=10^{-3}$ s.",
+      "oben": "shortest",
+      "unten": "longest"
+    },
+    "k00.q03": {
+      "frage": "How many nanoseconds are $0.000\\,000\\,3$ s?",
+      "erklaerung": "$3\\cdot10^{-7}\\,\\mathrm{s}=300\\cdot10^{-9}\\,\\mathrm{s}=300$ ns."
+    },
+    "k00.q04": {
+      "frage": "What distance does light ($c=3\\cdot10^{8}$ m/s) cover in $400\\,\\mathrm{fs}$? Answer in µm. Tip: **EE** key on the pocket calculator.",
+      "erklaerung": "$3\\cdot10^{8}\\cdot4\\cdot10^{-13}=1.2\\cdot10^{-4}$ m $=120$ µm.",
+      "tipp": "On the calculator enter: 3 EE 8 × 4 EE − 13. The result is in m."
+    },
+    "k00.q05": {
+      "frage": "How many wavelengths of 515 nm fit into 1 mm?",
+      "erklaerung": "$10^{-3}\\,\\mathrm{m}/(515\\cdot10^{-9}\\,\\mathrm{m})\\approx1942$."
+    },
+    "k00.c01": {
+      "vorne": "What power of ten is a femtosecond?",
+      "hinten": "1 fs $=10^{-15}$ s; 1 ps $=10^{-12}$ s; 1 ns $=10^{-9}$ s."
+    },
+    "k00.l02.b01": {
+      "inhalt": [
+        "Most calculation errors in laser physics are **unit errors**. The rule of thumb: first bring all quantities into a consistent system (SI, or cm for fluence and intensity), then calculate, then convert the result to the requested unit.",
+        "The most important conversions:",
+        "- 1 µm $=10^{-6}$ m $=10^{-4}$ cm, 1 nm $=10^{-7}$ cm\n- 1 cm² $=10^{-4}$ m², 1 µm² $=10^{-8}$ cm²\n- 1 J/cm² $=10^{4}$ J/m², 1 W/cm² $=10^{4}$ W/m²\n- 1 eV $=1.602\\cdot10^{-19}$ J"
+      ]
+    },
+    "k00.l02.b02": {
+      "inhalt": "**Convert areas quadratically:** from $1\\,\\mu\\mathrm{m}=10^{-4}\\,\\mathrm{cm}$ it follows that $1\\,\\mu\\mathrm{m}^2=10^{-8}\\,\\mathrm{cm}^2$. This square of the linear factor is the most common source of error for fluence."
+    },
+    "k00.l02.b03": {
+      "aufgabe": "A fluence of $2\\,\\mathrm{J/cm^2}$ and an intensity of $4\\cdot10^{12}\\,\\mathrm{W/cm^2}$ are to be expressed in SI units.",
+      "schritte": [
+        "$2\\,\\mathrm{J/cm^2}=2\\cdot10^{4}\\,\\mathrm{J/m^2}$",
+        "$4\\cdot10^{12}\\,\\mathrm{W/cm^2}=4\\cdot10^{16}\\,\\mathrm{W/m^2}$"
+      ],
+      "ergebnis": "$2\\cdot10^{4}\\,\\mathrm{J/m^2}$ and $4\\cdot10^{16}\\,\\mathrm{W/m^2}$: every per-square-centimetre unit gains a factor of $10^{4}$.",
+      "titel": "Worked example"
+    },
+    "k00.q06": {
+      "frage": "Convert $3\\,\\mathrm{J/cm^2}$ to $\\mathrm{kJ/m^2}$.",
+      "erklaerung": "$3\\,\\mathrm{J/cm^2}=3\\cdot10^{4}\\,\\mathrm{J/m^2}=30\\,\\mathrm{kJ/m^2}$."
+    },
+    "k00.q07": {
+      "frage": "Convert $20\\,\\mu\\mathrm{m}^2$ to $\\mathrm{cm}^2$. Answer in $10^{-7}\\,\\mathrm{cm^2}$.",
+      "erklaerung": "$20\\,\\mu\\mathrm{m}^2=20\\cdot10^{-8}\\,\\mathrm{cm^2}=2\\cdot10^{-7}\\,\\mathrm{cm^2}$."
+    },
+    "k00.q08": {
+      "frage": "How many joules are $1.2\\,\\mathrm{eV}$? Answer in $10^{-19}\\,\\mathrm{J}$.",
+      "erklaerung": "$1.2\\cdot1.602\\cdot10^{-19}\\,\\mathrm{J}=1.92\\cdot10^{-19}\\,\\mathrm{J}$."
+    },
+    "k00.q09": {
+      "frage": "Build the photon energy in joules from constants and calculate it for $\\lambda=515\\,\\mathrm{nm}$. Answer in $10^{-19}\\,\\mathrm{J}$. Tip: the calculator knows $h$ and $c$ under “Constants and prefixes”.",
+      "erklaerung": "$E=hc/\\lambda=6.626\\cdot10^{-34}\\cdot2.998\\cdot10^{8}/(515\\cdot10^{-9})=3.86\\cdot10^{-19}\\,\\mathrm{J}$ (that is 2.41 eV)."
+    },
+    "k00.q10": {
+      "frage": "Which expression has the unit W/cm² ($E_\\mathrm{p}$ pulse energy, $A$ area, $\\tau$ pulse duration, $f$ rate)?",
+      "erklaerung": "$E_\\mathrm{p}/A$ is J/cm² (fluence), divided by $\\tau$ it gives W/cm² (intensity). $E_\\mathrm{p}f$ is W; $\\tau f$ is dimensionless."
+    },
+    "k00.c02": {
+      "vorne": "How do you convert µm² to cm²?",
+      "hinten": "$1\\,\\mu\\mathrm{m}^2=(10^{-4}\\,\\mathrm{cm})^2=10^{-8}\\,\\mathrm{cm}^2$: convert areas quadratically."
+    },
+    "k00.l03.b01": {
+      "inhalt": [
+        "Three functions meet you throughout the course: the **exponential function** $e^x$ (Beer–Lambert, Gaussian profile), the **natural logarithm** $\\ln$ (ablation depth $\\delta=\\ell\\ln(F/F_\\mathrm{th})$) and the **square root** (diffusion length $\\sqrt{D\\tau}$). $\\ln$ and $e^x$ are inverse functions: $\\ln(e^x)=x$.",
+        "Important rules: $\\ln(ab)=\\ln a+\\ln b$, $\\ln(a/b)=\\ln a-\\ln b$, $\\ln(a^n)=n\\ln a$. The common logarithm $\\log$ is $\\log x=\\ln x/\\ln10$."
+      ]
+    },
+    "k00.l03.b02": {
+      "erklaerung": "Laws of logarithms.",
+      "titel": "Laws of logarithms",
+      "sammlung": "Maths toolkit"
+    },
+    "k00.l03.b03": {
+      "inhalt": "**You recognize power laws in a log–log plot as a straight line:** $y=ax^n$ becomes $\\log y=\\log a+n\\log x$, the slope is the exponent $n$. This is how you read incubation coefficients or multiphoton orders from measured data."
+    },
+    "k00.q11": {
+      "frage": "Calculate $\\ln10$.",
+      "erklaerung": "$\\ln10=2.3026$ (**ln** key on the calculator)."
+    },
+    "k00.q12": {
+      "frage": "What percentage is $e^{-2}$? (The intensity fraction at $r=w_0$ of a Gaussian beam.)",
+      "erklaerung": "$e^{-2}=0.1353=13.5\\,\\%$.",
+      "tipp": "On the calculator: 2nd, then eˣ, then − 2 ), then = and multiply by 100."
+    },
+    "k00.q13": {
+      "frage": "The rate grows with $I^{8}$. You raise $I$ by 10 %. By what factor does the rate rise?",
+      "erklaerung": "$1.1^8=2.14$ (**xʸ** key)."
+    },
+    "k00.q14": {
+      "frage": "Calculate $\\log_{10}(2\\cdot10^{5})$.",
+      "erklaerung": "$\\log(2\\cdot10^5)=\\log2+5=0.301+5=5.301$."
+    },
+    "k00.q15": {
+      "frage": "The threshold falls from $1$ (at $N=1$) to $0.5$ (at $N=100$). Determine the exponent $S-1=\\ln(0.5)/\\ln(100)$ of the incubation law.",
+      "erklaerung": "$\\ln0.5/\\ln100=-0.693/4.605=-0.1505$, so $S\\approx0.85$."
+    },
+    "k00.q16": {
+      "frage": "How do you recognize a power law $y=ax^n$ in a double-logarithmic plot?",
+      "optionen": [
+        "As a straight line with slope $n$",
+        "As a parabola",
+        "As an exponential curve",
+        "As a horizontal line"
+      ],
+      "erklaerung": "$\\log y=\\log a+n\\log x$ is a straight line; $n$ is the slope."
+    },
+    "k00.q17": {
+      "frage": "You lengthen the pulse duration to 100 times. By what factor does the diffusion length $\\sqrt{D\\tau}$ grow?",
+      "erklaerung": "$\\sqrt{100}=10$."
+    },
+    "k00.c03": {
+      "vorne": "How are $\\ln$ and $e^x$ related?",
+      "hinten": "They are inverse functions: $\\ln(e^x)=x$ and $e^{\\ln x}=x$. $\\ln(ab)=\\ln a+\\ln b$."
+    },
+    "k00.l04.b01": {
+      "inhalt": [
+        "Before using the pocket calculator you estimate the result. For that you round every number to **one digit and one power of ten**. Example: peak power for $5.3\\,\\mu\\mathrm{J}$ and $480\\,\\mathrm{fs}$: $5\\cdot10^{-6}/(5\\cdot10^{-13})=10^{7}$ W, so roughly 10 MW. The calculator shows 11 MW: plausible.",
+        "This catches typing errors (forgotten EE, wrong exponent, reciprocal). Also mind the **significant digits**: a result has no more valid digits than the least accurate input. From $0.0450$ (3 significant digits) and $2.1$ (2 digits) follows a product with 2 digits."
+      ]
+    },
+    "k00.q18": {
+      "frage": "You calculate the peak fluence for $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ and $w_0=15\\,\\mu\\mathrm{m}$. Which order of magnitude is plausible?",
+      "optionen": [
+        "0.028 J/cm²",
+        "2.8 J/cm²",
+        "280 J/cm²",
+        "28,000 J/cm²"
+      ],
+      "erklaerung": "Estimate: $2\\cdot10^{-5}\\,\\mathrm{J}/(3\\cdot(1.5\\cdot10^{-3}\\,\\mathrm{cm})^2)\\approx2\\cdot10^{-5}/7\\cdot10^{-6}\\approx3$ J/cm²."
+    },
+    "k00.q19": {
+      "frage": "How many significant digits does $0.0450$ have?",
+      "erklaerung": "Leading zeros do not count, the trailing zero after the decimal point does: 4, 5, 0."
+    },
+    "k00.q20": {
+      "frage": "For a peak power ($E_\\mathrm{p}=5\\,\\mu\\mathrm{J}$, $\\tau=500\\,\\mathrm{fs}$) the calculator shows $10^{-2}$ W. What probably happened?",
+      "optionen": [
+        "The value is correct",
+        "The EE exponent for the time was forgotten or the sign was mixed up",
+        "The pulse energy is too small",
+        "The calculator is broken"
+      ],
+      "erklaerung": "The expected value is about $5\\cdot10^{-6}/5\\cdot10^{-13}=10^{7}$ W. A value of $10^{-2}$ W shows an exponent error of 9 steps."
+    },
+    "k00.q21": {
+      "frage": "Match the quantity to its typical order of magnitude (numerical examples from this course).",
+      "paare": [
+        [
+          "Photon energy at 1030 nm",
+          "≈ 1 eV"
+        ],
+        [
+          "Focus radius behind the scan lens",
+          "≈ 10 µm"
+        ],
+        [
+          "Pulse energy in the UKP amplifier",
+          "µJ to mJ"
+        ],
+        [
+          "Pulse duration in chapter K01",
+          "≈ 100 fs"
+        ]
+      ],
+      "erklaerung": "These values are examples from chapters K01, K02 and K04, not standard values."
+    },
+    "k00.c04": {
+      "vorne": "How do you estimate a result before calculating?",
+      "hinten": "Round every number to one digit and one power of ten, add or subtract the exponents, then compare with the calculator value."
+    },
+    "k00.l05.b01": {
+      "inhalt": [
+        "In this lesson you practise the app’s **pocket calculator** on typical expressions. You reach it at any time via the calculator button (bottom right) or in any calculation task via “Pocket calculator”.",
+        "Keys: **EE** for powers of ten (3 EE 8 $=3\\cdot10^{8}$), **( )** for brackets, **xʸ** and **x²** for powers, **√**, **ln**, **log**, **2nd** for eˣ, 10ˣ and the inverse functions, **Ans** for the last result. Under “Constants and prefixes” you find $c$, $h$, $e_0$ and the SI prefixes. **DEG/RAD** switches the angle unit (start: DEG). “Use result” puts the result into the answer field."
+      ]
+    },
+    "k00.q22": {
+      "frage": "Peak fluence with a complete expression: $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$ for $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ and $w_0=20\\,\\mu\\mathrm{m}$ (i.e. $2\\cdot10^{-3}$ cm). Answer in J/cm².",
+      "erklaerung": "$2\\cdot10^{-5}/(\\pi\\cdot4\\cdot10^{-6})=1.59\\,\\mathrm{J/cm^2}$. Entry: 2 × 10 EE − 6 ÷ ( π × ( 2 EE − 3 ) x² ).",
+      "tipp": "Put the denominator in brackets: $2\\cdot10^{-5}\\,/\\,(\\pi\\cdot(2\\cdot10^{-3})^2)$."
+    },
+    "k00.q23": {
+      "frage": "Photon energy with the constant keys: $E=\\dfrac{hc}{\\lambda\\,e_0}$ in eV for $\\lambda=343\\,\\mathrm{nm}$. Use **h**, **c** and **e₀** from “Constants and prefixes”.",
+      "erklaerung": "$hc/\\lambda=5.79\\cdot10^{-19}\\,\\mathrm{J}$, divided by $e_0=1.602\\cdot10^{-19}\\,\\mathrm{C}$ gives $3.61\\,\\mathrm{eV}$.",
+      "tipp": "Entry: ( h × c ) ÷ ( 343 EE − 9 × e₀ )."
+    },
+    "k00.q24": {
+      "frage": "Incubation: how many pulses $N^\\ast=(1/0.6)^{1/0.15}$ do you need until ablation starts? Use **xʸ** with the exponent in brackets.",
+      "erklaerung": "$(1/0.6)^{6.67}=e^{6.67\\cdot0.511}=e^{3.41}=30.1$.",
+      "tipp": "Entry: ( 1 ÷ 0.6 ) xʸ ( 1 ÷ 0.15 )."
+    },
+    "k00.q25": {
+      "frage": "Half-opening angle of a lens: $\\theta=\\arctan(w_\\mathrm{in}/f)$ with $w_\\mathrm{in}=5\\,\\mathrm{mm}$ and $f=100\\,\\mathrm{mm}$. Answer in degrees (calculator in DEG mode, **2nd → tan⁻¹**).",
+      "erklaerung": "$\\arctan(0.05)=2.862^{\\circ}$."
+    },
+    "k00.q26": {
+      "frage": "Peak power with prefix keys: $E_\\mathrm{p}=12\\,\\mu\\mathrm{J}$, $\\tau=300\\,\\mathrm{fs}$. Give the answer in **MW** (use µ and f from the prefixes).",
+      "erklaerung": "$12\\cdot10^{-6}/(300\\cdot10^{-15})=4\\cdot10^{7}\\,\\mathrm{W}=40\\,\\mathrm{MW}$."
+    },
+    "k00.c05": {
+      "vorne": "How do you enter $3\\cdot10^{-13}$ on the pocket calculator?",
+      "hinten": "3 EE − 13 (EE = ×10^). Negative exponents with the minus key right after EE."
+    }
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "titel": "Materials: fused silica, ceramics, semiconductors",
+  "einleitung": "Why does fused silica behave differently from silicon, and both differently from aluminium oxide? Here you sort the material classes by band gap, absorption regime and brittleness and learn why cracks and residual stresses limit the process. Numerical values are orders of magnitude from the literature and marked as unchecked.",
+  "ziele": [
+    "Classify material classes by band gap and microstructure",
+    "Derive the absorption regime from photon energy and band gap",
+    "Estimate thermal stresses and name causes of cracks",
+    "Derive a material-appropriate process strategy"
+  ],
+  "lektionen": {
+    "k08.l01": "Overview of material classes",
+    "k08.l02": "Absorption regimes: transparent, absorbing, in between",
+    "k08.l03": "Cracking and residual stress",
+    "k08.l04": "Process strategy by material class"
+  },
+  "blocks": {
+    "k08.l01.b01": {
+      "inhalt": [
+        "This chapter sorts the materials that occur in your PhD by the properties that matter for UKP ablation. From chapter 3 you know the link between **band gap** and absorption, and from chapter 7 the mechanisms of ablation. Now comes the question: how do the material classes behave in the process?",
+        "- **Fused silica:** amorphous SiO₂, very pure, transparent from UV to the near infrared, very small thermal expansion.\n- **Sapphire:** single-crystal Al₂O₃, hard, transparent.\n- **Oxide ceramics** (e.g. aluminium oxide, zirconium oxide): polycrystalline, hard, brittle.\n- **Non-oxide ceramics** (e.g. silicon nitride, silicon carbide, aluminium nitride): mostly very hard and temperature-resistant.\n- **Semiconductors** (e.g. silicon, silicon carbide, gallium nitride): small to medium band gap, base material of electronics."
+      ]
+    },
+    "k08.l01.b02": {
+      "inhalt": [
+        "As an **order of magnitude** the literature often quotes the following band gaps (numbers not checked against the primary source):",
+        "- Fused silica and sapphire: about 9 eV\n- Silicon nitride: about 5 eV\n- Silicon carbide (4H): about 3.3 eV\n- Silicon: about 1.1 eV"
+      ]
+    },
+    "k08.l01.b03": {
+      "inhalt": "Always compare the **photon energy** (1030 nm: 1.20 eV; 515 nm: 2.41 eV; 343 nm: 3.61 eV) with the **band gap**. This tells you whether the material absorbs linearly (one photon is enough), only nonlinearly (several photons) or stays practically transparent at that wavelength."
+    },
+    "k08.q01": {
+      "frage": "Sort the materials by their (approximate, unchecked) band gap, from small to large.",
+      "items": [
+        "Silicon",
+        "Silicon carbide (4H)",
+        "Silicon nitride",
+        "Fused silica"
+      ],
+      "erklaerung": "Order of magnitude from literature values: Si ≈ 1.1 eV, SiC ≈ 3.3 eV, Si₃N₄ ≈ 5 eV, SiO₂ ≈ 9 eV (unchecked).",
+      "oben": "smallest band gap",
+      "unten": "largest band gap"
+    },
+    "k08.q02": {
+      "frage": "Match the material to its class.",
+      "paare": [
+        [
+          "Fused silica",
+          "Amorphous glass"
+        ],
+        [
+          "Sapphire",
+          "Single crystal (Al₂O₃)"
+        ],
+        [
+          "Aluminium oxide",
+          "Oxide ceramic"
+        ],
+        [
+          "Silicon nitride",
+          "Non-oxide ceramic"
+        ],
+        [
+          "Silicon",
+          "Elemental semiconductor"
+        ]
+      ],
+      "erklaerung": "The class determines the microstructure (amorphous, single crystal, polycrystalline) and with it the behaviour under heat and cracking."
+    },
+    "k08.q03": {
+      "frage": "Which property is most important for **absorption**?",
+      "optionen": [
+        "The density",
+        "The band gap relative to the photon energy",
+        "The colour of the sample",
+        "The sample thickness alone"
+      ],
+      "erklaerung": "Whether a photon can bridge the gap decides between linear and nonlinear absorption."
+    },
+    "k08.c01": {
+      "vorne": "How do you classify the absorption case of a material?",
+      "hinten": "Compare the photon energy $h\\nu$ with the band gap $E_\\mathrm{g}$: $h\\nu>E_\\mathrm{g}$ linear, $h\\nu<E_\\mathrm{g}$ only nonlinear (multiphoton) or transparent."
+    },
+    "k08.l02.b01": {
+      "inhalt": [
+        "Three typical cases for ultrashort pulses (all numbers are orders of magnitude from the literature, not checked):",
+        "- **Large band gap (fused silica, sapphire):** $h\\nu\\ll E_\\mathrm{g}$. Linearly transparent; absorption only at high intensity via [[multiphotonenabsorption]] and avalanche in the focus. Volume processing is possible.",
+        "- **Medium band gap (SiC, Si₃N₄):** 2 to 5 photons depending on the wavelength. A shorter wavelength (515 nm, 343 nm) lowers the required photon number and the threshold.",
+        "- **Small band gap (silicon):** at 1030 nm, $h\\nu=1.20$ eV is larger than $E_\\mathrm{g}\\approx1.1$ eV. So there is linear absorption, but because of the **indirect** band gap of silicon only weak. At 1550 nm ($h\\nu=0.80$ eV) silicon, on the other hand, is largely transparent."
+      ]
+    },
+    "k08.l02.b02": {
+      "inhalt": "Whether energy lands at the **surface** or in the **volume** depends on the penetration depth $\\delta$. Small $\\delta$ (strongly absorbing): surface ablation. Large $\\delta$ (transparent): the energy spreads through the volume until nonlinear absorption starts in the focus."
+    },
+    "k08.q04": {
+      "frage": "At what wavelength does the photon energy equal the band gap $E_\\mathrm{g}=1.12\\,\\mathrm{eV}$ (silicon, literature value)? Answer in nm.",
+      "erklaerung": "$\\lambda=1239.84\\,\\mathrm{eV\\,nm}/1.12\\,\\mathrm{eV}\\approx1107\\,\\mathrm{nm}$. Above that, silicon is largely transparent."
+    },
+    "k08.q05": {
+      "frage": "For $E_\\mathrm{g}=3.3\\,\\mathrm{eV}$ (SiC, literature value): at what wavelength in nm is $h\\nu=E_\\mathrm{g}$?",
+      "erklaerung": "$\\lambda=1239.84/3.3\\approx376\\,\\mathrm{nm}$. Shorter wavelengths are absorbed linearly."
+    },
+    "k08.q06": {
+      "frage": "How many photons are needed at least for $E_\\mathrm{g}=5\\,\\mathrm{eV}$ (silicon nitride, literature value) at 1030 nm ($h\\nu=1.20$ eV)?",
+      "erklaerung": "$5/1.20=4.17\\Rightarrow n_\\mathrm{min}=5$ (round up)."
+    },
+    "k08.q07": {
+      "frage": "Silicon at 1550 nm: what is to be expected?",
+      "optionen": [
+        "Strong linear absorption at the surface",
+        "Largely transparent, because $h\\nu<E_\\mathrm{g}$",
+        "100 % reflection",
+        "Plasma shielding at the lowest intensity"
+      ],
+      "erklaerung": "$h\\nu=0.80$ eV lies below the band gap of about 1.1 eV (literature value)."
+    },
+    "k08.q08": {
+      "frage": "Complete the statements on the choice of wavelength.",
+      "text": "A ___ wavelength lowers the required photon number for a band gap. As a result, the ___ of the material usually falls.",
+      "luecken": [
+        {
+          "optionen": [
+            "shorter",
+            "longer"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "ablation threshold",
+            "density"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "Shorter wavelength, higher photon energy, fewer photons needed, lower threshold (qualitative)."
+    },
+    "k08.c02": {
+      "vorne": "Why is silicon transparent at 1550 nm?",
+      "hinten": "The photon energy (≈ 0.8 eV) lies below the band gap (≈ 1.1 eV, literature value); without defects or nonlinearity nothing is absorbed."
+    },
+    "k08.l03.b01": {
+      "inhalt": [
+        "Brittle materials fail when a tensile stress exceeds the strength at a **flaw** (micro-crack, pore, scratch). Lasers create stresses in three ways:",
+        "- **Thermal:** a heated region wants to expand and the cold surroundings prevent it: compressive stress in the hot, tensile stress in the cold region (and the reverse on cooling).\n- **Mechanical:** pressure waves from the ablation (see [[spallation]]).\n- **Structural:** with volume modification the density changes locally, leaving a [[eigenspannung|residual stress]]."
+      ]
+    },
+    "k08.l03.b02": {
+      "erklaerung": "Constrained thermal expansion: stress $\\sigma_\\mathrm{th}$ from Young’s modulus $E$, expansion coefficient $\\alpha$ and temperature change $\\Delta T$. Follows from Hooke’s law with $\\varepsilon=\\alpha\\Delta T$. For biaxial constraint the factor $1/(1-\\nu)$ is added.",
+      "titel": "Thermal stress",
+      "sammlung": "Materials"
+    },
+    "k08.l03.b03": {
+      "aufgabe": "Assume a material has (as a numerical example, not a material value) $E=70\\,\\mathrm{GPa}$ and $\\alpha=5\\cdot10^{-6}\\,\\mathrm{K^{-1}}$. What stress arises on a constrained temperature rise of $\\Delta T=100\\,\\mathrm{K}$?",
+      "schritte": [
+        "$\\sigma=E\\alpha\\Delta T=70\\cdot10^{9}\\,\\mathrm{Pa}\\cdot5\\cdot10^{-6}\\,\\mathrm{K^{-1}}\\cdot100\\,\\mathrm{K}$",
+        "$\\sigma=3.5\\cdot10^{7}\\,\\mathrm{Pa}=35\\,\\mathrm{MPa}$"
+      ],
+      "ergebnis": "35 MPa. Whether that is critical depends on the tensile strength at the flaw; brittle materials tolerate tension much worse than compression.",
+      "titel": "Worked example"
+    },
+    "k08.l03.b04": {
+      "inhalt": "What matters is the **temperature gradient**, not just $\\Delta T$: the faster and more locally heating takes place, the less the surroundings can follow. With UKP the gradient is high but the heated zone small; that is why **heat accumulation** (many pulses, small spacings) is the main enemy."
+    },
+    "k08.q09": {
+      "frage": "Build the formula for the thermal stress and calculate it for (numerical example) $E=100\\,\\mathrm{GPa}$, $\\alpha=4\\cdot10^{-6}\\,\\mathrm{K^{-1}}$ and $\\Delta T=150\\,\\mathrm{K}$. Answer in MPa.",
+      "erklaerung": "$\\sigma=100\\cdot10^{9}\\cdot4\\cdot10^{-6}\\cdot150=6\\cdot10^{7}\\,\\mathrm{Pa}=60\\,\\mathrm{MPa}$.",
+      "tipp": "1 GPa $=10^9$ Pa. At the end divide by $10^6$ for MPa."
+    },
+    "k08.q10": {
+      "frage": "With everything else equal you double $\\Delta T$. By what factor does the thermal stress $\\sigma=E\\alpha\\Delta T$ grow?",
+      "erklaerung": "$\\sigma\\propto\\Delta T$: doubling $\\Delta T$ doubles $\\sigma$."
+    },
+    "k08.q11": {
+      "frage": "Which measure typically reduces cracking in laser ablation of brittle materials?",
+      "optionen": [
+        "Avoid heat accumulation (larger pulse spacing, lower rate)",
+        "Raise the fluence far above the threshold",
+        "Raise the pulse overlap",
+        "Ignore the focus position"
+      ],
+      "erklaerung": "Less accumulated heat means smaller gradients and lower stresses (qualitative rule, details depend on the material)."
+    },
+    "k08.q12": {
+      "frage": "Match the cause of stress to its description.",
+      "paare": [
+        [
+          "Thermal stress",
+          "Constrained expansion due to temperature gradients"
+        ],
+        [
+          "Mechanical stress",
+          "Pressure and tensile waves from ablation"
+        ],
+        [
+          "Residual stress",
+          "Stresses that remain in the part after modification"
+        ]
+      ],
+      "erklaerung": "All three can trigger cracks; which dominates depends on material and process."
+    },
+    "k08.c03": {
+      "vorne": "How do you estimate a thermal stress?",
+      "hinten": "$\\sigma_\\mathrm{th}\\approx E\\,\\alpha\\,\\Delta T$ (constrained expansion). Tensile stress at a flaw triggers cracks in brittle materials."
+    },
+    "k08.l04.b01": {
+      "inhalt": [
+        "From the properties follows a **decision aid**. All statements are qualitative rules of thumb from the literature and the project notes; you have to determine the numerical values for your material yourself (threshold, crack limit):",
+        "- **Transparent (large band gap):** the surface is uncritical even at low intensity, volume processing ([[sle]], [[wellenleiter|waveguides]]) is possible. For surface ablation a short wavelength or high intensity counts.\n- **Absorbing (small band gap):** surface ablation without nonlinearity. Watch melt and debris.\n- **Brittle:** keep heat accumulation and gradients small; ablate layer by layer; plan pauses or cooling time.\n- **Good heat conduction:** heat flows away faster; higher rates are more likely tolerated."
+      ]
+    },
+    "k08.q13": {
+      "frage": "Match the property to its process consequence (qualitative).",
+      "paare": [
+        [
+          "Large band gap",
+          "Nonlinear absorption needed, volume processing possible"
+        ],
+        [
+          "Small band gap",
+          "Linear absorption at the surface"
+        ],
+        [
+          "High brittleness",
+          "Risk of cracks: limit heat accumulation and fluence"
+        ],
+        [
+          "High thermal conductivity",
+          "Heat flows away faster"
+        ]
+      ],
+      "erklaerung": "Qualitative rules of thumb; concrete limits need experiments on your own material."
+    },
+    "k08.q14": {
+      "frage": "You want to process fused silica in the **interior** without damaging the surface. What do you use?",
+      "optionen": [
+        "A focus in the volume with fs pulses (nonlinear absorption)",
+        "A defocused beam on the surface",
+        "A continuous-wave laser",
+        "The longest possible wavelength in the far infrared"
+      ],
+      "erklaerung": "Only in the focus is the intensity high enough for nonlinear absorption; the surface stays untouched (chapters 3 and 6)."
+    },
+    "k08.q15": {
+      "frage": "Complete the strategy for a brittle material.",
+      "text": "To avoid cracks, keep the ___ small and ablate ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "heat accumulation",
+            "pulse duration"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "layer by layer",
+            "in a single pulse"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "Qualitative rule of thumb for brittle materials."
+    },
+    "k08.q16": {
+      "frage": "Which quantity helps you first to judge the absorption case at a new wavelength?",
+      "optionen": [
+        "$h\\nu$ compared with $E_\\mathrm{g}$",
+        "The mass of the sample",
+        "The repetition rate alone",
+        "The beam diameter at the laser"
+      ],
+      "erklaerung": "Photon energy versus band gap is the first step."
+    },
+    "k08.c04": {
+      "vorne": "How do you proceed with a new material?",
+      "hinten": "1) Band gap vs. photon energy, 2) penetration depth, 3) brittleness and heat conduction, 4) determine threshold and crack limit experimentally."
+    }
+  }
+}

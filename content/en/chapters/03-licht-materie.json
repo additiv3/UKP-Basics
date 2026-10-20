@@ -1,0 +1,277 @@
+{
+  "titel": "Light meets matter",
+  "einleitung": "Why can glass be illuminated through with a laser and still be processed inside, while metal absorbs right at the surface? Here you clarify the basics of absorption: bands, reflection, penetration depth and the difference between linear and nonlinear absorption.",
+  "ziele": [
+    "Distinguish metals, semiconductors and dielectrics using the band model",
+    "Estimate absorption and reflection quantitatively with Lambert–Beer and Fresnel",
+    "Explain why linear absorption happens at the surface and nonlinear absorption in the focus",
+    "Name the difference to the PBF-LB/M process (pulse duration, absorption, ablation instead of melting)"
+  ],
+  "lektionen": {
+    "k03.l01": "Bands: metal, semiconductor, dielectric",
+    "k03.l02": "Absorption, reflection, penetration depth",
+    "k03.l03": "Linear vs. nonlinear absorption",
+    "k03.l04": "Bridge: PBF-LB/M vs. UKP ablation",
+    "k03.l05": "Calculation training: absorption and photons"
+  },
+  "blocks": {
+    "k03.l01.b01": {
+      "inhalt": [
+        "In a solid the energy levels of the atoms merge into **bands**. Two bands are decisive for absorption: the **valence band** (low in energy, filled with electrons at low temperatures) and the **conduction band** (above it, empty in the ground state). Between them lies the **band gap** ([[bandluecke]]) $E_\\mathrm{g}$, in which there are no allowed states.",
+        "A photon can only excite an electron if the photon energy suffices to reach a free target state. That explains the difference between the three material classes."
+      ]
+    },
+    "k03.l01.b02": {
+      "alt": "Band scheme for metal, semiconductor and dielectric with different band gaps",
+      "unterschrift": "Band scheme (not to scale): metal without a gap, semiconductor with a small and dielectric with a large band gap."
+    },
+    "k03.l01.b03": {
+      "inhalt": [
+        "- **Metal:** The conduction band is partly filled, there is no band gap. Free electrons take up photon energy of practically any wavelength. Absorption happens in a thin layer at the surface.",
+        "- **Semiconductor:** Small band gap. Photons with $h\\nu\\ge E_\\mathrm{g}$ are strongly absorbed; with $h\\nu<E_\\mathrm{g}$ the material is (almost) transparent.",
+        "- **Dielectric (insulator):** Large band gap. At photon energies below the gap the material stays transparent in the visible and near infrared. Fused silica and sapphire belong here."
+      ]
+    },
+    "k03.l01.b04": {
+      "inhalt": "**Transparency is a question of $h\\nu$ versus $E_\\mathrm{g}$.** If a photon has less energy than the band gap, it cannot excite anything on its own and the light passes through. Ultrashort pulses change that, because at high intensity several photons act at the same time (lesson 3)."
+    },
+    "k03.l01.b05": {
+      "titel": "How many photons for the band gap?"
+    },
+    "k03.q01": {
+      "frage": "Which material class has **no** band gap?",
+      "optionen": [
+        "Semiconductor",
+        "Dielectric",
+        "Metal",
+        "All three"
+      ],
+      "erklaerung": "In a metal the conduction band is partly filled: electrons can move into free states even with small energies."
+    },
+    "k03.q02": {
+      "frage": "A photon has less energy than the band gap of the material. What happens at low intensity?",
+      "optionen": [
+        "The material absorbs strongly",
+        "The material is largely transparent",
+        "The material melts immediately",
+        "The photon is split into two photons"
+      ],
+      "erklaerung": "A single photon cannot lift an electron across the gap; the light is not (linearly) absorbed."
+    },
+    "k03.q03": {
+      "frage": "Match the property to the material class.",
+      "paare": [
+        [
+          "Partly filled conduction band",
+          "Metal"
+        ],
+        [
+          "Small band gap",
+          "Semiconductor"
+        ],
+        [
+          "Large band gap, transparent in the visible",
+          "Dielectric"
+        ]
+      ],
+      "erklaerung": "The size of the band gap determines whether a photon can excite an electron."
+    },
+    "k03.c01": {
+      "vorne": "What is the band gap?",
+      "hinten": "Energy range between valence and conduction band without allowed electron states, symbol $E_\\mathrm{g}$."
+    },
+    "k03.l02.b01": {
+      "titel": "Two steps: reflection, then attenuation",
+      "inhalt": [
+        "When light hits a surface, part of it is reflected; the rest penetrates and is attenuated along its path. Both parts can be described with simple formulas."
+      ]
+    },
+    "k03.l02.b02": {
+      "titel": "Lambert–Beer",
+      "sammlung": "Light and matter",
+      "erklaerung": "Lambert–Beer: intensity at depth $z$ after reflection ($R$ = reflectance). The absorption coefficient $\\alpha$ has the unit 1/m; the penetration depth $\\delta=1/\\alpha$ is the depth at which the intensity has dropped to $1/e$."
+    },
+    "k03.l02.b03": {
+      "titel": "Fresnel (normal incidence) and absorption coefficient",
+      "sammlung": "Light and matter",
+      "erklaerung": "Reflectance at normal incidence from the complex refractive index $\\tilde n=n+\\mathrm{i}\\kappa$. For a transparent dielectric $\\kappa\\approx0$ and $R=\\left(\\frac{n-1}{n+1}\\right)^2$."
+    },
+    "k03.l02.b04": {
+      "titel": "Worked example",
+      "aufgabe": "A transparent dielectric has $n=1.5$ (and $\\kappa\\approx0$). What fraction is reflected at a surface? And: a metal has $\\alpha=5\\cdot10^{5}\\,\\mathrm{cm^{-1}}$ at some wavelength. What is the penetration depth?",
+      "schritte": [
+        "$R=\\left(\\dfrac{1.5-1}{1.5+1}\\right)^2=0.2^2=0.04$",
+        "$\\delta=1/\\alpha=1/(5\\cdot10^{5}\\,\\mathrm{cm^{-1}})=2\\cdot10^{-6}\\,\\mathrm{cm}=20\\,\\mathrm{nm}$"
+      ],
+      "ergebnis": "About 4 % reflection for the glass, and in the metal the light penetrates only around 20 nm."
+    },
+    "k03.l02.b05": {
+      "inhalt": [
+        "From PBF-LB/M you know that the absorptance depends on the material, the wavelength, the surface roughness and the powder bed. For metallic surfaces, reflection is the big loss in addition to absorption; for dielectrics the losses are reflection (small) and transmission (large)."
+      ]
+    },
+    "k03.l02.b06": {
+      "inhalt": "The penetration depth $\\delta=1/\\alpha$ decides **how much material** the energy ends up in. A small depth means a high energy density in the absorption volume, and thus a low threshold fluence."
+    },
+    "k03.q04": {
+      "frage": "What is the reflectance of a glass surface with $n=1.5$ in percent (normal incidence)?",
+      "erklaerung": "$R=((n-1)/(n+1))^2=(0.5/2.5)^2=0.04=4\\,\\%$."
+    },
+    "k03.q05": {
+      "frage": "A material has $\\alpha=2\\cdot10^{4}\\,\\mathrm{cm^{-1}}$. What is the penetration depth in micrometres?",
+      "erklaerung": "$\\delta=1/\\alpha=1/(2\\cdot10^{4}\\,\\mathrm{cm^{-1}})=5\\cdot10^{-5}\\,\\mathrm{cm}=0.5\\,\\mu\\mathrm{m}$."
+    },
+    "k03.q06": {
+      "frage": "At which absorption coefficient does light penetrate deepest?",
+      "erklaerung": "$\\delta=1/\\alpha$: the smallest $\\alpha$ gives the largest penetration depth (here 1 cm)."
+    },
+    "k03.c02": {
+      "vorne": "What is the Lambert–Beer law?",
+      "hinten": "$I(z)=I_0(1-R)\\,e^{-\\alpha z}$ with penetration depth $\\delta=1/\\alpha$."
+    },
+    "k03.l03.b01": {
+      "inhalt": [
+        "**Linear absorption** means: one photon is taken up by one electron, and the absorption rate grows in proportion to the intensity. $\\alpha$ is then a material constant and the Lambert–Beer law holds as above.",
+        "At very high intensity, which only ultrashort pulses reach in the focus, **several photons are absorbed simultaneously** by one electron ([[multiphotonenabsorption]]). The absorption rate then grows with $I^n$, where $n$ is the number of photons involved. The effective absorption coefficient $\\alpha_n\\propto I^{\\,n-1}$ itself rises with the intensity."
+      ]
+    },
+    "k03.l03.b03": {
+      "inhalt": "Because nonlinear absorption rises with $I^n$, it practically only happens where the intensity is high enough, i.e. in the **focus**. The material in front of and behind it stays unaffected. That makes processing *inside* a transparent material possible, and the effective focus is smaller than the beam ($w_\\mathrm{eff}=w_0/\\sqrt{n}$)."
+    },
+    "k03.q07": {
+      "frage": "Why can a femtosecond laser be focused inside fused silica without damaging the surface?",
+      "optionen": [
+        "The surface reflects everything",
+        "Outside the focus the intensity is too low for nonlinear absorption",
+        "Fused silica absorbs linearly only in the interior",
+        "Femtosecond pulses have no energy"
+      ],
+      "erklaerung": "The rate rises with $I^n$; only in the focus is the intensity high enough."
+    },
+    "k03.q08": {
+      "frage": "The absorption rate grows with $I^{n}$ and $n=4$. By what factor does it rise when you double the intensity?",
+      "erklaerung": "$2^4=16$."
+    },
+    "k03.q09": {
+      "frage": "For $n=4$, $w_\\mathrm{eff}=w_0/\\sqrt{n}$ holds. How large is $w_\\mathrm{eff}$ in multiples of $w_0$?",
+      "erklaerung": "$1/\\sqrt4=0.5$: the absorbing region is only half as wide as the beam."
+    },
+    "k03.c03": {
+      "vorne": "How does the rate of $n$-photon absorption depend on the intensity?",
+      "hinten": "Proportional to $I^{\\,n}$."
+    },
+    "k03.c04": {
+      "vorne": "What is the advantage of nonlinear absorption?",
+      "hinten": "The energy is absorbed only in the focus (high intensity); the material in front of it stays untouched and the active region is smaller than the beam."
+    },
+    "k03.l04.b01": {
+      "inhalt": [
+        "You know the laser–metal interaction from powder bed fusion. Here is the comparison, so that you can deliberately switch your PBF-LB/M intuition:"
+      ]
+    },
+    "k03.l04.b02": {
+      "inhalt": [
+        "- **Time scale:** In PBF-LB/M the laser acts for microseconds to milliseconds. With UKP the pulse lasts picoseconds to femtoseconds. That is a factor of $10^{6}$ to $10^{12}$ shorter.",
+        "- **Goal:** PBF-LB/M wants a **melt pool** that solidifies. UKP wants to **remove material** without leaving melt behind.",
+        "- **Heat:** In PBF-LB/M heat conduction is the controlling quantity. With UKP the energy is gone before the heat can flow away (chapter 5).",
+        "- **Absorption:** In the metal linear via free electrons; in the dielectric only nonlinear, when the intensity is high enough.",
+        "- **Measure:** Instead of laser power and scan speed (energy density per length/volume), the **fluence** per pulse relative to the threshold counts."
+      ]
+    },
+    "k03.l04.b03": {
+      "inhalt": "In PBF-LB/M you ask: “How much energy per length?” With UKP you ask: “Is the fluence above the threshold, and how many pulses hit the same spot?”"
+    },
+    "k03.q10": {
+      "frage": "Match the property to the process.",
+      "paare": [
+        [
+          "Interaction time in PBF-LB/M",
+          "Microseconds to milliseconds"
+        ],
+        [
+          "Interaction time with UKP",
+          "Picoseconds to femtoseconds"
+        ],
+        [
+          "Goal in PBF-LB/M",
+          "Solidified melt pool"
+        ],
+        [
+          "Goal with UKP",
+          "Removed material without melt"
+        ]
+      ],
+      "erklaerung": "UKP processes are described by fluence, pulse overlap and threshold; PBF-LB/M by line energy or energy density."
+    },
+    "k03.q11": {
+      "frage": "By what factor is a 1 ps pulse shorter than a 1 µs laser pulse?",
+      "erklaerung": "1 µs $=10^{-6}$ s, 1 ps $=10^{-12}$ s, ratio $10^{6}$."
+    },
+    "k03.c05": {
+      "vorne": "What do you ask with UKP instead of “line energy”?",
+      "hinten": "Fluence per pulse relative to the ablation threshold, and the number of pulses per spot."
+    },
+    "k03.l05.b01": {
+      "inhalt": "Calculation tasks on reflection, Lambert–Beer and multiphoton absorption. All numbers are chosen freely and are not material values. For $e^{-x}$ use **2nd → eˣ** on the pocket calculator, or the constant **e** with **xʸ**."
+    },
+    "k03.q12": {
+      "frage": "A dielectric has $n=1.45$ ($\\kappa\\approx0$). What percentage of the normally incident light is reflected at one surface?",
+      "erklaerung": "$R=\\left(\\dfrac{n-1}{n+1}\\right)^2=\\left(\\dfrac{0.45}{2.45}\\right)^2=0.0337=3.37\\,\\%$."
+    },
+    "k03.q13": {
+      "frage": "Build the Lambert–Beer law with reflection loss. Then: what percentage of the incident intensity $I_0$ is left at a depth of $1\\,\\mu\\mathrm{m}$ for $R=0.04$ and $\\alpha=10^{4}\\,\\mathrm{cm^{-1}}$?",
+      "erklaerung": "$I/I_0=(1-R)\\,e^{-\\alpha z}=0.96\\cdot e^{-10^{4}\\cdot10^{-4}}=0.96\\cdot e^{-1}\\approx0.353$, i.e. 35.3 %. $z=1\\,\\mu\\mathrm{m}=10^{-4}$ cm, so $\\alpha z=1$.",
+      "tipp": "The depth has to match the unit of $\\alpha$: 1 µm $=10^{-4}$ cm. Then $\\alpha z$ is dimensionless."
+    },
+    "k03.q14": {
+      "frage": "A metal has $\\alpha=5\\cdot10^{4}\\,\\mathrm{cm^{-1}}$. What is the penetration depth $\\delta$ in nm?",
+      "erklaerung": "$\\delta=1/\\alpha=2\\cdot10^{-5}\\,\\mathrm{cm}=2\\cdot10^{-7}\\,\\mathrm{m}=200\\,\\mathrm{nm}$."
+    },
+    "k03.q15": {
+      "frage": "At what depth has the intensity dropped to 10 % (after reflection)? Answer in multiples of the penetration depth $\\delta$.",
+      "erklaerung": "$e^{-z/\\delta}=0.1\\Rightarrow z=\\delta\\ln10\\approx2.30\\,\\delta$.",
+      "tipp": "Solve $e^{-z/\\delta}=0.1$ for $z$: take the logarithm of both sides (ln key)."
+    },
+    "k03.q16": {
+      "frage": "The band gap of a material is (chosen freely) 3 eV. Which of these wavelengths can be absorbed linearly by a single photon?",
+      "optionen": [
+        "1030 nm (1.20 eV)",
+        "515 nm (2.41 eV)",
+        "343 nm (3.61 eV)",
+        "800 nm (1.55 eV)"
+      ],
+      "erklaerung": "Only 3.61 eV lies above the band gap of 3 eV. The other photons carry less energy; there several photons would be needed."
+    },
+    "k03.q17": {
+      "frage": "The absorption rate grows with $I^{3}$. You raise the intensity to 1.5 times. By what factor does the rate rise?",
+      "erklaerung": "$1.5^3=3.375$."
+    },
+    "k03.q18": {
+      "frage": "Complete how the absorption rate depends on the intensity.",
+      "text": "With linear absorption the rate rises with ___, with $n$-photon absorption with ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "$I$",
+            "$I^2$",
+            "$I^n$"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "$I$",
+            "$I^2$",
+            "$I^n$"
+          ],
+          "richtig": 2
+        }
+      ],
+      "erklaerung": "Linear: rate proportional to $I$; with $n$ photons proportional to $I^n$."
+    },
+    "k03.c06": {
+      "vorne": "How do you calculate the minimum photon number for the band gap?",
+      "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$ with $h\\nu\\approx1239.84\\,\\mathrm{eV\\,nm}/\\lambda$; always round up."
+    }
+  }
+}

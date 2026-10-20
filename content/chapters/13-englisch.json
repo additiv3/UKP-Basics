@@ -1,0 +1,751 @@
+{
+  "id": "k13",
+  "titel": "Wissenschaftliches Englisch für die Photonik",
+  "einleitung": "Du musst fachlich auf Englisch lesen, schreiben und sprechen. Dieses Kapitel trainiert die Werkzeuge dafür: Zahlen, Einheiten und Formeln aussprechen, Aufbauten und Prozesse beschreiben, Diagramme in Worte fassen, Abstracts lesen und Gespräche auf Konferenzen führen. Die Beispiele sind englisch, die Erläuterungen folgen der gewählten Sprache.",
+  "ziele": [
+    "Zahlen, Einheiten und Formeln korrekt aussprechen",
+    "Aufbauten und Methoden im Passiv beschreiben",
+    "Verläufe und Vergleiche in Diagrammen präzise ausdrücken",
+    "Abstracts lesen, vorsichtig formulieren und Gespräche führen"
+  ],
+  "lektionen": [
+    {
+      "id": "k13.l01",
+      "titel": "Zahlen, Einheiten und Formeln aussprechen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k13.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Auf Konferenzen und in Meetings musst du Zahlen und Formeln **laut und eindeutig** sagen. Die wichtigsten Muster:",
+            "- Dezimalpunkt: 2.5 → *two point five*; 0.3 → *zero point three*.\n- Zehnerpotenzen: $3\\cdot10^{8}$ → *three times ten to the eight*; $10^{-15}$ s → *ten to the minus fifteen seconds* oder einfach *one femtosecond*.\n- Einheiten: J/cm² → *joules per square centimetre* (US: centimeter); W/cm² → *watts per square centimetre*; µm → *micrometres* (auch *microns*); nm → *nanometres*.\n- Faktor und Größenordnung: *by a factor of ten*, *an order of magnitude higher*.",
+            "Formeln liest du Teil für Teil: $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$ → *F zero equals two E p over pi w zero squared*. Zeichen: ≈ *is approximately*, ∝ *is proportional to*, ≥ *is greater than or equal to*, √ *square root of*, ln *natural log*."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.q01",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie liest du „2.5 J/cm²“ auf Englisch?",
+          "optionen": [
+            "two point five joules per square centimetre",
+            "two comma five joule through centimetre squared",
+            "two five joules centimetre",
+            "twenty-five joule per centimetre"
+          ],
+          "richtig": 0,
+          "erklaerung": "Dezimalpunkt als *point*, Einheit mit *per* und *square*.",
+          "fest": true
+        },
+        {
+          "id": "k13.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie sagst du $3\\cdot10^{8}$ m/s?",
+          "optionen": [
+            "three times ten to the eight metres per second",
+            "three ten eight meters second",
+            "three to the power eight metres",
+            "thirty million metres per second"
+          ],
+          "richtig": 0,
+          "erklaerung": "*times ten to the* gefolgt vom Exponenten.",
+          "fest": true
+        },
+        {
+          "id": "k13.q03",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jedem griechischen Buchstaben seinen englischen Namen zu.",
+          "paare": [
+            [
+              "λ",
+              "lambda"
+            ],
+            [
+              "τ",
+              "tau"
+            ],
+            [
+              "ν",
+              "nu"
+            ],
+            [
+              "θ",
+              "theta"
+            ],
+            [
+              "ω",
+              "omega"
+            ],
+            [
+              "π",
+              "pi"
+            ]
+          ],
+          "erklaerung": "Typische Zuordnung: $\\lambda$ Wellenlänge, $\\tau$ Pulsdauer, $\\nu$ Frequenz, $\\theta$ Divergenzwinkel, $\\omega$ Kreisfrequenz."
+        },
+        {
+          "id": "k13.q04",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die gesprochene Formel für $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$.",
+          "text": "F zero ___ two E p ___ pi w zero ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "equals",
+                "plus",
+                "minus"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "over",
+                "times",
+                "to"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "squared",
+                "cubed",
+                "half"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "*equals*, *over* für den Bruch, *squared* für die Potenz 2."
+        },
+        {
+          "id": "k13.q05",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem Symbol seine gesprochene Form zu.",
+          "paare": [
+            [
+              "∝",
+              "is proportional to"
+            ],
+            [
+              "≈",
+              "is approximately"
+            ],
+            [
+              "≥",
+              "is greater than or equal to"
+            ],
+            [
+              "√2",
+              "square root of two"
+            ],
+            [
+              "M²",
+              "M squared"
+            ]
+          ],
+          "erklaerung": "Diese Wendungen brauchst du bei jeder Formel im Vortrag."
+        },
+        {
+          "id": "k13.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "„The intensity is ten times higher“ ist mehrdeutig. Welche Formulierung ist eindeutiger?",
+          "optionen": [
+            "The intensity is higher by a factor of ten.",
+            "The intensity is much high.",
+            "The intensity is ten higher.",
+            "The intensity is on ten."
+          ],
+          "richtig": 0,
+          "erklaerung": "*by a factor of ten* nennt den Faktor eindeutig.",
+          "fest": true
+        },
+        {
+          "id": "k13.c01",
+          "typ": "karte",
+          "vorne": "How do you say 10⁻¹⁵ s?",
+          "hinten": "*ten to the minus fifteen seconds* oder *one femtosecond*.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.c02",
+          "typ": "karte",
+          "vorne": "How do you read the formula P_peak ≈ E_p/τ?",
+          "hinten": "*P peak is approximately E p over tau.*",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k13.l02",
+      "titel": "Aufbauten und Prozesse beschreiben",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k13.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "In der Methodenbeschreibung nutzt man das **Passiv** und die **Vergangenheit** für das, was du getan hast, und das **Präsens** für allgemeine Zusammenhänge:",
+            "- *The beam was expanded by a telescope and focused onto the sample by a lens with a focal length of 100 mm.*\n- *The sample was mounted on a motorized stage and scanned at a speed of 2 m/s.*\n- *The pulse energy was measured with a thermal power meter.*\n- *The Rayleigh length scales with the square of the beam waist.* (allgemeine Aussage, Präsens)",
+            "Typische Präpositionen: *focus **onto** the sample*, *scan **across** the surface*, *irradiate **with** pulses*, *at a repetition rate **of** 100 kHz*, *with a pulse duration **of** 300 fs*, *at a wavelength **of** 1030 nm*, *energy **per** pulse*."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.q07",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem deutschen Verb das passende englische zu.",
+          "paare": [
+            [
+              "fokussieren",
+              "focus"
+            ],
+            [
+              "abtragen",
+              "ablate"
+            ],
+            [
+              "bestrahlen",
+              "irradiate"
+            ],
+            [
+              "aufweiten",
+              "expand"
+            ],
+            [
+              "abschwächen",
+              "attenuate"
+            ],
+            [
+              "verfahren (Probe bewegen)",
+              "translate"
+            ]
+          ],
+          "erklaerung": "Aktive Verben für Methoden: focus, ablate, irradiate, expand, attenuate, translate, scan, measure."
+        },
+        {
+          "id": "k13.q08",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die Methodenbeschreibung.",
+          "text": "The laser beam ___ focused ___ the sample by a lens. The pulse energy ___ measured ___ a thermal power meter.",
+          "luecken": [
+            {
+              "optionen": [
+                "was",
+                "were",
+                "is being"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "onto",
+                "to",
+                "into"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "was",
+                "were",
+                "has"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "with",
+                "by",
+                "from"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Passiv in der Vergangenheit: *was focused*, *was measured*; *focused onto*, *measured with*."
+        },
+        {
+          "id": "k13.q09",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Satzteile in die richtige Reihenfolge.",
+          "items": [
+            "The sample",
+            "was irradiated",
+            "with 300 fs pulses",
+            "at a repetition rate",
+            "of 100 kHz."
+          ],
+          "erklaerung": "Subjekt, Passiv, Mittel, Bedingung: *The sample was irradiated with 300 fs pulses at a repetition rate of 100 kHz.*"
+        },
+        {
+          "id": "k13.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was bedeutet das englische *eventually*?",
+          "optionen": [
+            "schließlich, am Ende",
+            "eventuell, möglicherweise",
+            "gelegentlich",
+            "sofort"
+          ],
+          "richtig": 0,
+          "erklaerung": "Falscher Freund: *eventually* = schließlich; *possibly* oder *perhaps* = eventuell."
+        },
+        {
+          "id": "k13.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welches Wort ist der physikalische Begriff für Pulsenergie pro Fläche?",
+          "optionen": [
+            "fluence",
+            "fluency",
+            "fluidity",
+            "flux density of fluid"
+          ],
+          "richtig": 0,
+          "erklaerung": "*fluence* (J/cm²) ist die Fluenz; *fluency* bedeutet Sprachgewandtheit.",
+          "fest": true
+        },
+        {
+          "id": "k13.q12",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "*actually* im Englischen bedeutet…",
+          "optionen": [
+            "tatsächlich, in Wirklichkeit",
+            "aktuell, derzeit",
+            "sofort",
+            "genau"
+          ],
+          "richtig": 0,
+          "erklaerung": "Falscher Freund: *actually* = tatsächlich; *currently* = aktuell."
+        },
+        {
+          "id": "k13.c03",
+          "typ": "karte",
+          "vorne": "Wie beschreibst du den Aufbau in einem Satz?",
+          "hinten": "*The beam was focused onto the sample by a lens with a focal length of 100 mm.*",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.c04",
+          "typ": "karte",
+          "vorne": "Falscher Freund: *eventually* und *actually*",
+          "hinten": "*eventually* = schließlich (nicht eventuell); *actually* = tatsächlich (nicht aktuell).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k13.l03",
+      "titel": "Diagramme und Ergebnisse beschreiben",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k13.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ergebnisse beschreibst du mit präzisen **Verben für Verläufe** und **Vergleichen**:",
+            "- Anstieg: *increase*, *rise*, *grow*; Abfall: *decrease*, *drop*, *decline*, *fall*; gleichbleibend: *remain constant*, *stay unchanged*.\n- Sättigung: *level off*, *saturate*, *approach a plateau*; Maximum: *peak at*, *reach a maximum at*.\n- Verlaufsform: *scale linearly / quadratically / exponentially / logarithmically*; *is proportional to*, *is inversely proportional to*.",
+            "Vergleiche: *twice as high as*, *half as large as*, *by a factor of three*, *an increase of 20 %* (oder *by 20 %*), *an order of magnitude lower*. Stärke: *slightly*, *noticeably*, *significantly*, *markedly*. Ungefähr: *approximately*, *roughly*, *about*."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.q13",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die Sätze zum Abtragsverhalten.",
+          "text": "The ablation depth ___ logarithmically with the fluence. The threshold ___ with increasing pulse number.",
+          "luecken": [
+            {
+              "optionen": [
+                "increases",
+                "decays",
+                "peaks"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "decreases",
+                "saturates exponentially fast",
+                "doubles"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Tiefe steigt logarithmisch (Kapitel 7); die Schwelle sinkt wegen Inkubation."
+        },
+        {
+          "id": "k13.q14",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Die Rate steigt von 2 auf 6. Welcher Satz ist richtig?",
+          "optionen": [
+            "The rate increased by a factor of three.",
+            "The rate increased to three.",
+            "The rate decreased by a factor of three.",
+            "The rate increased by three percent."
+          ],
+          "richtig": 0,
+          "erklaerung": "$6/2=3$: *by a factor of three*. *increased by 4* wäre die additive Angabe.",
+          "fest": true
+        },
+        {
+          "id": "k13.q15",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem Fachbegriff die Beschreibung zu.",
+          "paare": [
+            [
+              "levels off",
+              "nähert sich einem konstanten Wert"
+            ],
+            [
+              "peaks at",
+              "erreicht ein Maximum bei"
+            ],
+            [
+              "scales quadratically",
+              "Verdopplung ergibt das Vierfache"
+            ],
+            [
+              "is inversely proportional to",
+              "Verdopplung der einen Größe halbiert die andere"
+            ]
+          ],
+          "erklaerung": "Typische Wendungen: $z_\\mathrm{R}\\propto w_0^2$ skaliert quadratisch; $P_\\mathrm{peak}\\propto1/\\tau$ ist umgekehrt proportional."
+        },
+        {
+          "id": "k13.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie beschreibst du $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$ in Worten?",
+          "optionen": [
+            "The peak power is inversely proportional to the pulse duration.",
+            "The peak power is proportional to the pulse duration.",
+            "The peak power grows exponentially with the pulse duration.",
+            "The peak power is independent of the pulse duration."
+          ],
+          "richtig": 0,
+          "erklaerung": "Halbe Pulsdauer, doppelte Spitzenleistung.",
+          "fest": true
+        },
+        {
+          "id": "k13.q17",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welcher Satz beschreibt ein Maximum bei 7,4-facher Schwelle korrekt?",
+          "optionen": [
+            "The efficiency peaks at about 7.4 times the threshold fluence.",
+            "The efficiency is peaking from 7.4 threshold.",
+            "The efficiency peaks on 7.4 times the threshold.",
+            "The efficiency peaked at 7.4 times threshold fluence of."
+          ],
+          "richtig": 0,
+          "erklaerung": "*peaks at* + Wert; Zahlen mit *about / roughly* abschwächen.",
+          "fest": true
+        },
+        {
+          "id": "k13.c05",
+          "typ": "karte",
+          "vorne": "Wie beschreibst du eine Sättigung?",
+          "hinten": "*The signal levels off at high fluence.* / *The depth approaches a plateau.*",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.c06",
+          "typ": "karte",
+          "vorne": "*by a factor of* vs. *by*",
+          "hinten": "*by a factor of 3* heißt mal drei; *by 3* heißt plus drei (oder *by 3 %*, wenn Prozent).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k13.l04",
+      "titel": "Paper lesen: Abstracts und typische Wendungen",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k13.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein **Abstract** folgt oft diesem Muster: Hintergrund, Ziel, Methode, Ergebnis, Schluss. Typische Wendungen:",
+            "- Ziel: *In this work we investigate…*, *Here we demonstrate that…*, *The aim of this study is…*\n- Ergebnis: *The results show / indicate / suggest…*, *We observe that…*\n- Vorsichtig formulieren (**hedging**): *may*, *might*, *appears to*, *is likely to*, *suggests that* (statt *proves*).\n- Verknüpfen: *however*, *whereas*, *moreover*, *therefore*, *in contrast to*, *in agreement with*, *consistent with*, *is attributed to*, *owing to*, *as a result*."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.q18",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Sätze eines Abstracts in die übliche Reihenfolge.",
+          "items": [
+            "Ultrashort pulses enable the processing of transparent materials.",
+            "Here we investigate the ablation threshold of fused silica at 1030 nm.",
+            "Craters were produced with 300 fs pulses and evaluated by the D² method.",
+            "The threshold decreases with the pulse number, which is attributed to incubation.",
+            "These results suggest that multi-pulse processing requires lower fluences."
+          ],
+          "erklaerung": "Hintergrund, Ziel, Methode, Ergebnis, Schluss."
+        },
+        {
+          "id": "k13.q19",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welcher Schlusssatz ist wissenschaftlich angemessen vorsichtig?",
+          "optionen": [
+            "The data suggest that heat accumulation plays a role above 500 kHz.",
+            "The data prove that heat accumulation is the only reason above 500 kHz.",
+            "It is obvious that nothing else matters.",
+            "Everybody knows that heat accumulation is bad."
+          ],
+          "richtig": 0,
+          "erklaerung": "*suggest* statt *prove*, und keine absoluten Aussagen.",
+          "fest": true
+        },
+        {
+          "id": "k13.q20",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die Verknüpfungswörter.",
+          "text": "The threshold is lower at 515 nm ___ the photon energy is higher. ___, the effect is weak at 1030 nm.",
+          "luecken": [
+            {
+              "optionen": [
+                "because",
+                "although",
+                "unless"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "However",
+                "Therefore",
+                "Moreover"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "*because* nennt den Grund; *However* leitet den Kontrast ein."
+        },
+        {
+          "id": "k13.q21",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem Verknüpfungswort seine Funktion zu.",
+          "paare": [
+            [
+              "however",
+              "Gegensatz"
+            ],
+            [
+              "therefore",
+              "Folgerung"
+            ],
+            [
+              "moreover",
+              "Ergänzung"
+            ],
+            [
+              "owing to",
+              "Ursache"
+            ],
+            [
+              "consistent with",
+              "Übereinstimmung"
+            ]
+          ],
+          "erklaerung": "Mit diesen Wörtern verbindest du Aussagen logisch."
+        },
+        {
+          "id": "k13.q22",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was bedeutet *The effect is attributed to incubation*?",
+          "optionen": [
+            "Der Effekt wird auf Inkubation zurückgeführt.",
+            "Der Effekt ist Inkubation.",
+            "Der Effekt zerstört die Inkubation.",
+            "Der Effekt wird später gemessen."
+          ],
+          "richtig": 0,
+          "erklaerung": "*be attributed to* = zugeschrieben bzw. zurückgeführt auf.",
+          "fest": true
+        },
+        {
+          "id": "k13.c07",
+          "typ": "karte",
+          "vorne": "Hedging: *suggest* statt *prove*",
+          "hinten": "Wissenschaftlich vorsichtig: *The data suggest…*, *appears to*, *may*, *is likely to*.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.c08",
+          "typ": "karte",
+          "vorne": "Gegensatz ausdrücken",
+          "hinten": "*However,*, *In contrast to…*, *whereas*, *on the other hand*.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k13.l05",
+      "titel": "Gespräche, Fragen und E-Mails",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k13.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "Auf Konferenzen und in der Gruppe brauchst du feste **Gesprächsbausteine**:",
+            "- **Vorstellen:** *I am a PhD student at TH Aschaffenburg. I work on ultrashort pulse laser ablation of hard materials such as ceramics, fused silica and semiconductors.*\n- **Frage stellen:** *Could you say a bit more about…?*, *What was the pulse duration?*, *Did you observe heat accumulation?*\n- **Antworten:** *That is a good question.*, *I would expect…, but we have not tested that yet.*, *I am not sure, but…*\n- **Nachfragen:** *Sorry, could you repeat that?*, *Do you mean…?*\n- **E-Mail:** *Dear Professor …, I am writing to ask about…* / *Thank you for your time. Best regards,*"
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.q23",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne der Situation die passende Wendung zu.",
+          "paare": [
+            [
+              "Du willst mehr Details erfragen",
+              "Could you say a bit more about the focusing?"
+            ],
+            [
+              "Du hast etwas nicht verstanden",
+              "Sorry, could you repeat that?"
+            ],
+            [
+              "Du weißt die Antwort nicht",
+              "I am not sure, but I would expect a weaker effect."
+            ],
+            [
+              "Du stellst dich vor",
+              "I am a PhD student working on laser ablation."
+            ]
+          ],
+          "erklaerung": "Feste Wendungen machen dich im Gespräch sicherer."
+        },
+        {
+          "id": "k13.q24",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Frage klingt in einer Diskussion höflich und präzise?",
+          "optionen": [
+            "Could you clarify what pulse duration you used?",
+            "Tell me the pulse duration.",
+            "What is this?",
+            "You did it wrong, right?"
+          ],
+          "richtig": 0,
+          "erklaerung": "*Could you clarify…?* ist höflich und konkret.",
+          "fest": true
+        },
+        {
+          "id": "k13.q25",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie beginnst du eine E-Mail an eine Professorin, die du nicht kennst?",
+          "optionen": [
+            "Dear Professor Müller, I am writing to ask about…",
+            "Hi Müller, quick question:",
+            "Hello!!!",
+            "Yo Prof,"
+          ],
+          "richtig": 0,
+          "erklaerung": "Förmliche Anrede und klarer Grund im ersten Satz.",
+          "fest": true
+        },
+        {
+          "id": "k13.q26",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Teile einer kurzen Vorstellung in eine sinnvolle Reihenfolge.",
+          "items": [
+            "I am a PhD student at TH Aschaffenburg.",
+            "I work on ultrashort pulse laser ablation of hard materials.",
+            "I am particularly interested in heat accumulation in ceramics.",
+            "Could I ask you about your experience with burst mode?"
+          ],
+          "erklaerung": "Wer, was, Schwerpunkt, Frage."
+        },
+        {
+          "id": "k13.q27",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die höfliche Antwort auf eine Frage nach der Rate.",
+          "text": "That is a good ___. We used a repetition rate ___ 100 kHz, but we have ___ tested higher rates yet.",
+          "luecken": [
+            {
+              "optionen": [
+                "question",
+                "answer",
+                "problem"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "of",
+                "by",
+                "to"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "not",
+                "never not",
+                "no"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "*a good question*; *a rate of*; *have not tested … yet*."
+        },
+        {
+          "id": "k13.c09",
+          "typ": "karte",
+          "vorne": "Wie stellst du dich in einem Satz vor?",
+          "hinten": "*I am a PhD student at TH Aschaffenburg working on ultrashort pulse laser ablation of hard materials.*",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k13.c10",
+          "typ": "karte",
+          "vorne": "Höflich nachfragen",
+          "hinten": "*Sorry, could you repeat that?* / *Could you clarify…?* / *Do you mean…?*",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    }
+  ]
+}

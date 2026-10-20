@@ -1,6 +1,7 @@
 // Game "Zahlen-Blitz": 60 seconds of mental-math questions about pulse quantities. Everything is derived from definitions.
 import { h } from '../ui/dom.js';
 import { si, num } from '../core/format.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Zahlen-Blitz', kurz: '60 Sekunden Kopfrechnen mit UKP-Größen', max: 40 };
 
@@ -20,29 +21,29 @@ const PROBLEMS = [
     const Ep = pick([2, 5, 10, 20, 50, 100]);
     const f = pick([10, 20, 50, 100, 200, 500, 1000]);
     const P = (Ep * f) / 1000;
-    return { q: `Mittlere Leistung: E_p = ${Ep} µJ bei f = ${f} kHz`, hint: 'P = E_p · f', val: P, fmt: (x) => si(x, 'W', 2), distract: [P * 10, P / 10, P * 2, P / 2] };
+    return { q: t('Mittlere Leistung: E_p = {a} µJ bei f = {b} kHz', { a: Ep, b: f }), hint: 'P = E_p · f', val: P, fmt: (x) => si(x, 'W', 2), distract: [P * 10, P / 10, P * 2, P / 2] };
   },
   () => {
     const Ep = pick([1, 2, 5, 10, 20, 50]);
     const tau = pick([100, 200, 250, 500, 1000]);
     const P = (Ep * 1e-6) / (tau * 1e-15);
-    return { q: `Spitzenleistung: E_p = ${Ep} µJ, τ = ${tau} fs`, hint: 'P ≈ E_p / τ', val: P, fmt: (x) => si(x, 'W', 2), distract: [P * 10, P / 10, P * 1000, P / 2] };
+    return { q: t('Spitzenleistung: E_p = {a} µJ, τ = {b} fs', { a: Ep, b: tau }), hint: 'P ≈ E_p / τ', val: P, fmt: (x) => si(x, 'W', 2), distract: [P * 10, P / 10, P * 1000, P / 2] };
   },
   () => {
     const tau = pick([10, 30, 100, 200, 300, 500, 1000, 3000]);
     const s = 3e8 * tau * 1e-15;
-    return { q: `Wie weit kommt Licht im Vakuum in ${tau} fs?`, hint: 'Δs = c · τ, c ≈ 3·10⁸ m/s', val: s, fmt: (x) => si(x, 'm', 2), distract: [s * 10, s / 10, s * 1000, s / 1000] };
+    return { q: t('Wie weit kommt Licht im Vakuum in {a} fs?', { a: tau }), hint: 'Δs = c · τ, c ≈ 3·10⁸ m/s', val: s, fmt: (x) => si(x, 'm', 2), distract: [s * 10, s / 10, s * 1000, s / 1000] };
   },
   () => {
     const lam = pick([343, 355, 515, 532, 800, 1030, 1064]);
     const E = 1239.84 / lam;
-    return { q: `Photonenenergie bei λ = ${lam} nm`, hint: 'hν ≈ 1240 eV·nm / λ', val: E, fmt: (x) => `${num(x, 3)} eV`, distract: [E * 2, E / 2, E * 4, E / 3] };
+    return { q: t('Photonenenergie bei λ = {a} nm', { a: lam }), hint: 'hν ≈ 1240 eV·nm / λ', val: E, fmt: (x) => `${num(x, 3)} eV`, distract: [E * 2, E / 2, E * 4, E / 3] };
   },
   () => {
     const Ep = pick([5, 10, 20, 40, 100]);
     const w0 = pick([5, 10, 15, 20, 25]);
     const F = (2 * Ep * 1e-6) / (Math.PI * (w0 * 1e-4) ** 2);
-    return { q: `Spitzenfluenz: E_p = ${Ep} µJ, w₀ = ${w0} µm`, hint: 'F₀ = 2E_p / (π w₀²)', val: F, fmt: (x) => `${num(x, 2)} J/cm²`, distract: [F * Math.PI, F / 2, F * 10, F / 10] };
+    return { q: t('Spitzenfluenz: E_p = {a} µJ, w₀ = {b} µm', { a: Ep, b: w0 }), hint: 'F₀ = 2E_p / (π w₀²)', val: F, fmt: (x) => `${num(x, 2)} J/cm²`, distract: [F * Math.PI, F / 2, F * 10, F / 10] };
   },
 ];
 
@@ -99,7 +100,7 @@ export function mount(root, ctx) {
                     box.querySelectorAll('.opt').forEach((b, i) => q.options[i].ok && b.classList.add('ok'));
                     streak = 0;
                   }
-                  score.textContent = `${correct} ✓${streak >= 3 ? ` · ${streak}er-Serie` : ''}`;
+                  score.textContent = `${correct} ✓${streak >= 3 ? ` · ${t('{n}er-Serie', { n: streak })}` : ''}`;
                   setTimeout(ask, o.ok ? 350 : 900);
                 },
               },
@@ -133,10 +134,10 @@ export function mount(root, ctx) {
       h(
         'div',
         { class: 'empty' },
-        h('h2', {}, `${points} Punkte`),
-        h('p', {}, `${correct} richtig, längste Serie ${bestStreak} (Bonus: 1 Punkt je 5er-Serie).`),
-        h('p', {}, res.newBest ? 'Neuer Bestwert!' : `Bestwert: ${res.best}`, res.xp ? h('span', { class: 'xp-chip' }, ` +${res.xp} XP`) : null),
-        h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, 'Nochmal'),
+        h('h2', {}, t('{n} Punkte', { n: points })),
+        h('p', {}, t('{a} richtig, längste Serie {b} (Bonus: 1 Punkt je 5er-Serie).', { a: correct, b: bestStreak })),
+        h('p', {}, res.newBest ? t('Neuer Bestwert!') : t('Bestwert: {n}', { n: res.best }), res.xp ? h('span', { class: 'xp-chip' }, ` +${res.xp} XP`) : null),
+        h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, t('Nochmal')),
       ),
     );
   }
@@ -145,8 +146,8 @@ export function mount(root, ctx) {
     h(
       'div',
       { class: 'empty' },
-      h('p', {}, 'Du hast 60 Sekunden. Rechne im Kopf (die Formel steht als Hinweis dabei) und tippe die richtige Zahl. Falsche Antworten kosten nichts, brechen aber deine Serie.'),
-      h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, 'Los geht’s'),
+      h('p', {}, t('Du hast 60 Sekunden. Rechne im Kopf (die Formel steht als Hinweis dabei) und tippe die richtige Zahl. Falsche Antworten kosten nichts, brechen aber deine Serie.')),
+      h('button', { type: 'button', class: 'btn btn-primary', onClick: start }, t('Los geht’s')),
     ),
   );
 }

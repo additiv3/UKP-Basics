@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num } from '../core/format.js';
 import { canvasView, control, readouts, Plot } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Inkubation: Schwelle sinkt mit Pulszahl', kurz: 'Wie viele Pulse braucht es unterhalb der Einzelpuls-Schwelle?' };
 export const formel = [
@@ -44,7 +45,7 @@ export function mount(root) {
       p.text('kein Abtrag', p.X(3), p.Y(ratio) - 8, { color: pal.muted, size: 11.5, bold: true });
     },
   });
-  view.canvas.setAttribute('aria-label', 'Normierte Schwelle über der Pulszahl, doppelt logarithmisch, mit Fluenzlinie und Schnittpunkt N*');
+  view.canvas.setAttribute('aria-label', t('Normierte Schwelle über der Pulszahl, doppelt logarithmisch, mit Fluenzlinie und Schnittpunkt N*'));
 
   function update() {
     const ns = nStar();
@@ -58,5 +59,5 @@ export function mount(root) {
   }
   update();
 
-  root.append(box, ...ctrls.map((c) => c.el), out.el, h('p', { class: 'hint sim-note' }, 'Das Potenzgesetz ist ein empirisches Modell. S ist hier frei gewählt, keine Materialangabe.'));
+  root.append(box, ...ctrls.map((c) => c.el), out.el, h('p', { class: 'hint sim-note' }, t('Das Potenzgesetz ist ein empirisches Modell. S ist hier frei gewählt, keine Materialangabe.')));
 }

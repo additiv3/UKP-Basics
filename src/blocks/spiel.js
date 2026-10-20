@@ -4,9 +4,10 @@ import { icon } from '../ui/icons.js';
 import * as store from '../core/store.js';
 import { recordGame } from '../core/progress.js';
 import { toDay } from '../core/dates.js';
+import { t } from '../core/i18n.js';
 
 export async function gameCard(id, { showTitle = true } = {}) {
-  if (!/^[a-z0-9-]+$/.test(id)) return h('div', {}, 'Ungültiges Spiel.');
+  if (!/^[a-z0-9-]+$/.test(id)) return h('div', {}, 'Invalid game.');
   let mod;
   try {
     mod = await import(`../games/${id}.js`);
@@ -16,7 +17,7 @@ export async function gameCard(id, { showTitle = true } = {}) {
   const best = h('span', { class: 'chip' });
   const showBest = () => {
     const b = store.get().games[id]?.best ?? 0;
-    best.textContent = b ? `Bestwert ${b}` : 'Noch kein Bestwert';
+    best.textContent = b ? t('Bestwert {n}', { n: b }) : t('Noch kein Bestwert');
   };
   showBest();
   const body = h('div', { class: 'game' });
@@ -30,7 +31,7 @@ export async function gameCard(id, { showTitle = true } = {}) {
       return res;
     },
   });
-  return h('div', { class: 'sim game-card' }, showTitle ? h('div', { class: 'sim-head' }, h('span', { class: 'sim-tag game', html: `${icon('star', 14)} Spiel` }), h('strong', { class: 'sim-title' }, mod.meta.titel), best) : null, body);
+  return h('div', { class: 'sim game-card' }, showTitle ? h('div', { class: 'sim-head' }, h('span', { class: 'sim-tag game', html: `${icon('star', 14)} ${t('Spiel')}` }), h('strong', { class: 'sim-title' }, t(mod.meta.titel)), best) : null, body);
 }
 
 export async function render(block) {

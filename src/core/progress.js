@@ -1,6 +1,7 @@
 // Pure progress logic (XP, levels, streak, availability). Functions take state explicitly; no DOM.
 import { addDays } from './dates.js';
 import { review, isDue, maturity } from './sm2.js';
+import { t } from './i18n.js';
 
 export const XP = { quizFirst: 10, quizRetry: 3, card: 5, lesson: 20, review: 3 };
 export const UNLOCK_THRESHOLD = 0.8;
@@ -30,7 +31,7 @@ export function levelInfo(xp) {
   const next = xpForLevel(level + 1);
   return {
     level,
-    title: LEVEL_TITLES[Math.min(level - 1, LEVEL_TITLES.length - 1)],
+    title: t(LEVEL_TITLES[Math.min(level - 1, LEVEL_TITLES.length - 1)]),
     xp,
     cur,
     next,

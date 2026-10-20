@@ -508,6 +508,176 @@
           "quelle": "Rechnung aus der Formel"
         }
       ]
+    },
+    {
+      "id": "k01.l05",
+      "titel": "Rechentraining: Größen sicher berechnen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k01.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "Hier rechnest du die Größen aus Lektion 1 bis 4 selbst. Du musst nichts im Kopf rechnen: Bei jeder Aufgabe bekommst du den **Taschenrechner** (Knopf unter dem Antwortfeld). Er kennt Zehnerpotenzen (Taste EE), Klammern, Wurzeln und die Konstanten.",
+            "Bei den **Rechenweg-Aufgaben** baust du zuerst die Formel aus Kacheln zusammen: antippen oder in das Feld ziehen. Danach setzt du die Zahlen ein und rechnest. Tipp: Rechne vor dem Eintippen alle Größen in SI-Einheiten (oder J/cm² bzw. cm) um, sonst rutschen Zehnerpotenzen."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k01.q15",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Spitzenleistung (Näherung) und berechne sie für $E_\\mathrm{p}=12\\,\\mu\\mathrm{J}$ und $\\tau=250\\,\\mathrm{fs}$. Antwort in MW.",
+          "vorlage": "$P_\\mathrm{peak}\\approx$ {{ [] // [] }}",
+          "richtig": [
+            "$E_\\mathrm{p}$",
+            "$\\tau$"
+          ],
+          "erklaerung": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau=12\\cdot10^{-6}\\,\\mathrm{J}/(250\\cdot10^{-15}\\,\\mathrm{s})=4{,}8\\cdot10^{7}\\,\\mathrm{W}=48\\,\\mathrm{MW}$.",
+          "ablenker": [
+            "$f$",
+            "$w_0^2$"
+          ],
+          "antwort": 48,
+          "einheit": "MW",
+          "toleranz": 0.05,
+          "tipp": "Pulsenergie durch Pulsdauer. Setze µJ als $10^{-6}$ J und fs als $10^{-15}$ s ein; das Ergebnis in W durch $10^6$ teilen."
+        },
+        {
+          "id": "k01.q16",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die mittlere Leistung und berechne sie für $E_\\mathrm{p}=8\\,\\mu\\mathrm{J}$ und $f=250\\,\\mathrm{kHz}$. Antwort in W.",
+          "vorlage": "$P_\\mathrm{avg}=$ [] $\\cdot$ []",
+          "richtig": [
+            "$E_\\mathrm{p}$",
+            "$f$"
+          ],
+          "erklaerung": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f=8\\cdot10^{-6}\\,\\mathrm{J}\\cdot2{,}5\\cdot10^{5}\\,\\mathrm{s^{-1}}=2\\,\\mathrm{W}$. Bei einem Produkt ist die Reihenfolge egal.",
+          "ablenker": [
+            "$\\tau$",
+            "$\\lambda$"
+          ],
+          "tausch": [
+            [
+              0,
+              1
+            ]
+          ],
+          "antwort": 2,
+          "einheit": "W",
+          "toleranz": 0.05
+        },
+        {
+          "id": "k01.q17",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Spitzenfluenz des Gauß-Strahls und berechne sie für $E_\\mathrm{p}=8\\,\\mu\\mathrm{J}$ und $w_0=20\\,\\mu\\mathrm{m}$. Antwort in J/cm².",
+          "vorlage": "$F_0=$ {{ [] $\\cdot$ [] // $\\pi$ $\\cdot$ [] }}",
+          "richtig": [
+            "$2$",
+            "$E_\\mathrm{p}$",
+            "$w_0^2$"
+          ],
+          "erklaerung": "$F_0=\\dfrac{2E_\\mathrm{p}}{\\pi w_0^2}=\\dfrac{2\\cdot8\\cdot10^{-6}\\,\\mathrm{J}}{\\pi\\,(2\\cdot10^{-3}\\,\\mathrm{cm})^2}\\approx1{,}27\\,\\mathrm{J/cm^2}$. $w_0=20\\,\\mu\\mathrm{m}=2\\cdot10^{-3}$ cm.",
+          "ablenker": [
+            "$w_0$",
+            "$\\tau$"
+          ],
+          "tausch": [
+            [
+              0,
+              1
+            ]
+          ],
+          "antwort": 1.27,
+          "einheit": "J/cm²",
+          "toleranz": 0.03,
+          "tipp": "Der Radius muss in cm in die Formel: 1 µm $=10^{-4}$ cm. Vergiss das Quadrat nicht: $(2\\cdot10^{-3})^2$."
+        },
+        {
+          "id": "k01.q18",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Puls hat die Spitzenfluenz $F_0=2\\,\\mathrm{J/cm^2}$ und dauert $\\tau=500\\,\\mathrm{fs}$. Wie hoch ist die Spitzenintensität (Näherung $F_0/\\tau$)? Antwort in $10^{12}\\,\\mathrm{W/cm^2}$.",
+          "antwort": 4,
+          "einheit": "·10¹² W/cm²",
+          "toleranz": 0.05,
+          "erklaerung": "$I_0\\approx F_0/\\tau=2\\,\\mathrm{J/cm^2}/(5\\cdot10^{-13}\\,\\mathrm{s})=4\\cdot10^{12}\\,\\mathrm{W/cm^2}$."
+        },
+        {
+          "id": "k01.q19",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Photonenenergie und berechne sie für $\\lambda=343\\,\\mathrm{nm}$. Antwort in eV.",
+          "vorlage": "$h\\nu=$ {{ [] // [] }}",
+          "richtig": [
+            "$hc\\approx1240\\,\\mathrm{eV\\,nm}$",
+            "$\\lambda$"
+          ],
+          "erklaerung": "$h\\nu=hc/\\lambda\\approx1239{,}84\\,\\mathrm{eV\\,nm}/343\\,\\mathrm{nm}\\approx3{,}61\\,\\mathrm{eV}$.",
+          "ablenker": [
+            "$c\\cdot\\lambda$",
+            "$\\tau$"
+          ],
+          "antwort": 3.61,
+          "einheit": "eV",
+          "toleranz": 0.02
+        },
+        {
+          "id": "k01.q20",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jeder Größe ihre Formel zu.",
+          "paare": [
+            [
+              "Mittlere Leistung",
+              "$E_\\mathrm{p}\\cdot f$"
+            ],
+            [
+              "Spitzenleistung",
+              "$E_\\mathrm{p}/\\tau$"
+            ],
+            [
+              "Spitzenfluenz",
+              "$2E_\\mathrm{p}/(\\pi w_0^2)$"
+            ],
+            [
+              "Spitzenintensität",
+              "$F_0/\\tau$"
+            ],
+            [
+              "Photonenenergie",
+              "$hc/\\lambda$"
+            ]
+          ],
+          "erklaerung": "Alle fünf Formeln stammen aus den Lektionen 2 bis 4. Prüfe die Einheiten: W, W, J/cm², W/cm², eV."
+        },
+        {
+          "id": "k01.q21",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Ordne bei **gleicher Pulsenergie** die Pulsdauern nach der Spitzenleistung, von niedrig nach hoch.",
+          "items": [
+            "5 ns",
+            "10 ps",
+            "300 fs",
+            "10 fs"
+          ],
+          "erklaerung": "Die Spitzenleistung ist $E_\\mathrm{p}/\\tau$: Je kürzer der Puls, desto höher die Spitzenleistung.",
+          "oben": "niedrigste Spitzenleistung",
+          "unten": "höchste Spitzenleistung"
+        },
+        {
+          "id": "k01.c09",
+          "typ": "karte",
+          "vorne": "Wie rechnest du µJ, fs und µm sicher in die Formeln ein?",
+          "hinten": "Alles in SI (J, s, m) oder bei Fluenz in J und cm: 1 µJ $=10^{-6}$ J, 1 fs $=10^{-15}$ s, 1 µm $=10^{-4}$ cm. Ergebnis zum Schluss in die gewünschte Einheit umrechnen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

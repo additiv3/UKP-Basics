@@ -5,41 +5,19 @@ import * as store from '../../core/store.js';
 import { dueIds, totalXp } from '../../core/progress.js';
 import { toDay, diffDays } from '../../core/dates.js';
 import { renderBlock } from '../../blocks/registry.js';
+import { t } from '../../core/i18n.js';
 
 const MAX_REQUEUE = 2;
 
-export async function render(_params, app) {
+/**
+ * Run a card/question session in `page`. ids: item ids in order. again(): optional "more" link target after the summary.
+ */
+export async function runSession(app, page, ids, { backHref = '#/', kicker, moreHref, moreLabel, after } = {}) {
   const { data } = app;
   const today = toDay();
-  const state = store.get();
-  const valid = dueIds(state, today).filter((id) => data.items.has(id));
-  const batch = state.settings.reviewBatch;
-  const queue = valid.slice(0, batch);
+  const queue = [...ids];
   const total = queue.length;
-
-  const page = h('div', { class: 'page review' });
-
-  if (!total) {
-    const future = Object.values(state.items)
-      .filter((it) => it.due > today)
-      .map((it) => it.due)
-      .sort();
-    const seenAny = Object.keys(state.items).length > 0;
-    append(page, [
-      h('h1', {}, 'Wiederholen'),
-      h(
-        'div',
-        { class: 'empty' },
-        h('span', { class: 'empty-icon', html: icon('check', 40) }),
-        h('p', {}, seenAny ? 'Heute ist nichts mehr fällig.' : 'Hier erscheinen deine Fragen und Karten, sobald du Lektionen bearbeitet hast.'),
-        future.length ? h('p', { class: 'hint' }, `Nächste Wiederholung: ${diffDays(today, future[0]) === 1 ? 'morgen' : `in ${diffDays(today, future[0])} Tagen`}.`) : null,
-        h('a', { class: 'btn btn-primary', href: '#/' }, 'Weiter lernen'),
-      ),
-    ]);
-    return page;
-  }
-
-  const xpStart = totalXp(state);
+  const xpStart = totalXp(store.get());
   const requeued = new Map();
   let done = 0;
   let correctFirst = 0;
@@ -48,7 +26,7 @@ export async function render(_params, app) {
   const fill = h('div', { class: 'progress-fill' });
   const count = h('span', { class: 'topbar-count' });
   const stage = h('div', { class: 'review-stage' });
-  page.append(h('header', { class: 'topbar' }, h('a', { class: 'back', href: '#/', 'aria-label': 'Beenden', html: icon('back', 22) }), h('div', { class: 'progress grow' }, fill), count), stage);
+  page.append(h('header', { class: 'topbar' }, h('a', { class: 'back', href: backHref, 'aria-label': t('Beenden'), html: icon('back', 22) }), h('div', { class: 'progress grow' }, fill), count), stage);
 
   async function show() {
     fill.style.width = `${Math.round((done / total) * 100)}%`;
@@ -74,7 +52,7 @@ export async function render(_params, app) {
         show();
       },
     };
-    const meta = h('p', { class: 'kicker' }, `${entry.chapter.titel} · ${entry.lesson.titel}`);
+    const meta = h('p', { class: 'kicker' }, kicker ?? `${entry.chapter.titel} · ${entry.lesson.titel}`);
     stage.replaceChildren(meta, await renderBlock(entry.block, ctx));
     window.scrollTo(0, 0);
   }
@@ -89,14 +67,49 @@ export async function render(_params, app) {
         'div',
         { class: 'empty' },
         h('span', { class: 'empty-icon', html: icon('star', 40) }),
-        h('h2', {}, 'Runde geschafft'),
-        h('p', {}, `${correctFirst} von ${total} gleich gewusst`, h('span', { class: 'xp-chip' }, ` +${gained} XP`)),
-        more ? h('a', { class: 'btn btn-primary', href: '#/wiederholen', onClick: () => app.rerender() }, `Weitere ${Math.min(more, batch)} wiederholen`) : null,
-        h('a', { class: more ? 'btn btn-ghost' : 'btn btn-primary', href: '#/' }, 'Zum Lernpfad'),
+        h('h2', {}, t('Runde geschafft')),
+        h('p', {}, t('{n} von {total} gleich gewusst', { n: correctFirst, total }), h('span', { class: 'xp-chip' }, ` +${gained} XP`)),
+        moreHref ? h('a', { class: 'btn btn-primary', href: moreHref, onClick: () => app.rerender() }, moreLabel) : null,
+        !moreHref && more ? h('a', { class: 'btn btn-primary', href: '#/wiederholen', onClick: () => app.rerender() }, t('Weitere {n} wiederholen', { n: Math.min(more, store.get().settings.reviewBatch) })) : null,
+        h('a', { class: moreHref || more ? 'btn btn-ghost' : 'btn btn-primary', href: backHref }, backHref === '#/' ? t('Zum Lernpfad') : t('Zurück')),
+        after,
       ),
     );
   }
 
   await show();
+}
+
+export async function render(_params, app) {
+  const { data } = app;
+  const today = toDay();
+  const state = store.get();
+  const valid = dueIds(state, today).filter((id) => data.items.has(id));
+  const queue = valid.slice(0, state.settings.reviewBatch);
+  const page = h('div', { class: 'page review' });
+
+  if (!queue.length) {
+    const future = Object.values(state.items)
+      .filter((it) => it.due > today)
+      .map((it) => it.due)
+      .sort();
+    const seenAny = Object.keys(state.items).length > 0;
+    const days = future.length ? diffDays(today, future[0]) : 0;
+    append(page, [
+      h('h1', {}, t('Wiederholen')),
+      h(
+        'div',
+        { class: 'empty' },
+        h('span', { class: 'empty-icon', html: icon('check', 40) }),
+        h('p', {}, seenAny ? t('Heute ist nichts mehr fällig.') : t('Hier erscheinen deine Fragen und Karten, sobald du Lektionen bearbeitet hast.')),
+        future.length ? h('p', { class: 'hint' }, t('Nächste Wiederholung: {when}.', { when: days === 1 ? t('morgen') : t('in {n} Tagen', { n: days }) })) : null,
+        h('a', { class: 'btn btn-primary', href: '#/' }, t('Weiter lernen')),
+        h('a', { class: 'btn btn-ghost', href: '#/vokabeln' }, t('Vokabeln üben')),
+      ),
+    ]);
+    return page;
+  }
+
+  await runSession(app, page, queue);
   return page;
 }

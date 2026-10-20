@@ -1,0 +1,82 @@
+{
+  "stufen": {
+    "A": {
+      "titel": "Foundation",
+      "beschreibung": "Quantities, beam optics and the basics of light–matter interaction."
+    },
+    "B": {
+      "titel": "Ultrashort pulses",
+      "beschreibung": "How ultrashort pulses are generated and why time scales change ablation."
+    },
+    "C": {
+      "titel": "Ablation",
+      "beschreibung": "Ablation threshold, mechanisms and the behaviour of the materials."
+    },
+    "D": {
+      "titel": "Process and practice",
+      "beschreibung": "Equipment, special processes, metrology and scientific work."
+    },
+    "E": {
+      "titel": "English",
+      "beschreibung": "Scientific English: speaking, writing, reading."
+    }
+  },
+  "kapitel": {
+    "k00": {
+      "titel": "Toolkit: numbers, units, calculating",
+      "kurz": "Powers of ten, units, logarithm, estimation, pocket calculator"
+    },
+    "k01": {
+      "titel": "Pulse quantities and a feel for numbers",
+      "kurz": "Time scales, pulse energy, peak power, fluence, intensity, photon energy"
+    },
+    "k02": {
+      "titel": "Beam optics: from the laser to the focus",
+      "kurz": "Gaussian beam, focusing, Rayleigh length, beam quality M²"
+    },
+    "k03": {
+      "titel": "Light meets matter",
+      "kurz": "Bands, absorption, reflection, linear and nonlinear absorption"
+    },
+    "k04": {
+      "titel": "Generating ultrashort pulses",
+      "kurz": "Bandwidth, mode locking, chirp, CPA, amplifier architectures"
+    },
+    "k05": {
+      "titel": "Time scales and the two-temperature model",
+      "kurz": "Heat diffusion vs. pulse duration, electron and lattice systems, TTM"
+    },
+    "k06": {
+      "titel": "Nonlinear absorption in dielectrics",
+      "kurz": "Multiphoton and tunnel ionization, Keldysh, avalanche, plasma"
+    },
+    "k07": {
+      "titel": "Ablation mechanisms and threshold",
+      "kurz": "Threshold, ablation depth, spallation, phase explosion, incubation, burst"
+    },
+    "k08": {
+      "titel": "Materials: fused silica, ceramics, semiconductors",
+      "kurz": "Band gap, absorption regimes, cracking, residual stress"
+    },
+    "k09": {
+      "titel": "Process parameters and equipment",
+      "kurz": "Pulse spacing, hatch, scanner, beam delivery, pulse shaping, DoE"
+    },
+    "k10": {
+      "titel": "Special processes",
+      "kurz": "LIPSS, selective laser etching, Bessel beam, waveguides"
+    },
+    "k11": {
+      "titel": "Metrology, standards and diagnostics",
+      "kurz": "Pulse duration, beam profile, uncertainty, roughness, standards, in-situ monitoring"
+    },
+    "k12": {
+      "titel": "Scientific practice in photonics",
+      "kurz": "Journals, conferences, reading papers, reference management, presenting"
+    },
+    "k13": {
+      "titel": "Scientific English for photonics",
+      "kurz": "Numbers aloud, describing setups and graphs, abstracts, conversations"
+    }
+  }
+}

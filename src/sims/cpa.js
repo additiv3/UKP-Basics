@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num, si } from '../core/format.js';
 import { canvasView, animate, control, readouts, Plot, alpha, supNum } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'CPA: strecken, verstärken, komprimieren', kurz: 'Warum der Verstärker den Puls nie in voller Spitzenleistung sieht' };
 export const formel = [
@@ -72,7 +73,7 @@ export function mount(root) {
         ctx.font = '700 11px system-ui, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
-        ctx.fillText(name, cx, rowY);
+        ctx.fillText(t(name), cx, rowY);
         // pulse shape icon below the box: width ~ log tau
         const w = 6 + 26 * ((Math.log10(st[i].tau) + 15) / 6);
         const hgt = 28;
@@ -121,7 +122,7 @@ export function mount(root) {
         ctx.fillStyle = pal.muted;
         ctx.textBaseline = 'top';
         ctx.font = '600 10.5px system-ui, sans-serif';
-        ctx.fillText(STAGES[i], x0 + bw / 2, p.y + p.h + 6);
+        ctx.fillText(t(STAGES[i]), x0 + bw / 2, p.y + p.h + 6);
       });
       // what the amplifier would see without stretching
       const yn = p.Y(noCpa);
@@ -139,10 +140,10 @@ export function mount(root) {
       ctx.font = '700 10.5px system-ui, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
-      ctx.fillText('ohne Strecker', xA + p.w / 8 - 4, yn - 14);
+      ctx.fillText(t('ohne Strecker'), xA + p.w / 8 - 4, yn - 14);
     },
   });
-  view.canvas.setAttribute('aria-label', 'Schema der gestreckten Pulsverstärkung mit Spitzenleistung je Stufe');
+  view.canvas.setAttribute('aria-label', t('Schema der gestreckten Pulsverstärkung mit Spitzenleistung je Stufe'));
   animate(view.canvas, (dt) => {
     phase += dt * 0.12;
     view.redraw();
@@ -160,5 +161,5 @@ export function mount(root) {
   }
   update();
 
-  root.append(box, ...ctrls.map((c) => c.el), out.el, h('p', { class: 'hint sim-note' }, 'Idealisiert: Verluste, Pulsformverzerrungen und die Grenze durch die Zerstörschwelle im Verstärker sind nicht modelliert. Die Zerstörschwelle hängt von Fluenz und Strahlgröße ab, nicht nur von der Spitzenleistung.'));
+  root.append(box, ...ctrls.map((c) => c.el), out.el, h('p', { class: 'hint sim-note' }, t('Idealisiert: Verluste, Pulsformverzerrungen und die Grenze durch die Zerstörschwelle im Verstärker sind nicht modelliert. Die Zerstörschwelle hängt von Fluenz und Strahlgröße ab, nicht nur von der Spitzenleistung.')));
 }

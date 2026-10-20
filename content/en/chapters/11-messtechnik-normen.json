@@ -1,0 +1,311 @@
+{
+  "titel": "Metrology, standards and diagnostics",
+  "einleitung": "What you do not measure you cannot reproduce. Here you learn how pulse duration, beam profile and power are measured, how measurement uncertainties propagate to the fluence, how surfaces are described according to standards, and which standards you need in everyday work.",
+  "ziele": [
+    "Determine the pulse duration from an autocorrelation measurement",
+    "Evaluate the beam radius with the knife-edge method and propagate the fluence uncertainty",
+    "Distinguish and calculate the roughness parameters $Ra$ and $Sa$",
+    "Assign the most important standards of laser processing",
+    "Name methods of in-situ monitoring"
+  ],
+  "lektionen": {
+    "k11.l01": "Measuring the pulse duration (autocorrelation)",
+    "k11.l02": "Beam profile, power and measurement uncertainty",
+    "k11.l03": "Surface characterization (ISO 21920, ISO 25178)",
+    "k11.l04": "Standards and in-situ monitoring",
+    "k11.l05": "Calculation training: evaluating measurements"
+  },
+  "blocks": {
+    "k11.l01.b01": {
+      "inhalt": [
+        "No detector is fast enough to measure a femtosecond pulse directly. The solution: the pulse measures itself. In **autocorrelation** ([[autokorrelation]]) the pulse is split into two parts, one is delayed against the other and they are superimposed in a nonlinear crystal. The generated second harmonic (SHG) is only strong where the two pulses overlap in time. The measured curve versus delay has the width $\\tau_\\mathrm{AC}$."
+      ]
+    },
+    "k11.l01.b02": {
+      "titel": "Pulse duration from the autocorrelation",
+      "sammlung": "Metrology",
+      "erklaerung": "Deconvolution factor $\\kappa$: it depends on the pulse shape, which has to be assumed. The autocorrelation alone does not provide the pulse shape."
+    },
+    "k11.l01.b03": {
+      "titel": "Worked example",
+      "aufgabe": "The autocorrelation (intensity, FWHM) has $\\tau_\\mathrm{AC}=212\\,\\mathrm{fs}$. How long is the pulse for a Gaussian and a sech² shape?",
+      "schritte": [
+        "Gaussian: $\\tau=212/1.414\\,\\mathrm{fs}=150\\,\\mathrm{fs}$",
+        "sech²: $\\tau=212/1.543\\,\\mathrm{fs}=137.4\\,\\mathrm{fs}$"
+      ],
+      "ergebnis": "150 fs (Gaussian) or about 137 fs (sech²). The assumption about the pulse shape changes the result by just under 10 %."
+    },
+    "k11.l01.b04": {
+      "inhalt": [
+        "For a complete characterization (phase, chirp), methods such as **FROG** and **SPIDER** are used, which reconstruct amplitude and phase of the pulse. This is important if you want to compensate dispersion or set pulse shapes deliberately."
+      ]
+    },
+    "k11.q01": {
+      "frage": "Autocorrelation width $\\tau_\\mathrm{AC}=420\\,\\mathrm{fs}$ for a sech² pulse: how long is the pulse in fs?",
+      "erklaerung": "$\\tau=420/1.543\\approx272\\,\\mathrm{fs}$."
+    },
+    "k11.q02": {
+      "frage": "What does the autocorrelation **not** measure directly?",
+      "optionen": [
+        "The width of the correlation signal",
+        "The pulse shape and the phase",
+        "The delay dependence of the SHG",
+        "The time behaviour of the pulse, only averaged"
+      ],
+      "erklaerung": "The intensity autocorrelation only provides the width; the pulse shape has to be assumed. For the phase you need FROG or SPIDER."
+    },
+    "k11.c01": {
+      "vorne": "How do you determine the pulse duration from an autocorrelation?",
+      "hinten": "$\\tau=\\tau_\\mathrm{AC}/\\kappa$ with $\\kappa=\\sqrt2$ (Gaussian) or 1.543 (sech²)."
+    },
+    "k11.l02.b01": {
+      "inhalt": [
+        "Two measured quantities determine every fluence figure: the **pulse energy** (from average power via $E_\\mathrm{p}=P_\\mathrm{avg}/f$, with a thermal power meter at the workpiece position) and the **beam radius** $w_0$ in the focus (with a beam profiling camera or the knife-edge method, according to ISO 11146 via the second moments)."
+      ]
+    },
+    "k11.l02.b02": {
+      "inhalt": [
+        "In the **knife-edge method** you push a sharp edge through the beam and measure the transmitted power. For a Gaussian beam $P(x)/P_0=\\tfrac12\\,\\mathrm{erfc}(\\sqrt2\\,x/w)$ follows. The distance between the 10 % and 90 % points is then $\\Delta x_{10\\text{–}90}=1.28\\,w$:"
+      ]
+    },
+    "k11.l02.b03": {
+      "titel": "Knife edge: beam radius",
+      "sammlung": "Metrology",
+      "erklaerung": "Beam radius from the 10–90 % distance of the knife-edge method (Gaussian beam)."
+    },
+    "k11.l02.b04": {
+      "titel": "Fluence uncertainty",
+      "sammlung": "Metrology",
+      "erklaerung": "Propagation of the relative measurement uncertainties to the peak fluence $F_0\\propto E_\\mathrm{p}/w_0^2$ (uncorrelated errors). The beam radius enters **twice**."
+    },
+    "k11.l02.b05": {
+      "titel": "Worked example",
+      "aufgabe": "The pulse energy is known with 3 % uncertainty, the beam radius with 5 %. How accurate is the peak fluence?",
+      "schritte": [
+        "$2\\cdot5\\,\\%=10\\,\\%$ from the radius",
+        "$\\sqrt{(3\\,\\%)^2+(10\\,\\%)^2}=\\sqrt{9+100}\\,\\%\\approx10.4\\,\\%$"
+      ],
+      "ergebnis": "Around 10 %. The fluence uncertainty is almost entirely determined by the beam radius."
+    },
+    "k11.l02.b06": {
+      "inhalt": "A threshold fluence is only as accurate as your beam radius. If you measure $w_0$ with 5 % uncertainty, you cannot state $F_\\mathrm{th}$ better than about 10 % (D² method: radius from the slope, no extra measurement error)."
+    },
+    "k11.q03": {
+      "frage": "Knife edge: the 10–90 % distance is $\\Delta x=19.2\\,\\mu\\mathrm{m}$. What is the beam radius $w$ in µm?",
+      "erklaerung": "$w=19.2/1.28=15\\,\\mu\\mathrm{m}$."
+    },
+    "k11.q04": {
+      "frage": "Pulse energy 2 % and beam radius 3 % uncertainty: what is the relative uncertainty of the peak fluence in percent?",
+      "erklaerung": "$\\sqrt{2^2+(2\\cdot3)^2}=\\sqrt{4+36}=\\sqrt{40}=6.3\\,\\%$."
+    },
+    "k11.q05": {
+      "frage": "Why does the beam radius enter the fluence quadratically?",
+      "optionen": [
+        "Because the area grows with $w_0^2$",
+        "Because the wavelength enters quadratically",
+        "Because the pulse duration enters quadratically",
+        "It does not enter quadratically"
+      ],
+      "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)$: energy is distributed over an area $\\propto w_0^2$."
+    },
+    "k11.c02": {
+      "vorne": "How does an error in the beam radius affect the fluence?",
+      "hinten": "Doubly: $\\delta F/F=2\\,\\delta w/w$ (in addition to the energy error, added in quadrature)."
+    },
+    "k11.l03.b01": {
+      "inhalt": [
+        "Ablated surfaces are described with **roughness parameters**. Two systems have to be distinguished: profile parameters ($R$ values, ISO 21920) from a line section and areal parameters ($S$ values, ISO 25178) from a 3D measurement."
+      ]
+    },
+    "k11.l03.b02": {
+      "titel": "Roughness parameters",
+      "sammlung": "Metrology",
+      "erklaerung": "Arithmetic mean roughness $Ra$ (line), root-mean-square roughness $Rq$ and areal $Sa$, each relative to the mean line or surface ($z=0$ as mean). $Rz$ and $Sz$ are height differences (peak to valley)."
+    },
+    "k11.l03.b03": {
+      "inhalt": [
+        "Measurement is done with stylus instruments, confocal microscopy, white-light interferometry or the laser scanning microscope. **Filters** and **cut-off wavelengths** ($\\lambda_\\mathrm{s}$, $\\lambda_\\mathrm{c}$ or S/L filters) are important: without them roughness values are not comparable. Ablation surfaces often have roughness on several scales (LIPSS, melt droplets, waviness)."
+      ]
+    },
+    "k11.l03.b04": {
+      "titel": "Worked example",
+      "aufgabe": "A profile section gives five height values (relative to the mean line): $z=(2,\\,-1,\\,-3,\\,1,\\,1)\\,\\mu\\mathrm{m}$. Calculate $Ra$ and $Rq$.",
+      "schritte": [
+        "$Ra=(|2|+|{-1}|+|{-3}|+|1|+|1|)/5\\,\\mu\\mathrm{m}=8/5\\,\\mu\\mathrm{m}=1.6\\,\\mu\\mathrm{m}$",
+        "$Rq=\\sqrt{(4+1+9+1+1)/5}\\,\\mu\\mathrm{m}=\\sqrt{3.2}\\,\\mu\\mathrm{m}=1.79\\,\\mu\\mathrm{m}$"
+      ],
+      "ergebnis": "$Ra=1.6\\,\\mu\\mathrm{m}$ and $Rq\\approx1.79\\,\\mu\\mathrm{m}$. $Rq$ is larger than $Ra$ because it weights outliers more."
+    },
+    "k11.q06": {
+      "frage": "Match the parameter to the correct description.",
+      "paare": [
+        [
+          "Ra",
+          "Mean absolute deviation in the profile"
+        ],
+        [
+          "Sa",
+          "Mean absolute deviation over an area"
+        ],
+        [
+          "Rz",
+          "Peak-to-valley height difference in the profile"
+        ]
+      ],
+      "erklaerung": "R values come from profiles, S values from areal measurements; z values describe extremes."
+    },
+    "k11.q07": {
+      "frage": "A profile has $z=(1,\\,-2,\\,3,\\,-1,\\,-1)\\,\\mu\\mathrm{m}$. What is $Ra$ in µm?",
+      "erklaerung": "$Ra=(1+2+3+1+1)/5=1.6\\,\\mu\\mathrm{m}$."
+    },
+    "k11.q08": {
+      "frage": "Which statement about $Sa$ is true?",
+      "optionen": [
+        "It is a profile parameter",
+        "It is an areal parameter according to ISO 25178",
+        "It describes the pulse duration",
+        "It is the threshold fluence"
+      ],
+      "erklaerung": "$Sa$ is the areal arithmetic mean roughness according to ISO 25178."
+    },
+    "k11.c03": {
+      "vorne": "What is the difference between $Ra$ and $Sa$?",
+      "hinten": "$Ra$ is the profile roughness (line, ISO 21920), $Sa$ the areal one (3D, ISO 25178)."
+    },
+    "k11.l04.b01": {
+      "inhalt": [
+        "Standards ensure that measured values are comparable across laboratories. The most important ones for you (full list: Lab → Standards):"
+      ]
+    },
+    "k11.q09": {
+      "frage": "Match the standard to the topic.",
+      "paare": [
+        [
+          "ISO 11146",
+          "Measuring beam radius and M²"
+        ],
+        [
+          "ISO 21254",
+          "Laser-induced damage threshold"
+        ],
+        [
+          "ISO 21920 / 25178",
+          "Surface roughness"
+        ],
+        [
+          "IEC 60825-1",
+          "Laser classes and safety"
+        ],
+        [
+          "ISO 11554",
+          "Measuring power, energy, pulse duration"
+        ]
+      ],
+      "erklaerung": "The standard series cover beam characterization, threshold, surface, safety and power measurement."
+    },
+    "k11.l04.b02": {
+      "inhalt": [
+        "**Threshold determination according to the standard:** ISO 21254 describes test methods for laser-induced damage thresholds (e.g. measurement with one pulse per site, 1-on-1, or with many pulses per site, S-on-1). With threshold fluences always state which method and which pulse number you used, otherwise values are not comparable (see incubation, chapter 7)."
+      ]
+    },
+    "k11.l04.b03": {
+      "inhalt": [
+        "**In-situ monitoring:** During the process the following can be measured: plasma emission (spectroscopy, LIBS), acoustic signals, high-speed camera, reflection and scattered light, and optical coherence tomography (OCT) for depth measurement. They serve to detect focus position, ablation depth or process disturbances."
+      ]
+    },
+    "k11.l04.b04": {
+      "inhalt": "Document for every experiment: pulse energy **at the workpiece**, beam radius with method, pulse duration with method, pulse number, focus position. Without these data a result cannot be classified later."
+    },
+    "k11.q10": {
+      "frage": "Which standard do you use to measure $M^2$ of a laser beam?",
+      "optionen": [
+        "IEC 60825-1",
+        "ISO 11146",
+        "ISO 25178",
+        "ISO 21254"
+      ],
+      "erklaerung": "ISO 11146 describes test methods for beam dimensions, divergence and beam propagation factor."
+    },
+    "k11.q11": {
+      "frage": "What is in-situ monitoring used for?",
+      "optionen": [
+        "To replace the standards",
+        "To detect process quantities such as focus position and ablation depth during processing",
+        "To change the pulse duration",
+        "To measure the wavelength"
+      ],
+      "erklaerung": "It provides signals (plasma, acoustics, camera, OCT) from which process state and disturbances are derived."
+    },
+    "k11.c04": {
+      "vorne": "Which standard series regulates the measurement of beam radius and $M^2$?",
+      "hinten": "ISO 11146 (parts 1 to 3)."
+    },
+    "k11.c05": {
+      "vorne": "Why must the pulse number be stated for threshold fluences?",
+      "hinten": "Because of incubation the threshold falls with the pulse number: $F_\\mathrm{th}(N)$ is not constant."
+    },
+    "k11.l05.b01": {
+      "inhalt": "Evaluating measurements means calculating **and** carrying the uncertainties along. For propagating uncorrelated relative uncertainties you add the squares and take the root."
+    },
+    "k11.q12": {
+      "frage": "Build the formula for the pulse duration from the autocorrelation and calculate it for $\\tau_\\mathrm{AC}=300\\,\\mathrm{fs}$ and a Gaussian pulse ($\\kappa=\\sqrt2$). Answer in fs.",
+      "erklaerung": "$\\tau=\\tau_\\mathrm{AC}/\\kappa=300/1.414=212\\,\\mathrm{fs}$."
+    },
+    "k11.q13": {
+      "frage": "Build the formula for the beam radius from the 10–90 % distance of the knife-edge method and calculate it for $\\Delta x=25.6\\,\\mu\\mathrm{m}$. Answer in µm.",
+      "richtig": [
+        "$\\Delta x_{10\\text{–}90}$",
+        "$1.28$"
+      ],
+      "erklaerung": "$w=\\Delta x_{10\\text{–}90}/1.28=25.6/1.28=20\\,\\mu\\mathrm{m}$."
+    },
+    "k11.q14": {
+      "frage": "Pulse energy 4 % and beam radius 2 % uncertainty: what is the relative uncertainty of the peak fluence in percent?",
+      "erklaerung": "$\\sqrt{4^2+(2\\cdot2)^2}=\\sqrt{16+16}=\\sqrt{32}=5.66\\,\\%$."
+    },
+    "k11.q15": {
+      "frage": "A sech² pulse has $\\tau_\\mathrm{AC}=280\\,\\mathrm{fs}$ ($\\kappa=1.543$). How long is the pulse in fs?",
+      "erklaerung": "$\\tau=280/1.543=181.5\\,\\mathrm{fs}$."
+    },
+    "k11.q16": {
+      "frage": "A profile section has the height values $z=(3,\\,-2,\\,-1,\\,2,\\,-2)\\,\\mu\\mathrm{m}$ (mean line at 0). What is $Rq$ in µm?",
+      "erklaerung": "$Rq=\\sqrt{(9+4+1+4+4)/5}=\\sqrt{4.4}=2.10\\,\\mu\\mathrm{m}$ (and $Ra=2.0\\,\\mu\\mathrm{m}$)."
+    },
+    "k11.q17": {
+      "frage": "Match each measurement method to its measured quantity.",
+      "paare": [
+        [
+          "Autocorrelation",
+          "Pulse width (pulse shape assumed)"
+        ],
+        [
+          "FROG / SPIDER",
+          "Amplitude and phase of the pulse"
+        ],
+        [
+          "Knife-edge method",
+          "Beam radius"
+        ],
+        [
+          "Thermal power meter",
+          "Average power"
+        ]
+      ],
+      "erklaerung": "Each method provides a different quantity; for fluence you need energy (power) and beam radius."
+    },
+    "k11.q18": {
+      "frage": "You want to state the fluence more accurately. Which measured quantity do you improve first?",
+      "optionen": [
+        "The pulse energy, because it enters quadratically",
+        "The beam radius, because it enters quadratically",
+        "The wavelength",
+        "None, they are equally important"
+      ],
+      "erklaerung": "$F_0\\propto E_\\mathrm{p}/w_0^2$: a radius error acts twice."
+    },
+    "k11.c06": {
+      "vorne": "How do you propagate uncorrelated relative uncertainties?",
+      "hinten": "Add squares, take the root; powers enter as factors: $F_0\\propto E_\\mathrm{p}/w_0^2$ gives $\\sqrt{(\\delta E/E)^2+(2\\,\\delta w/w)^2}$."
+    }
+  }
+}

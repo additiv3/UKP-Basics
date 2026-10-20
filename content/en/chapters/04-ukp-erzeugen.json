@@ -1,0 +1,305 @@
+{
+  "titel": "Generating ultrashort pulses",
+  "einleitung": "A femtosecond pulse is not a coincidence: it arises when many light frequencies are superimposed with the right phase. Here you learn why short pulses need broad spectra, how a laser is made to do it, and how pulses are amplified without destroying the amplifier.",
+  "ziele": [
+    "Apply the time–bandwidth product: calculate spectral width from pulse duration and vice versa",
+    "Explain mode locking and repetition rate via the cavity length",
+    "Describe dispersion, GDD and chirp and calculate the pulse broadening",
+    "Justify the CPA principle (stretch, amplify, compress)",
+    "Trade off repetition rate, pulse energy and average power"
+  ],
+  "lektionen": {
+    "k04.l01": "Bandwidth and pulse duration",
+    "k04.l02": "Mode locking",
+    "k04.l03": "Dispersion and chirp",
+    "k04.l04": "CPA and amplifier architectures",
+    "k04.l05": "Repetition rate, pulse energy, power",
+    "k04.l06": "Calculation training: pulses, spectra, amplifiers"
+  },
+  "blocks": {
+    "k04.l01.b01": {
+      "inhalt": [
+        "A light pulse is a superposition of waves of different frequencies. The shorter the pulse, the more frequencies must be involved: time and frequency are coupled through the Fourier transform ([[zeit-bandbreite-produkt]])."
+      ]
+    },
+    "k04.l01.b02": {
+      "titel": "Time–bandwidth product",
+      "sammlung": "Pulses",
+      "erklaerung": "Pulse duration $\\tau$ (FWHM of the intensity) times spectral width $\\Delta\\nu$ (FWHM). Equality holds for a **Fourier-limited** pulse without chirp; real pulses lie above it."
+    },
+    "k04.l01.b03": {
+      "titel": "Spectral width in wavelength",
+      "sammlung": "Pulses",
+      "erklaerung": "Conversion of the frequency width into a wavelength width at centre wavelength $\\lambda_0$ (for $\\Delta\\nu\\ll\\nu_0$)."
+    },
+    "k04.l01.b05": {
+      "titel": "Worked example",
+      "aufgabe": "How wide must the spectrum of a Gaussian pulse with $\\tau=100\\,\\mathrm{fs}$ at $\\lambda_0=1030\\,\\mathrm{nm}$ be at least?",
+      "schritte": [
+        "$\\Delta\\nu=0.441/\\tau=0.441/(100\\cdot10^{-15}\\,\\mathrm{s})=4.41\\cdot10^{12}\\,\\mathrm{Hz}$",
+        "$\\Delta\\lambda=\\lambda_0^2\\Delta\\nu/c=(1.03\\cdot10^{-6}\\,\\mathrm{m})^2\\cdot4.41\\cdot10^{12}\\,\\mathrm{Hz}/(3\\cdot10^{8}\\,\\mathrm{m/s})\\approx1.56\\cdot10^{-8}\\,\\mathrm{m}$"
+      ],
+      "ergebnis": "At least about 4.4 THz, corresponding to roughly 16 nm of wavelength width. For 10 fs it would already be 160 nm."
+    },
+    "k04.l01.b06": {
+      "inhalt": "Half the pulse duration means double the bandwidth. A laser whose gain medium provides only a narrow bandwidth cannot physically produce very short pulses."
+    },
+    "k04.q01": {
+      "frage": "What is the minimum frequency width of a Gaussian pulse with $\\tau=30\\,\\mathrm{fs}$, in THz?",
+      "erklaerung": "$\\Delta\\nu=0.441/30\\,\\mathrm{fs}=1.47\\cdot10^{13}\\,\\mathrm{Hz}=14.7\\,\\mathrm{THz}$."
+    },
+    "k04.q02": {
+      "frage": "A Gaussian pulse has $\\tau=30\\,\\mathrm{fs}$ at $\\lambda_0=800\\,\\mathrm{nm}$. How wide is the spectrum at least, in nm?",
+      "erklaerung": "$\\Delta\\lambda=\\lambda_0^2\\Delta\\nu/c=(800\\,\\mathrm{nm})^2\\cdot1.47\\cdot10^{13}\\,\\mathrm{Hz}/(3\\cdot10^{17}\\,\\mathrm{nm/s})\\approx31\\,\\mathrm{nm}$."
+    },
+    "k04.q03": {
+      "frage": "You halve the pulse duration of a Fourier-limited pulse. What happens to the spectral width?",
+      "optionen": [
+        "It halves",
+        "It stays the same",
+        "It doubles",
+        "It quadruples"
+      ],
+      "erklaerung": "$\\Delta\\nu=K/\\tau$: half the pulse duration, double the bandwidth."
+    },
+    "k04.c01": {
+      "vorne": "What is the time–bandwidth product of a Gaussian pulse?",
+      "hinten": "$\\tau\\,\\Delta\\nu\\ge0.441$ (both FWHM, intensity/spectrum)."
+    },
+    "k04.l02.b01": {
+      "inhalt": [
+        "A laser cavity of length $L$ only allows certain frequencies, the **longitudinal modes**. Their spacing is $\\Delta\\nu_\\mathrm{FSR}=c/(2L)$ (linear cavity). Normally they oscillate with random phases: the result is continuous wave or noise.",
+        "In **mode locking** ([[modenkopplung]]) all phases are tied together. The modes then add up constructively only at certain moments, and a pulse forms that circulates in the cavity. Part of it couples out on every round trip: that is the pulse train."
+      ]
+    },
+    "k04.l02.b02": {
+      "titel": "Repetition rate of the oscillator",
+      "sammlung": "Pulses",
+      "erklaerung": "Repetition rate of an oscillator with a linear cavity of length $L$ (round-trip time $2L/c$)."
+    },
+    "k04.l02.b03": {
+      "inhalt": [
+        "The more modes are locked (i.e. the larger the bandwidth), the shorter the pulse becomes, which is the time–bandwidth product again. Widely used coupling mechanisms are **Kerr-lens mode locking** (e.g. in titanium–sapphire oscillators) and saturable semiconductor absorber mirrors (**SESAM**)."
+      ]
+    },
+    "k04.l02.b04": {
+      "titel": "Worked example",
+      "aufgabe": "An oscillator has a linear cavity of $L=1.5\\,\\mathrm{m}$. What repetition rate does it have?",
+      "schritte": [
+        "$f_\\mathrm{rep}=c/(2L)=3\\cdot10^{8}\\,\\mathrm{m/s}/(2\\cdot1.5\\,\\mathrm{m})=1\\cdot10^{8}\\,\\mathrm{Hz}$"
+      ],
+      "ergebnis": "About 100 MHz, i.e. one pulse every 10 ns. The pulse energy is small; an amplifier (CPA, lesson 4) and a pulse picker bring the rate down again."
+    },
+    "k04.q04": {
+      "frage": "A cavity is $L=0.75\\,\\mathrm{m}$ long. What repetition rate (linear cavity) does the oscillator have, in MHz?",
+      "erklaerung": "$f=c/(2L)=3\\cdot10^{8}/(1.5)=2\\cdot10^{8}\\,\\mathrm{Hz}=200\\,\\mathrm{MHz}$."
+    },
+    "k04.q05": {
+      "frage": "What happens to the phases of the cavity modes in mode locking?",
+      "optionen": [
+        "They are randomly distributed",
+        "They are locked firmly together",
+        "They are set to zero",
+        "They are cancelled"
+      ],
+      "erklaerung": "Only with a fixed phase relationship do the modes superimpose into a short pulse."
+    },
+    "k04.q06": {
+      "frage": "Which quantity mainly determines how short the pulse can become?",
+      "optionen": [
+        "The colour of the mirror",
+        "The bandwidth of the locked modes",
+        "The cooling water temperature",
+        "The length of the power cable"
+      ],
+      "erklaerung": "More locked modes mean more bandwidth and, via $\\tau\\Delta\\nu\\ge K$, shorter pulses."
+    },
+    "k04.c02": {
+      "vorne": "How is the repetition rate of an oscillator related to the cavity length?",
+      "hinten": "$f_\\mathrm{rep}=c/(2L)$ (linear cavity): longer means slower."
+    },
+    "k04.l03.b01": {
+      "inhalt": [
+        "In every material the refractive index depends on the wavelength (**dispersion**, [[dispersion]]). The frequency components of a pulse travel at different speeds, the pulse is stretched in time and the frequency changes along the pulse: it is **chirped** ([[chirp]]).",
+        "Second-order dispersion is described as **group delay dispersion** (GDD, $\\varphi_2$, unit fs²). For a Gaussian pulse:"
+      ]
+    },
+    "k04.l03.b02": {
+      "titel": "Pulse broadening by GDD",
+      "sammlung": "Pulses",
+      "erklaerung": "Pulse duration after the dispersion $\\varphi_2$ for an original duration $\\tau_0$ (Gaussian pulse, Fourier-limited at the input). The pulse energy stays, the peak power drops roughly in the ratio $\\tau_0/\\tau_\\mathrm{out}$."
+    },
+    "k04.l03.b03": {
+      "titel": "Worked example",
+      "aufgabe": "A Fourier-limited Gaussian pulse with $\\tau_0=100\\,\\mathrm{fs}$ passes through a material with $\\varphi_2=10^{5}\\,\\mathrm{fs^2}$. How long is it afterwards?",
+      "schritte": [
+        "$4\\ln2\\cdot\\varphi_2/\\tau_0^2=2.77\\cdot10^{5}\\,\\mathrm{fs^2}/10^{4}\\,\\mathrm{fs^2}=27.7$",
+        "$\\tau_\\mathrm{out}=100\\,\\mathrm{fs}\\cdot\\sqrt{1+27.7^2}\\approx100\\,\\mathrm{fs}\\cdot27.7\\approx2.8\\,\\mathrm{ps}$"
+      ],
+      "ergebnis": "100 fs become about 2.8 ps; the peak power falls to about 3.6 %."
+    },
+    "k04.l03.b04": {
+      "inhalt": [
+        "Positive GDD (normal dispersion in most transparent materials) lets the red components travel earlier and the blue ones later (positive chirp). To shorten a pulse again you need **negative GDD**, e.g. from grating or prism pairs and special mirrors (chirped mirrors). That is the basis of the stretcher and compressor in a CPA system."
+      ]
+    },
+    "k04.l03.b05": {
+      "inhalt": "A pulse can only stay as short as the dispersion on the way to the workpiece is compensated. Every lens, every window and every stretch of air adds GDD, which is critical for very short pulses."
+    },
+    "k04.q07": {
+      "frage": "How long is a Gaussian pulse of $\\tau_0=50\\,\\mathrm{fs}$ after $\\varphi_2=2.5\\cdot10^{4}\\,\\mathrm{fs^2}$, in fs? (Rule of thumb: for strong broadening $\\tau_\\mathrm{out}\\approx4\\ln2\\,\\varphi_2/\\tau_0$)",
+      "erklaerung": "$4\\ln2\\cdot\\varphi_2/\\tau_0^2=2.77\\cdot2.5\\cdot10^{4}/2500=27.7$; $\\tau_\\mathrm{out}=50\\,\\mathrm{fs}\\sqrt{1+27.7^2}\\approx1.39\\,\\mathrm{ps}$."
+    },
+    "k04.q08": {
+      "frage": "What happens to the peak power if a pulse of constant energy is dispersively stretched to 10 times its length?",
+      "optionen": [
+        "It rises to 10 times",
+        "It stays the same",
+        "It drops to one tenth",
+        "It drops to 1/100"
+      ],
+      "erklaerung": "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$: ten times the duration, one tenth of the peak power."
+    },
+    "k04.c03": {
+      "vorne": "What is a chirp?",
+      "hinten": "Change of the instantaneous frequency in time within the pulse, arising e.g. from dispersion; the pulse becomes longer."
+    },
+    "k04.l04.b01": {
+      "inhalt": [
+        "An oscillator delivers pulses in the nanojoule range. For ablation you need micro- to millijoules. Directly amplifying a femtosecond pulse would destroy the amplifier medium because of the high peak power and nonlinearities (self-focusing).",
+        "The solution is **chirped pulse amplification** (CPA, [[cpa]]; Strickland & Mourou 1985, Nobel Prize 2018). Three steps: the pulse is **stretched** in time (factor $10^3$ to $10^5$), **amplified** in the amplifier at low peak power and afterwards **compressed** again."
+      ]
+    },
+    "k04.l04.b03": {
+      "inhalt": "CPA decouples energy and peak power: the amplifier sees a long, low-power version of the pulse; only the compressor restores the short, high-power one."
+    },
+    "k04.l04.b04": {
+      "inhalt": [
+        "**Amplifier architectures** (overview): regenerative amplifiers (the pulse passes many times through the medium), multipass amplifiers, fibre amplifiers (high gain, compact) and thin-disk lasers (high average power). Which architecture is chosen depends on the desired pulse energy, repetition rate and average power."
+      ]
+    },
+    "k04.q09": {
+      "frage": "Put the stations of a CPA system in the right order.",
+      "items": [
+        "Oscillator (short pulse, little energy)",
+        "Stretcher (pulse is lengthened)",
+        "Amplifier (energy grows)",
+        "Compressor (pulse becomes short again)"
+      ],
+      "erklaerung": "Stretching before amplifying protects the medium; compression only happens at the end."
+    },
+    "k04.q10": {
+      "frage": "Why is the pulse stretched before amplification?",
+      "optionen": [
+        "To change the wavelength",
+        "To lower the peak power in the amplifier",
+        "To reduce the pulse energy",
+        "To avoid the chirp"
+      ],
+      "erklaerung": "At constant energy $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$ falls with the stretching and stays below the damage limit of the amplifier."
+    },
+    "k04.q11": {
+      "frage": "A seed pulse with $\\tau_0=200\\,\\mathrm{fs}$ is stretched by a factor of $10^{4}$. How long is it then, in ns?",
+      "erklaerung": "$200\\,\\mathrm{fs}\\cdot10^{4}=2\\cdot10^{6}\\,\\mathrm{fs}=2\\,\\mathrm{ns}$."
+    },
+    "k04.c04": {
+      "vorne": "What does CPA stand for?",
+      "hinten": "Chirped pulse amplification: stretch, amplify, compress the pulse."
+    },
+    "k04.l05.b01": {
+      "inhalt": [
+        "Three quantities are connected: $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$. With limited average power $P_\\mathrm{avg}$ (cooling, pump power), a high repetition rate means low pulse energy, and vice versa.",
+        "The process usually demands a **minimum fluence** (threshold, chapter 7) per pulse. This gives the minimum pulse energy for a given focus; the maximum usable repetition rate follows from $f_\\mathrm{max}=P_\\mathrm{avg}/E_\\mathrm{p}$."
+      ]
+    },
+    "k04.l05.b02": {
+      "titel": "Fast scanning demands a high rate"
+    },
+    "k04.l05.b03": {
+      "titel": "Worked example",
+      "aufgabe": "A laser delivers $P_\\mathrm{avg}=20\\,\\mathrm{W}$. You need $E_\\mathrm{p}=50\\,\\mu\\mathrm{J}$ per pulse. What is the maximum possible repetition rate, and what peak power results at $\\tau=400\\,\\mathrm{fs}$?",
+      "schritte": [
+        "$f_\\mathrm{max}=P_\\mathrm{avg}/E_\\mathrm{p}=20\\,\\mathrm{W}/(50\\cdot10^{-6}\\,\\mathrm{J})=4\\cdot10^{5}\\,\\mathrm{Hz}$",
+        "$P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau=50\\cdot10^{-6}/(400\\cdot10^{-15})=1.25\\cdot10^{8}\\,\\mathrm{W}$"
+      ],
+      "ergebnis": "400 kHz and a peak power of about 125 MW."
+    },
+    "k04.q12": {
+      "frage": "At $P_\\mathrm{avg}=10\\,\\mathrm{W}$ and $f=1\\,\\mathrm{MHz}$: what pulse energy in µJ?",
+      "erklaerung": "$E_\\mathrm{p}=P_\\mathrm{avg}/f=10\\,\\mathrm{W}/10^{6}\\,\\mathrm{Hz}=10\\,\\mu\\mathrm{J}$."
+    },
+    "k04.q13": {
+      "frage": "You double the repetition rate at the same average power. What happens to the pulse energy?",
+      "optionen": [
+        "It doubles",
+        "It halves",
+        "It stays the same",
+        "It quadruples"
+      ],
+      "erklaerung": "$E_\\mathrm{p}=P_\\mathrm{avg}/f$."
+    },
+    "k04.c05": {
+      "vorne": "How are $P_\\mathrm{avg}$, $E_\\mathrm{p}$ and $f$ related?",
+      "hinten": "$P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$; at fixed average power a high rate means low pulse energy."
+    },
+    "k04.l06.b01": {
+      "inhalt": "Calculate the quantities of K04 yourself. For Gaussian pulses $K=0.441$; use seconds for times (1 fs $=10^{-15}$ s) and Hz for frequencies (1 THz $=10^{12}$ Hz)."
+    },
+    "k04.q14": {
+      "frage": "Build the formula for the minimum frequency width of a Fourier-limited Gaussian pulse ($K=0.441$) and calculate it for $\\tau=25\\,\\mathrm{fs}$. Answer in THz.",
+      "erklaerung": "$\\Delta\\nu=K/\\tau=0.441/(25\\cdot10^{-15}\\,\\mathrm{s})=1.76\\cdot10^{13}\\,\\mathrm{Hz}=17.6\\,\\mathrm{THz}$."
+    },
+    "k04.q15": {
+      "frage": "Build the formula for the wavelength width and calculate it for $\\lambda_0=1030\\,\\mathrm{nm}$ and $\\Delta\\nu=2\\,\\mathrm{THz}$. Answer in nm.",
+      "erklaerung": "$\\Delta\\lambda=\\dfrac{\\lambda_0^2\\Delta\\nu}{c}=\\dfrac{(1.03\\cdot10^{-6}\\,\\mathrm{m})^2\\cdot2\\cdot10^{12}\\,\\mathrm{Hz}}{3\\cdot10^{8}\\,\\mathrm{m/s}}\\approx7.07\\,\\mathrm{nm}$.",
+      "tipp": "Insert everything in SI (m, Hz, m/s). The result comes out in m; times $10^9$ gives nm."
+    },
+    "k04.q16": {
+      "frage": "An oscillator has a linear cavity of $L=1.2\\,\\mathrm{m}$. What repetition rate does it have, in MHz?",
+      "erklaerung": "$f=c/(2L)=3\\cdot10^{8}/2.4=1.25\\cdot10^{8}\\,\\mathrm{Hz}=125\\,\\mathrm{MHz}$."
+    },
+    "k04.q17": {
+      "frage": "A Fourier-limited Gaussian pulse with $\\tau_0=50\\,\\mathrm{fs}$ experiences $\\varphi_2=10^{4}\\,\\mathrm{fs^2}$. How long is it afterwards, in fs?",
+      "erklaerung": "$x=4\\ln2\\cdot\\varphi_2/\\tau_0^2=2.77\\cdot10^{4}/2500=11.1$; $\\tau_\\mathrm{out}=50\\,\\mathrm{fs}\\sqrt{1+11.1^2}\\approx557\\,\\mathrm{fs}$.",
+      "tipp": "First calculate $x=4\\ln2\\cdot\\varphi_2/\\tau_0^2$ (ln key), then $\\tau_0\\sqrt{1+x^2}$."
+    },
+    "k04.q18": {
+      "frage": "After amplification the stretched pulse has $E_\\mathrm{p}=1\\,\\mathrm{mJ}$ and $\\tau=2\\,\\mathrm{ns}$. What is the peak power in the amplifier, in kW?",
+      "erklaerung": "$P\\approx E_\\mathrm{p}/\\tau=10^{-3}\\,\\mathrm{J}/(2\\cdot10^{-9}\\,\\mathrm{s})=5\\cdot10^{5}\\,\\mathrm{W}=500\\,\\mathrm{kW}$."
+    },
+    "k04.q19": {
+      "frage": "The same pulse (1 mJ) is compressed to $\\tau=400\\,\\mathrm{fs}$. What is the peak power in GW?",
+      "erklaerung": "$P\\approx10^{-3}\\,\\mathrm{J}/(4\\cdot10^{-13}\\,\\mathrm{s})=2.5\\cdot10^{9}\\,\\mathrm{W}=2.5\\,\\mathrm{GW}$. That is 5000 times the power in the amplifier."
+    },
+    "k04.q20": {
+      "frage": "Build the formula for the maximum repetition rate for a given average power and pulse energy and calculate it for $P_\\mathrm{avg}=30\\,\\mathrm{W}$ and $E_\\mathrm{p}=100\\,\\mu\\mathrm{J}$. Answer in kHz.",
+      "erklaerung": "$f_\\mathrm{max}=P_\\mathrm{avg}/E_\\mathrm{p}=30\\,\\mathrm{W}/(10^{-4}\\,\\mathrm{J})=3\\cdot10^{5}\\,\\mathrm{Hz}=300\\,\\mathrm{kHz}$."
+    },
+    "k04.q21": {
+      "frage": "Match each station to its task.",
+      "paare": [
+        [
+          "Oscillator",
+          "Generates short pulses with low energy"
+        ],
+        [
+          "Stretcher",
+          "Lengthens the pulse and lowers the peak power"
+        ],
+        [
+          "Amplifier",
+          "Raises the pulse energy"
+        ],
+        [
+          "Compressor",
+          "Restores the short pulse through negative GDD"
+        ]
+      ],
+      "erklaerung": "CPA: stretching protects the amplifier, the compressor brings the pulse duration back."
+    },
+    "k04.c06": {
+      "vorne": "How do you calculate the minimum wavelength width of a pulse?",
+      "hinten": "First $\\Delta\\nu=K/\\tau$ (Gaussian: $K=0.441$), then $\\Delta\\lambda=\\lambda_0^2\\Delta\\nu/c$."
+    }
+  }
+}

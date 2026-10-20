@@ -450,6 +450,159 @@
           "quelle": "Herleitung"
         }
       ]
+    },
+    {
+      "id": "k04.l06",
+      "titel": "Rechentraining: Pulse, Spektrum, Verstärker",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k04.l06.b01",
+          "typ": "text",
+          "inhalt": "Rechne die Größen aus K04 selbst. Bei Gauß-Pulsen gilt $K=0{,}441$; Zeiten rechnest du in Sekunden (1 fs $=10^{-15}$ s), Frequenzen in Hz (1 THz $=10^{12}$ Hz).",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k04.q14",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die minimale Frequenzbreite eines fourierlimitierten Gauß-Pulses ($K=0{,}441$) und berechne sie für $\\tau=25\\,\\mathrm{fs}$. Antwort in THz.",
+          "vorlage": "$\\Delta\\nu=$ {{ [] // [] }}",
+          "richtig": [
+            "$K$",
+            "$\\tau$"
+          ],
+          "erklaerung": "$\\Delta\\nu=K/\\tau=0{,}441/(25\\cdot10^{-15}\\,\\mathrm{s})=1{,}76\\cdot10^{13}\\,\\mathrm{Hz}=17{,}6\\,\\mathrm{THz}$.",
+          "ablenker": [
+            "$\\tau^2$",
+            "$c$"
+          ],
+          "antwort": 17.6,
+          "einheit": "THz",
+          "toleranz": 0.03
+        },
+        {
+          "id": "k04.q15",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Wellenlängenbreite und berechne sie für $\\lambda_0=1030\\,\\mathrm{nm}$ und $\\Delta\\nu=2\\,\\mathrm{THz}$. Antwort in nm.",
+          "vorlage": "$\\Delta\\lambda=$ {{ [] $\\cdot$ [] // [] }}",
+          "richtig": [
+            "$\\lambda_0^2$",
+            "$\\Delta\\nu$",
+            "$c$"
+          ],
+          "erklaerung": "$\\Delta\\lambda=\\dfrac{\\lambda_0^2\\Delta\\nu}{c}=\\dfrac{(1{,}03\\cdot10^{-6}\\,\\mathrm{m})^2\\cdot2\\cdot10^{12}\\,\\mathrm{Hz}}{3\\cdot10^{8}\\,\\mathrm{m/s}}\\approx7{,}07\\,\\mathrm{nm}$.",
+          "ablenker": [
+            "$\\lambda_0$",
+            "$\\tau$"
+          ],
+          "tausch": [
+            [
+              0,
+              1
+            ]
+          ],
+          "antwort": 7.07,
+          "einheit": "nm",
+          "toleranz": 0.03,
+          "tipp": "Alles in SI einsetzen (m, Hz, m/s). Das Ergebnis kommt in m heraus; $10^9$ ergibt nm."
+        },
+        {
+          "id": "k04.q16",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Oszillator hat einen linearen Resonator von $L=1{,}2\\,\\mathrm{m}$. Welche Repetitionsrate hat er in MHz?",
+          "antwort": 125,
+          "einheit": "MHz",
+          "toleranz": 0.05,
+          "erklaerung": "$f=c/(2L)=3\\cdot10^{8}/2{,}4=1{,}25\\cdot10^{8}\\,\\mathrm{Hz}=125\\,\\mathrm{MHz}$."
+        },
+        {
+          "id": "k04.q17",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein fourierlimitierter Gauß-Puls mit $\\tau_0=50\\,\\mathrm{fs}$ erfährt $\\varphi_2=10^{4}\\,\\mathrm{fs^2}$. Wie lang ist er danach in fs?",
+          "antwort": 557,
+          "einheit": "fs",
+          "toleranz": 0.03,
+          "erklaerung": "$x=4\\ln2\\cdot\\varphi_2/\\tau_0^2=2{,}77\\cdot10^{4}/2500=11{,}1$; $\\tau_\\mathrm{out}=50\\,\\mathrm{fs}\\sqrt{1+11{,}1^2}\\approx557\\,\\mathrm{fs}$.",
+          "tipp": "Erst $x=4\\ln2\\cdot\\varphi_2/\\tau_0^2$ berechnen (ln-Taste), dann $\\tau_0\\sqrt{1+x^2}$."
+        },
+        {
+          "id": "k04.q18",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Nach der Verstärkung hat der gestreckte Puls $E_\\mathrm{p}=1\\,\\mathrm{mJ}$ und $\\tau=2\\,\\mathrm{ns}$. Wie hoch ist die Spitzenleistung im Verstärker in kW?",
+          "antwort": 500,
+          "einheit": "kW",
+          "toleranz": 0.05,
+          "erklaerung": "$P\\approx E_\\mathrm{p}/\\tau=10^{-3}\\,\\mathrm{J}/(2\\cdot10^{-9}\\,\\mathrm{s})=5\\cdot10^{5}\\,\\mathrm{W}=500\\,\\mathrm{kW}$."
+        },
+        {
+          "id": "k04.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Derselbe Puls (1 mJ) wird auf $\\tau=400\\,\\mathrm{fs}$ komprimiert. Wie hoch ist die Spitzenleistung in GW?",
+          "antwort": 2.5,
+          "einheit": "GW",
+          "toleranz": 0.05,
+          "erklaerung": "$P\\approx10^{-3}\\,\\mathrm{J}/(4\\cdot10^{-13}\\,\\mathrm{s})=2{,}5\\cdot10^{9}\\,\\mathrm{W}=2{,}5\\,\\mathrm{GW}$. Das ist das 5000-Fache der Leistung im Verstärker."
+        },
+        {
+          "id": "k04.q20",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die maximale Repetitionsrate bei gegebener mittlerer Leistung und Pulsenergie und berechne sie für $P_\\mathrm{avg}=30\\,\\mathrm{W}$ und $E_\\mathrm{p}=100\\,\\mu\\mathrm{J}$. Antwort in kHz.",
+          "vorlage": "$f_\\mathrm{max}=$ {{ [] // [] }}",
+          "richtig": [
+            "$P_\\mathrm{avg}$",
+            "$E_\\mathrm{p}$"
+          ],
+          "erklaerung": "$f_\\mathrm{max}=P_\\mathrm{avg}/E_\\mathrm{p}=30\\,\\mathrm{W}/(10^{-4}\\,\\mathrm{J})=3\\cdot10^{5}\\,\\mathrm{Hz}=300\\,\\mathrm{kHz}$.",
+          "ablenker": [
+            "$\\tau$",
+            "$P_\\mathrm{peak}$"
+          ],
+          "antwort": 300,
+          "einheit": "kHz",
+          "toleranz": 0.05
+        },
+        {
+          "id": "k04.q21",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jede Station ihrer Aufgabe zu.",
+          "paare": [
+            [
+              "Oszillator",
+              "Erzeugt kurze Pulse mit geringer Energie"
+            ],
+            [
+              "Strecker",
+              "Verlängert den Puls und senkt die Spitzenleistung"
+            ],
+            [
+              "Verstärker",
+              "Erhöht die Pulsenergie"
+            ],
+            [
+              "Kompressor",
+              "Stellt den kurzen Puls durch negative GDD wieder her"
+            ]
+          ],
+          "erklaerung": "CPA: Strecken schützt den Verstärker, der Kompressor holt die Pulsdauer zurück."
+        },
+        {
+          "id": "k04.c06",
+          "typ": "karte",
+          "vorne": "Wie berechnest du die minimale Wellenlängenbreite eines Pulses?",
+          "hinten": "Erst $\\Delta\\nu=K/\\tau$ (Gauß: $K=0{,}441$), dann $\\Delta\\lambda=\\lambda_0^2\\Delta\\nu/c$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

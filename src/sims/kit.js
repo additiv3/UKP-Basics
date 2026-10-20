@@ -2,6 +2,7 @@
 // Simulations are physics definitions with freely chosen parameters (no material data).
 import { h } from '../ui/dom.js';
 import { num } from '../core/format.js';
+import { t } from '../core/i18n.js';
 
 const SUPS = { 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹', '-': '⁻' };
 export const supNum = (n) => String(n).replace(/[0-9-]/g, (c) => SUPS[c]);
@@ -201,12 +202,12 @@ export class Plot {
     if (xlabel) {
       ctx.textAlign = 'right';
       ctx.textBaseline = 'bottom';
-      ctx.fillText(xlabel, this.x + this.w, this.y + this.h + 34);
+      ctx.fillText(t(xlabel), this.x + this.w, this.y + this.h + 34);
     }
     if (ylabel) {
       ctx.textAlign = 'left';
       ctx.textBaseline = 'bottom';
-      ctx.fillText(ylabel, this.x, this.y - 6);
+      ctx.fillText(t(ylabel), this.x, this.y - 6);
     }
     ctx.restore();
   }
@@ -312,7 +313,7 @@ export class Plot {
       ctx.font = '600 11.5px system-ui, sans-serif';
       ctx.textBaseline = 'bottom';
       ctx.textAlign = labelSide === 'left' ? 'left' : 'right';
-      ctx.fillText(label, labelSide === 'left' ? this.x + 6 : this.x + this.w - 6, py - 3);
+      ctx.fillText(t(label), labelSide === 'left' ? this.x + 6 : this.x + this.w - 6, py - 3);
     }
     ctx.restore();
   }
@@ -335,7 +336,7 @@ export class Plot {
       ctx.font = '600 11.5px system-ui, sans-serif';
       ctx.textAlign = px > this.x + this.w - 60 ? 'right' : 'left';
       ctx.textBaseline = labelBelow ? 'bottom' : 'top';
-      ctx.fillText(label, px + (ctx.textAlign === 'left' ? 5 : -5), labelBelow ? this.y + this.h - 4 : this.y + 4);
+      ctx.fillText(t(label), px + (ctx.textAlign === 'left' ? 5 : -5), labelBelow ? this.y + this.h - 4 : this.y + 4);
     }
     ctx.restore();
   }
@@ -364,7 +365,7 @@ export class Plot {
     ctx.font = `${bold ? '700 ' : ''}${size}px system-ui, sans-serif`;
     ctx.textAlign = align;
     ctx.textBaseline = base;
-    ctx.fillText(txt, x, y);
+    ctx.fillText(t(txt), x, y);
     ctx.restore();
   }
 }
@@ -388,7 +389,7 @@ export function control({ label, unit = '', min, max, value, log = false, step, 
     max: log ? 1 : max,
     step: log ? 0.0005 : (step ?? (max - min) / 400),
     value: toT(value),
-    'aria-label': `${label}${unit ? ` in ${unit}` : ''}`,
+    'aria-label': `${t(label)}${unit ? ` (${unit})` : ''}`,
   });
   const show = () => {
     out.textContent = fmt ? fmt(current) : `${num(current, 3)}${unit ? ` ${unit}` : ''}`;
@@ -400,7 +401,7 @@ export function control({ label, unit = '', min, max, value, log = false, step, 
   });
   show();
   return {
-    el: h('label', { class: 'calc-row' }, h('span', { class: 'calc-label' }, label), input, out),
+    el: h('label', { class: 'calc-row' }, h('span', { class: 'calc-label' }, t(label)), input, out),
     get: () => current,
     set(v) {
       current = v;
@@ -429,7 +430,7 @@ export function segmented(options, value, onChange) {
         },
         dataset: { id: o.id },
       },
-      o.label,
+      t(o.label),
     ),
   );
   const btn = (id) => buttons.find((b) => b.dataset.id === id);
@@ -445,11 +446,11 @@ export function readouts() {
     update(items) {
       el.replaceChildren(
         ...items.map((o) =>
-          h('div', { class: `calc-item ${o.tone ?? ''}` }, h('span', { class: 'calc-item-label' }, o.label), h('strong', {}, o.value)),
+          h('div', { class: `calc-item ${o.tone ?? ''}` }, h('span', { class: 'calc-item-label' }, t(o.label)), h('strong', {}, typeof o.value === 'string' ? t(o.value) : o.value)),
         ),
       );
     },
   };
 }
 
-export const note = (txt) => h('p', { class: 'hint sim-note' }, txt);
+export const note = (txt) => h('p', { class: 'hint sim-note' }, t(txt));

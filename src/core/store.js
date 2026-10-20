@@ -13,7 +13,7 @@ export function defaultState() {
     lessons: {}, // lesson id -> { done: 'YYYY-MM-DD' }
     unlocked: [], // chapter ids opened manually
     games: {}, // game id -> { best, plays }
-    settings: { dailyGoal: 40, reviewBatch: 15 },
+    settings: { dailyGoal: 40, reviewBatch: 15, lang: 'de' },
   };
 }
 

@@ -5,6 +5,7 @@ import * as store from '../../core/store.js';
 import { completeLesson, lessonDone, levelInfo, totalXp, XP } from '../../core/progress.js';
 import { toDay } from '../../core/dates.js';
 import { renderBlock } from '../../blocks/registry.js';
+import { t } from '../../core/i18n.js';
 
 const isItem = (b) => b.typ === 'quiz' || b.typ === 'karte';
 
@@ -12,7 +13,7 @@ export async function render({ id, lektion }, app) {
   const { data } = app;
   const chapter = data.chapters.get(id);
   const lesson = chapter?.lektionen.find((l) => l.id === lektion);
-  if (!lesson) return h('div', { class: 'page' }, h('a', { class: 'back', href: '#/' }, 'Zurück'), h('p', {}, 'Lektion nicht gefunden.'));
+  if (!lesson) return h('div', { class: 'page' }, h('a', { class: 'back', href: '#/' }, t('Zurück')), h('p', {}, t('Lektion nicht gefunden.')));
 
   const idx = chapter.lektionen.indexOf(lesson);
   const next = chapter.lektionen[idx + 1];
@@ -22,18 +23,18 @@ export async function render({ id, lektion }, app) {
   const fill = h('div', { class: 'progress-fill' });
   const label = h('span', { class: 'topbar-count' });
   const finish = h('section', { class: 'finish' });
-  const topbar = h('header', { class: 'topbar' }, h('a', { class: 'back', href: `#/kapitel/${id}`, 'aria-label': 'Zurück zum Kapitel', html: icon('back', 22) }), h('div', { class: 'progress grow', role: 'progressbar', 'aria-label': 'Fragen beantwortet' }, fill), label);
+  const topbar = h('header', { class: 'topbar' }, h('a', { class: 'back', href: `#/kapitel/${id}`, 'aria-label': t('Zurück zum Kapitel'), html: icon('back', 22) }), h('div', { class: 'progress grow', role: 'progressbar', 'aria-label': t('Fragen beantwortet') }, fill), label);
 
-  const navLinks = () => [next ? h('a', { class: 'btn btn-primary', href: `#/kapitel/${id}/${next.id}` }, `Weiter: ${next.titel}`) : null, h('a', { class: next ? 'btn btn-ghost' : 'btn btn-primary', href: `#/kapitel/${id}` }, 'Zum Kapitel')];
+  const navLinks = () => [next ? h('a', { class: 'btn btn-primary', href: `#/kapitel/${id}/${next.id}` }, t('Weiter: {x}', { x: next.titel })) : null, h('a', { class: next ? 'btn btn-ghost' : 'btn btn-primary', href: `#/kapitel/${id}` }, t('Zum Kapitel'))];
 
   function drawFinish() {
     if (lessonDone(store.get(), lesson.id)) {
-      finish.replaceChildren(h('p', { class: 'verdict ok' }, 'Lektion abgeschlossen'), h('div', { class: 'quiz-actions' }, navLinks()));
+      finish.replaceChildren(h('p', { class: 'verdict ok' }, t('Lektion abgeschlossen')), h('div', { class: 'quiz-actions' }, navLinks()));
       return;
     }
     const ready = answered() >= items.length;
     finish.replaceChildren(
-      h('p', { class: 'hint' }, ready ? 'Alle Fragen beantwortet.' : `Noch ${items.length - answered()} ${items.length - answered() === 1 ? 'Frage' : 'Fragen'} offen.`),
+      h('p', { class: 'hint' }, ready ? t('Alle Fragen beantwortet.') : t(items.length - answered() === 1 ? 'Noch {n} Frage offen.' : 'Noch {n} Fragen offen.', { n: items.length - answered() })),
       h(
         'button',
         {
@@ -46,14 +47,14 @@ export async function render({ id, lektion }, app) {
             const after = levelInfo(totalXp(store.get()));
             finish.classList.add('celebrate');
             append(clear(finish), [
-              h('p', { class: 'verdict ok' }, 'Geschafft!', h('span', { class: 'xp-chip' }, ` +${XP.lesson} XP`)),
+              h('p', { class: 'verdict ok' }, t('Geschafft!'), h('span', { class: 'xp-chip' }, ` +${XP.lesson} XP`)),
               after.level > before ? h('p', { class: 'levelup' }, `Level ${after.level}: ${after.title}`) : null,
-              h('p', { class: 'hint' }, 'Deine Fragen und Karten sind jetzt in der Wiederholung.'),
+              h('p', { class: 'hint' }, t('Deine Fragen und Karten sind jetzt in der Wiederholung.')),
               h('div', { class: 'quiz-actions' }, navLinks()),
             ]);
           },
         },
-        'Lektion abschließen',
+        t('Lektion abschließen'),
       ),
     );
   }
@@ -70,5 +71,5 @@ export async function render({ id, lektion }, app) {
   for (const block of lesson.blocks) content.append(await renderBlock(block, ctx));
   refresh();
 
-  return h('div', { class: 'page lesson' }, topbar, h('p', { class: 'kicker' }, `${chapter.titel} · Lektion ${idx + 1}`), h('h1', {}, lesson.titel), content, finish);
+  return h('div', { class: 'page lesson' }, topbar, h('p', { class: 'kicker' }, `${chapter.titel} · ${t('Lektion')} ${idx + 1}`), h('h1', {}, lesson.titel), content, finish);
 }

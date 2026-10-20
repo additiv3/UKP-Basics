@@ -1,0 +1,392 @@
+{
+  "id": "k10",
+  "titel": "Sonderverfahren",
+  "einleitung": "Vier Verfahren, die über das einfache Abtragen hinausgehen: selbstorganisierte LIPSS, selektives Ätzen (SLE), Bessel-Strahl und Filamentation für lange Fokuslinien sowie Wellenleiter und Volumenmodifikation. Qualitative Aussagen sind Literaturstand und als ungeprüft markiert, gerechnet wird mit freien Zahlenbeispielen.",
+  "ziele": [
+    "LIPSS-Typen und Entstehung einordnen",
+    "Das SLE-Prinzip und die Selektivität erklären und rechnen",
+    "Kernradius und Länge eines Bessel-Strahls abschätzen",
+    "Modifikationstypen unterscheiden und NA und Einmodenbedingung eines Wellenleiters berechnen"
+  ],
+  "weiterlesen": [
+    "gattass2008",
+    "sugioka2014",
+    "schaffer2001"
+  ],
+  "lektionen": [
+    {
+      "id": "k10.l01",
+      "titel": "LIPSS: selbstorganisierte Nanostrukturen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k10.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Bei Fluenzen nahe der Schwelle bilden sich auf vielen Oberflächen **periodische Wellen** ([[lipss]], laser-induced periodic surface structures). Sie entstehen von selbst, ohne dass die Struktur im Strahl steckt. Man unterscheidet grob:",
+            "- **LSFL** (low spatial frequency LIPSS): Periode in der Größenordnung der Wellenlänge, bei Metallen und Halbleitern meist **senkrecht** zur Polarisationsrichtung.\n- **HSFL** (high spatial frequency LIPSS): Periode deutlich unter der halben Wellenlänge.",
+            "Als Ursache wird vor allem die **Interferenz** des einfallenden Lichts mit Streuwellen bzw. Oberflächenplasmonen diskutiert (Sipe-Modell). Die Rückkopplung über viele Pulse (Inkubation) verstärkt die Struktur."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k10.l01.b02",
+          "typ": "text",
+          "inhalt": [
+            "Anwendungen, die in der Literatur genannt werden: veränderte Benetzbarkeit, Reibung und Verschleiß, Strukturfarben, Haftung von Beschichtungen und Zellen. Sie sind dann interessant, wenn man **große Flächen** mit Nanostruktur versehen will, denn LIPSS entstehen beim Scannen mit passendem Überlapp.",
+            "Der Gegenspieler: Bei der Ablation ist LIPSS oft **unerwünscht**, weil sie die Rauheit erhöht. Fluenz, Pulszahl und Polarisation entscheiden, ob sie wachsen."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k10.q01",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "LSFL stehen bei Metallen und Halbleitern typischerweise in welcher Richtung zur linearen Polarisation?",
+          "optionen": [
+            "Senkrecht",
+            "Parallel",
+            "Unter 45°",
+            "Zufällig"
+          ],
+          "richtig": 0,
+          "erklaerung": "Typisch senkrecht zur Polarisation (Literaturaussage, ungeprüft); bei Dielektrika sind auch andere Orientierungen berichtet."
+        },
+        {
+          "id": "k10.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "LSFL mit der Periode $\\Lambda\\approx\\lambda=1030\\,\\mathrm{nm}$: Wie viele Linien liegen auf einer Breite von $100\\,\\mu\\mathrm{m}$?",
+          "antwort": 97,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$100\\,\\mu\\mathrm{m}/1{,}03\\,\\mu\\mathrm{m}\\approx97$."
+        },
+        {
+          "id": "k10.q03",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die LIPSS-Art ihrer Eigenschaft zu.",
+          "paare": [
+            [
+              "LSFL",
+              "Periode in der Größenordnung von $\\lambda$"
+            ],
+            [
+              "HSFL",
+              "Periode deutlich unter $\\lambda/2$"
+            ]
+          ],
+          "erklaerung": "Zwei Familien; die genaue Periode hängt von Material, Wellenlänge, Pulszahl und Fluenz ab."
+        },
+        {
+          "id": "k10.c01",
+          "typ": "karte",
+          "vorne": "Was sind LIPSS?",
+          "hinten": "Selbstorganisierte periodische Nanostrukturen, entstehen bei Fluenzen nahe der Schwelle durch Interferenz und Rückkopplung über viele Pulse.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k10.l02",
+      "titel": "Selective Laser Etching (SLE)",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k10.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "[[sle]] ist ein **Zweischrittverfahren** für Quarzglas: (1) Ein fs-Laser schreibt im Volumen entlang einer 3D-Bahn eine Modifikation. (2) In einem Ätzbad (z. B. KOH oder HF) wird das modifizierte Material viel schneller abgetragen als das unveränderte. Zurück bleiben Hohlräume und Kanäle, die du gezielt in 3D entworfen hast.",
+            "Die Güte des Verfahrens beschreibt die **Selektivität** $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$ (Ätzrate modifiziert zu unmodifiziert). In der Literatur werden Werte von mehreren hundert und mehr berichtet (ungeprüft). Vorteile: keine thermische Schädigung, glatte Wände nach dem Ätzen, echte 3D-Geometrien. Grenzen: Das Ätzmittel muss den Kanal erreichen, und lange Kanäle ätzen langsamer."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k10.l02.b02",
+          "typ": "formel",
+          "latex": "S=\\frac{r_\\mathrm{mod}}{r_\\mathrm{unmod}},\\qquad \\ell=r_\\mathrm{mod}\\cdot t",
+          "erklaerung": "Selektivität aus den Ätzraten und die Ätzstrecke $\\ell$ bei konstanter Ätzrate nach der Zeit $t$ (Idealisierung: Die Ätzrate fällt in langen Kanälen).",
+          "titel": "SLE: Selektivität und Ätzstrecke",
+          "sammlung": "Sonderverfahren",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k10.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: $r_\\mathrm{mod}=12\\,\\mu\\mathrm{m/h}$ und $r_\\mathrm{unmod}=0{,}04\\,\\mu\\mathrm{m/h}$. Wie groß ist die Selektivität $S$?",
+          "antwort": 300,
+          "einheit": "",
+          "toleranz": 0.05,
+          "erklaerung": "$S=12/0{,}04=300$."
+        },
+        {
+          "id": "k10.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Konstante Ätzrate $r_\\mathrm{mod}=50\\,\\mu\\mathrm{m/min}$. Wie lange in Minuten dauert es, einen Kanal von $5\\,\\mathrm{mm}$ Länge zu ätzen? (In der Praxis fällt die Rate mit der Länge.)",
+          "antwort": 100,
+          "einheit": "min",
+          "toleranz": 0.05,
+          "erklaerung": "$t=\\ell/r=5000\\,\\mu\\mathrm{m}/(50\\,\\mu\\mathrm{m/min})=100\\,\\mathrm{min}$."
+        },
+        {
+          "id": "k10.q06",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die SLE-Schritte in die richtige Reihenfolge.",
+          "items": [
+            "3D-Geometrie entwerfen",
+            "Mit fs-Pulsen im Volumen modifizieren",
+            "Im Ätzbad selektiv ätzen",
+            "Spülen und prüfen"
+          ],
+          "erklaerung": "Erst Laser, dann Chemie: Die Modifikation legt fest, wo geätzt wird."
+        },
+        {
+          "id": "k10.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was bedeutet eine hohe Selektivität?",
+          "optionen": [
+            "Modifiziertes Material wird viel schneller geätzt als unmodifiziertes",
+            "Das Ätzbad ist heißer",
+            "Der Laser ist schneller",
+            "Das Glas ist transparenter"
+          ],
+          "richtig": 0,
+          "erklaerung": "$S=r_\\mathrm{mod}/r_\\mathrm{unmod}$: Je größer, desto schärfer bleiben Kanten und Wände."
+        },
+        {
+          "id": "k10.c02",
+          "typ": "karte",
+          "vorne": "Was ist SLE?",
+          "hinten": "Zweischrittverfahren: fs-Modifikation im Volumen, danach nasschemisches Ätzen. Selektivität $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k10.l03",
+      "titel": "Bessel-Strahl und Filamentation",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k10.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Gauß-Fokus hat wegen $z_\\mathrm{R}\\propto w_0^2$ nur eine kurze Schärfentiefe. Für Glas, das du über die **volle Dicke** (z. B. 0,5 bis 2 mm) in einem Durchgang trennen willst, ist das zu wenig. Zwei Wege zu einer **langen Fokuslinie**:",
+            "- **Bessel-Strahl** ([[bessel-strahl]]): Ein [[axicon]] (kegelförmige Linse) überlagert Strahlanteile unter einem Winkel $\\theta$. Die Interferenz erzeugt eine lange, schmale Linie mit konstantem Kern.\n- **Filamentation:** Selbstfokussierung (Kerr-Effekt) und Plasmadefokussierung halten sich im Gleichgewicht; der Puls bildet einen langen Kanal."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k10.l03.b02",
+          "typ": "formel",
+          "latex": "r_0\\approx\\frac{2{,}405}{k\\sin\\theta}=\\frac{0{,}383\\,\\lambda}{\\sin\\theta},\\qquad L\\approx\\frac{w_\\mathrm{in}}{\\tan\\theta}",
+          "erklaerung": "Radius $r_0$ des zentralen Kerns (erste Nullstelle von $J_0$ bei 2,405) und Länge $L$ der Fokuslinie für den Kegelwinkel $\\theta$ und den Strahlradius $w_\\mathrm{in}$ am Axicon. Geometrische Näherung.",
+          "titel": "Bessel-Strahl: Kern und Länge",
+          "sammlung": "Sonderverfahren",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k10.l03.b03",
+          "typ": "beispiel",
+          "aufgabe": "Ein Bessel-Strahl bei $\\lambda=1030\\,\\mathrm{nm}$ hat den Kegelwinkel $\\theta=10^{\\circ}$ und $w_\\mathrm{in}=2\\,\\mathrm{mm}$ (Zahlenbeispiele). Bestimme Kernradius und Linienlänge und vergleiche mit der Rayleighlänge eines Gauß-Fokus gleichen Radius.",
+          "schritte": [
+            "$r_0=0{,}383\\cdot1{,}03\\,\\mu\\mathrm{m}/\\sin10^{\\circ}=2{,}27\\,\\mu\\mathrm{m}$",
+            "$L=2\\,\\mathrm{mm}/\\tan10^{\\circ}=11{,}3\\,\\mathrm{mm}$",
+            "Gauß ($M^2=1$): $z_\\mathrm{R}=\\pi r_0^2/\\lambda=\\pi\\,(2{,}27)^2/1{,}03\\,\\mu\\mathrm{m}\\approx15{,}7\\,\\mu\\mathrm{m}$"
+          ],
+          "ergebnis": "Die Bessel-Linie ist mit etwa 11 mm rund 700-mal länger als die Rayleighlänge (16 µm) eines gleich schmalen Gauß-Fokus.",
+          "titel": "Rechenbeispiel",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k10.l03.b04",
+          "typ": "merke",
+          "inhalt": "Ein Bessel-Strahl ist kein Freibrief: Ein großer Teil der Energie liegt in den **Ringen** um den Kern, nicht im Kern selbst. Deshalb braucht man mehr Pulsenergie als bei einem gleich schmalen Gauß-Fokus.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k10.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Kernradius $r_0=0{,}383\\,\\lambda/\\sin\\theta$ für $\\lambda=515\\,\\mathrm{nm}$ und $\\theta=15^{\\circ}$. Antwort in µm (Rechner im DEG-Modus).",
+          "antwort": 0.762,
+          "einheit": "µm",
+          "toleranz": 0.02,
+          "erklaerung": "$r_0=0{,}383\\cdot0{,}515\\,\\mu\\mathrm{m}/\\sin15^{\\circ}=0{,}197/0{,}2588=0{,}762\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k10.q09",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Linienlänge $L=w_\\mathrm{in}/\\tan\\theta$ für $w_\\mathrm{in}=1{,}5\\,\\mathrm{mm}$ und $\\theta=5^{\\circ}$. Antwort in mm.",
+          "antwort": 17.1,
+          "einheit": "mm",
+          "toleranz": 0.02,
+          "erklaerung": "$L=1{,}5/\\tan5^{\\circ}=1{,}5/0{,}0875=17{,}1\\,\\mathrm{mm}$."
+        },
+        {
+          "id": "k10.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum nutzt man für das Trennen dicker Gläser in einem Durchgang einen Bessel-Strahl statt eines Gauß-Fokus?",
+          "optionen": [
+            "Er hat eine lange, schmale Fokuslinie",
+            "Er ist heller",
+            "Er braucht keine Pulse",
+            "Er verändert die Wellenlänge"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die lange Fokuslinie modifiziert die gesamte Dicke gleichzeitig."
+        },
+        {
+          "id": "k10.q11",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne Konzept und Mechanismus zu.",
+          "paare": [
+            [
+              "Bessel-Strahl",
+              "Axicon überlagert Strahlanteile unter einem Winkel"
+            ],
+            [
+              "Filamentation",
+              "Selbstfokussierung gleicht Plasmadefokussierung aus"
+            ],
+            [
+              "Gauß-Fokus",
+              "Kurze Schärfentiefe $z_\\mathrm{R}\\propto w_0^2$"
+            ]
+          ],
+          "erklaerung": "Alle drei sind Wege, Energie entlang der Strahlachse zu verteilen oder zu halten."
+        },
+        {
+          "id": "k10.c03",
+          "typ": "karte",
+          "vorne": "Wie groß ist der Kernradius eines Bessel-Strahls?",
+          "hinten": "$r_0\\approx0{,}383\\,\\lambda/\\sin\\theta$ (Kegelwinkel $\\theta$); Länge $L\\approx w_\\mathrm{in}/\\tan\\theta$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k10.l04",
+      "titel": "Wellenleiter und Volumenmodifikation",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k10.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Im Volumen von Glas verändert der fs-Fokus je nach Pulsenergie und Pulszahl die Struktur. In der Literatur werden grob drei Typen unterschieden:",
+            "- **Typ I:** glatte, lokale Brechungsindexänderung (meist leichte Erhöhung): geeignet für **Wellenleiter**.\n- **Typ II:** doppelbrechende Nanogitter, deren Orientierung von der Polarisation abhängt; erhöhen die Ätzrate (Grundlage von [[sle]]).\n- **Typ III:** Hohlräume (Voids) durch Mikroexplosionen, z. B. für optische Speicherung.",
+            "Wellenleiter schreibt man, indem der Fokus mit geringer Geschwindigkeit durch das Glas bewegt wird. Entlang der Bahn bleibt eine Spur mit leicht **erhöhtem Brechungsindex** zurück (Erstbeschreibung: Davis et al. 1996, Literatur prüfen)."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k10.l04.b02",
+          "typ": "formel",
+          "latex": "\\mathrm{NA}=\\sqrt{n_\\mathrm{c}^2-n_\\mathrm{cl}^2}\\approx\\sqrt{2\\,n\\,\\Delta n},\\qquad a_\\mathrm{max}=\\frac{2{,}405\\,\\lambda}{2\\pi\\,\\mathrm{NA}}",
+          "erklaerung": "Numerische Apertur $\\mathrm{NA}$ eines Wellenleiters mit Kern-Mantel-Indexdifferenz $\\Delta n$ und maximaler Kernradius $a_\\mathrm{max}$ für Einmodenbetrieb ($V=2\\pi a\\,\\mathrm{NA}/\\lambda<2{,}405$, Stufenindex-Näherung).",
+          "titel": "Wellenleiter: NA und Einmodenbedingung",
+          "sammlung": "Sonderverfahren",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k10.l04.b03",
+          "typ": "beispiel",
+          "aufgabe": "Zahlenbeispiel: Ein Wellenleiter in Glas mit $n=1{,}45$ und $\\Delta n=10^{-3}$ wird für $\\lambda=1550\\,\\mathrm{nm}$ ausgelegt. Bestimme NA und den maximalen Kernradius für Einmodenbetrieb.",
+          "schritte": [
+            "$\\mathrm{NA}\\approx\\sqrt{2\\cdot1{,}45\\cdot10^{-3}}=0{,}0539$",
+            "$a_\\mathrm{max}=2{,}405\\cdot1{,}55\\,\\mu\\mathrm{m}/(2\\pi\\cdot0{,}0539)=11{,}0\\,\\mu\\mathrm{m}$"
+          ],
+          "ergebnis": "NA ≈ 0,054 und ein Kernradius bis etwa 11 µm. Der geschriebene Wellenleiter ist also gut mit Standardfasern vergleichbar.",
+          "titel": "Rechenbeispiel",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k10.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Berechne $\\mathrm{NA}\\approx\\sqrt{2n\\Delta n}$ für $n=1{,}46$ und $\\Delta n=2\\cdot10^{-3}$ (Zahlenbeispiele).",
+          "antwort": 0.0764,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$\\sqrt{2\\cdot1{,}46\\cdot2\\cdot10^{-3}}=\\sqrt{5{,}84\\cdot10^{-3}}=0{,}0764$."
+        },
+        {
+          "id": "k10.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Maximaler Einmodenkernradius $a_\\mathrm{max}=2{,}405\\,\\lambda/(2\\pi\\,\\mathrm{NA})$ für $\\lambda=1550\\,\\mathrm{nm}$ und $\\mathrm{NA}=0{,}0764$. Antwort in µm.",
+          "antwort": 7.77,
+          "einheit": "µm",
+          "toleranz": 0.03,
+          "erklaerung": "$a_\\mathrm{max}=2{,}405\\cdot1{,}55/(2\\pi\\cdot0{,}0764)=3{,}728/0{,}480=7{,}77\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k10.q14",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Modifikationstyp seiner Beschreibung zu.",
+          "paare": [
+            [
+              "Typ I",
+              "Glatte Brechungsindexänderung (Wellenleiter)"
+            ],
+            [
+              "Typ II",
+              "Doppelbrechende Nanogitter (erhöhte Ätzrate)"
+            ],
+            [
+              "Typ III",
+              "Hohlräume durch Mikroexplosionen"
+            ]
+          ],
+          "erklaerung": "Gängige Einteilung aus der Literatur; die Grenzen hängen von Material und Parametern ab."
+        },
+        {
+          "id": "k10.q15",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie schreibt man einen Wellenleiter in Glas?",
+          "optionen": [
+            "Fokus mit niedriger Geschwindigkeit durchs Volumen bewegen: Spur mit leicht erhöhtem Brechungsindex",
+            "Oberfläche abtragen",
+            "Das Glas schmelzen",
+            "Mit dem Laser eine Faser ziehen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Der fs-Fokus verändert lokal die Struktur und damit den Brechungsindex; die Bahn wird zum Kern."
+        },
+        {
+          "id": "k10.c04",
+          "typ": "karte",
+          "vorne": "Welche drei Modifikationstypen unterscheidet man im Glasvolumen?",
+          "hinten": "Typ I: glatte Indexänderung (Wellenleiter), Typ II: Nanogitter (doppelbrechend), Typ III: Hohlräume (Voids).",
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+        }
+      ]
+    }
+  ]
+}

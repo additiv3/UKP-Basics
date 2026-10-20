@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { icon } from '../ui/icons.js';
 import { math, inline } from '../core/richtext.js';
+import { t } from '../core/i18n.js';
 
 export async function loadSim(modell) {
   if (!/^[a-z0-9-]+$/.test(modell) || modell === 'kit') throw new Error('invalid model');
@@ -21,15 +22,15 @@ export async function simCard(modell, { titel, showTitle = true } = {}) {
   return h(
     'div',
     { class: 'sim' },
-    showTitle ? h('div', { class: 'sim-head' }, h('span', { class: 'sim-tag', html: `${icon('bolt', 14)} Interaktiv` }), h('strong', { class: 'sim-title' }, titel ?? mod.meta.titel)) : null,
+    showTitle ? h('div', { class: 'sim-head' }, h('span', { class: 'sim-tag', html: `${icon('bolt', 14)} ${t('Interaktiv')}` }), h('strong', { class: 'sim-title' }, titel ?? t(mod.meta.titel))) : null,
     ...[].concat(mod.formel ?? []).map((f) => h('div', { class: 'formula small', html: math(f, true) })),
     body,
     mod.aufgaben?.length
       ? h(
           'details',
           { class: 'sim-tasks' },
-          h('summary', {}, 'Experimentier-Aufgaben'),
-          h('ul', {}, mod.aufgaben.map((a) => h('li', { html: inline(a) }))),
+          h('summary', {}, t('Experimentier-Aufgaben')),
+          h('ul', {}, mod.aufgaben.map((a) => h('li', { html: inline(t(a)) }))),
         )
       : null,
   );

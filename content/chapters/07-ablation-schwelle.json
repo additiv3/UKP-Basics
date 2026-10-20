@@ -463,6 +463,151 @@
           "quelle": "kerse2016"
         }
       ]
+    },
+    {
+      "id": "k07.l06",
+      "titel": "Rechentraining: Schwelle, Krater, Inkubation",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k07.l06.b01",
+          "typ": "text",
+          "inhalt": "Die Zahlen in dieser Lektion sind **Zahlenbeispiele**, keine Materialwerte. Den natürlichen Logarithmus findest du am Taschenrechner als **ln**, die Potenz mit **xʸ**.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k07.q11",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die D²-Gleichung und berechne damit den Kraterdurchmesser $D$ für $w_0=12\\,\\mu\\mathrm{m}$ und $F_0/F_\\mathrm{th}=5$. Antwort in µm (Wurzel nicht vergessen).",
+          "vorlage": "$D^2=$ [] $\\cdot\\ \\ln$ {{ [] // [] }}",
+          "richtig": [
+            "$2w_0^2$",
+            "$F_0$",
+            "$F_\\mathrm{th}$"
+          ],
+          "erklaerung": "$D^2=2w_0^2\\ln(F_0/F_\\mathrm{th})=2\\cdot144\\cdot\\ln5=463{,}5\\,\\mu\\mathrm{m}^2\\Rightarrow D=21{,}5\\,\\mu\\mathrm{m}$.",
+          "ablenker": [
+            "$w_0$",
+            "$E_\\mathrm{p}$"
+          ],
+          "antwort": 21.5,
+          "einheit": "µm",
+          "toleranz": 0.03,
+          "tipp": "$\\ln5\\approx1{,}609$. Erst $D^2$ ausrechnen, dann mit der √-Taste die Wurzel ziehen."
+        },
+        {
+          "id": "k07.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist der Kraterdurchmesser $D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$ für $w_0=15\\,\\mu\\mathrm{m}$ und $F_0=4\\,F_\\mathrm{th}$ in µm?",
+          "antwort": 25,
+          "einheit": "µm",
+          "toleranz": 0.03,
+          "erklaerung": "$D=15\\,\\mu\\mathrm{m}\\cdot\\sqrt{2\\ln4}=15\\cdot\\sqrt{2{,}77}=15\\cdot1{,}665=25\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k07.q13",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Schwellfluenz aus der Schwellenenergie und berechne sie für $E_\\mathrm{th}=0{,}8\\,\\mu\\mathrm{J}$ und $w_0=10\\,\\mu\\mathrm{m}$. Antwort in J/cm².",
+          "vorlage": "$F_\\mathrm{th}=$ {{ [] $\\cdot$ [] // $\\pi$ $\\cdot$ [] }}",
+          "richtig": [
+            "$2$",
+            "$E_\\mathrm{th}$",
+            "$w_0^2$"
+          ],
+          "erklaerung": "$F_\\mathrm{th}=\\dfrac{2E_\\mathrm{th}}{\\pi w_0^2}=\\dfrac{2\\cdot0{,}8\\cdot10^{-6}\\,\\mathrm{J}}{\\pi\\,(10^{-3}\\,\\mathrm{cm})^2}\\approx0{,}509\\,\\mathrm{J/cm^2}$.",
+          "ablenker": [
+            "$w_0$",
+            "$\\tau$"
+          ],
+          "tausch": [
+            [
+              0,
+              1
+            ]
+          ],
+          "antwort": 0.509,
+          "einheit": "J/cm²",
+          "toleranz": 0.03
+        },
+        {
+          "id": "k07.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Die Schwelle sei $F_\\mathrm{th}=0{,}4\\,\\mathrm{J/cm^2}$. Bei welcher Spitzenfluenz ist der Abtrag im Gauß-Modell am energieeffizientesten ($F_\\mathrm{opt}=e^2F_\\mathrm{th}$)? Antwort in J/cm².",
+          "antwort": 2.96,
+          "einheit": "J/cm²",
+          "toleranz": 0.02,
+          "erklaerung": "$F_\\mathrm{opt}=e^2\\cdot0{,}4=7{,}389\\cdot0{,}4\\approx2{,}96\\,\\mathrm{J/cm^2}$."
+        },
+        {
+          "id": "k07.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Inkubation mit $S=0{,}9$: Auf wie viel Prozent der Einzelpuls-Schwelle sinkt die Schwelle nach $N=500$ Pulsen?",
+          "antwort": 53.7,
+          "einheit": "%",
+          "toleranz": 0.03,
+          "erklaerung": "$500^{-0{,}1}=e^{-0{,}1\\ln500}=e^{-0{,}6215}=0{,}537\\Rightarrow53{,}7\\,\\%$."
+        },
+        {
+          "id": "k07.q16",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "$S=0{,}8$ und $F_0=0{,}5\\,F_\\mathrm{th}(1)$: Nach wie vielen Pulsen $N^\\ast=(F_\\mathrm{th}(1)/F_0)^{1/(1-S)}$ setzt Abtrag ein?",
+          "antwort": 32,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$N^\\ast=2^{1/0{,}2}=2^5=32$."
+        },
+        {
+          "id": "k07.q17",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Heat-Accumulation-Grenze $f_\\mathrm{krit}=D/w_0^2$ für $D=0{,}5\\,\\mathrm{cm^2/s}$ und $w_0=20\\,\\mu\\mathrm{m}$. Antwort in kHz.",
+          "antwort": 125,
+          "einheit": "kHz",
+          "toleranz": 0.03,
+          "erklaerung": "$f=5\\cdot10^{-5}\\,\\mathrm{m^2/s}/(2\\cdot10^{-5}\\,\\mathrm{m})^2=5\\cdot10^{-5}/4\\cdot10^{-10}=1{,}25\\cdot10^{5}\\,\\mathrm{Hz}=125\\,\\mathrm{kHz}$.",
+          "tipp": "$D$ in m²/s: 0,5 cm²/s $=5\\cdot10^{-5}$ m²/s; $w_0=2\\cdot10^{-5}$ m."
+        },
+        {
+          "id": "k07.q18",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne Gleichung und Aussage zu.",
+          "paare": [
+            [
+              "$\\delta=\\ell\\ln(F/F_\\mathrm{th})$",
+              "Abtragtiefe pro Puls"
+            ],
+            [
+              "$D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$",
+              "Schwellenbestimmung aus Kratern"
+            ],
+            [
+              "$F_\\mathrm{th}(N)=F_\\mathrm{th}(1)N^{S-1}$",
+              "Inkubation"
+            ],
+            [
+              "$F_\\mathrm{opt}=e^2F_\\mathrm{th}$",
+              "Effizienteste Fluenz im Modell"
+            ]
+          ],
+          "erklaerung": "Vier Kerngleichungen aus K07."
+        },
+        {
+          "id": "k07.c08",
+          "typ": "karte",
+          "vorne": "Wie rechnest du den Kraterdurchmesser aus Fluenzverhältnis und Strahlradius?",
+          "hinten": "$D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$ (Gauß-Strahl): kein Abtrag bei $F_0\\le F_\\mathrm{th}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

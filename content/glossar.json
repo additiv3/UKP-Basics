@@ -1,6 +1,33 @@
 {
   "begriffe": [
     {
+      "id": "debris",
+      "begriff": "Ablagerungen (Debris)",
+      "englisch": "debris",
+      "kurz": "Wieder abgelagertes Abtragsmaterial um die bearbeitete Stelle.",
+      "definition": "Debris besteht aus Partikeln, Tröpfchen und Kondensat. Er verschlechtert Kantenqualität und Rauheit und wird durch Absaugung oder Schutzgas reduziert.",
+      "siehe": [
+        "ablation",
+        "rauheit"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "ablation",
+      "begriff": "Ablation",
+      "englisch": "ablation",
+      "kurz": "Abtrag von Material durch Laserbestrahlung.",
+      "definition": "Bei der Laserablation wird Material durch Verdampfen, Schmelzauswurf, Spallation oder Plasmaprozesse entfernt. Sie setzt oberhalb der [[ablationsschwelle]] ein.",
+      "siehe": [
+        "ablationsschwelle",
+        "spallation",
+        "phasenexplosion"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "ablationsschwelle",
       "begriff": "Ablationsschwelle",
       "englisch": "ablation threshold",
@@ -12,6 +39,72 @@
       ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
+    },
+    {
+      "id": "abschwaecher",
+      "begriff": "Abschwächer",
+      "englisch": "attenuator",
+      "kurz": "Bauteil zur stufenlosen Einstellung der Pulsenergie.",
+      "definition": "Üblich: drehbare Lambda-Halbe-Platte vor einem Polarisator. Der Laser selbst bleibt dabei unverändert.",
+      "siehe": [
+        "polarisation",
+        "pulsenergie"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "absorption",
+      "begriff": "Absorption",
+      "englisch": "absorption",
+      "kurz": "Aufnahme von Lichtenergie durch das Material.",
+      "definition": "Bei der Absorption gibt das Licht Energie an das Material ab (Anregung von Elektronen oder Gitterschwingungen). Gemeinsam mit [[reflexion]] und [[transmission]] gilt $A+R+T=1$.",
+      "siehe": [
+        "reflexion",
+        "transmission",
+        "absorptionskoeffizient"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "absorptionskoeffizient",
+      "begriff": "Absorptionskoeffizient",
+      "englisch": "absorption coefficient",
+      "kurz": "Abschwächung der Intensität pro Weg, $\\alpha$ in 1/m (oder 1/cm).",
+      "definition": "Der Absorptionskoeffizient $\\alpha$ beschreibt im Lambert-Beer-Gesetz $I(z)=I_0e^{-\\alpha z}$ die Abschwächung. Der Kehrwert ist die [[eindringtiefe]].",
+      "siehe": [
+        "lambert-beer",
+        "eindringtiefe"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "abstract",
+      "begriff": "Abstract (Kurzfassung)",
+      "englisch": "abstract",
+      "kurz": "Kurzzusammenfassung eines Artikels: Ziel, Methode, Ergebnis, Schluss.",
+      "definition": "Der Abstract entscheidet, ob du einen Artikel liest. Beim Lesen lohnt die Reihenfolge: Abstract, Abbildungen, Schlussfolgerung, dann Methoden.",
+      "siehe": [
+        "peer-review",
+        "doi"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "abtragrate",
+      "begriff": "Abtragrate",
+      "englisch": "material removal rate",
+      "kurz": "Abgetragenes Volumen pro Zeit, z. B. in mm³/min.",
+      "definition": "Die Abtragrate $\\dot V$ folgt aus Volumen pro Puls und Repetitionsrate. Bezogen auf die Leistung ergibt sich die Effizienz in mm³/(min·W).",
+      "siehe": [
+        "repetitionsrate",
+        "ablation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     },
     {
       "id": "autokorrelation",
@@ -39,6 +132,19 @@
       "quelle": "Projektnotizen"
     },
     {
+      "id": "axicon",
+      "begriff": "Axicon",
+      "englisch": "axicon",
+      "kurz": "Kegelförmiges optisches Element, das einen Bessel-Strahl erzeugt.",
+      "definition": "Ein Axicon erzeugt eine lange, schmale Fokuslinie, mit der Glas über die ganze Dicke modifiziert werden kann.",
+      "siehe": [
+        "bessel-strahl",
+        "volumenmodifikation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "bandluecke",
       "begriff": "Bandlücke",
       "englisch": "band gap",
@@ -47,6 +153,19 @@
       "siehe": [
         "photonenenergie",
         "multiphotonenabsorption"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "peer-review",
+      "begriff": "Begutachtung (Peer Review)",
+      "englisch": "peer review",
+      "kurz": "Fachliche Prüfung eines Manuskripts durch unabhängige Experten vor der Veröffentlichung.",
+      "definition": "Peer Review sichert die Qualität wissenschaftlicher Artikel, ist aber kein Garant für Richtigkeit. Preprints sind nicht begutachtet.",
+      "siehe": [
+        "preprint",
+        "abstract"
       ],
       "verifiziert": true,
       "quelle": "Definition"
@@ -62,17 +181,69 @@
       "quelle": "Projektnotizen"
     },
     {
-      "id": "bpp",
-      "begriff": "Strahlparameterprodukt (BPP)",
-      "englisch": "beam parameter product",
-      "kurz": "Produkt aus Taillenradius und Divergenz-Halbwinkel, $\\mathrm{BPP}=w_0\\theta=M^2\\lambda/\\pi$.",
-      "definition": "Das Strahlparameterprodukt $\\mathrm{BPP}=w_0\\theta$ bleibt bei verlustfreier Strahlformung mit idealen Optiken erhalten und kennzeichnet die Strahlqualität. Für den idealen Gauß-Strahl ist $\\mathrm{BPP}=\\lambda/\\pi$. Üblich in mm·mrad.",
+      "id": "beugung",
+      "begriff": "Beugung",
+      "englisch": "diffraction",
+      "kurz": "Ausbreitung von Wellen um Hindernisse und durch Öffnungen; begrenzt die Fokusgröße.",
+      "definition": "Wegen der Beugung kann Licht nicht beliebig scharf fokussiert werden; der kleinste Fokus ist von der Größenordnung der Wellenlänge. Beugungsbegrenzt heißt: $M^2\\approx1$.",
       "siehe": [
         "m2",
+        "doe-element"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "m2",
+      "begriff": "Beugungsmaßzahl M²",
+      "englisch": "beam propagation factor M²",
+      "kurz": "Maß der Strahlqualität: $M^2=1$ ist ideal gaußsch, größere Werte fokussieren schlechter.",
+      "definition": "Die Beugungsmaßzahl $M^2\\ge1$ ist das Verhältnis des Strahlparameterprodukts (BPP) eines realen Strahls zum idealen Gauß-Strahl. Sie wird nach ISO 11146 aus den zweiten Momenten der Intensitätsverteilung bestimmt. Hohe $M^2$ vergrößern bei gleicher Optik den Fokus oder verkleinern die Rayleighlänge.",
+      "siehe": [
+        "bpp",
         "rayleighlaenge"
       ],
       "verifiziert": true,
       "quelle": "siegman1986"
+    },
+    {
+      "id": "brechungsindex",
+      "begriff": "Brechungsindex",
+      "englisch": "refractive index",
+      "kurz": "Verhältnis von Vakuumlichtgeschwindigkeit zu Phasengeschwindigkeit im Material, $n=c/v$.",
+      "definition": "Der Brechungsindex $n$ bestimmt, wie stark Licht im Material gebrochen und verzögert wird. Mit dem Extinktionskoeffizienten $\\kappa$ bildet er den komplexen Brechungsindex $\\tilde n=n+\\mathrm{i}\\kappa$. Er hängt von der Wellenlänge ab ([[dispersion]]).",
+      "siehe": [
+        "dispersion",
+        "fresnel"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "brennweite",
+      "begriff": "Brennweite",
+      "englisch": "focal length",
+      "kurz": "Abstand zwischen Linse und Fokus für parallel einfallendes Licht, $f$.",
+      "definition": "Die Brennweite $f$ bestimmt mit Wellenlänge, $M^2$ und Strahlradius auf der Linse die Fokusgröße: $w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})$.",
+      "siehe": [
+        "strahltaille",
+        "f-theta"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "bruchzaehigkeit",
+      "begriff": "Bruchzähigkeit",
+      "englisch": "fracture toughness",
+      "kurz": "Widerstand eines Werkstoffs gegen Rissausbreitung, $K_\\mathrm{Ic}$.",
+      "definition": "Die Bruchzähigkeit $K_\\mathrm{Ic}$ (Einheit MPa√m) gibt an, bei welcher Spannungsintensität ein vorhandener Riss instabil wächst. Keramiken haben niedrige Werte, Metalle hohe.",
+      "siehe": [
+        "spoedigkeit",
+        "rissbildung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     },
     {
       "id": "burst-mode",
@@ -126,18 +297,31 @@
       "quelle": "Projektnotizen"
     },
     {
-      "id": "d2-methode",
-      "begriff": "D²-Methode",
-      "englisch": "D² method",
-      "kurz": "Bestimmung von Schwelle und Strahlradius aus dem Quadrat des Kraterdurchmessers über $\\ln E_\\mathrm{p}$.",
-      "definition": "Nach Liu (1982) gilt $D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$. Eine Gerade im $D^2$–$\\ln E_\\mathrm{p}$-Diagramm liefert aus der Steigung $w_0$ und aus dem Nulldurchgang die Schwellenenergie.",
+      "id": "dielektrikum",
+      "begriff": "Dielektrikum",
+      "englisch": "dielectric",
+      "kurz": "Elektrischer Isolator mit großer Bandlücke, im Sichtbaren meist transparent.",
+      "definition": "Dielektrika wie Quarzglas und Saphir absorbieren Licht im Sichtbaren und nahen Infrarot nur über nichtlineare Prozesse. Das macht Volumenbearbeitung möglich.",
       "siehe": [
-        "ablationsschwelle",
-        "fluenz",
-        "strahlradius"
+        "bandluecke",
+        "quarzglas",
+        "volumenmodifikation"
       ],
       "verifiziert": true,
-      "quelle": "liu1982"
+      "quelle": "Definition"
+    },
+    {
+      "id": "doe-element",
+      "begriff": "Diffraktives optisches Element (DOE)",
+      "englisch": "diffractive optical element",
+      "kurz": "Optik, die den Strahl durch Beugung formt oder teilt.",
+      "definition": "DOEs erzeugen z. B. Top-Hat-Profile oder mehrere Strahlen für paralleles Bearbeiten.",
+      "siehe": [
+        "beugung",
+        "slm"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     },
     {
       "id": "dispersion",
@@ -154,6 +338,111 @@
       "quelle": "diels"
     },
     {
+      "id": "divergenz",
+      "begriff": "Divergenz",
+      "englisch": "divergence",
+      "kurz": "Aufweitung des Strahls mit der Entfernung, Halbwinkel $\\theta$.",
+      "definition": "Die Divergenz eines Gauß-Strahls ist $\\theta=M^2\\lambda/(\\pi w_0)$. Ein kleiner Fokus bedeutet große Divergenz.",
+      "siehe": [
+        "bpp",
+        "strahltaille"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "doi",
+      "begriff": "DOI",
+      "englisch": "DOI (digital object identifier)",
+      "kurz": "Dauerhafte Kennung eines Artikels, auflösbar über doi.org.",
+      "definition": "Ein DOI hat die Form 10.xxxx/yyyy. Er sollte in jedem Literatureintrag stehen und ist die verlässlichste Art, einen Artikel wiederzufinden.",
+      "siehe": [
+        "peer-review",
+        "abstract"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "d2-methode",
+      "begriff": "D²-Methode",
+      "englisch": "D² method",
+      "kurz": "Bestimmung von Schwelle und Strahlradius aus dem Quadrat des Kraterdurchmessers über $\\ln E_\\mathrm{p}$.",
+      "definition": "Nach Liu (1982) gilt $D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$. Eine Gerade im $D^2$–$\\ln E_\\mathrm{p}$-Diagramm liefert aus der Steigung $w_0$ und aus dem Nulldurchgang die Schwellenenergie.",
+      "siehe": [
+        "ablationsschwelle",
+        "fluenz",
+        "strahlradius"
+      ],
+      "verifiziert": true,
+      "quelle": "liu1982"
+    },
+    {
+      "id": "eigenspannung",
+      "begriff": "Eigenspannung",
+      "englisch": "residual stress",
+      "kurz": "Mechanische Spannung im Bauteil ohne äußere Last.",
+      "definition": "Eigenspannungen entstehen z. B. durch ungleichmäßige Erwärmung und Abkühlung oder durch lokale Modifikation (Volumenänderung). In Glas und Keramik können sie Risse auslösen.",
+      "siehe": [
+        "rissbildung",
+        "thermoschock"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "eindringtiefe",
+      "begriff": "Eindringtiefe",
+      "englisch": "penetration depth",
+      "kurz": "Tiefe, bei der die Intensität auf $1/e$ gefallen ist, $\\delta=1/\\alpha$.",
+      "definition": "Die Eindringtiefe (optische Eindringtiefe) $\\delta=1/\\alpha$ legt fest, in welcher Schicht die Energie absorbiert wird. Kleine $\\delta$ bedeutet hohe Energiedichte und niedrige Schwelle.",
+      "siehe": [
+        "absorptionskoeffizient",
+        "lambert-beer"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "elektron-phonon-kopplung",
+      "begriff": "Elektron-Phonon-Kopplung",
+      "englisch": "electron–phonon coupling",
+      "kurz": "Energieübertrag von den Elektronen an das Gitter, Konstante $G$.",
+      "definition": "Die Kopplung bestimmt, wie schnell sich Elektronen- und Gitterkomponente angleichen (Zeitskala von einigen Pikosekunden). Sie steht im Zwei-Temperatur-Modell als $G(T_\\mathrm{e}-T_\\mathrm{l})$.",
+      "siehe": [
+        "ttm",
+        "phonon"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "f-theta",
+      "begriff": "f-Theta-Linse",
+      "englisch": "f-theta lens",
+      "kurz": "Scanobjektiv, bei dem die Position proportional zum Ablenkwinkel ist, $x=f\\theta$.",
+      "definition": "Die f-Theta-Linse fokussiert auf eine ebene Fläche und legt Fokusgröße und Arbeitsfeld fest (beide $\\propto f$).",
+      "siehe": [
+        "galvo-scanner",
+        "brennweite"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "faserlaser",
+      "begriff": "Faserlaser",
+      "englisch": "fibre laser",
+      "kurz": "Laser mit dotierter Glasfaser als Verstärkungsmedium.",
+      "definition": "Faserlaser sind kompakt, robust und gut kühlbar; die hohe Intensität im kleinen Faserkern begrenzt die Pulsenergie durch Nichtlinearitäten.",
+      "siehe": [
+        "verstaerker",
+        "selbstphasenmodulation"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
       "id": "fluenz",
       "begriff": "Fluenz",
       "englisch": "fluence",
@@ -163,6 +452,111 @@
         "intensitaet",
         "ablationsschwelle",
         "gauss-strahl"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "fokuslage",
+      "begriff": "Fokuslage",
+      "englisch": "focus position",
+      "kurz": "Lage des Fokus relativ zur Werkstückoberfläche.",
+      "definition": "Die Fokuslage $z$ ist ein eigener Prozessparameter: Schon kleine Abweichungen ändern die Spitzenfluenz. Beim Tiefenabtrag wird sie nachgeführt.",
+      "siehe": [
+        "schaerfentiefe",
+        "rayleighlaenge"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "fourier-limit",
+      "begriff": "Fourier-Limit",
+      "englisch": "transform-limited pulse",
+      "kurz": "Kürzeste Pulsdauer bei gegebenem Spektrum, ohne Chirp.",
+      "definition": "Ein fourierlimitierter Puls erfüllt $\\tau\\Delta\\nu=K$. Jeder Chirp macht den Puls länger.",
+      "siehe": [
+        "zeit-bandbreite-produkt",
+        "chirp"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "frequenz",
+      "begriff": "Frequenz",
+      "englisch": "frequency",
+      "kurz": "Schwingungen pro Sekunde, $\\nu$ in Hz.",
+      "definition": "Die Frequenz $\\nu$ gibt an, wie oft die Lichtwelle pro Sekunde schwingt. Für Licht von 1030 nm ist $\\nu=c/\\lambda\\approx2{,}9\\cdot10^{14}\\,\\mathrm{Hz}$. Die Repetitionsrate eines Lasers ist davon zu unterscheiden.",
+      "siehe": [
+        "wellenlaenge",
+        "repetitionsrate"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "shg",
+      "begriff": "Frequenzverdopplung (SHG)",
+      "englisch": "second-harmonic generation",
+      "kurz": "Nichtlinearer Prozess, der die Frequenz verdoppelt und die Wellenlänge halbiert.",
+      "definition": "In einem nichtlinearen Kristall werden aus zwei Photonen der Grundwelle eines doppelter Energie: 1030 nm wird zu 515 nm. Auch Grundlage der [[autokorrelation]].",
+      "siehe": [
+        "thg",
+        "wellenlaenge"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "thg",
+      "begriff": "Frequenzverdreifachung (THG)",
+      "englisch": "third-harmonic generation",
+      "kurz": "Erzeugung der dritten Harmonischen: Wellenlänge durch drei.",
+      "definition": "Aus 1030 nm entstehen etwa 343 nm. Kürzere Wellenlänge heißt kleinerer Fokus und weniger nötige Photonen für die Bandlücke.",
+      "siehe": [
+        "shg",
+        "wellenlaenge"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "fresnel",
+      "begriff": "Fresnel-Gleichungen",
+      "englisch": "Fresnel equations",
+      "kurz": "Reflexions- und Transmissionsgrad an einer Grenzfläche, abhängig von Winkel und Polarisation.",
+      "definition": "Die Fresnel-Gleichungen geben Reflexion und Transmission an der Grenzfläche zweier Medien an, abhängig vom Einfallswinkel, von der [[polarisation]] und vom (komplexen) [[brechungsindex]].",
+      "siehe": [
+        "polarisation",
+        "brechungsindex",
+        "reflexion"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "frog",
+      "begriff": "FROG",
+      "englisch": "FROG (frequency-resolved optical gating)",
+      "kurz": "Verfahren zur Rekonstruktion von Amplitude und Phase eines Pulses.",
+      "definition": "FROG misst ein Spektrogramm (spektral aufgelöste Autokorrelation) und liefert Pulsform und Chirp, anders als die reine [[autokorrelation]].",
+      "siehe": [
+        "autokorrelation",
+        "spider"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "galvo-scanner",
+      "begriff": "Galvanometer-Scanner",
+      "englisch": "galvanometer scanner",
+      "kurz": "Zwei schnelle Spiegel, die den Strahl ablenken.",
+      "definition": "Zusammen mit einer [[f-theta]]-Linse erreicht er Scangeschwindigkeiten im m/s-Bereich. Trägheit und Beschleunigung begrenzen die Konturgenauigkeit.",
+      "siehe": [
+        "f-theta",
+        "hatch"
       ],
       "verifiziert": true,
       "quelle": "Definition"
@@ -194,6 +588,19 @@
       "quelle": "diels"
     },
     {
+      "id": "halbleiter",
+      "begriff": "Halbleiter",
+      "englisch": "semiconductor",
+      "kurz": "Material mit kleiner Bandlücke; Leitfähigkeit zwischen Metall und Isolator.",
+      "definition": "Bei Halbleitern entscheidet das Verhältnis von Photonenenergie zu Bandlücke, ob linear absorbiert wird. Beispiele: Silizium, Siliziumkarbid.",
+      "siehe": [
+        "bandluecke",
+        "silizium"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "halbwertsbreite",
       "begriff": "Halbwertsbreite (FWHM)",
       "englisch": "full width at half maximum",
@@ -218,19 +625,6 @@
       ],
       "verifiziert": true,
       "quelle": "Definition"
-    },
-    {
-      "id": "haz",
-      "begriff": "Wärmeeinflusszone (WEZ / HAZ)",
-      "englisch": "heat affected zone",
-      "kurz": "Durch Wärme veränderter Randbereich; bei UKP minimal.",
-      "definition": "Die Wärmeeinflusszone (WEZ, engl. HAZ) ist der Bereich neben der bearbeiteten Stelle, dessen Gefüge oder Eigenschaften durch Wärme verändert wurden. Bei UKP gilt sie als minimal.",
-      "siehe": [
-        "ukp",
-        "ttm"
-      ],
-      "verifiziert": false,
-      "quelle": "Projektnotizen"
     },
     {
       "id": "inkubation",
@@ -259,6 +653,33 @@
       "quelle": "Definition, Näherung"
     },
     {
+      "id": "interferenz",
+      "begriff": "Interferenz",
+      "englisch": "interference",
+      "kurz": "Überlagerung von Wellen: Verstärkung oder Auslöschung je nach Phasenlage.",
+      "definition": "Interferenz entsteht, wenn kohärente Wellen sich überlagern. Beispiele in der Laserbearbeitung: Autokorrelation, [[lipss]] und Beugungsoptiken.",
+      "siehe": [
+        "kohaerenz",
+        "beugung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "ionisation",
+      "begriff": "Ionisation",
+      "englisch": "ionization",
+      "kurz": "Freisetzung von Elektronen aus gebundenen Zuständen.",
+      "definition": "Im Dielektrikum bedeutet Ionisation die Anregung eines Elektrons vom [[valenzband]] ins [[leitungsband]]. Mechanismen: Mehrphotonen-, Tunnel- und Stoßionisation.",
+      "siehe": [
+        "multiphotonenabsorption",
+        "avalanche-ionisation",
+        "keldysh-parameter"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "keldysh-parameter",
       "begriff": "Keldysh-Parameter",
       "englisch": "Keldysh parameter",
@@ -271,6 +692,86 @@
       ],
       "verifiziert": false,
       "quelle": "keldysh1965"
+    },
+    {
+      "id": "keramik",
+      "begriff": "Keramik",
+      "englisch": "ceramic",
+      "kurz": "Anorganischer, nichtmetallischer, meist polykristalliner und spröder Werkstoff.",
+      "definition": "Technische Keramiken (z. B. Aluminiumoxid, Siliziumnitrid) sind hart, verschleißfest und temperaturbeständig, aber [[spoedigkeit|spröde]] und empfindlich gegen [[thermoschock]].",
+      "siehe": [
+        "spoedigkeit",
+        "thermoschock",
+        "rissbildung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "kohaerenz",
+      "begriff": "Kohärenz",
+      "englisch": "coherence",
+      "kurz": "Feste Phasenbeziehung der Lichtwelle über Zeit (zeitlich) oder Raum (räumlich).",
+      "definition": "Laserlicht ist kohärent: Die Phasen sind über große Strecken korreliert. Das ermöglicht scharfe Fokussierung und Interferenz.",
+      "siehe": [
+        "laser",
+        "interferenz"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "kollimation",
+      "begriff": "Kollimation",
+      "englisch": "collimation",
+      "kurz": "Parallelrichten eines divergenten Strahls.",
+      "definition": "Ein kollimierter Strahl hat über eine große Strecke nahezu konstanten Radius. Vor der Fokussierung wird der Strahl meist kollimiert und aufgeweitet.",
+      "siehe": [
+        "strahlaufweiter",
+        "divergenz"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "kompressor",
+      "begriff": "Kompressor",
+      "englisch": "compressor",
+      "kurz": "Dispersive Anordnung mit negativer GDD, die den Puls wieder verkürzt.",
+      "definition": "Meist ein Gitterpaar. Der Kompressor muss die gesamte Dispersion des Systems ausgleichen; er sitzt oft hinter dem Verstärker.",
+      "siehe": [
+        "cpa",
+        "strecker",
+        "gdd"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "krater",
+      "begriff": "Krater",
+      "englisch": "crater",
+      "kurz": "Vertiefung, die ein oder mehrere Pulse im Werkstoff hinterlassen.",
+      "definition": "Der Kraterdurchmesser $D$ dient in der [[d2-methode]] zur Bestimmung von Schwelle und Strahlradius.",
+      "siehe": [
+        "d2-methode",
+        "ablationsschwelle"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "gitter",
+      "begriff": "Kristallgitter",
+      "englisch": "crystal lattice",
+      "kurz": "Periodische Anordnung der Atome im Festkörper.",
+      "definition": "Im Zwei-Temperatur-Modell steht „Gitter“ für das System der Atomrümpfe und ihrer Schwingungen ([[phonon|Phononen]]), im Gegensatz zum Elektronensystem.",
+      "siehe": [
+        "phonon",
+        "ttm"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     },
     {
       "id": "kritische-dichte",
@@ -286,6 +787,59 @@
       "quelle": "Herleitung (ε(ω) = 1 − ω_p²/ω²)"
     },
     {
+      "id": "lambert-beer",
+      "begriff": "Lambert-Beer-Gesetz",
+      "englisch": "Beer–Lambert law",
+      "kurz": "Exponentieller Intensitätsabfall im Material, $I=I_0e^{-\\alpha z}$.",
+      "definition": "Das Lambert-Beer-Gesetz beschreibt die lineare Absorption: Die Intensität fällt exponentiell mit der Tiefe $z$. Bei nichtlinearer Absorption gilt es nicht mehr, weil $\\alpha$ von der Intensität abhängt.",
+      "siehe": [
+        "absorptionskoeffizient",
+        "multiphotonenabsorption"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "laser",
+      "begriff": "Laser",
+      "englisch": "laser",
+      "kurz": "Lichtquelle, die kohärentes Licht durch stimulierte Emission erzeugt.",
+      "definition": "Laser steht für Light Amplification by Stimulated Emission of Radiation. Ein Verstärkungsmedium in einem [[resonator]] erzeugt kohärentes, meist schmalbandiges Licht mit geringer Divergenz.",
+      "siehe": [
+        "resonator",
+        "verstaerkungsmedium",
+        "kohaerenz"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "zerstoerschwelle",
+      "begriff": "Laserinduzierte Zerstörschwelle (LIDT)",
+      "englisch": "laser-induced damage threshold (LIDT)",
+      "kurz": "Fluenz, ab der eine Optik oder Probe dauerhaft geschädigt wird.",
+      "definition": "Prüfverfahren wie 1-on-1 und S-on-1 stehen in ISO 21254. Die LIDT hängt von Pulsdauer, Wellenlänge und Pulszahl ab.",
+      "siehe": [
+        "ablationsschwelle",
+        "inkubation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "leitungsband",
+      "begriff": "Leitungsband",
+      "englisch": "conduction band",
+      "kurz": "Energetisch höheres Elektronenband, im Grundzustand leer (Isolator, Halbleiter).",
+      "definition": "Elektronen im Leitungsband sind beweglich und absorbieren Licht als freie Ladungsträger. Bei Metallen ist das Leitungsband teilweise gefüllt.",
+      "siehe": [
+        "valenzband",
+        "bandluecke"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "lipss",
       "begriff": "LIPSS",
       "englisch": "laser-induced periodic surface structures",
@@ -296,17 +850,30 @@
       "quelle": "Projektnotizen"
     },
     {
-      "id": "m2",
-      "begriff": "Beugungsmaßzahl M²",
-      "englisch": "beam propagation factor M²",
-      "kurz": "Maß der Strahlqualität: $M^2=1$ ist ideal gaußsch, größere Werte fokussieren schlechter.",
-      "definition": "Die Beugungsmaßzahl $M^2\\ge1$ ist das Verhältnis des Strahlparameterprodukts (BPP) eines realen Strahls zum idealen Gauß-Strahl. Sie wird nach ISO 11146 aus den zweiten Momenten der Intensitätsverteilung bestimmt. Hohe $M^2$ vergrößern bei gleicher Optik den Fokus oder verkleinern die Rayleighlänge.",
+      "id": "knife-edge",
+      "begriff": "Messerschneidenverfahren",
+      "englisch": "knife-edge method",
+      "kurz": "Strahlradiusmessung durch Verfahren einer Kante durch den Strahl.",
+      "definition": "Aus der durchgelassenen Leistung folgt der Radius: $w=\\Delta x_{10\\text{–}90}/1{,}28$ für einen Gauß-Strahl.",
       "siehe": [
-        "bpp",
-        "rayleighlaenge"
+        "strahlprofil",
+        "strahlradius"
       ],
       "verifiziert": true,
-      "quelle": "siegman1986"
+      "quelle": "Definition"
+    },
+    {
+      "id": "messunsicherheit",
+      "begriff": "Messunsicherheit",
+      "englisch": "measurement uncertainty",
+      "kurz": "Streubereich, in dem der wahre Wert einer Messgröße erwartet wird.",
+      "definition": "Unkorrelierte relative Unsicherheiten werden quadratisch addiert. Bei der Fluenz geht der Strahlradius doppelt ein: $\\delta F/F=\\sqrt{(\\delta E/E)^2+(2\\delta w/w)^2}$.",
+      "siehe": [
+        "fluenz",
+        "knife-edge"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     },
     {
       "id": "mittlere-leistung",
@@ -349,6 +916,33 @@
       "quelle": "Projektnotizen"
     },
     {
+      "id": "nichtthermischer-abtrag",
+      "begriff": "Nichtthermischer Abtrag",
+      "englisch": "non-thermal ablation",
+      "kurz": "Abtrag, bei dem die Energie das Gitter erreicht, bevor Wärme abfließen kann.",
+      "definition": "„Nichtthermisch“ ist ein Grenzfall: Auch bei UKP wird die Energie am Ende Wärme, aber die Wärmeeinflusszone bleibt klein, weil die Zeit für Diffusion fehlt.",
+      "siehe": [
+        "ttm",
+        "diffusionslaenge",
+        "haz"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "oszillator",
+      "begriff": "Oszillator",
+      "englisch": "oscillator",
+      "kurz": "Modengekoppelter Laser, der den kurzen Seed-Puls erzeugt.",
+      "definition": "Der Oszillator liefert Pulse im Nanojoule-Bereich mit hoher Rate (z. B. 100 MHz). Er ist der erste Baustein eines [[cpa]]-Systems.",
+      "siehe": [
+        "modenkopplung",
+        "cpa"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "phasenexplosion",
       "begriff": "Phasenexplosion",
       "englisch": "phase explosion (explosive boiling)",
@@ -360,6 +954,31 @@
       ],
       "verifiziert": false,
       "quelle": "gamaly2002"
+    },
+    {
+      "id": "phonon",
+      "begriff": "Phonon",
+      "englisch": "phonon",
+      "kurz": "Quant der Gitterschwingung.",
+      "definition": "Phononen sind die Quasiteilchen der Gitterschwingungen. Die Energieabgabe heißer Elektronen an das Gitter erfolgt über [[elektron-phonon-kopplung]].",
+      "siehe": [
+        "elektron-phonon-kopplung",
+        "gitter"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "photon",
+      "begriff": "Photon",
+      "englisch": "photon",
+      "kurz": "Lichtquant mit der Energie $h\\nu$.",
+      "definition": "Ein Photon ist das Energiequant des Lichts. Es trägt die Energie $h\nu=hc/\\lambda$ und den Impuls $p=h/\\lambda$.",
+      "siehe": [
+        "photonenenergie"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     },
     {
       "id": "photonenenergie",
@@ -382,6 +1001,44 @@
       "siehe": [
         "kritische-dichte",
         "avalanche-ionisation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "plasmafrequenz",
+      "begriff": "Plasmafrequenz",
+      "englisch": "plasma frequency",
+      "kurz": "Eigenfrequenz des Elektronengases, $\\omega_\\mathrm{p}^2=n_\\mathrm{e}e^2/(\\varepsilon_0m_\\mathrm{e})$.",
+      "definition": "Unterhalb der Plasmafrequenz reflektiert ein Plasma, oberhalb ist es transparent. Gleichheit mit der Laserfrequenz definiert die [[kritische-dichte]].",
+      "siehe": [
+        "plasma",
+        "kritische-dichte"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "polarisation",
+      "begriff": "Polarisation",
+      "englisch": "polarization",
+      "kurz": "Schwingungsrichtung des elektrischen Feldes der Lichtwelle.",
+      "definition": "Die Polarisation kann linear, zirkular oder elliptisch sein. Sie beeinflusst Absorption bei schrägem Einfall und die Ausrichtung von [[lipss]].",
+      "siehe": [
+        "fresnel",
+        "lipss"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "preprint",
+      "begriff": "Preprint",
+      "englisch": "preprint",
+      "kurz": "Manuskript vor oder ohne Begutachtung, z. B. auf arXiv.",
+      "definition": "Preprints sind früh verfügbar, aber nicht begutachtet. Zitiere nach Möglichkeit die begutachtete Fassung.",
+      "siehe": [
+        "peer-review"
       ],
       "verifiziert": true,
       "quelle": "Definition"
@@ -427,6 +1084,72 @@
       "quelle": "Definition"
     },
     {
+      "id": "pulspicker",
+      "begriff": "Pulspicker",
+      "englisch": "pulse picker",
+      "kurz": "Schalter, der einzelne Pulse aus dem Pulszug auswählt.",
+      "definition": "Mit einem akustooptischen oder elektrooptischen Modulator wird die Repetitionsrate des Oszillators auf die Prozessrate gesenkt oder es werden Bursts gebildet.",
+      "siehe": [
+        "repetitionsrate",
+        "burst-mode"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "pulszug",
+      "begriff": "Pulszug",
+      "englisch": "pulse train",
+      "kurz": "Folge von Pulsen im Abstand $1/f$.",
+      "definition": "Ein Pulszug hat die mittlere Leistung $E_\\mathrm{p}f$ und die viel höhere Spitzenleistung $E_\\mathrm{p}/\\tau$.",
+      "siehe": [
+        "repetitionsrate",
+        "tastverhaeltnis"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "ueberlapp",
+      "begriff": "Pulsüberlapp",
+      "englisch": "pulse overlap",
+      "kurz": "Anteil des Spotdurchmessers, den aufeinanderfolgende Pulse gemeinsam bedecken.",
+      "definition": "Der lineare Überlapp $O=1-d/(2w_0)$ beschreibt, wie weit aufeinanderfolgende Spots übereinanderliegen. Hoher Überlapp bedeutet viele Pulse pro Stelle und damit Inkubation und Wärmeakkumulation.",
+      "siehe": [
+        "pulsabstand",
+        "inkubation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "quarzglas",
+      "begriff": "Quarzglas",
+      "englisch": "fused silica",
+      "kurz": "Amorphes, sehr reines Siliziumdioxid (SiO₂).",
+      "definition": "Quarzglas ist von UV bis nahes Infrarot transparent und hat eine sehr niedrige thermische Ausdehnung. Es ist der Standardwerkstoff für Volumenbearbeitung mit fs-Pulsen und für [[sle]].",
+      "siehe": [
+        "dielektrikum",
+        "sle",
+        "wellenleiter"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "rauheit",
+      "begriff": "Rauheit",
+      "englisch": "roughness",
+      "kurz": "Kurzwellige Abweichung der Oberfläche von der idealen Form, z. B. $Ra$ oder $Sa$.",
+      "definition": "Profilkenngrößen ($R$) stehen in ISO 21920, flächenhafte ($S$) in ISO 25178. Ohne Angabe von Filtern sind Rauheitswerte nicht vergleichbar.",
+      "siehe": [
+        "messunsicherheit",
+        "debris"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "rayleighlaenge",
       "begriff": "Rayleighlänge",
       "englisch": "Rayleigh length",
@@ -441,6 +1164,19 @@
       "quelle": "saleh2019"
     },
     {
+      "id": "reflexion",
+      "begriff": "Reflexion",
+      "englisch": "reflection",
+      "kurz": "Zurückwerfen eines Lichtanteils an der Oberfläche, Reflexionsgrad $R$.",
+      "definition": "Beim senkrechten Einfall auf ein transparentes Medium mit Brechungsindex $n$ ist der Reflexionsgrad $R=((n-1)/(n+1))^2$. Metalle reflektieren deutlich stärker.",
+      "siehe": [
+        "fresnel",
+        "brechungsindex"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "repetitionsrate",
       "begriff": "Repetitionsrate",
       "englisch": "repetition rate",
@@ -449,6 +1185,123 @@
       "siehe": [
         "mittlere-leistung",
         "burst-mode"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "resonator",
+      "begriff": "Resonator",
+      "englisch": "cavity (resonator)",
+      "kurz": "Anordnung aus Spiegeln, in der das Licht umläuft und verstärkt wird.",
+      "definition": "Der Resonator legt die erlaubten Moden fest. Bei einem linearen Resonator der Länge $L$ ist der Modenabstand $c/(2L)$.",
+      "siehe": [
+        "modenkopplung",
+        "verstaerkungsmedium"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "rissbildung",
+      "begriff": "Rissbildung",
+      "englisch": "cracking",
+      "kurz": "Entstehung von Rissen durch thermische oder mechanische Spannungen.",
+      "definition": "Beim Laserabtrag spröder Werkstoffe entstehen Risse durch steile Temperaturgradienten, Eigenspannungen oder Druckwellen. Gegenmaßnahmen: niedrigere Fluenz, weniger Wärmeakkumulation, angepasste Scanstrategie.",
+      "siehe": [
+        "eigenspannung",
+        "thermoschock",
+        "waermeakkumulation"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "slm",
+      "begriff": "Räumlicher Lichtmodulator (SLM)",
+      "englisch": "spatial light modulator",
+      "kurz": "Flüssigkristall-Display, das die Phase des Strahls ortsabhängig formt.",
+      "definition": "Mit einem SLM lassen sich Strahlprofile und Mehrfachfoki dynamisch programmieren.",
+      "siehe": [
+        "doe-element",
+        "strahlprofil"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "saphir",
+      "begriff": "Saphir",
+      "englisch": "sapphire",
+      "kurz": "Einkristallines Aluminiumoxid (Al₂O₃), hart und transparent.",
+      "definition": "Saphir ist ein sehr harter, transparenter Einkristall, verwendet als Fenster- und Substratmaterial; seine Bearbeitung ist wegen Härte und Sprödigkeit anspruchsvoll.",
+      "siehe": [
+        "dielektrikum",
+        "spoedigkeit"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "scheibenlaser",
+      "begriff": "Scheibenlaser",
+      "englisch": "thin-disk laser",
+      "kurz": "Festkörperlaser mit dünner Kristallscheibe als Verstärkungsmedium.",
+      "definition": "Die dünne Scheibe wird über die große Fläche gekühlt; das erlaubt hohe mittlere Leistung bei guter Strahlqualität.",
+      "siehe": [
+        "verstaerker"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "schaerfentiefe",
+      "begriff": "Schärfentiefe",
+      "englisch": "depth of focus",
+      "kurz": "Axialer Bereich um den Fokus mit nahezu unveränderter Fluenz, etwa $2z_\\mathrm{R}$.",
+      "definition": "Die Schärfentiefe (Tiefenschärfe) des Fokus ist von der Größenordnung $2z_\\mathrm{R}$. Sie schrumpft mit dem Quadrat des Fokusradius.",
+      "siehe": [
+        "rayleighlaenge",
+        "fokuslage"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "selbstfokussierung",
+      "begriff": "Selbstfokussierung",
+      "englisch": "self-focusing",
+      "kurz": "Der Kerr-Effekt bündelt einen intensiven Strahl ab einer kritischen Leistung.",
+      "definition": "In der Strahlmitte ist die Intensität höher, damit der Brechungsindex: Das Medium wirkt wie eine Linse. Selbstfokussierung kann Verstärkermedien zerstören und ist Grundlage der Filamentation.",
+      "siehe": [
+        "selbstphasenmodulation",
+        "bessel-strahl"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "selbstphasenmodulation",
+      "begriff": "Selbstphasenmodulation (SPM)",
+      "englisch": "self-phase modulation",
+      "kurz": "Intensitätsabhängiger Brechungsindex verbreitert das Spektrum eines Pulses.",
+      "definition": "Durch den Kerr-Effekt ($n=n_0+n_2I$) ändert ein intensiver Puls seine eigene Phase. Das erzeugt neue Frequenzen und begrenzt die Pulsenergie in Verstärkern.",
+      "siehe": [
+        "selbstfokussierung",
+        "cpa"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "silizium",
+      "begriff": "Silizium",
+      "englisch": "silicon",
+      "kurz": "Elementhalbleiter mit indirekter Bandlücke, Standardwerkstoff der Mikroelektronik.",
+      "definition": "Silizium ist bei Photonenenergien über der Bandlücke absorbierend und darunter weitgehend transparent. Wafer werden mit UKP-Lasern dünn geschnitten und strukturiert.",
+      "siehe": [
+        "halbleiter",
+        "bandluecke"
       ],
       "verifiziert": true,
       "quelle": "Definition"
@@ -477,6 +1330,19 @@
       "quelle": "gamaly2002"
     },
     {
+      "id": "spider",
+      "begriff": "SPIDER",
+      "englisch": "SPIDER (spectral phase interferometry for direct electric-field reconstruction)",
+      "kurz": "Interferometrisches Verfahren zur Messung von Pulsform und Phase.",
+      "definition": "SPIDER rekonstruiert die spektrale Phase direkt aus einem Interferogramm und eignet sich für sehr kurze Pulse.",
+      "siehe": [
+        "frog",
+        "autokorrelation"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
       "id": "spitzenleistung",
       "begriff": "Spitzenleistung",
       "englisch": "peak power",
@@ -491,6 +1357,71 @@
       "quelle": "Definition, Näherung"
     },
     {
+      "id": "spotdurchmesser",
+      "begriff": "Spotdurchmesser",
+      "englisch": "spot size",
+      "kurz": "Durchmesser des Strahls im Fokus, meist $2w_0$ (bei $1/e^2$).",
+      "definition": "Der Spotdurchmesser ist nicht gleich dem abgetragenen Durchmesser: Wegen der Schwelle ist der Krater kleiner als $2w_0$.",
+      "siehe": [
+        "strahlradius",
+        "krater"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "spoedigkeit",
+      "begriff": "Sprödigkeit",
+      "englisch": "brittleness",
+      "kurz": "Bruch ohne nennenswerte plastische Verformung.",
+      "definition": "Spröde Werkstoffe wie Glas und Keramik versagen bei Zugspannungen plötzlich durch Rissausbreitung. Das begrenzt die zulässige thermische und mechanische Last beim Laserabtrag.",
+      "siehe": [
+        "bruchzaehigkeit",
+        "rissbildung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "strahlaufweiter",
+      "begriff": "Strahlaufweiter",
+      "englisch": "beam expander",
+      "kurz": "Teleskop, das den Strahlradius vergrößert.",
+      "definition": "Ein größerer Strahl auf der Linse ergibt einen kleineren Fokus ($w_0\\propto1/w_\\mathrm{in}$).",
+      "siehe": [
+        "kollimation",
+        "brennweite"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "bpp",
+      "begriff": "Strahlparameterprodukt (BPP)",
+      "englisch": "beam parameter product",
+      "kurz": "Produkt aus Taillenradius und Divergenz-Halbwinkel, $\\mathrm{BPP}=w_0\\theta=M^2\\lambda/\\pi$.",
+      "definition": "Das Strahlparameterprodukt $\\mathrm{BPP}=w_0\\theta$ bleibt bei verlustfreier Strahlformung mit idealen Optiken erhalten und kennzeichnet die Strahlqualität. Für den idealen Gauß-Strahl ist $\\mathrm{BPP}=\\lambda/\\pi$. Üblich in mm·mrad.",
+      "siehe": [
+        "m2",
+        "rayleighlaenge"
+      ],
+      "verifiziert": true,
+      "quelle": "siegman1986"
+    },
+    {
+      "id": "strahlprofil",
+      "begriff": "Strahlprofil",
+      "englisch": "beam profile",
+      "kurz": "Räumliche Verteilung der Intensität im Strahlquerschnitt.",
+      "definition": "Das Strahlprofil wird mit einer Kamera oder dem Messerschneidenverfahren bestimmt. Typische Profile: Gauß, Top-Hat, Bessel.",
+      "siehe": [
+        "knife-edge",
+        "gauss-strahl"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "strahlradius",
       "begriff": "Strahlradius",
       "englisch": "beam radius",
@@ -503,26 +1434,118 @@
       "quelle": "Definition"
     },
     {
-      "id": "ttm",
-      "begriff": "Zwei-Temperatur-Modell (TTM)",
-      "englisch": "two-temperature model",
-      "kurz": "Modell mit getrennten Temperaturen für Elektronen- und Gittersystem.",
-      "definition": "Das Zwei-Temperatur-Modell (TTM) beschreibt Elektronen- und Gittersystem mit getrennten Temperaturen, die über eine Kopplung Energie austauschen. Es ist das Standardmodell für die Wechselwirkung von Ultrakurzpulsen mit Metallen.",
+      "id": "strahltaille",
+      "begriff": "Strahltaille",
+      "englisch": "beam waist",
+      "kurz": "Engste Stelle des Strahls (Fokus) mit Radius $w_0$.",
+      "definition": "An der Strahltaille ist die Wellenfront eben und die Spitzenfluenz maximal. Von dort an weitet sich der Strahl mit der [[rayleighlaenge]] als Längenmaß auf.",
       "siehe": [
-        "ukp"
+        "strahlradius",
+        "rayleighlaenge"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "strecker",
+      "begriff": "Strecker",
+      "englisch": "stretcher",
+      "kurz": "Dispersive Anordnung, die den Puls zeitlich verlängert.",
+      "definition": "Der Strecker erzeugt positive [[gdd]] und senkt die Spitzenleistung vor dem Verstärker um den Streckfaktor.",
+      "siehe": [
+        "cpa",
+        "kompressor"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "tastverhaeltnis",
+      "begriff": "Tastverhältnis",
+      "englisch": "duty cycle",
+      "kurz": "Zeitanteil, in dem Leistung fließt, $\\tau\\cdot f$.",
+      "definition": "Bei UKP-Lasern ist das Tastverhältnis winzig (z. B. $3\\cdot10^{-8}$ bei 300 fs und 100 kHz). Es ist das Verhältnis von mittlerer zu Spitzenleistung.",
+      "siehe": [
+        "pulszug",
+        "spitzenleistung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "temperaturleitfaehigkeit",
+      "begriff": "Temperaturleitfähigkeit",
+      "englisch": "thermal diffusivity",
+      "kurz": "Maß für die Geschwindigkeit des Temperaturausgleichs, $D=\\lambda_\\mathrm{th}/(\\rho c_p)$.",
+      "definition": "Die Temperaturleitfähigkeit $D$ (Einheit m²/s) bestimmt die [[diffusionslaenge|Diffusionslänge]] $L_\\mathrm{th}\\approx\\sqrt{D\\tau}$.",
+      "siehe": [
+        "diffusionslaenge",
+        "waermeakkumulation"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "thermalisierung",
+      "begriff": "Thermalisierung",
+      "englisch": "thermalization",
+      "kurz": "Einstellung einer Gleichgewichtsverteilung der angeregten Elektronen.",
+      "definition": "Nach der Anregung verteilen die Elektronen ihre Energie untereinander. Erst danach ist eine Elektronentemperatur $T_\\mathrm{e}$ definiert.",
+      "siehe": [
+        "ttm",
+        "elektron-phonon-kopplung"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "diffusionslaenge",
+      "begriff": "Thermische Diffusionslänge",
+      "englisch": "thermal diffusion length",
+      "kurz": "Strecke, die Wärme in der Zeit $\\tau$ zurücklegt, $L_\\mathrm{th}\\approx\\sqrt{D\\tau}$.",
+      "definition": "Ist $L_\\mathrm{th}$ kleiner als die [[eindringtiefe]], bleibt die Energie im Absorptionsvolumen: kaum Wärmeeinflusszone.",
+      "siehe": [
+        "temperaturleitfaehigkeit",
+        "haz"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "thermoschock",
+      "begriff": "Thermoschock",
+      "englisch": "thermal shock",
+      "kurz": "Rissbildung durch schnelle Temperaturwechsel.",
+      "definition": "Bei schnellem Aufheizen entsteht ein Temperaturgradient und damit eine thermische Spannung. Überschreitet sie die Festigkeit, bricht das Bauteil. Die Thermoschockbeständigkeit hängt von Ausdehnung, Wärmeleitung und Festigkeit ab.",
+      "siehe": [
+        "rissbildung",
+        "keramik"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "ti-saphir",
+      "begriff": "Titan-Saphir-Laser",
+      "englisch": "Ti:sapphire laser",
+      "kurz": "Festkörperlaser mit sehr großer Verstärkungsbandbreite um etwa 800 nm.",
+      "definition": "Wegen der großen Bandbreite sind Pulse von wenigen Femtosekunden möglich. Üblich ist Kerr-Linsen-Modenkopplung.",
+      "siehe": [
+        "modenkopplung",
+        "verstaerkungsmedium"
       ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
     },
     {
-      "id": "ueberlapp",
-      "begriff": "Pulsüberlapp",
-      "englisch": "pulse overlap",
-      "kurz": "Anteil des Spotdurchmessers, den aufeinanderfolgende Pulse gemeinsam bedecken.",
-      "definition": "Der lineare Überlapp $O=1-d/(2w_0)$ beschreibt, wie weit aufeinanderfolgende Spots übereinanderliegen. Hoher Überlapp bedeutet viele Pulse pro Stelle und damit Inkubation und Wärmeakkumulation.",
+      "id": "transmission",
+      "begriff": "Transmission",
+      "englisch": "transmission",
+      "kurz": "Durchgang des Lichts durch das Material.",
+      "definition": "Die Transmission $T$ ist der Anteil des Lichts, der das Material durchquert. Transparente Dielektrika haben bei Photonenenergien unter der Bandlücke eine hohe Transmission.",
       "siehe": [
-        "pulsabstand",
-        "inkubation"
+        "absorption",
+        "bandluecke"
       ],
       "verifiziert": true,
       "quelle": "Definition"
@@ -542,6 +1565,127 @@
       "quelle": "Projektnotizen"
     },
     {
+      "id": "valenzband",
+      "begriff": "Valenzband",
+      "englisch": "valence band",
+      "kurz": "Energetisch tiefes, bei $T=0$ gefülltes Elektronenband.",
+      "definition": "Das Valenzband enthält die am Bindungszustand beteiligten Elektronen. Eine Anregung ins [[leitungsband]] erfordert mindestens die Energie der [[bandluecke]].",
+      "siehe": [
+        "leitungsband",
+        "bandluecke"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "verstaerker",
+      "begriff": "Verstärker",
+      "englisch": "amplifier",
+      "kurz": "Stufe, die die Pulsenergie auf Mikro- bis Millijoule erhöht.",
+      "definition": "Typen: regenerative und Multipass-Verstärker, Faserverstärker, Scheibenlaser. Der Verstärker sieht in [[cpa]] den gestreckten Puls.",
+      "siehe": [
+        "cpa",
+        "strecker",
+        "faserlaser"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "verstaerkungsmedium",
+      "begriff": "Verstärkungsmedium",
+      "englisch": "gain medium",
+      "kurz": "Material, das Licht durch stimulierte Emission verstärkt.",
+      "definition": "Beispiele: Ytterbium-dotierte Kristalle und Fasern (um 1030 nm) und Titan-Saphir (um 800 nm). Die Bandbreite des Mediums begrenzt die kürzeste Pulsdauer.",
+      "siehe": [
+        "laser",
+        "ti-saphir"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "versuchsplanung",
+      "begriff": "Versuchsplanung (DoE)",
+      "englisch": "design of experiments (DoE)",
+      "kurz": "Systematische Planung von Versuchen, um viel Information mit wenigen Versuchen zu gewinnen.",
+      "definition": "Typische Pläne: Faktorstufenplan ($2^k$), zentral zusammengesetzter Plan (CCD), Box-Behnken. Mehrfachmessung, Randomisierung und Mittelpunktsversuche sichern die Aussage.",
+      "siehe": [
+        "messunsicherheit",
+        "hatch"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "volumenmodifikation",
+      "begriff": "Volumenmodifikation",
+      "englisch": "volume modification",
+      "kurz": "Lokale Veränderung des Werkstoffs im Inneren durch fokussierte fs-Pulse.",
+      "definition": "In transparenten Werkstoffen verändert der Fokus Dichte, Brechungsindex oder Ätzbarkeit, ohne die Oberfläche zu beschädigen. Anwendungen: [[sle]], [[wellenleiter]], Markierungen.",
+      "siehe": [
+        "sle",
+        "wellenleiter",
+        "quarzglas"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "wellenleiter",
+      "begriff": "Wellenleiter",
+      "englisch": "waveguide",
+      "kurz": "Struktur mit erhöhtem Brechungsindex, die Licht führt.",
+      "definition": "Mit fs-Pulsen lassen sich Wellenleiter direkt in Glas schreiben, indem der Fokus eine Spur mit leicht erhöhtem Brechungsindex hinterlässt.",
+      "siehe": [
+        "volumenmodifikation",
+        "brechungsindex"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
+      "id": "wellenlaenge",
+      "begriff": "Wellenlänge",
+      "englisch": "wavelength",
+      "kurz": "Räumlicher Abstand zweier gleicher Wellenphasen, $\\lambda=c/\\nu$.",
+      "definition": "Die Wellenlänge $\\lambda$ ist der Abstand zweier aufeinanderfolgender Wellenberge. Sie hängt über $\\lambda=c/\\nu$ mit der Frequenz zusammen. Typische UKP-Wellenlängen: 1030 nm (Grundwelle), 515 nm (SHG), 343 nm (THG).",
+      "siehe": [
+        "frequenz",
+        "shg",
+        "photonenenergie"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "waermeakkumulation",
+      "begriff": "Wärmeakkumulation",
+      "englisch": "heat accumulation",
+      "kurz": "Ansteigen der Temperatur von Puls zu Puls bei hoher Rate.",
+      "definition": "Wärmeakkumulation tritt auf, wenn der Pulsabstand kürzer ist als die Abkühlzeit. Sie erhöht die Wärmeeinflusszone und kann Schmelze und Risse fördern.",
+      "siehe": [
+        "repetitionsrate",
+        "haz",
+        "burst-mode"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "haz",
+      "begriff": "Wärmeeinflusszone (WEZ / HAZ)",
+      "englisch": "heat affected zone",
+      "kurz": "Durch Wärme veränderter Randbereich; bei UKP minimal.",
+      "definition": "Die Wärmeeinflusszone (WEZ, engl. HAZ) ist der Bereich neben der bearbeiteten Stelle, dessen Gefüge oder Eigenschaften durch Wärme verändert wurden. Bei UKP gilt sie als minimal.",
+      "siehe": [
+        "ukp",
+        "ttm"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
+    },
+    {
       "id": "zeit-bandbreite-produkt",
       "begriff": "Zeit-Bandbreite-Produkt",
       "englisch": "time-bandwidth product",
@@ -554,6 +1698,18 @@
       ],
       "verifiziert": true,
       "quelle": "diels"
+    },
+    {
+      "id": "ttm",
+      "begriff": "Zwei-Temperatur-Modell (TTM)",
+      "englisch": "two-temperature model",
+      "kurz": "Modell mit getrennten Temperaturen für Elektronen- und Gittersystem.",
+      "definition": "Das Zwei-Temperatur-Modell (TTM) beschreibt Elektronen- und Gittersystem mit getrennten Temperaturen, die über eine Kopplung Energie austauschen. Es ist das Standardmodell für die Wechselwirkung von Ultrakurzpulsen mit Metallen.",
+      "siehe": [
+        "ukp"
+      ],
+      "verifiziert": false,
+      "quelle": "Projektnotizen"
     }
   ]
 }

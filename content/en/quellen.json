@@ -1,0 +1,33 @@
+{
+  "diels": {
+    "jahr": "editions since 1996",
+    "ort": "Academic Press (textbook on generation, propagation and measurement of ultrashort pulses)"
+  },
+  "saleh2019": {
+    "titel": "Fundamentals of Photonics, 3rd edition",
+    "ort": "Wiley (textbook: beam optics, Gaussian beams, light–matter interaction)"
+  },
+  "siegman1986": {
+    "ort": "University Science Books (textbook on resonators, Gaussian beams, BPP and M²)"
+  },
+  "svelto2010": {
+    "titel": "Principles of Lasers, 5th edition",
+    "ort": "Springer (textbook on laser physics)"
+  },
+  "iso11146": {
+    "jahr": "ongoing",
+    "titel": "Lasers and laser-related equipment – Test methods for laser beam widths, divergence angles and beam propagation ratios",
+    "ort": "Standard series (title in substance, check the edition)"
+  },
+  "iso21254": {
+    "kurz": "ISO 21254-1 to -4",
+    "jahr": "ongoing",
+    "titel": "Lasers and laser-related equipment – Test methods for laser-induced damage threshold",
+    "ort": "Standard series (title in substance, check the edition)"
+  },
+  "iso21920": {
+    "jahr": "ongoing",
+    "titel": "Geometrical product specifications (GPS) – Surface texture: profile (21920) and areal (25178)",
+    "ort": "Standard series (title in substance, check the edition)"
+  }
+}

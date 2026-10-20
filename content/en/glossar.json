@@ -1,0 +1,526 @@
+{
+  "ablation": {
+    "kurz": "Removal of material by laser irradiation.",
+    "definition": "In laser ablation material is removed by evaporation, melt ejection, spallation or plasma processes. It sets in above the [[ablationsschwelle|ablation threshold]]."
+  },
+  "ablationsschwelle": {
+    "kurz": "Fluence above which material removal sets in (material specific).",
+    "definition": "The ablation threshold is the [[fluenz]] above which material removal sets in. It is material specific. Derivation and determination follow in chapter K07."
+  },
+  "abschwaecher": {
+    "kurz": "Component for continuous adjustment of the pulse energy.",
+    "definition": "Common: a rotatable half-wave plate in front of a polarizer. The laser itself remains unchanged."
+  },
+  "absorption": {
+    "kurz": "Uptake of light energy by the material.",
+    "definition": "In absorption the light gives energy to the material (excitation of electrons or lattice vibrations). Together with [[reflexion]] and [[transmission]], $A+R+T=1$ holds."
+  },
+  "absorptionskoeffizient": {
+    "kurz": "Attenuation of the intensity per path length, $\\alpha$ in 1/m (or 1/cm).",
+    "definition": "The absorption coefficient $\\alpha$ describes the attenuation in the Beer–Lambert law $I(z)=I_0e^{-\\alpha z}$. Its inverse is the [[eindringtiefe|penetration depth]]."
+  },
+  "abstract": {
+    "kurz": "Short summary of an article: aim, method, result, conclusion.",
+    "definition": "The abstract decides whether you read an article. When reading, a good order is: abstract, figures, conclusion, then methods."
+  },
+  "abtragrate": {
+    "kurz": "Removed volume per time, e.g. in mm³/min.",
+    "definition": "The removal rate $\\dot V$ follows from volume per pulse and repetition rate. Relative to the power one obtains the efficiency in mm³/(min·W)."
+  },
+  "autokorrelation": {
+    "kurz": "Pulse duration measurement in which the pulse is superimposed with a time-delayed copy of itself.",
+    "definition": "In an intensity autocorrelation a pulse is split, delayed in time and superimposed in a nonlinear crystal (SHG). The width of the signal over the delay is $\\tau_\\mathrm{AC}=\\kappa\\,\\tau$, with $\\kappa=\\sqrt2$ for Gaussian pulses. The pulse shape has to be assumed."
+  },
+  "avalanche-ionisation": {
+    "kurz": "Avalanche-like multiplication of free charge carriers.",
+    "definition": "In avalanche ionization a free electron absorbs laser energy and creates further free electrons by collision, so that their number grows like an avalanche. Seed electrons come e.g. from [[multiphotonenabsorption]]."
+  },
+  "axicon": {
+    "kurz": "Conical optical element that generates a Bessel beam.",
+    "definition": "An axicon produces a long, narrow focal line with which glass can be modified through its full thickness."
+  },
+  "bandluecke": {
+    "kurz": "Energy range without electron states between valence and conduction band, $E_\\mathrm{g}$.",
+    "definition": "The band gap $E_\\mathrm{g}$ separates the valence band from the conduction band. Photons with less energy cannot excite the material through a single absorption; dielectrics are therefore transparent in the visible and near infrared. Metals have no band gap."
+  },
+  "bessel-strahl": {
+    "kurz": "Beam shaping for cutting glass through the full thickness.",
+    "definition": "Bessel beam and filamentation are beam-shaping concepts with which glass can be cut through its full thickness."
+  },
+  "beugung": {
+    "kurz": "Spreading of waves around obstacles and through apertures; limits the focus size.",
+    "definition": "Because of diffraction light cannot be focused arbitrarily sharply; the smallest focus is of the order of the wavelength. Diffraction-limited means $M^2\\approx1$."
+  },
+  "bpp": {
+    "kurz": "Product of waist radius and divergence half-angle, $\\mathrm{BPP}=w_0\\theta=M^2\\lambda/\\pi$.",
+    "definition": "The beam parameter product $\\mathrm{BPP}=w_0\\theta$ is conserved in lossless beam shaping with ideal optics and characterizes the beam quality. For the ideal Gaussian beam $\\mathrm{BPP}=\\lambda/\\pi$. Usual unit: mm·mrad."
+  },
+  "brechungsindex": {
+    "kurz": "Ratio of the vacuum speed of light to the phase velocity in the material, $n=c/v$.",
+    "definition": "The refractive index $n$ determines how strongly light is refracted and delayed in the material. Together with the extinction coefficient $\\kappa$ it forms the complex refractive index $\\tilde n=n+\\mathrm{i}\\kappa$. It depends on the wavelength ([[dispersion]])."
+  },
+  "brennweite": {
+    "kurz": "Distance between lens and focus for parallel incident light, $f$.",
+    "definition": "The focal length $f$ determines, together with wavelength, $M^2$ and beam radius on the lens, the focus size: $w_0\\approx M^2\\lambda f/(\\pi w_\\mathrm{in})$."
+  },
+  "bruchzaehigkeit": {
+    "kurz": "Resistance of a material to crack propagation, $K_\\mathrm{Ic}$.",
+    "definition": "The fracture toughness $K_\\mathrm{Ic}$ (unit MPa√m) states at which stress intensity an existing crack grows unstably. Ceramics have low values, metals high ones."
+  },
+  "burst-mode": {
+    "kurz": "Pulse packets instead of single pulses.",
+    "definition": "In burst mode, pulse packets are emitted instead of single pulses, with pulse spacings down to the GHz range. According to the project notes this increases removal rate and efficiency."
+  },
+  "chirp": {
+    "kurz": "Change of the instantaneous frequency within a pulse over time.",
+    "definition": "A pulse is chirped if its instantaneous frequency rises or falls along the pulse, e.g. after dispersion. At the same bandwidth a chirped pulse is longer than the Fourier-limited pulse."
+  },
+  "coulomb-explosion": {
+    "kurz": "Ions are repelled from a positively charged surface and ejected.",
+    "definition": "When many electrons leave the surface it stays positively charged; the electrostatic repulsion can eject ions and small clusters. Discussed for dielectrics and semiconductors near the threshold."
+  },
+  "cpa": {
+    "kurz": "Amplification of stretched pulses, the basis of all high-power UKP systems.",
+    "definition": "In chirped pulse amplification (CPA) the pulse is stretched in time, amplified and compressed again. According to the project notes it is the basis of all high-power UKP systems. Details follow in chapter K04."
+  },
+  "d2-methode": {
+    "kurz": "Determining threshold and beam radius from the square of the crater diameter versus $\\ln E_\\mathrm{p}$.",
+    "definition": "According to Liu (1982), $D^2=2w_0^2\\ln(E_\\mathrm{p}/E_\\mathrm{th})$. A straight line in the $D^2$–$\\ln E_\\mathrm{p}$ diagram gives $w_0$ from the slope and the threshold energy from the zero crossing."
+  },
+  "debris": {
+    "kurz": "Redeposited ablation material around the processed spot.",
+    "definition": "Debris consists of particles, droplets and condensate. It degrades edge quality and roughness and is reduced by extraction or shielding gas."
+  },
+  "dielektrikum": {
+    "kurz": "Electrical insulator with a large band gap, usually transparent in the visible.",
+    "definition": "Dielectrics such as fused silica and sapphire absorb light in the visible and near infrared only through nonlinear processes. That makes volume processing possible."
+  },
+  "diffusionslaenge": {
+    "kurz": "Distance that heat travels in the time $\\tau$, $L_\\mathrm{th}\\approx\\sqrt{D\\tau}$.",
+    "definition": "If $L_\\mathrm{th}$ is smaller than the [[eindringtiefe|penetration depth]], the energy stays in the absorption volume: hardly any heat-affected zone."
+  },
+  "dispersion": {
+    "kurz": "Dependence of the refractive index on wavelength, which stretches pulses in time.",
+    "definition": "Because of dispersion, different frequency components of a pulse travel at different speeds. The group delay dispersion (GDD, $\\varphi_2$ in fs²) describes the second-order effect. Positive GDD stretches a pulse, negative GDD can shorten it again."
+  },
+  "divergenz": {
+    "kurz": "Widening of the beam with distance, half-angle $\\theta$.",
+    "definition": "The divergence of a Gaussian beam is $\\theta=M^2\\lambda/(\\pi w_0)$. A small focus means large divergence."
+  },
+  "doe-element": {
+    "kurz": "Optic that shapes or splits the beam by diffraction.",
+    "definition": "DOEs produce e.g. top-hat profiles or several beams for parallel processing."
+  },
+  "doi": {
+    "kurz": "Persistent identifier of an article, resolvable via doi.org.",
+    "definition": "A DOI has the form 10.xxxx/yyyy. It should be in every literature entry and is the most reliable way to find an article again."
+  },
+  "eigenspannung": {
+    "kurz": "Mechanical stress in a component without external load.",
+    "definition": "Residual stresses arise e.g. from non-uniform heating and cooling or from local modification (volume change). In glass and ceramics they can trigger cracks."
+  },
+  "eindringtiefe": {
+    "kurz": "Depth at which the intensity has dropped to $1/e$, $\\delta=1/\\alpha$.",
+    "definition": "The (optical) penetration depth $\\delta=1/\\alpha$ determines in which layer the energy is absorbed. A small $\\delta$ means high energy density and a low threshold."
+  },
+  "elektron-phonon-kopplung": {
+    "kurz": "Energy transfer from the electrons to the lattice, constant $G$.",
+    "definition": "The coupling determines how fast the electron and lattice systems equalize (time scale of a few picoseconds). It enters the two-temperature model as $G(T_\\mathrm{e}-T_\\mathrm{l})$."
+  },
+  "f-theta": {
+    "kurz": "Scan lens in which the position is proportional to the deflection angle, $x=f\\theta$.",
+    "definition": "The f-theta lens focuses onto a flat field and fixes focus size and working field (both $\\propto f$)."
+  },
+  "faserlaser": {
+    "kurz": "Laser with a doped glass fibre as the gain medium.",
+    "definition": "Fibre lasers are compact, robust and easy to cool; the high intensity in the small fibre core limits the pulse energy through nonlinearities."
+  },
+  "fluenz": {
+    "kurz": "Pulse energy per area in J/cm², central process quantity.",
+    "definition": "The fluence $F=E_\\mathrm{p}/A$ is the pulse energy delivered per area, here in J/cm². It is the central process quantity; ablation sets in above the [[ablationsschwelle]]. For a [[gauss-strahl]] one distinguishes the peak fluence $F_0$ from the mean fluence."
+  },
+  "fokuslage": {
+    "kurz": "Position of the focus relative to the workpiece surface.",
+    "definition": "The focus position $z$ is a process parameter of its own: even small deviations change the peak fluence. In depth ablation it is tracked."
+  },
+  "fourier-limit": {
+    "kurz": "Shortest pulse duration for a given spectrum, without chirp.",
+    "definition": "A transform-limited pulse satisfies $\\tau\\Delta\\nu=K$. Any chirp makes the pulse longer."
+  },
+  "frequenz": {
+    "kurz": "Oscillations per second, $\\nu$ in Hz.",
+    "definition": "The frequency $\\nu$ states how often the light wave oscillates per second. For light of 1030 nm, $\\nu=c/\\lambda\\approx2.9\\cdot10^{14}\\,\\mathrm{Hz}$. Do not confuse it with the repetition rate of a laser."
+  },
+  "fresnel": {
+    "kurz": "Reflectance and transmittance at an interface, depending on angle and polarization.",
+    "definition": "The Fresnel equations give reflection and transmission at the interface of two media, depending on the angle of incidence, the [[polarisation|polarization]] and the (complex) [[brechungsindex|refractive index]]."
+  },
+  "frog": {
+    "kurz": "Method for reconstructing the amplitude and phase of a pulse.",
+    "definition": "FROG measures a spectrogram (spectrally resolved autocorrelation) and provides pulse shape and chirp, unlike plain [[autokorrelation|autocorrelation]]."
+  },
+  "galvo-scanner": {
+    "kurz": "Two fast mirrors that deflect the beam.",
+    "definition": "Together with an [[f-theta]] lens it reaches scan speeds in the m/s range. Inertia and acceleration limit the contour accuracy."
+  },
+  "gauss-strahl": {
+    "kurz": "Beam with a Gaussian intensity profile, described by the beam radius $w_0$.",
+    "definition": "A Gaussian beam has the radial intensity profile $I(r)=I_0\\,e^{-2r^2/w_0^2}$. The [[strahlradius]] $w_0$ is the radius at which the intensity has dropped to $1/e^2$ of the maximum."
+  },
+  "gdd": {
+    "kurz": "Second-order dispersion, $\\varphi_2$ in fs².",
+    "definition": "The GDD $\\varphi_2$ describes how the group delay changes with frequency. It determines how strongly a pulse is stretched in time by a material."
+  },
+  "gitter": {
+    "kurz": "Periodic arrangement of the atoms in a solid.",
+    "definition": "In the two-temperature model “lattice” stands for the system of atomic cores and their vibrations ([[phonon|phonons]]), as opposed to the electron system."
+  },
+  "halbleiter": {
+    "kurz": "Material with a small band gap; conductivity between metal and insulator.",
+    "definition": "In semiconductors the ratio of photon energy to band gap decides whether absorption is linear. Examples: silicon, silicon carbide."
+  },
+  "halbwertsbreite": {
+    "kurz": "Width of a curve at half of its maximum value.",
+    "definition": "The full width at half maximum (FWHM) is the full width of a distribution at half height. For pulses the FWHM of the intensity is usually given, for the beam diameter often the $1/e^2$ diameter. For a Gaussian profile $d_\\mathrm{FWHM}=w\\sqrt{2\\ln2}\\approx1.18\\,w$."
+  },
+  "hatch": {
+    "kurz": "Distance between adjacent scan tracks in area ablation.",
+    "definition": "The hatch $h$ is the spacing of the scan lines in area ablation. Together with the pulse spacing it determines the pulse number per area, the accumulated fluence and the area rate $\\dot A=v\\,h$."
+  },
+  "haz": {
+    "kurz": "Edge region altered by heat; minimal with UKP.",
+    "definition": "The heat-affected zone (HAZ) is the region next to the processed spot whose microstructure or properties were changed by heat. With UKP it is considered minimal."
+  },
+  "inkubation": {
+    "kurz": "Lowering of the ablation threshold by preceding pulses.",
+    "definition": "In the incubation effect the [[ablationsschwelle]] falls when the same spot has already been hit by earlier pulses."
+  },
+  "intensitaet": {
+    "kurz": "Power per area in W/cm²; for pulses approximately $F/\\tau$.",
+    "definition": "The intensity $I$ is the power per area (here W/cm²). For a pulse $I\\approx F/\\tau$ holds approximately. Nonlinear effects such as [[multiphotonenabsorption]] depend on the intensity, not on the fluence."
+  },
+  "interferenz": {
+    "kurz": "Superposition of waves: reinforcement or cancellation depending on phase.",
+    "definition": "Interference arises when coherent waves are superimposed. Examples in laser processing: autocorrelation, [[lipss]] and diffractive optics."
+  },
+  "ionisation": {
+    "kurz": "Release of electrons from bound states.",
+    "definition": "In a dielectric ionization means the excitation of an electron from the [[valenzband|valence band]] into the [[leitungsband|conduction band]]. Mechanisms: multiphoton, tunnel and impact ionization."
+  },
+  "keldysh-parameter": {
+    "kurz": "Number $\\gamma$ that distinguishes multiphoton ($\\gamma\\gg1$) from tunnel ionization ($\\gamma\\ll1$).",
+    "definition": "The Keldysh parameter $\\gamma$ compares the laser frequency with the tunnelling frequency of an electron in the deformed potential barrier. For $\\gamma\\gg1$ multiphoton ionization dominates, for $\\gamma\\ll1$ tunnel ionization. The transition region lies at $\\gamma$ close to $1$ to $2$."
+  },
+  "keramik": {
+    "kurz": "Inorganic, non-metallic, mostly polycrystalline and brittle material.",
+    "definition": "Technical ceramics (e.g. aluminium oxide, silicon nitride) are hard, wear-resistant and temperature-resistant, but [[spoedigkeit|brittle]] and sensitive to [[thermoschock|thermal shock]]."
+  },
+  "knife-edge": {
+    "kurz": "Beam radius measurement by moving an edge through the beam.",
+    "definition": "The radius follows from the transmitted power: $w=\\Delta x_{10\\text{–}90}/1.28$ for a Gaussian beam."
+  },
+  "kohaerenz": {
+    "kurz": "Fixed phase relationship of the light wave over time (temporal) or space (spatial).",
+    "definition": "Laser light is coherent: the phases are correlated over large distances. This enables sharp focusing and interference."
+  },
+  "kollimation": {
+    "kurz": "Making a divergent beam parallel.",
+    "definition": "A collimated beam has an almost constant radius over a long distance. Before focusing, the beam is usually collimated and expanded."
+  },
+  "kompressor": {
+    "kurz": "Dispersive arrangement with negative GDD that shortens the pulse again.",
+    "definition": "Usually a grating pair. The compressor has to cancel the total dispersion of the system; it is often placed behind the amplifier."
+  },
+  "krater": {
+    "kurz": "Depression that one or several pulses leave in the material.",
+    "definition": "The crater diameter $D$ is used in the [[d2-methode|D² method]] to determine threshold and beam radius."
+  },
+  "kritische-dichte": {
+    "kurz": "Electron density at which the plasma frequency equals the laser frequency: $n_\\mathrm{c}=\\varepsilon_0m_\\mathrm{e}\\omega^2/e^2$.",
+    "definition": "When a plasma reaches the critical density $n_\\mathrm{c}$, it shields the laser light and absorbs or reflects strongly. For $\\lambda=1030\\,\\mathrm{nm}$, $n_\\mathrm{c}\\approx1\\cdot10^{21}\\,\\mathrm{cm^{-3}}$."
+  },
+  "lambert-beer": {
+    "kurz": "Exponential decay of the intensity in the material, $I=I_0e^{-\\alpha z}$.",
+    "definition": "The Beer–Lambert law describes linear absorption: the intensity falls exponentially with the depth $z$. It no longer holds for nonlinear absorption, because $\\alpha$ then depends on the intensity."
+  },
+  "laser": {
+    "kurz": "Light source that produces coherent light by stimulated emission.",
+    "definition": "Laser stands for light amplification by stimulated emission of radiation. A gain medium in a [[resonator]] produces coherent, usually narrow-band light with low divergence."
+  },
+  "leitungsband": {
+    "kurz": "Energetically higher electron band, empty in the ground state (insulator, semiconductor).",
+    "definition": "Electrons in the conduction band are mobile and absorb light as free carriers. In metals the conduction band is partly filled."
+  },
+  "lipss": {
+    "kurz": "Self-organized periodic nanostructures on the surface.",
+    "definition": "LIPSS (laser-induced periodic surface structures) are self-organized, periodic nanostructures that form on the surface under laser irradiation."
+  },
+  "m2": {
+    "kurz": "Measure of beam quality: $M^2=1$ is ideally Gaussian, larger values focus worse.",
+    "definition": "The beam propagation factor $M^2\\ge1$ is the ratio of the beam parameter product (BPP) of a real beam to that of the ideal Gaussian beam. It is determined according to ISO 11146 from the second moments of the intensity distribution. A high $M^2$ enlarges the focus or shrinks the Rayleigh length for the same optics."
+  },
+  "messunsicherheit": {
+    "kurz": "Range in which the true value of a measured quantity is expected.",
+    "definition": "Uncorrelated relative uncertainties are added in quadrature. For the fluence the beam radius enters twice: $\\delta F/F=\\sqrt{(\\delta E/E)^2+(2\\delta w/w)^2}$."
+  },
+  "mittlere-leistung": {
+    "kurz": "Time-averaged power, $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$.",
+    "definition": "The average power $P_\\mathrm{avg}=E_\\mathrm{p}\\cdot f$ is pulse energy times repetition rate. It determines the heat load and the throughput, not the peak load on the material."
+  },
+  "modenkopplung": {
+    "kurz": "Fixed phase locking of the cavity modes, so that a short pulse circulates in the cavity.",
+    "definition": "In mode locking all longitudinal cavity modes oscillate with a fixed phase relationship. Their superposition is a pulse that passes through the cavity with the round-trip time $2L/c$. The more modes (bandwidth), the shorter the pulse."
+  },
+  "multiphotonenabsorption": {
+    "kurz": "Simultaneous absorption of several photons in transparent media.",
+    "definition": "In multiphoton absorption several photons take up energy at the same time, although each single [[photonenenergie|photon]] has too little energy for the band gap. It is a nonlinear process and only relevant at high [[intensitaet]] (Keldysh theory)."
+  },
+  "nichtthermischer-abtrag": {
+    "kurz": "Ablation where the energy reaches the lattice before heat can flow away.",
+    "definition": "“Non-thermal” is a limiting case: even with UKP the energy ends up as heat, but the heat-affected zone stays small because there is no time for diffusion."
+  },
+  "oszillator": {
+    "kurz": "Mode-locked laser that produces the short seed pulse.",
+    "definition": "The oscillator delivers pulses in the nanojoule range at a high rate (e.g. 100 MHz). It is the first building block of a [[cpa]] system."
+  },
+  "peer-review": {
+    "kurz": "Expert evaluation of a manuscript by independent specialists before publication.",
+    "definition": "Peer review safeguards the quality of scientific articles but does not guarantee correctness. Preprints are not peer reviewed."
+  },
+  "phasenexplosion": {
+    "kurz": "Sudden decay of superheated melt into vapour and droplets.",
+    "definition": "In a phase explosion (explosive boiling) the melt is superheated to temperatures near the critical temperature and decays into a mixture of vapour and droplets. Typical at fluences well above the threshold."
+  },
+  "phonon": {
+    "kurz": "Quantum of lattice vibration.",
+    "definition": "Phonons are the quasi-particles of lattice vibrations. Hot electrons give energy to the lattice via [[elektron-phonon-kopplung|electron–phonon coupling]]."
+  },
+  "photon": {
+    "kurz": "Light quantum with the energy $h\\nu$.",
+    "definition": "A photon is the energy quantum of light. It carries the energy $h\\nu=hc/\\lambda$ and the momentum $p=h/\\lambda$."
+  },
+  "photonenenergie": {
+    "kurz": "Energy of a light quantum, $h\\nu=hc/\\lambda$.",
+    "definition": "A photon of wavelength $\\lambda$ carries the energy $h\\nu=hc/\\lambda\\approx 1239.84\\ \\mathrm{eV\\,nm}/\\lambda$. Whether a single photon can bridge the band gap of a material decides between linear and [[multiphotonenabsorption]]."
+  },
+  "plasma": {
+    "kurz": "Ionized gas or electron gas of high density that behaves like a metal.",
+    "definition": "At high electron density (after multiphoton ionization and avalanche) the excited material behaves like a plasma: it absorbs and reflects light differently from the starting material."
+  },
+  "plasmafrequenz": {
+    "kurz": "Natural frequency of the electron gas, $\\omega_\\mathrm{p}^2=n_\\mathrm{e}e^2/(\\varepsilon_0m_\\mathrm{e})$.",
+    "definition": "Below the plasma frequency a plasma reflects, above it it is transparent. Equality with the laser frequency defines the [[kritische-dichte|critical density]]."
+  },
+  "polarisation": {
+    "kurz": "Direction of oscillation of the electric field of the light wave.",
+    "definition": "Polarization can be linear, circular or elliptical. It affects absorption at oblique incidence and the orientation of [[lipss]]."
+  },
+  "preprint": {
+    "kurz": "Manuscript before or without peer review, e.g. on arXiv.",
+    "definition": "Preprints are available early but not peer reviewed. If possible cite the peer-reviewed version."
+  },
+  "pulsabstand": {
+    "kurz": "Distance between two consecutive pulses on the workpiece, $d=v/f$.",
+    "definition": "The pulse spacing $d=v/f$ follows from scan speed $v$ and repetition rate $f$. Compared with the spot diameter $2w_0$ it determines the pulse overlap."
+  },
+  "pulsdauer": {
+    "kurz": "Temporal width of the pulse (usually full width at half maximum), symbol $\\tau$.",
+    "definition": "The pulse duration $\\tau$ is the temporal width of a pulse, usually given as the full width at half maximum (FWHM)."
+  },
+  "pulsenergie": {
+    "kurz": "Energy of a single laser pulse, symbol $E_\\mathrm{p}$, in joules.",
+    "definition": "The pulse energy $E_\\mathrm{p}$ is the energy of a single pulse, measured in joules (usually microjoules in UKP systems). Together with [[pulsdauer]] and [[repetitionsrate]] it fixes [[spitzenleistung]] and [[mittlere-leistung]]."
+  },
+  "pulspicker": {
+    "kurz": "Switch that selects individual pulses from the pulse train.",
+    "definition": "With an acousto-optic or electro-optic modulator the repetition rate of the oscillator is lowered to the process rate, or bursts are formed."
+  },
+  "pulszug": {
+    "kurz": "Sequence of pulses spaced $1/f$ apart.",
+    "definition": "A pulse train has the average power $E_\\mathrm{p}f$ and the much higher peak power $E_\\mathrm{p}/\\tau$."
+  },
+  "quarzglas": {
+    "kurz": "Amorphous, very pure silicon dioxide (SiO₂).",
+    "definition": "Fused silica is transparent from UV to near infrared and has a very low thermal expansion. It is the standard material for volume processing with fs pulses and for [[sle]]."
+  },
+  "rauheit": {
+    "kurz": "Short-wavelength deviation of the surface from the ideal shape, e.g. $Ra$ or $Sa$.",
+    "definition": "Profile parameters ($R$) are in ISO 21920, areal ones ($S$) in ISO 25178. Without stating filters, roughness values are not comparable."
+  },
+  "rayleighlaenge": {
+    "kurz": "Distance from the focus after which the beam cross-section doubles: $z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)$.",
+    "definition": "The Rayleigh length $z_\\mathrm{R}$ is the distance from the beam waist at which the beam radius has grown to $\\sqrt2\\,w_0$ (cross-section area doubled, peak fluence halved). It determines the depth of focus: $z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)$."
+  },
+  "reflexion": {
+    "kurz": "Return of a fraction of the light at the surface, reflectance $R$.",
+    "definition": "At normal incidence on a transparent medium of refractive index $n$ the reflectance is $R=((n-1)/(n+1))^2$. Metals reflect considerably more."
+  },
+  "repetitionsrate": {
+    "kurz": "Pulses per second in hertz, symbol $f$.",
+    "definition": "The repetition rate $f$ states how many pulses are emitted per second. The pulse spacing is $1/f$; the [[mittlere-leistung]] is $E_\\mathrm{p}\\cdot f$."
+  },
+  "resonator": {
+    "kurz": "Arrangement of mirrors in which the light circulates and is amplified.",
+    "definition": "The cavity fixes the allowed modes. For a linear cavity of length $L$ the mode spacing is $c/(2L)$."
+  },
+  "rissbildung": {
+    "kurz": "Formation of cracks by thermal or mechanical stresses.",
+    "definition": "In laser ablation of brittle materials cracks arise from steep temperature gradients, residual stresses or pressure waves. Countermeasures: lower fluence, less heat accumulation, adapted scan strategy."
+  },
+  "saphir": {
+    "kurz": "Single-crystal aluminium oxide (Al₂O₃), hard and transparent.",
+    "definition": "Sapphire is a very hard, transparent single crystal used as window and substrate material; processing it is demanding because of its hardness and brittleness."
+  },
+  "schaerfentiefe": {
+    "kurz": "Axial region around the focus with almost unchanged fluence, about $2z_\\mathrm{R}$.",
+    "definition": "The depth of focus of the focus is of the order of $2z_\\mathrm{R}$. It shrinks with the square of the focus radius."
+  },
+  "scheibenlaser": {
+    "kurz": "Solid-state laser with a thin crystal disk as the gain medium.",
+    "definition": "The thin disk is cooled over its large area; this allows high average power with good beam quality."
+  },
+  "selbstfokussierung": {
+    "kurz": "The Kerr effect focuses an intense beam above a critical power.",
+    "definition": "The intensity is higher in the beam centre, and so is the refractive index: the medium acts like a lens. Self-focusing can destroy amplifier media and is the basis of filamentation."
+  },
+  "selbstphasenmodulation": {
+    "kurz": "An intensity-dependent refractive index broadens the spectrum of a pulse.",
+    "definition": "Through the Kerr effect ($n=n_0+n_2I$) an intense pulse changes its own phase. This generates new frequencies and limits the pulse energy in amplifiers."
+  },
+  "shg": {
+    "kurz": "Nonlinear process that doubles the frequency and halves the wavelength.",
+    "definition": "In a nonlinear crystal two photons of the fundamental become one of double the energy: 1030 nm becomes 515 nm. It is also the basis of [[autokorrelation|autocorrelation]]."
+  },
+  "silizium": {
+    "kurz": "Elemental semiconductor with an indirect band gap, standard material of microelectronics.",
+    "definition": "Silicon absorbs at photon energies above the band gap and is largely transparent below it. Wafers are thinned and structured with UKP lasers."
+  },
+  "sle": {
+    "kurz": "fs modification in the volume plus wet-chemical etching.",
+    "definition": "In selective laser etching (SLE) the material is first modified with femtosecond pulses and then etched wet-chemically; mainly in fused silica."
+  },
+  "slm": {
+    "kurz": "Liquid-crystal display that shapes the phase of the beam position-dependently.",
+    "definition": "With an SLM, beam profiles and multiple foci can be programmed dynamically."
+  },
+  "spallation": {
+    "kurz": "Layer-by-layer flaking by tensile stress after fast energy deposition.",
+    "definition": "In spallation the ultrafast energy deposition creates a pressure wave that is reflected as a tensile wave and detaches material layer by layer. It is mainly discussed near the ablation threshold."
+  },
+  "spider": {
+    "kurz": "Interferometric method for measuring pulse shape and phase.",
+    "definition": "SPIDER reconstructs the spectral phase directly from an interferogram and is suited for very short pulses."
+  },
+  "spitzenleistung": {
+    "kurz": "Maximum optical power during the pulse, approximately $E_\\mathrm{p}/\\tau$.",
+    "definition": "The peak power $P_\\mathrm{peak}$ is the power at the maximum of the pulse. Approximately $P_\\mathrm{peak}\\approx E_\\mathrm{p}/\\tau$ holds; a pulse-shape factor of order 1 is neglected."
+  },
+  "spoedigkeit": {
+    "kurz": "Fracture without appreciable plastic deformation.",
+    "definition": "Brittle materials such as glass and ceramics fail suddenly under tensile stress through crack propagation. That limits the permissible thermal and mechanical load in laser ablation."
+  },
+  "spotdurchmesser": {
+    "kurz": "Diameter of the beam in the focus, usually $2w_0$ (at $1/e^2$).",
+    "definition": "The spot size is not equal to the ablated diameter: because of the threshold the crater is smaller than $2w_0$."
+  },
+  "strahlaufweiter": {
+    "kurz": "Telescope that enlarges the beam radius.",
+    "definition": "A larger beam on the lens gives a smaller focus ($w_0\\propto1/w_\\mathrm{in}$)."
+  },
+  "strahlprofil": {
+    "kurz": "Spatial distribution of the intensity across the beam.",
+    "definition": "The beam profile is determined with a camera or the knife-edge method. Typical profiles: Gaussian, top-hat, Bessel."
+  },
+  "strahlradius": {
+    "kurz": "Radius $w_0$ at which the intensity has dropped to $1/e^2$.",
+    "definition": "The beam radius $w_0$ (based on the $1/e^2$ criterion) is the distance from the beam axis at which the intensity has dropped to $1/e^2\\approx 13.5\\,\\%$ of the maximum. In the focus it is the focus radius."
+  },
+  "strahltaille": {
+    "kurz": "Narrowest point of the beam (focus) with radius $w_0$.",
+    "definition": "At the beam waist the wavefront is flat and the peak fluence is maximal. From there the beam widens with the [[rayleighlaenge|Rayleigh length]] as the length scale."
+  },
+  "strecker": {
+    "kurz": "Dispersive arrangement that lengthens the pulse in time.",
+    "definition": "The stretcher produces positive [[gdd]] and lowers the peak power before the amplifier by the stretch factor."
+  },
+  "tastverhaeltnis": {
+    "kurz": "Fraction of time in which power flows, $\\tau\\cdot f$.",
+    "definition": "For UKP lasers the duty cycle is tiny (e.g. $3\\cdot10^{-8}$ at 300 fs and 100 kHz). It is the ratio of average to peak power."
+  },
+  "temperaturleitfaehigkeit": {
+    "kurz": "Measure of how fast temperature equalizes, $D=\\lambda_\\mathrm{th}/(\\rho c_p)$.",
+    "definition": "The thermal diffusivity $D$ (unit m²/s) determines the [[diffusionslaenge|diffusion length]] $L_\\mathrm{th}\\approx\\sqrt{D\\tau}$."
+  },
+  "thermalisierung": {
+    "kurz": "Establishment of an equilibrium distribution of the excited electrons.",
+    "definition": "After excitation the electrons share their energy among themselves. Only then is an electron temperature $T_\\mathrm{e}$ defined."
+  },
+  "thermoschock": {
+    "kurz": "Cracking caused by rapid temperature changes.",
+    "definition": "Rapid heating creates a temperature gradient and thus thermal stress. If it exceeds the strength, the component fractures. Thermal shock resistance depends on expansion, conduction and strength."
+  },
+  "thg": {
+    "kurz": "Generation of the third harmonic: wavelength divided by three.",
+    "definition": "From 1030 nm one obtains about 343 nm. A shorter wavelength means a smaller focus and fewer photons needed for the band gap."
+  },
+  "ti-saphir": {
+    "kurz": "Solid-state laser with a very large gain bandwidth around 800 nm.",
+    "definition": "Because of the large bandwidth pulses of a few femtoseconds are possible. Kerr-lens mode locking is common."
+  },
+  "transmission": {
+    "kurz": "Passage of light through the material.",
+    "definition": "The transmission $T$ is the fraction of light that passes through the material. Transparent dielectrics have a high transmission at photon energies below the band gap."
+  },
+  "ttm": {
+    "kurz": "Model with separate temperatures for electron and lattice systems.",
+    "definition": "The two-temperature model (TTM) describes the electron and lattice systems with separate temperatures that exchange energy through a coupling. It is the standard model for the interaction of ultrashort pulses with metals."
+  },
+  "ueberlapp": {
+    "kurz": "Fraction of the spot diameter that consecutive pulses cover jointly.",
+    "definition": "The linear overlap $O=1-d/(2w_0)$ describes how far consecutive spots lie on top of each other. High overlap means many pulses per spot and thus incubation and heat accumulation."
+  },
+  "ukp": {
+    "kurz": "Laser pulse in the picosecond to femtosecond range.",
+    "definition": "An ultrashort pulse (UKP, USP) has a duration in the picosecond to femtosecond range. The energy enters the material faster than heat can flow away (see [[ttm]])."
+  },
+  "valenzband": {
+    "kurz": "Energetically low electron band that is filled at $T=0$.",
+    "definition": "The valence band holds the electrons involved in bonding. An excitation into the [[leitungsband|conduction band]] requires at least the energy of the [[bandluecke|band gap]]."
+  },
+  "verstaerker": {
+    "kurz": "Stage that raises the pulse energy to micro- to millijoules.",
+    "definition": "Types: regenerative and multipass amplifiers, fibre amplifiers, thin-disk lasers. In [[cpa]] the amplifier sees the stretched pulse."
+  },
+  "verstaerkungsmedium": {
+    "kurz": "Material that amplifies light by stimulated emission.",
+    "definition": "Examples: ytterbium-doped crystals and fibres (around 1030 nm) and titanium–sapphire (around 800 nm). The bandwidth of the medium limits the shortest pulse duration."
+  },
+  "versuchsplanung": {
+    "kurz": "Systematic planning of experiments to gain a lot of information with few runs.",
+    "definition": "Typical designs: factorial ($2^k$), central composite (CCD), Box–Behnken. Replicates, randomization and centre points secure the conclusions."
+  },
+  "volumenmodifikation": {
+    "kurz": "Local change of the material in the interior by focused fs pulses.",
+    "definition": "In transparent materials the focus changes density, refractive index or etchability without damaging the surface. Applications: [[sle]], [[wellenleiter|waveguides]], markings."
+  },
+  "waermeakkumulation": {
+    "kurz": "Rise of the temperature from pulse to pulse at a high rate.",
+    "definition": "Heat accumulation occurs when the pulse spacing is shorter than the cooling time. It enlarges the heat-affected zone and can promote melt and cracks."
+  },
+  "wellenlaenge": {
+    "kurz": "Spatial distance between two equal wave phases, $\\lambda=c/\\nu$.",
+    "definition": "The wavelength $\\lambda$ is the distance between two consecutive wave crests. It is linked to the frequency by $\\lambda=c/\\nu$. Typical UKP wavelengths: 1030 nm (fundamental), 515 nm (SHG), 343 nm (THG)."
+  },
+  "wellenleiter": {
+    "kurz": "Structure with raised refractive index that guides light.",
+    "definition": "With fs pulses waveguides can be written directly into glass by leaving a track of slightly raised refractive index with the focus."
+  },
+  "zeit-bandbreite-produkt": {
+    "kurz": "$\\tau\\Delta\\nu\\ge K$, with $K\\approx0.441$ for Gaussian pulses.",
+    "definition": "Pulse duration and spectral width are coupled through the Fourier transform: $\\tau\\,\\Delta\\nu\\ge K$, where $K$ depends on the pulse shape (Gaussian: $0.441$; sech²: $0.315$). Equality holds for Fourier-limited pulses without chirp."
+  },
+  "zerstoerschwelle": {
+    "kurz": "Fluence above which an optic or sample is permanently damaged.",
+    "definition": "Test methods such as 1-on-1 and S-on-1 are given in ISO 21254. The LIDT depends on pulse duration, wavelength and pulse number."
+  }
+}

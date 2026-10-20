@@ -5,6 +5,7 @@ import * as store from '../core/store.js';
 import { review, GRADE } from '../core/sm2.js';
 import { toDay } from '../core/dates.js';
 import { scoreCard, isKnown } from './scoring.js';
+import { t } from '../core/i18n.js';
 
 const GRADES = [
   ['Nochmal', GRADE.again],
@@ -13,7 +14,7 @@ const GRADES = [
   ['Leicht', GRADE.easy],
 ];
 
-export const intervalText = (days) => (days <= 0 ? 'heute' : days === 1 ? '1 Tag' : `${days} Tage`);
+export const intervalText = (days) => (days <= 0 ? t('heute') : days === 1 ? t('1 Tag') : t('{n} Tage', { n: days }));
 
 export function render(block, ctx) {
   const flags = { known: isKnown(block.id) };
@@ -31,12 +32,12 @@ export function render(block, ctx) {
         showGrades();
       },
     },
-    'Antwort zeigen',
+    t('Antwort zeigen'),
   );
 
   function showGrades() {
     if (ctx.mode === 'lesson' && flags.known) {
-      controls.append(h('p', { class: 'hint' }, 'Übung: Diese Karte ist schon in deiner Wiederholung.'));
+      controls.append(h('p', { class: 'hint' }, t('Übung: Diese Karte ist schon in deiner Wiederholung.')));
       return;
     }
     const current = store.get().items[block.id] ?? null;
@@ -58,12 +59,12 @@ export function render(block, ctx) {
                   return;
                 }
                 controls.replaceChildren(
-                  h('p', { class: 'verdict ok' }, `Nächste Wiederholung: ${it ? (it.int === 0 ? 'heute' : 'in ' + intervalText(it.int)) : '–'}`, res.xp ? h('span', { class: 'xp-chip' }, ` +${res.xp} XP`) : null),
+                  h('p', { class: 'verdict ok' }, t('Nächste Wiederholung: {when}', { when: it ? (it.int === 0 ? t('heute') : t('in {x}', { x: intervalText(it.int) })) : '–' }), res.xp ? h('span', { class: 'xp-chip' }, ` +${res.xp} XP`) : null),
                 );
                 ctx.onScored?.();
               },
             },
-            h('span', { class: 'grade-label' }, label),
+            h('span', { class: 'grade-label' }, t(label)),
             h('span', { class: 'grade-int' }, intervalText(review(current, q, today).int)),
           ),
         ),
@@ -71,5 +72,5 @@ export function render(block, ctx) {
     );
   }
 
-  return h('div', { class: 'flashcard' }, h('span', { class: 'quiz-tag' }, 'Karte'), h('div', { class: 'fc-front prose', html: rich(block.vorne) }), back, revealBtn, controls);
+  return h('div', { class: `flashcard ${block.vok ? 'vocab-card' : ''}` }, h('span', { class: 'quiz-tag' }, block.vok ? t('Vokabel') : t('Karte')), h('div', { class: 'fc-front prose', html: rich(block.vorne) }), back, revealBtn, controls);
 }

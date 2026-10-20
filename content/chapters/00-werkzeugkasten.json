@@ -1,0 +1,535 @@
+{
+  "id": "k00",
+  "titel": "Werkzeugkasten: Zahlen, Einheiten, Rechnen",
+  "einleitung": "Alle Kapitel dieser App rechnen mit extremen Zahlen. Hier trainierst du das Handwerkszeug: Zehnerpotenzen und Vorsätze, Einheitenumrechnung, Logarithmus und Exponentialfunktion, Abschätzen von Größenordnungen und den sicheren Umgang mit dem Taschenrechner der App.",
+  "ziele": [
+    "Zehnerpotenzen und SI-Vorsätze sicher anwenden",
+    "Einheiten (besonders Flächen und Fluenz) fehlerfrei umrechnen",
+    "Logarithmus, Exponentialfunktion und Potenzgesetze lesen und rechnen",
+    "Ergebnisse vor dem Rechnen auf ihre Größenordnung prüfen",
+    "Den Taschenrechner der App für typische Ausdrücke nutzen"
+  ],
+  "weiterlesen": [
+    "codata2018"
+  ],
+  "lektionen": [
+    {
+      "id": "k00.l01",
+      "titel": "Zehnerpotenzen und SI-Vorsätze",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k00.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "In der UKP-Physik rechnest du mit Zahlen, die über rund dreißig Größenordnungen reichen: Pulsdauern von $10^{-15}$ s, Intensitäten von $10^{13}$ W/cm², Elektronendichten von $10^{21}$ cm⁻³. Ohne sicheren Umgang mit **Zehnerpotenzen** und **Vorsätzen** (Prefixes) verrechnest du dich dauernd.",
+            "Die Vorsätze, die du ständig brauchst (Faktor $10^3$ zwischen den Stufen):",
+            "- f (femto) $=10^{-15}$, p (pico) $=10^{-12}$, n (nano) $=10^{-9}$, µ (micro) $=10^{-6}$, m (milli) $=10^{-3}$\n- k (kilo) $=10^{3}$, M (mega) $=10^{6}$, G (giga) $=10^{9}$, T (tera) $=10^{12}$"
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.l01.b02",
+          "typ": "merke",
+          "inhalt": "Rechenregeln: $10^a\\cdot10^b=10^{a+b}$, $10^a/10^b=10^{a-b}$, $(10^a)^n=10^{an}$. Bei Zahlen in Normalform $m\\cdot10^e$ rechnest du Mantissen und Exponenten **getrennt**: $(3\\cdot10^{8})\\cdot(4\\cdot10^{-13})=12\\cdot10^{-5}=1{,}2\\cdot10^{-4}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.q01",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne jedem Vorsatz seine Zehnerpotenz zu.",
+          "paare": [
+            [
+              "Femto (f)",
+              "$10^{-15}$"
+            ],
+            [
+              "Piko (p)",
+              "$10^{-12}$"
+            ],
+            [
+              "Nano (n)",
+              "$10^{-9}$"
+            ],
+            [
+              "Mikro (µ)",
+              "$10^{-6}$"
+            ],
+            [
+              "Milli (m)",
+              "$10^{-3}$"
+            ],
+            [
+              "Kilo (k)",
+              "$10^{3}$"
+            ]
+          ],
+          "erklaerung": "Zwischen den Stufen liegt immer der Faktor $10^3$ (milli bis kilo ebenfalls: $10^{-3}$, $10^{3}$)."
+        },
+        {
+          "id": "k00.q02",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Ordne von kurz nach lang.",
+          "items": [
+            "2 ps",
+            "40 ns",
+            "3 µs",
+            "1 ms"
+          ],
+          "erklaerung": "ps $=10^{-12}$ s, ns $=10^{-9}$ s, µs $=10^{-6}$ s, ms $=10^{-3}$ s.",
+          "oben": "kürzeste",
+          "unten": "längste"
+        },
+        {
+          "id": "k00.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie viele Nanosekunden sind $0{,}000\\,000\\,3$ s?",
+          "optionen": [
+            "30 ns",
+            "300 ns",
+            "3 µs",
+            "300 µs"
+          ],
+          "richtig": 1,
+          "erklaerung": "$3\\cdot10^{-7}\\,\\mathrm{s}=300\\cdot10^{-9}\\,\\mathrm{s}=300$ ns.",
+          "fest": true
+        },
+        {
+          "id": "k00.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Welche Strecke legt Licht ($c=3\\cdot10^{8}$ m/s) in $400\\,\\mathrm{fs}$ zurück? Antwort in µm. Tipp: Taste **EE** am Taschenrechner.",
+          "antwort": 120,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$3\\cdot10^{8}\\cdot4\\cdot10^{-13}=1{,}2\\cdot10^{-4}$ m $=120$ µm.",
+          "tipp": "Gib am Rechner ein: 3 EE 8 × 4 EE − 13. Das Ergebnis steht in m."
+        },
+        {
+          "id": "k00.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie viele Wellenlängen von 515 nm passen in 1 mm?",
+          "antwort": 1942,
+          "einheit": "",
+          "toleranz": 0.01,
+          "erklaerung": "$10^{-3}\\,\\mathrm{m}/(515\\cdot10^{-9}\\,\\mathrm{m})\\approx1942$."
+        },
+        {
+          "id": "k00.c01",
+          "typ": "karte",
+          "vorne": "Welche Zehnerpotenz hat ein Femtosekunde?",
+          "hinten": "1 fs $=10^{-15}$ s; 1 ps $=10^{-12}$ s; 1 ns $=10^{-9}$ s.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k00.l02",
+      "titel": "Einheiten sicher umrechnen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k00.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die meisten Rechenfehler in der Laserphysik sind **Einheitenfehler**. Die Faustregel: Erst alle Größen in ein konsistentes System bringen (SI, oder cm für Fluenz und Intensität), dann rechnen, dann das Ergebnis in die gewünschte Einheit umrechnen.",
+            "Die wichtigsten Umrechnungen:",
+            "- 1 µm $=10^{-6}$ m $=10^{-4}$ cm, 1 nm $=10^{-7}$ cm\n- 1 cm² $=10^{-4}$ m², 1 µm² $=10^{-8}$ cm²\n- 1 J/cm² $=10^{4}$ J/m², 1 W/cm² $=10^{4}$ W/m²\n- 1 eV $=1{,}602\\cdot10^{-19}$ J"
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.l02.b02",
+          "typ": "merke",
+          "inhalt": "**Flächen rechnest du quadratisch um:** Aus $1\\,\\mu\\mathrm{m}=10^{-4}\\,\\mathrm{cm}$ folgt $1\\,\\mu\\mathrm{m}^2=10^{-8}\\,\\mathrm{cm}^2$. Dieser Faktor $10^{4}$ zwischen linearer und quadratischer Umrechnung ist die häufigste Fehlerquelle bei der Fluenz.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.l02.b03",
+          "typ": "beispiel",
+          "aufgabe": "Eine Fluenz von $2\\,\\mathrm{J/cm^2}$ und eine Intensität von $4\\cdot10^{12}\\,\\mathrm{W/cm^2}$ sollen in SI-Einheiten stehen.",
+          "schritte": [
+            "$2\\,\\mathrm{J/cm^2}=2\\cdot10^{4}\\,\\mathrm{J/m^2}$",
+            "$4\\cdot10^{12}\\,\\mathrm{W/cm^2}=4\\cdot10^{16}\\,\\mathrm{W/m^2}$"
+          ],
+          "ergebnis": "$2\\cdot10^{4}\\,\\mathrm{J/m^2}$ und $4\\cdot10^{16}\\,\\mathrm{W/m^2}$: je Quadratzentimeter-Einheit kommt der Faktor $10^{4}$ dazu.",
+          "titel": "Rechenbeispiel",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.q06",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Rechne $3\\,\\mathrm{J/cm^2}$ in $\\mathrm{kJ/m^2}$ um.",
+          "antwort": 30,
+          "einheit": "kJ/m²",
+          "toleranz": 0.05,
+          "erklaerung": "$3\\,\\mathrm{J/cm^2}=3\\cdot10^{4}\\,\\mathrm{J/m^2}=30\\,\\mathrm{kJ/m^2}$."
+        },
+        {
+          "id": "k00.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Rechne $20\\,\\mu\\mathrm{m}^2$ in $\\mathrm{cm}^2$ um. Antwort in $10^{-7}\\,\\mathrm{cm^2}$.",
+          "antwort": 2,
+          "einheit": "·10⁻⁷ cm²",
+          "toleranz": 0.05,
+          "erklaerung": "$20\\,\\mu\\mathrm{m}^2=20\\cdot10^{-8}\\,\\mathrm{cm^2}=2\\cdot10^{-7}\\,\\mathrm{cm^2}$."
+        },
+        {
+          "id": "k00.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie viel Joule sind $1{,}2\\,\\mathrm{eV}$? Antwort in $10^{-19}\\,\\mathrm{J}$.",
+          "antwort": 1.92,
+          "einheit": "·10⁻¹⁹ J",
+          "toleranz": 0.02,
+          "erklaerung": "$1{,}2\\cdot1{,}602\\cdot10^{-19}\\,\\mathrm{J}=1{,}92\\cdot10^{-19}\\,\\mathrm{J}$."
+        },
+        {
+          "id": "k00.q09",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Photonenenergie in Joule aus Konstanten und berechne sie für $\\lambda=515\\,\\mathrm{nm}$. Antwort in $10^{-19}\\,\\mathrm{J}$. Tipp: Der Rechner kennt $h$ und $c$ unter „Konstanten und Vorsätze“.",
+          "vorlage": "$E=$ {{ [] $\\cdot$ [] // [] }}",
+          "richtig": [
+            "$h$",
+            "$c$",
+            "$\\lambda$"
+          ],
+          "erklaerung": "$E=hc/\\lambda=6{,}626\\cdot10^{-34}\\cdot2{,}998\\cdot10^{8}/(515\\cdot10^{-9})=3{,}86\\cdot10^{-19}\\,\\mathrm{J}$ (das sind 2,41 eV).",
+          "ablenker": [
+            "$\\tau$",
+            "$f$"
+          ],
+          "tausch": [
+            [
+              0,
+              1
+            ]
+          ],
+          "antwort": 3.86,
+          "einheit": "·10⁻¹⁹ J",
+          "toleranz": 0.02
+        },
+        {
+          "id": "k00.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welcher Ausdruck hat die Einheit W/cm² ($E_\\mathrm{p}$ Pulsenergie, $A$ Fläche, $\\tau$ Pulsdauer, $f$ Rate)?",
+          "optionen": [
+            "$E_\\mathrm{p}/A$",
+            "$E_\\mathrm{p}/(A\\,\\tau)$",
+            "$E_\\mathrm{p}\\,f$",
+            "$\\tau\\,f$"
+          ],
+          "richtig": 1,
+          "erklaerung": "$E_\\mathrm{p}/A$ ist J/cm² (Fluenz), geteilt durch $\\tau$ ergibt W/cm² (Intensität). $E_\\mathrm{p}f$ ist W; $\\tau f$ ist einheitenlos.",
+          "fest": true
+        },
+        {
+          "id": "k00.c02",
+          "typ": "karte",
+          "vorne": "Wie rechnest du µm² in cm² um?",
+          "hinten": "$1\\,\\mu\\mathrm{m}^2=(10^{-4}\\,\\mathrm{cm})^2=10^{-8}\\,\\mathrm{cm}^2$: Flächen quadratisch umrechnen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k00.l03",
+      "titel": "Logarithmus, Exponentialfunktion und Wurzeln",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k00.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Drei Funktionen begegnen dir im ganzen Skript: die **Exponentialfunktion** $e^x$ (Lambert-Beer, Gauß-Profil), der **natürliche Logarithmus** $\\ln$ (Abtragtiefe $\\delta=\\ell\\ln(F/F_\\mathrm{th})$) und die **Wurzel** (Diffusionslänge $\\sqrt{D\\tau}$). Ln und $e^x$ sind Umkehrfunktionen: $\\ln(e^x)=x$.",
+            "Wichtige Regeln: $\\ln(ab)=\\ln a+\\ln b$, $\\ln(a/b)=\\ln a-\\ln b$, $\\ln(a^n)=n\\ln a$. Der Zehnerlogarithmus $\\log$ ist $\\log x=\\ln x/\\ln10$."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.l03.b02",
+          "typ": "formel",
+          "latex": "\\ln(ab)=\\ln a+\\ln b,\\qquad \\ln(a^n)=n\\ln a,\\qquad \\log x=\\frac{\\ln x}{\\ln 10}",
+          "erklaerung": "Logarithmengesetze.",
+          "titel": "Logarithmengesetze",
+          "sammlung": "Mathe-Werkzeug",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.l03.b03",
+          "typ": "merke",
+          "inhalt": "**Potenzgesetze erkennst du im Log-Log-Diagramm als Gerade:** Aus $y=ax^n$ wird $\\log y=\\log a+n\\log x$, die Steigung ist der Exponent $n$. So liest du Inkubationskoeffizienten oder Mehrphotonenordnungen aus Messdaten ab.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Berechne $\\ln10$.",
+          "antwort": 2.303,
+          "einheit": "",
+          "toleranz": 0.01,
+          "erklaerung": "$\\ln10=2{,}3026$ (Taste **ln** am Rechner)."
+        },
+        {
+          "id": "k00.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie viel Prozent ist $e^{-2}$? (Der Intensitätsanteil bei $r=w_0$ eines Gauß-Strahls.)",
+          "antwort": 13.5,
+          "einheit": "%",
+          "toleranz": 0.02,
+          "erklaerung": "$e^{-2}=0{,}1353=13{,}5\\,\\%$.",
+          "tipp": "Am Rechner: 2nd, dann eˣ, dann − 2 ), dann = und mit 100 multiplizieren."
+        },
+        {
+          "id": "k00.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Die Rate wächst mit $I^{8}$. Du erhöhst $I$ um 10 %. Um welchen Faktor steigt die Rate?",
+          "antwort": 2.14,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$1{,}1^8=2{,}14$ (Taste **xʸ**)."
+        },
+        {
+          "id": "k00.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Berechne $\\log_{10}(2\\cdot10^{5})$.",
+          "antwort": 5.301,
+          "einheit": "",
+          "toleranz": 0.005,
+          "erklaerung": "$\\log(2\\cdot10^5)=\\log2+5=0{,}301+5=5{,}301$."
+        },
+        {
+          "id": "k00.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Die Schwelle fällt von $1$ (bei $N=1$) auf $0{,}5$ (bei $N=100$). Bestimme den Exponenten $S-1=\\ln(0{,}5)/\\ln(100)$ des Inkubationsgesetzes.",
+          "antwort": -0.1505,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$\\ln0{,}5/\\ln100=-0{,}693/4{,}605=-0{,}1505$, also $S\\approx0{,}85$."
+        },
+        {
+          "id": "k00.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie erkennst du in einer doppelt logarithmischen Auftragung ein Potenzgesetz $y=ax^n$?",
+          "optionen": [
+            "Als Gerade mit der Steigung $n$",
+            "Als Parabel",
+            "Als Exponentialkurve",
+            "Als horizontale Linie"
+          ],
+          "richtig": 0,
+          "erklaerung": "$\\log y=\\log a+n\\log x$ ist eine Gerade; $n$ ist die Steigung."
+        },
+        {
+          "id": "k00.q17",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Du verlängerst die Pulsdauer auf das 100-Fache. Um welchen Faktor wächst die Diffusionslänge $\\sqrt{D\\tau}$?",
+          "antwort": 10,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$\\sqrt{100}=10$."
+        },
+        {
+          "id": "k00.c03",
+          "typ": "karte",
+          "vorne": "Wie hängen $\\ln$ und $e^x$ zusammen?",
+          "hinten": "Sie sind Umkehrfunktionen: $\\ln(e^x)=x$ und $e^{\\ln x}=x$. $\\ln(ab)=\\ln a+\\ln b$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k00.l04",
+      "titel": "Größenordnungen schätzen",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k00.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Bevor du den Taschenrechner benutzt, schätzt du das Ergebnis. Dazu rundest du jede Zahl auf **eine Stelle und eine Zehnerpotenz**. Beispiel: Spitzenleistung für $5{,}3\\,\\mu\\mathrm{J}$ und $480\\,\\mathrm{fs}$: $5\\cdot10^{-6}/(5\\cdot10^{-13})=10^{7}$ W, also rund 10 MW. Der Rechner zeigt 11 MW: plausibel.",
+            "Das fängt Tippfehler ab (vergessenes EE, falscher Exponent, Kehrwert). Beachte außerdem die **signifikanten Stellen**: Ein Ergebnis hat nicht mehr gültige Stellen als die ungenaueste Eingangsgröße. Aus $0{,}0450$ (3 signifikante Stellen) und $2{,}1$ (2 Stellen) folgt ein Produkt mit 2 Stellen."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.q18",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du rechnest die Spitzenfluenz für $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ und $w_0=15\\,\\mu\\mathrm{m}$. Welche Größenordnung ist plausibel?",
+          "optionen": [
+            "0,028 J/cm²",
+            "2,8 J/cm²",
+            "280 J/cm²",
+            "28 000 J/cm²"
+          ],
+          "richtig": 1,
+          "erklaerung": "Schätzung: $2\\cdot10^{-5}\\,\\mathrm{J}/(3\\cdot(1{,}5\\cdot10^{-3}\\,\\mathrm{cm})^2)\\approx2\\cdot10^{-5}/7\\cdot10^{-6}\\approx3$ J/cm².",
+          "fest": true
+        },
+        {
+          "id": "k00.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie viele signifikante Stellen hat $0{,}0450$?",
+          "antwort": 3,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "Führende Nullen zählen nicht, die abschließende Null nach dem Komma schon: 4, 5, 0."
+        },
+        {
+          "id": "k00.q20",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Der Taschenrechner zeigt für eine Spitzenleistung ($E_\\mathrm{p}=5\\,\\mu\\mathrm{J}$, $\\tau=500\\,\\mathrm{fs}$) den Wert $10^{-2}$ W. Was ist wahrscheinlich passiert?",
+          "optionen": [
+            "Der Wert ist richtig",
+            "Das Zeit-Exponent EE wurde vergessen oder mit Vorzeichen verwechselt",
+            "Die Pulsenergie ist zu klein",
+            "Der Rechner ist defekt"
+          ],
+          "richtig": 1,
+          "erklaerung": "Erwartet wird etwa $5\\cdot10^{-6}/5\\cdot10^{-13}=10^{7}$ W. Ein Wert von $10^{-2}$ W zeigt einen Exponentenfehler um 9 Stufen."
+        },
+        {
+          "id": "k00.q21",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Größe der typischen Größenordnung zu (Zahlenbeispiele aus diesem Skript).",
+          "paare": [
+            [
+              "Photonenenergie bei 1030 nm",
+              "≈ 1 eV"
+            ],
+            [
+              "Fokusradius hinter der Scanlinse",
+              "≈ 10 µm"
+            ],
+            [
+              "Pulsenergie im UKP-Verstärker",
+              "µJ bis mJ"
+            ],
+            [
+              "Pulsdauer im Kapitel K01",
+              "≈ 100 fs"
+            ]
+          ],
+          "erklaerung": "Diese Werte sind Beispiele aus den Kapiteln K01, K02 und K04, keine Normwerte."
+        },
+        {
+          "id": "k00.c04",
+          "typ": "karte",
+          "vorne": "Wie schätzt du ein Ergebnis vor dem Rechnen ab?",
+          "hinten": "Jede Zahl auf eine Stelle und eine Zehnerpotenz runden, die Exponenten addieren bzw. subtrahieren, danach den Rechnerwert vergleichen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k00.l05",
+      "titel": "Taschenrechner-Training",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k00.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "In dieser Lektion übst du den **Taschenrechner** der App an typischen Ausdrücken. Du erreichst ihn jederzeit über den Rechner-Knopf (unten rechts) oder in jeder Rechenaufgabe über „Taschenrechner“.",
+            "Tasten: **EE** für Zehnerpotenzen (3 EE 8 $=3\\cdot10^{8}$), **( )** für Klammern, **xʸ** und **x²** für Potenzen, **√**, **ln**, **log**, **2nd** für eˣ, 10ˣ und die Umkehrfunktionen, **Ans** für das letzte Ergebnis. Unter „Konstanten und Vorsätze“ findest du $c$, $h$, $e_0$ und die SI-Vorsätze. Mit **DEG/RAD** wechselst du das Winkelmaß (Start: DEG). „Ergebnis übernehmen“ trägt das Resultat ins Antwortfeld ein."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k00.q22",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Spitzenfluenz mit vollständigem Ausdruck: $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$ für $E_\\mathrm{p}=10\\,\\mu\\mathrm{J}$ und $w_0=20\\,\\mu\\mathrm{m}$ (also $2\\cdot10^{-3}$ cm). Antwort in J/cm².",
+          "antwort": 1.59,
+          "einheit": "J/cm²",
+          "toleranz": 0.02,
+          "erklaerung": "$2\\cdot10^{-5}/(\\pi\\cdot4\\cdot10^{-6})=1{,}59\\,\\mathrm{J/cm^2}$. Eingabe: 2 × 10 EE − 6 ÷ ( π × ( 2 EE − 3 ) x² ).",
+          "tipp": "Setze den Nenner in Klammern: $2\\cdot10^{-5}\\,/\\,(\\pi\\cdot(2\\cdot10^{-3})^2)$."
+        },
+        {
+          "id": "k00.q23",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Photonenenergie mit den Konstanten-Tasten: $E=\\dfrac{hc}{\\lambda\\,e_0}$ in eV für $\\lambda=343\\,\\mathrm{nm}$. Verwende **h**, **c** und **e₀** aus „Konstanten und Vorsätze“.",
+          "antwort": 3.61,
+          "einheit": "eV",
+          "toleranz": 0.02,
+          "erklaerung": "$hc/\\lambda=5{,}79\\cdot10^{-19}\\,\\mathrm{J}$, geteilt durch $e_0=1{,}602\\cdot10^{-19}\\,\\mathrm{C}$ ergibt $3{,}61\\,\\mathrm{eV}$.",
+          "tipp": "Eingabe: ( h × c ) ÷ ( 343 EE − 9 × e₀ )."
+        },
+        {
+          "id": "k00.q24",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Inkubation: Wie viele Pulse $N^\\ast=(1/0{,}6)^{1/0{,}15}$ brauchst du bis zum Abtrag? Nutze **xʸ** mit dem Exponenten in Klammern.",
+          "antwort": 30.1,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$(1/0{,}6)^{6{,}67}=e^{6{,}67\\cdot0{,}511}=e^{3{,}41}=30{,}1$.",
+          "tipp": "Eingabe: ( 1 ÷ 0.6 ) xʸ ( 1 ÷ 0.15 )."
+        },
+        {
+          "id": "k00.q25",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Öffnungshalbwinkel einer Linse: $\\theta=\\arctan(w_\\mathrm{in}/f)$ mit $w_\\mathrm{in}=5\\,\\mathrm{mm}$ und $f=100\\,\\mathrm{mm}$. Antwort in Grad (Rechner im DEG-Modus, **2nd → tan⁻¹**).",
+          "antwort": 2.862,
+          "einheit": "°",
+          "toleranz": 0.01,
+          "erklaerung": "$\\arctan(0{,}05)=2{,}862^{\\circ}$."
+        },
+        {
+          "id": "k00.q26",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Spitzenleistung mit Vorsatz-Tasten: $E_\\mathrm{p}=12\\,\\mu\\mathrm{J}$, $\\tau=300\\,\\mathrm{fs}$. Gib in **MW** an (nutze $\\mu$ und $f$ aus den Vorsätzen).",
+          "antwort": 40,
+          "einheit": "MW",
+          "toleranz": 0.05,
+          "erklaerung": "$12\\cdot10^{-6}/(300\\cdot10^{-15})=4\\cdot10^{7}\\,\\mathrm{W}=40\\,\\mathrm{MW}$."
+        },
+        {
+          "id": "k00.c05",
+          "typ": "karte",
+          "vorne": "Wie gibst du $3\\cdot10^{-13}$ am Taschenrechner ein?",
+          "hinten": "3 EE − 13 (EE = ×10^). Negative Exponenten mit der Minus-Taste direkt nach EE.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    }
+  ]
+}

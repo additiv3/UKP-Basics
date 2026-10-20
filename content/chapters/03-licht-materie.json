@@ -379,6 +379,135 @@
           "quelle": "Projektnotizen"
         }
       ]
+    },
+    {
+      "id": "k03.l05",
+      "titel": "Rechentraining: Absorption und Photonen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k03.l05.b01",
+          "typ": "text",
+          "inhalt": "Rechenaufgaben zu Reflexion, Lambert-Beer und Mehrphotonenabsorption. Alle Zahlen sind frei gewählt und keine Materialwerte. Für $e^{-x}$ nutzt du am Taschenrechner die Taste **2nd → eˣ** oder die Konstante **e** mit **xʸ**.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k03.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Dielektrikum hat $n=1{,}45$ ($\\kappa\\approx0$). Wie viel Prozent des senkrecht einfallenden Lichts werden an einer Oberfläche reflektiert?",
+          "antwort": 3.37,
+          "einheit": "%",
+          "toleranz": 0.03,
+          "erklaerung": "$R=\\left(\\dfrac{n-1}{n+1}\\right)^2=\\left(\\dfrac{0{,}45}{2{,}45}\\right)^2=0{,}0337=3{,}37\\,\\%$."
+        },
+        {
+          "id": "k03.q13",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue das Lambert-Beer-Gesetz mit Reflexionsverlust. Dann: Wie viel Prozent der einfallenden Intensität $I_0$ sind in $1\\,\\mu\\mathrm{m}$ Tiefe übrig bei $R=0{,}04$ und $\\alpha=10^{4}\\,\\mathrm{cm^{-1}}$?",
+          "vorlage": "$I(z)=I_0\\cdot$ [] $\\cdot$ []",
+          "richtig": [
+            "$(1-R)$",
+            "$e^{-\\alpha z}$"
+          ],
+          "erklaerung": "$I/I_0=(1-R)\\,e^{-\\alpha z}=0{,}96\\cdot e^{-10^{4}\\cdot10^{-4}}=0{,}96\\cdot e^{-1}\\approx0{,}353$, also 35,3 %. $z=1\\,\\mu\\mathrm{m}=10^{-4}$ cm, deshalb ist $\\alpha z=1$.",
+          "ablenker": [
+            "$e^{+\\alpha z}$",
+            "$R$"
+          ],
+          "tausch": [
+            [
+              0,
+              1
+            ]
+          ],
+          "antwort": 35.3,
+          "einheit": "%",
+          "toleranz": 0.03,
+          "tipp": "Die Tiefe muss zur Einheit von $\\alpha$ passen: 1 µm $=10^{-4}$ cm. Dann ist $\\alpha z$ einheitenlos."
+        },
+        {
+          "id": "k03.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Metall hat $\\alpha=5\\cdot10^{4}\\,\\mathrm{cm^{-1}}$. Wie groß ist die Eindringtiefe $\\delta$ in nm?",
+          "antwort": 200,
+          "einheit": "nm",
+          "toleranz": 0.05,
+          "erklaerung": "$\\delta=1/\\alpha=2\\cdot10^{-5}\\,\\mathrm{cm}=2\\cdot10^{-7}\\,\\mathrm{m}=200\\,\\mathrm{nm}$."
+        },
+        {
+          "id": "k03.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "In welcher Tiefe ist die Intensität (nach der Reflexion) auf 10 % gefallen? Antwort in Vielfachen der Eindringtiefe $\\delta$.",
+          "antwort": 2.3,
+          "einheit": "· δ",
+          "toleranz": 0.03,
+          "erklaerung": "$e^{-z/\\delta}=0{,}1\\Rightarrow z=\\delta\\ln10\\approx2{,}30\\,\\delta$.",
+          "tipp": "Löse $e^{-z/\\delta}=0{,}1$ nach $z$ auf: Logarithmus auf beiden Seiten (ln-Taste)."
+        },
+        {
+          "id": "k03.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Die Bandlücke eines Materials beträgt (frei gewählt) 3 eV. Welche dieser Wellenlängen kann ein einzelnes Photon linear absorbieren lassen?",
+          "optionen": [
+            "1030 nm (1,20 eV)",
+            "515 nm (2,41 eV)",
+            "343 nm (3,61 eV)",
+            "800 nm (1,55 eV)"
+          ],
+          "richtig": 2,
+          "erklaerung": "Nur 3,61 eV liegt über der Bandlücke von 3 eV. Die anderen Photonen sind energieärmer; dort wären mehrere Photonen nötig."
+        },
+        {
+          "id": "k03.q17",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Die Absorptionsrate wächst mit $I^{3}$. Du erhöhst die Intensität auf das 1,5-Fache. Um welchen Faktor steigt die Rate?",
+          "antwort": 3.375,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$1{,}5^3=3{,}375$."
+        },
+        {
+          "id": "k03.q18",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze, wie die Absorptionsrate von der Intensität abhängt.",
+          "text": "Bei linearer Absorption steigt die Rate mit ___, bei $n$-Photonen-Absorption mit ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "$I$",
+                "$I^2$",
+                "$I^n$"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "$I$",
+                "$I^2$",
+                "$I^n$"
+              ],
+              "richtig": 2
+            }
+          ],
+          "erklaerung": "Linear ist die Rate proportional zu $I$; bei $n$ Photonen zu $I^n$."
+        },
+        {
+          "id": "k03.c06",
+          "typ": "karte",
+          "vorne": "Wie berechnest du die minimale Photonenzahl für die Bandlücke?",
+          "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$ mit $h\\nu\\approx1239{,}84\\,\\mathrm{eV\\,nm}/\\lambda$; immer aufrunden.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

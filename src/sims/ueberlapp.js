@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num, si } from '../core/format.js';
 import { canvasView, control, readouts, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Pulsabstand, Überlapp und Hatch', kurz: 'Scangeschwindigkeit, Repetitionsrate und Spurabstand zusammen denken' };
 export const formel = [
@@ -78,7 +79,7 @@ export function mount(root) {
       ctx.font = '700 11.5px system-ui, sans-serif';
       ctx.textAlign = 'left';
       const y1 = cy0 - w0 * s - 8;
-      ctx.fillText(`Pulsabstand d = ${num(c.d, 3)} µm`, 10, Math.max(16, y1));
+      ctx.fillText(t('Pulsabstand d = {d} µm', { d: num(c.d, 3) }), 10, Math.max(16, y1));
       ctx.restore();
       // scale bar
       const bar = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000].find((b) => b * s > W * 0.14) ?? 1000;
@@ -89,7 +90,7 @@ export function mount(root) {
       ctx.fillText(`${bar} µm`, W - 12, H - 22);
     },
   });
-  view.canvas.setAttribute('aria-label', 'Draufsicht: Laserspots entlang mehrerer Scanspuren mit Pulsabstand und Spurabstand');
+  view.canvas.setAttribute('aria-label', t('Draufsicht: Laserspots entlang mehrerer Scanspuren mit Pulsabstand und Spurabstand'));
 
   function update() {
     const c = calc();
@@ -105,5 +106,5 @@ export function mount(root) {
   }
   update();
 
-  root.append(box, ...ctrls.map((x) => x.el), out.el, h('p', { class: 'hint sim-note' }, 'Der Spotdurchmesser 2w₀ ist der 1/e²-Durchmesser des Strahls. Der tatsächlich abgetragene Durchmesser ist kleiner (er hängt von der Fluenz und der Schwelle ab), also ist auch der effektive Überlapp kleiner als hier gezeigt.'));
+  root.append(box, ...ctrls.map((x) => x.el), out.el, h('p', { class: 'hint sim-note' }, t('Der Spotdurchmesser 2w₀ ist der 1/e²-Durchmesser des Strahls. Der tatsächlich abgetragene Durchmesser ist kleiner (er hängt von der Fluenz und der Schwelle ab), also ist auch der effektive Überlapp kleiner als hier gezeigt.')));
 }

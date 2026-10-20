@@ -2,6 +2,7 @@
 import { h } from '../ui/dom.js';
 import { num, si } from '../core/format.js';
 import { canvasView, control, readouts, Plot, alpha } from './kit.js';
+import { t } from '../core/i18n.js';
 
 export const meta = { titel: 'Ablationsschwelle und D²-Methode', kurz: 'Krater vermessen, Schwelle und Strahlradius bestimmen' };
 export const formel = [
@@ -64,14 +65,14 @@ export function mount(root) {
         ctx.stroke();
         ctx.font = '700 11.5px system-ui, sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(`Kraterdurchmesser D = ${num(D, 3)} µm`, p.X(0), y + 32);
+        ctx.fillText(t('Kraterdurchmesser D = {d} µm', { d: num(D, 3) }), p.X(0), y + 32);
         ctx.restore();
       } else {
         p.text('unter der Schwelle: kein Abtrag', p.X(0), p.Y(Fth) + 28, { color: pal.muted, align: 'center', bold: true });
       }
     },
   });
-  prof.canvas.setAttribute('aria-label', 'Gaußsches Fluenzprofil mit Schwelle und Kraterdurchmesser');
+  prof.canvas.setAttribute('aria-label', t('Gaußsches Fluenzprofil mit Schwelle und Kraterdurchmesser'));
 
   const fitBox = h('div', { class: 'sim-canvas-box' });
   const fitView = canvasView(fitBox, {
@@ -92,7 +93,7 @@ export function mount(root) {
       if (!pts.length) p.text('Setze Messpunkte, indem du Krater „schießt"', p.X(0.3), p.Y(p.ymax * 0.55), { color: pal.muted, size: 12.5 });
     },
   });
-  fitView.canvas.setAttribute('aria-label', 'Quadrat des Kraterdurchmessers über der Pulsenergie, logarithmische x-Achse, mit linearer Anpassung');
+  fitView.canvas.setAttribute('aria-label', t('Quadrat des Kraterdurchmessers über der Pulsenergie, logarithmische x-Achse, mit linearer Anpassung'));
 
   function regress() {
     if (pts.length < 2) return null;
@@ -115,7 +116,7 @@ export function mount(root) {
   function shoot(E) {
     const F0 = (2 * E * 1e-6) / (Math.PI * (w0 * 1e-4) ** 2);
     if (F0 <= Fth) {
-      msg.textContent = 'Unter der Schwelle: Hier entsteht kein Krater, also auch kein Messpunkt.';
+      msg.textContent = t('Unter der Schwelle: Hier entsteht kein Krater, also auch kein Messpunkt.');
       return;
     }
     const D2 = 2 * w0 * w0 * Math.log(F0 / Fth) * (1 + (Math.random() - 0.5) * 0.08); // measurement noise on D²
@@ -137,7 +138,7 @@ export function mount(root) {
     },
     'Messreihe automatisch',
   );
-  const clear = h('button', { type: 'button', class: 'btn btn-ghost', onClick: () => { pts = []; msg.textContent = ''; update(); } }, 'Löschen');
+  const clear = h('button', { type: 'button', class: 'btn btn-ghost', onClick: () => { pts = []; msg.textContent = ''; update(); } }, t('Löschen'));
 
   function update() {
     const c = calc();
@@ -147,8 +148,8 @@ export function mount(root) {
       { label: 'F₀ / F_th', value: num(c.ratio, 3), tone: c.ratio > 1 ? 'ok' : 'warn' },
       { label: 'Kraterdurchmesser D', value: c.D2 > 0 ? si(c.D * 1e-6, 'm') : 'kein Abtrag' },
       { label: 'Messpunkte', value: String(pts.length) },
-      { label: 'Aus Fit: w₀', value: fit ? `${num(fit.w0fit, 3)} µm (wahr: ${num(w0, 3)})` : '–' },
-      { label: 'Aus Fit: F_th', value: fit ? `${num(fit.Fthfit, 3)} J/cm² (wahr: ${num(Fth, 3)})` : '–', tone: 'accent' },
+      { label: 'Aus Fit: w₀', value: fit ? t('{a} µm (wahr: {b})', { a: num(fit.w0fit, 3), b: num(w0, 3) }) : '–' },
+      { label: 'Aus Fit: F_th', value: fit ? t('{a} J/cm² (wahr: {b})', { a: num(fit.Fthfit, 3), b: num(Fth, 3) }) : '–', tone: 'accent' },
     ]);
     prof.redraw();
     fitView.redraw();

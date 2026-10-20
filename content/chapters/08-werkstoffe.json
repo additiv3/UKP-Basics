@@ -1,0 +1,460 @@
+{
+  "id": "k08",
+  "titel": "Werkstoffe: Quarzglas, Keramik, Halbleiter",
+  "einleitung": "Warum verhält sich Quarzglas anders als Silizium und beide anders als Aluminiumoxid? Hier ordnest du die Werkstoffklassen nach Bandlücke, Absorptionsregime und Sprödigkeit und lernst, warum Risse und Eigenspannungen den Prozess begrenzen. Zahlenwerte sind Größenordnungen aus der Literatur und als ungeprüft markiert.",
+  "ziele": [
+    "Werkstoffklassen nach Bandlücke und Gefüge einordnen",
+    "Das Absorptionsregime aus Photonenenergie und Bandlücke ableiten",
+    "Thermische Spannungen abschätzen und Ursachen von Rissen benennen",
+    "Eine werkstoffgerechte Prozessstrategie ableiten"
+  ],
+  "weiterlesen": [
+    "gattass2008",
+    "sugioka2014",
+    "schaffer2001"
+  ],
+  "lektionen": [
+    {
+      "id": "k08.l01",
+      "titel": "Werkstoffklassen im Überblick",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k08.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Dieses Kapitel ordnet die Werkstoffe, die in deiner Promotion vorkommen, nach den Eigenschaften, die für den UKP-Abtrag entscheidend sind. Du kennst aus Kapitel 3 den Zusammenhang zwischen **Bandlücke** und Absorption und aus Kapitel 7 die Mechanismen des Abtrags. Jetzt kommt die Frage: Wie verhalten sich die Materialklassen im Prozess?",
+            "- **Quarzglas** (fused silica): amorphes SiO₂, sehr rein, von UV bis nahes Infrarot transparent, sehr kleine thermische Ausdehnung.\n- **Saphir:** einkristallines Al₂O₃, hart, transparent.\n- **Oxidkeramik** (z. B. Aluminiumoxid, Zirkonoxid): polykristallin, hart, spröde.\n- **Nichtoxidkeramik** (z. B. Siliziumnitrid, Siliziumkarbid, Aluminiumnitrid): meist sehr hart und temperaturbeständig.\n- **Halbleiter** (z. B. Silizium, Siliziumkarbid, Galliumnitrid): kleine bis mittlere Bandlücke, Grundstoff der Elektronik."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k08.l01.b02",
+          "typ": "text",
+          "inhalt": [
+            "Als **Größenordnung** der Bandlücken werden in der Literatur häufig genannt (Zahlen nicht an der Primärquelle geprüft):",
+            "- Quarzglas und Saphir: etwa 9 eV\n- Siliziumnitrid: etwa 5 eV\n- Siliziumkarbid (4H): etwa 3,3 eV\n- Silizium: etwa 1,1 eV"
+          ],
+          "verifiziert": false,
+          "quelle": "gängige Literaturwerte, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k08.l01.b03",
+          "typ": "merke",
+          "inhalt": "Vergleiche immer die **Photonenenergie** (1030 nm: 1,20 eV; 515 nm: 2,41 eV; 343 nm: 3,61 eV) mit der **Bandlücke**. Daraus folgt, ob der Werkstoff linear absorbiert (Photon reicht), nur nichtlinear (mehrere Photonen) oder bei dieser Wellenlänge praktisch transparent bleibt.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k08.q01",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Ordne die Werkstoffe nach der (ungefähren, nicht geprüften) Bandlücke, von klein nach groß.",
+          "items": [
+            "Silizium",
+            "Siliziumkarbid (4H)",
+            "Siliziumnitrid",
+            "Quarzglas"
+          ],
+          "erklaerung": "Größenordnung nach Literaturwerten: Si ≈ 1,1 eV, SiC ≈ 3,3 eV, Si₃N₄ ≈ 5 eV, SiO₂ ≈ 9 eV (ungeprüft).",
+          "oben": "kleinste Bandlücke",
+          "unten": "größte Bandlücke"
+        },
+        {
+          "id": "k08.q02",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Werkstoff seiner Klasse zu.",
+          "paare": [
+            [
+              "Quarzglas",
+              "Amorphes Glas"
+            ],
+            [
+              "Saphir",
+              "Einkristall (Al₂O₃)"
+            ],
+            [
+              "Aluminiumoxid",
+              "Oxidkeramik"
+            ],
+            [
+              "Siliziumnitrid",
+              "Nichtoxidkeramik"
+            ],
+            [
+              "Silizium",
+              "Elementhalbleiter"
+            ]
+          ],
+          "erklaerung": "Die Klasse bestimmt Gefüge (amorph, Einkristall, polykristallin) und damit das Verhalten bei Wärme und Rissbildung."
+        },
+        {
+          "id": "k08.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Eigenschaft ist für die **Absorption** am wichtigsten?",
+          "optionen": [
+            "Die Dichte",
+            "Die Bandlücke relativ zur Photonenenergie",
+            "Die Farbe der Probe",
+            "Die Probendicke allein"
+          ],
+          "richtig": 1,
+          "erklaerung": "Ob ein Photon die Lücke überwinden kann, entscheidet über lineare oder nichtlineare Absorption."
+        },
+        {
+          "id": "k08.c01",
+          "typ": "karte",
+          "vorne": "Wie stufst du den Absorptionsfall eines Werkstoffs ein?",
+          "hinten": "Photonenenergie $h\\nu$ mit der Bandlücke $E_\\mathrm{g}$ vergleichen: $h\\nu>E_\\mathrm{g}$ linear, $h\\nu<E_\\mathrm{g}$ nur nichtlinear (Mehrphotonen) bzw. transparent.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k08.l02",
+      "titel": "Absorptionsregime: transparent, absorbierend, dazwischen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k08.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Drei typische Fälle bei Ultrakurzpulsen (alle Zahlen sind Größenordnungen aus der Literatur, nicht geprüft):",
+            "- **Große Bandlücke (Quarzglas, Saphir):** $h\\nu\\ll E_\\mathrm{g}$. Linear transparent; Absorption erst bei hoher Intensität über [[multiphotonenabsorption]] und Lawine im Fokus. Volumenbearbeitung ist möglich.",
+            "- **Mittlere Bandlücke (SiC, Si₃N₄):** je nach Wellenlänge 2 bis 5 Photonen. Kürzere Wellenlänge (515 nm, 343 nm) senkt die nötige Photonenzahl und die Schwelle.",
+            "- **Kleine Bandlücke (Silizium):** Bei 1030 nm ist $h\\nu=1{,}20$ eV größer als $E_\\mathrm{g}\\approx1{,}1$ eV. Es gibt also lineare Absorption, bei Silizium wegen der **indirekten** Bandlücke aber nur schwach. Bei 1550 nm ($h\\nu=0{,}80$ eV) ist Silizium dagegen weitgehend transparent."
+          ],
+          "verifiziert": false,
+          "quelle": "gängige Literaturwerte, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k08.l02.b02",
+          "typ": "merke",
+          "inhalt": "Ob Energie an der **Oberfläche** oder im **Volumen** landet, hängt von der Eindringtiefe $\\delta$ ab. Kleine $\\delta$ (stark absorbierend): Oberflächenabtrag. Große $\\delta$ (transparent): Energie verteilt sich im Volumen, bis nichtlineare Absorption im Fokus startet.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k08.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei welcher Wellenlänge entspricht die Photonenenergie der Bandlücke $E_\\mathrm{g}=1{,}12\\,\\mathrm{eV}$ (Silizium, Literaturwert)? Antwort in nm.",
+          "antwort": 1107,
+          "einheit": "nm",
+          "toleranz": 0.01,
+          "erklaerung": "$\\lambda=1239{,}84\\,\\mathrm{eV\\,nm}/1{,}12\\,\\mathrm{eV}\\approx1107\\,\\mathrm{nm}$. Darüber ist Silizium weitgehend transparent."
+        },
+        {
+          "id": "k08.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Für $E_\\mathrm{g}=3{,}3\\,\\mathrm{eV}$ (SiC, Literaturwert): Bei welcher Wellenlänge in nm ist $h\\nu=E_\\mathrm{g}$?",
+          "antwort": 376,
+          "einheit": "nm",
+          "toleranz": 0.01,
+          "erklaerung": "$\\lambda=1239{,}84/3{,}3\\approx376\\,\\mathrm{nm}$. Kürzere Wellenlängen werden linear absorbiert."
+        },
+        {
+          "id": "k08.q06",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Wie viele Photonen braucht es mindestens für $E_\\mathrm{g}=5\\,\\mathrm{eV}$ (Siliziumnitrid, Literaturwert) bei 1030 nm ($h\\nu=1{,}20$ eV)?",
+          "vorlage": "$n_\\mathrm{min}=\\left\\lceil\\right.$ {{ [] // [] }} $\\left.\\right\\rceil$",
+          "richtig": [
+            "$E_\\mathrm{g}$",
+            "$h\\nu$"
+          ],
+          "erklaerung": "$5/1{,}20=4{,}17\\Rightarrow n_\\mathrm{min}=5$ (aufrunden).",
+          "ablenker": [
+            "$\\tau$",
+            "$I$"
+          ],
+          "antwort": 5,
+          "einheit": "",
+          "toleranz": 0
+        },
+        {
+          "id": "k08.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Silizium bei 1550 nm: Was ist zu erwarten?",
+          "optionen": [
+            "Starke lineare Absorption an der Oberfläche",
+            "Weitgehende Transparenz, da $h\\nu<E_\\mathrm{g}$",
+            "Reflexion von 100 %",
+            "Plasmaabschirmung bei niedrigster Intensität"
+          ],
+          "richtig": 1,
+          "erklaerung": "$h\\nu=0{,}80$ eV liegt unter der Bandlücke von etwa 1,1 eV (Literaturwert)."
+        },
+        {
+          "id": "k08.q08",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die Aussagen zur Wellenlängenwahl.",
+          "text": "Eine ___ Wellenlänge senkt die nötige Photonenzahl für eine Bandlücke. Dadurch sinkt in der Regel die ___ des Materials.",
+          "luecken": [
+            {
+              "optionen": [
+                "kürzere",
+                "längere"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Ablationsschwelle",
+                "Dichte"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Kürzere Wellenlänge, höhere Photonenenergie, weniger Photonen nötig, niedrigere Schwelle (qualitativ)."
+        },
+        {
+          "id": "k08.c02",
+          "typ": "karte",
+          "vorne": "Warum ist Silizium bei 1550 nm transparent?",
+          "hinten": "Die Photonenenergie (≈ 0,8 eV) liegt unter der Bandlücke (≈ 1,1 eV, Literaturwert); ohne Defekte oder Nichtlinearität wird nichts absorbiert.",
+          "verifiziert": false,
+          "quelle": "gängige Literaturwerte, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k08.l03",
+      "titel": "Rissbildung und Eigenspannung",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k08.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Spröde Werkstoffe versagen, wenn eine Zugspannung die Festigkeit am **Fehler** (Mikroriss, Pore, Kratzer) überschreitet. Laser erzeugen Spannungen auf drei Wegen:",
+            "- **Thermisch:** Ein erwärmter Bereich will sich ausdehnen, die kalte Umgebung verhindert das: Druckspannung im heißen, Zugspannung im kalten Bereich (und umgekehrt beim Abkühlen).\n- **Mechanisch:** Druckwellen aus dem Abtrag (siehe [[spallation]]).\n- **Strukturell:** Bei Volumenmodifikation ändert sich die Dichte lokal, es bleibt eine [[eigenspannung]] zurück."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k08.l03.b02",
+          "typ": "formel",
+          "latex": "\\sigma_\\mathrm{th}\\approx E\\,\\alpha\\,\\Delta T",
+          "erklaerung": "Behinderte Wärmeausdehnung: Spannung $\\sigma_\\mathrm{th}$ aus Elastizitätsmodul $E$, Ausdehnungskoeffizient $\\alpha$ und Temperaturänderung $\\Delta T$. Folgt aus dem Hookeschen Gesetz mit $\\varepsilon=\\alpha\\Delta T$. Bei zweiachsiger Behinderung kommt der Faktor $1/(1-\\nu)$ hinzu.",
+          "titel": "Thermische Spannung",
+          "sammlung": "Werkstoffe",
+          "einheit": "Pa",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k08.l03.b03",
+          "typ": "beispiel",
+          "aufgabe": "Ein Werkstoff habe (als Zahlenbeispiel, nicht als Materialwert) $E=70\\,\\mathrm{GPa}$ und $\\alpha=5\\cdot10^{-6}\\,\\mathrm{K^{-1}}$. Welche Spannung entsteht bei einer behinderten Erwärmung um $\\Delta T=100\\,\\mathrm{K}$?",
+          "schritte": [
+            "$\\sigma=E\\alpha\\Delta T=70\\cdot10^{9}\\,\\mathrm{Pa}\\cdot5\\cdot10^{-6}\\,\\mathrm{K^{-1}}\\cdot100\\,\\mathrm{K}$",
+            "$\\sigma=3{,}5\\cdot10^{7}\\,\\mathrm{Pa}=35\\,\\mathrm{MPa}$"
+          ],
+          "ergebnis": "35 MPa. Ob das kritisch ist, hängt von der Zugfestigkeit am Fehler ab; spröde Werkstoffe vertragen Zug viel schlechter als Druck.",
+          "titel": "Rechenbeispiel",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k08.l03.b04",
+          "typ": "merke",
+          "inhalt": "Entscheidend ist der **Temperaturgradient**, nicht nur $\\Delta T$: Je schneller und lokaler geheizt wird, desto weniger kann die Umgebung mitwachsen. Bei UKP ist der Gradient hoch, die erhitzte Zone aber klein; deshalb ist **Wärmeakkumulation** (viele Pulse, kleine Abstände) der Hauptfeind.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k08.q09",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die thermische Spannung und berechne sie für (Zahlenbeispiel) $E=100\\,\\mathrm{GPa}$, $\\alpha=4\\cdot10^{-6}\\,\\mathrm{K^{-1}}$ und $\\Delta T=150\\,\\mathrm{K}$. Antwort in MPa.",
+          "vorlage": "$\\sigma_\\mathrm{th}\\approx$ [] $\\cdot$ [] $\\cdot$ []",
+          "richtig": [
+            "$E$",
+            "$\\alpha$",
+            "$\\Delta T$"
+          ],
+          "erklaerung": "$\\sigma=100\\cdot10^{9}\\cdot4\\cdot10^{-6}\\cdot150=6\\cdot10^{7}\\,\\mathrm{Pa}=60\\,\\mathrm{MPa}$.",
+          "ablenker": [
+            "$\\tau$",
+            "$\\lambda$"
+          ],
+          "tausch": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "antwort": 60,
+          "einheit": "MPa",
+          "toleranz": 0.02,
+          "tipp": "1 GPa $=10^9$ Pa. Am Ende durch $10^6$ teilen für MPa."
+        },
+        {
+          "id": "k08.q10",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei sonst gleichen Werten verdoppelst du $\\Delta T$. Um welchen Faktor wächst die thermische Spannung $\\sigma=E\\alpha\\Delta T$?",
+          "antwort": 2,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$\\sigma\\propto\\Delta T$: Verdopplung von $\\Delta T$ verdoppelt $\\sigma$."
+        },
+        {
+          "id": "k08.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Maßnahme reduziert Rissbildung beim Laserabtrag spröder Werkstoffe typischerweise?",
+          "optionen": [
+            "Wärmeakkumulation vermeiden (größerer Pulsabstand, niedrigere Rate)",
+            "Die Fluenz weit über die Schwelle erhöhen",
+            "Pulsüberlapp erhöhen",
+            "Die Fokuslage ignorieren"
+          ],
+          "richtig": 0,
+          "erklaerung": "Weniger akkumulierte Wärme heißt kleinere Gradienten und niedrigere Spannungen (qualitative Regel, Details materialabhängig)."
+        },
+        {
+          "id": "k08.q12",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Spannungsursache der Beschreibung zu.",
+          "paare": [
+            [
+              "Thermische Spannung",
+              "Behinderte Ausdehnung durch Temperaturgradienten"
+            ],
+            [
+              "Mechanische Spannung",
+              "Druck- und Zugwellen aus dem Abtrag"
+            ],
+            [
+              "Eigenspannung",
+              "Spannungen, die nach der Modifikation im Bauteil bleiben"
+            ]
+          ],
+          "erklaerung": "Alle drei können Risse auslösen; welche dominiert, hängt von Werkstoff und Prozess ab."
+        },
+        {
+          "id": "k08.c03",
+          "typ": "karte",
+          "vorne": "Wie schätzt du eine thermische Spannung ab?",
+          "hinten": "$\\sigma_\\mathrm{th}\\approx E\\,\\alpha\\,\\Delta T$ (behinderte Ausdehnung). Zugspannung am Fehler löst Risse in spröden Werkstoffen aus.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k08.l04",
+      "titel": "Prozessstrategie je Werkstoffklasse",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k08.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Aus den Eigenschaften folgt eine **Entscheidungshilfe**. Alle Aussagen sind qualitative Faustregeln aus der Literatur und aus den Projektnotizen; die Zahlenwerte musst du für dein Material selbst bestimmen (Schwelle, Rissgrenze):",
+            "- **Transparent (große Bandlücke):** Oberfläche schon bei niedriger Intensität unkritisch, Volumenbearbeitung ([[sle]], [[wellenleiter]]) möglich. Beim Oberflächenabtrag zählt kurze Wellenlänge oder hohe Intensität.\n- **Absorbierend (kleine Bandlücke):** Oberflächenabtrag ohne Nichtlinearität. Auf Schmelze und Debris achten.\n- **Spröde:** Wärmeakkumulation und Gradienten klein halten; schichtweise abtragen; Pausen oder Abkühlzeit einplanen.\n- **Gute Wärmeleitung:** Wärme fließt schneller ab; höhere Raten werden eher toleriert."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        },
+        {
+          "id": "k08.q13",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Eigenschaft der prozessseitigen Konsequenz zu (qualitativ).",
+          "paare": [
+            [
+              "Große Bandlücke",
+              "Nichtlineare Absorption nötig, Volumenbearbeitung möglich"
+            ],
+            [
+              "Kleine Bandlücke",
+              "Lineare Absorption an der Oberfläche"
+            ],
+            [
+              "Hohe Sprödigkeit",
+              "Rissgefahr: Wärmeakkumulation und Fluenz begrenzen"
+            ],
+            [
+              "Hohe Wärmeleitfähigkeit",
+              "Wärme fließt schneller ab"
+            ]
+          ],
+          "erklaerung": "Qualitative Faustregeln; konkrete Grenzwerte brauchen Versuche am eigenen Material."
+        },
+        {
+          "id": "k08.q14",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du willst Quarzglas im **Inneren** bearbeiten, ohne die Oberfläche zu verletzen. Was nutzt du?",
+          "optionen": [
+            "Einen Fokus im Volumen mit fs-Pulsen (nichtlineare Absorption)",
+            "Einen defokussierten Strahl auf der Oberfläche",
+            "Einen Dauerstrichlaser",
+            "Eine möglichst lange Wellenlänge im fernen Infrarot"
+          ],
+          "richtig": 0,
+          "erklaerung": "Nur im Fokus ist die Intensität hoch genug für nichtlineare Absorption; die Oberfläche bleibt unberührt (Kapitel 3 und 6)."
+        },
+        {
+          "id": "k08.q15",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze die Strategie für einen spröden Werkstoff.",
+          "text": "Um Risse zu vermeiden, halte die ___ klein und trage ___ ab.",
+          "luecken": [
+            {
+              "optionen": [
+                "Wärmeakkumulation",
+                "Pulsdauer"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "schichtweise",
+                "in einem einzigen Puls"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Qualitative Faustregel für spröde Werkstoffe."
+        },
+        {
+          "id": "k08.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Größe hilft dir zuerst, den Absorptionsfall bei einer neuen Wellenlänge einzuschätzen?",
+          "optionen": [
+            "$h\\nu$ im Vergleich zu $E_\\mathrm{g}$",
+            "Die Masse der Probe",
+            "Die Repetitionsrate allein",
+            "Der Strahldurchmesser am Laser"
+          ],
+          "richtig": 0,
+          "erklaerung": "Photonenenergie gegen Bandlücke ist der erste Schritt."
+        },
+        {
+          "id": "k08.c04",
+          "typ": "karte",
+          "vorne": "Wie gehst du bei einem neuen Werkstoff vor?",
+          "hinten": "1) Bandlücke vs. Photonenenergie, 2) Eindringtiefe, 3) Sprödigkeit und Wärmeleitung, 4) Schwelle und Rissgrenze im Versuch bestimmen.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen"
+        }
+      ]
+    }
+  ]
+}

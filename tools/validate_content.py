@@ -16,7 +16,9 @@ BLOCKS = ROOT / "src" / "blocks"
 SIMS = ROOT / "src" / "sims"
 GAMES = ROOT / "src" / "games"
 
-QUIZ_ARTEN = {"multiple-choice", "zuordnung", "luecke", "sortieren", "zahl"}
+QUIZ_ARTEN = {"multiple-choice", "zuordnung", "luecke", "sortieren", "zahl", "rechenweg"}
+# fields of a block that an English overlay may translate (everything else stays in the German file)
+TRANSLATABLE = {"inhalt", "titel", "erklaerung", "alt", "unterschrift", "aufgabe", "schritte", "ergebnis", "frage", "optionen", "paare", "text", "luecken", "items", "oben", "unten", "vorne", "hinten", "tipp", "gegeben", "sammlung", "vorlage", "richtig", "ablenker"}
 # Unit-bearing numbers that must carry a source or verifiziert flag (heuristic).
 QUANTITY_RE = re.compile(r"\d[\d.,]*\s*(?:fs|ps|ns|µs|ms|µm|nm|mm|eV|J/cm|W/cm|MW|GW|kW|TW|GHz|MHz|kHz|%)(?![A-Za-z])")
 TEXT_FIELDS = ("inhalt", "vorne", "hinten", "erklaerung", "aufgabe", "ergebnis", "frage")
@@ -34,6 +36,10 @@ def load(path):
     except Exception as e:  # noqa: BLE001
         err(f"{path.relative_to(ROOT)}: invalid JSON ({e})")
         return None
+
+
+def load_opt(path):
+    return load(path) if path.exists() else None
 
 
 def strings(obj):
@@ -79,6 +85,84 @@ def check_quiz(b, where):
     elif art == "zahl":
         if not isinstance(b.get("antwort"), (int, float)):
             err(f"{where}: 'antwort' must be a number")
+    elif art == "rechenweg":
+        vorlage, richtig = b.get("vorlage", ""), b.get("richtig", [])
+        if vorlage.count("[]") != len(richtig) or not richtig:
+            err(f"{where}: number of [] slots in 'vorlage' ({vorlage.count('[]')}) must equal len(richtig) ({len(richtig)})")
+        for grp in b.get("tausch", []):
+            if not all(isinstance(i, int) and 0 <= i < len(richtig) for i in grp):
+                err(f"{where}: 'tausch' index out of range")
+        if "antwort" in b and not isinstance(b["antwort"], (int, float)):
+            err(f"{where}: 'antwort' must be a number")
+
+
+def check_english(index, chapters_data, glossar):
+    """English overlays (content/en): ids must exist and structure (option counts, pair counts) must match the German file."""
+    en_dir = CONTENT / "en"
+    if not en_dir.exists():
+        return
+    translatable_types = {"text", "merke", "formel", "bild", "beispiel", "rechner", "sim", "quiz", "karte"}
+    total = missing = 0
+    for cid, (k, ch) in chapters_data.items():
+        ov = load_opt(en_dir / k["datei"])
+        if ov is None:
+            warnings.append(f"{cid}: no English overlay content/en/{k['datei']}")
+            continue
+        blocks = {b["id"]: b for l in ch["lektionen"] for b in l["blocks"]}
+        for bid, fields in ov.get("blocks", {}).items():
+            if bid not in blocks:
+                err(f"en/{k['datei']}: unknown block id {bid}")
+                continue
+            de = blocks[bid]
+            for f, v in fields.items():
+                if f not in TRANSLATABLE:
+                    err(f"en/{bid}: field {f!r} must not be translated (stays in the German file)")
+                    continue
+                if f in ("optionen", "items") and isinstance(v, list) and len(v) != len(de.get(f, [])):
+                    err(f"en/{bid}: {f} has {len(v)} entries, German has {len(de.get(f, []))}")
+                if f == "paare" and len(v) != len(de.get("paare", [])):
+                    err(f"en/{bid}: paare count differs")
+                if f == "luecken":
+                    if len(v) != len(de["luecken"]) or any(len(a["optionen"]) != len(b["optionen"]) or a["richtig"] != b["richtig"] for a, b in zip(v, de["luecken"])):
+                        err(f"en/{bid}: luecken structure (options, richtig) differs from the German file")
+                if f == "text" and de.get("art") == "luecke" and v.count("___") != de["text"].count("___"):
+                    err(f"en/{bid}: number of ___ differs")
+                if f == "vorlage" and v.count("[]") != de["vorlage"].count("[]"):
+                    err(f"en/{bid}: number of [] slots in vorlage differs")
+                if f in ("richtig", "ablenker") and de.get("art") != "rechenweg":
+                    err(f"en/{bid}: {f} may only be translated for rechenweg tiles (indices must stay German)")
+                if f in ("richtig", "ablenker") and len(v) != len(de.get(f, [])):
+                    err(f"en/{bid}: {f} has {len(v)} entries, German has {len(de.get(f, []))}")
+        for l in ch["lektionen"]:
+            if l["id"] not in ov.get("lektionen", {}):
+                warnings.append(f"en/{k['datei']}: lesson title {l['id']} not translated")
+            for b in l["blocks"]:
+                if b["typ"] in translatable_types and b["typ"] not in ("rechner", "sim", "bild", "formel"):
+                    total += 1
+                    if b["id"] not in ov.get("blocks", {}):
+                        missing += 1
+                        warnings.append(f"en/{k['datei']}: block {b['id']} has no English translation")
+        for key in ("titel", "einleitung", "ziele"):
+            if key not in ov:
+                warnings.append(f"en/{k['datei']}: chapter {key} not translated")
+    en_idx = load_opt(en_dir / "index.json")
+    if en_idx is None:
+        warnings.append("content/en/index.json missing")
+    else:
+        for kid in en_idx.get("kapitel", {}):
+            if kid not in {x["id"] for x in index["kapitel"]}:
+                err(f"en/index.json: unknown chapter {kid}")
+    en_g = load_opt(en_dir / "glossar.json")
+    if en_g is None:
+        warnings.append("content/en/glossar.json missing")
+    else:
+        for t in glossar["begriffe"]:
+            if t["id"] not in en_g:
+                warnings.append(f"glossary term {t['id']} has no English definition")
+        for tid in en_g:
+            if tid not in {t["id"] for t in glossar["begriffe"]}:
+                err(f"en/glossar.json: unknown term {tid}")
+    print(f"English coverage: {total - missing}/{total} translatable blocks")
 
 
 def main():
@@ -140,12 +224,14 @@ def main():
             err(f"glossar {t['id']}: needs 'verifiziert' true/false")
 
     seen_blocks, item_ids, texts = set(), [], list(strings(glossar))
+    chapters_data = {}
     for k in index["kapitel"]:
         if "datei" not in k:
             continue
         ch = load(CONTENT / k["datei"])
         if not ch:
             continue
+        chapters_data[k["id"]] = (k, ch)
         if ch.get("id") != k["id"]:
             err(f"{k['datei']}: id {ch.get('id')} != index id {k['id']}")
         for ref in ch.get("weiterlesen", []):
@@ -202,6 +288,8 @@ def main():
                         err(f"{where}: quantity without 'quelle' or 'verifiziert'")
         texts.extend(strings(ch))
 
+    check_english(index, chapters_data, glossar)
+
     # lab configuration: every listed simulation / game must exist, every sim needs a chapter
     labor = load(CONTENT / "labor.json") or {"sims": [], "spiele": []}
     for sim in labor["sims"]:
@@ -228,6 +316,11 @@ def main():
         for ref in re.findall(r"\[\[([a-z0-9-]+)", t):
             if ref not in term_ids:
                 err(f"unknown glossary reference [[{ref}]]")
+
+    # vocabulary cards are generated from the glossary (v.<term>.de / v.<term>.en)
+    for t in glossar["begriffe"]:
+        if t.get("englisch"):
+            item_ids += [f"v.{t['id']}.de", f"v.{t['id']}.en"]
 
     # stable IDs
     reg_path = CONTENT / "id-registry.json"

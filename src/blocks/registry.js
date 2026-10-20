@@ -1,6 +1,7 @@
 // Block registry: block type 'foo' is rendered by src/blocks/foo.js exporting render(block, ctx).
 // Adding a block type = adding a module. Unknown types render a visible placeholder.
 import { h } from '../ui/dom.js';
+import { t } from '../core/i18n.js';
 
 const RESERVED = new Set(['registry', 'scoring']);
 const modules = new Map();
@@ -20,7 +21,7 @@ async function moduleFor(typ) {
 /** "Quelle: ..." text; resolves bibliography ids from content/quellen.json. */
 export function sourceText(ref, ctx) {
   const s = ctx?.data?.sources?.get(ref);
-  return s ? `${s.kurz}` : ref;
+  return s ? `${s.kurz}` : t(ref);
 }
 
 /**
@@ -36,10 +37,10 @@ export async function renderBlock(block, ctx) {
   el.classList.add('block', `block-${block.typ}`);
   if (block.id) el.dataset.blockId = block.id;
   if (block.verifiziert === false) {
-    el.prepend(h('span', { class: 'badge badge-warn', title: 'Noch nicht gegen Literatur geprüft' }, 'ungeprüft'));
+    el.prepend(h('span', { class: 'badge badge-warn', title: t('Noch nicht gegen Literatur geprüft') }, t('ungeprüft')));
   }
   if (block.quelle && block.typ !== 'quelle') {
-    el.append(h('p', { class: 'src-note' }, `Quelle: ${sourceText(block.quelle, ctx)}`));
+    el.append(h('p', { class: 'src-note' }, t('Quelle: {s}', { s: sourceText(block.quelle, ctx) })));
   }
   return el;
 }

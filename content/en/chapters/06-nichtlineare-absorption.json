@@ -1,0 +1,265 @@
+{
+  "titel": "Nonlinear absorption in dielectrics",
+  "einleitung": "How do you put energy into a material that is actually transparent to the laser light? With extreme intensity: several photons act at the same time, electrons are torn out of the valence band, and an avalanche of free charge carriers turns the glass into a plasma.",
+  "ziele": [
+    "Calculate the minimum number of photons for a band gap and interpret the rate $\\propto I^n$",
+    "Calculate the Keldysh parameter and distinguish multiphoton from tunnel ionization",
+    "Explain avalanche ionization as amplification of free charge carriers",
+    "Calculate the critical plasma density and place its significance for absorption"
+  ],
+  "lektionen": {
+    "k06.l01": "Multiphoton absorption",
+    "k06.l02": "Tunnel ionization and the Keldysh parameter",
+    "k06.l03": "Avalanche ionization",
+    "k06.l04": "Plasma and critical density",
+    "k06.l05": "Calculation training: photons, Keldysh, plasma"
+  },
+  "blocks": {
+    "k06.l01.b01": {
+      "inhalt": [
+        "An electron in the valence band of a dielectric needs at least the energy $E_\\mathrm{g}$ to reach the conduction band. A single photon in the near infrared has much less. At high intensity the electron absorbs **$n$ photons simultaneously**, as many as it takes until the sum exceeds the band gap ([[multiphotonenabsorption]])."
+      ]
+    },
+    "k06.l01.b02": {
+      "titel": "Multiphoton absorption",
+      "sammlung": "Nonlinear absorption",
+      "erklaerung": "$\\lceil\\cdot\\rceil$ rounds up to the next integer. Photon energy $h\\nu=hc/\\lambda\\approx1239.84\\,\\mathrm{eV\\,nm}/\\lambda$."
+    },
+    "k06.l01.b04": {
+      "titel": "Worked example",
+      "aufgabe": "A dielectric has (as a numerical example) $E_\\mathrm{g}=9\\,\\mathrm{eV}$. How many photons are needed at 1030 nm and at 343 nm?",
+      "schritte": [
+        "1030 nm: $h\\nu=1239.84/1030\\,\\mathrm{eV}\\approx1.20\\,\\mathrm{eV}$, $9/1.20=7.5\\Rightarrow n=8$",
+        "343 nm: $h\\nu=1239.84/343\\,\\mathrm{eV}\\approx3.61\\,\\mathrm{eV}$, $9/3.61=2.5\\Rightarrow n=3$"
+      ],
+      "ergebnis": "8 photons at 1030 nm, but only 3 at 343 nm. Because of $I^n$, absorption at the short wavelength is many orders of magnitude more probable at the same intensity."
+    },
+    "k06.l01.b05": {
+      "inhalt": "The higher the order $n$, the steeper the absorption depends on the intensity (doubling the intensity: factor $2^n$). That is why multiphoton processes have a **sharp threshold** and a very localized effect."
+    },
+    "k06.q01": {
+      "frage": "At $E_\\mathrm{g}=6\\,\\mathrm{eV}$ and $\\lambda=515\\,\\mathrm{nm}$ ($h\\nu\\approx2.41\\,\\mathrm{eV}$): at least how many photons are needed?",
+      "erklaerung": "$6/2.41=2.49\\Rightarrow n=3$ (round up, 2 photons are not enough)."
+    },
+    "k06.q02": {
+      "frage": "The rate rises with $I^{5}$. You increase the intensity by 20 %. By what factor does the rate rise?",
+      "erklaerung": "$1.2^5=2.49$."
+    },
+    "k06.q03": {
+      "frage": "Why does multiphoton absorption only become practically relevant with ultrashort pulses?",
+      "optionen": [
+        "Because UKP lasers have a different wavelength",
+        "Because at the same pulse energy the peak intensity is very high",
+        "Because photons have more energy in short pulses",
+        "Because the material is thinner for short pulses"
+      ],
+      "erklaerung": "$I\\approx F/\\tau$: short pulses reach very high intensities at which $I^n$ becomes relevant."
+    },
+    "k06.c01": {
+      "vorne": "How many photons does an $n$-photon process need at least?",
+      "hinten": "$n=\\lceil E_\\mathrm{g}/h\\nu\\rceil$, the rate grows $\\propto I^n$."
+    },
+    "k06.l02.b01": {
+      "inhalt": [
+        "At very strong fields the electric field of the laser deforms the potential barrier that holds the electron in the atom or valence band. The electron can then **tunnel** through. Which mechanism dominates is told by the **Keldysh parameter** ([[keldysh-parameter]]) $\\gamma$."
+      ]
+    },
+    "k06.l02.b02": {
+      "titel": "Keldysh parameter",
+      "sammlung": "Nonlinear absorption",
+      "erklaerung": "Angular frequency $\\omega$, reduced electron–hole mass $m^\\ast$, refractive index $n_0$, intensity $I$, band gap $E_\\mathrm{g}$. In the literature the expression is often given in this form with these quantities (not checked against the primary source)."
+    },
+    "k06.l02.b03": {
+      "inhalt": [
+        "$\\gamma\\gg1$: multiphoton ionization dominates (low intensity, high frequency). $\\gamma\\ll1$: tunnel ionization dominates (high intensity, low frequency). In between lies a transition; the literature quotes the region around $\\gamma\\approx1.5$."
+      ]
+    },
+    "k06.l02.b04": {
+      "titel": "Worked example",
+      "aufgabe": "Calculate $\\gamma$ for $\\lambda=1030\\,\\mathrm{nm}$, $I=10^{13}\\,\\mathrm{W/cm^2}$, $E_\\mathrm{g}=9\\,\\mathrm{eV}$, $m^\\ast=0.5\\,m_\\mathrm{e}$ and $n_0=1.5$ (all numerical examples).",
+      "schritte": [
+        "$\\omega=2\\pi c/\\lambda=1.83\\cdot10^{15}\\,\\mathrm{s^{-1}}$, $E_\\mathrm{g}=1.44\\cdot10^{-18}\\,\\mathrm{J}$, $I=10^{17}\\,\\mathrm{W/m^2}$, $m^\\ast=4.55\\cdot10^{-31}\\,\\mathrm{kg}$",
+        "Radicand: $m^\\ast c\\,n_0\\varepsilon_0E_\\mathrm{g}/I=2.6\\cdot10^{-68}$, root: $1.6\\cdot10^{-34}$",
+        "$\\gamma=(1.83\\cdot10^{15}/1.6\\cdot10^{-19})\\cdot1.6\\cdot10^{-34}\\approx1.8$"
+      ],
+      "ergebnis": "$\\gamma\\approx1.8$: you are in the transition region between multiphoton and tunnel ionization. At $10^{12}\\,\\mathrm{W/cm^2}$ it would be $\\gamma\\approx5.8$, at $10^{14}\\,\\mathrm{W/cm^2}$ about $0.6$."
+    },
+    "k06.l02.b05": {
+      "inhalt": "With rising intensity $\\gamma\\propto I^{-1/2}$ falls and the process shifts from multiphoton to tunnel ionization. With longer wavelength $\\omega$ falls, and with it $\\gamma$."
+    },
+    "k06.q04": {
+      "frage": "How does $\\gamma$ change if you quadruple the intensity?",
+      "optionen": [
+        "It quadruples",
+        "It halves",
+        "It stays the same",
+        "It doubles"
+      ],
+      "erklaerung": "$\\gamma\\propto I^{-1/2}$: four times the intensity, half the value."
+    },
+    "k06.q05": {
+      "frage": "At which value of the Keldysh parameter does tunnel ionization dominate?",
+      "optionen": [
+        "$\\gamma\\gg1$",
+        "$\\gamma\\ll1$",
+        "$\\gamma=100$",
+        "$\\gamma$ is independent of it"
+      ],
+      "erklaerung": "A small $\\gamma$ stands for very strong, slowly varying fields: tunnelling."
+    },
+    "k06.c02": {
+      "vorne": "What does the Keldysh parameter tell you?",
+      "hinten": "Ratio of photon frequency to tunnelling frequency: $\\gamma\\gg1$ multiphoton, $\\gamma\\ll1$ tunnelling, $\\gamma\\propto1/\\sqrt I$."
+    },
+    "k06.l03.b01": {
+      "inhalt": [
+        "Multiphoton ionization initially produces only a few free electrons. These **seed electrons** now absorb further photons in the conduction band (**free-carrier absorption**, inverse bremsstrahlung). As soon as an electron has more energy than about $E_\\mathrm{g}$, it can lift another valence electron into the conduction band by a collision ([[avalanche-ionisation]], impact ionization). One becomes two, two become four, and so on: an avalanche.",
+        "In simplified form a rate equation describes both contributions:"
+      ]
+    },
+    "k06.l03.b02": {
+      "titel": "Rate equation of the electron density (simplified)",
+      "sammlung": "Nonlinear absorption",
+      "erklaerung": "Electron density $n_\\mathrm{e}$; $\\sigma_n$ multiphoton coefficient, $\\eta$ avalanche coefficient, $\\tau_\\mathrm{r}$ recombination time. Simplified form (rate-equation model, parameters depend on the material)."
+    },
+    "k06.l03.b03": {
+      "inhalt": [
+        "The avalanche needs time (several doublings, each with a certain collision time). With ns pulses it runs extensively and dominates; with femtosecond pulses time is short and photoionization contributes a large part of the carrier generation. This is one reason why the threshold scales differently for very short pulses than for longer ones (Stuart et al. 1996)."
+      ]
+    },
+    "k06.l03.b04": {
+      "inhalt": "Avalanche = exponential growth $n_\\mathrm{e}\\propto\\mathrm{e}^{\\eta I t}$, provided seed electrons are present. Without seed electrons (from multiphoton processes or defects) no avalanche starts."
+    },
+    "k06.q06": {
+      "frage": "Put the steps of plasma formation in the right order.",
+      "items": [
+        "Multiphoton or tunnel ionization creates seed electrons",
+        "Seed electrons absorb further photons (free-carrier absorption)",
+        "Hot electrons ionize further atoms by impact (avalanche)",
+        "The electron density reaches the critical density, a plasma forms"
+      ],
+      "erklaerung": "First the seeding, then heating, then impact ionization, finally the plasma."
+    },
+    "k06.q07": {
+      "frage": "What role does photoionization play in avalanche ionization?",
+      "optionen": [
+        "It replaces the avalanche",
+        "It supplies the seed electrons",
+        "It cools the electrons",
+        "It inhibits the avalanche"
+      ],
+      "erklaerung": "Without seed electrons there is nothing that could be multiplied by collisions."
+    },
+    "k06.c03": {
+      "vorne": "How does avalanche ionization work?",
+      "hinten": "Free electrons absorb photons, ionize further valence electrons by impact, and the electron density grows exponentially."
+    },
+    "k06.l04.b01": {
+      "inhalt": [
+        "The more free electrons, the more the material behaves like a metal: the electron gas can follow the light field and shield it. The **plasma frequency** $\\omega_\\mathrm{p}$ depends on the electron density $n_\\mathrm{e}$. When it reaches the laser frequency $\\omega$, the plasma has reached the **critical density** ([[kritische-dichte]]) $n_\\mathrm{c}$."
+      ]
+    },
+    "k06.l04.b02": {
+      "titel": "Plasma frequency and critical density",
+      "sammlung": "Nonlinear absorption",
+      "erklaerung": "Plasma frequency and critical density (at $\\omega_\\mathrm{p}=\\omega$). Above $n_\\mathrm{c}$ the plasma becomes strongly reflecting or absorbing for the laser light."
+    },
+    "k06.l04.b03": {
+      "titel": "Worked example",
+      "aufgabe": "What is the critical density for $\\lambda=1030\\,\\mathrm{nm}$?",
+      "schritte": [
+        "$\\omega=2\\pi c/\\lambda=1.83\\cdot10^{15}\\,\\mathrm{s^{-1}}$",
+        "$n_\\mathrm{c}=\\dfrac{8.854\\cdot10^{-12}\\cdot9.109\\cdot10^{-31}\\cdot(1.83\\cdot10^{15})^2}{(1.602\\cdot10^{-19})^2}\\,\\mathrm{m^{-3}}\\approx1.05\\cdot10^{27}\\,\\mathrm{m^{-3}}$"
+      ],
+      "ergebnis": "$n_\\mathrm{c}\\approx1.05\\cdot10^{21}\\,\\mathrm{cm^{-3}}$. The rule of thumb $n_\\mathrm{c}\\approx1.1\\cdot10^{21}\\,\\mathrm{cm^{-3}}/\\lambda^2[\\mu\\mathrm{m}]$ gives almost the same."
+    },
+    "k06.l04.b04": {
+      "inhalt": [
+        "In dielectrics under UKP irradiation the density of free electrons can reach the order of magnitude of the critical density. In the literature, reaching $n_\\mathrm{c}$ is used in models as a damage or ablation criterion (Stuart et al. 1996; Schaffer et al. 2001). This counts as a model assumption, not as a general rule."
+      ]
+    },
+    "k06.l04.b05": {
+      "inhalt": "The plasma determines **how much energy** actually goes into the material: below $n_\\mathrm{c}$ absorption continues, above it the light is shielded. This limits the penetration depth and shapes the ablation depth per pulse."
+    },
+    "k06.q08": {
+      "frage": "What is the critical density at $\\lambda=515\\,\\mathrm{nm}$ in units of $10^{21}\\,\\mathrm{cm^{-3}}$? (Rule of thumb $1.1\\cdot10^{21}/\\lambda^2[\\mu\\mathrm{m}]$)",
+      "erklaerung": "$\\lambda=0.515\\,\\mu\\mathrm{m}$: $1.1/0.265\\approx4.2$. Half the wavelength gives four times the critical density."
+    },
+    "k06.q09": {
+      "frage": "You halve the wavelength. What happens to the critical density?",
+      "optionen": [
+        "It halves",
+        "It quadruples",
+        "It stays the same",
+        "It doubles"
+      ],
+      "erklaerung": "$n_\\mathrm{c}\\propto\\omega^2\\propto1/\\lambda^2$."
+    },
+    "k06.c04": {
+      "vorne": "What is the critical plasma density?",
+      "hinten": "$n_\\mathrm{c}=\\varepsilon_0m_\\mathrm{e}\\omega^2/e^2$: at this electron density the plasma frequency equals the laser frequency; the plasma becomes strongly reflecting."
+    },
+    "k06.l05.b01": {
+      "inhalt": "All band gaps and intensities are **numerical examples**, not material values. For the photon number first calculate $h\\nu=1239.84\\,\\mathrm{eV\\,nm}/\\lambda$ and round $E_\\mathrm{g}/h\\nu$ **up**."
+    },
+    "k06.q10": {
+      "frage": "Build the formula for the minimum photon number and calculate it for $E_\\mathrm{g}=8\\,\\mathrm{eV}$ at $\\lambda=1030\\,\\mathrm{nm}$ ($h\\nu=1.20\\,\\mathrm{eV}$).",
+      "erklaerung": "$n_\\mathrm{min}=\\lceil8/1.20\\rceil=\\lceil6.67\\rceil=7$.",
+      "tipp": "Divide the band gap by the photon energy and **round up**: 6.67 becomes 7."
+    },
+    "k06.q11": {
+      "frage": "How many photons are needed at least for $E_\\mathrm{g}=5\\,\\mathrm{eV}$ and $\\lambda=343\\,\\mathrm{nm}$ ($h\\nu\\approx3.61\\,\\mathrm{eV}$)?",
+      "erklaerung": "$5/3.61=1.38\\Rightarrow n=2$."
+    },
+    "k06.q12": {
+      "frage": "An $n=6$ photon process: you double the intensity. By what factor does the rate rise?",
+      "erklaerung": "$2^6=64$."
+    },
+    "k06.q13": {
+      "frage": "The Keldysh parameter is $\\gamma=1.8$ at $I=10^{13}\\,\\mathrm{W/cm^2}$. What is it at $4\\cdot10^{13}\\,\\mathrm{W/cm^2}$? ($\\gamma\\propto I^{-1/2}$)",
+      "erklaerung": "$\\gamma\\propto1/\\sqrt I$: four times the intensity, half the value: $1.8/2=0.9$ (below the transition region, tunnelling gains importance)."
+    },
+    "k06.q14": {
+      "frage": "Build the formula for the critical density (rule-of-thumb form) and calculate it for $\\lambda=800\\,\\mathrm{nm}$. Answer in $10^{21}\\,\\mathrm{cm^{-3}}$.",
+      "vorlage": "$n_\\mathrm{c}\\approx$ {{ $1.1\\cdot10^{21}\\,\\mathrm{cm^{-3}}$ // [] }}",
+      "erklaerung": "$n_\\mathrm{c}\\approx1.1\\cdot10^{21}\\,\\mathrm{cm^{-3}}/\\lambda^2[\\mu\\mathrm{m}]=1.1/0.64\\approx1.72\\cdot10^{21}\\,\\mathrm{cm^{-3}}$.",
+      "tipp": "Insert $\\lambda$ in µm: 800 nm $=0.8\\,\\mu\\mathrm{m}$, square $0.64$."
+    },
+    "k06.q15": {
+      "frage": "Which wavelength reaches the critical density **sooner** at the same electron density?",
+      "optionen": [
+        "343 nm",
+        "515 nm",
+        "1030 nm",
+        "All the same"
+      ],
+      "erklaerung": "$n_\\mathrm{c}\\propto1/\\lambda^2$: the longer the wavelength, the smaller $n_\\mathrm{c}$ and the sooner it is reached."
+    },
+    "k06.q16": {
+      "frage": "Match process and condition.",
+      "paare": [
+        [
+          "Multiphoton ionization",
+          "$\\gamma\\gg1$"
+        ],
+        [
+          "Tunnel ionization",
+          "$\\gamma\\ll1$"
+        ],
+        [
+          "Avalanche ionization",
+          "Seed electrons plus impact ionization"
+        ],
+        [
+          "Plasma shielding",
+          "$n_\\mathrm{e}\\ge n_\\mathrm{c}$"
+        ]
+      ],
+      "erklaerung": "The Keldysh parameter sorts multiphoton from tunnelling; the avalanche needs seed electrons; above $n_\\mathrm{c}$ the light is shielded."
+    },
+    "k06.c05": {
+      "vorne": "How do you calculate the minimum photon number?",
+      "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$, with $h\\nu=1239.84\\,\\mathrm{eV\\,nm}/\\lambda$. Always round up."
+    }
+  }
+}

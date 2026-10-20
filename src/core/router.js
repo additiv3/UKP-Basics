@@ -14,7 +14,8 @@ export function route(pattern, view, tab) {
   routes.push({ re, keys, view, tab });
 }
 
-export const currentPath = () => decodeURIComponent(location.hash.replace(/^#/, '') || '/');
+/** Path part of the hash (a ?query after it is ignored for matching, e.g. #/vokabeln?start=due). */
+export const currentPath = () => decodeURIComponent(location.hash.replace(/^#/, '').split('?')[0] || '/');
 
 export function match(path) {
   for (const r of routes) {
