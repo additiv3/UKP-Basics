@@ -608,6 +608,181 @@
           "quelle": "Herleitung"
         }
       ]
+    },
+    {
+      "id": "k07.l07",
+      "titel": "Diagramme lesen: Abtrag und Schwelle",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k07.l07.b01",
+          "typ": "text",
+          "inhalt": "Abtragskurven sind fast immer halb- oder doppellogarithmisch aufgetragen. Wer die Achsen liest, liest die Physik: Schwelle, Eindringtiefe, Inkubation, Effizienzmaximum. Modellkurven, frei gewählte Zahlen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k07.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Abtragtiefe pro Puls über der Fluenz (x logarithmisch). Wo liegt die Schwellfluenz? Antwort in J/cm².",
+          "antwort": 0.5,
+          "einheit": "J/cm²",
+          "toleranz": 0.08,
+          "erklaerung": "$d=\\ell\\ln(F/F_\\mathrm{th})$ ist im halblogarithmischen Plot eine Gerade, die bei $F_\\mathrm{th}=0{,}5\\,\\mathrm{J/cm^2}$ die Nulllinie schneidet.",
+          "plot": {
+            "x": {
+              "label": "F / (J/cm²)",
+              "min": 0.2,
+              "max": 30,
+              "log": true,
+              "sym": "F"
+            },
+            "y": {
+              "label": "d / nm",
+              "min": 0,
+              "max": 90
+            },
+            "kurven": [
+              {
+                "f": "20*ln(x/0.5)",
+                "label": "d(F)",
+                "sym": "d"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 2
+          }
+        },
+        {
+          "id": "k07.q20",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Mit derselben Kurve: Lies $d$ bei $F=5\\,\\mathrm{J/cm^2}$ ab und bestimme die effektive Eindringtiefe $\\ell$ in nm.",
+          "antwort": 20,
+          "einheit": "nm",
+          "toleranz": 0.05,
+          "erklaerung": "$d(5)\\approx46\\,\\mathrm{nm}$, $\\ln(5/0{,}5)=\\ln10=2{,}303$, also $\\ell=46/2{,}303\\approx20\\,\\mathrm{nm}$.",
+          "plot": {
+            "x": {
+              "label": "F / (J/cm²)",
+              "min": 0.2,
+              "max": 30,
+              "log": true,
+              "sym": "F"
+            },
+            "y": {
+              "label": "d / nm",
+              "min": 0,
+              "max": 90
+            },
+            "kurven": [
+              {
+                "f": "20*ln(x/0.5)",
+                "label": "d(F)",
+                "sym": "d"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 1
+          }
+        },
+        {
+          "id": "k07.q21",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Schwelle über der Pulszahl, doppellogarithmisch. Bestimme den Inkubationskoeffizienten $S$ aus $F_\\mathrm{th}(N)=F_\\mathrm{th}(1)N^{S-1}$.",
+          "antwort": 0.8,
+          "einheit": "",
+          "toleranz": 0.04,
+          "erklaerung": "Von $N=1$ bis $1000$ (drei Dekaden) fällt $F_\\mathrm{th}$ von 1 auf 0,25, also um $\\log_{10}4=0{,}6$ Dekaden: Steigung $-0{,}2=S-1\\Rightarrow S=0{,}8$.",
+          "tipp": "Steigung = Dekaden in y ÷ Dekaden in x.",
+          "plot": {
+            "x": {
+              "label": "N",
+              "min": 1,
+              "max": 1000,
+              "log": true
+            },
+            "y": {
+              "label": "F_th / (J/cm²)",
+              "min": 0.1,
+              "max": 2,
+              "log": true
+            },
+            "punkte": [
+              {
+                "daten": [
+                  [
+                    1,
+                    1.0
+                  ],
+                  [
+                    10,
+                    0.63
+                  ],
+                  [
+                    100,
+                    0.4
+                  ],
+                  [
+                    1000,
+                    0.25
+                  ]
+                ],
+                "label": "Messung",
+                "label_en": "measured"
+              }
+            ],
+            "kurven": [
+              {
+                "f": "x^(-0.2)",
+                "label": "Fit"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k07.q22",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Energieeffizienz des Abtrags (abgetragenes Volumen pro Energie) über der Spitzenfluenz. Bei welcher Fluenz liegt das Maximum? Antwort in J/cm².",
+          "antwort": 3.69,
+          "einheit": "J/cm²",
+          "toleranz": 0.08,
+          "erklaerung": "Im Gauß-Modell ist das Maximum bei $F_0=e^2F_\\mathrm{th}=7{,}39\\cdot0{,}5\\approx3{,}7\\,\\mathrm{J/cm^2}$. Darüber steigt der Abtrag nur noch logarithmisch, die Effizienz sinkt.",
+          "plot": {
+            "x": {
+              "label": "F₀ / (J/cm²)",
+              "min": 0.5,
+              "max": 20,
+              "sym": "F₀"
+            },
+            "y": {
+              "label": "η (rel.)",
+              "min": 0,
+              "max": 1.1
+            },
+            "kurven": [
+              {
+                "f": "(ln(x/0.5))^2/x*0.5*7.389/4",
+                "label": "η",
+                "sym": "η"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 10
+          }
+        },
+        {
+          "id": "k07.c09",
+          "typ": "karte",
+          "vorne": "Welche Achsen braucht welcher Abtragsplot?",
+          "hinten": "$d$ über $\\ln F$: Gerade, Schnitt = $F_\\mathrm{th}$, Steigung = $\\ell$. $F_\\mathrm{th}$ über $N$ doppellogarithmisch: Steigung $S-1$. Effizienz über $F_0$: Maximum bei $e^2F_\\mathrm{th}$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

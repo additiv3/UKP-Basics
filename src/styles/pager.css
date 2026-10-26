@@ -1,0 +1,299 @@
+/* Paged lessons: full-screen pages, segmented progress, bottom navigation bar. */
+:root {
+  --pager-h: 64px;
+}
+
+body.immersive .tabbar {
+  display: none;
+}
+body.immersive #view {
+  padding-bottom: calc(var(--pager-h) + env(safe-area-inset-bottom) + 20px);
+}
+body.immersive .calc-fab {
+  bottom: calc(var(--pager-h) + env(safe-area-inset-bottom) + 14px);
+}
+
+.pager-top {
+  gap: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.back.icon-only {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+.pg-segs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  min-width: 0;
+}
+.pg-seg {
+  flex: 1 1 0;
+  min-width: 4px;
+  height: 22px; /* touch target, the visible bar is the ::before */
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+.pg-seg::before {
+  content: '';
+  position: absolute;
+  inset: 8px 0;
+  border-radius: 99px;
+  background: var(--surface-3);
+  transition: background 0.2s, inset 0.2s;
+}
+.pg-seg.seen::before {
+  background: color-mix(in srgb, var(--stage, var(--accent)) 45%, var(--surface-3));
+}
+.pg-seg.done::before {
+  background: var(--ok);
+}
+.pg-seg.on::before {
+  inset: 6px 0;
+  background: var(--stage, var(--accent));
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--stage, var(--accent)) 25%, transparent);
+}
+.pg-seg.pg-finish::before {
+  border-radius: 3px;
+}
+
+.pager-stage {
+  touch-action: pan-y;
+  min-height: calc(100dvh - 160px);
+  overflow-x: clip;
+  margin: 0 -16px;
+  padding: 0 16px;
+}
+.pager-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 6px;
+  will-change: transform;
+}
+.pager-intro h1 {
+  margin-bottom: 0.2em;
+}
+.pager-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.pager-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.pager-ltitle {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pg-tag {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--surface-2);
+  color: var(--muted);
+}
+.pg-tag.t-quiz {
+  background: color-mix(in srgb, var(--stage, var(--accent)) 16%, var(--surface));
+  color: var(--stage, var(--accent));
+}
+.pg-tag.t-lab {
+  background: var(--laser-soft);
+  color: var(--laser);
+}
+.pg-tag.t-card {
+  background: var(--xp-soft);
+  color: var(--xp);
+}
+
+/* question pages: the card is the hero */
+.kind-quiz .quiz,
+.kind-card .flashcard {
+  padding: 20px 18px;
+  border-radius: 22px;
+  box-shadow: var(--shadow-lg);
+}
+.kind-quiz .quiz-q {
+  font-size: 1.12rem;
+  line-height: 1.45;
+}
+.kind-read .block-text {
+  font-size: 1.02rem;
+}
+
+/* bottom bar */
+.pager-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--pager-h);
+  padding: 8px max(14px, env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  border-top: 1px solid var(--line);
+}
+.pager-hint {
+  flex: 1;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pager-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 48px;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s, background 0.2s, color 0.2s;
+}
+.pager-btn:active {
+  transform: scale(0.95);
+}
+.pager-btn:disabled {
+  opacity: 0.35;
+}
+.pager-btn.primary {
+  min-width: 132px;
+  border-color: transparent;
+  background: var(--stage, var(--accent));
+  color: #fff;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--stage, var(--accent)) 40%, transparent);
+}
+.pager-btn.ghost:not(:first-child) {
+  min-width: 132px;
+  color: var(--muted);
+}
+.pager-btn.nudge {
+  animation: pager-nudge 0.7s ease 2;
+}
+@keyframes pager-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+}
+
+/* finish page */
+.finish-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 8px 8px;
+  text-align: center;
+}
+.finish-page h2 {
+  margin: 0;
+}
+.finish-badge {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--stage, var(--accent)) 14%, var(--surface));
+  color: var(--stage, var(--accent));
+}
+.finish-badge.ok {
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+.finish-badge.pop {
+  animation: pop 0.5s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+@keyframes pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+}
+.finish-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 8px;
+}
+.q-overview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 6px 0;
+}
+.q-dot {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1.5px dashed var(--fig-soft);
+  background: var(--surface);
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.q-dot.done {
+  border: 0;
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+.finish-page .btn-wide {
+  width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pager-btn.nudge,
+  .finish-badge.pop {
+    animation: none;
+  }
+}

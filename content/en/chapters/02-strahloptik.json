@@ -13,7 +13,8 @@
     "k02.l02": "Focusing, Rayleigh length, spot size",
     "k02.l03": "Beam quality M²",
     "k02.l04": "Polarization and wavelength",
-    "k02.l05": "Calculation training: focus and beam quality"
+    "k02.l05": "Calculation training: focus and beam quality",
+    "k02.l06": "Reading plots: beam caustic"
   },
   "blocks": {
     "k02.l01.b01": {
@@ -335,6 +336,35 @@
     "k02.c08": {
       "vorne": "What is the divergence half-angle?",
       "hinten": "$\\theta=\\dfrac{M^2\\lambda}{\\pi w_0}$; a small focus means large divergence ($w_0\\theta$ is constant)."
+    },
+    "k02.l06.b01": {
+      "inhalt": "The **caustic** $w(z)$ shows the beam radius along the axis. From it you read the focus radius, Rayleigh length and divergence. Drag in the plot to read values. The curves are model curves with freely chosen numbers."
+    },
+    "k02.q19": {
+      "frage": "What is the beam radius at the focus $w_0$? Answer in µm.",
+      "erklaerung": "The minimum of the caustic is at $w_0=15\\,\\mu\\mathrm{m}$ (at $z=0$)."
+    },
+    "k02.q20": {
+      "frage": "At which $z>0$ is $w=\\sqrt2\\,w_0\\approx21.2\\,\\mu\\mathrm{m}$? That is the Rayleigh length $z_\\mathrm{R}$ in mm.",
+      "erklaerung": "$w=21.2\\,\\mu\\mathrm{m}$ is reached at $z=0.6\\,\\mathrm{mm}$: $z_\\mathrm{R}=0.6\\,\\mathrm{mm}$, the depth of focus $2z_\\mathrm{R}=1.2\\,\\mathrm{mm}$."
+    },
+    "k02.q21": {
+      "frage": "Two beams, same wavelength. Which one has the larger divergence?",
+      "optionen": [
+        "A: small focus, caustic rises steeply",
+        "B: large focus, flat caustic",
+        "Both the same, divergence only depends on λ",
+        "Cannot be read from the plot"
+      ],
+      "erklaerung": "Far from the focus $w\\approx\\theta z$: the slope is the divergence angle. A ($w_0=10\\,\\mu\\mathrm{m}$, $z_\\mathrm{R}=0.3\\,\\mathrm{mm}$) has $\\theta=w_0/z_\\mathrm{R}\\approx33\\,\\mathrm{mrad}$, B ($20\\,\\mu\\mathrm{m}$, $1.2\\,\\mathrm{mm}$) only $17\\,\\mathrm{mrad}$. Small focus, large divergence."
+    },
+    "k02.q22": {
+      "frage": "Read off the depth of focus $2z_\\mathrm{R}$ of beam B ($w=\\sqrt2\\cdot20\\approx28.3\\,\\mu\\mathrm{m}$). Answer in mm.",
+      "erklaerung": "B reaches $28.3\\,\\mu\\mathrm{m}$ at $z=\\pm1.2\\,\\mathrm{mm}$, so $2z_\\mathrm{R}=2.4\\,\\mathrm{mm}$. Twice the focus radius, four times the depth of focus ($z_\\mathrm{R}\\propto w_0^2$)."
+    },
+    "k02.c09": {
+      "vorne": "What do you read from a caustic $w(z)$?",
+      "hinten": "Minimum = $w_0$ and focal position; $w=\\sqrt2w_0$ at $z_\\mathrm{R}$; slope far out = divergence $\\theta$."
     }
   }
 }

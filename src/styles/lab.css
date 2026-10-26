@@ -1,0 +1,184 @@
+/* Lab games (focus search, beam walking, Liu plot, compressor, power) and plot questions. */
+.game-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.game-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.game-intro .lead {
+  margin: 0;
+}
+.lab-steps {
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.lab-steps ol {
+  margin: 6px 0 0;
+  padding-left: 1.3em;
+  font-size: 0.92rem;
+}
+.lab-steps li + li {
+  margin-top: 4px;
+}
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid color-mix(in srgb, var(--laser) 45%, var(--line));
+  background: color-mix(in srgb, var(--laser-soft) 55%, var(--surface));
+}
+.checklist > strong {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--laser);
+}
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  text-align: left;
+  cursor: pointer;
+}
+.check-box {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  border: 2px solid var(--fig-soft);
+  color: transparent;
+  transition: background 0.15s;
+}
+.check-item.on .check-box {
+  border-color: var(--ok);
+  background: var(--ok);
+  color: #fff;
+}
+
+/* beam walking */
+.iris-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.iris-card .sim-canvas {
+  border-radius: 14px;
+}
+.justage-ctl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.justage-seg {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  grid-template-rows: repeat(3, 52px);
+  gap: 4px;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.pad-btn {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--accent);
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  -webkit-touch-callout: none;
+}
+.pad-btn:active {
+  transform: scale(0.94);
+  background: var(--accent-soft);
+}
+.pad-btn:disabled {
+  opacity: 0.4;
+}
+.dpad-mid {
+  border-radius: 50%;
+  margin: 14px;
+  background: var(--surface-3);
+}
+
+/* signal meter */
+.meter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.meter {
+  flex: 1;
+  height: 14px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--surface-3);
+}
+.meter-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--accent), var(--laser));
+  transition: width 0.15s;
+}
+.meter-val {
+  min-width: 6ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table {
+  width: 100%;
+  margin-top: 6px;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+.data-table th,
+.data-table td {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+}
+
+/* plot questions */
+.plot-figure {
+  margin: 4px 0 10px;
+}
+.plot-figure figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+.plot-readout {
+  margin: 0;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.plot-figure .hint {
+  font-size: 0.8rem;
+}

@@ -81,7 +81,7 @@ async function gameList(app) {
       return h(
         'a',
         { class: 'tile game', href: `#/labor/spiel/${g.id}` },
-        h('span', { class: 'tile-ic', html: icon('star', 22) }),
+        h('span', { class: 'tile-ic', html: icon(g.icon ?? 'star', 22) }),
         h('strong', { class: 'tile-title' }, t(mod.meta.titel)),
         h('span', { class: 'tile-kurz' }, t(mod.meta.kurz)),
         h('span', { class: 'tile-foot' }, best ? t('Bestwert {n}', { n: best }) : t('Noch nicht gespielt')),

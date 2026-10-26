@@ -69,6 +69,26 @@
   ],
   "spiele": [
     {
+      "id": "fokussuche",
+      "icon": "target"
+    },
+    {
+      "id": "strahljustage",
+      "icon": "beam"
+    },
+    {
+      "id": "leistung",
+      "icon": "bolt"
+    },
+    {
+      "id": "kompressor",
+      "icon": "pulse"
+    },
+    {
+      "id": "liuplot",
+      "icon": "crater"
+    },
+    {
       "id": "rechenwerkstatt"
     },
     {

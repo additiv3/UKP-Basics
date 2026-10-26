@@ -1,0 +1,256 @@
+{
+  "titel": "Everyday lab work at the USP system",
+  "einleitung": "What you do on a normal lab day: work safely, align the beam, find the focal position, set the power, check the pulse duration and evaluate the threshold. Every lesson has a game that recreates the task.",
+  "ziele": [
+    "Know the sequence of a lab day and the key safety measures",
+    "Align a beam with two mirrors and two irises",
+    "Determine the focal position with a focus series",
+    "Convert a target fluence into power and set it",
+    "Determine the pulse duration from an autocorrelation",
+    "Evaluate a Liu plot"
+  ],
+  "lektionen": {
+    "k14.l01": "Safety and the daily routine",
+    "k14.l02": "Beam alignment with two mirrors",
+    "k14.l03": "Finding the focal position",
+    "k14.l04": "Setting and measuring the power",
+    "k14.l05": "Checking the pulse duration",
+    "k14.l06": "Determining the threshold (Liu method)"
+  },
+  "blocks": {
+    "k14.l01.b01": {
+      "inhalt": [
+        "An open USP setup is not a printer you just switch on. Before a single pulse hits the sample, safety, the beam path and the state of the laser come first. A typical lab day therefore follows a fixed order.",
+        "**Safety:** Open beam paths usually fall into laser class 4 (check the risk assessment and the label). Goggles matched to the wavelength, alignment only at reduced power, no reflective watches or rings, beam height below eye level, never put your head into the beam plane. Ablation produces particles and nanoparticles: switch on the extraction.",
+        "**Laser state:** let it warm up, then check power and pulse duration. **Beam path:** check the alignment. **Sample:** mount it, find the focal position. **Experiment:** run the parameter study. **Analysis:** microscope, profilometer, SEM. **Lab notebook:** write down every parameter."
+      ]
+    },
+    "k14.l01.b02": {
+      "inhalt": "The games in this chapter recreate these steps: beam alignment, focus search, setting the power, checking the pulse duration and evaluating the threshold after Liu."
+    },
+    "k14.q01": {
+      "frage": "Put the lab day into a sensible order.",
+      "items": [
+        "Safety check, goggles, extraction",
+        "Warm up the laser, check power and pulse duration",
+        "Check beam path and alignment",
+        "Mount the sample, find the focal position",
+        "Run the parameter study",
+        "Analyse and document in the lab notebook"
+      ],
+      "erklaerung": "Safety first, then a known laser state, then the beam path. A focus search belongs to every new sample because the surface never sits at exactly the same height.",
+      "oben": "first",
+      "unten": "last"
+    },
+    "k14.q02": {
+      "frage": "Why do you align at reduced power or with a pilot laser?",
+      "optionen": [
+        "Because stray reflections are most likely during alignment and then stay less dangerous",
+        "Because the mirrors reflect differently at full power",
+        "Because otherwise the pulse duration is wrong",
+        "Because otherwise the power meter saturates"
+      ],
+      "erklaerung": "During alignment you reach into the beam path, insert cards and irises and create reflections. With little power a mistake stays manageable. You still wear the goggles."
+    },
+    "k14.q03": {
+      "frage": "Match the measure to the risk.",
+      "paare": [
+        [
+          "Remove watch and rings",
+          "specular reflections into the eye"
+        ],
+        [
+          "Switch on extraction",
+          "particles and nanoparticles from ablation"
+        ],
+        [
+          "Goggles matched to the wavelength",
+          "scattered radiation in the room"
+        ],
+        [
+          "Beam height below eye level",
+          "head in the beam plane"
+        ]
+      ],
+      "erklaerung": "Each measure targets a specific path by which radiation or substances reach you."
+    },
+    "k14.c01": {
+      "vorne": "Which four things do you check before the first pulse hits the sample?",
+      "hinten": "Safety (goggles, enclosure, extraction), laser state (power, pulse duration), beam path (alignment) and focal position on the sample."
+    },
+    "k14.l02.b01": {
+      "inhalt": [
+        "A beam on the optical axis needs **two** correct quantities per direction (horizontal, vertical): the **position** and the **angle**. One mirror only changes the angle. That is why you align with **two mirrors** and check at **two irises** on the target axis.",
+        "A mirror in front of a distance $L$ shifts the beam there by $L\\cdot\\Delta\\theta$. The first mirror therefore acts strongly on both irises, the second one almost only on the far one. The procedure is called **beam walking**: centre alternately until both irises fit."
+      ]
+    },
+    "k14.l02.b03": {
+      "erklaerung": "Factor by which the error shrinks per pass when mirror 1 centres on the near iris ($z_1$) and mirror 2 on the far one ($z_2$) ($L$: distance between the mirrors). For $z_1<z_2$, $g<1$: the procedure converges. The reverse assignment has the factor $1/g>1$ and runs away."
+    },
+    "k14.q04": {
+      "frage": "Why are one mirror and one iris not enough?",
+      "optionen": [
+        "One mirror only sets the angle; position and angle are two degrees of freedom per direction",
+        "Because one iris clips the beam too much",
+        "Because otherwise the beam gets polarised",
+        "It is enough, you only need more patience"
+      ],
+      "erklaerung": "With one mirror you hit one iris, but at the wrong angle. Only two mirrors give you position and angle independently."
+    },
+    "k14.q05": {
+      "frage": "Mirror distance $L=300\\,\\mathrm{mm}$, irises at $z_1=100\\,\\mathrm{mm}$ and $z_2=800\\,\\mathrm{mm}$ behind mirror 2. By which factor $g$ does the error shrink per pass (mirror 1 → near iris)?",
+      "erklaerung": "$g=\\dfrac{100}{800}\\cdot\\dfrac{1100}{400}=0.125\\cdot2.75\\approx0.34$. After three passes the error has shrunk to $0.34^3\\approx4\\,\\%$."
+    },
+    "k14.q06": {
+      "frage": "You turn mirror 1 by $\\Delta\\theta=0.1\\,\\mathrm{mrad}$. Where does the beam move more: at the iris 400 mm or 1100 mm behind mirror 1?",
+      "optionen": [
+        "1100 mm: shift $0.11\\,\\mathrm{mm}$ instead of $0.04\\,\\mathrm{mm}$",
+        "400 mm, because it is closer",
+        "The same at both",
+        "Nowhere, an angle shifts nothing"
+      ],
+      "erklaerung": "Shift = distance × angle: $1100\\,\\mathrm{mm}\\cdot10^{-4}=0.11\\,\\mathrm{mm}$, $400\\,\\mathrm{mm}\\cdot10^{-4}=0.04\\,\\mathrm{mm}$."
+    },
+    "k14.c02": {
+      "vorne": "Beam walking: which mirror on which iris?",
+      "hinten": "Mirror 1 (further upstream) on the near iris, mirror 2 on the far one, repeat alternately. The other way round the error builds up."
+    },
+    "k14.l03.b01": {
+      "inhalt": [
+        "Every newly mounted sample sits slightly differently. You find the focal position with a **focus series**: you place a row of spots or short lines and move the z axis in fixed steps between them. Then you measure the diameters under the microscope.",
+        "Careful, the curve has two faces. With **a lot of energy** the crater is **smallest** in the focus; further out it first gets wider (larger beam, fluence still above the threshold) and then disappears. With energy **just above the threshold** a crater only forms in the focus. Around the focus the curve is flat: two points of equal width left and right give the centre more precisely than the one smallest point."
+      ]
+    },
+    "k14.l03.b02": {
+      "erklaerung": "Crater diameter over the z position (Gaussian beam): for $F_0\\gg eF_\\mathrm{th}$ the minimum lies at the focus $z_0$."
+    },
+    "k14.q07": {
+      "frage": "Focus series with plenty of energy: where is the focus $z_0$? Answer in mm.",
+      "erklaerung": "The curve is symmetric about its minimum at $z\\approx0.6\\,\\mathrm{mm}$. Take two points of equal width left and right; the centre between them is the focus.",
+      "tipp": "Look for two measured points with the same $D$ left and right of the minimum."
+    },
+    "k14.q08": {
+      "frage": "Beam with $w_0=10\\,\\mu\\mathrm{m}$, $\\lambda=1.03\\,\\mu\\mathrm{m}$, $M^2=1.2$. What is the depth of focus $2z_\\mathrm{R}$ in mm?",
+      "erklaerung": "$z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)=\\pi\\cdot(10^{-5})^2/(1.2\\cdot1.03\\cdot10^{-6})=0.254\\,\\mathrm{mm}$, so $2z_\\mathrm{R}\\approx0.51\\,\\mathrm{mm}$. The step size of the focus series should be clearly smaller."
+    },
+    "k14.q09": {
+      "frage": "At energy just above the single-shot threshold you only see craters in three neighbouring z steps. What follows?",
+      "optionen": [
+        "The focus lies in the middle of these three steps",
+        "The focus lies at the largest crater at the edge",
+        "The energy is too high",
+        "The sample is tilted, a focus series is impossible"
+      ],
+      "erklaerung": "Just above the threshold the fluence is only sufficient near the focus. The window with ablation is symmetric about $z_0$."
+    },
+    "k14.c03": {
+      "vorne": "Why is the crater in the focus not always the largest?",
+      "hinten": "$D^2=2w^2\\ln(F_0/F_\\mathrm{th})$: outside the focus $w$ grows. As long as $F_0>eF_\\mathrm{th}$, $D$ first grows, only then it shrinks to zero."
+    },
+    "k14.l04.b01": {
+      "inhalt": [
+        "The power is usually not set via the pump current, because pulse properties can change as well. A common choice is an **attenuator** made of a **λ/2 plate** and a **polariser**: the plate rotates the polarisation, the polariser only lets a fraction through.",
+        "Rotating the λ/2 plate by $\\theta$ rotates the polarisation by $2\\theta$. That is why the curve repeats every 45° of the plate. You measure with a **thermal head** (slow, but for high average power) or a **photodiode** (fast, low power). Thermal heads need a few seconds until the value settles."
+      ]
+    },
+    "k14.l04.b02": {
+      "erklaerung": "Transmitted power behind the polariser ($\\theta_0$: position of maximum transmission).",
+      "titel": "Attenuator (λ/2 + polariser)",
+      "sammlung": "Everyday lab work"
+    },
+    "k14.q10": {
+      "frage": "Read off: at which plate angle is the power at maximum? Answer in degrees.",
+      "erklaerung": "The maximum is at $\\theta_0=12°$, the next minimum 22.5° later at 34.5°."
+    },
+    "k14.q11": {
+      "frage": "With the same curve: which power do you measure at $\\theta=30°$? Answer in W.",
+      "erklaerung": "$P=10\\,\\mathrm{W}\\cdot\\cos^2(2\\cdot18°)=10\\cdot\\cos^2 36°=6.55\\,\\mathrm{W}$."
+    },
+    "k14.q12": {
+      "frage": "Build the formula for the power at the measuring point so that $F_0=2\\,\\mathrm{J/cm^2}$ reaches the workpiece ($w_0=15\\,\\mu\\mathrm{m}$, $f=200\\,\\mathrm{kHz}$, transmission to the workpiece $T=0.9$). Answer in W.",
+      "erklaerung": "$P=\\dfrac{F_0\\pi w_0^2f}{2T}=\\dfrac{2\\cdot\\pi\\cdot(1.5\\cdot10^{-3}\\,\\mathrm{cm})^2\\cdot2\\cdot10^5\\,\\mathrm{Hz}}{2\\cdot0.9}\\,\\mathrm{J/cm^2}\\approx1.57\\,\\mathrm{W}$.",
+      "tipp": "$w_0$ in cm: $15\\,\\mu\\mathrm{m}=1.5\\cdot10^{-3}\\,\\mathrm{cm}$."
+    },
+    "k14.q13": {
+      "frage": "You rotate the λ/2 plate and read immediately. The thermal head shows 1.2 W, but 1.5 W after 10 s. What happened?",
+      "optionen": [
+        "The head had not settled yet",
+        "The laser raised its power within 10 s",
+        "The plate kept turning by itself",
+        "The polariser warmed up and lets more through"
+      ],
+      "erklaerung": "Thermal heads measure via a temperature difference and need a few seconds. Read only when the value has settled."
+    },
+    "k14.c04": {
+      "vorne": "Why do you set the power with a λ/2 plate and polariser instead of at the laser?",
+      "hinten": "The laser keeps running at its known operating point, pulse duration and beam quality stay the same. The attenuator only changes the transmitted fraction: $P=P_\\mathrm{max}\\cos^2(2(\\theta-\\theta_0))$."
+    },
+    "k14.l05.b01": {
+      "inhalt": [
+        "No electronic detector is fast enough for femtoseconds. An **autocorrelator** measures the pulse with itself: it splits it, delays one copy by $\\Delta t$ and overlaps both in a nonlinear crystal. The frequency-doubled signal (SHG) only appears when the two pulses overlap in time.",
+        "The width of the autocorrelation trace is **larger** than the pulse. You divide by a shape factor that depends on the assumed pulse shape: Gaussian $\\sqrt2$, sech² $1.543$. A misadjusted **compressor** leaves the pulse chirped and longer. You set it to maximum SHG signal, because that grows with the peak intensity."
+      ]
+    },
+    "k14.l05.b02": {
+      "erklaerung": "Pulse duration (FWHM) from the half-width of the intensity autocorrelation.",
+      "titel": "Autocorrelation: shape factor",
+      "sammlung": "Everyday lab work"
+    },
+    "k14.q14": {
+      "frage": "Autocorrelation trace of a sech² pulse: read off the half-width and calculate the pulse duration $\\tau$ in fs.",
+      "erklaerung": "The trace drops to 50 % at $\\Delta t\\approx\\pm232\\,\\mathrm{fs}$, so $\\Delta t_\\mathrm{AC}\\approx463\\,\\mathrm{fs}$. $\\tau=463/1.543\\approx300\\,\\mathrm{fs}$.",
+      "tipp": "Drag the cursor to where the signal is 0.5 and double the distance to the centre."
+    },
+    "k14.q15": {
+      "frage": "A 200 fs pulse (Gaussian, transform-limited) passes through glass with $\\mathrm{GDD}=10\\,000\\,\\mathrm{fs^2}$. How long is it afterwards? $\\tau=\\tau_0\\sqrt{1+(4\\ln2\\cdot\\mathrm{GDD}/\\tau_0^2)^2}$, answer in fs.",
+      "erklaerung": "$4\\ln2\\cdot10^4/200^2=0.693$, squared $0.480$; $\tau=200\\,\\mathrm{fs}\\cdot\\sqrt{1.480}=200\\cdot1.217\u0007pprox243\\,\\mathrm{fs}$."
+    },
+    "k14.q16": {
+      "frage": "You adjust the compressor and the SHG signal halves. What happened to the pulse (same energy)?",
+      "optionen": [
+        "It became about twice as long (chirped)",
+        "Its energy halved",
+        "It became shorter",
+        "The wavelength halved"
+      ],
+      "erklaerung": "At the same energy the peak power is $\\propto1/\\tau$, and the autocorrelator's SHG signal grows with it. Half the signal means roughly twice the pulse duration."
+    },
+    "k14.c05": {
+      "vorne": "Why is the autocorrelation width not the pulse duration?",
+      "hinten": "The trace is the correlation of the pulse with itself and therefore wider. Divide by the shape factor: Gaussian $\\sqrt2$, sech² $1.543$."
+    },
+    "k14.l06.b01": {
+      "inhalt": [
+        "The most common evaluation in the USP lab: place spots at several pulse energies, measure the diameters and plot $D^2$ over $\\ln E_\\mathrm{p}$. For a Gaussian beam the points lie on a straight line. The **slope** is $2w_0^2$, the **intercept with $D^2=0$** is the threshold energy $E_\\mathrm{th}$.",
+        "The appeal: you get the beam radius **on the sample** for free, without a beam camera. Numbers in this lesson are examples."
+      ]
+    },
+    "k14.q17": {
+      "frage": "Liu plot: at which pulse energy does the line cross $D^2=0$? $E_\\mathrm{th}$ in µJ.",
+      "erklaerung": "The line reaches $D^2=0$ at $E_\\mathrm{p}\\approx0.4\\,\\mu\\mathrm{J}$: that is the threshold energy."
+    },
+    "k14.q18": {
+      "frage": "With the same line: read $D^2$ at 1 µJ and at 10 µJ and determine $w_0$ in µm from it.",
+      "erklaerung": "$D^2(1)\\approx264$, $D^2(10)\\approx927\\,\\mu\\mathrm{m}^2$. Slope per $\\ln$: $(927-264)/\\ln10=288=2w_0^2\\Rightarrow w_0=12\\,\\mu\\mathrm{m}$.",
+      "tipp": "Slope $=\\Delta(D^2)/\\Delta(\\ln E)$, and $\\ln10\\approx2.303$."
+    },
+    "k14.q19": {
+      "frage": "From $E_\\mathrm{th}=0.4\\,\\mu\\mathrm{J}$ and $w_0=12\\,\\mu\\mathrm{m}$: what is $F_\\mathrm{th}=2E_\\mathrm{th}/(\\pi w_0^2)$ in J/cm²?",
+      "erklaerung": "$F_\\mathrm{th}=2\\cdot0.4\\cdot10^{-6}/(\\pi\\cdot(1.2\\cdot10^{-3})^2)=0.177\\,\\mathrm{J/cm^2}$."
+    },
+    "k14.q20": {
+      "frage": "Your points in the Liu plot bend downwards at high energies. What is a plausible cause?",
+      "optionen": [
+        "The beam profile is not purely Gaussian or the crater edge frays; the straight line only holds in the Gaussian model",
+        "The threshold is negative at high energies",
+        "The logarithm is inaccurate for large numbers",
+        "That proves the focus was wrong"
+      ],
+      "erklaerung": "The straight line follows from the Gaussian profile. Deviations from the profile, plasma shielding or blurred crater edges bend the curve. Then you fit only the straight part."
+    },
+    "k14.c06": {
+      "vorne": "What do you read from slope and intercept in the Liu plot?",
+      "hinten": "Slope of $D^2$ over $\\ln E_\\mathrm{p}$ = $2w_0^2$, intercept at $D^2=0$ = $E_\\mathrm{th}$; from that $F_\\mathrm{th}=2E_\\mathrm{th}/(\\pi w_0^2)$."
+    }
+  }
+}

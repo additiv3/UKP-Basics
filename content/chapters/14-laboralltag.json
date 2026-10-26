@@ -1,0 +1,729 @@
+{
+  "id": "k14",
+  "titel": "Laboralltag an der UKP-Anlage",
+  "einleitung": "Was du an einem normalen Labortag tust: sicher arbeiten, den Strahl justieren, die Fokuslage finden, die Leistung einstellen, die Pulsdauer prüfen und die Schwelle auswerten. Jede Lektion hat ein Spiel, das den Handgriff nachbildet.",
+  "ziele": [
+    "Den Ablauf eines Labortags und die wichtigsten Schutzmaßnahmen kennen",
+    "Einen Strahl mit zwei Spiegeln und zwei Blenden justieren",
+    "Die Fokuslage mit einer Fokusserie bestimmen",
+    "Ziel-Fluenz in Leistung umrechnen und einstellen",
+    "Pulsdauer aus einer Autokorrelation bestimmen",
+    "Einen Liu-Plot auswerten"
+  ],
+  "weiterlesen": [
+    "liu1982",
+    "diels",
+    "siegman1986"
+  ],
+  "lektionen": [
+    {
+      "id": "k14.l01",
+      "titel": "Sicherheit und Tagesablauf",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k14.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein offener UKP-Aufbau ist kein Drucker, den man einschaltet. Bevor überhaupt ein Puls die Probe trifft, gehen Sicherheit, Strahlweg und Laserzustand vor. Der typische Labortag hat deshalb eine feste Reihenfolge.",
+            "**Sicherheit:** Offene Strahlengänge fallen meist in Laserklasse 4 (Gefährdungsbeurteilung und Typenschild prüfen). Schutzbrille passend zur Wellenlänge, Justage nur mit reduzierter Leistung, keine reflektierenden Uhren oder Ringe, Strahlhöhe unter Augenhöhe, Kopf nie in die Strahlebene. Beim Abtrag entstehen Partikel und Nanopartikel: Absaugung an.",
+            "**Laserzustand:** Aufwärmen lassen, dann Leistung und Pulsdauer prüfen. **Strahlweg:** Justage kontrollieren. **Probe:** einspannen, Fokuslage suchen. **Versuch:** Parameterstudie fahren. **Analyse:** Mikroskop, Profilometer, REM. **Laborbuch:** jeden Parameter notieren."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Praxis, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k14.l01.b02",
+          "typ": "merke",
+          "inhalt": "Die Spiele in diesem Kapitel bilden diese Schritte nach: Strahljustage, Fokussuche, Leistung einstellen, Pulsdauer prüfen und die Schwelle nach Liu auswerten.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k14.q01",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bring den Labortag in eine sinnvolle Reihenfolge.",
+          "items": [
+            "Sicherheitscheck, Schutzbrille, Absaugung",
+            "Laser aufwärmen, Leistung und Pulsdauer prüfen",
+            "Strahlweg und Justage kontrollieren",
+            "Probe einspannen, Fokuslage suchen",
+            "Parameterstudie fahren",
+            "Analysieren und im Laborbuch dokumentieren"
+          ],
+          "erklaerung": "Erst Sicherheit, dann ein bekannter Laserzustand, dann der Strahlweg. Fokussuche gehört zu jeder neuen Probe, weil die Oberfläche nie exakt gleich hoch liegt.",
+          "oben": "zuerst",
+          "unten": "zuletzt"
+        },
+        {
+          "id": "k14.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum justiert man mit reduzierter Leistung oder einem Pilotlaser?",
+          "optionen": [
+            "Weil Fehlreflexe beim Justieren am wahrscheinlichsten sind und dann weniger gefährlich bleiben",
+            "Weil die Spiegel bei voller Leistung anders reflektieren",
+            "Weil die Pulsdauer sonst nicht stimmt",
+            "Weil der Leistungsmesser sonst übersteuert"
+          ],
+          "richtig": 0,
+          "erklaerung": "Beim Justieren greifst du in den Strahlengang, setzt Karten und Blenden ein und erzeugst Reflexe. Mit wenig Leistung bleibt ein Fehler beherrschbar. Die Schutzbrille trägst du trotzdem."
+        },
+        {
+          "id": "k14.q03",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Maßnahme dem Risiko zu.",
+          "paare": [
+            [
+              "Uhr und Ringe ablegen",
+              "spiegelnde Reflexe ins Auge"
+            ],
+            [
+              "Absaugung einschalten",
+              "Partikel und Nanopartikel aus dem Abtrag"
+            ],
+            [
+              "Brille passend zur Wellenlänge",
+              "Streustrahlung im Raum"
+            ],
+            [
+              "Strahlhöhe unter Augenhöhe",
+              "Kopf in der Strahlebene"
+            ]
+          ],
+          "erklaerung": "Jede Maßnahme zielt auf einen konkreten Weg, auf dem Strahlung oder Stoffe dich erreichen."
+        },
+        {
+          "id": "k14.c01",
+          "typ": "karte",
+          "vorne": "Welche vier Dinge prüfst du, bevor der erste Puls die Probe trifft?",
+          "hinten": "Sicherheit (Brille, Gehäuse, Absaugung), Laserzustand (Leistung, Pulsdauer), Strahlweg (Justage) und Fokuslage auf der Probe.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Praxis, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k14.l02",
+      "titel": "Strahljustage mit zwei Spiegeln",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k14.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Strahl auf der optischen Achse braucht pro Richtung (horizontal, vertikal) **zwei** richtige Größen: die **Position** und den **Winkel**. Ein Spiegel ändert nur den Winkel. Deshalb justiert man mit **zwei Spiegeln** und kontrolliert an **zwei Irisblenden** auf der Sollachse.",
+            "Ein Spiegel vor einer Strecke $L$ verschiebt den Strahl dort um $L\\cdot\\Delta\\theta$. Der erste Spiegel wirkt also auf beide Blenden stark, der zweite fast nur auf die ferne. Das Verfahren heißt **Beam Walking**: abwechselnd zentrieren, bis beide Blenden passen."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k14.l02.b02",
+          "typ": "spiel",
+          "spiel": "strahljustage"
+        },
+        {
+          "id": "k14.l02.b03",
+          "typ": "formel",
+          "latex": "g=\\dfrac{z_1}{z_2}\\cdot\\dfrac{L+z_2}{L+z_1}",
+          "erklaerung": "Faktor, um den der Fehler pro Durchgang schrumpft, wenn Spiegel 1 auf die nahe Blende ($z_1$) und Spiegel 2 auf die ferne ($z_2$) zentriert ($L$: Abstand der Spiegel). Für $z_1<z_2$ ist $g<1$: Das Verfahren konvergiert. Die umgekehrte Zuordnung hat den Faktor $1/g>1$ und läuft weg.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k14.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum reichen ein Spiegel und eine Blende nicht?",
+          "optionen": [
+            "Ein Spiegel stellt nur den Winkel ein; Position und Winkel sind zwei Freiheitsgrade pro Richtung",
+            "Weil eine Blende den Strahl zu stark beschneidet",
+            "Weil der Strahl sonst polarisiert wird",
+            "Es reicht, man braucht nur mehr Geduld"
+          ],
+          "richtig": 0,
+          "erklaerung": "Mit einem Spiegel triffst du eine Blende, aber dann im falschen Winkel. Erst zwei Spiegel geben dir Position und Winkel unabhängig."
+        },
+        {
+          "id": "k14.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Spiegelabstand $L=300\\,\\mathrm{mm}$, Blenden bei $z_1=100\\,\\mathrm{mm}$ und $z_2=800\\,\\mathrm{mm}$ hinter Spiegel 2. Um welchen Faktor $g$ schrumpft der Fehler pro Durchgang (Spiegel 1 → nahe Blende)?",
+          "antwort": 0.344,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$g=\\dfrac{100}{800}\\cdot\\dfrac{1100}{400}=0{,}125\\cdot2{,}75\\approx0{,}34$. Nach drei Durchgängen ist der Fehler auf $0{,}34^3\\approx4\\,\\%$ geschrumpft."
+        },
+        {
+          "id": "k14.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du drehst an Spiegel 1 um $\\Delta\\theta=0{,}1\\,\\mathrm{mrad}$. Wo wandert der Strahl mehr: an der Blende 400 mm oder 1100 mm hinter Spiegel 1?",
+          "optionen": [
+            "1100 mm: Verschiebung $0{,}11\\,\\mathrm{mm}$ statt $0{,}04\\,\\mathrm{mm}$",
+            "400 mm, weil sie näher ist",
+            "An beiden gleich",
+            "Nirgends, ein Winkel verschiebt nichts"
+          ],
+          "richtig": 0,
+          "erklaerung": "Verschiebung = Abstand × Winkel: $1100\\,\\mathrm{mm}\\cdot10^{-4}=0{,}11\\,\\mathrm{mm}$, $400\\,\\mathrm{mm}\\cdot10^{-4}=0{,}04\\,\\mathrm{mm}$."
+        },
+        {
+          "id": "k14.c02",
+          "typ": "karte",
+          "vorne": "Beam Walking: welcher Spiegel auf welche Blende?",
+          "hinten": "Spiegel 1 (weiter vorn) auf die nahe Blende, Spiegel 2 auf die ferne, abwechselnd wiederholen. Umgekehrt schaukelt sich der Fehler auf.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k14.l03",
+      "titel": "Fokuslage finden",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k14.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Jede neu eingespannte Probe liegt ein wenig anders. Die Fokuslage findest du mit einer **Fokusserie**: Du setzt eine Reihe von Spots oder kurzen Linien und verfährst zwischen ihnen die z-Achse in festen Schritten. Danach misst du die Durchmesser unter dem Mikroskop.",
+            "Achtung, die Kurve hat zwei Gesichter. Mit **viel Energie** ist der Krater im Fokus am **kleinsten**, weiter außen wird er erst breiter (größerer Strahl, Fluenz noch über der Schwelle) und verschwindet dann. Mit Energie **knapp über der Schwelle** entsteht nur noch im Fokus ein Krater. Um den Fokus ist die Kurve flach: Zwei Punkte gleicher Breite links und rechts liefern die Mitte genauer als der eine kleinste Punkt."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k14.l03.b02",
+          "typ": "formel",
+          "latex": "D^2(z)=2w^2(z)\\,\\ln\\dfrac{2E_\\mathrm{p}}{\\pi w^2(z)F_\\mathrm{th}},\\qquad w(z)=w_0\\sqrt{1+(z-z_0)^2/z_\\mathrm{R}^2}",
+          "erklaerung": "Kraterdurchmesser über der z-Position (Gauß-Strahl): Für $F_0\\gg eF_\\mathrm{th}$ liegt das Minimum im Fokus $z_0$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k14.l03.b03",
+          "typ": "spiel",
+          "spiel": "fokussuche"
+        },
+        {
+          "id": "k14.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Fokusserie mit viel Energie: Wo liegt der Fokus $z_0$? Antwort in mm.",
+          "antwort": 0.6,
+          "einheit": "mm",
+          "toleranz": 0.1,
+          "erklaerung": "Die Kurve ist symmetrisch um ihr Minimum bei $z\\approx0{,}6\\,\\mathrm{mm}$. Nimm zwei Punkte gleicher Breite links und rechts, die Mitte dazwischen ist der Fokus.",
+          "tipp": "Suche zwei Messpunkte mit gleichem $D$ links und rechts vom Minimum.",
+          "plot": {
+            "x": {
+              "label": "z / mm",
+              "min": -0.6,
+              "max": 1.8
+            },
+            "y": {
+              "label": "D / µm",
+              "min": 0,
+              "max": 50
+            },
+            "punkte": [
+              {
+                "daten": [
+                  [
+                    -0.4,
+                    23.5
+                  ],
+                  [
+                    -0.2,
+                    36.0
+                  ],
+                  [
+                    0.0,
+                    38.3
+                  ],
+                  [
+                    0.2,
+                    35.1
+                  ],
+                  [
+                    0.4,
+                    28.6
+                  ],
+                  [
+                    0.6,
+                    24.5
+                  ],
+                  [
+                    0.8,
+                    28.6
+                  ],
+                  [
+                    1.0,
+                    35.1
+                  ],
+                  [
+                    1.2,
+                    38.3
+                  ],
+                  [
+                    1.4,
+                    36.0
+                  ],
+                  [
+                    1.6,
+                    23.5
+                  ]
+                ],
+                "label": "Messung",
+                "label_en": "measured"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k14.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Strahl mit $w_0=10\\,\\mu\\mathrm{m}$, $\\lambda=1{,}03\\,\\mu\\mathrm{m}$, $M^2=1{,}2$. Wie groß ist die Schärfentiefe $2z_\\mathrm{R}$ in mm?",
+          "antwort": 0.508,
+          "einheit": "mm",
+          "toleranz": 0.03,
+          "erklaerung": "$z_\\mathrm{R}=\\pi w_0^2/(M^2\\lambda)=\\pi\\cdot(10^{-5})^2/(1{,}2\\cdot1{,}03\\cdot10^{-6})=0{,}254\\,\\mathrm{mm}$, also $2z_\\mathrm{R}\\approx0{,}51\\,\\mathrm{mm}$. Die Schrittweite der Fokusserie sollte deutlich kleiner sein."
+        },
+        {
+          "id": "k14.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Bei Energie knapp über der Einzelschuss-Schwelle siehst du nur in drei benachbarten z-Schritten Krater. Was folgt daraus?",
+          "optionen": [
+            "Der Fokus liegt in der Mitte dieser drei Schritte",
+            "Der Fokus liegt beim größten Krater am Rand",
+            "Die Energie ist zu hoch",
+            "Die Probe ist schief, eine Fokusserie ist unmöglich"
+          ],
+          "richtig": 0,
+          "erklaerung": "Knapp über der Schwelle reicht die Fluenz nur nahe dem Fokus. Das Fenster mit Abtrag ist symmetrisch um $z_0$."
+        },
+        {
+          "id": "k14.c03",
+          "typ": "karte",
+          "vorne": "Warum ist der Krater im Fokus nicht immer der größte?",
+          "hinten": "$D^2=2w^2\\ln(F_0/F_\\mathrm{th})$: Außerhalb des Fokus wird $w$ größer. Solange $F_0>eF_\\mathrm{th}$ bleibt, wächst $D$ zunächst, erst dann schrumpft er auf null.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k14.l04",
+      "titel": "Leistung einstellen und messen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k14.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die Leistung stellt man meist nicht über den Pumpstrom ein, weil sich dabei auch Pulseigenschaften ändern können. Üblich ist ein **Abschwächer** aus **λ/2-Platte** und **Polarisator**: Die Platte dreht die Polarisation, der Polarisator lässt nur einen Anteil durch.",
+            "Eine Drehung der λ/2-Platte um $\\theta$ dreht die Polarisation um $2\\theta$. Deshalb wiederholt sich die Kurve alle 45° der Platte. Gemessen wird mit einem **thermischen Messkopf** (träge, aber für hohe mittlere Leistung) oder einer **Photodiode** (schnell, kleine Leistung). Thermische Köpfe brauchen einige Sekunden, bis der Wert steht."
+          ],
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Praxis, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k14.l04.b02",
+          "typ": "formel",
+          "latex": "P(\\theta)=P_\\mathrm{max}\\cos^2\\!\\big(2(\\theta-\\theta_0)\\big)",
+          "erklaerung": "Transmittierte Leistung hinter dem Polarisator ($\\theta_0$: Stellung maximaler Transmission).",
+          "verifiziert": true,
+          "quelle": "Herleitung",
+          "titel": "Abschwächer (λ/2 + Polarisator)",
+          "sammlung": "Laboralltag"
+        },
+        {
+          "id": "k14.l04.b03",
+          "typ": "spiel",
+          "spiel": "leistung"
+        },
+        {
+          "id": "k14.q10",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Lies ab: Bei welchem Plattenwinkel ist die Leistung maximal? Antwort in Grad.",
+          "antwort": 12,
+          "einheit": "°",
+          "toleranz": 0.1,
+          "erklaerung": "Das Maximum liegt bei $\\theta_0=12°$, das nächste Minimum 22,5° später bei 34,5°.",
+          "plot": {
+            "x": {
+              "label": "θ / °",
+              "min": 0,
+              "max": 90,
+              "sym": "θ"
+            },
+            "y": {
+              "label": "P / W",
+              "min": 0,
+              "max": 11
+            },
+            "kurven": [
+              {
+                "f": "10*cos(2*(x-12)*pi/180)^2",
+                "label": "P(θ)",
+                "sym": "P"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 45
+          }
+        },
+        {
+          "id": "k14.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Mit derselben Kurve: Welche Leistung misst du bei $\\theta=30°$? Antwort in W.",
+          "antwort": 6.55,
+          "einheit": "W",
+          "toleranz": 0.04,
+          "erklaerung": "$P=10\\,\\mathrm{W}\\cdot\\cos^2(2\\cdot18°)=10\\cdot\\cos^2 36°=6{,}55\\,\\mathrm{W}$.",
+          "plot": {
+            "x": {
+              "label": "θ / °",
+              "min": 0,
+              "max": 90,
+              "sym": "θ"
+            },
+            "y": {
+              "label": "P / W",
+              "min": 0,
+              "max": 11
+            },
+            "kurven": [
+              {
+                "f": "10*cos(2*(x-12)*pi/180)^2",
+                "label": "P(θ)",
+                "sym": "P"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 60
+          }
+        },
+        {
+          "id": "k14.q12",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Formel für die Leistung am Messort, damit am Werkstück $F_0=2\\,\\mathrm{J/cm^2}$ ankommt ($w_0=15\\,\\mu\\mathrm{m}$, $f=200\\,\\mathrm{kHz}$, Transmission bis zum Werkstück $T=0{,}9$). Antwort in W.",
+          "vorlage": "$P=$ {{ [] $\\cdot\\,\\pi$ [] $\\cdot$ [] // $2$ $\\cdot$ [] }}",
+          "richtig": [
+            "$F_0$",
+            "$w_0^2$",
+            "$f$",
+            "$T$"
+          ],
+          "erklaerung": "$P=\\dfrac{F_0\\pi w_0^2f}{2T}=\\dfrac{2\\cdot\\pi\\cdot(1{,}5\\cdot10^{-3}\\,\\mathrm{cm})^2\\cdot2\\cdot10^5\\,\\mathrm{Hz}}{2\\cdot0{,}9}\\,\\mathrm{J/cm^2}\\approx1{,}57\\,\\mathrm{W}$.",
+          "ablenker": [
+            "$w_0$",
+            "$\\tau$"
+          ],
+          "tausch": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "antwort": 1.57,
+          "einheit": "W",
+          "toleranz": 0.03,
+          "tipp": "$w_0$ in cm: $15\\,\\mu\\mathrm{m}=1{,}5\\cdot10^{-3}\\,\\mathrm{cm}$."
+        },
+        {
+          "id": "k14.q13",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du drehst die λ/2-Platte und liest sofort ab. Der thermische Messkopf zeigt 1,2 W, nach 10 s aber 1,5 W. Was ist passiert?",
+          "optionen": [
+            "Der Messkopf war noch nicht eingeschwungen",
+            "Der Laser hat in 10 s seine Leistung erhöht",
+            "Die Platte hat sich von selbst weitergedreht",
+            "Der Polarisator hat sich erwärmt und lässt mehr durch"
+          ],
+          "richtig": 0,
+          "erklaerung": "Thermische Köpfe messen über eine Temperaturdifferenz und brauchen einige Sekunden. Erst ablesen, wenn der Wert steht."
+        },
+        {
+          "id": "k14.c04",
+          "typ": "karte",
+          "vorne": "Warum regelt man die Leistung mit λ/2-Platte und Polarisator statt am Laser?",
+          "hinten": "Der Laser läuft im bekannten Betriebspunkt weiter, Pulsdauer und Strahlqualität bleiben gleich. Der Abschwächer ändert nur den transmittierten Anteil: $P=P_\\mathrm{max}\\cos^2(2(\\theta-\\theta_0))$.",
+          "verifiziert": false,
+          "quelle": "Projektnotizen und gängige Praxis, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k14.l05",
+      "titel": "Pulsdauer prüfen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k14.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "Kein Elektronik-Detektor ist schnell genug für Femtosekunden. Ein **Autokorrelator** misst den Puls mit sich selbst: Er teilt ihn, verzögert eine Kopie um $\\Delta t$ und überlagert beide in einem nichtlinearen Kristall. Das frequenzverdoppelte Signal (SHG) entsteht nur, wenn beide Pulse sich zeitlich überlappen.",
+            "Die Breite der Autokorrelationsspur ist **größer** als der Puls. Du teilst durch einen Formfaktor, der von der angenommenen Pulsform abhängt: Gauß $\\sqrt2$, sech² $1{,}543$. Ein verstellter **Kompressor** lässt den Puls gechirpt und länger. Man stellt ihn auf maximales SHG-Signal, denn das wächst mit der Spitzenintensität."
+          ],
+          "verifiziert": true,
+          "quelle": "diels"
+        },
+        {
+          "id": "k14.l05.b02",
+          "typ": "formel",
+          "latex": "\\tau=\\dfrac{\\Delta t_\\mathrm{AC}}{k},\\qquad k_\\mathrm{Gau\\ss}=\\sqrt2,\\ k_{\\mathrm{sech}^2}=1{,}543",
+          "erklaerung": "Pulsdauer (FWHM) aus der Halbwertsbreite der Intensitäts-Autokorrelation.",
+          "verifiziert": true,
+          "quelle": "diels",
+          "titel": "Autokorrelation: Formfaktor",
+          "sammlung": "Laboralltag"
+        },
+        {
+          "id": "k14.l05.b03",
+          "typ": "spiel",
+          "spiel": "kompressor"
+        },
+        {
+          "id": "k14.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Autokorrelationsspur eines sech²-Pulses: Lies die Halbwertsbreite ab und berechne die Pulsdauer $\\tau$ in fs.",
+          "antwort": 300,
+          "einheit": "fs",
+          "toleranz": 0.06,
+          "erklaerung": "Die Spur fällt bei $\\Delta t\\approx\\pm232\\,\\mathrm{fs}$ auf 50 %, also $\\Delta t_\\mathrm{AC}\\approx463\\,\\mathrm{fs}$. $\\tau=463/1{,}543\\approx300\\,\\mathrm{fs}$.",
+          "tipp": "Ziehe den Cursor auf die Stelle, an der das Signal 0,5 ist, und verdopple den Abstand zur Mitte.",
+          "plot": {
+            "x": {
+              "label": "Δt / fs",
+              "min": -800,
+              "max": 800,
+              "sym": "Δt"
+            },
+            "y": {
+              "label": "SHG (rel.)",
+              "min": 0,
+              "max": 1.1
+            },
+            "kurven": [
+              {
+                "f": "4/(exp(0.00380713*x)+exp(-0.00380713*x))^2",
+                "label": "AC",
+                "sym": "S"
+              }
+            ],
+            "linien": [
+              {
+                "y": 0.5,
+                "label": "50 %"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 400
+          }
+        },
+        {
+          "id": "k14.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein 200-fs-Puls (Gauß, bandbreitebegrenzt) läuft durch Glas mit $\\mathrm{GDD}=10\\,000\\,\\mathrm{fs^2}$. Wie lang ist er danach? $\\tau=\\tau_0\\sqrt{1+(4\\ln2\\cdot\\mathrm{GDD}/\\tau_0^2)^2}$, Antwort in fs.",
+          "antwort": 243,
+          "einheit": "fs",
+          "toleranz": 0.03,
+          "erklaerung": "$4\\ln2\\cdot10^4/200^2=0{,}693$, quadriert $0{,}480$; $\tau=200\\,\\mathrm{fs}\\cdot\\sqrt{1{,}480}=200\\cdot1{,}217\u0007pprox243\\,\\mathrm{fs}$."
+        },
+        {
+          "id": "k14.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du verstellst den Kompressor und das SHG-Signal halbiert sich. Was ist mit dem Puls passiert (Energie gleich)?",
+          "optionen": [
+            "Er ist etwa doppelt so lang geworden (gechirpt)",
+            "Seine Energie hat sich halbiert",
+            "Er ist kürzer geworden",
+            "Die Wellenlänge hat sich halbiert"
+          ],
+          "richtig": 0,
+          "erklaerung": "Bei gleicher Energie ist die Spitzenleistung $\\propto1/\\tau$, das SHG-Signal des Autokorrelators wächst mit ihr. Halbes Signal heißt grob doppelte Pulsdauer."
+        },
+        {
+          "id": "k14.c05",
+          "typ": "karte",
+          "vorne": "Warum ist die Autokorrelationsbreite nicht die Pulsdauer?",
+          "hinten": "Die Spur ist die Faltung des Pulses mit sich selbst und deshalb breiter. Teilen durch den Formfaktor: Gauß $\\sqrt2$, sech² $1{,}543$.",
+          "verifiziert": true,
+          "quelle": "diels"
+        }
+      ]
+    },
+    {
+      "id": "k14.l06",
+      "titel": "Schwelle bestimmen (Liu-Methode)",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k14.l06.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die häufigste Auswertung im UKP-Labor: Spots bei mehreren Pulsenergien setzen, Durchmesser messen und $D^2$ über $\\ln E_\\mathrm{p}$ auftragen. Für einen Gauß-Strahl liegen die Punkte auf einer Geraden. Die **Steigung** ist $2w_0^2$, der **Schnitt mit $D^2=0$** ist die Schwellenenergie $E_\\mathrm{th}$.",
+            "Der Charme: Du bekommst den Strahlradius **auf der Probe** gleich mit, ohne Strahlkamera. Zahlen in dieser Lektion sind Beispiele."
+          ],
+          "verifiziert": true,
+          "quelle": "liu1982"
+        },
+        {
+          "id": "k14.l06.b02",
+          "typ": "spiel",
+          "spiel": "liuplot"
+        },
+        {
+          "id": "k14.q17",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Liu-Plot: Bei welcher Pulsenergie schneidet die Gerade $D^2=0$? $E_\\mathrm{th}$ in µJ.",
+          "antwort": 0.4,
+          "einheit": "µJ",
+          "toleranz": 0.1,
+          "erklaerung": "Die Gerade erreicht $D^2=0$ bei $E_\\mathrm{p}\\approx0{,}4\\,\\mu\\mathrm{J}$: Das ist die Schwellenenergie.",
+          "plot": {
+            "x": {
+              "label": "E_p / µJ (log)",
+              "min": 0.2,
+              "max": 50,
+              "log": true,
+              "sym": "E"
+            },
+            "y": {
+              "label": "D² / µm²",
+              "min": 0,
+              "max": 1700
+            },
+            "kurven": [
+              {
+                "f": "288*ln(x/0.4)",
+                "label": "Fit",
+                "sym": "D²"
+              }
+            ],
+            "punkte": [
+              {
+                "daten": [
+                  [
+                    0.6,
+                    121
+                  ],
+                  [
+                    1,
+                    270
+                  ],
+                  [
+                    2,
+                    455
+                  ],
+                  [
+                    4,
+                    670
+                  ],
+                  [
+                    8,
+                    855
+                  ],
+                  [
+                    16,
+                    1070
+                  ],
+                  [
+                    32,
+                    1255
+                  ]
+                ],
+                "label": "Messung",
+                "label_en": "measured"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 1
+          }
+        },
+        {
+          "id": "k14.q18",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Mit derselben Geraden: Lies $D^2$ bei 1 µJ und bei 10 µJ ab und bestimme daraus $w_0$ in µm.",
+          "antwort": 12,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "$D^2(1)\\approx264$, $D^2(10)\\approx927\\,\\mu\\mathrm{m}^2$. Steigung pro $\\ln$: $(927-264)/\\ln10=288=2w_0^2\\Rightarrow w_0=12\\,\\mu\\mathrm{m}$.",
+          "tipp": "Steigung $=\\Delta(D^2)/\\Delta(\\ln E)$, und $\\ln10\\approx2{,}303$.",
+          "plot": {
+            "x": {
+              "label": "E_p / µJ (log)",
+              "min": 0.2,
+              "max": 50,
+              "log": true,
+              "sym": "E"
+            },
+            "y": {
+              "label": "D² / µm²",
+              "min": 0,
+              "max": 1700
+            },
+            "kurven": [
+              {
+                "f": "288*ln(x/0.4)",
+                "label": "Fit",
+                "sym": "D²"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 3
+          }
+        },
+        {
+          "id": "k14.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Aus $E_\\mathrm{th}=0{,}4\\,\\mu\\mathrm{J}$ und $w_0=12\\,\\mu\\mathrm{m}$: Wie groß ist $F_\\mathrm{th}=2E_\\mathrm{th}/(\\pi w_0^2)$ in J/cm²?",
+          "antwort": 0.177,
+          "einheit": "J/cm²",
+          "toleranz": 0.03,
+          "erklaerung": "$F_\\mathrm{th}=2\\cdot0{,}4\\cdot10^{-6}/(\\pi\\cdot(1{,}2\\cdot10^{-3})^2)=0{,}177\\,\\mathrm{J/cm^2}$."
+        },
+        {
+          "id": "k14.q20",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Deine Punkte im Liu-Plot knicken bei hohen Energien nach unten ab. Was ist eine plausible Ursache?",
+          "optionen": [
+            "Das Strahlprofil ist nicht rein gaußförmig oder der Krater franst aus, die Gerade gilt nur im Gauß-Modell",
+            "Die Schwelle ist bei hohen Energien negativ",
+            "Der Logarithmus ist für große Zahlen ungenau",
+            "Das beweist, dass der Fokus falsch war"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die Gerade folgt aus dem Gauß-Profil. Abweichungen vom Profil, Abschattung durch Plasma oder unscharfe Kraterränder verbiegen die Kurve. Dann fittet man nur den geraden Bereich."
+        },
+        {
+          "id": "k14.c06",
+          "typ": "karte",
+          "vorne": "Was liest du aus Steigung und Achsenschnitt im Liu-Plot?",
+          "hinten": "Steigung von $D^2$ über $\\ln E_\\mathrm{p}$ = $2w_0^2$, Schnitt mit $D^2=0$ = $E_\\mathrm{th}$; daraus $F_\\mathrm{th}=2E_\\mathrm{th}/(\\pi w_0^2)$.",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        }
+      ]
+    }
+  ]
+}

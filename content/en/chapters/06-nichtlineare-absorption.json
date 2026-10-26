@@ -12,7 +12,8 @@
     "k06.l02": "Tunnel ionization and the Keldysh parameter",
     "k06.l03": "Avalanche ionization",
     "k06.l04": "Plasma and critical density",
-    "k06.l05": "Calculation training: photons, Keldysh, plasma"
+    "k06.l05": "Calculation training: photons, Keldysh, plasma",
+    "k06.l06": "Reading plots: nonlinear absorption"
   },
   "blocks": {
     "k06.l01.b01": {
@@ -260,6 +261,26 @@
     "k06.c05": {
       "vorne": "How do you calculate the minimum photon number?",
       "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$, with $h\\nu=1239.84\\,\\mathrm{eV\\,nm}/\\lambda$. Always round up."
+    },
+    "k06.l06.b01": {
+      "inhalt": "In a **log-log** plot a power law $S\\propto I^n$ becomes a straight line with slope $n$. That is how you recognise how many photons are absorbed simultaneously. Model curves, freely chosen numbers."
+    },
+    "k06.q17": {
+      "frage": "Signal over intensity, log-log. What order $n$ does the process have?",
+      "erklaerung": "Over one decade in $I$ the signal rises by three decades: slope 3, so three-photon absorption."
+    },
+    "k06.q18": {
+      "frage": "Does that match the physics? Band gap $E_\\mathrm{g}=3.4\\,\\mathrm{eV}$ (example value), photon energy at 1030 nm $1.20\\,\\mathrm{eV}$. How many photons are needed at least?",
+      "erklaerung": "$3.4/1.2=2.83$, rounded up 3 photons, matching slope 3."
+    },
+    "k06.q19": {
+      "frage": "Transmission of a sample over intensity. At which intensity has it dropped to 50 %? Answer in W/cm².",
+      "erklaerung": "$T=1/(1+I/I_\\mathrm{s})$ has dropped to 0.5 at $I=I_\\mathrm{s}=5\\cdot10^{11}\\,\\mathrm{W/cm^2}$. Below that the sample is practically transparent, above it nonlinear absorption sets in.",
+      "tipp": "Enter e.g. as 5e11."
+    },
+    "k06.c06": {
+      "vorne": "How do you recognise the number of photons in a plot?",
+      "hinten": "Plot log-log: signal $\\propto I^n$ is a straight line, the slope is $n$."
     }
   }
 }

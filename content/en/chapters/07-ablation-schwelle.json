@@ -14,7 +14,8 @@
     "k07.l03": "Mechanisms: spallation, phase explosion, Coulomb explosion",
     "k07.l04": "Incubation",
     "k07.l05": "Burst mode and heat accumulation",
-    "k07.l06": "Calculation training: threshold, craters, incubation"
+    "k07.l06": "Calculation training: threshold, craters, incubation",
+    "k07.l07": "Reading plots: ablation and threshold"
   },
   "blocks": {
     "k07.l01.b01": {
@@ -304,6 +305,30 @@
     "k07.c08": {
       "vorne": "How do you calculate the crater diameter from fluence ratio and beam radius?",
       "hinten": "$D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$ (Gaussian beam): no ablation for $F_0\\le F_\\mathrm{th}$."
+    },
+    "k07.l07.b01": {
+      "inhalt": "Ablation curves are almost always plotted semi-log or log-log. Reading the axes means reading the physics: threshold, penetration depth, incubation, efficiency maximum. Model curves, freely chosen numbers."
+    },
+    "k07.q19": {
+      "frage": "Ablation depth per pulse over fluence (x logarithmic). Where is the threshold fluence? Answer in J/cm².",
+      "erklaerung": "$d=\\ell\\ln(F/F_\\mathrm{th})$ is a straight line in the semi-log plot that crosses zero at $F_\\mathrm{th}=0.5\\,\\mathrm{J/cm^2}$."
+    },
+    "k07.q20": {
+      "frage": "With the same curve: read $d$ at $F=5\\,\\mathrm{J/cm^2}$ and determine the effective penetration depth $\\ell$ in nm.",
+      "erklaerung": "$d(5)\\approx46\\,\\mathrm{nm}$, $\\ln(5/0.5)=\\ln10=2.303$, so $\\ell=46/2.303\\approx20\\,\\mathrm{nm}$."
+    },
+    "k07.q21": {
+      "frage": "Threshold over number of pulses, log-log. Determine the incubation coefficient $S$ from $F_\\mathrm{th}(N)=F_\\mathrm{th}(1)N^{S-1}$.",
+      "erklaerung": "From $N=1$ to $1000$ (three decades) $F_\\mathrm{th}$ falls from 1 to 0.25, i.e. by $\\log_{10}4=0.6$ decades: slope $-0.2=S-1\\Rightarrow S=0.8$.",
+      "tipp": "Slope = decades in y ÷ decades in x."
+    },
+    "k07.q22": {
+      "frage": "Energy efficiency of ablation (removed volume per energy) over peak fluence. At which fluence is the maximum? Answer in J/cm².",
+      "erklaerung": "In the Gaussian model the maximum is at $F_0=e^2F_\\mathrm{th}=7.39\\cdot0.5\\approx3.7\\,\\mathrm{J/cm^2}$. Above that the ablation only grows logarithmically and the efficiency drops."
+    },
+    "k07.c09": {
+      "vorne": "Which axes does which ablation plot need?",
+      "hinten": "$d$ over $\\ln F$: straight line, intercept = $F_\\mathrm{th}$, slope = $\\ell$. $F_\\mathrm{th}$ over $N$ log-log: slope $S-1$. Efficiency over $F_0$: maximum at $e^2F_\\mathrm{th}$."
     }
   }
 }

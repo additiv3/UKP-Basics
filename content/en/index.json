@@ -77,6 +77,10 @@
     "k13": {
       "titel": "Scientific English for photonics",
       "kurz": "Numbers aloud, describing setups and graphs, abstracts, conversations"
+    },
+    "k14": {
+      "titel": "Everyday lab work at the USP system",
+      "kurz": "Safety, beam alignment, focus search, power, pulse duration and Liu evaluation as games"
     }
   }
 }

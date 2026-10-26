@@ -29,7 +29,8 @@ export function createShell(root) {
 
   return {
     view,
-    setView(el, tab, { calculator = false } = {}) {
+    setView(el, tab, { calculator = false, immersive = false } = {}) {
+      document.body.classList.toggle('immersive', immersive);
       view.replaceChildren(el);
       view.scrollTop = 0;
       window.scrollTo(0, 0);

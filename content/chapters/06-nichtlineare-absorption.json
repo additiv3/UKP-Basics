@@ -495,6 +495,146 @@
           "quelle": "Herleitung"
         }
       ]
+    },
+    {
+      "id": "k06.l06",
+      "titel": "Diagramme lesen: nichtlineare Absorption",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k06.l06.b01",
+          "typ": "text",
+          "inhalt": "Im **doppellogarithmischen** Plot wird ein Potenzgesetz $S\\propto I^n$ zur Geraden mit der Steigung $n$. So erkennt man, wie viele Photonen gleichzeitig absorbiert werden. Modellkurven, frei gewählte Zahlen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k06.q17",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Signal über Intensität, doppellogarithmisch. Welche Ordnung $n$ hat der Prozess?",
+          "optionen": [
+            "$n=1$",
+            "$n=2$",
+            "$n=3$",
+            "$n=4$"
+          ],
+          "richtig": 2,
+          "erklaerung": "Über eine Dekade in $I$ steigt das Signal um drei Dekaden: Steigung 3, also Drei-Photonen-Absorption.",
+          "plot": {
+            "x": {
+              "label": "I / (W/cm²)",
+              "min": 1000000000000.0,
+              "max": 10000000000000.0,
+              "log": true
+            },
+            "y": {
+              "label": "S (rel.)",
+              "min": 1,
+              "max": 2000,
+              "log": true
+            },
+            "punkte": [
+              {
+                "daten": [
+                  [
+                    1200000000000.0,
+                    1.75
+                  ],
+                  [
+                    2000000000000.0,
+                    8.1
+                  ],
+                  [
+                    3000000000000.0,
+                    26
+                  ],
+                  [
+                    5000000000000.0,
+                    128
+                  ],
+                  [
+                    7000000000000.0,
+                    340
+                  ],
+                  [
+                    9500000000000.0,
+                    860
+                  ]
+                ],
+                "label": "Messung",
+                "label_en": "measured"
+              }
+            ],
+            "kurven": [
+              {
+                "f": "(x/1E12)^2",
+                "label": "n = 2",
+                "farbe": "muted",
+                "gestrichelt": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "k06.q18",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Passt das zur Physik? Bandlücke $E_\\mathrm{g}=3{,}4\\,\\mathrm{eV}$ (Beispielwert), Photonenenergie bei 1030 nm $1{,}20\\,\\mathrm{eV}$. Wie viele Photonen braucht es mindestens?",
+          "antwort": 3,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$3{,}4/1{,}2=2{,}83$, aufgerundet 3 Photonen, passend zur Steigung 3."
+        },
+        {
+          "id": "k06.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Transmission einer Probe über der Intensität. Bei welcher Intensität ist sie auf 50 % gefallen? Antwort in W/cm².",
+          "antwort": 500000000000.0,
+          "einheit": "W/cm²",
+          "toleranz": 0.1,
+          "erklaerung": "$T=1/(1+I/I_\\mathrm{s})$ ist bei $I=I_\\mathrm{s}=5\\cdot10^{11}\\,\\mathrm{W/cm^2}$ auf 0,5 gefallen. Darunter ist die Probe praktisch transparent, darüber setzt nichtlineare Absorption ein.",
+          "tipp": "Eingabe z. B. als 5e11.",
+          "plot": {
+            "x": {
+              "label": "I / (W/cm²)",
+              "min": 10000000000.0,
+              "max": 100000000000000.0,
+              "log": true,
+              "sym": "I"
+            },
+            "y": {
+              "label": "T",
+              "min": 0,
+              "max": 1.05
+            },
+            "kurven": [
+              {
+                "f": "1/(1+x/5E11)",
+                "label": "T(I)",
+                "sym": "T"
+              }
+            ],
+            "linien": [
+              {
+                "y": 0.5,
+                "label": "50 %"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 1000000000000.0
+          }
+        },
+        {
+          "id": "k06.c06",
+          "typ": "karte",
+          "vorne": "Wie erkennst du die Photonenzahl im Plot?",
+          "hinten": "Doppellogarithmisch auftragen: Signal $\\propto I^n$ ist eine Gerade, die Steigung ist $n$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }

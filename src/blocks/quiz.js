@@ -7,6 +7,7 @@ import { rich, inline } from '../core/richtext.js';
 import { icon } from '../ui/icons.js';
 import { num } from '../core/format.js';
 import { t } from '../core/i18n.js';
+import { plotFigure } from '../ui/plotfig.js';
 import { createBoard, sortable } from '../ui/board.js';
 import { openCalculator } from '../ui/calculator.js';
 import { scoreQuizAnswer, isKnown } from './scoring.js';
@@ -380,7 +381,8 @@ export function render(block, ctx) {
     : null;
   const feedback = h('div', { class: 'quiz-feedback', 'aria-live': 'polite' });
   const tag = block.art === 'rechenweg' || block.art === 'zahl' ? t('Rechnen') : t('Frage');
-  const root = h('div', { class: `quiz art-${block.art}` }, h('div', { class: 'quiz-top' }, h('span', { class: 'quiz-tag' }, tag), hintBtn), question, hintBox, holder, feedback);
+  const figure = block.plot ? plotFigure(block.plot) : null;
+  const root = h('div', { class: `quiz art-${block.art}` }, h('div', { class: 'quiz-top' }, h('span', { class: 'quiz-tag' }, block.plot ? t('Diagramm lesen') : tag), hintBtn), question, figure, hintBox, holder, feedback);
 
   const refreshCheck = () => {
     checkBtn.disabled = !widget.canCheck();

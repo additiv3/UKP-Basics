@@ -151,6 +151,16 @@
       ]
     },
     {
+      "id": "k14",
+      "datei": "chapters/14-laboralltag.json",
+      "stufe": "D",
+      "titel": "Laboralltag an der UKP-Anlage",
+      "kurz": "Sicherheit, Strahljustage, Fokussuche, Leistung, Pulsdauer und Liu-Auswertung als Spiele",
+      "voraussetzungen": [
+        "k09"
+      ]
+    },
+    {
       "id": "k12",
       "stufe": "D",
       "titel": "Wissenschaftliche Praxis in der Photonik",

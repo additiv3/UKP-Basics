@@ -7,7 +7,7 @@ import { t } from '../core/i18n.js';
 const SUPS = { 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹', '-': '⁻' };
 export const supNum = (n) => String(n).replace(/[0-9-]/g, (c) => SUPS[c]);
 export const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
-export const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+export const reducedMotion = () => globalThis.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
 
 /** Current theme colors, read from the CSS custom properties (so canvases follow light/dark). */
 export function palette() {
@@ -34,7 +34,7 @@ export function palette() {
 
 export const alpha = (color, a) => `color-mix(in srgb, ${color} ${Math.round(a * 100)}%, transparent)`;
 
-const mq = window.matchMedia?.('(prefers-color-scheme: dark)');
+const mq = typeof window !== 'undefined' ? window.matchMedia?.('(prefers-color-scheme: dark)') : null;
 
 /**
  * A canvas that fills its box, is DPR-aware and redraws on resize and theme change.

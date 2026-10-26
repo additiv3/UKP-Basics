@@ -21,6 +21,8 @@ const root = document.getElementById('app');
 
 // calculator button on pages where people calculate
 const WITH_CALCULATOR = /^\/(kapitel\/[^/]+\/[^/]+|wiederholen|vokabeln|labor.*)$/;
+// full-screen pages without the tab bar (lessons are paged and bring their own bottom bar)
+const IMMERSIVE = /^\/kapitel\/[^/]+\/[^/]+$/;
 
 async function boot() {
   store.init();
@@ -80,7 +82,7 @@ async function boot() {
       console.error(e);
       el = h('div', { class: 'page' }, h('h1', {}, t('Da ist etwas schiefgelaufen')), h('p', { class: 'hint' }, String(e?.message ?? e)), h('a', { class: 'btn btn-primary', href: '#/' }, t('Zum Lernpfad')));
     }
-    if (tk === token) shell.setView(el, m?.tab, { calculator: WITH_CALCULATOR.test(currentPath()) });
+    if (tk === token) shell.setView(el, m?.tab, { calculator: WITH_CALCULATOR.test(currentPath()), immersive: IMMERSIVE.test(currentPath()) && !el.classList.contains('page-plain') });
   }
 
   const updateBadge = () => shell.setDueCount(dueIds(store.get(), toDay()).filter((id) => app.data.items.has(id)).length);

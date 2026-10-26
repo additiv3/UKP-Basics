@@ -627,6 +627,174 @@
           "quelle": "Herleitung"
         }
       ]
+    },
+    {
+      "id": "k02.l06",
+      "titel": "Diagramme lesen: Strahlkaustik",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k02.l06.b01",
+          "typ": "text",
+          "inhalt": "Die **Kaustik** $w(z)$ zeigt den Strahlradius entlang der Achse. Aus ihr liest du Fokusradius, Rayleigh-Länge und Divergenz ab. Ziehe im Diagramm, um Werte abzulesen. Die Kurven sind Modellkurven mit frei gewählten Zahlen.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k02.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist der Strahlradius im Fokus $w_0$? Antwort in µm.",
+          "antwort": 15,
+          "einheit": "µm",
+          "toleranz": 0.05,
+          "erklaerung": "Das Minimum der Kaustik liegt bei $w_0=15\\,\\mu\\mathrm{m}$ (bei $z=0$).",
+          "plot": {
+            "x": {
+              "label": "z / mm",
+              "min": -2,
+              "max": 2,
+              "sym": "z"
+            },
+            "y": {
+              "label": "w / µm",
+              "min": 0,
+              "max": 60
+            },
+            "kurven": [
+              {
+                "f": "15*sqrt(1+(x/0.6)^2)",
+                "label": "w(z)",
+                "sym": "w"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 1.2
+          }
+        },
+        {
+          "id": "k02.q20",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Bei welchem $z>0$ ist $w=\\sqrt2\\,w_0\\approx21{,}2\\,\\mu\\mathrm{m}$? Das ist die Rayleigh-Länge $z_\\mathrm{R}$ in mm.",
+          "antwort": 0.6,
+          "einheit": "mm",
+          "toleranz": 0.08,
+          "erklaerung": "$w=21{,}2\\,\\mu\\mathrm{m}$ wird bei $z=0{,}6\\,\\mathrm{mm}$ erreicht: $z_\\mathrm{R}=0{,}6\\,\\mathrm{mm}$, die Schärfentiefe $2z_\\mathrm{R}=1{,}2\\,\\mathrm{mm}$.",
+          "plot": {
+            "x": {
+              "label": "z / mm",
+              "min": -2,
+              "max": 2,
+              "sym": "z"
+            },
+            "y": {
+              "label": "w / µm",
+              "min": 0,
+              "max": 60
+            },
+            "kurven": [
+              {
+                "f": "15*sqrt(1+(x/0.6)^2)",
+                "label": "w(z)",
+                "sym": "w"
+              }
+            ],
+            "linien": [
+              {
+                "y": 21.2,
+                "label": "√2·w₀"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 1.5
+          }
+        },
+        {
+          "id": "k02.q21",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Zwei Strahlen, gleiche Wellenlänge. Welcher hat die größere Divergenz?",
+          "optionen": [
+            "A: kleiner Fokus, Kaustik steigt steil an",
+            "B: großer Fokus, Kaustik flach",
+            "Beide gleich, Divergenz hängt nur von λ ab",
+            "Aus dem Diagramm nicht ablesbar"
+          ],
+          "richtig": 0,
+          "erklaerung": "Weit vom Fokus ist $w\\approx\\theta z$: Die Steigung ist der Divergenzwinkel. A ($w_0=10\\,\\mu\\mathrm{m}$, $z_\\mathrm{R}=0{,}3\\,\\mathrm{mm}$) hat $\\theta=w_0/z_\\mathrm{R}\\approx33\\,\\mathrm{mrad}$, B ($20\\,\\mu\\mathrm{m}$, $1{,}2\\,\\mathrm{mm}$) nur $17\\,\\mathrm{mrad}$. Kleiner Fokus, große Divergenz.",
+          "plot": {
+            "x": {
+              "label": "z / mm",
+              "min": -2,
+              "max": 2
+            },
+            "y": {
+              "label": "w / µm",
+              "min": 0,
+              "max": 80
+            },
+            "kurven": [
+              {
+                "f": "10*sqrt(1+(x/0.3)^2)",
+                "label": "A"
+              },
+              {
+                "f": "20*sqrt(1+(x/1.2)^2)",
+                "label": "B",
+                "farbe": "laser"
+              }
+            ]
+          }
+        },
+        {
+          "id": "k02.q22",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Lies die Schärfentiefe $2z_\\mathrm{R}$ von Strahl B ab ($w=\\sqrt2\\cdot20\\approx28{,}3\\,\\mu\\mathrm{m}$). Antwort in mm.",
+          "antwort": 2.4,
+          "einheit": "mm",
+          "toleranz": 0.06,
+          "erklaerung": "B erreicht $28{,}3\\,\\mu\\mathrm{m}$ bei $z=\\pm1{,}2\\,\\mathrm{mm}$, also $2z_\\mathrm{R}=2{,}4\\,\\mathrm{mm}$. Doppelter Fokusradius, vierfache Schärfentiefe ($z_\\mathrm{R}\\propto w_0^2$).",
+          "plot": {
+            "x": {
+              "label": "z / mm",
+              "min": -2,
+              "max": 2,
+              "sym": "z"
+            },
+            "y": {
+              "label": "w / µm",
+              "min": 0,
+              "max": 80
+            },
+            "kurven": [
+              {
+                "f": "20*sqrt(1+(x/1.2)^2)",
+                "label": "B",
+                "farbe": "laser",
+                "sym": "w_B"
+              }
+            ],
+            "linien": [
+              {
+                "y": 28.3,
+                "label": "√2·w₀"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 0.5
+          }
+        },
+        {
+          "id": "k02.c09",
+          "typ": "karte",
+          "vorne": "Was liest du an einer Kaustik $w(z)$ ab?",
+          "hinten": "Minimum = $w_0$ und Fokuslage; $w=\\sqrt2w_0$ bei $z_\\mathrm{R}$; Steigung weit außen = Divergenz $\\theta$.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
     }
   ]
 }
