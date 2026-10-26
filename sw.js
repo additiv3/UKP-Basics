@@ -1,6 +1,6 @@
 // Service worker: precache app shell and content, serve cache-first (offline-capable).
 // VERSION and the PRECACHE block are maintained by tools/release.py - do not edit by hand.
-const VERSION = '0.3.0';
+const VERSION = '0.4.0';
 const CACHE = `ukp-basics-${VERSION}`;
 
 // BEGIN PRECACHE
@@ -27,14 +27,21 @@ const PRECACHE = [
   'src/core/exportimport.js',
   'src/core/format.js',
   'src/core/i18n.js',
+  'src/core/paginate.js',
   'src/core/progress.js',
   'src/core/richtext.js',
   'src/core/router.js',
   'src/core/sm2.js',
   'src/core/storage.js',
   'src/core/store.js',
+  'src/games/_common.js',
+  'src/games/fokussuche.js',
+  'src/games/kompressor.js',
+  'src/games/leistung.js',
+  'src/games/liuplot.js',
   'src/games/rechenwerkstatt.js',
   'src/games/schwellenjaeger.js',
+  'src/games/strahljustage.js',
   'src/games/zahlenblitz.js',
   'src/i18n/en.js',
   'src/main.js',
@@ -54,6 +61,8 @@ const PRECACHE = [
   'src/styles/components.css',
   'src/styles/extras.css',
   'src/styles/home.css',
+  'src/styles/lab.css',
+  'src/styles/pager.css',
   'src/styles/theme.css',
   'src/styles/tools.css',
   'src/ui/board.js',
@@ -61,7 +70,9 @@ const PRECACHE = [
   'src/ui/dom.js',
   'src/ui/icons.js',
   'src/ui/langswitch.js',
+  'src/ui/plotfig.js',
   'src/ui/shell.js',
+  'src/ui/swipe.js',
   'src/ui/views/chapter.js',
   'src/ui/views/glossary.js',
   'src/ui/views/home.js',
@@ -85,6 +96,7 @@ const PRECACHE = [
   'content/chapters/11-messtechnik-normen.json',
   'content/chapters/12-wissenschaftliche-praxis.json',
   'content/chapters/13-englisch.json',
+  'content/chapters/14-laboralltag.json',
   'content/en/chapters/00-werkzeugkasten.json',
   'content/en/chapters/01-pulsgroessen.json',
   'content/en/chapters/02-strahloptik.json',
@@ -99,6 +111,7 @@ const PRECACHE = [
   'content/en/chapters/11-messtechnik-normen.json',
   'content/en/chapters/12-wissenschaftliche-praxis.json',
   'content/en/chapters/13-englisch.json',
+  'content/en/chapters/14-laboralltag.json',
   'content/en/glossar.json',
   'content/en/index.json',
   'content/en/quellen.json',

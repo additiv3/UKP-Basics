@@ -38,6 +38,12 @@ Offen aus Phase 2: Karteikarten-Ansicht pro Kapitel (Blättern ohne SM-2), Stati
 - [x] Rechentraining-Lektion in K01 bis K07, K09 und K11 (über 100 neue Fragen)
 - [x] Neue Startseite (Wochenstreifen, Weiter-Karte, Schnellzugriffe, Lernpfad als Zeitleiste)
 
+## Phase 2c · Version 0.4 (erledigt)
+
+- [x] Lektionen als Seiten mit Wischgeste, Fortschrittsleiste und Abschlussseite ([ADR 0008](adr/0008-lektionen-als-seiten-und-laborspiele.md))
+- [x] Kapitel K14 „Laboralltag an der UKP-Anlage“ mit fünf Laborspielen (Strahljustage, Fokussuche, Leistung, Pulskompressor, Liu-Plot)
+- [x] Diagrammfragen (`plot`-Feld) mit Ablese-Cursor, Lektionen „Diagramme lesen“ in K02, K06 und K07
+
 ## Phase 3 · Vertiefung
 
 - Weitere Simulationen: Bessel-Strahl und Filamentation, LIPSS-Periode, Wärmeakkumulation über Pulsfolgen

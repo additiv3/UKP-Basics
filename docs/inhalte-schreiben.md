@@ -62,6 +62,7 @@ Quizarten:
 - `sortieren`: `items[]` in richtiger Reihenfolge, optional `oben`, `unten` (Beschriftung der Enden)
 - `zahl`: `antwort` (Zahl), `einheit`, `toleranz` (relativ, Standard 0,05; 0 = exakt). Eingaben wie `12,5`, `1.2e13`, `1,2 x 10^13` werden akzeptiert. Bei Einheiten wie `MW`, `µm` oder `·10⁻¹⁹ J` gilt auch der reine SI-Wert als richtig. Das Antwortfeld hat einen Taschenrechner-Knopf.
 - `rechenweg`: Formel aus Kacheln bauen, optional danach rechnen. Felder: `vorlage` (`[]` = Feld, `{{ oben // unten }}` = Bruch, `$latex$` erlaubt), `richtig` (Kacheltexte in Feldreihenfolge), `ablenker` (falsche Kacheln), `tausch` (Gruppen vertauschbarer Felder, z. B. `[[0,1]]`), `gegeben` (Liste angezeigter Größen), optional `antwort`, `einheit`, `toleranz` für den Zahlenteil.
+- Diagrammfrage: Jede Quizart kann ein Feld `plot` haben: `{"x": {"label": "z / mm", "min": -2, "max": 2, "log": false, "sym": "z"}, "y": {…}, "kurven": [{"f": "15*sqrt(1+(x/0.6)^2)", "label": "w(z)", "sym": "w", "farbe": "accent", "gestrichelt": false}], "punkte": [{"daten": [[x, y], …], "label": "Messung", "label_en": "measured"}], "linien": [{"y": 0.5, "label": "50 %"}], "cursor": true, "cursor_start": 1}`. Kurven sind Ausdrücke in `x` mit der Syntax des Taschenrechners (`ln`, `exp`, `sqrt`, `^`, `pi`, Zahlen wie `5E11`). Beschriftungen symbolisch halten, dann braucht es keine Übersetzung.
 - Für alle Arten: optional `tipp` (Hinweis, einblendbar). „Lösung zeigen“ ist immer vorhanden.
 
 ## Faktenregel (wichtig)

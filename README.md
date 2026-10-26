@@ -8,8 +8,11 @@ Persönliche Lern-App für den Einstieg in die **Ultrakurzpuls-(UKP-)Laserablati
 
 - **Zweisprachig (DE/EN-Schalter):** Oberfläche, alle Kapitel, Fragen und das Glossar; Vokabelkarten DE ↔ EN aus allen Fachbegriffen
 - Lernpfad mit 14 aufeinander aufbauenden Kapiteln (K00 Werkzeugkasten bis K13 Wissenschaftliches Englisch) und über 600 Fragen und Karten
+- **Lektionen als Seiten:** jede Frage auf einer eigenen Seite, Blättern per Wischen, Fortschrittsleiste mit Sprung zu offenen Fragen
+- **Laboralltag (K14) als Spiele:** Strahljustage, Fokussuche, Leistung einstellen, Pulskompressor mit Autokorrelator, Liu-Plot
+- **Diagramme lesen:** Fragen mit interaktiven Plots und Ablese-Cursor (Kaustik, Liu-Plot, Abtragskurven, Autokorrelation)
 - **Rechnen am Handy:** eingebauter wissenschaftlicher Taschenrechner, Formelbaukasten (Kacheln ziehen oder antippen), Zuordnung und Lückentext per Antippen, Sortieren per Ziehen, Rechenwerkstatt
-- **Labor-Tab:** 11 interaktive Simulationen (Gauß-Strahl, Zwei-Temperatur-Modell, Keldysh-Parameter, D²-Methode, CPA …), Formelsammlung, Konstanten, Normen, Taschenrechner und drei Spiele
+- **Labor-Tab:** 11 interaktive Simulationen (Gauß-Strahl, Zwei-Temperatur-Modell, Keldysh-Parameter, D²-Methode, CPA …), Formelsammlung, Konstanten, Normen, Taschenrechner und acht Spiele
 - Schlaue Wiederholung nach dem SM-2-Verfahren (Abstände wachsen, wenn du etwas sicher kannst)
 - Fortschritt lokal im Browser, Export/Import als JSON
 - Inhalte sind reine JSON-Dateien in `content/`; unverifizierte Aussagen tragen das Badge „ungeprüft"
