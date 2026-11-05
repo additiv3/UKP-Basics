@@ -1,6 +1,6 @@
 // Service worker: precache app shell and content, serve cache-first (offline-capable).
 // VERSION and the PRECACHE block are maintained by tools/release.py - do not edit by hand.
-const VERSION = '0.4.0';
+const VERSION = '0.5.0';
 const CACHE = `ukp-basics-${VERSION}`;
 
 // BEGIN PRECACHE
@@ -97,6 +97,12 @@ const PRECACHE = [
   'content/chapters/12-wissenschaftliche-praxis.json',
   'content/chapters/13-englisch.json',
   'content/chapters/14-laboralltag.json',
+  'content/chapters/15-packaging-grundlagen.json',
+  'content/chapters/16-packaging-architekturen.json',
+  'content/chapters/17-packaging-werkstoffe.json',
+  'content/chapters/18-substrat-microvias-glaskern.json',
+  'content/chapters/19-trennen-loesen.json',
+  'content/chapters/20-qualitaet-forschung.json',
   'content/en/chapters/00-werkzeugkasten.json',
   'content/en/chapters/01-pulsgroessen.json',
   'content/en/chapters/02-strahloptik.json',
@@ -112,6 +118,12 @@ const PRECACHE = [
   'content/en/chapters/12-wissenschaftliche-praxis.json',
   'content/en/chapters/13-englisch.json',
   'content/en/chapters/14-laboralltag.json',
+  'content/en/chapters/15-packaging-grundlagen.json',
+  'content/en/chapters/16-packaging-architekturen.json',
+  'content/en/chapters/17-packaging-werkstoffe.json',
+  'content/en/chapters/18-substrat-microvias-glaskern.json',
+  'content/en/chapters/19-trennen-loesen.json',
+  'content/en/chapters/20-qualitaet-forschung.json',
   'content/en/glossar.json',
   'content/en/index.json',
   'content/en/quellen.json',
@@ -125,6 +137,8 @@ const PRECACHE = [
   'assets/brand/mark.svg',
   'assets/figures/baender.svg',
   'assets/figures/gauss-profil.svg',
+  'assets/figures/microvia.svg',
+  'assets/figures/package-querschnitt.svg',
   'assets/figures/pulszug.svg',
   'assets/figures/zeitleiter.svg',
   'assets/figures/zeitskalen-prozesse.svg',

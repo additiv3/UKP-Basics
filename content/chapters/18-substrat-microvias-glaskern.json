@@ -1,0 +1,591 @@
+{
+  "id": "k18",
+  "titel": "IC-Substrat, Microvias und Glaskern",
+  "einleitung": "Das Kernkapitel für UKP im Packaging: Wie ein IC-Substrat Lage für Lage entsteht, warum Microvias mit CO₂-, UV- und UKP-Lasern gebohrt werden, was Burst und Top-Hat bewirken und wie Through-Glass Vias für Glaskern-Substrate entstehen. Dabei lernst du die Arbeiten der AG alp an der TH Aschaffenburg zu Microvias und TGVs kennen. Zahlen aus Papers stammen aus deren Kurzfassungen und tragen das Badge „ungeprüft“, bis du die Volltexte gelesen hast.",
+  "ziele": [
+    "Den Lagenaufbau eines IC-Substrats und die Rolle der Microvia beschreiben",
+    "CO₂-, UV-ns- und UKP-Laser für das Via-Bohren vergleichen",
+    "Burst, Pulsdauer und Top-Hat als Stellhebel für Taper und Bohrzeit erklären",
+    "Glaskern-Substrate und die Wege zum TGV einordnen",
+    "Lochdurchmesser, Bohrzeit und Durchsatz abschätzen"
+  ],
+  "weiterlesen": [
+    "franz2022",
+    "franz2023",
+    "rung2025",
+    "ostholt2014",
+    "intel2023",
+    "nimbalkar2025",
+    "lamp2025"
+  ],
+  "lektionen": [
+    {
+      "id": "k18.l01",
+      "titel": "Das IC-Substrat und seine Microvias",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k18.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein [[ic-substrat|IC-Substrat]] wächst Lage für Lage. In der Mitte sitzt ein steifer **Kern** aus glasfaserverstärktem Epoxid mit mechanisch gebohrten, verkupferten Durchgangslöchern. Darauf werden beidseitig **Aufbaulagen** gestapelt. Eine Lage entsteht typischerweise so:",
+            "1. Dielektrische Folie ([[abf|ABF]]) auflaminieren und aushärten.\n2. **[[microvia|Microvias]] bohren:** Sacklöcher durch das Dielektrikum bis auf das Kupferpad der Lage darunter, mit dem Laser.\n3. **Desmear:** Harzreste chemisch entfernen, Wände aufrauen.\n4. Dünne Kupfer-Keimschicht stromlos abscheiden.\n5. Fotolack, Belichtung und galvanisches Kupfer bauen Leiterbahnen und füllen die Vias (semi-additives Verfahren, SAP), dann Lack und Keimschicht entfernen.\n6. Nächste Lage.",
+            "Eine Microvia verbindet also immer nur **zwei benachbarte Lagen**. Über mehrere Lagen hinweg werden Vias versetzt (*staggered*) oder direkt übereinander gestapelt (*stacked*). Ein großes Substrat enthält eine sehr große Zahl solcher Vias, deshalb zählen beim Bohren Qualität und Durchsatz gleichermaßen."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k18.l01.b02",
+          "typ": "bild",
+          "src": "assets/figures/microvia.svg",
+          "alt": "Schnitt durch eine Microvia: Laserstrahl von oben, konische Bohrung durch das Dielektrikum mit oberem Durchmesser d_top, unterem Durchmesser d_bot und Tiefe h, darunter das Kupferpad.",
+          "unterschrift": "Schematisch. Die Wand ist geneigt; die Konizität beschreibt, wie stark sich das Loch nach unten verengt."
+        },
+        {
+          "id": "k18.l01.b03",
+          "typ": "text",
+          "inhalt": [
+            "Qualitätsmerkmale einer Microvia: oberer und unterer Durchmesser, daraus die **[[taper|Konizität]]** (*taper*), eine glatte Wand ohne Hohlräume, kein Unterschnitt an der Grenzfläche, ein **sauberer Boden** ohne Harzreste und ein Kupferpad, das nicht durchgebohrt oder aufgeschmolzen ist.",
+            "Achtung: Der Begriff *Taper* wird unterschiedlich definiert, als Durchmesserverhältnis $d_\\mathrm{bot}/d_\\mathrm{top}$ (dann ist 100 % ein zylindrisches Loch) oder als Wandwinkel. Prüfe in jedem Paper, welche Definition gilt."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k18.l01.b04",
+          "typ": "formel",
+          "latex": "T_\\mathrm{V}=\\frac{d_\\mathrm{bot}}{d_\\mathrm{top}},\\qquad \\tan\\theta=\\frac{d_\\mathrm{top}-d_\\mathrm{bot}}{2h}",
+          "erklaerung": "Konizität als Durchmesserverhältnis und Wandwinkel $\\theta$ gegen die Senkrechte für eine kegelstumpfförmige Bohrung der Tiefe $h$.",
+          "titel": "Via-Konizität",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k18.q01",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe den Aufbau einer Substratlage in die richtige Reihenfolge.",
+          "items": [
+            "ABF auflaminieren",
+            "Microvias lasern",
+            "Desmear",
+            "Kupfer-Keimschicht",
+            "Lithografie und Galvanik"
+          ],
+          "erklaerung": "Erst Dielektrikum, dann Loch, dann reinigen, dann Kupfer.",
+          "oben": "zuerst",
+          "unten": "zuletzt"
+        },
+        {
+          "id": "k18.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Eine Microvia hat $d_\\mathrm{top}=50\\,\\mu\\mathrm{m}$ und $d_\\mathrm{bot}=40\\,\\mu\\mathrm{m}$. Wie groß ist die Konizität als Durchmesserverhältnis? Antwort in %.",
+          "antwort": 80,
+          "einheit": "%",
+          "toleranz": 0.01,
+          "erklaerung": "$40/50=0{,}8=80\\,\\%$."
+        },
+        {
+          "id": "k18.q03",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleiche Via, Tiefe $h=30\\,\\mu\\mathrm{m}$. Wie groß ist der Wandwinkel gegen die Senkrechte in Grad?",
+          "antwort": 9.46,
+          "einheit": "°",
+          "toleranz": 0.03,
+          "erklaerung": "$\\tan\\theta=(50-40)/(2\\cdot30)=0{,}167$, $\\theta=9{,}5°$.",
+          "tipp": "Taschenrechner: atan, Ergebnis in Grad umrechnen ($\\cdot180/\\pi$)."
+        },
+        {
+          "id": "k18.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum ist ein sauberer Via-Boden so wichtig?",
+          "optionen": [
+            "Harzreste verhindern einen zuverlässigen elektrischen Kontakt zum Kupferpad",
+            "Damit die Via glänzt",
+            "Weil der Boden später abgeschliffen wird"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die galvanische Füllung muss metallisch auf dem Pad haften. Reste führen zu Ausfällen, oft erst im Temperaturwechsel."
+        },
+        {
+          "id": "k18.c01",
+          "typ": "karte",
+          "vorne": "Was ist eine Microvia?",
+          "hinten": "Kleines, meist lasergebohrtes Sackloch durch eine Aufbaulage bis zum Kupferpad darunter, danach verkupfert. Verbindet zwei benachbarte Lagen.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k18.l02",
+      "titel": "Drei Laser für ein Loch: CO₂, UV-ns, UKP",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k18.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Microvias werden industriell seit Langem gelasert. Drei Lasertypen konkurrieren:",
+            "- **CO₂-Laser** (Wellenlänge im fernen Infrarot): Polymere absorbieren stark, **Kupfer reflektiert fast vollständig**. Der Prozess stoppt deshalb von selbst am Kupferpad. Hoher Durchsatz, aber durch die lange Wellenlänge große Fokusdurchmesser und thermische Rückstände.\n- **UV-ns-Laser** (typisch 355 nm): Kupfer und Polymer absorbieren beide. Damit lässt sich auch die obere Kupferlage öffnen, aber es fehlt der natürliche Stopp: Auf dünnem Kupfer kontrolliert anzuhalten ist schwierig.\n- **Hybrid:** Der UV-Laser öffnet das obere Kupfer, der CO₂-Laser bohrt das Dielektrikum und stoppt am Pad.",
+            "**UKP-Laser** (ps, fs) kommen hinzu, weil die Vias kleiner werden und die Anforderungen an Wand und Boden steigen: kleine Fokusdurchmesser, kaum Wärmeeinflusszone und ein Stopp über den **Schwellenkontrast** zwischen Dielektrikum und Kupfer (K17). Dafür ist die Pulsenergie kleiner, und der Durchsatz muss über hohe Repetitionsraten, Burst und Strahlformung kommen."
+          ],
+          "verifiziert": false,
+          "quelle": "rung2025"
+        },
+        {
+          "id": "k18.l02.b02",
+          "typ": "formel",
+          "latex": "w_0\\approx\\frac{M^2\\,\\lambda\\,f}{\\pi\\,w_\\mathrm{in}}\\ \\Rightarrow\\ d_\\mathrm{Fokus}\\propto\\lambda",
+          "erklaerung": "Fokusradius bei gleicher Optik (Brennweite $f$, Rohstrahlradius $w_\\mathrm{in}$, Strahlqualität $M^2$, siehe K09): Der kleinste erreichbare Fokus skaliert mit der Wellenlänge.",
+          "titel": "Fokus skaliert mit λ",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung (Strahlpropagation, K02)"
+        },
+        {
+          "id": "k18.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleiche Optik und Strahlqualität: Um welchen Faktor ist der Fokus eines CO₂-Lasers ($10{,}6\\,\\mu\\mathrm{m}$) größer als der eines UV-Lasers ($355\\,\\mathrm{nm}$)?",
+          "antwort": 29.9,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$10\\,600/355\\approx30$. Deshalb sind sehr kleine Vias mit CO₂ kaum zu erreichen."
+        },
+        {
+          "id": "k18.q06",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Laser seiner Eigenschaft beim Via-Bohren zu.",
+          "paare": [
+            [
+              "CO₂",
+              "Natürlicher Stopp, weil Kupfer reflektiert"
+            ],
+            [
+              "UV-ns",
+              "Öffnet Kupfer, aber kein natürlicher Stopp"
+            ],
+            [
+              "Hybrid UV + CO₂",
+              "Kupfer mit UV öffnen, Dielektrikum mit CO₂"
+            ],
+            [
+              "UKP (ps, fs)",
+              "Kleine Vias, Stopp über Schwellenkontrast"
+            ]
+          ],
+          "erklaerung": "Jeder Typ hat seinen Platz; UKP gewinnt dort, wo Vias klein und Wände sauber sein müssen."
+        },
+        {
+          "id": "k18.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum stoppt der CO₂-Laser von selbst am Kupferpad?",
+          "optionen": [
+            "Kupfer reflektiert im fernen Infrarot fast die gesamte Strahlung",
+            "Kupfer ist transparent für CO₂-Strahlung",
+            "Der Laser schaltet sich über einen Sensor ab"
+          ],
+          "richtig": 0,
+          "erklaerung": "Metalle reflektieren lange Wellenlängen stark (K03, Fresnel und freie Elektronen)."
+        },
+        {
+          "id": "k18.q08",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist das Hauptproblem des UV-ns-Lasers beim Bohren auf dünnes Kupfer?",
+          "optionen": [
+            "Er absorbiert in Kupfer und Polymer, es gibt keinen natürlichen Stopp",
+            "Er kann Polymer nicht abtragen",
+            "Sein Fokus ist zu groß"
+          ],
+          "richtig": 0,
+          "erklaerung": "Dieselbe Absorption, die das Öffnen der oberen Kupferlage erlaubt, gefährdet das Pad unten."
+        },
+        {
+          "id": "k18.c02",
+          "typ": "karte",
+          "vorne": "CO₂, UV-ns oder UKP für Microvias?",
+          "hinten": "**CO₂:** schnell, stoppt am Kupfer, aber große Spots. **UV-ns:** öffnet Kupfer, kein natürlicher Stopp. **UKP:** kleine, saubere Vias, Stopp über Schwellenkontrast, Durchsatz über Burst und Strahlformung.",
+          "verifiziert": false,
+          "quelle": "rung2025"
+        }
+      ]
+    },
+    {
+      "id": "k18.l03",
+      "titel": "UKP-Microvias: Burst, Top-Hat und Wärme",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k18.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Beim **[[perkussionsbohren|Perkussionsbohren]]** treffen viele Pulse dieselbe Stelle, bis das Loch fertig ist. Die Pulszahl und die Folge der Pulse bestimmen Qualität und Zeit. Hier setzt die Forschung der AG alp an der TH Aschaffenburg an (Franz, Rung, Hellmann und Kollegen):",
+            "- **Leiterplattenmaterial (FR-4):** Vergleich von ps- und fs-Pulsen beim Bohren von Microvias bis zur inneren Kupferlage. Eine Pulsdauer von 2 ps erwies sich als günstig: kleine Glasfaserüberstände und ein präziser Stopp an der inneren Kupferlage.\n- **ABF mit MHz-Burst:** Wärmeakkumulation im Burst verursacht Hohlräume (*voids*) und Delamination der ABF-Lage. Bei vergleichbarem Freiraum (*clearance*) senkten zwei Pulse pro Burst den Taper gegenüber Einzelpulsen um bis zu 19,5 %, und die Bohrzeit pro Via sank um 16,7 %.\n- **Top-Hat plus Burst:** Mit einem [[top-hat|Top-Hat-Profil]] sank die Bohrzeit bei ähnlichem Taper um 18,2 %.",
+            "Die Zahlen stammen aus den Kurzfassungen der Arbeiten und gelten nur für deren Versuchsbedingungen. Lies die Volltexte, bevor du sie zitierst."
+          ],
+          "verifiziert": false,
+          "quelle": "franz2023"
+        },
+        {
+          "id": "k18.l03.b02",
+          "typ": "text",
+          "inhalt": [
+            "Warum hilft ein Top-Hat-Profil gegen den Taper? Beim Gauß-Strahl fällt die Fluenz zum Rand hin stetig ab. Abgetragen wird nur, wo die lokale Fluenz über der Schwelle liegt. Der Lochdurchmesser folgt der **Schwellenkontur** $D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$ (D²-Methode, K07). Am Rand liegt die Fluenz nur knapp über der Schwelle, dort wird pro Puls wenig abgetragen: Die Wand wird flach.",
+            "Ein Top-Hat-Profil hat eine fast konstante Fluenz und steile Flanken. Fast überall im Spot wird gleich viel abgetragen, die Wand wird steiler. Der Preis: Strahlformer (refraktiv oder diffraktiv) sind justageempfindlich, und das Profil gilt nur in einem begrenzten Bereich um die Fokusebene."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung (log. Gesetz, Gauß-Profil)"
+        },
+        {
+          "id": "k18.l03.b03",
+          "typ": "merke",
+          "inhalt": "Drei Stellhebel für UKP-Microvias: **Pulsdauer** (Fasern, Stopp am Kupfer), **Burst und Repetitionsrate** (Tempo gegen Wärmeakkumulation), **Strahlprofil** (Gauß gegen Top-Hat, also Taper).",
+          "verifiziert": false,
+          "quelle": "franz2023"
+        },
+        {
+          "id": "k18.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was verursachte laut der Aschaffenburger ABF-Studie Hohlräume und Delamination beim MHz-Burst-Bohren?",
+          "optionen": [
+            "Wärmeakkumulation im Burst",
+            "Zu kleine Pulsenergie",
+            "Die Polarisation",
+            "Reflexion am Kupfer"
+          ],
+          "richtig": 0,
+          "erklaerung": "Pulse im MHz-Abstand lassen dem Polymer keine Zeit abzukühlen (vergleiche das Kriterium in K07)."
+        },
+        {
+          "id": "k18.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum führt ein Gauß-Strahl beim Perkussionsbohren zu einer geneigten Wand?",
+          "optionen": [
+            "Am Rand liegt die Fluenz nur knapp über der Schwelle, dort wird pro Puls wenig abgetragen",
+            "Der Gauß-Strahl ist am Rand heißer",
+            "Weil Gauß-Strahlen immer divergent sind"
+          ],
+          "richtig": 0,
+          "erklaerung": "Abtragtiefe pro Puls $\\propto\\ln(F/F_\\mathrm{th})$ (K07): Zum Rand hin geht sie gegen null."
+        },
+        {
+          "id": "k18.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Ein Via braucht im Einzelpulsbetrieb $120\\,\\mu\\mathrm{s}$ reine Bohrzeit. Mit Burst sinkt sie um 16,7 %. Wie viele Vias pro Sekunde sind dann rechnerisch möglich (ohne Positionierzeit)?",
+          "antwort": 10004,
+          "einheit": "1/s",
+          "toleranz": 0.03,
+          "erklaerung": "$t=120\\cdot(1-0{,}167)=100\\,\\mu\\mathrm{s}$, also rund $10\\,000$ Vias pro Sekunde. In der Praxis begrenzen Scanner und Tischbewegung."
+        },
+        {
+          "id": "k18.q12",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Ein ___-Profil hat steile Flanken und verringert den Taper. Im MHz-Burst steigt die Gefahr von ___. Bei FR-4 erwies sich eine Pulsdauer im ___-Bereich als günstig.",
+          "luecken": [
+            {
+              "optionen": [
+                "Top-Hat",
+                "Gauß"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Wärmeakkumulation",
+                "Interferenz"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Pikosekunden",
+                "Nanosekunden"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Alle drei Aussagen beziehen sich auf die genannten Arbeiten und deren Bedingungen."
+        },
+        {
+          "id": "k18.c03",
+          "typ": "karte",
+          "vorne": "Was zeigten die Aschaffenburger Arbeiten zu UKP-Microvias?",
+          "hinten": "FR-4: 2 ps günstig (kleine Faserüberstände, präziser Kupferstopp). ABF-Burst: Wärmeakkumulation erzeugt Voids und Delamination; zwei Pulse pro Burst senken Taper und Bohrzeit. Top-Hat plus Burst: kürzere Bohrzeit bei ähnlichem Taper.",
+          "verifiziert": false,
+          "quelle": "franz2023"
+        }
+      ]
+    },
+    {
+      "id": "k18.l04",
+      "titel": "Glaskern-Substrate und Through-Glass Vias",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k18.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Organische Kerne stoßen bei sehr großen Packages an Grenzen: Verzug, Formstabilität und Lochdichte. Die Antwort, an der die Industrie seit einigen Jahren arbeitet, ist ein **[[glaskern-substrat|Glaskern-Substrat]]**: Der Kern besteht aus einer dünnen Glasplatte, die Aufbaulagen bleiben organisch. Intel stellte 2023 Glaskern-Substrate für die zweite Hälfte des Jahrzehnts vor und nannte als Vorteile eine an Silizium angenäherte Wärmeausdehnung, einstellbare Steifigkeit, große Ebenheit und eine etwa zehnfach höhere Dichte von Durchgangslöchern als bei organischen Kernen.",
+            "Glas taucht auch als **Interposer** und als Träger auf. Schon 2014 beschrieben Ostholt und Kollegen Glas als Interposerwerkstoff mit guter mechanischer Festigkeit, geringen Verlusten und hoher chemischer Beständigkeit und nannten die **Lochherstellung** als Haupthindernis."
+          ],
+          "verifiziert": false,
+          "quelle": "intel2023"
+        },
+        {
+          "id": "k18.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "Für **[[tgv|Through-Glass Vias]]** (TGV) gibt es drei Laserwege:",
+            "1. **Laserinduziertes Ätzen** ([[lide|LIDE]], verwandt mit [[sle|SLE]] aus K10): Ein einzelner UKP-Puls modifiziert das Glas über die ganze Dicke, danach ätzt Flusssäure die modifizierten Bereiche viel schneller als das unveränderte Glas. Ostholt et al. berichten rund 5000 TGV/s Strukturiergeschwindigkeit, je nach Ätzdauer Durchmesser von 10 bis 50 µm und einen Taper unter 5°.\n2. **Direktes UKP-Bohren:** Perkussions- oder Wendelbohren mit fs- oder ps-Pulsen, ohne Nasschemie. Die Herausforderung sind **Mikrorisse, Ausbrüche an der Rückseite und Eigenspannungen** durch Thermoschock. Genau hier arbeitet die AG alp an Borofloat-33-Glas für Glaskern-Packaging.\n3. **Andere Laser:** Excimer (193 nm) für sehr kleine Löcher, CO₂ mit dem Risiko thermisch induzierter Risse.",
+            "Eine Übersichtsarbeit von 2025 nennt laserbasierte Verfahren die am weitesten verbreitete Methode zur Via-Herstellung in Glas."
+          ],
+          "verifiziert": false,
+          "quelle": "ostholt2014"
+        },
+        {
+          "id": "k18.l04.b03",
+          "typ": "formel",
+          "latex": "\\mathrm{AR}=\\frac{t}{d},\\qquad t_\\mathrm{ges}=\\frac{N_\\mathrm{Via}}{\\dot N}",
+          "erklaerung": "Aspektverhältnis einer Durchgangsbohrung (Glasdicke $t$, Durchmesser $d$) und reine Strukturierzeit für $N_\\mathrm{Via}$ Löcher bei einer Rate $\\dot N$ (Löcher pro Sekunde).",
+          "titel": "TGV: Aspektverhältnis und Zeit",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k18.q13",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie funktioniert laserinduziertes Ätzen (LIDE) für TGVs?",
+          "optionen": [
+            "Ein UKP-Puls modifiziert das Glas über die Dicke, danach ätzt Flusssäure die modifizierte Spur bevorzugt",
+            "Der Laser verdampft das ganze Loch in einem Schritt",
+            "Ein Diamantbohrer folgt der Laserspur"
+          ],
+          "richtig": 0,
+          "erklaerung": "Zweischrittverfahren wie SLE: Laser legt fest, wo, Chemie trägt ab."
+        },
+        {
+          "id": "k18.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Glaskern ist $500\\,\\mu\\mathrm{m}$ dick, die TGV haben $50\\,\\mu\\mathrm{m}$ Durchmesser. Wie groß ist das Aspektverhältnis?",
+          "antwort": 10,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$\\mathrm{AR}=500/50=10$."
+        },
+        {
+          "id": "k18.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Ein Panel braucht $10^6$ TGVs. Wie viele Sekunden dauert das reine Modifizieren bei $5000$ TGV/s?",
+          "antwort": 200,
+          "einheit": "s",
+          "toleranz": 0.01,
+          "erklaerung": "$10^6/5000=200\\,\\mathrm{s}$. Dazu kommt die Ätzzeit, die im Batch für viele Panels gleichzeitig läuft."
+        },
+        {
+          "id": "k18.q16",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne das TGV-Verfahren seiner typischen Herausforderung zu.",
+          "paare": [
+            [
+              "Laserinduziertes Ätzen",
+              "Nasschemie mit Flusssäure, Ätzdauer bestimmt den Durchmesser"
+            ],
+            [
+              "Direktes UKP-Bohren",
+              "Mikrorisse, Rückseitenausbrüche, Eigenspannung"
+            ],
+            [
+              "CO₂-Laser",
+              "Thermisch induzierte Risse"
+            ]
+          ],
+          "erklaerung": "Alle Wege kämpfen mit der Sprödigkeit des Glases; sie unterscheiden sich darin, wo der Aufwand liegt."
+        },
+        {
+          "id": "k18.q17",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Vorteile nannte Intel 2023 für Glaskern-Substrate? (Mehrfachauswahl)",
+          "optionen": [
+            "Wärmeausdehnung näher an Silizium",
+            "Höhere Dichte von Durchgangslöchern",
+            "Große Ebenheit",
+            "Glas ist bruchunempfindlich"
+          ],
+          "richtig": [
+            0,
+            1,
+            2
+          ],
+          "erklaerung": "Die Sprödigkeit bleibt die Schwachstelle; deshalb ist rissfreies Bohren und Trennen von Glas ein Forschungsthema."
+        },
+        {
+          "id": "k18.c04",
+          "typ": "karte",
+          "vorne": "Drei Laserwege zum TGV?",
+          "hinten": "Laserinduziertes Ätzen (Modifikation plus HF-Ätzen), direktes UKP-Bohren (ohne Chemie, Risiko Mikrorisse), Excimer oder CO₂ (klein bzw. thermische Risse).",
+          "verifiziert": false,
+          "quelle": "ostholt2014"
+        },
+        {
+          "id": "k18.c05",
+          "typ": "karte",
+          "vorne": "Warum Glaskern statt organischer Kern?",
+          "hinten": "Wärmeausdehnung näher an Silizium, steif und eben, höhere Lochdichte. Nachteil: spröde, TGVs müssen rissfrei entstehen.",
+          "verifiziert": false,
+          "quelle": "intel2023"
+        }
+      ]
+    },
+    {
+      "id": "k18.l05",
+      "titel": "Rechentraining: Lochdurchmesser, Pulse und Durchsatz",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k18.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "Zum Abschluss verbindest du die Via-Geometrie mit den Werkzeugen aus K01, K07 und K09: Spitzenfluenz, Schwellenkontur und Repetitionsrate. Alle Zahlen sind frei gewählt."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k18.l05.b02",
+          "typ": "formel",
+          "latex": "D=w_0\\sqrt{2\\ln\\frac{F_0}{F_\\mathrm{th}}},\\qquad t_\\mathrm{Via}=\\frac{N_\\mathrm{P}}{f}",
+          "erklaerung": "Durchmesser der Schwellenkontur eines Gauß-Strahls (Umstellung der D²-Methode aus K07) und reine Bohrzeit eines Perkussionslochs mit $N_\\mathrm{P}$ Pulsen bei der Repetitionsrate $f$.",
+          "titel": "Lochdurchmesser und Bohrzeit",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung (log. Gesetz, Gauß-Profil)"
+        },
+        {
+          "id": "k18.q18",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "$w_0=10\\,\\mu\\mathrm{m}$, $F_0=2\\,\\mathrm{J/cm^2}$, $F_\\mathrm{th}=0{,}5\\,\\mathrm{J/cm^2}$. Wie groß ist der Durchmesser der Schwellenkontur in µm?",
+          "antwort": 16.65,
+          "einheit": "µm",
+          "toleranz": 0.03,
+          "erklaerung": "$D=10\\cdot\\sqrt{2\\ln4}=10\\cdot\\sqrt{2{,}773}=16{,}7\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k18.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Diagramm: Durchmesser der Schwellenkontur über der Spitzenfluenz ($w_0=10\\,\\mu\\mathrm{m}$, $F_\\mathrm{th}=0{,}5\\,\\mathrm{J/cm^2}$). Welche Spitzenfluenz braucht ein Loch mit $D=20\\,\\mu\\mathrm{m}$? Antwort in J/cm².",
+          "antwort": 3.69,
+          "einheit": "J/cm²",
+          "toleranz": 0.05,
+          "erklaerung": "Aus $D=20$: $2\\ln(F_0/0{,}5)=4$, also $F_0=0{,}5\\,e^2=3{,}7\\,\\mathrm{J/cm^2}$. Die Kurve wird flach: Für größere Löcher steigt die nötige Fluenz exponentiell.",
+          "tipp": "Cursor auf $D=20$ schieben oder die Formel nach $F_0$ umstellen.",
+          "plot": {
+            "x": {
+              "label": "F₀ / (J/cm²)",
+              "min": 0.5,
+              "max": 8,
+              "sym": "F₀"
+            },
+            "y": {
+              "label": "D / µm",
+              "min": 0,
+              "max": 30
+            },
+            "kurven": [
+              {
+                "f": "10*sqrt(2*ln(x/0.5))",
+                "label": "D(F₀)",
+                "sym": "D"
+              }
+            ],
+            "linien": [
+              {
+                "y": 20,
+                "label": "20 µm"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 2
+          }
+        },
+        {
+          "id": "k18.q20",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Via braucht $N_\\mathrm{P}=200$ Pulse bei $f=400\\,\\mathrm{kHz}$. Wie lange dauert das reine Bohren in µs?",
+          "antwort": 500,
+          "einheit": "µs",
+          "toleranz": 0.01,
+          "erklaerung": "$t=200/400\\,000\\,\\mathrm{s^{-1}}=5\\cdot10^{-4}\\,\\mathrm{s}=500\\,\\mu\\mathrm{s}$."
+        },
+        {
+          "id": "k18.q21",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleiche Vias, zusätzlich $300\\,\\mu\\mathrm{s}$ Sprungzeit des Scanners pro Via. Wie viele Vias pro Sekunde schafft die Anlage?",
+          "antwort": 1250,
+          "einheit": "1/s",
+          "toleranz": 0.02,
+          "erklaerung": "$1/(500+300)\\,\\mu\\mathrm{s}=1250\\,\\mathrm{s^{-1}}$. Die Nebenzeit frisst fast 40 % der Zeit."
+        },
+        {
+          "id": "k18.q22",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Ein Substrat-Panel braucht $2\\cdot10^6$ Microvias, die Anlage schafft $1250$ Vias/s. Wie viele Minuten dauert ein Panel?",
+          "antwort": 26.7,
+          "einheit": "min",
+          "toleranz": 0.03,
+          "erklaerung": "$2\\cdot10^6/1250=1600\\,\\mathrm{s}\\approx27\\,\\mathrm{min}$, pro Lage. Mehrere Lagen und Panels multiplizieren das: Durchsatz ist ein harter Wettbewerbsfaktor."
+        },
+        {
+          "id": "k18.q23",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue das Quadrat des Durchmessers der Schwellenkontur eines Gauß-Strahls (D²-Methode).",
+          "vorlage": "$D^2=2\\cdot$ [] $\\cdot\\ln$ {{ [] // [] }}",
+          "richtig": [
+            "$w_0^2$",
+            "$F_0$",
+            "$F_\\mathrm{th}$"
+          ],
+          "ablenker": [
+            "$w_0$",
+            "$E_\\mathrm{p}$",
+            "$\\lambda$"
+          ],
+          "erklaerung": "$D^2=2w_0^2\\ln(F_0/F_\\mathrm{th})$ aus K07; die Wurzel daraus gibt $D$."
+        },
+        {
+          "id": "k18.c06",
+          "typ": "karte",
+          "vorne": "Wie hängt der Lochdurchmesser von der Fluenz ab (Gauß-Strahl)?",
+          "hinten": "$D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$: nur logarithmisch. Größere Löcher über mehr Fluenz werden schnell teuer; besser Fokus oder Bahn (Wendeln) anpassen.",
+          "verifiziert": true,
+          "quelle": "Herleitung (log. Gesetz, Gauß-Profil)"
+        }
+      ]
+    }
+  ]
+}

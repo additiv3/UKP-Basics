@@ -1,0 +1,426 @@
+{
+  "id": "k16",
+  "titel": "Packaging-Architekturen: von Drahtbond bis Chiplet",
+  "einleitung": "Vom klassischen Leadframe bis zum Chipstapel: Hier lernst du die wichtigsten Package-Bauformen kennen, warum die Verbindungsraster immer feiner werden und an welchen Stellen Glas, Polymere und Laserprozesse ins Spiel kommen. Rasterangaben stammen aus Fachpresse und Übersichtsliteratur und sind als ungeprüft markiert; die Rechnungen nutzen frei gewählte Zahlen.",
+  "ziele": [
+    "Drahtbonden und Flip-Chip vergleichen und die Rolle des Underfills erklären",
+    "Leadframe-, Substrat- und Wafer-Level-Packages unterscheiden",
+    "Fan-in, Fan-out, chip-first und chip-last einordnen",
+    "2.5D, 3D, Chiplets und Hybrid Bonding beschreiben und Verbindungsdichten abschätzen"
+  ],
+  "weiterlesen": [
+    "lau2022",
+    "lau2018",
+    "semieng-bumps",
+    "hir"
+  ],
+  "lektionen": [
+    {
+      "id": "k16.l01",
+      "titel": "Erste Verbindungsebene: Draht oder Flip-Chip",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k16.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Beim **[[drahtbonden|Drahtbonden]]** (*wire bonding*) liegt der Chip mit der aktiven Seite nach oben. Ein dünner Draht aus Gold, Kupfer oder Aluminium wird mit Ultraschall, Wärme und Kraft auf das Pad und dann auf Leadframe oder Substrat geschweißt. Das Verfahren ist robust und günstig, hat aber eine Grenze: Die Pads liegen nur am **Rand** des Chips. Die Zahl der Anschlüsse wächst daher nur mit dem Umfang.",
+            "Beim **[[flip-chip|Flip-Chip]]** wird der Chip umgedreht. Er trägt auf der ganzen Fläche Lothöcker ([[bump|Bumps]]) oder Kupfersäulen (*Cu pillars*) und wird kopfüber aufgesetzt und gelötet. Vorteile: Anschlüsse in der **Fläche** (viel mehr I/O), kurze elektrische Wege, und die Rückseite ist frei für den Kühlkörper.",
+            "Der Spalt zwischen Chip und Substrat wird mit **[[underfill|Unterfüllung]]** (*underfill*) ausgegossen, einem gefüllten Epoxid. Es verteilt die thermomechanischen Spannungen, die durch unterschiedliche Wärmeausdehnung von Chip und Substrat entstehen, auf die ganze Fläche statt nur auf die Lötstellen (mehr in K17)."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k16.l01.b02",
+          "typ": "formel",
+          "latex": "N_\\mathrm{Rand}\\approx\\frac{4a}{p_\\mathrm{R}},\\qquad N_\\mathrm{Fl}\\approx\\left(\\frac{a}{p_\\mathrm{F}}\\right)^2",
+          "erklaerung": "Anschlusszahl eines quadratischen Chips mit Kantenlänge $a$: eine Padreihe am Rand mit Raster $p_\\mathrm{R}$ gegenüber einem Flächenraster $p_\\mathrm{F}$. Der Rand wächst linear, die Fläche quadratisch mit $a$.",
+          "titel": "Anschlüsse: Rand gegen Fläche",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k16.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Chip $a=10\\,\\mathrm{mm}$, eine Padreihe am Rand mit Raster $50\\,\\mu\\mathrm{m}$. Wie viele Pads passen ungefähr darauf?",
+          "antwort": 800,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$N=4\\cdot10\\,\\mathrm{mm}/0{,}05\\,\\mathrm{mm}=800$."
+        },
+        {
+          "id": "k16.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleicher Chip, aber Flip-Chip mit Flächenraster $150\\,\\mu\\mathrm{m}$. Wie viele Bumps passen ungefähr darauf?",
+          "antwort": 4444,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$N=(10/0{,}15)^2=66{,}7^2\\approx4444$. Trotz dreifach gröberem Raster über fünfmal so viele Anschlüsse."
+        },
+        {
+          "id": "k16.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist die Hauptaufgabe der Unterfüllung (*underfill*)?",
+          "optionen": [
+            "Thermomechanische Spannungen von den Lötstellen auf die ganze Fläche verteilen",
+            "Den Chip elektrisch leitend mit dem Substrat verbinden",
+            "Licht vom Chip fernhalten",
+            "Die Lotkugeln an der Leiterplatte befestigen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Chip und Substrat dehnen sich verschieden aus. Ohne Underfill tragen die Lötstellen die ganze Scherung und ermüden schnell."
+        },
+        {
+          "id": "k16.q04",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne zu.",
+          "paare": [
+            [
+              "Drahtbonden",
+              "Pads am Rand, aktive Seite oben"
+            ],
+            [
+              "Flip-Chip",
+              "Bumps in der Fläche, aktive Seite unten"
+            ],
+            [
+              "Underfill",
+              "Gefülltes Epoxid im Spalt unter dem Chip"
+            ],
+            [
+              "Kupfersäule (Cu pillar)",
+              "Erlaubt ein engeres Raster als eine Lotkugel"
+            ]
+          ],
+          "erklaerung": "Die Kupfersäule behält ihre Form beim Löten, nur die dünne Lotkappe schmilzt; deshalb sind engere Raster möglich."
+        },
+        {
+          "id": "k16.c01",
+          "typ": "karte",
+          "vorne": "Warum skaliert Flip-Chip besser als Drahtbonden?",
+          "hinten": "Anschlüsse in der Fläche ($N\\propto a^2$) statt am Rand ($N\\propto a$), kürzere Wege, Rückseite frei für die Kühlung.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        }
+      ]
+    },
+    {
+      "id": "k16.l02",
+      "titel": "Leadframe, Substrat und Ball Grid Array",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k16.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "**Leadframe-Packages** (z. B. QFN, SOIC) bauen auf einem gestanzten oder geätzten Kupferrahmen auf: Der Chip sitzt auf einer Insel, Drähte führen zu den Anschlüssen, alles wird umspritzt. Günstig, robust, aber mit begrenzter Anschlusszahl.",
+            "Für viele Anschlüsse sitzt der Chip auf einem **[[ic-substrat|IC-Substrat]]**, einer Art Mini-Leiterplatte mit sehr feinen Leiterbahnen. Auf der Unterseite trägt das Substrat ein Feld aus Lotkugeln: das **[[bga|Ball Grid Array]]** (BGA). Prozessoren und Grafikchips sitzen typischerweise als *Flip-Chip-BGA* (FCBGA) auf solchen Substraten.",
+            "Das Substrat übersetzt das feine Raster des Chips auf das grobe Raster der Leiterplatte. Es besteht aus einem steifen **Kern** und darauf aufgebauten **Aufbaulagen** (*build-up layers*) aus Dielektrikum und Kupfer, die durch lasergebohrte [[microvia|Microvias]] verbunden sind. Genau dort liegt ein Hauptanwendungsfeld des UKP-Lasers (K18).",
+            "In der **Leistungselektronik** (Wechselrichter, E-Mobilität) sitzen die Chips dagegen oft auf **Keramiksubstraten** (z. B. Aluminiumoxid, Aluminiumnitrid oder Siliziumnitrid mit aufgebrachtem Kupfer). Dort geht es um Wärmeabfuhr und Isolation bei hohen Strömen."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k16.l02.b02",
+          "typ": "bild",
+          "src": "assets/figures/package-querschnitt.svg",
+          "alt": "Schnitt durch ein Flip-Chip-BGA: Chip mit Bumps und Underfill auf einem Substrat aus Kern und Aufbaulagen mit Microvias, darunter Lotkugeln auf der Leiterplatte.",
+          "unterschrift": "Schematisch, nicht maßstäblich. Die Raster werden von oben nach unten gröber: Bumps, Microvias, Lotkugeln."
+        },
+        {
+          "id": "k16.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was kennzeichnet ein Ball Grid Array (BGA)?",
+          "optionen": [
+            "Lotkugeln in einem Flächenraster auf der Unterseite des Packages",
+            "Anschlussbeinchen an zwei Seiten des Packages",
+            "Ein Glasgehäuse um den Chip"
+          ],
+          "richtig": 0,
+          "erklaerung": "Wie beim Flip-Chip, nur eine Ebene tiefer: Fläche statt Rand."
+        },
+        {
+          "id": "k16.q06",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Packagetyp zu.",
+          "paare": [
+            [
+              "QFN",
+              "Leadframe, Anschlüsse am Rand der Unterseite"
+            ],
+            [
+              "FCBGA",
+              "Flip-Chip auf Substrat mit Lotkugeln"
+            ],
+            [
+              "WLCSP",
+              "Package so groß wie der Chip"
+            ],
+            [
+              "Keramiksubstrat mit Kupfer",
+              "Leistungselektronik"
+            ]
+          ],
+          "erklaerung": "WLCSP = *wafer level chip scale package*, siehe nächste Lektion."
+        },
+        {
+          "id": "k16.q07",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Das IC-Substrat übersetzt das ___ Raster des Chips auf das ___ Raster der Leiterplatte. Seine Aufbaulagen sind über ___ verbunden.",
+          "luecken": [
+            {
+              "optionen": [
+                "feine",
+                "grobe"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "grobe",
+                "feine"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Microvias",
+                "Drahtbonds"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Microvias sind kleine, meist lasergebohrte Sacklöcher durch eine Aufbaulage, die anschließend verkupfert werden."
+        },
+        {
+          "id": "k16.c02",
+          "typ": "karte",
+          "vorne": "Aufbau eines IC-Substrats?",
+          "hinten": "Steifer Kern plus Aufbaulagen aus Dielektrikum und Kupfer, verbunden durch Microvias; oben Bumps des Chips, unten Lotkugeln (BGA).",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k16.l03",
+      "titel": "Wafer-Level-Packaging und Fan-Out",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k16.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Beim **[[wlp|Wafer-Level-Packaging]]** (WLP) wird nicht jeder Chip einzeln verpackt, sondern alle Chips gleichzeitig auf dem Wafer, erst danach wird vereinzelt. Die feine Verdrahtung entsteht als **Umverdrahtungslage** ([[rdl]], *redistribution layer*): Kupferbahnen in Polymer, mit lithografischen Verfahren wie in der Fab.",
+            "- **Fan-in (WLCSP):** RDL und Lotkugeln liegen innerhalb der Chipfläche. Das Package ist so klein wie der Chip, die Anschlusszahl aber durch die Chipfläche begrenzt.\n- **[[fan-out|Fan-out]]:** Die Chips werden mit Abstand in [[moldmasse|Moldmasse]] eingebettet (rekonstituierter Wafer oder Panel). Die RDL darf über den Chiprand hinausgehen, es passen mehr Kugeln darunter.",
+            "Zwei Grundabläufe: Bei **chip-first** werden zuerst die Chips eingebettet, dann die RDL darauf aufgebaut (Beispiele: eWLB, InFO). Bei **chip-last** (RDL-first) wird zuerst die RDL auf einem Träger gebaut und geprüft, dann werden nur geprüfte Chips aufgesetzt. Beide brauchen einen **temporären Träger**, oft aus Glas, der am Ende wieder abgelöst wird, zum Beispiel per Laser ([[laser-debonding]], K19).",
+            "Ein Dauerthema ist der **[[verzug|Verzug]]** (*warpage*) der Moldwafer: Moldmasse, Silizium und Kupfer dehnen sich unterschiedlich aus."
+          ],
+          "verifiziert": false,
+          "quelle": "lau2018"
+        },
+        {
+          "id": "k16.q08",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe einen RDL-first-Ablauf (chip-last) in die richtige Reihenfolge.",
+          "items": [
+            "Trennschicht auf Glasträger aufbringen",
+            "RDL aufbauen und prüfen",
+            "Geprüfte Chips aufsetzen",
+            "Molden",
+            "Träger per Laser lösen",
+            "Lotkugeln setzen und vereinzeln"
+          ],
+          "erklaerung": "Der Vorteil von RDL-first: Nur geprüfte Chips landen auf einer geprüften Verdrahtung.",
+          "oben": "zuerst",
+          "unten": "zuletzt"
+        },
+        {
+          "id": "k16.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist der Kernunterschied zwischen Fan-in und Fan-out?",
+          "optionen": [
+            "Beim Fan-out reicht die Umverdrahtung über den Chiprand hinaus in die Moldmasse",
+            "Fan-out nutzt Drahtbonds",
+            "Fan-in braucht immer ein Substrat"
+          ],
+          "richtig": 0,
+          "erklaerung": "Mehr Fläche für Kugeln, also mehr Anschlüsse, ohne klassisches Substrat."
+        },
+        {
+          "id": "k16.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum ist ein Glasträger für das Laser-Debonding praktisch?",
+          "optionen": [
+            "Glas ist für die Laserwellenlänge transparent, der Strahl erreicht die Trennschicht durch den Träger",
+            "Glas leitet Wärme besonders gut",
+            "Glas ist leitfähig"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die Energie wird gezielt in der dünnen Trennschicht absorbiert, nicht im Bauteil."
+        },
+        {
+          "id": "k16.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Ein Chip misst $8\\times8\\,\\mathrm{mm^2}$, das Fan-out-Package $12\\times12\\,\\mathrm{mm^2}$. Um welchen Faktor steigt bei gleichem Kugelraster die Zahl der Lotkugeln (Fläche zu Fläche)?",
+          "antwort": 2.25,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$(12/8)^2=2{,}25$."
+        },
+        {
+          "id": "k16.c03",
+          "typ": "karte",
+          "vorne": "Chip-first oder chip-last?",
+          "hinten": "**Chip-first:** erst Chips in Moldmasse einbetten, dann RDL. **Chip-last (RDL-first):** erst RDL auf einem Träger bauen und prüfen, dann geprüfte Chips aufsetzen. Beide nutzen temporäre Träger.",
+          "verifiziert": false,
+          "quelle": "lau2018"
+        }
+      ]
+    },
+    {
+      "id": "k16.l04",
+      "titel": "2.5D, 3D und Chiplets",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k16.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein großer Chip hat ein Ausbeuteproblem: Je größer die Fläche, desto wahrscheinlicher sitzt ein Defekt darauf. **[[chiplet|Chiplets]]** teilen das System in kleinere Chips, die einzeln geprüft und dann eng verbunden werden. Bonus: Jeder Teil kann im passenden Prozessknoten gefertigt werden.",
+            "- **2.5D:** Chips liegen nebeneinander auf einem **[[interposer|Interposer]]** (Silizium mit Durchkontaktierungen, organisch oder aus Glas) oder sind über eingebettete Siliziumbrücken verbunden.\n- **3D:** Chips werden gestapelt, etwa Speicherstapel (HBM). Senkrecht verbinden **[[tsv|Through-Silicon Vias]]** (TSV), zwischen den Ebenen Microbumps oder **[[hybrid-bonding|Hybrid Bonding]]** (direkte Kupfer-Kupfer- und Dielektrikum-Dielektrikum-Verbindung ohne Lot).",
+            "Der Trend geht zu immer engeren Rastern. Microbumps liegen in der Fachpresse bei etwa $40\\,\\mu\\mathrm{m}$, Hybrid Bonding zielt auf $10\\,\\mu\\mathrm{m}$ und darunter. Je enger das Raster, desto empfindlicher ist der Verbund gegen Partikel und Kantenausbrüche, und desto strenger werden die Anforderungen an das Vereinzeln."
+          ],
+          "verifiziert": false,
+          "quelle": "semieng-bumps"
+        },
+        {
+          "id": "k16.l04.b02",
+          "typ": "formel",
+          "latex": "n=\\frac{1}{p^2}",
+          "erklaerung": "Verbindungsdichte $n$ (Verbindungen pro Fläche) eines quadratischen Rasters mit Pitch $p$. Halbes Raster bedeutet vierfache Dichte.",
+          "titel": "Verbindungsdichte",
+          "sammlung": "Packaging",
+          "einheit": "\\mathrm{mm^{-2}}",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k16.q12",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Sortiere die Verbindungstechniken nach ihrem typischen Raster.",
+          "items": [
+            "Lotkugel am BGA",
+            "Flip-Chip-Bump",
+            "Microbump",
+            "Hybrid Bonding"
+          ],
+          "erklaerung": "Von der Leiterplatte zum Chipstapel wird das Raster immer feiner. Konkrete Zahlen hängen stark vom Produkt ab.",
+          "oben": "grob",
+          "unten": "fein"
+        },
+        {
+          "id": "k16.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Um welchen Faktor steigt die Verbindungsdichte, wenn das Raster von $40\\,\\mu\\mathrm{m}$ auf $10\\,\\mu\\mathrm{m}$ sinkt?",
+          "antwort": 16,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$n\\propto1/p^2$: $(40/10)^2=16$."
+        },
+        {
+          "id": "k16.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie viele Verbindungen pro mm² hat ein quadratisches Raster mit $p=10\\,\\mu\\mathrm{m}$?",
+          "antwort": 10000,
+          "einheit": "",
+          "toleranz": 0.01,
+          "erklaerung": "$1\\,\\mathrm{mm}/10\\,\\mu\\mathrm{m}=100$ pro Richtung, also $100^2=10\\,000$ pro mm²."
+        },
+        {
+          "id": "k16.q15",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist der wichtigste wirtschaftliche Grund für Chiplets?",
+          "optionen": [
+            "Kleinere Chips haben eine höhere Ausbeute, und jeder Teil kann im passenden Prozessknoten gefertigt werden",
+            "Chiplets brauchen kein Package",
+            "Chiplets werden immer drahtgebondet"
+          ],
+          "richtig": 0,
+          "erklaerung": "Ein Defekt kostet nur ein kleines Chiplet statt des ganzen großen Chips."
+        },
+        {
+          "id": "k16.q16",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne zu.",
+          "paare": [
+            [
+              "TSV",
+              "Senkrechte Durchkontaktierung durch Silizium"
+            ],
+            [
+              "Interposer",
+              "Verdrahtungsträger unter mehreren Chips"
+            ],
+            [
+              "Hybrid Bonding",
+              "Direkte Cu-Cu-Verbindung ohne Lot"
+            ],
+            [
+              "TGV",
+              "Durchkontaktierung durch Glas"
+            ]
+          ],
+          "erklaerung": "TGVs in Glas sind ein zentrales Laserthema (K18)."
+        },
+        {
+          "id": "k16.q17",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum verschärft Hybrid Bonding die Anforderungen an das Vereinzeln?",
+          "optionen": [
+            "Partikel und Kantenausbrüche stören die direkte, lotfreie Verbindung der sehr glatten Flächen",
+            "Weil die Chips dann aus Glas sind",
+            "Weil Hybrid Bonding nur mit Drahtbonds funktioniert"
+          ],
+          "richtig": 0,
+          "erklaerung": "Ohne Lot gibt es nichts, was Unebenheiten ausgleicht. Deshalb werden hier saubere Trennverfahren (z. B. Laser-Grooving plus Plasma) untersucht."
+        },
+        {
+          "id": "k16.c04",
+          "typ": "karte",
+          "vorne": "2.5D gegen 3D?",
+          "hinten": "**2.5D:** Chips nebeneinander auf Interposer oder Brücke. **3D:** Chips gestapelt, verbunden über TSV und Microbumps oder Hybrid Bonding."
+        },
+        {
+          "id": "k16.c05",
+          "typ": "karte",
+          "vorne": "Raster halbieren: was passiert mit der Verbindungsdichte?",
+          "hinten": "Sie vervierfacht sich, $n=1/p^2$.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        }
+      ]
+    }
+  ]
+}

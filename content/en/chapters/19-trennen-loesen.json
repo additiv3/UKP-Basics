@@ -1,0 +1,292 @@
+{
+  "titel": "Separating and releasing: dicing and debonding",
+  "einleitung": "How a wafer becomes individual chips and how thin components are released again from their carrier: saw, laser grooving, stealth dicing, laser full cut and plasma compared, plus laser debonding, glass cutting and opening mould compound. Results from manufacturer reports and trade press are marked as unchecked.",
+  "ziele": [
+    "Name the limits of the wafer saw",
+    "Distinguish laser grooving, stealth dicing, laser full cut and plasma dicing",
+    "Compare sequential and parallel separation processes by time",
+    "Explain laser debonding and further laser processes in the back end"
+  ],
+  "lektionen": {
+    "k19.l01": "Mechanical sawing and its limits",
+    "k19.l02": "Laser grooving: open first, then separate",
+    "k19.l03": "Stealth dicing and laser full cut",
+    "k19.l04": "Plasma dicing and the comparison",
+    "k19.l05": "Releasing, cutting glass, opening mould compound"
+  },
+  "blocks": {
+    "k19.l01.b01": {
+      "inhalt": [
+        "The classic of [[dicing]] is the **wafer saw** (*blade dicing*): a very thin, fast-rotating blade with diamond grit, cooled with water. It traces street after street. The [[kerf]] is about as wide as the blade.",
+        "For you this is machining of brittle materials: each grain creates microcracks, shell-shaped pieces break out at the top and bottom edges ([[chipping]]). With new chip generations the saw reaches its limits:",
+        "- **Low-k stacks** in the street chip off or delaminate under the cutting forces (K15).\n- **Metal test structures** in the street load the blade and raise the forces.\n- **Thin wafers** break more easily, back-side chips reach relatively deeper into the chip.\n- **Hard materials** like SiC wear the blade and force slow feed rates.\n- **Hybrid bonding** requires particle-free, smooth edges (K16)."
+      ]
+    },
+    "k19.q01": {
+      "frage": "Match the sawing problem to its cause.",
+      "paare": [
+        [
+          "Delamination at the chip edge",
+          "Weakly adhering low-k layers"
+        ],
+        [
+          "Loaded blade",
+          "Metal test structures in the street"
+        ],
+        [
+          "Fast blade wear",
+          "Very hard materials like SiC"
+        ],
+        [
+          "Back-side chipping",
+          "Microcracks from the diamond grit"
+        ]
+      ],
+      "erklaerung": "Almost every limit of the saw is an entry point for laser or plasma processes."
+    },
+    "k19.q02": {
+      "frage": "Why are thin wafers particularly critical in sawing?",
+      "optionen": [
+        "Chips reach relatively deeper, and the die strength drops",
+        "Thin wafers are harder",
+        "Thin wafers do not conduct current"
+      ],
+      "erklaerung": "With small thickness $h$ every edge flaw has more effect, and the bending stress grows with $1/h^2$ (K17)."
+    },
+    "k19.c01": {
+      "vorne": "Five limits of the wafer saw?",
+      "hinten": "Low-k delamination, metal in the street, thin wafers, hard materials (SiC), cleanliness for hybrid bonding."
+    },
+    "k19.l02.b01": {
+      "inhalt": [
+        "In **[[laser-grooving]]** the laser first removes the sensitive layer stack (low-k, metal, passivation) in the street. Only afterwards does the saw (or a plasma) separate the silicon underneath. Typical are **two outer grooves** whose outer edges are further apart than the blade is wide, often with material removed in between. That way the blade no longer touches any low-k layer.",
+        "With **ns pulses** the process has long been in production. The heat-affected zone and melt at the groove edges can, however, lower the die strength and create [[debris]] on which the blade later catches. **Ultrashort pulses** reduce the heat input. A technical report by the equipment maker DISCO reports higher die strength after USP grooving plus sawing than after sawing alone and than after conventional laser grooving plus sawing.",
+        "For **hybrid bonding**, UV USP grooving followed by plasma dicing has been studied: laser alone does not give a burr-free edge, plasma needs a clean mask opening and a metal-free street. The combination fulfils both."
+      ]
+    },
+    "k19.q03": {
+      "frage": "Put grooving plus sawing in the right order.",
+      "items": [
+        "Protective coating on the wafer surface",
+        "Laser two outer grooves",
+        "Remove material between the grooves",
+        "Separate the silicon with the blade",
+        "Clean and remove the protective coating"
+      ],
+      "erklaerung": "A water-soluble coating catches debris and is washed off at the end (common practice, details vary by machine).",
+      "oben": "first",
+      "unten": "last"
+    },
+    "k19.q04": {
+      "frage": "Why are the outer edges of the laser grooves further apart than the blade is wide?",
+      "optionen": [
+        "So that the blade does not touch any remaining low-k layer",
+        "So that the laser finishes faster",
+        "Because otherwise the blade gets too cold"
+      ],
+      "erklaerung": "Any contact with low-k can trigger delamination into the chip."
+    },
+    "k19.q05": {
+      "frage": "Numerical example: blade width $25\\,\\mu\\mathrm{m}$, positioning tolerance $\\pm6\\,\\mu\\mathrm{m}$, safety margin $5\\,\\mu\\mathrm{m}$ per side. How far apart must the outer groove edges be at least? Answer in µm.",
+      "erklaerung": "$25+2\\cdot6+2\\cdot5=47\\,\\mu\\mathrm{m}$. Tolerances add on both sides; the street must provide this."
+    },
+    "k19.q06": {
+      "frage": "Why is USP grooving combined with plasma dicing for hybrid bonding?",
+      "optionen": [
+        "The laser cleanly opens metal and dielectric, the plasma separates the silicon burr-free and without mechanical damage",
+        "Because plasma alone is faster than any saw",
+        "Because the laser cannot ablate silicon"
+      ],
+      "erklaerung": "Plasma etches silicon but not metal in the street; the laser prepares the street."
+    },
+    "k19.c02": {
+      "vorne": "What does USP bring to laser grooving?",
+      "hinten": "Less heat input than ns grooving: less melt and debris, higher die strength according to a manufacturer report; can be combined with plasma for hybrid bonding."
+    },
+    "k19.l03.b01": {
+      "inhalt": [
+        "**[[stealth-dicing|Stealth dicing]]** (Kumagai et al. 2007) turns the principle around: the laser works at a wavelength at which silicon is largely **transparent** and is focused **inside** the wafer. Energy is absorbed only near the focus, where a modified layer with cracks forms. No surface is ablated. Afterwards the dicing tape is stretched, the cracks run to the surfaces and the chips separate.",
+        "Advantages according to the original paper: dry process, no debris, no unwanted heat damage to the surface; applied to very thin wafers. A follow-up (Ohmura et al. 2008) analysed the mechanism on 50 µm thin wafers and found that with a suitable focal depth the thermal shock wave stays inside. For thicker wafers several layers are written at different depths.",
+        "Limits: metal in the street blocks the beam (then irradiate from the back side), and low-k at the surface may still need grooving. Variants: *stealth dicing before grinding* (SDBG), where the subsequent thinning completes the separation.",
+        "In **laser full cut** (*ablation dicing*), in contrast, the laser removes material through the whole thickness, usually in many passes. This creates a kerf, debris and an edge zone, but it is flexible, e.g. for thin wafers or composites."
+      ]
+    },
+    "k19.l03.b02": {
+      "inhalt": "Stealth dicing uses the same physics as volume modification in glass (K06, K10): absorption only where the intensity in the focus is high enough. No ablation at the surface, hardly any kerf."
+    },
+    "k19.q07": {
+      "frage": "Silicon has a band gap of about $1.12\\,\\mathrm{eV}$. From what wavelength on is the photon energy smaller than the band gap? Answer in nm.",
+      "erklaerung": "$\\lambda=hc/E_\\mathrm{g}=1240\\,\\mathrm{nm\\,eV}/1.12\\,\\mathrm{eV}\\approx1107\\,\\mathrm{nm}$. Near this edge silicon, as an indirect semiconductor, absorbs only weakly.",
+      "tipp": "$hc\\approx1240\\,\\mathrm{nm\\cdot eV}$ (K01)."
+    },
+    "k19.q08": {
+      "frage": "Put the stealth dicing sequence in the right order.",
+      "items": [
+        "Wafer on dicing tape in frame",
+        "Focus the laser inside along the streets",
+        "Write further layers at other depths",
+        "Stretch the tape, chips separate",
+        "Pick the chips"
+      ],
+      "erklaerung": "The actual separation happens mechanically during stretching; the laser only sets the predetermined breaking line.",
+      "oben": "first",
+      "unten": "last"
+    },
+    "k19.q09": {
+      "frage": "Match the separation process to its characteristic.",
+      "paare": [
+        [
+          "Wafer saw",
+          "Diamond blade, water, kerf about blade width"
+        ],
+        [
+          "Laser grooving",
+          "Open the layer stack, separate silicon afterwards"
+        ],
+        [
+          "Stealth dicing",
+          "Focus inside, separation by stretching"
+        ],
+        [
+          "Laser full cut",
+          "Ablation through the whole thickness in many passes"
+        ],
+        [
+          "Plasma dicing",
+          "All streets dry-etched at the same time"
+        ]
+      ],
+      "erklaerung": "Five tools, often combined."
+    },
+    "k19.q10": {
+      "frage": "What is a typical limit of stealth dicing?",
+      "optionen": [
+        "Metal in the street blocks the beam",
+        "It needs a lot of cooling water",
+        "It creates a wide kerf"
+      ],
+      "erklaerung": "That is why the beam often enters from the back side, where there is no metallization."
+    },
+    "k19.q11": {
+      "frage": "Numerical example: a $300\\,\\mu\\mathrm{m}$ thick wafer needs enough modification layers per street that each covers about $50\\,\\mu\\mathrm{m}$ of thickness. How many passes per street are needed?",
+      "erklaerung": "$300/50=6$. Thin wafers need fewer passes, which is one reason stealth dicing suits thin wafers well."
+    },
+    "k19.c03": {
+      "vorne": "How does stealth dicing work?",
+      "hinten": "Wavelength at which Si is transparent, focus inside, modified layer with cracks, then stretch the tape. Dry, no debris, hardly any kerf; metal in the street interferes."
+    },
+    "k19.l04.b01": {
+      "inhalt": [
+        "In **[[plasma-dicing]]** the wafer is masked so that only the streets stay open. A deep etching process (reactive ion etching with alternating etch and passivation steps) then removes **all streets at the same time**. No forces, no heat-affected zone, smooth flanks, arbitrary chip shapes and very narrow streets are possible. Studies (among others by imec, reported in trade press) found higher die strength after plasma dicing than after other processes.",
+        "The catch: plasma etches silicon but not metal test structures. The street must be cleared beforehand, and the mask needs a clean opening. This is where the laser comes back (K19, lesson 2).",
+        "A second, economic difference: saw and laser work **sequentially**, their time grows with the street length. Plasma works **in parallel**, the etching time depends on the depth, not on the number of chips. The smaller the chips, the more plasma pays off."
+      ]
+    },
+    "k19.l04.b02": {
+      "erklaerung": "Sequential processing time for $n$ passes at feed rate $v$ over all streets ($L_\\mathrm{Str}\\approx2A/p$, K15). Below the pitch $p^{*}$ a plasma process with fixed time $t_\\mathrm{Plasma}$ is faster. Idle times are neglected.",
+      "titel": "Sequential vs. parallel",
+      "sammlung": "Packaging"
+    },
+    "k19.q12": {
+      "frage": "300 mm wafer ($A=70{,}686\\,\\mathrm{mm^2}$) with chips at pitch $p=1\\,\\mathrm{mm}$: how long are all streets together? Answer in m.",
+      "erklaerung": "$L=2A/p=141{,}372\\,\\mathrm{mm}\\approx141\\,\\mathrm{m}$."
+    },
+    "k19.q13": {
+      "frage": "Numerical example: laser at $v=100\\,\\mathrm{mm/s}$, one pass per street, plasma process $t_\\mathrm{Plasma}=30\\,\\mathrm{min}$ per wafer. Below which pitch is plasma faster? Answer in mm.",
+      "erklaerung": "$p^{*}=2A/(v\\,t)=141{,}372/(100\\cdot1800)\\approx0.79\\,\\mathrm{mm}$. For very small chips the parallel process wins.",
+      "tipp": "30 min = 1800 s. Set the times equal and solve for $p$."
+    },
+    "k19.q14": {
+      "frage": "What is the biggest advantage of plasma dicing for chip quality?",
+      "optionen": [
+        "No mechanical or thermal damage to the edge, hence high die strength",
+        "It also etches metal in the street",
+        "It needs no mask"
+      ],
+      "erklaerung": "That is exactly why they are combined: laser for metal and dielectric, plasma for the silicon."
+    },
+    "k19.q15": {
+      "frage": "Why does plasma dicing pay off particularly for small chips?",
+      "optionen": [
+        "The sequential time grows with $1/p$, the plasma time does not",
+        "Small chips are thicker",
+        "Plasma can only etch small chips"
+      ],
+      "erklaerung": "$L_\\mathrm{Str}\\approx2A/p$: half the pitch, double the street length."
+    },
+    "k19.c04": {
+      "vorne": "Separate sequentially or in parallel?",
+      "hinten": "Saw and laser: time $\\propto$ street length $\\approx2A/p$. Plasma: time almost independent of the chip count. Small chips: plasma; metal in the street: laser first."
+    },
+    "k19.l05.b01": {
+      "inhalt": [
+        "**[[laser-debonding|Laser debonding]]:** thin wafers and fan-out builds are glued onto a glass carrier during processing (temporary bonding). Between adhesive and glass lies a thin **release layer**. To release, a UV laser irradiates **through the glass**. The release layer absorbs, its polymer bonds are broken and the carrier can be lifted off with low force. The process has a threshold: below a certain exposure nothing releases; nonuniform layers or misfocus can damage the component.",
+        "**Cutting glass:** glass carriers, glass cores and glass interposers are made in panels and cut later. Here filamentation and Bessel beams from K10 are used; edge strength is again assessed according to Weibull (K17).",
+        "**Opening and marking mould compound:** the laser exposes contact pads under the mould compound or drills holes through it, e.g. for stacked packages, and labels packages. The mould compound is a composite of epoxy and silicon dioxide filler (K17)."
+      ]
+    },
+    "k19.q16": {
+      "frage": "How does laser debonding work?",
+      "optionen": [
+        "UV beam through the glass carrier, absorption in a thin release layer, carrier releases with low force",
+        "The laser melts the wafer off the carrier",
+        "The laser saws between wafer and carrier"
+      ],
+      "erklaerung": "Selective absorption: glass transparent, release layer absorbing, component protected."
+    },
+    "k19.q17": {
+      "frage": "Fill in.",
+      "text": "In laser debonding the carrier is made of ___ so that the beam reaches the ___. Below a ___ the carrier does not release.",
+      "luecken": [
+        {
+          "optionen": [
+            "glass",
+            "silicon"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "release layer",
+            "circuit board"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "threshold",
+            "wavelength"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "A threshold process like ablation, just in a buried layer."
+    },
+    "k19.q18": {
+      "frage": "Match the process to the laser application.",
+      "paare": [
+        [
+          "Temporary bonding",
+          "Release the layer through glass"
+        ],
+        [
+          "Glass panel",
+          "Filamentation or Bessel beam"
+        ],
+        [
+          "Stacked packages",
+          "Holes through the mould compound"
+        ],
+        [
+          "Finished package",
+          "Labelling"
+        ]
+      ],
+      "erklaerung": "In the back end the laser is a tool for many tasks, not only for cutting."
+    },
+    "k19.c05": {
+      "vorne": "Laser debonding in one sentence?",
+      "hinten": "A UV laser through the glass carrier decomposes a thin release layer above a threshold, and the carrier releases from the thin component with low force."
+    }
+  }
+}

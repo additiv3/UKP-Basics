@@ -764,4 +764,5 @@ export default {
   "Übung: Diese Karte ist schon in deiner Wiederholung.": "Practice: this card is already in your review.",
   "γ ≈ 1,5 (Übergang)": "γ ≈ 1.5 (transition)",
   "δ (Absorptionstiefe)": "δ (absorption depth)",
+  "Übersichtswissen Packaging, nicht an der Primärquelle geprüft": "Packaging overview knowledge, not checked against the primary source",
 };

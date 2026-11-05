@@ -1,0 +1,221 @@
+{
+  "titel": "Quality, reliability and research landscape",
+  "einleitung": "How to recognize good laser processes in packaging, how to measure them, what fails later in the field and what throughput and yield mean economically. Finally a map: who works on what, where results are published, a reading list for getting started and open questions as a compass for your own work.",
+  "ziele": [
+    "Assign quality features of microvias, TGVs and cut edges to measurement methods",
+    "Explain late consequences of laser damage and accelerated tests",
+    "Estimate yield and cost per via",
+    "Know the research landscape and set up a reading plan"
+  ],
+  "lektionen": {
+    "k20.l01": "Quality features and how to measure them",
+    "k20.l02": "Reliability: what fails later",
+    "k20.l03": "Throughput, cost and yield",
+    "k20.l04": "Research map: where to read up"
+  },
+  "blocks": {
+    "k20.l01.b01": {
+      "inhalt": [
+        "Every laser process in packaging has its own features:",
+        "- **Microvia:** top and bottom diameter, taper, wall roughness, voids and delamination in the dielectric, resin residue at the bottom, damage to the copper pad, glass fibre protrusion.\n- **TGV:** entry and exit diameter, taper, microcracks, back-side chipping, residual stress in the glass.\n- **Singulation:** chipping at front and back, kerf width, delamination, debris, side-wall roughness, die strength.",
+        "And the measurement methods, many of which you know from materials engineering:",
+        "- **Light microscope and automated optical inspection (AOI):** diameters, chipping, debris.\n- **Confocal or white-light microscope:** 3D shape, depth, roughness (K11).\n- **Scanning electron microscope (SEM):** walls, fillers, microcracks.\n- **[[querschliff|Cross-section]]** and **FIB cut:** via profile, interfaces, taper in section.\n- **Scanning acoustic microscopy** ([[csam|CSAM]]): delamination and voids, non-destructively.\n- **X-ray and CT:** vias, fill, voids in the volume.\n- **Photoelasticity:** residual stresses in glass via birefringence in polarized light.\n- **Bending test:** die and edge strength (K17).\n- **Electrical tests:** resistance of via chains (*daisy chain*)."
+      ]
+    },
+    "k20.q01": {
+      "frage": "Match the defect to the suitable measurement method.",
+      "paare": [
+        [
+          "Delamination below the surface",
+          "Scanning acoustic microscopy (CSAM)"
+        ],
+        [
+          "Residual stress in glass",
+          "Photoelasticity in polarized light"
+        ],
+        [
+          "Via profile and taper",
+          "Cross-section"
+        ],
+        [
+          "Edge strength of a chip",
+          "Bending test with Weibull evaluation"
+        ]
+      ],
+      "erklaerung": "Non-destructive (CSAM, photoelasticity, X-ray) for series, destructive (section, bending) for depth and statistics."
+    },
+    "k20.q02": {
+      "frage": "Which method shows delamination in the package non-destructively?",
+      "optionen": [
+        "Scanning acoustic microscopy (CSAM)",
+        "Cross-section",
+        "Three-point bending test"
+      ],
+      "erklaerung": "Sound is almost completely reflected at interfaces with an air gap; delaminations light up in the image."
+    },
+    "k20.q03": {
+      "frage": "Why are cross-sections still made in via drilling despite microscopy?",
+      "optionen": [
+        "From above you see neither the wall profile nor voids and interfaces at depth",
+        "Because microscopes cannot image holes",
+        "Because sections are cheaper than photos"
+      ],
+      "erklaerung": "The section is your window into the interior, as in microstructure analysis."
+    },
+    "k20.c01": {
+      "vorne": "Measurement methods for laser processes in packaging?",
+      "hinten": "Microscope/AOI, confocal/white light, SEM, cross-section/FIB, ultrasound (CSAM), X-ray/CT, photoelasticity, bending test, electrical via chains."
+    },
+    "k20.l02.b01": {
+      "inhalt": [
+        "A defect that passes the first electrical test can still fail later. Typical late consequences of laser damage:",
+        "- **Microcracks** at glass or chip edges grow under temperature cycles until the residual strength is no longer sufficient.\n- **Resin residues** at the via bottom weaken copper adhesion; the via tears off during cycling.\n- **Delamination** grows with absorbed moisture; during the next soldering it vaporizes abruptly (*popcorn effect*).",
+        "That is why accelerated tests are used: **temperature cycling**, **damp heat storage**, **preconditioning with moisture and reflow soldering** and electrical measurements on via chains. The test procedures are laid down in JEDEC and IPC standards (please check numbers and editions in the standards database).",
+        "Solder joints fatigue according to the **Coffin-Manson approach** known from fatigue strength: life falls with a power of the plastic strain range. Every reduction of shear (K17) pays off disproportionately."
+      ]
+    },
+    "k20.l02.b02": {
+      "erklaerung": "Coffin-Manson in power form: cycles to failure $N_\\mathrm{f}$ over the plastic strain range $\\Delta\\varepsilon_\\mathrm{p}$, with material-dependent constants $C$ and $k$. The ratio of two lifetimes depends only on $k$.",
+      "titel": "Coffin-Manson",
+      "sammlung": "Packaging"
+    },
+    "k20.q04": {
+      "frage": "Numerical example: $k=2$. By what factor does life increase if the plastic strain range is halved?",
+      "erklaerung": "$(1/0.5)^2=4$."
+    },
+    "k20.q05": {
+      "frage": "Why do vias with resin residue at the bottom often fail only in thermal cycling?",
+      "optionen": [
+        "The weakened copper adhesion tears under repeated thermomechanical load",
+        "Because resin becomes conductive in the cold",
+        "Because the laser keeps drilling afterwards"
+      ],
+      "erklaerung": "Initially the via still conducts; cycles open the contact."
+    },
+    "k20.q06": {
+      "frage": "Match the test to the failure mechanism it accelerates.",
+      "paare": [
+        [
+          "Temperature cycling",
+          "Fatigue from CTE mismatch"
+        ],
+        [
+          "Damp heat storage",
+          "Corrosion and moisture-driven delamination"
+        ],
+        [
+          "Moisture preconditioning plus reflow",
+          "Popcorn effect during soldering"
+        ]
+      ],
+      "erklaerung": "Each test reproduces a phase of the component's life in fast motion."
+    },
+    "k20.c02": {
+      "vorne": "Three late consequences of laser damage?",
+      "hinten": "Microcracks grow in thermal cycling, resin residues loosen via adhesion, delamination plus moisture leads to the popcorn effect during soldering."
+    },
+    "k20.l03.b01": {
+      "inhalt": [
+        "In industry what counts is not the most beautiful hole but the **reliable hole at low cost**. Three quantities determine this:",
+        "- **Throughput:** holes or wafers per hour, limited by drilling time and idle times (scanner jumps, stage motion, alignment).\n- **Cost per hour:** machine, laser, floor space, staff, energy (often summarized as *cost of ownership*).\n- **Yield:** fraction of good parts. Because a substrate has very many vias, the defect rate per via must be extremely small.",
+        "Levers for ultrashort pulse machines: more average power via **multi-beam optics** (e.g. [[doe-element|diffractive beam splitters]]), faster scanners, burst and beam shaping. The limit is often not the laser power but **heat accumulation** (K07) and the mechanics of beam delivery."
+      ]
+    },
+    "k20.l03.b02": {
+      "erklaerung": "Yield $Y$ of a component with $N$ vias if each via is defective independently with probability $q$ (approximation for small $q$). Cost per via from hourly rate $K_\\mathrm{h}$ and rate $\\dot N$ (vias per second).",
+      "titel": "Yield and cost per via",
+      "sammlung": "Packaging"
+    },
+    "k20.q07": {
+      "frage": "Numerical example: a substrate has $N=50{,}000$ vias, each is defective with $q=10^{-6}$. How large is the yield in %?",
+      "erklaerung": "$Y\\approx e^{-0.05}=0.951$. Even one defect per million vias costs 5 % of the substrates."
+    },
+    "k20.q08": {
+      "frage": "Same substrate: what is the maximum defect rate $q$ per via for a yield of 99 %? Answer as a number (e.g. 2e-7).",
+      "erklaerung": "$e^{-Nq}=0.99$, so $Nq=-\\ln0.99=0.01005$ and $q=2.0\\cdot10^{-7}$.",
+      "tipp": "Take the logarithm: $Nq=-\\ln Y$."
+    },
+    "k20.q09": {
+      "frage": "Numerical example: hourly machine rate 150 €/h, rate $1250$ vias/s. What do one million vias cost, in €?",
+      "erklaerung": "$1250\\cdot3600=4.5\\cdot10^6$ vias per hour; $150/4.5=33$, i.e. 33 € per million."
+    },
+    "k20.q10": {
+      "frage": "A diffractive beam splitter turns one beam into four. Why does throughput often not quadruple in practice?",
+      "optionen": [
+        "Each sub-beam needs enough pulse energy, and hole pattern, positioning and uniformity impose restrictions",
+        "Because beam splitters double the wavelength",
+        "Because four beams always cancel each other"
+      ],
+      "erklaerung": "Multi-beam pays off when there is power to spare and the hole pattern matches the beam pattern."
+    },
+    "k20.c03": {
+      "vorne": "Why must the defect rate per via be so small?",
+      "hinten": "$Y\\approx e^{-Nq}$: with tens of thousands of vias per substrate, even $q=10^{-6}$ costs several percent of yield."
+    },
+    "k20.l04.b01": {
+      "inhalt": [
+        "**Who works on what?** A first orientation, without claiming completeness:",
+        "- **Chip makers and foundries** drive advanced packaging (e.g. Intel with glass core substrates).\n- **Assembly and test service providers** ([[osat|OSATs]]) and **substrate makers** manufacture in high volume.\n- **Equipment makers** supply the processes: DISCO (sawing, grooving, stealth dicing), Hamamatsu (origin of stealth dicing), LPKF (LIDE), EV Group (bonding and debonding), Schmoll Maschinen (drilling machines for circuit boards and substrates).\n- **Research:** Fraunhofer institutes for reliability and microintegration and for laser technology, imec, university groups such as the AG alp in Aschaffenburg, which publishes on USP microvias and TGVs together with Schmoll Maschinen and Ruhr University Bochum.",
+        "**Where is it published?** Packaging conferences: ECTC (IEEE Electronic Components and Technology Conference), ESTC (European counterpart), EPTC, IMAPS Symposium. Laser conferences: LPM (Laser Precision Microfabrication), LAMP, Photonics West (LASE), ICALEO, LiM (Lasers in Manufacturing). Journals: *IEEE Transactions on Components, Packaging and Manufacturing Technology*, *Microelectronics Reliability*, *Journal of Laser Applications*, *Journal of Laser Micro/Nanoengineering*, *Optics & Laser Technology*.",
+        "**Roadmap:** the *Heterogeneous Integration Roadmap* (HIR) of the IEEE Electronics Packaging Society is freely available and describes requirements and challenges many years ahead."
+      ]
+    },
+    "k20.l04.b02": {
+      "inhalt": [
+        "**Reading list for getting started**, in this order:",
+        "1. Overview: Lau 2022 (*Recent Advances and Trends in Advanced Packaging*) and the relevant HIR chapters.\n2. Your own group: Franz et al. 2022 (FR-4) and Franz et al. 2023 (ABF, MHz burst), then the LAMP 2025 contribution on TGVs for glass core packaging.\n3. Glass: Ostholt et al. 2014 (laser-induced etching), Intel 2023, the glass review by Nimbalkar et al. 2025.\n4. Separation: Kumagai et al. 2007 (stealth dicing), Evertsen et al. 2023 (USP grooving plus plasma), Schönfelder et al. 2007 (die strength).",
+        "The bibliographic details are listed directly below. Transfer them to Zotero and check them via the DOI."
+      ]
+    },
+    "k20.l04.b04": {
+      "inhalt": [
+        "**Open questions as a compass.** Not answers, but questions you should get stuck on while reading:",
+        "- How are taper, wall quality and drilling time of USP microvias related for new ABF generations with finer structures and different filler?\n- Can TGVs in glass be drilled directly, without an etching step, with few cracks and low stress, and how can the damage be measured non-destructively?\n- How can throughput be raised (burst, high repetition rates, multi-beam) without heat building up?\n- How robust is the process window in the layer stack against variations in layer thickness, filler and focal position? This is where DoE helps you.\n- How can one detect during the process when the copper has been reached, e.g. via plasma emission or acoustics?\n- How does laser damage affect reliability in thermal cycling?"
+      ]
+    },
+    "k20.q11": {
+      "frage": "Match the conference to its focus.",
+      "paare": [
+        [
+          "ECTC",
+          "Components and packaging (IEEE)"
+        ],
+        [
+          "LPM",
+          "Laser microprocessing"
+        ],
+        [
+          "IMAPS Symposium",
+          "Microelectronics and packaging"
+        ],
+        [
+          "ICALEO",
+          "Laser applications and laser materials processing"
+        ]
+      ],
+      "erklaerung": "For your topic both worlds are worthwhile: packaging conferences for the requirements, laser conferences for the processes."
+    },
+    "k20.q12": {
+      "frage": "Which roadmap describes the future of packaging and is freely available?",
+      "optionen": [
+        "Heterogeneous Integration Roadmap (HIR) of the IEEE EPS",
+        "ISO 11146",
+        "The Liu method"
+      ],
+      "erklaerung": "ISO 11146 concerns beam measurement (K11), Liu the threshold determination (K07)."
+    },
+    "k20.q13": {
+      "frage": "With which partners does the AG alp publish on USP drilling for packaging?",
+      "optionen": [
+        "Schmoll Maschinen and Ruhr University Bochum",
+        "Only with Intel",
+        "With no one, only internally"
+      ],
+      "erklaerung": "According to the LAMP 2025 programme listing; check the current partner situation in conversation with the group."
+    },
+    "k20.c04": {
+      "vorne": "Where is USP in packaging published?",
+      "hinten": "Packaging: ECTC, ESTC, EPTC, IMAPS; IEEE T-CPMT, Microelectronics Reliability. Laser: LPM, LAMP, Photonics West, ICALEO, LiM; JLA, JLMN, Optics & Laser Technology. Roadmap: HIR."
+    }
+  }
+}

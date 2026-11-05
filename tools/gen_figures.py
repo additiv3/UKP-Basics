@@ -212,8 +212,111 @@ def zeitskalen_prozesse():
     return svg(360, base + 44, "".join(p), "Zeitachse von Femtosekunden bis Nanosekunden mit Balken für Absorption, Elektronenthermalisierung, Elektron-Gitter-Kopplung, Wärmeleitung und Materialabtrag")
 
 
+def package_querschnitt():
+    """Cross-section of a flip-chip BGA (schematic): chip, bumps, underfill, substrate, balls, board."""
+    p = []
+    L, R = 16, 216
+    # underfill fillet, chip and bumps
+    p.append('<polygon class="fg-fill" points="40,64 50,50 150,50 160,64" stroke="var(--fig-soft,#aab4cb)" stroke-width="1"/>')
+    p.append('<rect class="fg-band" x="50" y="20" width="100" height="30" rx="3"/>')
+    for i in range(8):
+        p.append(f'<circle class="fg-bar-s" cx="{57 + 12.3 * i:.1f}" cy="57" r="4.2"/>')
+
+    def via(x, ya, yb, up=False):
+        wa, wb = (2.5, 4.5) if up else (4.5, 2.5)  # wide end faces the laser (top side or bottom side)
+        return f'<polygon class="fg-bar-w" points="{x - wa},{ya} {x + wa},{ya} {x + wb},{yb} {x - wb},{yb}" opacity=".9"/>'
+
+    def pad(x0, x1, y):
+        return f'<rect class="fg-bar-w" x="{x0:.1f}" y="{y - 1.5}" width="{x1 - x0:.1f}" height="3" opacity=".9"/>'
+
+    cols = [36, 82, 128, 174]
+    for y0, down in ((64, True), (130, False)):
+        p.append(f'<rect class="fg-fill" x="{L}" y="{y0}" width="{R - L}" height="30" stroke="var(--fig-soft,#aab4cb)" stroke-width="1"/>')
+        for x in cols:
+            xa, xb = (x, x + 14) if down else (x + 14, x)
+            outer, inner = (y0, y0 + 30) if down else (y0 + 30, y0)
+            mid = y0 + 15
+            p.append(pad(xa - 7, xa + 7, outer))
+            p.append(pad(min(xa, xb) - 6, max(xa, xb) + 6, mid))
+            p.append(pad(xb - 7, xb + 7, inner))
+            if down:
+                p.append(via(xa, y0, y0 + 15))
+                p.append(via(xb, y0 + 15, y0 + 30))
+            else:
+                p.append(via(xa, y0 + 15, y0 + 30, up=True))
+                p.append(via(xb, y0, y0 + 15, up=True))
+    p.append(f'<rect class="fg-bar-s" x="{L}" y="94" width="{R - L}" height="36" opacity=".45"/>')
+    for x in cols:
+        p.append(f'<rect class="fg-bar-w" x="{x + 11}" y="94" width="6" height="36" opacity=".9"/>')
+    # solder balls and board
+    for i in range(6):
+        p.append(f'<circle class="fg-bar-s" cx="{36 + 32 * i}" cy="170" r="9"/>')
+    p.append('<rect class="fg-bar-s" x="10" y="179" width="212" height="20" rx="2" opacity=".35"/>')
+    p.append('<rect class="fg-soft" x="10" y="179" width="212" height="20" rx="2"/>')
+    # labels with leader lines
+    labels = [(35, 154, "Chip (Si)", True), (58, 166, "Bumps, Underfill", False), (79, 220, "Aufbaulagen", False),
+              (112, 220, "Kern", False), (139, 220, "Aufbaulagen", False), (170, 210, "Lotkugeln (BGA)", False), (189, 226, "Leiterplatte", False)]
+    for y, x0, txt, bold in labels:
+        p.append(f'<line class="fg-soft" x1="{x0}" y1="{y}" x2="230" y2="{y}" stroke-width="1"/>')
+        cls = "fg-text fg-bold" if bold else "fg-text"
+        p.append(f'<text class="{cls}" x="234" y="{y + 4}">{txt}</text>')
+    p.append('<text class="fg-muted" x="234" y="97" font-size="11">mit Microvias</text>')
+    p.append('<text class="fg-muted" x="234" y="155" font-size="11">mit Microvias</text>')
+    p.append('<text class="fg-muted" x="10" y="218">Raster von oben nach unten: Bumps, Microvias, Lotkugeln</text>')
+    return svg(360, 226, "".join(p), "Schnitt durch ein Flip-Chip-BGA: Chip mit Bumps und Underfill auf einem Substrat aus Kern und Aufbaulagen mit Microvias, darunter Lotkugeln auf der Leiterplatte")
+
+
+def microvia():
+    """Cross-section of a laser-drilled microvia in a filled build-up dielectric down to a copper pad."""
+    p = []
+    L, R = 16, 236
+    top, bot = 74, 144
+    xt0, xt1, xb0, xb1 = 101, 151, 110, 142
+    cx = (xt0 + xt1) / 2
+    # laser cone converging onto the via
+    p.append(f'<polygon class="fg-laser-f" points="{cx - 36},8 {cx + 36},8 {xt1 - 6},{top - 2} {xt0 + 6},{top - 2}" opacity=".18"/>')
+    p.append(f'<line class="fg-laser" x1="{cx - 36}" y1="8" x2="{xt0 + 6}" y2="{top - 2}"/><line class="fg-laser" x1="{cx + 36}" y1="8" x2="{xt1 - 6}" y2="{top - 2}"/>')
+    p.append('<text class="fg-text fg-bold" x="16" y="24">UKP-Pulse</text>')
+    # dielectric with the hole
+    p.append(f'<polygon class="fg-fill" points="{L},{top} {xt0},{top} {xb0},{bot} {L},{bot}" stroke="var(--fig-soft,#aab4cb)" stroke-width="1"/>')
+    p.append(f'<polygon class="fg-fill" points="{xt1},{top} {R},{top} {R},{bot} {xb1},{bot}" stroke="var(--fig-soft,#aab4cb)" stroke-width="1"/>')
+    # filler particles (deterministic pseudo-random positions, linear congruential generator)
+    seed = 7
+    for _ in range(70):
+        seed = (seed * 1103515245 + 12345) % 2**31
+        x = L + 4 + seed % (R - L - 8)
+        seed = (seed * 1103515245 + 12345) % 2**31
+        y = top + 5 + seed % (bot - top - 10)
+        frac = (y - top) / (bot - top)
+        if xt0 + (xb0 - xt0) * frac - 3 < x < xt1 + (xb1 - xt1) * frac + 3:
+            continue
+        p.append(f'<circle class="fg-bar-s" cx="{x}" cy="{y}" r="{1.4 + (seed % 3) * 0.6:.1f}"/>')
+    # copper pad and layer below
+    p.append(f'<rect class="fg-bar-w" x="{cx - 50}" y="{bot}" width="100" height="10" opacity=".9"/>')
+    p.append(f'<rect class="fg-fill" x="{L}" y="{bot + 10}" width="{R - L}" height="22" stroke="var(--fig-soft,#aab4cb)" stroke-width="1"/>')
+    # dimensions
+    yt = top - 10
+    p.append(f'<line class="fg-line" x1="{xt0}" y1="{yt}" x2="{xt1}" y2="{yt}" stroke-width="1.2"/>')
+    p.append(f'<line class="fg-line" x1="{xt0}" y1="{yt - 5}" x2="{xt0}" y2="{yt + 5}" stroke-width="1.2"/><line class="fg-line" x1="{xt1}" y1="{yt - 5}" x2="{xt1}" y2="{yt + 5}" stroke-width="1.2"/>')
+    p.append(f'<text class="fg-text" x="{xt0 - 6}" y="{yt + 4}" text-anchor="end">{label("d", ("top",))}</text>')
+    yb = bot - 8
+    p.append(f'<line class="fg-accent" x1="{xb0 + 1}" y1="{yb}" x2="{xb1 - 1}" y2="{yb}" stroke-width="1.5"/>')
+    p.append(f'<text class="fg-text" x="{cx}" y="{yb - 6}" text-anchor="middle">{label("d", ("bot",))}</text>')
+    p.append(f'<line class="fg-line" x1="246" y1="{top}" x2="246" y2="{bot}" stroke-width="1.2"/>')
+    p.append(f'<line class="fg-line" x1="241" y1="{top}" x2="251" y2="{top}" stroke-width="1.2"/><line class="fg-line" x1="241" y1="{bot}" x2="251" y2="{bot}" stroke-width="1.2"/>')
+    p.append(f'<text class="fg-text fg-bold" x="254" y="{(top + bot) // 2 + 4}">h</text>')
+    # labels
+    p.append(f'<text class="fg-text" x="268" y="{top + 14}">Dielektrikum</text>')
+    p.append(f'<text class="fg-muted" x="268" y="{top + 29}" font-size="11">Harz mit</text>')
+    p.append(f'<text class="fg-muted" x="268" y="{top + 42}" font-size="11">Füllstoff</text>')
+    p.append(f'<line class="fg-soft" x1="{cx + 52}" y1="{bot + 5}" x2="264" y2="{bot + 5}" stroke-width="1"/>')
+    p.append(f'<text class="fg-text" x="268" y="{bot + 9}">Kupferpad</text>')
+    p.append(f'<text class="fg-muted" x="22" y="{bot + 26}">Lage darunter</text>')
+    p.append(f'<text class="fg-muted" x="16" y="{bot + 50}">Taper = d_bot / d_top · Wandwinkel aus (d_top − d_bot) / 2h</text>')
+    return svg(360, bot + 58, "".join(p), "Schnitt durch eine Microvia: Laserstrahl von oben, konische Bohrung durch ein gefülltes Dielektrikum bis auf ein Kupferpad, mit oberem Durchmesser, unterem Durchmesser und Tiefe")
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    for name, fn in [("zeitleiter", zeitleiter), ("pulszug", pulszug), ("gauss-profil", gauss_profil), ("baender", baender), ("zeitskalen-prozesse", zeitskalen_prozesse)]:
+    for name, fn in [("zeitleiter", zeitleiter), ("pulszug", pulszug), ("gauss-profil", gauss_profil), ("baender", baender), ("zeitskalen-prozesse", zeitskalen_prozesse), ("package-querschnitt", package_querschnitt), ("microvia", microvia)]:
         (OUT / f"{name}.svg").write_text(fn(), encoding="utf-8", newline="\n")
         print("wrote", OUT / f"{name}.svg")

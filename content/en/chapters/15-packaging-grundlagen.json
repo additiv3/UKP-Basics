@@ -1,0 +1,305 @@
+{
+  "titel": "Semiconductor packaging: from chip to system",
+  "einleitung": "The entry into the world after the chip fab: what a package must do, what a chip looks like in cross-section, which steps follow in the back end and where the laser appears in it. At the end you calculate why a narrow dicing street is worth real money. Technical statements are based on overview literature and are marked as unchecked until you have compared them with the sources.",
+  "ziele": [
+    "Name the five tasks of a package",
+    "Reliably distinguish front end, BEOL and back end",
+    "Describe the layer structure of a chip and the dicing street",
+    "Reproduce the back-end process chain and locate the laser steps in it",
+    "Estimate dies per wafer and street length"
+  ],
+  "lektionen": {
+    "k15.l01": "What a package does",
+    "k15.l02": "A chip from above and in cross-section",
+    "k15.l03": "The back-end process chain",
+    "k15.l04": "Calculation training: dies per wafer and dicing street"
+  },
+  "blocks": {
+    "k15.l01.b01": {
+      "inhalt": [
+        "A finished chip ([[die]]) cannot be used on its own: its contact pads sit close together, it is brittle, sensitive to moisture and contamination, and it heats up during operation. **Packaging** (German: Aufbau- und Verbindungstechnik, AVT) turns it into a component that can be soldered onto a circuit board. A package fulfils five tasks:",
+        "1. **Connect electrically:** route signals and supply from the chip to the board.\n2. **Fan out the pitch:** translate the tight contact spacing (pitch) of the chip to the coarser grid of the board.\n3. **Remove heat:** pass dissipated power to a heat sink or the board.\n4. **Protect:** against moisture, corrosion, particles and mechanical load.\n5. **Make it handleable and testable:** placement, testing, replacement.",
+        "As a mechanical engineer you know points 3 and 4 well: heat conduction, stresses, fatigue. What is new are the electrical requirements and the length scales at which everything happens."
+      ]
+    },
+    "k15.l01.b02": {
+      "inhalt": [
+        "Manufacturing is classically split into two worlds. In the **front end** (the semiconductor fab) transistors and, above them, the wiring are built on the [[wafer]]. In the **[[back-end]]** the wafer is thinned, singulated into chips, assembled, connected, encapsulated and tested. The back end is often run by specialized assembly and test service providers ([[osat|OSAT]]).",
+        "**Beware of a mix-up:** the wiring levels on the chip are called [[beol]] (*back end of line*). Despite the name they still belong to the front end, i.e. the fab, not to packaging.",
+        "The boundary is currently blurring: in **advanced packaging**, wafer-fab processes (fine redistribution layers, wafer-to-wafer bonding) are used for packaging, often by the foundries themselves. The term *mid end* is also used for this."
+      ]
+    },
+    "k15.l01.b03": {
+      "inhalt": [
+        "Why is packaging in such demand right now? Shrinking transistors further keeps getting more expensive and slower. Performance increasingly comes from **integration in the package**: several chips (chiplets) placed closely side by side or stacked, with very many, very fine connections. The drivers are data centres and AI accelerators. This raises the demand for fine holes, cuts and structures in glass, polymers, silicon and copper, and that is exactly where lasers come in:",
+        "- **Cutting:** singulate wafers and panels, open sensitive layers in the dicing street (K19).\n- **Drilling:** microvias in build-up layers of substrates, through-vias in glass (K18).\n- **Releasing:** detach carrier wafers after processing (K19).\n- **Structuring and marking:** remove layers selectively, label packages."
+      ]
+    },
+    "k15.l01.b04": {
+      "inhalt": "Package = electrical connection + pitch fan-out + heat removal + protection + handling. **BEOL** is on-chip wiring (front end), **back end** is assembly and test."
+    },
+    "k15.q01": {
+      "frage": "Which task does **not** belong to the package?",
+      "optionen": [
+        "Increase the transistor density on the chip",
+        "Route signals and supply to the circuit board",
+        "Remove dissipated heat",
+        "Protect the chip against moisture and corrosion"
+      ],
+      "erklaerung": "Transistor density is set in the front end (lithography, process node). The package connects, cools, protects and makes the chip handleable."
+    },
+    "k15.q02": {
+      "frage": "Which manufacturing world does the BEOL (*back end of line*) belong to?",
+      "optionen": [
+        "Front end: wiring levels on the wafer in the fab",
+        "Back end: assembly and test",
+        "Circuit board manufacturing"
+      ],
+      "erklaerung": "Despite the name: BEOL is the metallization levels on the chip and is made in the fab. The back end starts afterwards."
+    },
+    "k15.q03": {
+      "frage": "Match the interconnect level to its task.",
+      "paare": [
+        [
+          "Level 0",
+          "Wiring on the chip (BEOL)"
+        ],
+        [
+          "Level 1",
+          "Connect chip to package or substrate"
+        ],
+        [
+          "Level 2",
+          "Solder package onto the board"
+        ],
+        [
+          "Level 3",
+          "Build assembly into the system"
+        ]
+      ],
+      "erklaerung": "The numbering is not identical everywhere, but the principle 'from the inside out' applies everywhere."
+    },
+    "k15.q04": {
+      "frage": "Fill in.",
+      "text": "Transistors and wiring are made in the ___. Singulating, assembling and testing is called the ___. Specialized service providers for this are called ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "front end",
+            "back end"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "back end",
+            "front end"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "OSATs",
+            "foundries"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "OSAT = *outsourced semiconductor assembly and test*."
+    },
+    "k15.c01": {
+      "vorne": "Five tasks of a package?",
+      "hinten": "Connect electrically, fan out the pitch, remove heat, protect, make handleable and testable."
+    },
+    "k15.c02": {
+      "vorne": "BEOL or back end?",
+      "hinten": "**BEOL:** metallization levels on the chip, in the fab (front end). **Back end:** thinning, singulating, assembling, connecting, encapsulating, testing."
+    },
+    "k15.l02.b01": {
+      "inhalt": [
+        "In cross-section a chip has two parts. At the bottom, in the silicon, are the transistors (*front end of line*, FEOL). Above them lies the **metallization stack** ([[beol]]): many levels of copper lines embedded in a dielectric and connected by small vias. At the bottom the lines are very fine, towards the top they get coarser.",
+        "At the very top are the **contact pads** and a protective **passivation** (e.g. silicon nitride or polyimide). Around the edge of each chip runs a **seal ring**, a closed metal ring through all levels that keeps cracks and moisture away from the active area.",
+        "Between the chips lies the **[[ritzgraben|dicing street]]** (*scribe line*). It is not empty: it often holds **test structures** (*test element groups*, TEG) with metal and dielectric that the fab uses to monitor the process. Anyone singulating therefore cuts through a layer stack, not just through silicon."
+      ]
+    },
+    "k15.l02.b02": {
+      "inhalt": [
+        "Why not simply use silicon dioxide as dielectric? Two neighbouring lines form a capacitor. The larger its capacitance $C$, the longer a signal takes (delay $\\tau\\propto RC$) and the more energy each recharge costs. That is why **[[low-k]] dielectrics** are used, with a lower relative permittivity $k$ (in microelectronics one writes $k$ instead of $\\varepsilon_\\mathrm{r}$) than silicon dioxide ($k\\approx3.9$).",
+        "The price: many low-k materials are **porous**, have a low Young's modulus and adhere poorly. During mechanical sawing they chip off or delaminate. This is one of the main reasons why the dicing street is first opened with the laser (*laser grooving*, K19)."
+      ]
+    },
+    "k15.l02.b03": {
+      "erklaerung": "Parallel-plate capacitor as a model for two neighbouring lines: area $A$, spacing $d$, relative permittivity $k$. For the same geometry $C\\propto k$, so delay and recharge energy fall with $k$.",
+      "titel": "Capacitance and RC delay",
+      "sammlung": "Packaging"
+    },
+    "k15.l02.b04": {
+      "inhalt": "The dicing street is a **layer stack** of silicon, copper, low-k and passivation. Low-k is electrically good and mechanically weak: that is what makes singulation difficult."
+    },
+    "k15.q05": {
+      "frage": "Why is silicon dioxide between the lines replaced by low-k dielectrics?",
+      "optionen": [
+        "Lower capacitance between the lines, i.e. less delay and recharge energy",
+        "Higher mechanical strength",
+        "Better heat conduction",
+        "Easier sawing"
+      ],
+      "erklaerung": "$C\\propto k$. Mechanically, low-k materials are rather weaker, which makes sawing harder."
+    },
+    "k15.q06": {
+      "frage": "Numerical example: the dielectric changes from $k=3.9$ to $k=2.5$, the geometry stays the same. To what percentage of the original capacitance does $C$ fall?",
+      "erklaerung": "$C_2/C_1=k_2/k_1=2.5/3.9=0.641$, i.e. about 64 %."
+    },
+    "k15.q07": {
+      "frage": "Match the structure to its task.",
+      "paare": [
+        [
+          "Seal ring",
+          "Crack and moisture barrier at the chip edge"
+        ],
+        [
+          "Pad",
+          "Contact area for wire or bump"
+        ],
+        [
+          "Passivation",
+          "Protective layer over the wiring"
+        ],
+        [
+          "Test structure in the street",
+          "Process monitoring of the fab"
+        ]
+      ],
+      "erklaerung": "All of these can interfere with singulation or must be protected during it."
+    },
+    "k15.q08": {
+      "frage": "Why is singulation more than 'cutting silicon'?",
+      "optionen": [
+        "Test structures of metal and dielectric lie on top of the silicon in the street",
+        "Because silicon is a metal",
+        "Because the wafer is always made of glass"
+      ],
+      "erklaerung": "Layer stack of Cu, low-k, passivation and Si: different thresholds, strengths and adhesion."
+    },
+    "k15.c03": {
+      "vorne": "Low-k: why, and what problem?",
+      "hinten": "Lower $k$ gives lower line capacitance, so less RC delay and energy. But porous low-k layers are mechanically weak and adhere poorly; they delaminate during sawing."
+    },
+    "k15.l03.b01": {
+      "inhalt": [
+        "A typical flow for a classical package looks like this:",
+        "1. **Wafer test:** each chip is tested electrically, defective ones are marked.\n2. **Backgrinding** ([[rueckduennen]]): the wafer is ground from the back side, for thin packages and for stacking.\n3. **Mounting:** the wafer is stuck onto a stretchable dicing tape in a frame.\n4. **Singulation** ([[dicing]]): saw, laser or plasma separate the chips.\n5. **Die attach:** a pick-and-place machine takes the good chips and places them on a leadframe or substrate.\n6. **Interconnect:** [[drahtbonden|wire bonding]] or [[flip-chip]] with solder bumps and [[underfill]].\n7. **Encapsulation:** overmoulding with [[moldmasse|mould compound]].\n8. **Marking, ball attach, package singulation, final test.**",
+        "There are many variants. With flip chip, the solder bumps are applied on the wafer already. With *dicing before grinding* ([[dbg]]) the wafer is first grooved and then thinned until the chips separate by themselves."
+      ]
+    },
+    "k15.l03.b02": {
+      "inhalt": "Lasers appear at several points: in singulation (grooving, stealth dicing, full cut), in drilling microvias in the substrate, in releasing carriers and in marking. Wire bonding and moulding, in contrast, are not laser processes."
+    },
+    "k15.q09": {
+      "frage": "Put the steps of a classical back end in the right order.",
+      "items": [
+        "Wafer test",
+        "Backgrinding",
+        "Singulation",
+        "Die attach",
+        "Wire bonding",
+        "Moulding",
+        "Final test"
+      ],
+      "erklaerung": "First test, then thin and separate, then assemble, connect, encapsulate and finally test.",
+      "oben": "first",
+      "unten": "last"
+    },
+    "k15.q10": {
+      "frage": "Which steps are typical laser processes? (multiple choice)",
+      "optionen": [
+        "Marking the packages",
+        "Opening the dicing street (grooving)",
+        "Wire bonding",
+        "Drilling microvias in the substrate"
+      ],
+      "erklaerung": "Wire bonding joins with ultrasound, heat and force, not with the laser."
+    },
+    "k15.q11": {
+      "frage": "Match the step to its tool or principle.",
+      "paare": [
+        [
+          "Backgrinding",
+          "Grinding wheel"
+        ],
+        [
+          "Singulation",
+          "Saw, laser or plasma"
+        ],
+        [
+          "Wire bonding",
+          "Ultrasound, heat and force"
+        ],
+        [
+          "Moulding",
+          "Transfer moulding with epoxy compound"
+        ]
+      ],
+      "erklaerung": "The tools come from very different disciplines: machining, lasers, ultrasonic joining, polymer processing."
+    },
+    "k15.q12": {
+      "frage": "Why are wafers thinned before singulation?",
+      "optionen": [
+        "For thinner packages and to be able to stack chips",
+        "To make the wafer more stable",
+        "So that the transistors switch faster"
+      ],
+      "erklaerung": "Thin wafers are, in return, more fragile: singulation becomes harder and edge quality more important."
+    },
+    "k15.c04": {
+      "vorne": "The back end in one sentence?",
+      "hinten": "Test, thin, singulate, place die, connect (wire or flip chip), encapsulate, mark, test."
+    },
+    "k15.l04.b01": {
+      "inhalt": [
+        "How many chips fit on a wafer? A chip with edge length $a$, together with the dicing street of width $s$, occupies a cell with pitch $p=a+s$. Dividing the wafer area by the cell area gives an **upper bound**. At the edge, partial chips are lost, so the real number is smaller.",
+        "For understanding, the upper bound is enough, because it shows the key relation: $N\\propto1/p^2$. A narrower street gives noticeably more chips per wafer for small chips. That is an economic argument for separation processes with a narrow [[kerf]]."
+      ]
+    },
+    "k15.l04.b02": {
+      "erklaerung": "Upper bound of the chip count on a wafer of diameter $d$ (without edge losses) and total length of the dicing streets $L_\\mathrm{Str}$ on the area $A=\\pi d^2/4$: in each of the two directions lines are spaced by $p$, each direction contributes $A/p$.",
+      "titel": "Dies per wafer and street length",
+      "sammlung": "Packaging"
+    },
+    "k15.l04.b03": {
+      "aufgabe": "A 300 mm wafer carries chips with $a=2\\,\\mathrm{mm}$. How many chips are gained (upper bound) if the street shrinks from $s=80\\,\\mu\\mathrm{m}$ to $20\\,\\mu\\mathrm{m}$? All numbers are freely chosen.",
+      "schritte": [
+        "$A=\\pi\\cdot(300\\,\\mathrm{mm})^2/4=70{,}686\\,\\mathrm{mm^2}$",
+        "$p_1=2.08\\,\\mathrm{mm}$: $N_1=70{,}686/2.08^2\\approx16{,}338$",
+        "$p_2=2.02\\,\\mathrm{mm}$: $N_2=70{,}686/2.02^2\\approx17{,}323$"
+      ],
+      "ergebnis": "About 985 chips or 6 % more per wafer, just from the narrower street.",
+      "titel": "Worked example"
+    },
+    "k15.q13": {
+      "frage": "Build the upper bound of the chip count from wafer diameter $d$ and pitch $p$.",
+      "erklaerung": "Circle area $\\pi d^2/4$ divided by the cell area $p^2$."
+    },
+    "k15.q14": {
+      "frage": "Upper bound: how many chips with $a=5\\,\\mathrm{mm}$ and $s=100\\,\\mu\\mathrm{m}$ fit on a 300 mm wafer?",
+      "erklaerung": "$p=5.1\\,\\mathrm{mm}$, $N=70{,}686/26.01\\approx2718$. In reality noticeably fewer remain because of edge losses.",
+      "tipp": "First $A=\\pi d^2/4$ in mm², then divide by $p^2$."
+    },
+    "k15.q15": {
+      "frage": "Chips with $a=1\\,\\mathrm{mm}$: by how many percent does the upper bound rise if the street shrinks from $100\\,\\mu\\mathrm{m}$ to $20\\,\\mu\\mathrm{m}$?",
+      "erklaerung": "$N_2/N_1=(p_1/p_2)^2=(1.10/1.02)^2=1.163$, i.e. +16 %. The smaller the chip, the more the street matters."
+    },
+    "k15.q16": {
+      "frage": "How long are all dicing streets together on a 300 mm wafer with pitch $p=5\\,\\mathrm{mm}$? Answer in m.",
+      "erklaerung": "$L\\approx2A/p=2\\cdot70{,}686\\,\\mathrm{mm^2}/5\\,\\mathrm{mm}=28{,}274\\,\\mathrm{mm}\\approx28\\,\\mathrm{m}$."
+    },
+    "k15.q17": {
+      "frage": "Numerical example: a laser traces these $28.3\\,\\mathrm{m}$ of streets at $200\\,\\mathrm{mm/s}$, each street twice. How long does the pure processing take, in seconds?",
+      "erklaerung": "$t=2\\cdot28{,}300\\,\\mathrm{mm}/(200\\,\\mathrm{mm/s})=283\\,\\mathrm{s}\\approx4.7\\,\\mathrm{min}$, without acceleration and alignment times."
+    },
+    "k15.c05": {
+      "vorne": "How does the chip count per wafer depend on the pitch?",
+      "hinten": "$N\\propto1/p^2$ with $p=a+s$. Narrow streets pay off above all for small chips."
+    }
+  }
+}

@@ -1,0 +1,372 @@
+{
+  "id": "k20",
+  "titel": "Qualität, Zuverlässigkeit und Forschungslandschaft",
+  "einleitung": "Woran man gute Laserprozesse im Packaging erkennt, wie man sie misst, was später im Feld ausfällt und was Durchsatz und Ausbeute wirtschaftlich bedeuten. Zum Schluss eine Landkarte: wer woran arbeitet, wo publiziert wird, eine Leseliste für den Einstieg und offene Fragen als Kompass für die eigene Arbeit.",
+  "ziele": [
+    "Qualitätsmerkmale von Microvias, TGVs und Trennkanten den Messmethoden zuordnen",
+    "Spätfolgen von Laserschäden und beschleunigte Prüfungen erklären",
+    "Ausbeute und Kosten pro Via abschätzen",
+    "Die Forschungslandschaft kennen und einen Leseplan aufstellen"
+  ],
+  "weiterlesen": [
+    "hir",
+    "lau2022",
+    "franz2023",
+    "lamp2025"
+  ],
+  "lektionen": [
+    {
+      "id": "k20.l01",
+      "titel": "Qualitätsmerkmale und wie man sie misst",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k20.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Jeder Laserprozess im Packaging hat seine eigenen Merkmale:",
+            "- **Microvia:** oberer und unterer Durchmesser, Taper, Wandrauheit, Hohlräume und Delamination im Dielektrikum, Harzreste am Boden, Schädigung des Kupferpads, Glasfaserüberstand.\n- **TGV:** Eintritts- und Austrittsdurchmesser, Taper, Mikrorisse, Rückseitenausbrüche, Eigenspannung im Glas.\n- **Vereinzeln:** Ausbrüche an Vorder- und Rückseite, Schnittfugenbreite, Delamination, Ablagerungen, Rauheit der Seitenwand, Chipfestigkeit.",
+            "Und die Messmethoden, viele davon kennst du aus der Werkstofftechnik:",
+            "- **Lichtmikroskop und automatische optische Inspektion (AOI):** Durchmesser, Ausbrüche, Ablagerungen.\n- **Konfokal- oder Weißlichtmikroskop:** 3D-Form, Tiefe, Rauheit (K11).\n- **Rasterelektronenmikroskop (REM):** Wände, Füllstoffe, Mikrorisse.\n- **[[querschliff|Querschliff]]** und **FIB-Schnitt:** Via-Profil, Grenzflächen, Taper im Schnitt.\n- **Ultraschallmikroskopie** ([[csam|CSAM]]): Delamination und Hohlräume zerstörungsfrei.\n- **Röntgen und CT:** Vias, Füllung, Hohlräume im Volumen.\n- **Spannungsoptik:** Eigenspannungen in Glas über die Doppelbrechung im polarisierten Licht.\n- **Biegeversuch:** Chip- und Kantenfestigkeit (K17).\n- **Elektrische Tests:** Widerstand von Via-Ketten (*daisy chain*)."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k20.q01",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Fehler der passenden Messmethode zu.",
+          "paare": [
+            [
+              "Delamination unter der Oberfläche",
+              "Ultraschallmikroskopie (CSAM)"
+            ],
+            [
+              "Eigenspannung im Glas",
+              "Spannungsoptik im polarisierten Licht"
+            ],
+            [
+              "Via-Profil und Taper",
+              "Querschliff"
+            ],
+            [
+              "Kantenfestigkeit eines Chips",
+              "Biegeversuch mit Weibull-Auswertung"
+            ]
+          ],
+          "erklaerung": "Zerstörungsfrei (CSAM, Spannungsoptik, Röntgen) für Serien, zerstörend (Schliff, Biegung) für Tiefe und Statistik."
+        },
+        {
+          "id": "k20.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Methode zeigt Delamination im Package zerstörungsfrei?",
+          "optionen": [
+            "Ultraschallmikroskopie (CSAM)",
+            "Querschliff",
+            "Dreipunkt-Biegeversuch"
+          ],
+          "richtig": 0,
+          "erklaerung": "Schall wird an Grenzflächen mit Luftspalt fast vollständig reflektiert; Ablösungen leuchten im Bild auf."
+        },
+        {
+          "id": "k20.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum macht man beim Via-Bohren trotz Mikroskopie noch Querschliffe?",
+          "optionen": [
+            "Von oben sieht man weder das Wandprofil noch Hohlräume und Grenzflächen in der Tiefe",
+            "Weil Mikroskope keine Löcher abbilden",
+            "Weil Schliffe billiger als Fotos sind"
+          ],
+          "richtig": 0,
+          "erklaerung": "Der Schliff ist dein Fenster ins Innere, wie bei Gefügeuntersuchungen."
+        },
+        {
+          "id": "k20.c01",
+          "typ": "karte",
+          "vorne": "Messmethoden für Laserprozesse im Packaging?",
+          "hinten": "Mikroskop/AOI, Konfokal/Weißlicht, REM, Querschliff/FIB, Ultraschall (CSAM), Röntgen/CT, Spannungsoptik, Biegeversuch, elektrische Via-Ketten.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k20.l02",
+      "titel": "Zuverlässigkeit: was später ausfällt",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k20.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Fehler, der den ersten elektrischen Test besteht, kann trotzdem später ausfallen. Typische Spätfolgen von Laserschäden:",
+            "- **Mikrorisse** an Glas- oder Chipkanten wachsen unter Temperaturwechseln, bis die Restfestigkeit nicht mehr reicht.\n- **Harzreste** am Via-Boden schwächen die Kupferhaftung; die Via reißt im Zyklus ab.\n- **Delamination** wächst mit aufgenommener Feuchte; beim nächsten Löten verdampft sie schlagartig (*Popcorn-Effekt*).",
+            "Deshalb wird beschleunigt geprüft: **Temperaturwechsel**, **Feuchte-Wärme-Lagerung**, **Vorbehandlung mit Feuchte und Reflow-Löten** und elektrische Messungen an Via-Ketten. Die Prüfabläufe sind in Normen der JEDEC und IPC festgelegt (Nummern und Ausgabestände bitte in der Normendatenbank prüfen).",
+            "Lötstellen ermüden nach dem aus der Betriebsfestigkeit bekannten **Coffin-Manson-Ansatz**: Die Lebensdauer fällt mit einer Potenz der plastischen Dehnungsschwingbreite. Jede Senkung der Scherung (K17) zahlt sich überproportional aus."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k20.l02.b02",
+          "typ": "formel",
+          "latex": "N_\\mathrm{f}=C\\,(\\Delta\\varepsilon_\\mathrm{p})^{-k},\\qquad \\frac{N_\\mathrm{f,2}}{N_\\mathrm{f,1}}=\\left(\\frac{\\Delta\\varepsilon_\\mathrm{p,1}}{\\Delta\\varepsilon_\\mathrm{p,2}}\\right)^{k}",
+          "erklaerung": "Coffin-Manson in Potenzform: Zyklen bis zum Ausfall $N_\\mathrm{f}$ über der plastischen Dehnungsschwingbreite $\\Delta\\varepsilon_\\mathrm{p}$, mit werkstoffabhängigen Konstanten $C$ und $k$. Das Verhältnis zweier Lebensdauern hängt nur von $k$ ab.",
+          "titel": "Coffin-Manson",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Definition"
+        },
+        {
+          "id": "k20.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: $k=2$. Um welchen Faktor steigt die Lebensdauer, wenn die plastische Dehnungsschwingbreite halbiert wird?",
+          "antwort": 4,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$(1/0{,}5)^2=4$."
+        },
+        {
+          "id": "k20.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum fallen Vias mit Harzresten am Boden oft erst im Temperaturwechsel aus?",
+          "optionen": [
+            "Die geschwächte Kupferhaftung reißt unter wiederholter thermomechanischer Last",
+            "Weil Harz bei Kälte leitfähig wird",
+            "Weil der Laser nachträglich weiterbohrt"
+          ],
+          "richtig": 0,
+          "erklaerung": "Anfangs leitet die Via noch; Zyklen öffnen den Kontakt."
+        },
+        {
+          "id": "k20.q06",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Prüfung dem Ausfallmechanismus zu, den sie beschleunigt.",
+          "paare": [
+            [
+              "Temperaturwechsel",
+              "Ermüdung durch CTE-Fehlanpassung"
+            ],
+            [
+              "Feuchte-Wärme-Lagerung",
+              "Korrosion und feuchtegetriebene Delamination"
+            ],
+            [
+              "Feuchte-Vorbehandlung plus Reflow",
+              "Popcorn-Effekt beim Löten"
+            ]
+          ],
+          "erklaerung": "Jede Prüfung bildet einen Lebensabschnitt des Bauteils im Zeitraffer ab."
+        },
+        {
+          "id": "k20.c02",
+          "typ": "karte",
+          "vorne": "Drei Spätfolgen von Laserschäden?",
+          "hinten": "Mikrorisse wachsen im Temperaturwechsel, Harzreste lösen die Via-Haftung, Delamination plus Feuchte führt beim Löten zum Popcorn-Effekt.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k20.l03",
+      "titel": "Durchsatz, Kosten und Ausbeute",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k20.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "In der Industrie zählt nicht das schönste Loch, sondern das **zuverlässige Loch zu kleinen Kosten**. Drei Größen bestimmen das:",
+            "- **Durchsatz:** Löcher oder Wafer pro Stunde, begrenzt durch Bohrzeit und Nebenzeiten (Scannersprünge, Tischbewegung, Ausrichten).\n- **Kosten pro Stunde:** Anlage, Laser, Fläche, Personal, Energie (oft zusammengefasst als *Cost of Ownership*).\n- **Ausbeute:** Anteil guter Teile. Weil ein Substrat sehr viele Vias hat, muss die Fehlerrate pro Via extrem klein sein.",
+            "Hebel für UKP-Anlagen: mehr mittlere Leistung über **Mehrstrahl-Optiken** (z. B. [[doe-element|diffraktive Strahlteiler]]), schnellere Scanner, Burst und Strahlformung. Grenze ist häufig nicht die Laserleistung, sondern die **Wärmeakkumulation** (K07) und die Mechanik der Strahlführung."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k20.l03.b02",
+          "typ": "formel",
+          "latex": "Y=(1-q)^{N}\\approx e^{-Nq},\\qquad K_\\mathrm{Via}=\\frac{K_\\mathrm{h}}{3600\\,\\dot N}",
+          "erklaerung": "Ausbeute $Y$ eines Bauteils mit $N$ Vias, wenn jede Via unabhängig mit Wahrscheinlichkeit $q$ fehlerhaft ist (Näherung für kleine $q$). Kosten pro Via aus Stundensatz $K_\\mathrm{h}$ und Rate $\\dot N$ (Vias pro Sekunde).",
+          "titel": "Ausbeute und Kosten pro Via",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung (Definition)"
+        },
+        {
+          "id": "k20.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Ein Substrat hat $N=50\\,000$ Vias, jede ist mit $q=10^{-6}$ fehlerhaft. Wie groß ist die Ausbeute in %?",
+          "antwort": 95.1,
+          "einheit": "%",
+          "toleranz": 0.01,
+          "erklaerung": "$Y\\approx e^{-0{,}05}=0{,}951$. Schon ein Fehler pro Million Vias kostet 5 % der Substrate."
+        },
+        {
+          "id": "k20.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleiches Substrat: Welche Fehlerrate $q$ pro Via darf höchstens auftreten, damit die Ausbeute 99 % beträgt? Antwort als Zahl (z. B. 2e-7).",
+          "antwort": 2.01e-07,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$e^{-Nq}=0{,}99$, also $Nq=-\\ln0{,}99=0{,}01005$ und $q=2{,}0\\cdot10^{-7}$.",
+          "tipp": "Gleichung logarithmieren: $Nq=-\\ln Y$."
+        },
+        {
+          "id": "k20.q09",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Stundensatz der Anlage 150 €/h, Rate $1250$ Vias/s. Was kosten eine Million Vias in €?",
+          "antwort": 33.3,
+          "einheit": "€",
+          "toleranz": 0.03,
+          "erklaerung": "$1250\\cdot3600=4{,}5\\cdot10^6$ Vias pro Stunde; $150/4{,}5=33$, also 33 € pro Million."
+        },
+        {
+          "id": "k20.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Ein diffraktiver Strahlteiler macht aus einem Strahl vier. Warum vervierfacht sich der Durchsatz in der Praxis oft nicht?",
+          "optionen": [
+            "Jeder Teilstrahl braucht genug Pulsenergie, und Lochmuster, Positionierung und Gleichmäßigkeit schränken ein",
+            "Weil Strahlteiler die Wellenlänge verdoppeln",
+            "Weil vier Strahlen sich immer auslöschen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Mehrstrahl lohnt sich, wenn Leistung übrig ist und das Lochmuster zum Strahlmuster passt."
+        },
+        {
+          "id": "k20.c03",
+          "typ": "karte",
+          "vorne": "Warum muss die Fehlerrate pro Via so klein sein?",
+          "hinten": "$Y\\approx e^{-Nq}$: Bei zehntausenden Vias pro Substrat kostet schon $q=10^{-6}$ mehrere Prozent Ausbeute.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k20.l04",
+      "titel": "Forschungslandkarte: wo du dich einliest",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k20.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "**Wer arbeitet woran?** Eine erste Orientierung, ohne Anspruch auf Vollständigkeit:",
+            "- **Chiphersteller und Foundries** treiben Advanced Packaging (z. B. Intel mit Glaskern-Substraten).\n- **Montage- und Testdienstleister** ([[osat|OSATs]]) und **Substrathersteller** fertigen in großer Stückzahl.\n- **Anlagenbauer** liefern die Prozesse: DISCO (Sägen, Grooving, Stealth Dicing), Hamamatsu (Ursprung des Stealth Dicing), LPKF (LIDE), EV Group (Bonden und Debonding), Schmoll Maschinen (Bohranlagen für Leiterplatten und Substrate).\n- **Forschung:** Fraunhofer-Institute für Zuverlässigkeit und Mikrointegration bzw. Lasertechnik, imec, Hochschulgruppen wie die AG alp in Aschaffenburg, die mit Schmoll Maschinen und der Ruhr-Universität Bochum zu UKP-Microvias und TGVs veröffentlicht.",
+            "**Wo wird publiziert?** Packaging-Konferenzen: ECTC (IEEE Electronic Components and Technology Conference), ESTC (europäisches Pendant), EPTC, IMAPS-Symposium. Laser-Konferenzen: LPM (Laser Precision Microfabrication), LAMP, Photonics West (LASE), ICALEO, LiM (Lasers in Manufacturing). Journale: *IEEE Transactions on Components, Packaging and Manufacturing Technology*, *Microelectronics Reliability*, *Journal of Laser Applications*, *Journal of Laser Micro/Nanoengineering*, *Optics & Laser Technology*.",
+            "**Roadmap:** Die *Heterogeneous Integration Roadmap* (HIR) der IEEE Electronics Packaging Society ist frei verfügbar und beschreibt Anforderungen und Herausforderungen über viele Jahre im Voraus."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k20.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "**Leseliste für den Einstieg**, in dieser Reihenfolge:",
+            "1. Überblick: Lau 2022 (*Recent Advances and Trends in Advanced Packaging*) und die passenden HIR-Kapitel.\n2. Die eigene Gruppe: Franz et al. 2022 (FR-4) und Franz et al. 2023 (ABF, MHz-Burst), dann der LAMP-2025-Beitrag zu TGVs für Glaskern-Packaging.\n3. Glas: Ostholt et al. 2014 (laserinduziertes Ätzen), Intel 2023, die Glas-Übersicht von Nimbalkar et al. 2025.\n4. Trennen: Kumagai et al. 2007 (Stealth Dicing), Evertsen et al. 2023 (UKP-Grooving plus Plasma), Schönfelder et al. 2007 (Chipfestigkeit).",
+            "Die bibliografischen Angaben stehen direkt darunter. Übernimm sie in Zotero und prüfe sie über die DOI."
+          ]
+        },
+        {
+          "id": "k20.l04.b03",
+          "typ": "quelle",
+          "refs": [
+            "lau2022",
+            "hir",
+            "franz2022",
+            "franz2023",
+            "lamp2025",
+            "ostholt2014",
+            "intel2023",
+            "nimbalkar2025",
+            "kumagai2007",
+            "evertsen2023",
+            "schoenfelder2007"
+          ]
+        },
+        {
+          "id": "k20.l04.b04",
+          "typ": "text",
+          "inhalt": [
+            "**Offene Fragen als Kompass.** Keine Antworten, sondern Fragen, an denen du beim Lesen hängen bleiben solltest:",
+            "- Wie hängen Taper, Wandqualität und Bohrzeit von UKP-Microvias bei neuen ABF-Generationen mit feineren Strukturen und anderem Füllstoff zusammen?\n- Lassen sich TGVs in Glas direkt, ohne Ätzschritt, riss- und spannungsarm bohren, und wie misst man die Schädigung zerstörungsfrei?\n- Wie steigert man den Durchsatz (Burst, hohe Repetitionsraten, Mehrstrahl), ohne dass sich Wärme ansammelt?\n- Wie robust ist das Prozessfenster im Schichtverbund gegen Schwankungen von Schichtdicke, Füllstoff und Fokuslage? Hier hilft dir DoE.\n- Wie erkennt man im Prozess, wann das Kupfer erreicht ist, etwa über Plasmaemission oder Akustik?\n- Wie wirken sich Laserschäden auf die Zuverlässigkeit im Temperaturwechsel aus?"
+          ]
+        },
+        {
+          "id": "k20.q11",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Konferenz ihrem Schwerpunkt zu.",
+          "paare": [
+            [
+              "ECTC",
+              "Bauelemente und Packaging (IEEE)"
+            ],
+            [
+              "LPM",
+              "Laser-Mikrobearbeitung"
+            ],
+            [
+              "IMAPS-Symposium",
+              "Mikroelektronik und Packaging"
+            ],
+            [
+              "ICALEO",
+              "Laseranwendungen und Lasermaterialbearbeitung"
+            ]
+          ],
+          "erklaerung": "Für dein Thema lohnen sich beide Welten: Packaging-Konferenzen für die Anforderungen, Laser-Konferenzen für die Prozesse."
+        },
+        {
+          "id": "k20.q12",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Roadmap beschreibt die Zukunft des Packagings und ist frei verfügbar?",
+          "optionen": [
+            "Heterogeneous Integration Roadmap (HIR) der IEEE EPS",
+            "ISO 11146",
+            "Die Liu-Methode"
+          ],
+          "richtig": 0,
+          "erklaerung": "ISO 11146 betrifft Strahlvermessung (K11), Liu die Schwellenbestimmung (K07)."
+        },
+        {
+          "id": "k20.q13",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Mit welchen Partnern veröffentlicht die AG alp zu UKP-Bohrungen für das Packaging?",
+          "optionen": [
+            "Schmoll Maschinen und Ruhr-Universität Bochum",
+            "Nur mit Intel",
+            "Mit niemandem, nur intern"
+          ],
+          "richtig": 0,
+          "erklaerung": "Laut der Tagungsliste von LAMP 2025; prüfe die aktuelle Partnerlage im Gespräch mit der Gruppe.",
+          "verifiziert": false,
+          "quelle": "lamp2025"
+        },
+        {
+          "id": "k20.c04",
+          "typ": "karte",
+          "vorne": "Wo publiziert man zu UKP im Packaging?",
+          "hinten": "Packaging: ECTC, ESTC, EPTC, IMAPS; IEEE T-CPMT, Microelectronics Reliability. Laser: LPM, LAMP, Photonics West, ICALEO, LiM; JLA, JLMN, Optics & Laser Technology. Roadmap: HIR.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    }
+  ]
+}

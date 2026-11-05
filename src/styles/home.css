@@ -152,6 +152,9 @@
 .hm-continue[data-stage='E'] {
   --stage: var(--st-e);
 }
+.hm-continue[data-stage='F'] {
+  --stage: var(--st-f);
+}
 .hm-continue .play {
   flex: none;
   display: grid;

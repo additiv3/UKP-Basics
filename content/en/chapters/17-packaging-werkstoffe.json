@@ -1,0 +1,255 @@
+{
+  "titel": "Materials and thermomechanics in the package",
+  "einleitung": "Here you are on familiar ground: thermal expansion, stresses, fatigue, fracture mechanics and Weibull. What is new are the materials (filled polymers, glass, low-k) and the question of what happens when a laser hits a composite of metal, polymer and glass. Material values are marked as unchecked; calculations use freely chosen numbers.",
+  "ziele": [
+    "Assign the materials of a package to their function",
+    "Estimate CTE mismatch, stress, solder-joint shear and warpage",
+    "Measure die strength and evaluate it according to Weibull",
+    "Justify the process window of a laser in a layer stack"
+  ],
+  "lektionen": {
+    "k17.l01": "The materials zoo in the package",
+    "k17.l02": "Thermal expansion, stress and warpage",
+    "k17.l03": "Fracture strength of chips and glass",
+    "k17.l04": "Laser meets layer stack"
+  },
+  "blocks": {
+    "k17.l01.b01": {
+      "inhalt": [
+        "A single package contains more material classes than most machines:",
+        "- **Silicon:** chip, interposer, carrier wafer.\n- **Copper:** lines, pads, pillars, vias.\n- **Solders:** mostly lead-free tin-silver-copper alloys.\n- **Low-k dielectrics:** in the chip (K15).\n- **Polyimide and similar polymers:** passivation and dielectric of the RDL.\n- **Build-up film** ([[abf]]): epoxy resin with a high fraction of silicon dioxide filler, dielectric of the substrate build-up layers.\n- **Core material:** glass-fibre-reinforced epoxy (like FR-4 in circuit boards).\n- **[[moldmasse|Mould compound]]** (*epoxy mold compound*, EMC) and **[[underfill]]:** epoxy with silicon dioxide filler.\n- **Glass:** carriers, interposers, [[glaskern-substrat|glass core substrates]].\n- **Ceramics:** aluminium oxide, aluminium nitride, silicon nitride in power electronics.\n- **SiC and GaN:** wide-band-gap semiconductors for power devices, very hard.",
+        "Why so much filler? Polymers expand strongly when heated and shrink during curing. Hard silicon dioxide particles that barely expand lower the thermal expansion and shrinkage of the composite and bring it closer to silicon and copper."
+      ]
+    },
+    "k17.l01.b02": {
+      "inhalt": [
+        "For the laser this means: you almost never hit a pure material but a **composite**. Polymer matrix and silicon dioxide filler or glass fibre behave completely differently: the polymer decomposes at low fluence, the silicon dioxide is transparent at 1030 nm and needs much more. The result can be protruding glass fibres, filler residues and rough walls. Studies on FR-4 showed, for example, that the pulse duration influences how far glass fibres protrude into the hole."
+      ]
+    },
+    "k17.q01": {
+      "frage": "Match the material to its role.",
+      "paare": [
+        [
+          "ABF (build-up film)",
+          "Dielectric of the substrate build-up layers"
+        ],
+        [
+          "Mould compound (EMC)",
+          "Encapsulation of the chip"
+        ],
+        [
+          "Polyimide",
+          "Dielectric of the RDL and passivation"
+        ],
+        [
+          "Aluminium nitride",
+          "Ceramic substrate of power electronics"
+        ]
+      ],
+      "erklaerung": "All polymers in the package are usually filled to lower thermal expansion."
+    },
+    "k17.q02": {
+      "frage": "Why do mould compound, underfill and ABF contain a lot of silicon dioxide filler?",
+      "optionen": [
+        "To lower thermal expansion and shrinkage of the polymer",
+        "To increase electrical conductivity",
+        "So that the laser ablates more easily"
+      ],
+      "erklaerung": "Silicon dioxide barely expands. For the laser, in contrast, the filler is rather a nuisance: it is transparent and has a high threshold."
+    },
+    "k17.q03": {
+      "frage": "What is typical when laser drilling glass-fibre-reinforced epoxy?",
+      "optionen": [
+        "Glass fibres protrude into the hole because they have a higher threshold than the resin",
+        "The resin remains, the fibres evaporate first",
+        "Both components behave the same"
+      ],
+      "erklaerung": "Two components, two thresholds. The pulse duration influences how strongly the difference shows."
+    },
+    "k17.c01": {
+      "vorne": "Why is ABF a composite problem for the laser?",
+      "hinten": "Epoxy matrix with low threshold plus transparent silicon dioxide filler with high threshold: filler residues, rough walls, the process window depends on both."
+    },
+    "k17.l02.b01": {
+      "inhalt": [
+        "Every material expands with its [[cte|coefficient of thermal expansion]] $\\alpha$ (CTE). If two materials are firmly joined and heat up together, a strain difference $\\Delta\\alpha\\,\\Delta T$ arises. It turns into stress (if the assembly is stiff) or into **bending** as in a bimetal strip. In the package this bending is called [[verzug|warpage]].",
+        "You know two consequences from fatigue strength: with every switch-on and switch-off and every temperature cycle the solder joints are sheared and **fatigue**. And a warped package is hard to solder because not all balls touch down at the same time.",
+        "As a rough orientation (common literature values, unchecked): silicon lies at a few ppm/K, copper and organic substrates clearly above 10 ppm/K. Glasses can be tuned via their composition into a range close to silicon. This is a main argument for glass core substrates."
+      ]
+    },
+    "k17.l02.b02": {
+      "erklaerung": "Left: biaxial stress in a thin layer on a thick carrier (Hooke, plane stress). Right: shear $\\gamma$ of a solder joint of height $h$ at distance $L_\\mathrm{DNP}$ from the neutral point (centre of the component) when chip and substrate shift freely against each other. The outermost joint is loaded most.",
+      "titel": "Mismatch: stress and shear",
+      "sammlung": "Packaging"
+    },
+    "k17.l02.b03": {
+      "aufgabe": "Numerical example without underfill: $\\Delta\\alpha=14\\cdot10^{-6}\\,\\mathrm{K^{-1}}$, $\\Delta T=100\\,\\mathrm{K}$, outermost joint at $L_\\mathrm{DNP}=10\\,\\mathrm{mm}$, height $h=50\\,\\mu\\mathrm{m}$. How large is the shear?",
+      "schritte": [
+        "Displacement: $\\Delta\\alpha\\,\\Delta T\\,L_\\mathrm{DNP}=14\\cdot10^{-6}\\cdot100\\cdot10\\,\\mathrm{mm}=0.014\\,\\mathrm{mm}=14\\,\\mu\\mathrm{m}$",
+        "Shear: $\\gamma=14\\,\\mu\\mathrm{m}/50\\,\\mu\\mathrm{m}=0.28$"
+      ],
+      "ergebnis": "28 % shear per cycle is something no solder joint survives for long. That is why the underfill couples chip and substrate mechanically and takes most of the load off the joints.",
+      "titel": "Worked example"
+    },
+    "k17.q04": {
+      "frage": "Numerical example: $E/(1-\\nu)=150\\,\\mathrm{GPa}$, $\\Delta\\alpha=10\\cdot10^{-6}\\,\\mathrm{K^{-1}}$, $\\Delta T=100\\,\\mathrm{K}$. What biaxial stress arises in the thin layer? Answer in MPa.",
+      "erklaerung": "$\\sigma=150\\cdot10^{9}\\cdot10^{-5}\\cdot100=1.5\\cdot10^{8}\\,\\mathrm{Pa}=150\\,\\mathrm{MPa}$."
+    },
+    "k17.q05": {
+      "frage": "Build the shear of the outermost solder joint and calculate it for $\\Delta\\alpha=12\\cdot10^{-6}\\,\\mathrm{K^{-1}}$, $\\Delta T=80\\,\\mathrm{K}$, $L_\\mathrm{DNP}=5\\,\\mathrm{mm}$, $h=0.1\\,\\mathrm{mm}$ (numerical example).",
+      "erklaerung": "$\\gamma=12\\cdot10^{-6}\\cdot80\\cdot5/0.1=0.048$, i.e. almost 5 %."
+    },
+    "k17.q06": {
+      "frage": "Which solder joint of a large BGA typically fatigues first in thermal cycling?",
+      "optionen": [
+        "The outermost one, farthest from the neutral point",
+        "The central one",
+        "All at the same time"
+      ],
+      "erklaerung": "$\\gamma\\propto L_\\mathrm{DNP}$: the relative displacement is largest at the outside."
+    },
+    "k17.q07": {
+      "frage": "What is a main argument for glass core substrates compared with organic cores?",
+      "optionen": [
+        "Thermal expansion tunable closer to silicon, stiff and flat",
+        "Glass is electrically conductive",
+        "Glass is easier to drill mechanically"
+      ],
+      "erklaerung": "Less mismatch to the chip and less warpage in large packages. The price: glass is brittle, and the through-vias (TGV) must be made without cracks."
+    },
+    "k17.c02": {
+      "vorne": "What does the shear of a solder joint depend on?",
+      "hinten": "$\\gamma\\approx\\Delta\\alpha\\,\\Delta T\\,L_\\mathrm{DNP}/h$: CTE difference, temperature swing, distance from the neutral point, joint height. Underfill relieves it."
+    },
+    "k17.l03.b01": {
+      "inhalt": [
+        "Silicon and glass are **brittle**: they do not flow plastically but break as soon as the critical stress intensity is reached at a flaw ([[bruchzaehigkeit|fracture toughness]]). Their strength is therefore not a material constant but depends on the **largest flaw**, and that usually sits at the edge.",
+        "That very edge is created during singulation. Chipping ([[chipping]]), microcracks and a damaged edge zone lower the **[[die-festigkeit|die strength]]**. Studies on thin silicon show that the separation method changes the strength strongly: sawn samples are clearly weaker than samples with dry-etched edges.",
+        "It is mostly measured in the **three-point bending test** (standardized as SEMI G86) or in four-point or ring-on-ring tests. Because the strength of brittle bodies scatters, it is evaluated according to **[[weibull]]**: the weakest-link model you know from materials testing."
+      ]
+    },
+    "k17.l03.b02": {
+      "erklaerung": "Left: maximum surface stress in the three-point bending test (span $L$, width $b$, thickness $h$, fracture force $F$, linear beam theory). Right: Weibull distribution of the failure probability with characteristic strength $\\sigma_0$ (63.2 % failure) and Weibull modulus $m$ (scatter: large $m$, small scatter). For very thin chips the deflection becomes large, and then the linear formula only holds approximately.",
+      "titel": "Bending strength and Weibull",
+      "sammlung": "Packaging"
+    },
+    "k17.l03.b03": {
+      "aufgabe": "Numerical example: a chip with $b=5\\,\\mathrm{mm}$ and $h=50\\,\\mu\\mathrm{m}$ breaks in the three-point bending test with span $L=4\\,\\mathrm{mm}$ at $F=0.5\\,\\mathrm{N}$. How large is the fracture stress?",
+      "schritte": [
+        "Numerator: $3FL=3\\cdot0.5\\,\\mathrm{N}\\cdot4\\,\\mathrm{mm}=6\\,\\mathrm{N\\,mm}$",
+        "Denominator: $2bh^2=2\\cdot5\\,\\mathrm{mm}\\cdot(0.05\\,\\mathrm{mm})^2=0.025\\,\\mathrm{mm^3}$",
+        "$\\sigma=6/0.025=240\\,\\mathrm{N/mm^2}=240\\,\\mathrm{MPa}$"
+      ],
+      "ergebnis": "240 MPa. Calculating with N and mm gives MPa directly.",
+      "titel": "Worked example"
+    },
+    "k17.q08": {
+      "frage": "Same test, but the chip is only half as thick ($h=25\\,\\mu\\mathrm{m}$). What surface stress arises at the same force $F=0.5\\,\\mathrm{N}$? Answer in MPa.",
+      "erklaerung": "$\\sigma\\propto1/h^2$: half the thickness, four times the stress, $4\\cdot240=960\\,\\mathrm{MPa}$."
+    },
+    "k17.q09": {
+      "frage": "According to Weibull, how large is the failure probability at $\\sigma=\\sigma_0$? Answer in %.",
+      "erklaerung": "$P_\\mathrm{f}=1-e^{-1}=0.632$, independent of $m$."
+    },
+    "k17.q10": {
+      "frage": "Weibull plot: the line shows $\\ln\\ln(1/(1-P_\\mathrm{f}))$ over $\\ln\\sigma$ (σ in MPa) for a test series. Read off the characteristic strength $\\sigma_0$ (where the line crosses zero). Answer in MPa.",
+      "erklaerung": "The line crosses zero at $\\ln\\sigma\\approx5.99$, so $\\sigma_0=e^{5.99}\\approx400\\,\\mathrm{MPa}$. The slope is the Weibull modulus, here $m=8$.",
+      "tipp": "Move the cursor to $y=0$, read $x$ and calculate $e^x$."
+    },
+    "k17.q11": {
+      "frage": "What does a large Weibull modulus $m$ mean?",
+      "optionen": [
+        "The strength scatters little",
+        "The strength is high",
+        "The chip is thick"
+      ],
+      "erklaerung": "$m$ describes the scatter, $\\sigma_0$ the level. A good separation process ideally raises both."
+    },
+    "k17.q12": {
+      "frage": "What usually determines the fracture strength of a thin chip?",
+      "optionen": [
+        "Flaws at the edge from the separation process",
+        "The doping of the transistors",
+        "The colour of the passivation"
+      ],
+      "erklaerung": "Brittle bodies fail at the largest flaw, and that usually arises during singulation or thinning."
+    },
+    "k17.c03": {
+      "vorne": "Why is die strength a process characteristic?",
+      "hinten": "Brittle materials break at the largest flaw, and edge flaws (chipping, microcracks) arise during separation. Measurement: three-point bending, evaluation according to Weibull."
+    },
+    "k17.l04.b01": {
+      "inhalt": [
+        "In packaging the laser almost always works in a **layer stack**: copper on dielectric on a copper pad, glass fibre in epoxy, filler in mould compound, low-k and copper in the street, a release layer on glass. Four basic patterns follow from this:",
+        "1. **Use the threshold contrast:** if the [[ablationsschwelle|ablation thresholds]] of two layers are far apart, there is a **process window**: fluence above the threshold of the dielectric but below that of copper. Then the laser removes the polymer and stops at the copper. This creates a clean via bottom.\n2. **Inclusions with a high threshold:** fibres and fillers remain standing or are torn out.\n3. **Heat in the polymer:** polymers decompose thermally. If heat accumulates (high repetition rate, burst), voids, charring and delamination arise.\n4. **Interfaces:** different expansion and adhesion turn interfaces into predetermined breaking points for delamination.",
+        "With ultrashort pulses the heat-affected zone becomes small ([[haz]], K05), but incubation and [[waermeakkumulation|heat accumulation]] (K07) shift the thresholds during the process. The window is therefore not a fixed value but depends on pulse number, repetition rate and beam profile."
+      ]
+    },
+    "k17.l04.b02": {
+      "inhalt": "Process window in the stack: $F_\\mathrm{th,dielectric}<F<F_\\mathrm{th,Cu}$. Incubation, heat accumulation and beam profile shift it."
+    },
+    "k17.q13": {
+      "frage": "Numerical example: dielectric $F_\\mathrm{th}=0.4\\,\\mathrm{J/cm^2}$, copper $F_\\mathrm{th}=1.2\\,\\mathrm{J/cm^2}$ (freely chosen). Gaussian beam with $w_0=10\\,\\mu\\mathrm{m}$. Up to what pulse energy does the peak fluence stay below the copper threshold? Answer in µJ.",
+      "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)$, so $E_\\mathrm{p}=F\\pi w_0^2/2=1.2\\cdot\\pi\\cdot(10^{-3}\\,\\mathrm{cm})^2/2=1.88\\cdot10^{-6}\\,\\mathrm{J}$.",
+      "tipp": "$10\\,\\mu\\mathrm{m}=10^{-3}\\,\\mathrm{cm}$. Peak fluence from K01."
+    },
+    "k17.q14": {
+      "frage": "Same numbers: from what pulse energy does removal of the dielectric start at all (peak fluence equal to its threshold)? Answer in µJ.",
+      "erklaerung": "$E_\\mathrm{p}=0.4\\cdot\\pi\\cdot10^{-6}/2=0.63\\,\\mu\\mathrm{J}$. Here the window lies between about 0.63 and 1.88 µJ, a factor of 3."
+    },
+    "k17.q15": {
+      "frage": "Match the defect to its most likely cause.",
+      "paare": [
+        [
+          "Protruding glass fibres",
+          "Higher threshold of the fibre than of the resin"
+        ],
+        [
+          "Voids and delamination in the dielectric",
+          "Heat accumulation in the polymer"
+        ],
+        [
+          "Damaged copper bottom",
+          "Fluence above the copper threshold"
+        ],
+        [
+          "Delamination at an interface",
+          "Different expansion and adhesion"
+        ]
+      ],
+      "erklaerung": "Each defect points to a control knob: pulse duration, repetition rate or burst, fluence, beam profile."
+    },
+    "k17.q16": {
+      "frage": "Fill in.",
+      "text": "For the laser to stop at the copper pad, the fluence must lie ___ the threshold of the dielectric and ___ the threshold of copper. High repetition rates can damage the polymer through ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "above",
+            "below"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "below",
+            "above"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "heat accumulation",
+            "polarization"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "Window between two thresholds, shifted by heat and incubation."
+    },
+    "k17.c04": {
+      "vorne": "Four basic patterns when the laser hits a layer stack?",
+      "hinten": "Threshold contrast (process window, stop at copper), inclusions with high threshold (fibres, filler), heat in the polymer (voids, charring), interfaces (delamination)."
+    }
+  }
+}
