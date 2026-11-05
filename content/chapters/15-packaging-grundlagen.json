@@ -1,0 +1,494 @@
+{
+  "id": "k15",
+  "titel": "Halbleiter-Packaging: vom Chip zum System",
+  "einleitung": "Der Einstieg in die Welt nach der Chipfabrik: was ein Package leisten muss, wie ein Chip im Schnitt aussieht, welche Schritte im Back-End folgen und wo der Laser darin vorkommt. Am Ende rechnest du aus, warum eine schmale Sägestraße bares Geld wert ist. Fachaussagen beruhen auf Übersichtsliteratur und sind als ungeprüft markiert, bis du sie gegen die Quellen abgeglichen hast.",
+  "ziele": [
+    "Die fünf Aufgaben eines Packages benennen",
+    "Front-End, BEOL und Back-End sicher unterscheiden",
+    "Den Schichtaufbau eines Chips und der Sägestraße beschreiben",
+    "Die Back-End-Prozesskette wiedergeben und Laserschritte darin verorten",
+    "Chips pro Wafer und Straßenlänge abschätzen"
+  ],
+  "weiterlesen": [
+    "tummala2001",
+    "lau2022",
+    "hir"
+  ],
+  "lektionen": [
+    {
+      "id": "k15.l01",
+      "titel": "Was ein Package leistet",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k15.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein fertiger Chip ([[die]]) ist allein nicht nutzbar: Seine Anschlussflächen liegen dicht an dicht, er ist spröde, empfindlich gegen Feuchte und Verunreinigung und wird im Betrieb warm. Die **Aufbau- und Verbindungstechnik** (AVT, englisch [[packaging]]) macht aus ihm ein Bauteil, das man auf eine Leiterplatte löten kann. Ein Package erfüllt dabei fünf Aufgaben:",
+            "1. **Elektrisch verbinden:** Signale und Versorgung vom Chip zur Leiterplatte führen.\n2. **Raster aufweiten:** Die engen Anschlussabstände (Pitch) des Chips auf das gröbere Raster der Leiterplatte übersetzen.\n3. **Wärme abführen:** Verlustleistung an Kühlkörper oder Leiterplatte weitergeben.\n4. **Schützen:** gegen Feuchte, Korrosion, Partikel und mechanische Last.\n5. **Handhabbar und prüfbar machen:** Bestücken, Testen, Austauschen.",
+            "Für dich als Maschinenbauer ist Punkt 3 und 4 vertrautes Terrain: Wärmeleitung, Spannungen, Ermüdung. Neu sind die elektrischen Anforderungen und die Größenordnungen, in denen alles passiert."
+          ],
+          "verifiziert": false,
+          "quelle": "tummala2001"
+        },
+        {
+          "id": "k15.l01.b02",
+          "typ": "text",
+          "inhalt": [
+            "Die Fertigung teilt sich klassisch in zwei Welten. Im **Front-End** (der Halbleiterfabrik, Fab) entstehen auf dem [[wafer]] die Transistoren und darüber die Verdrahtung. Im **[[back-end|Back-End]]** wird der Wafer gedünnt, in Chips vereinzelt, montiert, verbunden, verkapselt und getestet. Das Back-End übernehmen oft spezialisierte Montage- und Testdienstleister ([[osat|OSAT]]).",
+            "**Achtung, Verwechslungsgefahr:** Die Verdrahtungsebenen auf dem Chip heißen [[beol]] (*back end of line*). Sie gehören trotz des Namens noch zum Front-End, also zur Fab, nicht zum Packaging.",
+            "Die Grenze verschwimmt gerade: Beim **Advanced Packaging** werden Verfahren der Waferfertigung (feine Umverdrahtungslagen, Wafer-zu-Wafer-Bonden) für das Packaging genutzt, oft von den Foundries selbst. Dafür ist auch der Begriff *Mid-End* im Umlauf."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k15.l01.b03",
+          "typ": "text",
+          "inhalt": [
+            "Warum ist Packaging gerade so gefragt? Transistoren immer weiter zu verkleinern wird teurer und langsamer. Leistung entsteht zunehmend durch **Integration im Package**: mehrere Chips (Chiplets) eng nebeneinander oder gestapelt, mit sehr vielen, sehr feinen Verbindungen. Treiber sind Rechenzentren und KI-Beschleuniger. Damit wächst der Bedarf an feinen Bohrungen, Trennschnitten und Strukturen in Glas, Polymeren, Silizium und Kupfer, und genau hier kommen Laser ins Spiel:",
+            "- **Trennen:** Wafer und Panels vereinzeln, empfindliche Schichten in der Sägestraße öffnen (K19).\n- **Bohren:** Microvias in Aufbaulagen von Substraten, Durchkontaktierungen in Glas (K18).\n- **Lösen:** Trägerwafer nach dem Bearbeiten abtrennen (K19).\n- **Strukturieren und Markieren:** Schichten selektiv entfernen, Packages beschriften."
+          ],
+          "verifiziert": false,
+          "quelle": "lau2022"
+        },
+        {
+          "id": "k15.l01.b04",
+          "typ": "merke",
+          "inhalt": "Package = elektrische Verbindung + Rasteraufweitung + Wärmeabfuhr + Schutz + Handhabung. **BEOL** ist Chip-Verdrahtung (Front-End), **Back-End** ist Montage und Test."
+        },
+        {
+          "id": "k15.q01",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Aufgabe gehört **nicht** zum Package?",
+          "optionen": [
+            "Die Transistordichte auf dem Chip erhöhen",
+            "Signale und Versorgung zur Leiterplatte führen",
+            "Verlustwärme abführen",
+            "Den Chip vor Feuchte und Korrosion schützen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die Transistordichte entsteht im Front-End (Lithografie, Prozessknoten). Das Package verbindet, entwärmt, schützt und macht den Chip handhabbar."
+        },
+        {
+          "id": "k15.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Zu welcher Fertigungswelt gehört der BEOL (*back end of line*)?",
+          "optionen": [
+            "Front-End: Verdrahtungsebenen auf dem Wafer in der Fab",
+            "Back-End: Montage und Test",
+            "Leiterplattenfertigung"
+          ],
+          "richtig": 0,
+          "erklaerung": "Trotz des Namens: BEOL sind die Metallisierungsebenen auf dem Chip und entstehen in der Fab. Das Back-End beginnt danach.",
+          "fest": true
+        },
+        {
+          "id": "k15.q03",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Verbindungsebene ihrer Aufgabe zu.",
+          "paare": [
+            [
+              "Ebene 0",
+              "Verdrahtung auf dem Chip (BEOL)"
+            ],
+            [
+              "Ebene 1",
+              "Chip mit Package oder Substrat verbinden"
+            ],
+            [
+              "Ebene 2",
+              "Package auf die Leiterplatte löten"
+            ],
+            [
+              "Ebene 3",
+              "Baugruppe ins System einbauen"
+            ]
+          ],
+          "erklaerung": "Die Zählung ist nicht überall gleich; das Prinzip „von innen nach außen“ gilt aber überall."
+        },
+        {
+          "id": "k15.q04",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Transistoren und Verdrahtung entstehen im ___. Vereinzeln, Montieren und Testen heißt ___. Spezialisierte Dienstleister dafür heißen ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "Front-End",
+                "Back-End"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Back-End",
+                "Front-End"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "OSATs",
+                "Foundries"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "OSAT = *outsourced semiconductor assembly and test*."
+        },
+        {
+          "id": "k15.c01",
+          "typ": "karte",
+          "vorne": "Fünf Aufgaben eines Packages?",
+          "hinten": "Elektrisch verbinden, Raster aufweiten, Wärme abführen, schützen, handhabbar und prüfbar machen."
+        },
+        {
+          "id": "k15.c02",
+          "typ": "karte",
+          "vorne": "BEOL oder Back-End?",
+          "hinten": "**BEOL:** Metallisierungsebenen auf dem Chip, in der Fab (Front-End). **Back-End:** Dünnen, Vereinzeln, Montieren, Verbinden, Verkapseln, Testen."
+        }
+      ]
+    },
+    {
+      "id": "k15.l02",
+      "titel": "Ein Chip von oben und im Schnitt",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k15.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Im Querschnitt hat ein Chip zwei Teile. Unten, im Silizium, liegen die Transistoren (*front end of line*, FEOL). Darüber liegt der **Metallisierungsstapel** ([[beol]]): viele Ebenen aus Kupferleitungen, die in ein Dielektrikum eingebettet und durch kleine Durchkontakte verbunden sind. Unten sind die Leitungen sehr fein, nach oben werden sie gröber.",
+            "Ganz oben liegen die **Anschlussflächen** (Pads) und eine schützende **Passivierung** (z. B. Siliziumnitrid oder Polyimid). Am Rand jedes Chips läuft ein **Sealring**, ein geschlossener Metallring durch alle Ebenen, der Risse und Feuchte vom aktiven Bereich fernhält.",
+            "Zwischen den Chips liegt der **[[ritzgraben]]** (Sägestraße, *dicing street* oder *scribe line*). Er ist nicht leer: Oft sitzen dort **Teststrukturen** (*test element groups*, TEG) mit Metall und Dielektrikum, mit denen die Fab den Prozess überwacht. Wer vereinzelt, schneidet also durch einen Schichtverbund, nicht nur durch Silizium."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k15.l02.b02",
+          "typ": "text",
+          "inhalt": [
+            "Warum nicht einfach Siliziumdioxid als Dielektrikum? Zwei benachbarte Leitungen bilden einen Kondensator. Je größer seine Kapazität $C$, desto länger braucht ein Signal (Verzögerung $\\tau\\propto RC$) und desto mehr Energie kostet jedes Umladen. Deshalb nutzt man **[[low-k]]-Dielektrika** mit kleinerer relativer Permittivität $k$ (in der Mikroelektronik schreibt man $k$ statt $\\varepsilon_\\mathrm{r}$) als Siliziumdioxid ($k\\approx3{,}9$).",
+            "Der Preis: Viele Low-k-Materialien sind **porös**, haben einen niedrigen E-Modul und haften schlecht. Beim mechanischen Sägen platzen sie ab oder delaminieren. Das ist einer der Hauptgründe, warum man die Sägestraße zuerst mit dem Laser öffnet (*laser grooving*, K19)."
+          ],
+          "verifiziert": false,
+          "quelle": "maex2003"
+        },
+        {
+          "id": "k15.l02.b03",
+          "typ": "formel",
+          "latex": "C=\\varepsilon_0\\,k\\,\\frac{A}{d},\\qquad \\tau\\propto R\\,C",
+          "erklaerung": "Plattenkondensator als Modell für zwei benachbarte Leitungen: Fläche $A$, Abstand $d$, relative Permittivität $k$. Bei gleicher Geometrie ist $C\\propto k$, und damit sinken Verzögerung und Umladeenergie mit $k$.",
+          "titel": "Kapazität und RC-Verzögerung",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k15.l02.b04",
+          "typ": "merke",
+          "inhalt": "Die Sägestraße ist ein **Schichtverbund** aus Silizium, Kupfer, Low-k und Passivierung. Low-k ist elektrisch gut und mechanisch schwach: Das macht das Vereinzeln schwierig."
+        },
+        {
+          "id": "k15.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum ersetzt man Siliziumdioxid zwischen den Leitungen durch Low-k-Dielektrika?",
+          "optionen": [
+            "Kleinere Kapazität zwischen den Leitungen, also weniger Verzögerung und Umladeenergie",
+            "Höhere mechanische Festigkeit",
+            "Bessere Wärmeleitung",
+            "Leichteres Sägen"
+          ],
+          "richtig": 0,
+          "erklaerung": "$C\\propto k$. Mechanisch sind Low-k-Materialien eher schwächer, deshalb ist das Sägen schwieriger."
+        },
+        {
+          "id": "k15.q06",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Das Dielektrikum wechselt von $k=3{,}9$ auf $k=2{,}5$, die Geometrie bleibt gleich. Auf wie viel Prozent der ursprünglichen Kapazität sinkt $C$?",
+          "antwort": 64.1,
+          "einheit": "%",
+          "toleranz": 0.02,
+          "erklaerung": "$C_2/C_1=k_2/k_1=2{,}5/3{,}9=0{,}641$, also rund 64 %."
+        },
+        {
+          "id": "k15.q07",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Struktur ihrer Aufgabe zu.",
+          "paare": [
+            [
+              "Sealring",
+              "Riss- und Feuchtesperre am Chiprand"
+            ],
+            [
+              "Pad",
+              "Anschlussfläche für Draht oder Bump"
+            ],
+            [
+              "Passivierung",
+              "Schutzschicht über der Verdrahtung"
+            ],
+            [
+              "Teststruktur im Ritzgraben",
+              "Prozessüberwachung der Fab"
+            ]
+          ],
+          "erklaerung": "Alles davon kann beim Vereinzeln stören oder geschützt werden müssen."
+        },
+        {
+          "id": "k15.q08",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum ist das Vereinzeln mehr als „Silizium schneiden“?",
+          "optionen": [
+            "In der Sägestraße liegen Teststrukturen aus Metall und Dielektrikum über dem Silizium",
+            "Weil Silizium ein Metall ist",
+            "Weil der Wafer immer aus Glas besteht"
+          ],
+          "richtig": 0,
+          "erklaerung": "Schichtverbund aus Cu, Low-k, Passivierung und Si: unterschiedliche Schwellen, Festigkeiten und Haftungen."
+        },
+        {
+          "id": "k15.c03",
+          "typ": "karte",
+          "vorne": "Low-k: warum und welches Problem?",
+          "hinten": "Kleineres $k$ gibt kleinere Leitungskapazität, also weniger RC-Verzögerung und Energie. Aber poröse Low-k-Schichten sind mechanisch schwach und haften schlecht, sie delaminieren beim Sägen.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k15.l03",
+      "titel": "Die Prozesskette im Back-End",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k15.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein typischer Ablauf für ein klassisches Package sieht so aus:",
+            "1. **Wafertest:** Jeder Chip wird elektrisch geprüft, defekte werden markiert.\n2. **Rückdünnen** ([[rueckduennen]], *backgrinding*): Der Wafer wird von der Rückseite abgeschliffen, für flache Packages und zum Stapeln.\n3. **Aufziehen:** Der Wafer klebt auf einer dehnbaren Sägefolie in einem Rahmen.\n4. **Vereinzeln** ([[dicing]]): Säge, Laser oder Plasma trennen die Chips.\n5. **Die-Attach:** Ein Bestückautomat nimmt die guten Chips und setzt sie auf Leadframe oder Substrat.\n6. **Verbinden:** [[drahtbonden|Drahtbonden]] oder [[flip-chip|Flip-Chip]] mit Lothöckern und [[underfill|Unterfüllung]].\n7. **Verkapseln:** Umspritzen mit [[moldmasse|Moldmasse]].\n8. **Markieren, Kugeln setzen, Packages trennen, Endtest.**",
+            "Es gibt viele Varianten. Beim Flip-Chip werden die Lothöcker schon auf dem Wafer aufgebracht. Bei *dicing before grinding* ([[dbg]]) wird erst angeritzt und dann gedünnt, bis die Chips von selbst getrennt sind."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k15.l03.b02",
+          "typ": "merke",
+          "inhalt": "Laser tauchen an mehreren Stellen auf: beim Vereinzeln (Grooving, Stealth Dicing, Vollschnitt), beim Bohren von Microvias im Substrat, beim Lösen von Trägern und beim Markieren. Drahtbonden und Molden sind dagegen keine Laserprozesse."
+        },
+        {
+          "id": "k15.q09",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Schritte eines klassischen Back-Ends in die richtige Reihenfolge.",
+          "items": [
+            "Wafertest",
+            "Rückdünnen",
+            "Vereinzeln",
+            "Die-Attach",
+            "Drahtbonden",
+            "Molden",
+            "Endtest"
+          ],
+          "erklaerung": "Erst prüfen, dann dünnen und trennen, dann montieren, verbinden, verkapseln und zum Schluss testen.",
+          "oben": "zuerst",
+          "unten": "zuletzt"
+        },
+        {
+          "id": "k15.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Schritte sind typische Laserprozesse? (Mehrfachauswahl)",
+          "optionen": [
+            "Markieren der Packages",
+            "Öffnen der Sägestraße (Grooving)",
+            "Drahtbonden",
+            "Bohren von Microvias im Substrat"
+          ],
+          "richtig": [
+            0,
+            1,
+            3
+          ],
+          "erklaerung": "Drahtbonden verbindet mit Ultraschall, Wärme und Kraft, nicht mit dem Laser."
+        },
+        {
+          "id": "k15.q11",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Schritt dem Werkzeug oder Prinzip zu.",
+          "paare": [
+            [
+              "Rückdünnen",
+              "Schleifscheibe"
+            ],
+            [
+              "Vereinzeln",
+              "Säge, Laser oder Plasma"
+            ],
+            [
+              "Drahtbonden",
+              "Ultraschall, Wärme und Kraft"
+            ],
+            [
+              "Molden",
+              "Spritzpressen mit Epoxidmasse"
+            ]
+          ],
+          "erklaerung": "Die Werkzeuge stammen aus ganz verschiedenen Disziplinen: Zerspanung, Laser, Ultraschallfügen, Kunststoffverarbeitung."
+        },
+        {
+          "id": "k15.q12",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum werden Wafer vor dem Vereinzeln gedünnt?",
+          "optionen": [
+            "Für flachere Packages und um Chips stapeln zu können",
+            "Damit der Wafer stabiler wird",
+            "Damit die Transistoren schneller schalten"
+          ],
+          "richtig": 0,
+          "erklaerung": "Dünne Wafer sind dafür bruchempfindlicher: Das Vereinzeln wird schwieriger und die Randqualität wichtiger."
+        },
+        {
+          "id": "k15.c04",
+          "typ": "karte",
+          "vorne": "Back-End in einem Satz?",
+          "hinten": "Testen, dünnen, vereinzeln, Chip setzen, verbinden (Draht oder Flip-Chip), verkapseln, markieren, testen."
+        }
+      ]
+    },
+    {
+      "id": "k15.l04",
+      "titel": "Rechentraining: Chips pro Wafer und Sägestraße",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k15.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Wie viele Chips passen auf einen Wafer? Ein Chip mit Kantenlänge $a$ belegt zusammen mit der Sägestraße der Breite $s$ eine Zelle mit dem Rastermaß $p=a+s$. Teilt man die Waferfläche durch die Zellfläche, erhält man eine **Obergrenze**. Am Rand fallen angeschnittene Chips weg, die echte Zahl ist also kleiner.",
+            "Für das Verständnis reicht die Obergrenze, denn sie zeigt den entscheidenden Zusammenhang: $N\\propto1/p^2$. Eine schmalere Straße bringt bei kleinen Chips spürbar mehr Chips pro Wafer. Das ist ein wirtschaftliches Argument für Trennverfahren mit schmaler Schnittfuge ([[kerf]])."
+          ],
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k15.l04.b02",
+          "typ": "formel",
+          "latex": "N_\\mathrm{max}\\approx\\frac{\\pi d^2}{4\\,p^2},\\qquad p=a+s,\\qquad L_\\mathrm{Str}\\approx\\frac{2A}{p}",
+          "erklaerung": "Obergrenze der Chipzahl auf einem Wafer mit Durchmesser $d$ (ohne Randverluste) und Gesamtlänge der Sägestraßen $L_\\mathrm{Str}$ auf der Fläche $A=\\pi d^2/4$: In jeder der beiden Richtungen liegen Linien im Abstand $p$, jede Richtung trägt $A/p$ bei.",
+          "titel": "Chips pro Wafer und Straßenlänge",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k15.l04.b03",
+          "typ": "beispiel",
+          "aufgabe": "Ein 300-mm-Wafer trägt Chips mit $a=2\\,\\mathrm{mm}$. Wie viele Chips gewinnt man (Obergrenze), wenn die Straße von $s=80\\,\\mu\\mathrm{m}$ auf $20\\,\\mu\\mathrm{m}$ schrumpft? Alle Zahlen sind frei gewählt.",
+          "schritte": [
+            "$A=\\pi\\cdot(300\\,\\mathrm{mm})^2/4=70\\,686\\,\\mathrm{mm^2}$",
+            "$p_1=2{,}08\\,\\mathrm{mm}$: $N_1=70\\,686/2{,}08^2\\approx16\\,338$",
+            "$p_2=2{,}02\\,\\mathrm{mm}$: $N_2=70\\,686/2{,}02^2\\approx17\\,323$"
+          ],
+          "ergebnis": "Rund 985 Chips oder 6 % mehr pro Wafer, nur durch die schmalere Straße.",
+          "titel": "Rechenbeispiel",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k15.q13",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Obergrenze der Chipzahl aus Waferdurchmesser $d$ und Rastermaß $p$.",
+          "vorlage": "$N_\\mathrm{max}\\approx$ {{ [] $\\cdot$ [] // [] $\\cdot$ [] }}",
+          "richtig": [
+            "$\\pi$",
+            "$d^2$",
+            "$4$",
+            "$p^2$"
+          ],
+          "ablenker": [
+            "$2$",
+            "$p$",
+            "$d$"
+          ],
+          "erklaerung": "Kreisfläche $\\pi d^2/4$ geteilt durch die Zellfläche $p^2$.",
+          "tausch": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "id": "k15.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Obergrenze: Wie viele Chips mit $a=5\\,\\mathrm{mm}$ und $s=100\\,\\mu\\mathrm{m}$ passen auf einen 300-mm-Wafer?",
+          "antwort": 2718,
+          "einheit": "",
+          "toleranz": 0.02,
+          "erklaerung": "$p=5{,}1\\,\\mathrm{mm}$, $N=70\\,686/26{,}01\\approx2718$. Real bleiben wegen der Randverluste spürbar weniger.",
+          "tipp": "Erst $A=\\pi d^2/4$ in mm², dann durch $p^2$ teilen."
+        },
+        {
+          "id": "k15.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Chips mit $a=1\\,\\mathrm{mm}$: Um wie viel Prozent steigt die Obergrenze, wenn die Straße von $100\\,\\mu\\mathrm{m}$ auf $20\\,\\mu\\mathrm{m}$ schrumpft?",
+          "antwort": 16.3,
+          "einheit": "%",
+          "toleranz": 0.04,
+          "erklaerung": "$N_2/N_1=(p_1/p_2)^2=(1{,}10/1{,}02)^2=1{,}163$, also +16 %. Je kleiner der Chip, desto mehr zählt die Straße."
+        },
+        {
+          "id": "k15.q16",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie lang sind alle Sägestraßen zusammen auf einem 300-mm-Wafer mit Rastermaß $p=5\\,\\mathrm{mm}$? Antwort in m.",
+          "antwort": 28.3,
+          "einheit": "m",
+          "toleranz": 0.03,
+          "erklaerung": "$L\\approx2A/p=2\\cdot70\\,686\\,\\mathrm{mm^2}/5\\,\\mathrm{mm}=28\\,274\\,\\mathrm{mm}\\approx28\\,\\mathrm{m}$."
+        },
+        {
+          "id": "k15.q17",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Ein Laser fährt diese $28{,}3\\,\\mathrm{m}$ Straßen mit $200\\,\\mathrm{mm/s}$ ab, jede Straße zweimal. Wie lange dauert das reine Bearbeiten in Sekunden?",
+          "antwort": 283,
+          "einheit": "s",
+          "toleranz": 0.03,
+          "erklaerung": "$t=2\\cdot28\\,300\\,\\mathrm{mm}/(200\\,\\mathrm{mm/s})=283\\,\\mathrm{s}\\approx4{,}7\\,\\mathrm{min}$, ohne Beschleunigungs- und Ausrichtzeiten."
+        },
+        {
+          "id": "k15.c05",
+          "typ": "karte",
+          "vorne": "Wie hängt die Chipzahl pro Wafer vom Rastermaß ab?",
+          "hinten": "$N\\propto1/p^2$ mit $p=a+s$. Schmale Straßen lohnen sich vor allem bei kleinen Chips.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        }
+      ]
+    }
+  ]
+}

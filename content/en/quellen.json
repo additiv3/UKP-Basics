@@ -29,5 +29,54 @@
     "jahr": "ongoing",
     "titel": "Geometrical product specifications (GPS) – Surface texture: profile (21920) and areal (25178)",
     "ort": "Standard series (title in substance, check the edition)"
+  },
+  "tummala2001": {
+    "autoren": "R. R. Tummala (ed.)",
+    "ort": "McGraw-Hill, New York (textbook: packaging from wafer to system)"
+  },
+  "lau2018": {
+    "ort": "Springer, Singapore (textbook: chip-first, chip-last, carriers and warpage)"
+  },
+  "hir": {
+    "autoren": "IEEE Electronics Packaging Society et al.",
+    "jahr": "editions 2019, 2021, 2024",
+    "ort": "freely available via the IEEE EPS website"
+  },
+  "semieng-bumps": {
+    "autoren": "Semiconductor Engineering (trade press)",
+    "jahr": "check date",
+    "ort": "online article, industry information"
+  },
+  "semi-g86": {
+    "jahr": "ongoing (G86-0217, older edition G86-0303)",
+    "ort": "SEMI standard (check edition)"
+  },
+  "rung2025": {
+    "autoren": "M. LaRont in conversation with S. Rung (Schmoll Maschinen)",
+    "ort": "PCB007 Magazine, June 2025 (trade press)"
+  },
+  "intel2023": {
+    "ort": "press release, Intel Newsroom, September 2023"
+  },
+  "lamp2025": {
+    "autoren": "AG alp, TH Aschaffenburg, with partners (check author list)",
+    "ort": "LAMP 2025, poster P-12 (check proceedings)",
+    "kurz": "LAMP 2025, poster P-12"
+  },
+  "disco2023": {
+    "ort": "Technical Review TR23-01 (manufacturer report)"
+  },
+  "3dincites2023": {
+    "autoren": "3D InCites (trade press)",
+    "ort": "online article, June 2023"
+  },
+  "semidigest-debond": {
+    "kurz": "Semiconductor Digest (laser debonding)",
+    "autoren": "Semiconductor Digest (trade press)",
+    "jahr": "check date",
+    "ort": "online article"
+  },
+  "schoenfelder2007": {
+    "kurz": "Schönfelder et al. 2007"
   }
 }

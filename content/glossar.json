@@ -1710,6 +1710,606 @@
       ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
+    },
+    {
+      "id": "packaging",
+      "begriff": "Aufbau- und Verbindungstechnik (AVT)",
+      "englisch": "packaging",
+      "kurz": "Alles, was aus einem Chip ein einsetzbares Bauteil macht.",
+      "definition": "Die AVT (engl. packaging) verbindet den Chip elektrisch, weitet das Anschlussraster auf, führt Wärme ab, schützt ihn und macht ihn handhabbar und prüfbar.",
+      "siehe": [
+        "back-end",
+        "die",
+        "ic-substrat"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "back-end",
+      "begriff": "Back-End",
+      "englisch": "back end (assembly and test)",
+      "kurz": "Fertigungsschritte nach der Waferfab: dünnen, vereinzeln, montieren, verbinden, verkapseln, testen.",
+      "definition": "Das Back-End folgt auf die Waferfertigung (Front-End). Nicht zu verwechseln mit dem [[beol]], der Chip-Verdrahtung in der Fab.",
+      "siehe": [
+        "beol",
+        "osat",
+        "packaging"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "beol",
+      "begriff": "BEOL (Back-End-of-Line)",
+      "englisch": "back end of line",
+      "kurz": "Metallisierungsebenen auf dem Chip, gefertigt in der Fab.",
+      "definition": "Der BEOL umfasst die Kupferleitungen und Durchkontakte über den Transistoren, eingebettet in Dielektrika wie [[low-k]]. Er gehört trotz des Namens zum Front-End.",
+      "siehe": [
+        "low-k",
+        "back-end"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "wafer",
+      "begriff": "Wafer",
+      "englisch": "wafer",
+      "kurz": "Dünne Scheibe aus Halbleitermaterial, auf der viele Chips gleichzeitig entstehen.",
+      "definition": "Auf dem Wafer werden die Chips im Front-End gefertigt; im Back-End wird er gedünnt und in einzelne [[die|Dies]] vereinzelt.",
+      "siehe": [
+        "die",
+        "dicing",
+        "rueckduennen"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "die",
+      "begriff": "Chip (Die)",
+      "englisch": "die",
+      "kurz": "Ein einzelner, vereinzelter Halbleiterchip.",
+      "definition": "Ein Die ist ein Chip nach dem Vereinzeln, noch ohne Gehäuse. Mehrzahl: Dies.",
+      "siehe": [
+        "wafer",
+        "dicing"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "ritzgraben",
+      "begriff": "Ritzgraben (Sägestraße)",
+      "englisch": "dicing street",
+      "kurz": "Schmaler Bereich zwischen den Chips, in dem getrennt wird.",
+      "definition": "Im Ritzgraben (engl. dicing street oder scribe line) liegen oft Teststrukturen aus Metall und Dielektrikum. Seine Breite bestimmt mit, wie viele Chips auf einen Wafer passen.",
+      "siehe": [
+        "dicing",
+        "kerf",
+        "laser-grooving"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "kerf",
+      "begriff": "Schnittfuge (Kerf)",
+      "englisch": "kerf",
+      "kurz": "Durch das Trennverfahren abgetragene Breite.",
+      "definition": "Die Schnittfuge ist beim Sägen etwa so breit wie das Blatt; beim Stealth Dicing entsteht praktisch keine. Schmale Fugen erlauben schmale Straßen und mehr Chips pro Wafer.",
+      "siehe": [
+        "ritzgraben",
+        "stealth-dicing"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "dicing",
+      "begriff": "Vereinzeln (Dicing)",
+      "englisch": "dicing, singulation",
+      "kurz": "Trennen des Wafers in einzelne Chips.",
+      "definition": "Verfahren: Wafersäge, [[laser-grooving|Laser-Grooving]] plus Säge oder Plasma, [[stealth-dicing|Stealth Dicing]], Laser-Vollschnitt, [[plasma-dicing|Plasma-Dicing]].",
+      "siehe": [
+        "laser-grooving",
+        "stealth-dicing",
+        "plasma-dicing",
+        "chipping"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "low-k",
+      "begriff": "Low-k-Dielektrikum",
+      "englisch": "low-k dielectric",
+      "kurz": "Isolator mit kleiner Permittivität zwischen den Leitungen des Chips.",
+      "definition": "Low-k-Materialien senken die Leitungskapazität und damit RC-Verzögerung und Energie. Viele sind porös und mechanisch schwach; beim Sägen delaminieren sie leicht.",
+      "siehe": [
+        "beol",
+        "laser-grooving"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "drahtbonden",
+      "begriff": "Drahtbonden",
+      "englisch": "wire bonding",
+      "kurz": "Verbinden der Chip-Pads mit dünnen Drähten per Ultraschall, Wärme und Kraft.",
+      "definition": "Beim Drahtbonden liegt die aktive Seite oben, die Pads sitzen am Chiprand. Die Anschlusszahl wächst nur mit dem Umfang.",
+      "siehe": [
+        "flip-chip"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "flip-chip",
+      "begriff": "Flip-Chip",
+      "englisch": "flip chip",
+      "kurz": "Chip wird kopfüber mit Lothöckern in der Fläche aufgelötet.",
+      "definition": "Flip-Chip erlaubt viele Anschlüsse in einem Flächenraster und kurze Wege. Der Spalt wird mit [[underfill]] gefüllt.",
+      "siehe": [
+        "bump",
+        "underfill",
+        "drahtbonden"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "bump",
+      "begriff": "Lothöcker (Bump)",
+      "englisch": "bump",
+      "kurz": "Kleiner Löt- oder Kupferkontakt auf dem Chip für Flip-Chip-Verbindungen.",
+      "definition": "Bumps werden auf dem Wafer aufgebracht. Varianten: Lotkugeln, Kupfersäulen mit Lotkappe, Microbumps für Chipstapel.",
+      "siehe": [
+        "flip-chip",
+        "hybrid-bonding"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "underfill",
+      "begriff": "Unterfüllung (Underfill)",
+      "englisch": "underfill",
+      "kurz": "Gefülltes Epoxid im Spalt zwischen Flip-Chip und Substrat.",
+      "definition": "Der Underfill koppelt Chip und Substrat mechanisch und entlastet die Lötstellen von der Scherung durch unterschiedliche Wärmeausdehnung.",
+      "siehe": [
+        "flip-chip",
+        "cte"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "moldmasse",
+      "begriff": "Moldmasse (EMC)",
+      "englisch": "epoxy mold compound",
+      "kurz": "Epoxid mit Siliziumdioxid-Füllstoff zum Verkapseln von Chips.",
+      "definition": "Moldmasse schützt den Chip und bildet bei Fan-out den rekonstituierten Wafer. Für den Laser ist sie ein Verbund aus Polymer und transparentem Füllstoff.",
+      "siehe": [
+        "fan-out",
+        "underfill"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "bga",
+      "begriff": "Ball Grid Array (BGA)",
+      "englisch": "ball grid array",
+      "kurz": "Package mit Lotkugeln im Flächenraster auf der Unterseite.",
+      "definition": "Das BGA verbindet ein Package mit der Leiterplatte. Bei FCBGA sitzt ein Flip-Chip auf einem IC-Substrat mit BGA.",
+      "siehe": [
+        "ic-substrat",
+        "flip-chip"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "ic-substrat",
+      "begriff": "IC-Substrat",
+      "englisch": "IC substrate",
+      "kurz": "Mini-Leiterplatte zwischen Chip und Leiterplatte, aus Kern und Aufbaulagen.",
+      "definition": "Das IC-Substrat übersetzt das feine Chipraster auf das Leiterplattenraster. Seine Aufbaulagen aus [[abf|ABF]] und Kupfer sind über [[microvia|Microvias]] verbunden.",
+      "siehe": [
+        "abf",
+        "microvia",
+        "bga",
+        "glaskern-substrat"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "abf",
+      "begriff": "Aufbaufolie (ABF)",
+      "englisch": "build-up film",
+      "kurz": "Gefülltes Epoxid-Dielektrikum der Aufbaulagen von IC-Substraten.",
+      "definition": "ABF (Ajinomoto Build-up Film) wird auflaminiert, ausgehärtet und mit Microvias gebohrt. Der hohe Siliziumdioxid-Füllstoffanteil senkt die Wärmeausdehnung.",
+      "siehe": [
+        "ic-substrat",
+        "microvia"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "microvia",
+      "begriff": "Microvia",
+      "englisch": "microvia",
+      "kurz": "Kleines, meist lasergebohrtes Sackloch durch eine Aufbaulage.",
+      "definition": "Eine Microvia verbindet zwei benachbarte Lagen eines Substrats. Qualitätsmerkmale: Durchmesser, [[taper]], Wand, sauberer Boden, unversehrtes Kupferpad.",
+      "siehe": [
+        "ic-substrat",
+        "taper",
+        "perkussionsbohren"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "rdl",
+      "begriff": "Umverdrahtungslage (RDL)",
+      "englisch": "redistribution layer",
+      "kurz": "Feine Kupferverdrahtung in Polymer auf Wafer- oder Panel-Ebene.",
+      "definition": "Die RDL führt Anschlüsse vom Chip zu den Lotkugeln, bei [[wlp]] und [[fan-out]] mit lithografischen Verfahren.",
+      "siehe": [
+        "wlp",
+        "fan-out"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "wlp",
+      "begriff": "Wafer-Level-Packaging (WLP)",
+      "englisch": "wafer-level packaging",
+      "kurz": "Packaging aller Chips gleichzeitig auf dem Wafer, vor dem Vereinzeln.",
+      "definition": "Bei Fan-in (WLCSP) bleibt das Package so groß wie der Chip; bei [[fan-out]] wird die Fläche durch Moldmasse erweitert.",
+      "siehe": [
+        "fan-out",
+        "rdl"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "fan-out",
+      "begriff": "Fan-out",
+      "englisch": "fan-out",
+      "kurz": "Wafer-Level-Package, dessen Umverdrahtung über den Chiprand hinausreicht.",
+      "definition": "Chips werden mit Abstand in Moldmasse eingebettet; chip-first oder chip-last (RDL-first) auf temporären Trägern, die oft per [[laser-debonding]] gelöst werden.",
+      "siehe": [
+        "wlp",
+        "rdl",
+        "moldmasse",
+        "laser-debonding"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "interposer",
+      "begriff": "Interposer",
+      "englisch": "interposer",
+      "kurz": "Verdrahtungsträger, auf dem mehrere Chips nebeneinander sitzen (2.5D).",
+      "definition": "Interposer bestehen aus Silizium mit [[tsv|TSVs]], aus organischem Material oder aus Glas mit [[tgv|TGVs]].",
+      "siehe": [
+        "tsv",
+        "tgv",
+        "chiplet"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "tsv",
+      "begriff": "Through-Silicon Via (TSV)",
+      "englisch": "through-silicon via",
+      "kurz": "Senkrechte, metallgefüllte Durchkontaktierung durch Silizium.",
+      "definition": "TSVs verbinden gestapelte Chips oder die Ober- und Unterseite eines Silizium-Interposers.",
+      "siehe": [
+        "interposer",
+        "tgv"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "tgv",
+      "begriff": "Through-Glass Via (TGV)",
+      "englisch": "through-glass via",
+      "kurz": "Durchkontaktierung durch Glas, z. B. in Glaskern-Substraten oder Glasinterposern.",
+      "definition": "TGVs entstehen meist laserbasiert: durch [[lide|laserinduziertes Ätzen]] oder direktes UKP-Bohren. Kritisch sind Mikrorisse und Eigenspannungen.",
+      "siehe": [
+        "glaskern-substrat",
+        "lide",
+        "tsv"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "glaskern-substrat",
+      "begriff": "Glaskern-Substrat",
+      "englisch": "glass core substrate",
+      "kurz": "IC-Substrat mit einem Kern aus Glas statt glasfaserverstärktem Epoxid.",
+      "definition": "Als Vorteile werden eine an Silizium angenäherte Wärmeausdehnung, Ebenheit und hohe Lochdichte genannt; Herausforderung ist das rissfreie Bohren der [[tgv|TGVs]].",
+      "siehe": [
+        "tgv",
+        "ic-substrat",
+        "cte"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "hybrid-bonding",
+      "begriff": "Hybrid Bonding",
+      "englisch": "hybrid bonding",
+      "kurz": "Direkte Verbindung von Kupfer zu Kupfer und Dielektrikum zu Dielektrikum, ohne Lot.",
+      "definition": "Hybrid Bonding erlaubt sehr enge Raster für Chipstapel. Es verlangt extrem saubere, ebene Flächen und damit partikelarme Trennverfahren.",
+      "siehe": [
+        "bump",
+        "chiplet",
+        "plasma-dicing"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "chiplet",
+      "begriff": "Chiplet",
+      "englisch": "chiplet",
+      "kurz": "Kleiner Teilchip eines Systems, der mit anderen im Package eng verbunden wird.",
+      "definition": "Chiplets verbessern die Ausbeute und erlauben unterschiedliche Prozessknoten; verbunden werden sie über Interposer, Brücken oder Stapel.",
+      "siehe": [
+        "interposer",
+        "hybrid-bonding"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "osat",
+      "begriff": "OSAT",
+      "englisch": "outsourced semiconductor assembly and test",
+      "kurz": "Dienstleister für Montage und Test von Halbleitern.",
+      "definition": "OSATs übernehmen das [[back-end|Back-End]] für Chiphersteller und Foundries.",
+      "siehe": [
+        "back-end"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "cte",
+      "begriff": "Wärmeausdehnungskoeffizient (CTE)",
+      "englisch": "coefficient of thermal expansion",
+      "kurz": "Relative Längenänderung pro Kelvin, $\\alpha$ in 1/K.",
+      "definition": "Unterschiedliche CTE verbundener Werkstoffe erzeugen Spannungen, Lötstellenscherung und [[verzug|Verzug]].",
+      "siehe": [
+        "verzug",
+        "underfill"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "verzug",
+      "begriff": "Verzug (Warpage)",
+      "englisch": "warpage",
+      "kurz": "Biegung eines Packages oder Wafers durch unterschiedliche Wärmeausdehnung.",
+      "definition": "Verzug erschwert das Löten und Bonden; er ist ein Hauptproblem bei Moldwafern und großen Substraten.",
+      "siehe": [
+        "cte",
+        "fan-out"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "chipping",
+      "begriff": "Ausbrüche (Chipping)",
+      "englisch": "chipping",
+      "kurz": "Muschelförmige Ausbrüche an Chip- oder Glaskanten.",
+      "definition": "Chipping entsteht beim Trennen spröder Werkstoffe und senkt die [[die-festigkeit|Chipfestigkeit]]. Man unterscheidet Vorder- und Rückseitenausbrüche.",
+      "siehe": [
+        "die-festigkeit",
+        "dicing"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "die-festigkeit",
+      "begriff": "Chipfestigkeit (Die Strength)",
+      "englisch": "die strength",
+      "kurz": "Bruchfestigkeit eines vereinzelten Chips, bestimmt von Kantenfehlern.",
+      "definition": "Gemessen im Dreipunkt-Biegeversuch (SEMI G86) oder Ring-auf-Ring, ausgewertet nach [[weibull]]. Das Trennverfahren beeinflusst sie stark.",
+      "siehe": [
+        "weibull",
+        "chipping",
+        "bruchzaehigkeit"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "weibull",
+      "begriff": "Weibull-Verteilung",
+      "englisch": "Weibull distribution",
+      "kurz": "Statistik der Festigkeit spröder Werkstoffe nach dem schwächsten Glied.",
+      "definition": "$P_\\mathrm{f}=1-\\exp[-(\\sigma/\\sigma_0)^m]$ mit charakteristischer Festigkeit $\\sigma_0$ und Weibull-Modul $m$ (Streuung).",
+      "siehe": [
+        "die-festigkeit"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "laser-grooving",
+      "begriff": "Laser-Grooving",
+      "englisch": "laser grooving",
+      "kurz": "Öffnen des Schichtstapels in der Sägestraße mit dem Laser vor dem Trennen.",
+      "definition": "Der Laser entfernt Low-k, Metall und Passivierung; danach trennt eine Säge oder ein Plasma das Silizium. UKP-Pulse verringern den Wärmeeintrag.",
+      "siehe": [
+        "dicing",
+        "low-k",
+        "plasma-dicing"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "stealth-dicing",
+      "begriff": "Stealth Dicing",
+      "englisch": "stealth dicing",
+      "kurz": "Laser modifiziert das Innere eines Wafers, getrennt wird durch Dehnen der Folie.",
+      "definition": "Bei einer Wellenlänge, bei der Silizium weitgehend transparent ist, entsteht nur im Fokus eine modifizierte Schicht. Trocken, ohne Debris, kaum Schnittfuge.",
+      "siehe": [
+        "dicing",
+        "kerf",
+        "volumenmodifikation"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "plasma-dicing",
+      "begriff": "Plasma-Dicing",
+      "englisch": "plasma dicing",
+      "kurz": "Trockenätzen aller Sägestraßen gleichzeitig.",
+      "definition": "Plasma-Dicing vermeidet mechanische und thermische Kantenschäden, braucht aber metallfreie Straßen und eine saubere Maske; oft kombiniert mit [[laser-grooving]].",
+      "siehe": [
+        "dicing",
+        "laser-grooving"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "dbg",
+      "begriff": "Dicing before Grinding (DBG)",
+      "englisch": "dicing before grinding",
+      "kurz": "Erst anritzen oder modifizieren, dann dünnen, bis sich die Chips trennen.",
+      "definition": "Bei DBG und der Laser-Variante SDBG vollendet das Rückdünnen die Trennung. Das schont dünne Chips.",
+      "siehe": [
+        "rueckduennen",
+        "stealth-dicing"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "rueckduennen",
+      "begriff": "Rückdünnen (Backgrinding)",
+      "englisch": "backgrinding",
+      "kurz": "Abschleifen des Wafers von der Rückseite auf die Zieldicke.",
+      "definition": "Dünne Wafer erlauben flache Packages und Stapel, sind aber bruchempfindlicher.",
+      "siehe": [
+        "wafer",
+        "dbg"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "laser-debonding",
+      "begriff": "Laser-Debonding",
+      "englisch": "laser debonding",
+      "kurz": "Lösen eines Glasträgers durch Laserbestrahlung einer Trennschicht.",
+      "definition": "Ein UV-Laser strahlt durch den transparenten Träger; die Trennschicht zersetzt sich oberhalb einer Schwelle, der Träger löst sich mit geringer Kraft.",
+      "siehe": [
+        "fan-out"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "lide",
+      "begriff": "Laserinduziertes Ätzen (LIDE)",
+      "englisch": "laser-induced deep etching",
+      "kurz": "Laser modifiziert Glas, danach ätzt Flusssäure die Spur bevorzugt.",
+      "definition": "Verwandt mit [[sle|SLE]]: Ein UKP-Puls modifiziert das Glas über die Dicke; die Ätzdauer bestimmt den Durchmesser des [[tgv|TGV]].",
+      "siehe": [
+        "tgv",
+        "sle"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+    },
+    {
+      "id": "taper",
+      "begriff": "Konizität (Taper)",
+      "englisch": "taper",
+      "kurz": "Verengung eines Lochs von oben nach unten.",
+      "definition": "Meist als Durchmesserverhältnis $d_\\mathrm{bot}/d_\\mathrm{top}$ oder als Wandwinkel angegeben; die Definition unterscheidet sich zwischen Arbeiten.",
+      "siehe": [
+        "microvia",
+        "top-hat"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "top-hat",
+      "begriff": "Top-Hat-Profil",
+      "englisch": "top-hat profile",
+      "kurz": "Strahlprofil mit nahezu konstanter Intensität und steilen Flanken.",
+      "definition": "Ein Top-Hat-Profil wird mit refraktiven oder diffraktiven Strahlformern erzeugt; beim Bohren ergibt es steilere Wände als ein Gauß-Strahl.",
+      "siehe": [
+        "doe-element",
+        "taper",
+        "gauss-strahl"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "perkussionsbohren",
+      "begriff": "Perkussionsbohren",
+      "englisch": "percussion drilling",
+      "kurz": "Bohren mit vielen Pulsen auf dieselbe Stelle.",
+      "definition": "Beim Perkussionsbohren bestimmt der Fokus den Durchmesser; beim Wendelbohren (Trepanieren) fährt der Strahl eine Kreisbahn.",
+      "siehe": [
+        "microvia",
+        "tgv"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "csam",
+      "begriff": "Ultraschallmikroskopie (CSAM)",
+      "englisch": "scanning acoustic microscopy",
+      "kurz": "Zerstörungsfreie Abbildung von Delamination und Hohlräumen mit Ultraschall.",
+      "definition": "An Grenzflächen mit Luftspalt wird Ultraschall stark reflektiert; Ablösungen im Package werden so sichtbar.",
+      "siehe": [
+        "querschliff"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
+      "id": "querschliff",
+      "begriff": "Querschliff",
+      "englisch": "cross-section",
+      "kurz": "Präparierter Schnitt durch eine Probe zur Untersuchung im Mikroskop.",
+      "definition": "Querschliffe zeigen Via-Profile, Grenzflächen, Hohlräume und Taper; sie sind zerstörend.",
+      "siehe": [
+        "csam",
+        "microvia"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
     }
   ]
 }

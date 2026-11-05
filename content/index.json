@@ -25,6 +25,11 @@
       "id": "E",
       "titel": "Englisch",
       "beschreibung": "Wissenschaftliches Englisch: sprechen, schreiben, lesen."
+    },
+    {
+      "id": "F",
+      "titel": "Halbleiter-Packaging",
+      "beschreibung": "Vom Chip zum System: Packaging-Architekturen, Werkstoffe, Microvias, Glaskern, Trennen und Qualität."
     }
   ],
   "kapitel": [
@@ -177,6 +182,69 @@
       "titel": "Wissenschaftliches Englisch für die Photonik",
       "kurz": "Zahlen aussprechen, Aufbauten und Diagramme beschreiben, Abstracts, Gespräche",
       "voraussetzungen": []
+    },
+    {
+      "id": "k15",
+      "datei": "chapters/15-packaging-grundlagen.json",
+      "stufe": "F",
+      "titel": "Halbleiter-Packaging: vom Chip zum System",
+      "kurz": "Aufgaben des Packages, Front-End und Back-End, Sägestraße, Chips pro Wafer",
+      "voraussetzungen": []
+    },
+    {
+      "id": "k16",
+      "datei": "chapters/16-packaging-architekturen.json",
+      "stufe": "F",
+      "titel": "Packaging-Architekturen: von Drahtbond bis Chiplet",
+      "kurz": "Drahtbond, Flip-Chip, BGA, Fan-out, 2.5D, 3D, Hybrid Bonding",
+      "voraussetzungen": [
+        "k15"
+      ]
+    },
+    {
+      "id": "k17",
+      "datei": "chapters/17-packaging-werkstoffe.json",
+      "stufe": "F",
+      "titel": "Werkstoffe und Thermomechanik im Package",
+      "kurz": "Gefüllte Polymere, CTE-Fehlanpassung, Chipfestigkeit, Weibull, Schichtverbund",
+      "voraussetzungen": [
+        "k15",
+        "k08"
+      ]
+    },
+    {
+      "id": "k18",
+      "datei": "chapters/18-substrat-microvias-glaskern.json",
+      "stufe": "F",
+      "titel": "IC-Substrat, Microvias und Glaskern",
+      "kurz": "Aufbaulagen, CO₂/UV/UKP-Bohren, Burst, Top-Hat, TGV",
+      "voraussetzungen": [
+        "k16",
+        "k17",
+        "k07"
+      ]
+    },
+    {
+      "id": "k19",
+      "datei": "chapters/19-trennen-loesen.json",
+      "stufe": "F",
+      "titel": "Trennen und Lösen: Dicing und Debonding",
+      "kurz": "Säge, Laser-Grooving, Stealth Dicing, Plasma, Laser-Debonding",
+      "voraussetzungen": [
+        "k16",
+        "k07"
+      ]
+    },
+    {
+      "id": "k20",
+      "datei": "chapters/20-qualitaet-forschung.json",
+      "stufe": "F",
+      "titel": "Qualität, Zuverlässigkeit und Forschungslandschaft",
+      "kurz": "Messmethoden, Ausfallmechanismen, Ausbeute, Konferenzen, Leseliste",
+      "voraussetzungen": [
+        "k18",
+        "k19"
+      ]
     }
   ]
 }

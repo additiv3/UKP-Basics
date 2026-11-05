@@ -1,0 +1,318 @@
+{
+  "titel": "IC substrate, microvias and glass core",
+  "einleitung": "The core chapter for ultrashort pulses in packaging: how an IC substrate is built layer by layer, why microvias are drilled with CO₂, UV and ultrashort pulse lasers, what burst and top hat do and how through-glass vias for glass core substrates are made. Along the way you get to know the work of the AG alp at TH Aschaffenburg on microvias and TGVs. Numbers from papers come from their abstracts and carry the 'unchecked' badge until you have read the full texts.",
+  "ziele": [
+    "Describe the layer build-up of an IC substrate and the role of the microvia",
+    "Compare CO₂, UV ns and ultrashort pulse lasers for via drilling",
+    "Explain burst, pulse duration and top hat as control knobs for taper and drilling time",
+    "Classify glass core substrates and the routes to the TGV",
+    "Estimate hole diameter, drilling time and throughput"
+  ],
+  "lektionen": {
+    "k18.l01": "The IC substrate and its microvias",
+    "k18.l02": "Three lasers for one hole: CO₂, UV ns, USP",
+    "k18.l03": "USP microvias: burst, top hat and heat",
+    "k18.l04": "Glass core substrates and through-glass vias",
+    "k18.l05": "Calculation training: hole diameter, pulses and throughput"
+  },
+  "blocks": {
+    "k18.l01.b01": {
+      "inhalt": [
+        "An [[ic-substrat|IC substrate]] grows layer by layer. In the middle sits a stiff **core** of glass-fibre-reinforced epoxy with mechanically drilled, copper-plated through holes. **Build-up layers** are stacked on both sides. One layer is typically made like this:",
+        "1. Laminate and cure a dielectric film ([[abf|ABF]]).\n2. **Drill [[microvia|microvias]]:** blind holes through the dielectric down to the copper pad of the layer below, with the laser.\n3. **Desmear:** remove resin residues chemically, roughen the walls.\n4. Deposit a thin electroless copper seed layer.\n5. Photoresist, exposure and electroplated copper build the lines and fill the vias (semi-additive process, SAP), then strip resist and seed layer.\n6. Next layer.",
+        "A microvia therefore always connects only **two neighbouring layers**. Across several layers vias are offset (*staggered*) or stacked directly on top of each other (*stacked*). A large substrate contains a very large number of such vias, so in drilling quality and throughput count equally."
+      ]
+    },
+    "k18.l01.b02": {
+      "alt": "Cross-section of a microvia: laser beam from above, conical hole through the dielectric with top diameter d_top, bottom diameter d_bot and depth h, copper pad below.",
+      "unterschrift": "Schematic. The wall is inclined; the taper describes how much the hole narrows towards the bottom."
+    },
+    "k18.l01.b03": {
+      "inhalt": [
+        "Quality features of a microvia: top and bottom diameter, from these the **[[taper]]**, a smooth wall without voids, no undercut at the interface, a **clean bottom** without resin residue and a copper pad that is neither drilled through nor melted.",
+        "Caution: the term *taper* is defined differently, as diameter ratio $d_\\mathrm{bot}/d_\\mathrm{top}$ (then 100 % is a cylindrical hole) or as wall angle. Check in every paper which definition applies."
+      ]
+    },
+    "k18.l01.b04": {
+      "erklaerung": "Taper as diameter ratio and wall angle $\\theta$ against the vertical for a truncated-cone hole of depth $h$.",
+      "titel": "Via taper",
+      "sammlung": "Packaging"
+    },
+    "k18.q01": {
+      "frage": "Put the build-up of a substrate layer in the right order.",
+      "items": [
+        "Laminate ABF",
+        "Laser microvias",
+        "Desmear",
+        "Copper seed layer",
+        "Lithography and plating"
+      ],
+      "erklaerung": "First dielectric, then hole, then clean, then copper.",
+      "oben": "first",
+      "unten": "last"
+    },
+    "k18.q02": {
+      "frage": "A microvia has $d_\\mathrm{top}=50\\,\\mu\\mathrm{m}$ and $d_\\mathrm{bot}=40\\,\\mu\\mathrm{m}$. How large is the taper as diameter ratio? Answer in %.",
+      "erklaerung": "$40/50=0.8=80\\,\\%$."
+    },
+    "k18.q03": {
+      "frage": "Same via, depth $h=30\\,\\mu\\mathrm{m}$. How large is the wall angle against the vertical, in degrees?",
+      "erklaerung": "$\\tan\\theta=(50-40)/(2\\cdot30)=0.167$, $\\theta=9.5°$.",
+      "tipp": "Calculator: atan, convert the result to degrees ($\\cdot180/\\pi$)."
+    },
+    "k18.q04": {
+      "frage": "Why is a clean via bottom so important?",
+      "optionen": [
+        "Resin residues prevent reliable electrical contact to the copper pad",
+        "So that the via shines",
+        "Because the bottom is ground off later"
+      ],
+      "erklaerung": "The plated fill must bond metallically to the pad. Residues lead to failures, often only during thermal cycling."
+    },
+    "k18.c01": {
+      "vorne": "What is a microvia?",
+      "hinten": "Small, mostly laser-drilled blind hole through one build-up layer down to the copper pad below, then plated. Connects two neighbouring layers."
+    },
+    "k18.l02.b01": {
+      "inhalt": [
+        "Microvias have been laser drilled industrially for a long time. Three laser types compete:",
+        "- **CO₂ lasers** (wavelength in the far infrared): polymers absorb strongly, **copper reflects almost completely**. The process therefore stops by itself at the copper pad. High throughput, but because of the long wavelength large focus diameters and thermal residues.\n- **UV ns lasers** (typically 355 nm): copper and polymer both absorb. This also allows the top copper layer to be opened, but the natural stop is missing: stopping in a controlled way on thin copper is difficult.\n- **Hybrid:** the UV laser opens the top copper, the CO₂ laser drills the dielectric and stops at the pad.",
+        "**Ultrashort pulse lasers** (ps, fs) are being added because vias are getting smaller and the requirements on wall and bottom are rising: small focus diameters, hardly any heat-affected zone and a stop via the **threshold contrast** between dielectric and copper (K17). In return the pulse energy is smaller, and throughput must come from high repetition rates, burst and beam shaping."
+      ]
+    },
+    "k18.l02.b02": {
+      "erklaerung": "Focus radius for the same optics (focal length $f$, raw beam radius $w_\\mathrm{in}$, beam quality $M^2$, see K09): the smallest achievable focus scales with the wavelength.",
+      "titel": "Focus scales with λ",
+      "sammlung": "Packaging"
+    },
+    "k18.q05": {
+      "frage": "Same optics and beam quality: by what factor is the focus of a CO₂ laser ($10.6\\,\\mu\\mathrm{m}$) larger than that of a UV laser ($355\\,\\mathrm{nm}$)?",
+      "erklaerung": "$10{,}600/355\\approx30$. That is why very small vias are hardly achievable with CO₂."
+    },
+    "k18.q06": {
+      "frage": "Match the laser to its property in via drilling.",
+      "paare": [
+        [
+          "CO₂",
+          "Natural stop because copper reflects"
+        ],
+        [
+          "UV ns",
+          "Opens copper, but no natural stop"
+        ],
+        [
+          "Hybrid UV + CO₂",
+          "Open copper with UV, dielectric with CO₂"
+        ],
+        [
+          "USP (ps, fs)",
+          "Small vias, stop via threshold contrast"
+        ]
+      ],
+      "erklaerung": "Each type has its place; USP wins where vias must be small and walls clean."
+    },
+    "k18.q07": {
+      "frage": "Why does the CO₂ laser stop by itself at the copper pad?",
+      "optionen": [
+        "Copper reflects almost all radiation in the far infrared",
+        "Copper is transparent to CO₂ radiation",
+        "The laser switches off via a sensor"
+      ],
+      "erklaerung": "Metals strongly reflect long wavelengths (K03, Fresnel and free electrons)."
+    },
+    "k18.q08": {
+      "frage": "What is the main problem of the UV ns laser when drilling onto thin copper?",
+      "optionen": [
+        "It absorbs in copper and polymer, there is no natural stop",
+        "It cannot ablate polymer",
+        "Its focus is too large"
+      ],
+      "erklaerung": "The same absorption that allows opening the top copper layer endangers the pad at the bottom."
+    },
+    "k18.c02": {
+      "vorne": "CO₂, UV ns or USP for microvias?",
+      "hinten": "**CO₂:** fast, stops at copper, but large spots. **UV ns:** opens copper, no natural stop. **USP:** small, clean vias, stop via threshold contrast, throughput via burst and beam shaping."
+    },
+    "k18.l03.b01": {
+      "inhalt": [
+        "In **[[perkussionsbohren|percussion drilling]]** many pulses hit the same spot until the hole is finished. The number of pulses and their sequence determine quality and time. This is where the research of the AG alp at TH Aschaffenburg comes in (Franz, Rung, Hellmann and colleagues):",
+        "- **Circuit board material (FR-4):** comparison of ps and fs pulses when drilling microvias down to the inner copper layer. A pulse duration of 2 ps proved favourable: small glass fibre protrusions and a precise stop at the inner copper layer.\n- **ABF with MHz burst:** heat accumulation in the burst causes voids and delamination of the ABF layer. At comparable clearance, two pulses per burst reduced the taper by up to 19.5 % compared with single pulses, and the drilling time per via fell by 16.7 %.\n- **Top hat plus burst:** with a [[top-hat]] profile the drilling time fell by 18.2 % at similar taper.",
+        "The numbers come from the abstracts of the papers and only hold for their test conditions. Read the full texts before you cite them."
+      ]
+    },
+    "k18.l03.b02": {
+      "inhalt": [
+        "Why does a top-hat profile help against taper? With a Gaussian beam the fluence falls steadily towards the edge. Material is removed only where the local fluence lies above the threshold. The hole diameter follows the **threshold contour** $D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$ (D² method, K07). At the edge the fluence is only just above the threshold, little is removed per pulse there: the wall becomes shallow.",
+        "A top-hat profile has an almost constant fluence and steep flanks. Almost everywhere in the spot the same amount is removed, the wall becomes steeper. The price: beam shapers (refractive or diffractive) are sensitive to alignment, and the profile only holds in a limited range around the focal plane."
+      ]
+    },
+    "k18.l03.b03": {
+      "inhalt": "Three control knobs for USP microvias: **pulse duration** (fibres, stop at copper), **burst and repetition rate** (speed vs. heat accumulation), **beam profile** (Gaussian vs. top hat, i.e. taper)."
+    },
+    "k18.q09": {
+      "frage": "According to the Aschaffenburg ABF study, what caused voids and delamination in MHz burst drilling?",
+      "optionen": [
+        "Heat accumulation in the burst",
+        "Too small pulse energy",
+        "The polarization",
+        "Reflection at the copper"
+      ],
+      "erklaerung": "Pulses at MHz spacing leave the polymer no time to cool down (compare the criterion in K07)."
+    },
+    "k18.q10": {
+      "frage": "Why does a Gaussian beam lead to an inclined wall in percussion drilling?",
+      "optionen": [
+        "At the edge the fluence is only just above the threshold, little is removed there per pulse",
+        "The Gaussian beam is hotter at the edge",
+        "Because Gaussian beams are always divergent"
+      ],
+      "erklaerung": "Ablation depth per pulse $\\propto\\ln(F/F_\\mathrm{th})$ (K07): towards the edge it goes to zero."
+    },
+    "k18.q11": {
+      "frage": "Numerical example: a via needs $120\\,\\mu\\mathrm{s}$ of pure drilling time in single-pulse mode. With burst it drops by 16.7 %. How many vias per second are then possible in theory (without positioning time)?",
+      "erklaerung": "$t=120\\cdot(1-0.167)=100\\,\\mu\\mathrm{s}$, i.e. about $10{,}000$ vias per second. In practice scanner and stage motion are the limit."
+    },
+    "k18.q12": {
+      "frage": "Fill in.",
+      "text": "A ___ profile has steep flanks and reduces the taper. In MHz burst the risk of ___ rises. For FR-4 a pulse duration in the ___ range proved favourable.",
+      "luecken": [
+        {
+          "optionen": [
+            "top-hat",
+            "Gaussian"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "heat accumulation",
+            "interference"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "picosecond",
+            "nanosecond"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "All three statements refer to the cited papers and their conditions."
+    },
+    "k18.c03": {
+      "vorne": "What did the Aschaffenburg work on USP microvias show?",
+      "hinten": "FR-4: 2 ps favourable (small fibre protrusions, precise copper stop). ABF burst: heat accumulation creates voids and delamination; two pulses per burst reduce taper and drilling time. Top hat plus burst: shorter drilling time at similar taper."
+    },
+    "k18.l04.b01": {
+      "inhalt": [
+        "Organic cores reach their limits for very large packages: warpage, dimensional stability and hole density. The answer the industry has been working on for some years is a **[[glaskern-substrat|glass core substrate]]**: the core is a thin glass plate, the build-up layers remain organic. In 2023 Intel presented glass core substrates for the second half of the decade and named as advantages a thermal expansion closer to silicon, tunable stiffness, great flatness and an about ten times higher density of through holes than with organic cores.",
+        "Glass also appears as an **interposer** and as a carrier. As early as 2014, Ostholt and colleagues described glass as an interposer material with good mechanical strength, low losses and high chemical resistance and named **hole formation** as the main obstacle."
+      ]
+    },
+    "k18.l04.b02": {
+      "inhalt": [
+        "For **[[tgv|through-glass vias]]** (TGV) there are three laser routes:",
+        "1. **Laser-induced etching** ([[lide|LIDE]], related to [[sle|SLE]] from K10): a single ultrashort pulse modifies the glass over its whole thickness, then hydrofluoric acid etches the modified regions much faster than the unchanged glass. Ostholt et al. report about 5000 TGV/s structuring speed, diameters of 10 to 50 µm depending on etching time and a taper below 5°.\n2. **Direct USP drilling:** percussion or helical drilling with fs or ps pulses, without wet chemistry. The challenges are **microcracks, chipping at the back side and residual stresses** from thermal shock. This is exactly where the AG alp works, on Borofloat 33 glass for glass core packaging.\n3. **Other lasers:** excimer (193 nm) for very small holes, CO₂ with the risk of thermally induced cracks.",
+        "A review from 2025 names laser-based processes as the most widely used method for via formation in glass."
+      ]
+    },
+    "k18.l04.b03": {
+      "erklaerung": "Aspect ratio of a through hole (glass thickness $t$, diameter $d$) and pure structuring time for $N_\\mathrm{Via}$ holes at a rate $\\dot N$ (holes per second).",
+      "titel": "TGV: aspect ratio and time",
+      "sammlung": "Packaging"
+    },
+    "k18.q13": {
+      "frage": "How does laser-induced etching (LIDE) for TGVs work?",
+      "optionen": [
+        "An ultrashort pulse modifies the glass through its thickness, then hydrofluoric acid preferentially etches the modified track",
+        "The laser evaporates the whole hole in one step",
+        "A diamond drill follows the laser track"
+      ],
+      "erklaerung": "Two-step process like SLE: the laser decides where, chemistry removes."
+    },
+    "k18.q14": {
+      "frage": "A glass core is $500\\,\\mu\\mathrm{m}$ thick, the TGVs have $50\\,\\mu\\mathrm{m}$ diameter. How large is the aspect ratio?",
+      "erklaerung": "$\\mathrm{AR}=500/50=10$."
+    },
+    "k18.q15": {
+      "frage": "Numerical example: a panel needs $10^6$ TGVs. How many seconds does the pure modification take at $5000$ TGV/s?",
+      "erklaerung": "$10^6/5000=200\\,\\mathrm{s}$. On top comes the etching time, which runs in batch for many panels at once."
+    },
+    "k18.q16": {
+      "frage": "Match the TGV process to its typical challenge.",
+      "paare": [
+        [
+          "Laser-induced etching",
+          "Wet chemistry with hydrofluoric acid, etching time sets the diameter"
+        ],
+        [
+          "Direct USP drilling",
+          "Microcracks, back-side chipping, residual stress"
+        ],
+        [
+          "CO₂ laser",
+          "Thermally induced cracks"
+        ]
+      ],
+      "erklaerung": "All routes struggle with the brittleness of glass; they differ in where the effort lies."
+    },
+    "k18.q17": {
+      "frage": "Which advantages did Intel name in 2023 for glass core substrates? (multiple choice)",
+      "optionen": [
+        "Thermal expansion closer to silicon",
+        "Higher density of through holes",
+        "Great flatness",
+        "Glass is insensitive to fracture"
+      ],
+      "erklaerung": "Brittleness remains the weak point; that is why crack-free drilling and cutting of glass is a research topic."
+    },
+    "k18.c04": {
+      "vorne": "Three laser routes to a TGV?",
+      "hinten": "Laser-induced etching (modification plus HF etching), direct USP drilling (no chemistry, risk of microcracks), excimer or CO₂ (small or thermal cracks)."
+    },
+    "k18.c05": {
+      "vorne": "Why a glass core instead of an organic core?",
+      "hinten": "Thermal expansion closer to silicon, stiff and flat, higher hole density. Drawback: brittle, TGVs must be made crack-free."
+    },
+    "k18.l05.b01": {
+      "inhalt": [
+        "To finish, you connect the via geometry with the tools from K01, K07 and K09: peak fluence, threshold contour and repetition rate. All numbers are freely chosen."
+      ]
+    },
+    "k18.l05.b02": {
+      "erklaerung": "Diameter of the threshold contour of a Gaussian beam (rearranged D² method from K07) and pure drilling time of a percussion hole with $N_\\mathrm{P}$ pulses at the repetition rate $f$.",
+      "titel": "Hole diameter and drilling time",
+      "sammlung": "Packaging"
+    },
+    "k18.q18": {
+      "frage": "$w_0=10\\,\\mu\\mathrm{m}$, $F_0=2\\,\\mathrm{J/cm^2}$, $F_\\mathrm{th}=0.5\\,\\mathrm{J/cm^2}$. How large is the diameter of the threshold contour in µm?",
+      "erklaerung": "$D=10\\cdot\\sqrt{2\\ln4}=10\\cdot\\sqrt{2.773}=16.7\\,\\mu\\mathrm{m}$."
+    },
+    "k18.q19": {
+      "frage": "Plot: diameter of the threshold contour over the peak fluence ($w_0=10\\,\\mu\\mathrm{m}$, $F_\\mathrm{th}=0.5\\,\\mathrm{J/cm^2}$). What peak fluence does a hole with $D=20\\,\\mu\\mathrm{m}$ need? Answer in J/cm².",
+      "erklaerung": "From $D=20$: $2\\ln(F_0/0.5)=4$, so $F_0=0.5\\,e^2=3.7\\,\\mathrm{J/cm^2}$. The curve flattens: for larger holes the required fluence rises exponentially.",
+      "tipp": "Move the cursor to $D=20$ or rearrange the formula for $F_0$."
+    },
+    "k18.q20": {
+      "frage": "A via needs $N_\\mathrm{P}=200$ pulses at $f=400\\,\\mathrm{kHz}$. How long does the pure drilling take, in µs?",
+      "erklaerung": "$t=200/400{,}000\\,\\mathrm{s^{-1}}=5\\cdot10^{-4}\\,\\mathrm{s}=500\\,\\mu\\mathrm{s}$."
+    },
+    "k18.q21": {
+      "frage": "Same vias, plus $300\\,\\mu\\mathrm{s}$ scanner jump time per via. How many vias per second does the machine achieve?",
+      "erklaerung": "$1/(500+300)\\,\\mu\\mathrm{s}=1250\\,\\mathrm{s^{-1}}$. The idle time eats almost 40 % of the time."
+    },
+    "k18.q22": {
+      "frage": "Numerical example: a substrate panel needs $2\\cdot10^6$ microvias, the machine achieves $1250$ vias/s. How many minutes does one panel take?",
+      "erklaerung": "$2\\cdot10^6/1250=1600\\,\\mathrm{s}\\approx27\\,\\mathrm{min}$, per layer. Several layers and panels multiply this: throughput is a hard competitive factor."
+    },
+    "k18.q23": {
+      "frage": "Build the square of the diameter of the threshold contour of a Gaussian beam (D² method).",
+      "erklaerung": "$D^2=2w_0^2\\ln(F_0/F_\\mathrm{th})$ from K07; its square root gives $D$."
+    },
+    "k18.c06": {
+      "vorne": "How does the hole diameter depend on the fluence (Gaussian beam)?",
+      "hinten": "$D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$: only logarithmic. Larger holes via more fluence get expensive quickly; better adapt the focus or the path (helical drilling)."
+    }
+  }
+}

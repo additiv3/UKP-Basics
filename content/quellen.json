@@ -184,6 +184,181 @@
       "jahr": "2021",
       "titel": "CODATA recommended values of the fundamental physical constants: 2018",
       "ort": "Reviews of Modern Physics 93, 025010"
+    },
+    {
+      "id": "tummala2001",
+      "kurz": "Tummala 2001",
+      "autoren": "R. R. Tummala (Hrsg.)",
+      "jahr": "2001",
+      "titel": "Fundamentals of Microsystems Packaging",
+      "ort": "McGraw-Hill, New York (Lehrbuch: Packaging vom Wafer bis zum System)"
+    },
+    {
+      "id": "lau2022",
+      "kurz": "Lau 2022",
+      "autoren": "J. H. Lau",
+      "jahr": "2022",
+      "titel": "Recent Advances and Trends in Advanced Packaging",
+      "ort": "IEEE Transactions on Components, Packaging and Manufacturing Technology 12(2), 228–252"
+    },
+    {
+      "id": "lau2018",
+      "kurz": "Lau 2018",
+      "autoren": "J. H. Lau",
+      "jahr": "2018",
+      "titel": "Fan-Out Wafer-Level Packaging",
+      "ort": "Springer, Singapur (Lehrbuch: chip-first, chip-last, Träger und Verzug)",
+      "doi": "10.1007/978-981-10-8884-1"
+    },
+    {
+      "id": "hir",
+      "kurz": "HIR (IEEE EPS)",
+      "autoren": "IEEE Electronics Packaging Society u. a.",
+      "jahr": "Ausgaben 2019, 2021, 2024",
+      "titel": "Heterogeneous Integration Roadmap",
+      "ort": "frei verfügbar über die Webseite der IEEE EPS"
+    },
+    {
+      "id": "maex2003",
+      "kurz": "Maex et al. 2003",
+      "autoren": "K. Maex, M. R. Baklanov, D. Shamiryan, F. Iacopi, S. H. Brongersma, Z. S. Yanovitskaya",
+      "jahr": "2003",
+      "titel": "Low dielectric constant materials for microelectronics",
+      "ort": "Journal of Applied Physics 93(11), 8793–8841",
+      "doi": "10.1063/1.1567460"
+    },
+    {
+      "id": "semieng-bumps",
+      "kurz": "Semiconductor Engineering",
+      "autoren": "Semiconductor Engineering (Fachpresse)",
+      "jahr": "Datum prüfen",
+      "titel": "Bumps vs. Hybrid Bonding For Advanced Packaging",
+      "ort": "Online-Fachartikel, Angaben aus der Industrie"
+    },
+    {
+      "id": "schoenfelder2007",
+      "kurz": "Schönfelder et al. 2007",
+      "autoren": "S. Schönfelder, J. Bagdahn et al.",
+      "jahr": "2007",
+      "titel": "Investigations of the influence of dicing techniques on the strength properties of thin silicon",
+      "ort": "Microelectronics Reliability 47, 168–178"
+    },
+    {
+      "id": "semi-g86",
+      "kurz": "SEMI G86",
+      "autoren": "SEMI",
+      "jahr": "laufend (G86-0217, ältere Fassung G86-0303)",
+      "titel": "Test Method for Measurement of Chip (Die) Strength by Mean of 3-Point Bending",
+      "ort": "SEMI-Norm (Ausgabestand prüfen)"
+    },
+    {
+      "id": "franz2022",
+      "kurz": "Franz et al. 2022",
+      "autoren": "D. Franz, T. Häfner, T. Kunz, G.-L. Roth, S. Rung, C. Esen, R. Hellmann",
+      "jahr": "2022",
+      "titel": "Ultrashort Pulsed Laser Drilling of Printed Circuit Board Materials",
+      "ort": "Materials 15(11), 3932",
+      "doi": "10.3390/ma15113932"
+    },
+    {
+      "id": "franz2023",
+      "kurz": "Franz et al. 2023",
+      "autoren": "D. Franz, T. Häfner, K. Bischoff, J. Helm, T. Kunz, S. Rung, C. Esen, R. Hellmann",
+      "jahr": "2023",
+      "titel": "Picosecond laser microvia drilling of ABF material using MHz burst mode",
+      "ort": "Materials Research Express 10(9), 096301",
+      "doi": "10.1088/2053-1591/acf7b0"
+    },
+    {
+      "id": "rung2025",
+      "kurz": "PCB007 2025 (Interview S. Rung)",
+      "autoren": "M. LaRont im Gespräch mit S. Rung (Schmoll Maschinen)",
+      "jahr": "2025",
+      "titel": "The Evolution of Picosecond Laser Drilling",
+      "ort": "PCB007 Magazine, Juni 2025 (Fachpresse)"
+    },
+    {
+      "id": "ostholt2014",
+      "kurz": "Ostholt et al. 2014",
+      "autoren": "R. Ostholt, N. Ambrosius, R. A. Krüger",
+      "jahr": "2014",
+      "titel": "High speed through glass via manufacturing technology for interposer",
+      "ort": "Electronics System-Integration Technology Conference (ESTC) 2014, IEEE"
+    },
+    {
+      "id": "intel2023",
+      "kurz": "Intel 2023",
+      "autoren": "Intel Corporation",
+      "jahr": "2023",
+      "titel": "Intel unveils industry-leading glass substrates",
+      "ort": "Pressemitteilung, Intel Newsroom, September 2023"
+    },
+    {
+      "id": "nimbalkar2025",
+      "kurz": "Nimbalkar et al. 2025",
+      "autoren": "P. Nimbalkar et al.",
+      "jahr": "2025",
+      "titel": "A Review of Glass Substrate Technologies",
+      "ort": "Chips 4(3), 37 (MDPI)"
+    },
+    {
+      "id": "lamp2025",
+      "kurz": "LAMP 2025, Beitrag P-12",
+      "autoren": "AG alp, TH Aschaffenburg, mit Partnern (Autorenliste prüfen)",
+      "jahr": "2025",
+      "titel": "Ultrashort pulsed laser drilling of through-glass vias for glass core packaging",
+      "ort": "LAMP 2025, Posterbeitrag P-12 (Tagungsband prüfen)"
+    },
+    {
+      "id": "kumagai2007",
+      "kurz": "Kumagai et al. 2007",
+      "autoren": "M. Kumagai, N. Uchiyama, E. Ohmura, R. Sugiura, K. Atsumi, K. Fukumitsu",
+      "jahr": "2007",
+      "titel": "Advanced Dicing Technology for Semiconductor Wafer—Stealth Dicing",
+      "ort": "IEEE Transactions on Semiconductor Manufacturing 20(3), 259–265",
+      "doi": "10.1109/TSM.2007.901849"
+    },
+    {
+      "id": "ohmura2008",
+      "kurz": "Ohmura et al. 2008",
+      "autoren": "E. Ohmura et al.",
+      "jahr": "2008",
+      "titel": "Analysis of Processing Mechanism in Stealth Dicing of Ultra Thin Silicon Wafer",
+      "ort": "Journal of Advanced Mechanical Design, Systems, and Manufacturing 2(4), 540–549",
+      "doi": "10.1299/jamdsm.2.540"
+    },
+    {
+      "id": "disco2023",
+      "kurz": "DISCO TR23-01",
+      "autoren": "DISCO Corporation",
+      "jahr": "2023",
+      "titel": "Die Strength After Ultrashort Pulse Laser Processing",
+      "ort": "Technical Review TR23-01 (Herstellerbericht)"
+    },
+    {
+      "id": "evertsen2023",
+      "kurz": "Evertsen et al. 2023",
+      "autoren": "R. Evertsen et al.",
+      "jahr": "2023",
+      "titel": "Characterization of a UV-USP Laser Grooving Process Combined with Plasma Dicing to Support Next Generation Advanced Packaging Trends",
+      "ort": "IMAPS Symposium 2023, Proceedings",
+      "doi": "10.4071/001c.94490"
+    },
+    {
+      "id": "3dincites2023",
+      "kurz": "3D InCites 2023",
+      "autoren": "3D InCites (Fachpresse)",
+      "jahr": "2023",
+      "titel": "Plasma Dicing Enables Challenging Applications Including D2W Hybrid Bonding",
+      "ort": "Online-Fachartikel, Juni 2023"
+    },
+    {
+      "id": "semidigest-debond",
+      "kurz": "Semiconductor Digest (Laser-Debonding)",
+      "autoren": "Semiconductor Digest (Fachpresse)",
+      "jahr": "Datum prüfen",
+      "titel": "Laser debonding for ultrathin and stacked fan out packages",
+      "ort": "Online-Fachartikel"
     }
   ]
 }

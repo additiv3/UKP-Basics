@@ -1,0 +1,277 @@
+{
+  "titel": "Packaging architectures: from wire bond to chiplet",
+  "einleitung": "From the classical leadframe to the chip stack: here you get to know the most important package types, why the interconnect pitches keep getting finer and where glass, polymers and laser processes come in. Pitch values come from trade press and overview literature and are marked as unchecked; the calculations use freely chosen numbers.",
+  "ziele": [
+    "Compare wire bonding and flip chip and explain the role of the underfill",
+    "Distinguish leadframe, substrate and wafer-level packages",
+    "Classify fan-in, fan-out, chip-first and chip-last",
+    "Describe 2.5D, 3D, chiplets and hybrid bonding and estimate interconnect densities"
+  ],
+  "lektionen": {
+    "k16.l01": "First-level interconnect: wire or flip chip",
+    "k16.l02": "Leadframe, substrate and ball grid array",
+    "k16.l03": "Wafer-level packaging and fan-out",
+    "k16.l04": "2.5D, 3D and chiplets"
+  },
+  "blocks": {
+    "k16.l01.b01": {
+      "inhalt": [
+        "In **[[drahtbonden|wire bonding]]** the chip sits with its active side up. A thin wire of gold, copper or aluminium is welded with ultrasound, heat and force onto the pad and then onto the leadframe or substrate. The process is robust and cheap but has a limit: the pads sit only at the **edge** of the chip. The number of connections therefore grows only with the perimeter.",
+        "In **[[flip-chip]]** the chip is turned over. It carries solder [[bump|bumps]] or copper pillars over its whole area and is placed face down and soldered. Advantages: connections across the **area** (many more I/O), short electrical paths, and the back side is free for the heat sink.",
+        "The gap between chip and substrate is filled with **[[underfill]]**, a filled epoxy. It spreads the thermomechanical stresses caused by the different thermal expansion of chip and substrate over the whole area instead of only over the solder joints (more in K17)."
+      ]
+    },
+    "k16.l01.b02": {
+      "erklaerung": "Connection count of a square chip with edge length $a$: one row of pads at the edge with pitch $p_\\mathrm{R}$ versus an area array with pitch $p_\\mathrm{F}$. The edge grows linearly, the area quadratically with $a$.",
+      "titel": "Connections: perimeter vs. area",
+      "sammlung": "Packaging"
+    },
+    "k16.q01": {
+      "frage": "Numerical example: chip $a=10\\,\\mathrm{mm}$, one row of pads at the edge with $50\\,\\mu\\mathrm{m}$ pitch. About how many pads fit?",
+      "erklaerung": "$N=4\\cdot10\\,\\mathrm{mm}/0.05\\,\\mathrm{mm}=800$."
+    },
+    "k16.q02": {
+      "frage": "Same chip, but flip chip with an area array of $150\\,\\mu\\mathrm{m}$ pitch. About how many bumps fit?",
+      "erklaerung": "$N=(10/0.15)^2=66.7^2\\approx4444$. Despite a three times coarser pitch, more than five times as many connections."
+    },
+    "k16.q03": {
+      "frage": "What is the main task of the underfill?",
+      "optionen": [
+        "Spread thermomechanical stresses from the solder joints over the whole area",
+        "Connect the chip to the substrate electrically",
+        "Keep light away from the chip",
+        "Attach the solder balls to the circuit board"
+      ],
+      "erklaerung": "Chip and substrate expand differently. Without underfill the solder joints carry all the shear and fatigue quickly."
+    },
+    "k16.q04": {
+      "frage": "Match.",
+      "paare": [
+        [
+          "Wire bonding",
+          "Pads at the edge, active side up"
+        ],
+        [
+          "Flip chip",
+          "Bumps across the area, active side down"
+        ],
+        [
+          "Underfill",
+          "Filled epoxy in the gap under the chip"
+        ],
+        [
+          "Copper pillar",
+          "Allows a tighter pitch than a solder ball"
+        ]
+      ],
+      "erklaerung": "The copper pillar keeps its shape during soldering, only the thin solder cap melts; hence tighter pitches are possible."
+    },
+    "k16.c01": {
+      "vorne": "Why does flip chip scale better than wire bonding?",
+      "hinten": "Connections across the area ($N\\propto a^2$) instead of at the edge ($N\\propto a$), shorter paths, back side free for cooling."
+    },
+    "k16.l02.b01": {
+      "inhalt": [
+        "**Leadframe packages** (e.g. QFN, SOIC) are built on a stamped or etched copper frame: the chip sits on a pad, wires lead to the terminals, everything is overmoulded. Cheap, robust, but with a limited number of terminals.",
+        "For many connections the chip sits on an **[[ic-substrat|IC substrate]]**, a kind of mini circuit board with very fine lines. On its underside the substrate carries a field of solder balls: the **[[bga|ball grid array]]** (BGA). Processors and graphics chips typically sit on such substrates as *flip-chip BGA* (FCBGA).",
+        "The substrate translates the fine pitch of the chip to the coarse pitch of the board. It consists of a stiff **core** and **build-up layers** of dielectric and copper on top of it, connected by laser-drilled [[microvia|microvias]]. Exactly there lies a main application field of the ultrashort pulse laser (K18).",
+        "In **power electronics** (inverters, e-mobility), in contrast, the chips often sit on **ceramic substrates** (e.g. aluminium oxide, aluminium nitride or silicon nitride with bonded copper). There the focus is on heat removal and insulation at high currents."
+      ]
+    },
+    "k16.l02.b02": {
+      "alt": "Cross-section of a flip-chip BGA: chip with bumps and underfill on a substrate made of core and build-up layers with microvias, below it solder balls on the circuit board.",
+      "unterschrift": "Schematic, not to scale. The pitches get coarser from top to bottom: bumps, microvias, solder balls."
+    },
+    "k16.q05": {
+      "frage": "What characterizes a ball grid array (BGA)?",
+      "optionen": [
+        "Solder balls in an area array on the underside of the package",
+        "Terminal leads on two sides of the package",
+        "A glass housing around the chip"
+      ],
+      "erklaerung": "As with flip chip, just one level lower: area instead of perimeter."
+    },
+    "k16.q06": {
+      "frage": "Match the package type.",
+      "paare": [
+        [
+          "QFN",
+          "Leadframe, terminals at the edge of the underside"
+        ],
+        [
+          "FCBGA",
+          "Flip chip on substrate with solder balls"
+        ],
+        [
+          "WLCSP",
+          "Package as large as the chip"
+        ],
+        [
+          "Ceramic substrate with copper",
+          "Power electronics"
+        ]
+      ],
+      "erklaerung": "WLCSP = *wafer level chip scale package*, see next lesson."
+    },
+    "k16.q07": {
+      "frage": "Fill in.",
+      "text": "The IC substrate translates the ___ pitch of the chip to the ___ pitch of the board. Its build-up layers are connected by ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "fine",
+            "coarse"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "coarse",
+            "fine"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "microvias",
+            "wire bonds"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "Microvias are small, mostly laser-drilled blind holes through one build-up layer that are subsequently plated with copper."
+    },
+    "k16.c02": {
+      "vorne": "Structure of an IC substrate?",
+      "hinten": "Stiff core plus build-up layers of dielectric and copper, connected by microvias; chip bumps on top, solder balls (BGA) underneath."
+    },
+    "k16.l03.b01": {
+      "inhalt": [
+        "In **[[wlp|wafer-level packaging]]** (WLP) the chips are not packaged one by one but all at once on the wafer; only afterwards is it singulated. The fine wiring is made as a **[[rdl|redistribution layer]]** (RDL): copper lines in polymer, with lithographic processes as in the fab.",
+        "- **Fan-in (WLCSP):** RDL and solder balls lie within the chip area. The package is as small as the chip, but the connection count is limited by the chip area.\n- **[[fan-out]]:** the chips are embedded with spacing in [[moldmasse|mould compound]] (reconstituted wafer or panel). The RDL may extend beyond the chip edge, more balls fit underneath.",
+        "Two basic flows: in **chip-first** the chips are embedded first, then the RDL is built on top (examples: eWLB, InFO). In **chip-last** (RDL-first) the RDL is built and tested on a carrier first, then only tested chips are placed. Both need a **temporary carrier**, often made of glass, which is removed again at the end, for example by laser ([[laser-debonding]], K19).",
+        "A perennial issue is the **[[verzug|warpage]]** of the moulded wafers: mould compound, silicon and copper expand differently."
+      ]
+    },
+    "k16.q08": {
+      "frage": "Put an RDL-first (chip-last) flow in the right order.",
+      "items": [
+        "Apply release layer on glass carrier",
+        "Build and test RDL",
+        "Place tested chips",
+        "Mould",
+        "Release carrier by laser",
+        "Attach solder balls and singulate"
+      ],
+      "erklaerung": "The advantage of RDL-first: only tested chips end up on tested wiring.",
+      "oben": "first",
+      "unten": "last"
+    },
+    "k16.q09": {
+      "frage": "What is the core difference between fan-in and fan-out?",
+      "optionen": [
+        "In fan-out the redistribution extends beyond the chip edge into the mould compound",
+        "Fan-out uses wire bonds",
+        "Fan-in always needs a substrate"
+      ],
+      "erklaerung": "More area for balls, so more connections, without a classical substrate."
+    },
+    "k16.q10": {
+      "frage": "Why is a glass carrier practical for laser debonding?",
+      "optionen": [
+        "Glass is transparent at the laser wavelength, the beam reaches the release layer through the carrier",
+        "Glass conducts heat particularly well",
+        "Glass is conductive"
+      ],
+      "erklaerung": "The energy is absorbed selectively in the thin release layer, not in the component."
+    },
+    "k16.q11": {
+      "frage": "Numerical example: a chip measures $8\\times8\\,\\mathrm{mm^2}$, the fan-out package $12\\times12\\,\\mathrm{mm^2}$. By what factor does the number of solder balls rise for the same ball pitch (area to area)?",
+      "erklaerung": "$(12/8)^2=2.25$."
+    },
+    "k16.c03": {
+      "vorne": "Chip-first or chip-last?",
+      "hinten": "**Chip-first:** embed chips in mould compound first, then RDL. **Chip-last (RDL-first):** build and test RDL on a carrier first, then place tested chips. Both use temporary carriers."
+    },
+    "k16.l04.b01": {
+      "inhalt": [
+        "A large chip has a yield problem: the larger the area, the more likely a defect sits on it. **[[chiplet|Chiplets]]** split the system into smaller chips that are tested individually and then tightly connected. Bonus: each part can be made in the suitable process node.",
+        "- **2.5D:** chips lie side by side on an **[[interposer]]** (silicon with through-vias, organic or glass) or are connected via embedded silicon bridges.\n- **3D:** chips are stacked, e.g. memory stacks (HBM). Vertical connections are **[[tsv|through-silicon vias]]** (TSV), between the levels microbumps or **[[hybrid-bonding|hybrid bonding]]** (direct copper-copper and dielectric-dielectric bonding without solder).",
+        "The trend is towards ever tighter pitches. Trade press puts microbumps at about $40\\,\\mu\\mathrm{m}$, hybrid bonding aims at $10\\,\\mu\\mathrm{m}$ and below. The tighter the pitch, the more sensitive the assembly is to particles and edge chipping, and the stricter the requirements on singulation."
+      ]
+    },
+    "k16.l04.b02": {
+      "erklaerung": "Connection density $n$ (connections per area) of a square array with pitch $p$. Half the pitch means four times the density.",
+      "titel": "Interconnect density",
+      "sammlung": "Packaging"
+    },
+    "k16.q12": {
+      "frage": "Sort the interconnect technologies by their typical pitch.",
+      "items": [
+        "Solder ball on the BGA",
+        "Flip-chip bump",
+        "Microbump",
+        "Hybrid bonding"
+      ],
+      "erklaerung": "From the board to the chip stack the pitch keeps getting finer. Concrete numbers depend strongly on the product.",
+      "oben": "coarse",
+      "unten": "fine"
+    },
+    "k16.q13": {
+      "frage": "By what factor does the interconnect density rise when the pitch drops from $40\\,\\mu\\mathrm{m}$ to $10\\,\\mu\\mathrm{m}$?",
+      "erklaerung": "$n\\propto1/p^2$: $(40/10)^2=16$."
+    },
+    "k16.q14": {
+      "frage": "How many connections per mm² does a square array with $p=10\\,\\mu\\mathrm{m}$ have?",
+      "erklaerung": "$1\\,\\mathrm{mm}/10\\,\\mu\\mathrm{m}=100$ per direction, i.e. $100^2=10{,}000$ per mm²."
+    },
+    "k16.q15": {
+      "frage": "What is the most important economic reason for chiplets?",
+      "optionen": [
+        "Smaller chips have higher yield, and each part can be made in the suitable process node",
+        "Chiplets need no package",
+        "Chiplets are always wire bonded"
+      ],
+      "erklaerung": "A defect costs only a small chiplet instead of the whole large chip."
+    },
+    "k16.q16": {
+      "frage": "Match.",
+      "paare": [
+        [
+          "TSV",
+          "Vertical via through silicon"
+        ],
+        [
+          "Interposer",
+          "Wiring carrier under several chips"
+        ],
+        [
+          "Hybrid bonding",
+          "Direct Cu-Cu bond without solder"
+        ],
+        [
+          "TGV",
+          "Through-via in glass"
+        ]
+      ],
+      "erklaerung": "TGVs in glass are a central laser topic (K18)."
+    },
+    "k16.q17": {
+      "frage": "Why does hybrid bonding tighten the requirements on singulation?",
+      "optionen": [
+        "Particles and edge chipping disturb the direct, solder-free bond of the very smooth surfaces",
+        "Because the chips are then made of glass",
+        "Because hybrid bonding only works with wire bonds"
+      ],
+      "erklaerung": "Without solder there is nothing to compensate unevenness. That is why clean separation processes (e.g. laser grooving plus plasma) are being studied here."
+    },
+    "k16.c04": {
+      "vorne": "2.5D vs. 3D?",
+      "hinten": "**2.5D:** chips side by side on an interposer or bridge. **3D:** chips stacked, connected via TSV and microbumps or hybrid bonding."
+    },
+    "k16.c05": {
+      "vorne": "Halve the pitch: what happens to the interconnect density?",
+      "hinten": "It quadruples, $n=1/p^2$."
+    }
+  }
+}

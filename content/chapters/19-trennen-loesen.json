@@ -1,0 +1,467 @@
+{
+  "id": "k19",
+  "titel": "Trennen und Lösen: Dicing und Debonding",
+  "einleitung": "Wie aus einem Wafer einzelne Chips werden und wie man dünne Bauteile wieder von ihrem Träger löst: Säge, Laser-Grooving, Stealth Dicing, Laser-Vollschnitt und Plasma im Vergleich, dazu Laser-Debonding, Glastrennen und das Öffnen von Moldmasse. Ergebnisse aus Herstellerberichten und Fachpresse sind als ungeprüft markiert.",
+  "ziele": [
+    "Die Grenzen der Wafersäge benennen",
+    "Laser-Grooving, Stealth Dicing, Laser-Vollschnitt und Plasma-Dicing unterscheiden",
+    "Sequenzielle und parallele Trennverfahren nach Zeit vergleichen",
+    "Laser-Debonding und weitere Laserprozesse im Back-End erklären"
+  ],
+  "weiterlesen": [
+    "kumagai2007",
+    "ohmura2008",
+    "disco2023",
+    "evertsen2023",
+    "schoenfelder2007"
+  ],
+  "lektionen": [
+    {
+      "id": "k19.l01",
+      "titel": "Mechanisches Sägen und seine Grenzen",
+      "minuten": 11,
+      "blocks": [
+        {
+          "id": "k19.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Der Klassiker des [[dicing|Vereinzelns]] ist die **Wafersäge** (*blade dicing*): ein sehr dünnes, schnell drehendes Trennblatt mit Diamantkorn, gekühlt mit Wasser. Es fährt Straße für Straße ab. Die Schnittfuge ([[kerf]]) ist etwa so breit wie das Blatt.",
+            "Für dich ist das Zerspanung spröder Werkstoffe: Jedes Korn erzeugt Mikrorisse, an der Ober- und Unterkante brechen Muscheln aus ([[chipping]]). Mit den neuen Chipgenerationen stößt die Säge an Grenzen:",
+            "- **Low-k-Stapel** in der Straße platzen ab oder delaminieren unter den Schnittkräften (K15).\n- **Metall-Teststrukturen** in der Straße setzen das Blatt zu und erhöhen die Kräfte.\n- **Dünne Wafer** brechen leichter, Rückseitenausbrüche reichen relativ tiefer in den Chip.\n- **Harte Werkstoffe** wie SiC verschleißen das Blatt und erzwingen langsame Vorschübe.\n- **Hybrid Bonding** verlangt partikelfreie, glatte Kanten (K16)."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k19.q01",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne das Problem beim Sägen seiner Ursache zu.",
+          "paare": [
+            [
+              "Delamination am Chiprand",
+              "Schwach haftende Low-k-Schichten"
+            ],
+            [
+              "Zugesetztes Blatt",
+              "Metall-Teststrukturen in der Straße"
+            ],
+            [
+              "Schneller Blattverschleiß",
+              "Sehr harte Werkstoffe wie SiC"
+            ],
+            [
+              "Rückseitenausbrüche",
+              "Mikrorisse durch das Diamantkorn"
+            ]
+          ],
+          "erklaerung": "Fast jede Grenze der Säge ist ein Einstiegspunkt für Laser- oder Plasmaverfahren."
+        },
+        {
+          "id": "k19.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum sind dünne Wafer beim Sägen besonders kritisch?",
+          "optionen": [
+            "Ausbrüche reichen relativ tiefer, und die Chipfestigkeit sinkt",
+            "Dünne Wafer sind härter",
+            "Dünne Wafer leiten keinen Strom"
+          ],
+          "richtig": 0,
+          "erklaerung": "Bei kleiner Dicke $h$ wirkt jeder Kantenfehler stärker, und die Biegespannung wächst mit $1/h^2$ (K17)."
+        },
+        {
+          "id": "k19.c01",
+          "typ": "karte",
+          "vorne": "Fünf Grenzen der Wafersäge?",
+          "hinten": "Low-k-Delamination, Metall in der Straße, dünne Wafer, harte Werkstoffe (SiC), Sauberkeit für Hybrid Bonding.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k19.l02",
+      "titel": "Laser-Grooving: erst öffnen, dann trennen",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k19.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Beim **[[laser-grooving|Laser-Grooving]]** entfernt der Laser zuerst den empfindlichen Schichtstapel (Low-k, Metall, Passivierung) in der Straße. Erst danach trennt die Säge (oder ein Plasma) das Silizium darunter. Typisch sind **zwei äußere Rillen**, deren Außenkanten weiter auseinander liegen als das Sägeblatt breit ist, oft mit einem Abtrag dazwischen. So berührt das Blatt keine Low-k-Schicht mehr.",
+            "Mit **ns-Pulsen** ist das Verfahren seit Langem in der Fertigung. Die Wärmeeinflusszone und Schmelze an den Rillenkanten können jedoch die Chipfestigkeit senken und Ablagerungen ([[debris]]) erzeugen, an denen später das Blatt hängen bleibt. **UKP-Pulse** reduzieren den Wärmeeintrag. Ein technischer Bericht des Anlagenherstellers DISCO meldet nach UKP-Grooving plus Sägen eine höhere Chipfestigkeit als nach reinem Sägen und als nach konventionellem Laser-Grooving plus Sägen.",
+            "Für **Hybrid Bonding** wurde UV-UKP-Grooving mit anschließendem Plasma-Dicing untersucht: Laser allein liefert keine gratfreie Kante, Plasma braucht eine saubere Maskenöffnung und eine metallfreie Straße. Die Kombination erfüllt beides."
+          ],
+          "verifiziert": false,
+          "quelle": "disco2023"
+        },
+        {
+          "id": "k19.l02.b02",
+          "typ": "quelle",
+          "refs": [
+            "disco2023",
+            "evertsen2023"
+          ]
+        },
+        {
+          "id": "k19.q03",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe Grooving plus Sägen in die richtige Reihenfolge.",
+          "items": [
+            "Schutzschicht auf die Waferoberfläche",
+            "Zwei äußere Rillen lasern",
+            "Material zwischen den Rillen abtragen",
+            "Silizium mit dem Blatt trennen",
+            "Reinigen und Schutzschicht entfernen"
+          ],
+          "erklaerung": "Eine wasserlösliche Schutzschicht fängt Ablagerungen auf und wird am Ende abgewaschen (gängige Praxis, Details je Anlage).",
+          "oben": "zuerst",
+          "unten": "zuletzt"
+        },
+        {
+          "id": "k19.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum liegen die Außenkanten der Laserrillen weiter auseinander als das Sägeblatt breit ist?",
+          "optionen": [
+            "Damit das Blatt keine verbliebene Low-k-Schicht berührt",
+            "Damit der Laser schneller fertig ist",
+            "Weil das Blatt sonst zu kalt wird"
+          ],
+          "richtig": 0,
+          "erklaerung": "Jede Berührung mit Low-k kann Delamination in den Chip hinein auslösen."
+        },
+        {
+          "id": "k19.q05",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Blattbreite $25\\,\\mu\\mathrm{m}$, Positioniertoleranz $\\pm6\\,\\mu\\mathrm{m}$, Sicherheitsabstand $5\\,\\mu\\mathrm{m}$ je Seite. Wie weit müssen die Außenkanten der Rillen mindestens auseinander liegen? Antwort in µm.",
+          "antwort": 47,
+          "einheit": "µm",
+          "toleranz": 0,
+          "erklaerung": "$25+2\\cdot6+2\\cdot5=47\\,\\mu\\mathrm{m}$. Toleranzen addieren sich auf beiden Seiten; die Straße muss das hergeben.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k19.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum kombiniert man für Hybrid Bonding UKP-Grooving mit Plasma-Dicing?",
+          "optionen": [
+            "Laser öffnet Metall und Dielektrikum sauber, Plasma trennt das Silizium gratfrei und ohne mechanische Schädigung",
+            "Weil Plasma allein schneller ist als jede Säge",
+            "Weil der Laser Silizium nicht abtragen kann"
+          ],
+          "richtig": 0,
+          "erklaerung": "Plasma ätzt Silizium, aber kein Metall in der Straße; der Laser bereitet die Straße vor.",
+          "verifiziert": false,
+          "quelle": "evertsen2023"
+        },
+        {
+          "id": "k19.c02",
+          "typ": "karte",
+          "vorne": "Was bringt UKP beim Laser-Grooving?",
+          "hinten": "Weniger Wärmeeintrag als ns-Grooving: weniger Schmelze und Debris, laut Herstellerbericht höhere Chipfestigkeit; mit Plasma kombinierbar für Hybrid Bonding.",
+          "verifiziert": false,
+          "quelle": "disco2023"
+        }
+      ]
+    },
+    {
+      "id": "k19.l03",
+      "titel": "Stealth Dicing und Laser-Vollschnitt",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k19.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "**[[stealth-dicing|Stealth Dicing]]** (Kumagai et al. 2007) dreht das Prinzip um: Der Laser arbeitet mit einer Wellenlänge, bei der Silizium weitgehend **transparent** ist, und wird **ins Innere** des Wafers fokussiert. Nur nahe dem Fokus wird Energie absorbiert, dort entsteht eine modifizierte Schicht mit Rissen. Eine Oberfläche wird dabei nicht abgetragen. Danach wird die Sägefolie gedehnt, und die Risse laufen bis an die Oberflächen: Die Chips trennen sich.",
+            "Vorteile laut der Originalarbeit: trockener Prozess, keine Ablagerungen, keine unerwünschte Wärmeschädigung der Oberfläche; angewendet auf sehr dünne Wafer. Eine Folgearbeit (Ohmura et al. 2008) analysierte den Mechanismus an 50 µm dünnen Wafern und fand, dass bei geeigneter Fokustiefe die thermische Stoßwelle im Inneren bleibt. Bei dickeren Wafern werden mehrere Schichten in verschiedenen Tiefen geschrieben.",
+            "Grenzen: Metall in der Straße blockiert den Strahl (dann von der Rückseite einstrahlen), und Low-k an der Oberfläche braucht unter Umständen trotzdem ein Grooving. Varianten: *Stealth Dicing before Grinding* (SDBG), bei dem das anschließende Dünnen die Trennung vollendet.",
+            "Beim **Laser-Vollschnitt** (*ablation dicing*) trägt der Laser dagegen das Material über die ganze Dicke ab, meist in vielen Überfahrten. Das erzeugt eine Schnittfuge, Ablagerungen und eine Randzone, ist aber flexibel, etwa für dünne Wafer oder Verbunde."
+          ],
+          "verifiziert": false,
+          "quelle": "kumagai2007"
+        },
+        {
+          "id": "k19.l03.b02",
+          "typ": "merke",
+          "inhalt": "Stealth Dicing nutzt dieselbe Physik wie die Volumenmodifikation in Glas (K06, K10): Absorption nur dort, wo die Intensität im Fokus groß genug ist. Kein Abtrag an der Oberfläche, kaum Schnittfuge.",
+          "verifiziert": false,
+          "quelle": "kumagai2007"
+        },
+        {
+          "id": "k19.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Silizium hat eine Bandlücke von etwa $1{,}12\\,\\mathrm{eV}$. Ab welcher Wellenlänge ist die Photonenenergie kleiner als die Bandlücke? Antwort in nm.",
+          "antwort": 1107,
+          "einheit": "nm",
+          "toleranz": 0.02,
+          "erklaerung": "$\\lambda=hc/E_\\mathrm{g}=1240\\,\\mathrm{nm\\,eV}/1{,}12\\,\\mathrm{eV}\\approx1107\\,\\mathrm{nm}$. Nahe dieser Kante absorbiert Silizium als indirekter Halbleiter nur schwach.",
+          "tipp": "$hc\\approx1240\\,\\mathrm{nm\\cdot eV}$ (K01)."
+        },
+        {
+          "id": "k19.q08",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe den Ablauf des Stealth Dicing in die richtige Reihenfolge.",
+          "items": [
+            "Wafer auf Sägefolie im Rahmen",
+            "Laser im Inneren entlang der Straßen fokussieren",
+            "Weitere Schichten in anderen Tiefen schreiben",
+            "Folie dehnen, Chips trennen sich",
+            "Chips aufnehmen"
+          ],
+          "erklaerung": "Die eigentliche Trennung geschieht mechanisch beim Dehnen; der Laser setzt nur die Sollbruchstelle.",
+          "oben": "zuerst",
+          "unten": "zuletzt"
+        },
+        {
+          "id": "k19.q09",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne das Trennverfahren seinem Kennzeichen zu.",
+          "paare": [
+            [
+              "Wafersäge",
+              "Diamantblatt, Wasser, Schnittfuge etwa blattbreit"
+            ],
+            [
+              "Laser-Grooving",
+              "Schichtstapel öffnen, Silizium danach trennen"
+            ],
+            [
+              "Stealth Dicing",
+              "Fokus im Inneren, Trennung durch Dehnen"
+            ],
+            [
+              "Laser-Vollschnitt",
+              "Abtrag über die ganze Dicke in vielen Überfahrten"
+            ],
+            [
+              "Plasma-Dicing",
+              "Alle Straßen gleichzeitig trocken geätzt"
+            ]
+          ],
+          "erklaerung": "Fünf Werkzeuge, oft kombiniert."
+        },
+        {
+          "id": "k19.q10",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist eine typische Grenze des Stealth Dicing?",
+          "optionen": [
+            "Metall in der Straße blockiert den Strahl",
+            "Es braucht viel Kühlwasser",
+            "Es erzeugt eine breite Schnittfuge"
+          ],
+          "richtig": 0,
+          "erklaerung": "Deshalb wird oft von der Rückseite eingestrahlt, wo keine Metallisierung liegt.",
+          "verifiziert": false,
+          "quelle": "kumagai2007"
+        },
+        {
+          "id": "k19.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Ein $300\\,\\mu\\mathrm{m}$ dicker Wafer braucht pro Straße so viele Modifikationsschichten, dass jede etwa $50\\,\\mu\\mathrm{m}$ Dicke abdeckt. Wie viele Überfahrten pro Straße sind nötig?",
+          "antwort": 6,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$300/50=6$. Dünne Wafer brauchen weniger Überfahrten, das ist ein Grund, warum Stealth Dicing gut zu dünnen Wafern passt."
+        },
+        {
+          "id": "k19.c03",
+          "typ": "karte",
+          "vorne": "Wie funktioniert Stealth Dicing?",
+          "hinten": "Wellenlänge, bei der Si transparent ist, Fokus im Inneren, modifizierte Schicht mit Rissen, dann Folie dehnen. Trocken, ohne Debris, kaum Schnittfuge; Metall in der Straße stört.",
+          "verifiziert": false,
+          "quelle": "kumagai2007"
+        }
+      ]
+    },
+    {
+      "id": "k19.l04",
+      "titel": "Plasma-Dicing und der Vergleich",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k19.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Beim **[[plasma-dicing|Plasma-Dicing]]** wird der Wafer maskiert, nur die Straßen bleiben frei. Ein Tiefenätzprozess (reaktives Ionenätzen mit abwechselnden Ätz- und Passivierschritten) trägt dann **alle Straßen gleichzeitig** ab. Keine Kräfte, keine Wärmeeinflusszone, glatte Flanken, beliebige Chipformen und sehr schmale Straßen sind möglich. Untersuchungen (u. a. von imec, berichtet in der Fachpresse) fanden nach Plasma-Dicing eine höhere Chipfestigkeit als nach anderen Verfahren.",
+            "Der Haken: Plasma ätzt Silizium, aber keine Metall-Teststrukturen. Die Straße muss vorher frei sein, und die Maske braucht eine saubere Öffnung. Hier kommt der Laser zurück (K19, Lektion 2).",
+            "Ein zweiter, wirtschaftlicher Unterschied: Säge und Laser arbeiten **sequenziell**, ihre Zeit wächst mit der Straßenlänge. Plasma arbeitet **parallel**, die Ätzzeit hängt von der Tiefe, nicht von der Zahl der Chips ab. Je kleiner die Chips, desto mehr lohnt sich Plasma."
+          ],
+          "verifiziert": false,
+          "quelle": "3dincites2023"
+        },
+        {
+          "id": "k19.l04.b02",
+          "typ": "formel",
+          "latex": "t_\\mathrm{seq}\\approx\\frac{n\\,L_\\mathrm{Str}}{v}=\\frac{2nA}{p\\,v},\\qquad p^{*}=\\frac{2nA}{v\\,t_\\mathrm{Plasma}}",
+          "erklaerung": "Sequenzielle Bearbeitungszeit für $n$ Überfahrten mit Vorschub $v$ über alle Straßen ($L_\\mathrm{Str}\\approx2A/p$, K15). Unterhalb des Rastermaßes $p^{*}$ ist ein Plasmaprozess mit fester Zeit $t_\\mathrm{Plasma}$ schneller. Nebenzeiten sind vernachlässigt.",
+          "titel": "Sequenziell gegen parallel",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k19.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "300-mm-Wafer ($A=70\\,686\\,\\mathrm{mm^2}$) mit Chips im Raster $p=1\\,\\mathrm{mm}$: Wie lang sind alle Straßen zusammen? Antwort in m.",
+          "antwort": 141.4,
+          "einheit": "m",
+          "toleranz": 0.02,
+          "erklaerung": "$L=2A/p=141\\,372\\,\\mathrm{mm}\\approx141\\,\\mathrm{m}$."
+        },
+        {
+          "id": "k19.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Laser mit $v=100\\,\\mathrm{mm/s}$, eine Überfahrt pro Straße, Plasmaprozess $t_\\mathrm{Plasma}=30\\,\\mathrm{min}$ pro Wafer. Unterhalb welchen Rastermaßes ist Plasma schneller? Antwort in mm.",
+          "antwort": 0.785,
+          "einheit": "mm",
+          "toleranz": 0.03,
+          "erklaerung": "$p^{*}=2A/(v\\,t)=141\\,372/(100\\cdot1800)\\approx0{,}79\\,\\mathrm{mm}$. Für sehr kleine Chips gewinnt der parallele Prozess.",
+          "tipp": "30 min = 1800 s. Die Zeiten gleichsetzen und nach $p$ auflösen."
+        },
+        {
+          "id": "k19.q14",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist der größte Vorteil des Plasma-Dicing für die Chipqualität?",
+          "optionen": [
+            "Keine mechanische und thermische Schädigung der Kante, dadurch hohe Chipfestigkeit",
+            "Es ätzt auch Metall in der Straße",
+            "Es braucht keine Maske"
+          ],
+          "richtig": 0,
+          "erklaerung": "Genau deshalb kombiniert man: Laser für Metall und Dielektrikum, Plasma für das Silizium."
+        },
+        {
+          "id": "k19.q15",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum lohnt sich Plasma-Dicing besonders bei kleinen Chips?",
+          "optionen": [
+            "Die sequenzielle Zeit wächst mit $1/p$, die Plasmazeit nicht",
+            "Kleine Chips sind dicker",
+            "Plasma kann nur kleine Chips ätzen"
+          ],
+          "richtig": 0,
+          "erklaerung": "$L_\\mathrm{Str}\\approx2A/p$: Halbes Raster, doppelte Straßenlänge."
+        },
+        {
+          "id": "k19.c04",
+          "typ": "karte",
+          "vorne": "Sequenziell oder parallel trennen?",
+          "hinten": "Säge und Laser: Zeit $\\propto$ Straßenlänge $\\approx2A/p$. Plasma: Zeit fast unabhängig von der Chipzahl. Kleine Chips: Plasma; Metall in der Straße: vorher Laser.",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        }
+      ]
+    },
+    {
+      "id": "k19.l05",
+      "titel": "Lösen, Glas trennen, Moldmasse öffnen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k19.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "**[[laser-debonding|Laser-Debonding]]:** Dünne Wafer und Fan-out-Aufbauten werden während der Bearbeitung auf einen Glasträger geklebt (temporäres Bonden). Zwischen Kleber und Glas liegt eine dünne **Trennschicht**. Zum Lösen strahlt ein UV-Laser **durch das Glas**. Die Trennschicht absorbiert, ihre Polymerbindungen werden aufgebrochen, und der Träger lässt sich mit geringer Kraft abheben. Das Verfahren hat eine Schwelle: Unter einer bestimmten Bestrahlung löst sich nichts, ungleichmäßige Schichten oder Fehlfokus können das Bauteil schädigen.",
+            "**Glas trennen:** Glasträger, Glaskerne und Glasinterposer werden in Panels gefertigt und später geschnitten. Hier kommen Filamentation und Bessel-Strahlen aus K10 zum Einsatz; die Kantenfestigkeit wird wieder nach Weibull bewertet (K17).",
+            "**Moldmasse öffnen und markieren:** Der Laser legt Kontaktflächen unter der Moldmasse frei oder bohrt Löcher durch sie hindurch, etwa für gestapelte Packages, und beschriftet Packages. Die Moldmasse ist ein Verbund aus Epoxid und Siliziumdioxid-Füllstoff (K17)."
+          ],
+          "verifiziert": false,
+          "quelle": "semidigest-debond"
+        },
+        {
+          "id": "k19.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wie funktioniert Laser-Debonding?",
+          "optionen": [
+            "UV-Strahl durch den Glasträger, Absorption in einer dünnen Trennschicht, Träger löst sich mit geringer Kraft",
+            "Der Laser schmilzt den Wafer vom Träger",
+            "Der Laser sägt zwischen Wafer und Träger"
+          ],
+          "richtig": 0,
+          "erklaerung": "Selektive Absorption: Glas transparent, Trennschicht absorbierend, Bauteil geschützt."
+        },
+        {
+          "id": "k19.q17",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Beim Laser-Debonding ist der Träger aus ___, damit der Strahl die ___ erreicht. Unterhalb einer ___ löst sich der Träger nicht.",
+          "luecken": [
+            {
+              "optionen": [
+                "Glas",
+                "Silizium"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Trennschicht",
+                "Leiterplatte"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Schwelle",
+                "Wellenlänge"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Ein Schwellenprozess wie die Ablation, nur in einer vergrabenen Schicht."
+        },
+        {
+          "id": "k19.q18",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Prozess dem Lasereinsatz zu.",
+          "paare": [
+            [
+              "Temporäres Bonden",
+              "Trennschicht durch Glas lösen"
+            ],
+            [
+              "Glaspanel",
+              "Filamentation oder Bessel-Strahl"
+            ],
+            [
+              "Gestapelte Packages",
+              "Löcher durch die Moldmasse"
+            ],
+            [
+              "Fertiges Package",
+              "Beschriften"
+            ]
+          ],
+          "erklaerung": "Der Laser ist im Back-End ein Werkzeug für viele Aufgaben, nicht nur fürs Trennen."
+        },
+        {
+          "id": "k19.c05",
+          "typ": "karte",
+          "vorne": "Laser-Debonding in einem Satz?",
+          "hinten": "UV-Laser durch den Glasträger zersetzt eine dünne Trennschicht oberhalb einer Schwelle, der Träger löst sich mit geringer Kraft vom dünnen Bauteil.",
+          "verifiziert": false,
+          "quelle": "semidigest-debond"
+        }
+      ]
+    }
+  ]
+}

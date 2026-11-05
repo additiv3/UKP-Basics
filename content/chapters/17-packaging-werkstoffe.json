@@ -1,0 +1,464 @@
+{
+  "id": "k17",
+  "titel": "Werkstoffe und Thermomechanik im Package",
+  "einleitung": "Hier triffst du auf vertrautes Gelände: Wärmeausdehnung, Spannungen, Ermüdung, Bruchmechanik und Weibull. Neu sind die Werkstoffe (gefüllte Polymere, Glas, Low-k) und die Frage, was passiert, wenn ein Laser einen Verbund aus Metall, Polymer und Glas trifft. Werkstoffkennwerte sind als ungeprüft markiert; gerechnet wird mit frei gewählten Zahlen.",
+  "ziele": [
+    "Die Werkstoffe eines Packages ihrer Funktion zuordnen",
+    "CTE-Fehlanpassung, Spannung, Lötstellenscherung und Verzug abschätzen",
+    "Chipfestigkeit messen und nach Weibull auswerten",
+    "Das Prozessfenster eines Lasers im Schichtverbund begründen"
+  ],
+  "weiterlesen": [
+    "schoenfelder2007",
+    "semi-g86",
+    "franz2022",
+    "intel2023"
+  ],
+  "lektionen": [
+    {
+      "id": "k17.l01",
+      "titel": "Der Werkstoffzoo im Package",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k17.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "In einem einzigen Package stecken mehr Werkstoffklassen als in den meisten Maschinen:",
+            "- **Silizium:** Chip, Interposer, Trägerwafer.\n- **Kupfer:** Leiterbahnen, Pads, Säulen, Vias.\n- **Lote:** meist bleifreie Zinn-Silber-Kupfer-Legierungen.\n- **Low-k-Dielektrika:** im Chip (K15).\n- **Polyimid und ähnliche Polymere:** Passivierung und Dielektrikum der RDL.\n- **Aufbaufolie** ([[abf]], *build-up film*): Epoxidharz mit hohem Anteil an Siliziumdioxid-Füllstoff, Dielektrikum der Substrat-Aufbaulagen.\n- **Kernmaterial:** glasfaserverstärktes Epoxid (wie FR-4 in Leiterplatten).\n- **[[moldmasse|Moldmasse]]** (*epoxy mold compound*, EMC) und **[[underfill|Underfill]]:** Epoxid mit Siliziumdioxid-Füllstoff.\n- **Glas:** Träger, Interposer, [[glaskern-substrat|Glaskern-Substrate]].\n- **Keramik:** Aluminiumoxid, Aluminiumnitrid, Siliziumnitrid in der Leistungselektronik.\n- **SiC und GaN:** Halbleiter mit großer Bandlücke für Leistungsbauteile, sehr hart.",
+            "Warum so viel Füllstoff? Polymere dehnen sich bei Erwärmung stark aus und schrumpfen beim Aushärten. Harte, kaum dehnende Siliziumdioxid-Partikel senken die Wärmeausdehnung und den Schrumpf des Verbunds und bringen ihn näher an Silizium und Kupfer."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k17.l01.b02",
+          "typ": "text",
+          "inhalt": [
+            "Für den Laser heißt das: Du triffst fast nie einen reinen Werkstoff, sondern einen **Verbund**. Polymer-Matrix und Siliziumdioxid-Füllstoff oder Glasfaser verhalten sich völlig verschieden: Das Polymer zersetzt sich bei niedriger Fluenz, das Siliziumdioxid ist bei 1030 nm transparent und braucht viel mehr. Ergebnis können herausstehende Glasfasern, Füllstoffreste und raue Wände sein. Untersuchungen an FR-4 zeigten zum Beispiel, dass die Pulsdauer beeinflusst, wie weit Glasfasern in die Bohrung ragen."
+          ],
+          "verifiziert": false,
+          "quelle": "franz2022"
+        },
+        {
+          "id": "k17.q01",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Werkstoff seiner Rolle zu.",
+          "paare": [
+            [
+              "ABF (Aufbaufolie)",
+              "Dielektrikum der Substrat-Aufbaulagen"
+            ],
+            [
+              "Moldmasse (EMC)",
+              "Verkapselung des Chips"
+            ],
+            [
+              "Polyimid",
+              "Dielektrikum der RDL und Passivierung"
+            ],
+            [
+              "Aluminiumnitrid",
+              "Keramiksubstrat der Leistungselektronik"
+            ]
+          ],
+          "erklaerung": "Alle Polymere im Package sind meist gefüllt, um die Wärmeausdehnung zu senken."
+        },
+        {
+          "id": "k17.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum enthalten Moldmasse, Underfill und ABF viel Siliziumdioxid-Füllstoff?",
+          "optionen": [
+            "Um Wärmeausdehnung und Schrumpf des Polymers zu senken",
+            "Um die elektrische Leitfähigkeit zu erhöhen",
+            "Damit der Laser leichter abträgt"
+          ],
+          "richtig": 0,
+          "erklaerung": "Siliziumdioxid dehnt sich kaum aus. Für den Laser ist der Füllstoff dagegen eher lästig: Er ist transparent und hat eine hohe Schwelle."
+        },
+        {
+          "id": "k17.q03",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist beim Laserbohren in glasfaserverstärktem Epoxid typisch?",
+          "optionen": [
+            "Glasfasern ragen in die Bohrung, weil sie eine höhere Schwelle haben als das Harz",
+            "Das Harz bleibt stehen, die Fasern verdampfen zuerst",
+            "Beide Komponenten verhalten sich gleich"
+          ],
+          "richtig": 0,
+          "erklaerung": "Zwei Komponenten, zwei Schwellen. Die Pulsdauer beeinflusst, wie stark der Unterschied sichtbar wird."
+        },
+        {
+          "id": "k17.c01",
+          "typ": "karte",
+          "vorne": "Warum ist ABF für den Laser ein Verbund-Problem?",
+          "hinten": "Epoxid-Matrix mit niedriger Schwelle plus transparenter Siliziumdioxid-Füllstoff mit hoher Schwelle: Füllstoffreste, raue Wände, Prozessfenster hängt von beiden ab.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k17.l02",
+      "titel": "Wärmeausdehnung, Spannung und Verzug",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k17.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Jeder Werkstoff dehnt sich mit seinem [[cte|Wärmeausdehnungskoeffizienten]] $\\alpha$ (*coefficient of thermal expansion*, CTE) aus. Sind zwei Werkstoffe fest verbunden und erwärmen sich gemeinsam, entsteht eine Dehnungsdifferenz $\\Delta\\alpha\\,\\Delta T$. Sie wird zu Spannung (wenn der Verbund steif ist) oder zu **Biegung** wie beim Bimetall. Im Package heißt diese Biegung [[verzug|Verzug]] (*warpage*).",
+            "Zwei Folgen kennst du aus der Betriebsfestigkeit: Bei jedem Ein- und Ausschalten und bei jedem Temperaturwechsel werden die Lötstellen geschert und **ermüden**. Und ein verzogenes Package lässt sich schlecht löten, weil nicht alle Kugeln gleichzeitig aufliegen.",
+            "Als grobe Orientierung (gängige Literaturwerte, ungeprüft): Silizium liegt bei wenigen ppm/K, Kupfer und organische Substrate deutlich über 10 ppm/K. Gläser lassen sich über die Zusammensetzung in einem Bereich einstellen, der Silizium nahekommt. Das ist ein Hauptargument für Glaskern-Substrate."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k17.l02.b02",
+          "typ": "formel",
+          "latex": "\\sigma\\approx\\frac{E}{1-\\nu}\\,\\Delta\\alpha\\,\\Delta T,\\qquad \\gamma\\approx\\frac{\\Delta\\alpha\\,\\Delta T\\,L_\\mathrm{DNP}}{h}",
+          "erklaerung": "Links: zweiachsige Spannung in einer dünnen Schicht auf einem dicken Träger (Hooke, ebener Spannungszustand). Rechts: Scherung $\\gamma$ einer Lötstelle der Höhe $h$ im Abstand $L_\\mathrm{DNP}$ vom neutralen Punkt (Mitte des Bauteils), wenn sich Chip und Substrat frei gegeneinander verschieben. Die äußerste Lötstelle wird am stärksten belastet.",
+          "titel": "Fehlanpassung: Spannung und Scherung",
+          "sammlung": "Packaging",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k17.l02.b03",
+          "typ": "beispiel",
+          "aufgabe": "Zahlenbeispiel ohne Underfill: $\\Delta\\alpha=14\\cdot10^{-6}\\,\\mathrm{K^{-1}}$, $\\Delta T=100\\,\\mathrm{K}$, äußerste Lötstelle bei $L_\\mathrm{DNP}=10\\,\\mathrm{mm}$, Höhe $h=50\\,\\mu\\mathrm{m}$. Wie groß ist die Scherung?",
+          "schritte": [
+            "Verschiebung: $\\Delta\\alpha\\,\\Delta T\\,L_\\mathrm{DNP}=14\\cdot10^{-6}\\cdot100\\cdot10\\,\\mathrm{mm}=0{,}014\\,\\mathrm{mm}=14\\,\\mu\\mathrm{m}$",
+            "Scherung: $\\gamma=14\\,\\mu\\mathrm{m}/50\\,\\mu\\mathrm{m}=0{,}28$"
+          ],
+          "ergebnis": "28 % Scherung pro Zyklus hält keine Lötstelle lange aus. Deshalb koppelt der Underfill Chip und Substrat mechanisch und nimmt den Lötstellen den Großteil der Last ab.",
+          "titel": "Rechenbeispiel",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k17.q04",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: $E/(1-\\nu)=150\\,\\mathrm{GPa}$, $\\Delta\\alpha=10\\cdot10^{-6}\\,\\mathrm{K^{-1}}$, $\\Delta T=100\\,\\mathrm{K}$. Welche zweiachsige Spannung entsteht in der dünnen Schicht? Antwort in MPa.",
+          "antwort": 150,
+          "einheit": "MPa",
+          "toleranz": 0.02,
+          "erklaerung": "$\\sigma=150\\cdot10^{9}\\cdot10^{-5}\\cdot100=1{,}5\\cdot10^{8}\\,\\mathrm{Pa}=150\\,\\mathrm{MPa}$."
+        },
+        {
+          "id": "k17.q05",
+          "typ": "quiz",
+          "art": "rechenweg",
+          "frage": "Baue die Scherung der äußersten Lötstelle und rechne für $\\Delta\\alpha=12\\cdot10^{-6}\\,\\mathrm{K^{-1}}$, $\\Delta T=80\\,\\mathrm{K}$, $L_\\mathrm{DNP}=5\\,\\mathrm{mm}$, $h=0{,}1\\,\\mathrm{mm}$ (Zahlenbeispiel).",
+          "vorlage": "$\\gamma\\approx$ {{ [] $\\cdot$ [] $\\cdot$ [] // [] }}",
+          "richtig": [
+            "$\\Delta\\alpha$",
+            "$\\Delta T$",
+            "$L_\\mathrm{DNP}$",
+            "$h$"
+          ],
+          "ablenker": [
+            "$E$",
+            "$\\nu$"
+          ],
+          "erklaerung": "$\\gamma=12\\cdot10^{-6}\\cdot80\\cdot5/0{,}1=0{,}048$, also knapp 5 %.",
+          "tausch": [
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "antwort": 0.048,
+          "einheit": "",
+          "toleranz": 0.03
+        },
+        {
+          "id": "k17.q06",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Lötstelle eines großen BGA ermüdet im Temperaturwechsel typischerweise zuerst?",
+          "optionen": [
+            "Die äußerste, am weitesten vom neutralen Punkt entfernte",
+            "Die mittlere",
+            "Alle gleichzeitig"
+          ],
+          "richtig": 0,
+          "erklaerung": "$\\gamma\\propto L_\\mathrm{DNP}$: Außen ist die Relativverschiebung am größten."
+        },
+        {
+          "id": "k17.q07",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was ist ein Hauptargument für Glaskern-Substrate gegenüber organischen Kernen?",
+          "optionen": [
+            "Wärmeausdehnung näher an Silizium einstellbar, steif und eben",
+            "Glas ist elektrisch leitfähig",
+            "Glas lässt sich mechanisch leichter bohren"
+          ],
+          "richtig": 0,
+          "erklaerung": "Weniger Fehlanpassung zum Chip und weniger Verzug bei großen Packages. Der Preis: Glas ist spröde, und die Durchkontaktierungen (TGV) müssen ohne Risse entstehen."
+        },
+        {
+          "id": "k17.c02",
+          "typ": "karte",
+          "vorne": "Wovon hängt die Scherung einer Lötstelle ab?",
+          "hinten": "$\\gamma\\approx\\Delta\\alpha\\,\\Delta T\\,L_\\mathrm{DNP}/h$: CTE-Differenz, Temperaturhub, Abstand vom neutralen Punkt, Höhe der Lötstelle. Underfill entlastet.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        }
+      ]
+    },
+    {
+      "id": "k17.l03",
+      "titel": "Bruchfestigkeit von Chips und Glas",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k17.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "Silizium und Glas sind **spröde**: Sie fließen nicht plastisch, sondern brechen, sobald an einem Fehler die kritische Spannungsintensität erreicht ist ([[bruchzaehigkeit]]). Ihre Festigkeit ist deshalb keine Werkstoffkonstante, sondern hängt vom **größten Fehler** ab, und der sitzt meist an der Kante.",
+            "Genau die Kante entsteht beim Vereinzeln. Ausbrüche ([[chipping]]), Mikrorisse und eine geschädigte Randzone senken die **[[die-festigkeit|Chipfestigkeit]]** (*die strength*). Studien an dünnem Silizium zeigen, dass das Trennverfahren die Festigkeit stark verändert: Gesägte Proben sind deutlich schwächer als Proben mit trocken geätzten Kanten.",
+            "Gemessen wird meist im **Dreipunkt-Biegeversuch** (genormt als SEMI G86) oder im Vierpunkt- bzw. Ring-auf-Ring-Versuch. Weil die Festigkeit spröder Körper streut, wertet man nach **[[weibull]]** aus: das Modell des schwächsten Glieds, das du aus der Werkstoffprüfung kennst."
+          ],
+          "verifiziert": false,
+          "quelle": "schoenfelder2007"
+        },
+        {
+          "id": "k17.l03.b02",
+          "typ": "formel",
+          "latex": "\\sigma_\\mathrm{3PB}=\\frac{3\\,F\\,L}{2\\,b\\,h^2},\\qquad P_\\mathrm{f}=1-\\exp\\!\\left[-\\left(\\frac{\\sigma}{\\sigma_0}\\right)^{m}\\right]",
+          "erklaerung": "Links: maximale Randspannung im Dreipunkt-Biegeversuch (Stützweite $L$, Breite $b$, Dicke $h$, Bruchkraft $F$, lineare Balkentheorie). Rechts: Weibull-Verteilung der Ausfallwahrscheinlichkeit mit charakteristischer Festigkeit $\\sigma_0$ (63,2 % Ausfall) und Weibull-Modul $m$ (Streuung: großes $m$, kleine Streuung). Bei sehr dünnen Chips wird die Durchbiegung groß, dann gilt die lineare Formel nur noch näherungsweise.",
+          "titel": "Biegefestigkeit und Weibull",
+          "sammlung": "Packaging",
+          "einheit": "\\mathrm{Pa}",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k17.l03.b03",
+          "typ": "beispiel",
+          "aufgabe": "Zahlenbeispiel: Ein Chip mit $b=5\\,\\mathrm{mm}$ und $h=50\\,\\mu\\mathrm{m}$ bricht im Dreipunkt-Biegeversuch mit Stützweite $L=4\\,\\mathrm{mm}$ bei $F=0{,}5\\,\\mathrm{N}$. Wie groß ist die Bruchspannung?",
+          "schritte": [
+            "Zähler: $3FL=3\\cdot0{,}5\\,\\mathrm{N}\\cdot4\\,\\mathrm{mm}=6\\,\\mathrm{N\\,mm}$",
+            "Nenner: $2bh^2=2\\cdot5\\,\\mathrm{mm}\\cdot(0{,}05\\,\\mathrm{mm})^2=0{,}025\\,\\mathrm{mm^3}$",
+            "$\\sigma=6/0{,}025=240\\,\\mathrm{N/mm^2}=240\\,\\mathrm{MPa}$"
+          ],
+          "ergebnis": "240 MPa. Mit N und mm rechnet man direkt in MPa.",
+          "titel": "Rechenbeispiel",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k17.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleicher Versuch, aber der Chip ist nur halb so dick ($h=25\\,\\mu\\mathrm{m}$). Welche Randspannung entsteht bei derselben Kraft $F=0{,}5\\,\\mathrm{N}$? Antwort in MPa.",
+          "antwort": 960,
+          "einheit": "MPa",
+          "toleranz": 0.02,
+          "erklaerung": "$\\sigma\\propto1/h^2$: halbe Dicke, vierfache Spannung, $4\\cdot240=960\\,\\mathrm{MPa}$."
+        },
+        {
+          "id": "k17.q09",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist nach Weibull die Ausfallwahrscheinlichkeit bei $\\sigma=\\sigma_0$? Antwort in %.",
+          "antwort": 63.2,
+          "einheit": "%",
+          "toleranz": 0.01,
+          "erklaerung": "$P_\\mathrm{f}=1-e^{-1}=0{,}632$, unabhängig von $m$."
+        },
+        {
+          "id": "k17.q10",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Weibull-Diagramm: Die Gerade zeigt $\\ln\\ln(1/(1-P_\\mathrm{f}))$ über $\\ln\\sigma$ (σ in MPa) für eine Versuchsreihe. Lies die charakteristische Festigkeit $\\sigma_0$ ab (dort schneidet die Gerade die Nulllinie). Antwort in MPa.",
+          "antwort": 400,
+          "einheit": "MPa",
+          "toleranz": 0.06,
+          "erklaerung": "Die Gerade kreuzt null bei $\\ln\\sigma\\approx5{,}99$, also $\\sigma_0=e^{5{,}99}\\approx400\\,\\mathrm{MPa}$. Die Steigung ist der Weibull-Modul, hier $m=8$.",
+          "tipp": "Cursor auf $y=0$ schieben, $x$ ablesen und $e^x$ rechnen.",
+          "plot": {
+            "x": {
+              "label": "ln(σ / MPa)",
+              "min": 5.3,
+              "max": 6.5,
+              "sym": "x"
+            },
+            "y": {
+              "label": "ln ln(1/(1−P))",
+              "min": -5,
+              "max": 4
+            },
+            "kurven": [
+              {
+                "f": "8*(x-ln(400))",
+                "label": "Weibull",
+                "sym": "y"
+              }
+            ],
+            "linien": [
+              {
+                "y": 0,
+                "label": "σ₀"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 5.7
+          }
+        },
+        {
+          "id": "k17.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was bedeutet ein großer Weibull-Modul $m$?",
+          "optionen": [
+            "Die Festigkeit streut wenig",
+            "Die Festigkeit ist hoch",
+            "Der Chip ist dick"
+          ],
+          "richtig": 0,
+          "erklaerung": "$m$ beschreibt die Streuung, $\\sigma_0$ das Niveau. Ein gutes Trennverfahren hebt idealerweise beides."
+        },
+        {
+          "id": "k17.q12",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was bestimmt bei einem dünnen Chip meist die Bruchfestigkeit?",
+          "optionen": [
+            "Fehler an der Kante aus dem Trennprozess",
+            "Die Dotierung der Transistoren",
+            "Die Farbe der Passivierung"
+          ],
+          "richtig": 0,
+          "erklaerung": "Spröde Körper versagen am größten Fehler, und der entsteht meist beim Vereinzeln oder Dünnen."
+        },
+        {
+          "id": "k17.c03",
+          "typ": "karte",
+          "vorne": "Warum ist Chipfestigkeit ein Prozessmerkmal?",
+          "hinten": "Spröde Werkstoffe brechen am größten Fehler, und die Kantenfehler (Chipping, Mikrorisse) entstehen beim Trennen. Messung: Dreipunkt-Biegung, Auswertung nach Weibull.",
+          "verifiziert": false,
+          "quelle": "schoenfelder2007"
+        }
+      ]
+    },
+    {
+      "id": "k17.l04",
+      "titel": "Laser trifft Schichtverbund",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k17.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Im Packaging arbeitet der Laser fast immer in einem **Schichtverbund**: Kupfer auf Dielektrikum auf einem Kupferpad, Glasfaser in Epoxid, Füllstoff in Moldmasse, Low-k und Kupfer im Ritzgraben, eine Trennschicht auf Glas. Daraus folgen vier Grundmuster:",
+            "1. **Schwellenkontrast nutzen:** Liegen die [[ablationsschwelle|Ablationsschwellen]] zweier Schichten weit auseinander, gibt es ein **Prozessfenster**: Fluenz über der Schwelle des Dielektrikums, aber unter der des Kupfers. Dann trägt der Laser das Polymer ab und stoppt am Kupfer. So entsteht ein sauberer Via-Boden.\n2. **Einschlüsse mit hoher Schwelle:** Fasern und Füllstoffe bleiben stehen oder werden herausgerissen.\n3. **Wärme im Polymer:** Polymere zersetzen sich thermisch. Sammelt sich Wärme an (hohe Repetitionsrate, Burst), entstehen Hohlräume, Verkohlung und Ablösungen.\n4. **Grenzflächen:** Unterschiedliche Ausdehnung und Haftung machen Grenzflächen zu Sollbruchstellen für Delamination.",
+            "Mit UKP-Pulsen wird die Wärmeeinflusszone klein ([[haz]], K05), aber Inkubation und [[waermeakkumulation|Wärmeakkumulation]] (K07) verschieben die Schwellen im Prozess. Das Fenster ist also kein fester Wert, sondern hängt von Pulszahl, Repetitionsrate und Strahlprofil ab."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k17.l04.b02",
+          "typ": "merke",
+          "inhalt": "Prozessfenster im Verbund: $F_\\mathrm{th,Dielektrikum}<F<F_\\mathrm{th,Cu}$. Inkubation, Wärmeakkumulation und Strahlprofil verschieben es.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k17.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Dielektrikum $F_\\mathrm{th}=0{,}4\\,\\mathrm{J/cm^2}$, Kupfer $F_\\mathrm{th}=1{,}2\\,\\mathrm{J/cm^2}$ (frei gewählt). Gauß-Strahl mit $w_0=10\\,\\mu\\mathrm{m}$. Bis zu welcher Pulsenergie bleibt die Spitzenfluenz unter der Kupferschwelle? Antwort in µJ.",
+          "antwort": 1.885,
+          "einheit": "µJ",
+          "toleranz": 0.03,
+          "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)$, also $E_\\mathrm{p}=F\\pi w_0^2/2=1{,}2\\cdot\\pi\\cdot(10^{-3}\\,\\mathrm{cm})^2/2=1{,}88\\cdot10^{-6}\\,\\mathrm{J}$.",
+          "tipp": "$10\\,\\mu\\mathrm{m}=10^{-3}\\,\\mathrm{cm}$. Spitzenfluenz aus K01."
+        },
+        {
+          "id": "k17.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleiche Zahlen: Ab welcher Pulsenergie beginnt überhaupt der Abtrag des Dielektrikums (Spitzenfluenz gleich dessen Schwelle)? Antwort in µJ.",
+          "antwort": 0.628,
+          "einheit": "µJ",
+          "toleranz": 0.03,
+          "erklaerung": "$E_\\mathrm{p}=0{,}4\\cdot\\pi\\cdot10^{-6}/2=0{,}63\\,\\mu\\mathrm{J}$. Das Fenster liegt hier zwischen etwa 0,63 und 1,88 µJ, ein Faktor 3."
+        },
+        {
+          "id": "k17.q15",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Fehler seiner wahrscheinlichsten Ursache zu.",
+          "paare": [
+            [
+              "Herausstehende Glasfasern",
+              "Höhere Schwelle der Faser als des Harzes"
+            ],
+            [
+              "Hohlräume und Ablösung im Dielektrikum",
+              "Wärmeakkumulation im Polymer"
+            ],
+            [
+              "Beschädigter Kupferboden",
+              "Fluenz über der Kupferschwelle"
+            ],
+            [
+              "Delamination an einer Grenzfläche",
+              "Unterschiedliche Ausdehnung und Haftung"
+            ]
+          ],
+          "erklaerung": "Jeder Fehler zeigt auf einen Stellhebel: Pulsdauer, Repetitionsrate oder Burst, Fluenz, Strahlprofil."
+        },
+        {
+          "id": "k17.q16",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Damit der Laser am Kupferpad stoppt, muss die Fluenz ___ der Schwelle des Dielektrikums und ___ der Schwelle des Kupfers liegen. Hohe Repetitionsraten können durch ___ das Polymer schädigen.",
+          "luecken": [
+            {
+              "optionen": [
+                "über",
+                "unter"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "unter",
+                "über"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Wärmeakkumulation",
+                "Polarisation"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Fenster zwischen zwei Schwellen, verschoben durch Wärme und Inkubation."
+        },
+        {
+          "id": "k17.c04",
+          "typ": "karte",
+          "vorne": "Vier Grundmuster, wenn der Laser einen Schichtverbund trifft?",
+          "hinten": "Schwellenkontrast (Prozessfenster, Stopp am Kupfer), Einschlüsse mit hoher Schwelle (Fasern, Füllstoff), Wärme im Polymer (Hohlräume, Verkohlung), Grenzflächen (Delamination).",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging, nicht an der Primärquelle geprüft"
+        }
+      ]
+    }
+  ]
+}

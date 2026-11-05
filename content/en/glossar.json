@@ -522,5 +522,185 @@
   "zerstoerschwelle": {
     "kurz": "Fluence above which an optic or sample is permanently damaged.",
     "definition": "Test methods such as 1-on-1 and S-on-1 are given in ISO 21254. The LIDT depends on pulse duration, wavelength and pulse number."
+  },
+  "packaging": {
+    "kurz": "Everything that turns a chip into a usable component.",
+    "definition": "Packaging (German: Aufbau- und Verbindungstechnik, AVT) connects the chip electrically, fans out the contact pitch, removes heat, protects it and makes it handleable and testable."
+  },
+  "back-end": {
+    "kurz": "Manufacturing steps after the wafer fab: thinning, singulating, assembling, connecting, encapsulating, testing.",
+    "definition": "The back end follows wafer manufacturing (front end). Not to be confused with the [[beol]], the on-chip wiring made in the fab."
+  },
+  "beol": {
+    "kurz": "Metallization levels on the chip, made in the fab.",
+    "definition": "The BEOL comprises the copper lines and vias above the transistors, embedded in dielectrics such as [[low-k]]. Despite its name it belongs to the front end."
+  },
+  "wafer": {
+    "kurz": "Thin disc of semiconductor material on which many chips are made at once.",
+    "definition": "Chips are made on the wafer in the front end; in the back end it is thinned and singulated into individual [[die|dies]]."
+  },
+  "die": {
+    "kurz": "A single, singulated semiconductor chip.",
+    "definition": "A die is a chip after singulation, still without a package. Plural: dies."
+  },
+  "ritzgraben": {
+    "kurz": "Narrow area between the chips where separation takes place.",
+    "definition": "The dicing street (scribe line) often contains test structures of metal and dielectric. Its width co-determines how many chips fit on a wafer."
+  },
+  "kerf": {
+    "kurz": "Width removed by the separation process.",
+    "definition": "In sawing the kerf is about as wide as the blade; stealth dicing creates practically none. Narrow kerfs allow narrow streets and more chips per wafer."
+  },
+  "dicing": {
+    "kurz": "Separating the wafer into individual chips.",
+    "definition": "Processes: wafer saw, [[laser-grooving]] plus saw or plasma, [[stealth-dicing]], laser full cut, [[plasma-dicing]]."
+  },
+  "low-k": {
+    "kurz": "Insulator with low permittivity between the lines of the chip.",
+    "definition": "Low-k materials lower line capacitance and thus RC delay and energy. Many are porous and mechanically weak; they delaminate easily during sawing."
+  },
+  "drahtbonden": {
+    "kurz": "Connecting the chip pads with thin wires by ultrasound, heat and force.",
+    "definition": "In wire bonding the active side faces up and the pads sit at the chip edge. The number of connections grows only with the perimeter."
+  },
+  "flip-chip": {
+    "kurz": "Chip is soldered face down with bumps across its area.",
+    "definition": "Flip chip allows many connections in an area array and short paths. The gap is filled with [[underfill]]."
+  },
+  "bump": {
+    "kurz": "Small solder or copper contact on the chip for flip-chip connections.",
+    "definition": "Bumps are applied on the wafer. Variants: solder balls, copper pillars with solder cap, microbumps for chip stacks."
+  },
+  "underfill": {
+    "kurz": "Filled epoxy in the gap between flip chip and substrate.",
+    "definition": "The underfill couples chip and substrate mechanically and relieves the solder joints from shear caused by different thermal expansion."
+  },
+  "moldmasse": {
+    "kurz": "Epoxy with silicon dioxide filler for encapsulating chips.",
+    "definition": "Mould compound protects the chip and forms the reconstituted wafer in fan-out. For the laser it is a composite of polymer and transparent filler."
+  },
+  "bga": {
+    "kurz": "Package with solder balls in an area array on its underside.",
+    "definition": "The BGA connects a package to the circuit board. In FCBGA a flip chip sits on an IC substrate with a BGA."
+  },
+  "ic-substrat": {
+    "kurz": "Mini circuit board between chip and board, made of core and build-up layers.",
+    "definition": "The IC substrate translates the fine chip pitch to the board pitch. Its build-up layers of [[abf|ABF]] and copper are connected by [[microvia|microvias]]."
+  },
+  "abf": {
+    "kurz": "Filled epoxy dielectric of the build-up layers of IC substrates.",
+    "definition": "ABF (Ajinomoto Build-up Film) is laminated, cured and drilled with microvias. The high silicon dioxide filler content lowers thermal expansion."
+  },
+  "microvia": {
+    "kurz": "Small, mostly laser-drilled blind hole through one build-up layer.",
+    "definition": "A microvia connects two neighbouring layers of a substrate. Quality features: diameter, [[taper]], wall, clean bottom, intact copper pad."
+  },
+  "rdl": {
+    "kurz": "Fine copper wiring in polymer at wafer or panel level.",
+    "definition": "The RDL routes connections from the chip to the solder balls, in [[wlp]] and [[fan-out]] with lithographic processes."
+  },
+  "wlp": {
+    "kurz": "Packaging all chips at once on the wafer, before singulation.",
+    "definition": "In fan-in (WLCSP) the package stays as large as the chip; in [[fan-out]] the area is extended by mould compound."
+  },
+  "fan-out": {
+    "kurz": "Wafer-level package whose redistribution extends beyond the chip edge.",
+    "definition": "Chips are embedded with spacing in mould compound; chip-first or chip-last (RDL-first) on temporary carriers, often released by [[laser-debonding]]."
+  },
+  "interposer": {
+    "kurz": "Wiring carrier on which several chips sit side by side (2.5D).",
+    "definition": "Interposers are made of silicon with [[tsv|TSVs]], of organic material or of glass with [[tgv|TGVs]]."
+  },
+  "tsv": {
+    "kurz": "Vertical, metal-filled via through silicon.",
+    "definition": "TSVs connect stacked chips or the top and bottom of a silicon interposer."
+  },
+  "tgv": {
+    "kurz": "Through-via in glass, e.g. in glass core substrates or glass interposers.",
+    "definition": "TGVs are mostly made with lasers: by [[lide|laser-induced etching]] or direct ultrashort pulse drilling. Microcracks and residual stresses are critical."
+  },
+  "glaskern-substrat": {
+    "kurz": "IC substrate with a core of glass instead of glass-fibre-reinforced epoxy.",
+    "definition": "Named advantages are thermal expansion closer to silicon, flatness and high hole density; the challenge is crack-free drilling of the [[tgv|TGVs]]."
+  },
+  "hybrid-bonding": {
+    "kurz": "Direct bonding of copper to copper and dielectric to dielectric, without solder.",
+    "definition": "Hybrid bonding allows very tight pitches for chip stacks. It requires extremely clean, flat surfaces and therefore low-particle separation processes."
+  },
+  "chiplet": {
+    "kurz": "Small partial chip of a system that is tightly connected with others in the package.",
+    "definition": "Chiplets improve yield and allow different process nodes; they are connected via interposers, bridges or stacks."
+  },
+  "osat": {
+    "kurz": "Service provider for semiconductor assembly and test.",
+    "definition": "OSATs take over the [[back-end]] for chip makers and foundries."
+  },
+  "cte": {
+    "kurz": "Relative change in length per kelvin, $\\alpha$ in 1/K.",
+    "definition": "Different CTEs of joined materials create stresses, solder joint shear and [[verzug|warpage]]."
+  },
+  "verzug": {
+    "kurz": "Bending of a package or wafer due to different thermal expansion.",
+    "definition": "Warpage complicates soldering and bonding; it is a main problem for moulded wafers and large substrates."
+  },
+  "chipping": {
+    "kurz": "Shell-shaped breakouts at chip or glass edges.",
+    "definition": "Chipping arises when separating brittle materials and lowers the [[die-festigkeit|die strength]]. Front-side and back-side chipping are distinguished."
+  },
+  "die-festigkeit": {
+    "kurz": "Fracture strength of a singulated chip, determined by edge flaws.",
+    "definition": "Measured in the three-point bending test (SEMI G86) or ring-on-ring, evaluated according to [[weibull]]. The separation process influences it strongly."
+  },
+  "weibull": {
+    "kurz": "Statistics of the strength of brittle materials according to the weakest link.",
+    "definition": "$P_\\mathrm{f}=1-\\exp[-(\\sigma/\\sigma_0)^m]$ with characteristic strength $\\sigma_0$ and Weibull modulus $m$ (scatter)."
+  },
+  "laser-grooving": {
+    "kurz": "Opening the layer stack in the dicing street with the laser before separation.",
+    "definition": "The laser removes low-k, metal and passivation; afterwards a saw or a plasma separates the silicon. Ultrashort pulses reduce the heat input."
+  },
+  "stealth-dicing": {
+    "kurz": "Laser modifies the interior of a wafer, separation by stretching the tape.",
+    "definition": "At a wavelength at which silicon is largely transparent, a modified layer forms only in the focus. Dry, no debris, hardly any kerf."
+  },
+  "plasma-dicing": {
+    "kurz": "Dry etching of all dicing streets at the same time.",
+    "definition": "Plasma dicing avoids mechanical and thermal edge damage but needs metal-free streets and a clean mask; often combined with [[laser-grooving]]."
+  },
+  "dbg": {
+    "kurz": "First groove or modify, then thin until the chips separate.",
+    "definition": "In DBG and the laser variant SDBG, backgrinding completes the separation. This protects thin chips."
+  },
+  "rueckduennen": {
+    "kurz": "Grinding the wafer from the back side to the target thickness.",
+    "definition": "Thin wafers allow thin packages and stacks but are more fragile."
+  },
+  "laser-debonding": {
+    "kurz": "Releasing a glass carrier by laser irradiation of a release layer.",
+    "definition": "A UV laser irradiates through the transparent carrier; the release layer decomposes above a threshold and the carrier releases with low force."
+  },
+  "lide": {
+    "kurz": "Laser modifies glass, then hydrofluoric acid preferentially etches the track.",
+    "definition": "Related to [[sle|SLE]]: an ultrashort pulse modifies the glass through its thickness; the etching time determines the diameter of the [[tgv|TGV]]."
+  },
+  "taper": {
+    "kurz": "Narrowing of a hole from top to bottom.",
+    "definition": "Usually given as diameter ratio $d_\\mathrm{bot}/d_\\mathrm{top}$ or as wall angle; the definition differs between papers."
+  },
+  "top-hat": {
+    "kurz": "Beam profile with nearly constant intensity and steep flanks.",
+    "definition": "A top-hat profile is created with refractive or diffractive beam shapers; in drilling it gives steeper walls than a Gaussian beam."
+  },
+  "perkussionsbohren": {
+    "kurz": "Drilling with many pulses on the same spot.",
+    "definition": "In percussion drilling the focus determines the diameter; in helical drilling (trepanning) the beam follows a circular path."
+  },
+  "csam": {
+    "kurz": "Non-destructive imaging of delamination and voids with ultrasound.",
+    "definition": "Ultrasound is strongly reflected at interfaces with an air gap; delaminations in the package thus become visible."
+  },
+  "querschliff": {
+    "kurz": "Prepared section through a sample for examination under the microscope.",
+    "definition": "Cross-sections show via profiles, interfaces, voids and taper; they are destructive."
   }
 }

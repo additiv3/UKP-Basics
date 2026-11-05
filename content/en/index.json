@@ -19,6 +19,10 @@
     "E": {
       "titel": "English",
       "beschreibung": "Scientific English: speaking, writing, reading."
+    },
+    "F": {
+      "titel": "Semiconductor packaging",
+      "beschreibung": "From chip to system: packaging architectures, materials, microvias, glass core, separation and quality."
     }
   },
   "kapitel": {
@@ -81,6 +85,30 @@
     "k14": {
       "titel": "Everyday lab work at the USP system",
       "kurz": "Safety, beam alignment, focus search, power, pulse duration and Liu evaluation as games"
+    },
+    "k15": {
+      "titel": "Semiconductor packaging: from chip to system",
+      "kurz": "Tasks of the package, front end and back end, dicing street, dies per wafer"
+    },
+    "k16": {
+      "titel": "Packaging architectures: from wire bond to chiplet",
+      "kurz": "Wire bond, flip chip, BGA, fan-out, 2.5D, 3D, hybrid bonding"
+    },
+    "k17": {
+      "titel": "Materials and thermomechanics in the package",
+      "kurz": "Filled polymers, CTE mismatch, die strength, Weibull, layer stack"
+    },
+    "k18": {
+      "titel": "IC substrate, microvias and glass core",
+      "kurz": "Build-up layers, CO₂/UV/USP drilling, burst, top hat, TGV"
+    },
+    "k19": {
+      "titel": "Separating and releasing: dicing and debonding",
+      "kurz": "Saw, laser grooving, stealth dicing, plasma, laser debonding"
+    },
+    "k20": {
+      "titel": "Quality, reliability and research landscape",
+      "kurz": "Measurement methods, failure mechanisms, yield, conferences, reading list"
     }
   }
 }
