@@ -27,6 +27,8 @@ python tools/release.py --bump patch         # neue Cache-Version, sonst sieht d
 
 ## Kapitel anlegen
 
+Neue Stufe: Eintrag in `stufen` von `content/index.json` und `content/en/index.json`, dazu eine Farbe `--st-<x>` in `src/styles/theme.css` (hell und dunkel) und die Regeln `[data-stage='<X>']` in `src/styles/extras.css` und `src/styles/home.css`.
+
 1. Eintrag in `content/index.json` (`datei` setzen; `lektionen_geplant` entfällt dann).
 2. Datei `content/chapters/NN-name.json` mit `id`, `titel`, `einleitung`, `ziele[]`, optional `weiterlesen[]` (Quellen-IDs) und `lektionen[]`.
 3. Jede Lektion: `id` (z. B. `k02.l01`), `titel`, `minuten`, `blocks[]`.

@@ -30,12 +30,13 @@
   --tabbar-h: 60px;
   --font-display: ui-rounded, 'SF Pro Rounded', 'Nunito', 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
 
-  /* stage colors (A fundament, B ultrakurzpulse, C abtrag, D praxis) */
+  /* stage colors (A fundament, B ultrakurzpulse, C abtrag, D praxis, E englisch, F packaging) */
   --st-a: #0a8fd6;
   --st-b: #6a5af0;
   --st-c: #e2561f;
   --st-d: #12a577;
   --st-e: #d6458a;
+  --st-f: #b07800;
 
   /* figure colors (SVG figures and canvases read these) */
   --fig-line: #34415e;
@@ -78,6 +79,7 @@
     --st-c: #ff8a58;
     --st-d: #3ee0b0;
     --st-e: #ff7ab5;
+    --st-f: #ffc24d;
 
     --fig-line: #c9d3ea;
     --fig-soft: #4a5680;

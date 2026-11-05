@@ -229,6 +229,10 @@
 .page[data-stage='E'] {
   --stage: var(--st-e);
 }
+.stage[data-stage='F'],
+.page[data-stage='F'] {
+  --stage: var(--st-f);
+}
 .stage-id {
   background: var(--stage, var(--accent));
   color: #fff;
