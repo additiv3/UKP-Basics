@@ -13,6 +13,8 @@ Stand: Oktober 2026. Dieser Plan ersetzt den ersten Entwurf aus dem ursprünglic
 
 ## 2. Stufen und Kapitel
 
+Ergänzung in Version 0.5: neue **Stufe F · Halbleiter-Packaging** (K15 bis K20), siehe unten. Sie setzt die Stufen A bis D voraus, K15 und K16 lassen sich aber ohne Vorwissen lesen.
+
 Ergänzung in Version 0.3: **K00 Werkzeugkasten** (Zehnerpotenzen, Einheiten, Logarithmus, Abschätzen, Taschenrechner) als Start von Stufe A, die Kapitel K08, K10 und K12 sind ausgearbeitet, und die neue **Stufe E** enthält **K13 Wissenschaftliches Englisch**. Jedes Kapitel von K01 bis K11 hat am Ende eine Rechentraining-Lektion.
 
 ```mermaid
@@ -69,6 +71,37 @@ graph LR
 | K12 | Wissenschaftliche Praxis in der Photonik | K09 | Journals und Konferenzen · Paper lesen und einordnen · Literaturverwaltung · Einordnung der eigenen Arbeit |
 
 Dazu: **Glossar** (durchsuchbar, aus allen Kapiteln verlinkt) und **Wiederholen** (SM-2-Sitzung über alle bisher gesehenen Fragen und Karten).
+
+### Stufe F · Halbleiter-Packaging (ab Version 0.5)
+
+Anlass: Der thematische Schwerpunkt liegt auf **UKP-Ablation im Halbleiter-Packaging**. Die Recherche (November 2026) zeigt, dass die AG alp bereits zu UKP-Microvias in Leiterplatten- und Substratmaterial (FR-4, ABF) und zu Through-Glass Vias für Glaskern-Substrate veröffentlicht. K18 ist deshalb das Kernkapitel der Stufe.
+
+```mermaid
+graph LR
+  K15[K15 Packaging-Grundlagen] --> K16[K16 Architekturen]
+  K15 --> K17[K17 Werkstoffe und Thermomechanik]
+  K08[K08 Werkstoffe] --> K17
+  K16 --> K18[K18 IC-Substrat, Microvias, Glaskern]
+  K17 --> K18
+  K07[K07 Ablation und Schwelle] --> K18
+  K16 --> K19[K19 Trennen und Lösen]
+  K07 --> K19
+  K18 --> K20[K20 Qualität und Forschungslandschaft]
+  K19 --> K20
+```
+
+| Kap. | Titel | Voraussetzung | Lektionen |
+|---|---|---|---|
+| K15 | Halbleiter-Packaging: vom Chip zum System | – | Was ein Package leistet · Ein Chip von oben und im Schnitt · Die Prozesskette im Back-End · Rechentraining: Chips pro Wafer und Sägestraße |
+| K16 | Packaging-Architekturen: von Drahtbond bis Chiplet | K15 | Drahtbonden und Flip-Chip · Leadframe, Substrat, BGA · Wafer-Level-Packaging und Fan-Out · 2.5D, 3D und Chiplets |
+| K17 | Werkstoffe und Thermomechanik im Package | K15, K08 | Werkstoffzoo · Wärmeausdehnung, Spannung, Verzug · Bruchfestigkeit und Weibull · Laser trifft Schichtverbund |
+| K18 | IC-Substrat, Microvias und Glaskern | K16, K17, K07 | IC-Substrat und Microvias · CO₂, UV-ns, UKP · UKP-Microvias: Burst, Top-Hat, Wärme · Glaskern und TGV · Rechentraining |
+| K19 | Trennen und Lösen: Dicing und Debonding | K16, K07 | Sägen und Grenzen · Laser-Grooving · Stealth Dicing und Vollschnitt · Plasma-Dicing und Vergleich · Debonding, Glas, Moldmasse |
+| K20 | Qualität, Zuverlässigkeit und Forschungslandschaft | K18, K19 | Qualitätsmerkmale und Messmethoden · Zuverlässigkeit · Durchsatz, Kosten, Ausbeute · Forschungslandkarte mit Leseliste und offenen Fragen |
+
+Didaktik wie in den anderen Stufen, mit einer Besonderheit: Thermomechanik, Bruchmechanik und Weibull (K17) sind Vorwissen aus dem Maschinenbau und werden als Brücke genutzt, nicht neu erklärt. Zahlen aus Papers stammen aus deren Kurzfassungen und tragen das Badge „ungeprüft“, bis sie am Volltext geprüft sind.
+
+Quellen der Recherche zu Stufe F (Websuche, November 2026, Volltexte nicht gelesen): Franz et al. 2022 (Materials 15, 3932) und 2023 (Mater. Res. Express 10, 096301), LAMP-2025-Beitrag P-12 zu TGVs für Glaskern-Packaging, Ostholt et al. 2014 (ESTC), Kumagai et al. 2007 (IEEE TSM 20, 259), Evertsen et al. 2023 (IMAPS), Schönfelder et al. 2007 (Microelectron. Reliab. 47, 168), Maex et al. 2003 (J. Appl. Phys. 93, 8793), Lau 2022 (IEEE T-CPMT 12, 228), Intel-Pressemitteilung 2023, Nimbalkar et al. 2025 (Chips 4, 37), Herstellerberichte (DISCO TR23-01) und Fachpresse (PCB007, 3D InCites, Semiconductor Engineering, Semiconductor Digest). Vollständige Angaben in `content/quellen.json`.
 
 Stand Version 0.2: **K01 bis K07, K09 und K11 sind ausgearbeitet**; K08, K10 und K12 stehen als Gliederung in `content/index.json` („bald verfügbar"). K08 wartet auf belegte Materialkennwerte aus der Literatur.
 

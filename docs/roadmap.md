@@ -44,6 +44,15 @@ Offen aus Phase 2: Karteikarten-Ansicht pro Kapitel (Blättern ohne SM-2), Stati
 - [x] Kapitel K14 „Laboralltag an der UKP-Anlage“ mit fünf Laborspielen (Strahljustage, Fokussuche, Leistung, Pulskompressor, Liu-Plot)
 - [x] Diagrammfragen (`plot`-Feld) mit Ablese-Cursor, Lektionen „Diagramme lesen“ in K02, K06 und K07
 
+## Phase 2d · Version 0.5 (erledigt)
+
+- [x] Neue Stufe F **Halbleiter-Packaging** mit sechs Kapiteln (K15 bis K20, 26 Lektionen, 133 Fragen und Karten), zweisprachig
+- [x] Schwerpunkt auf UKP-Microvias in ABF und FR-4 und auf TGVs für Glaskern-Substrate (Arbeiten der AG alp), dazu Dicing, Stealth Dicing, Plasma und Laser-Debonding
+- [x] 45 neue Glossarbegriffe (mit Vokabelkarten), 21 neue Quellen, zwei neue Grafiken (Flip-Chip-BGA im Schnitt, Microvia)
+- [x] Diagrammfragen zu Weibull-Auswertung und Lochdurchmesser über Fluenz
+
+Offen aus Phase 2d: Simulation „Microvia-Bohren“ (Taper aus Gauß- und Top-Hat-Profil, Wärmeakkumulation im Burst), Laborspiel zum Prozessfenster im Schichtverbund, Belege aus den Volltexten.
+
 ## Phase 3 · Vertiefung
 
 - Weitere Simulationen: Bessel-Strahl und Filamentation, LIPSS-Periode, Wärmeakkumulation über Pulsfolgen

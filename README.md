@@ -7,7 +7,8 @@
 Persönliche Lern-App für den Einstieg in die **Ultrakurzpuls-(UKP-)Laserablation harter Werkstoffe** (Keramik, Quarzglas, Halbleiter). Statische PWA ohne Backend, offline-fähig, iPhone-first.
 
 - **Zweisprachig (DE/EN-Schalter):** Oberfläche, alle Kapitel, Fragen und das Glossar; Vokabelkarten DE ↔ EN aus allen Fachbegriffen
-- Lernpfad mit 14 aufeinander aufbauenden Kapiteln (K00 Werkzeugkasten bis K13 Wissenschaftliches Englisch) und über 600 Fragen und Karten
+- Lernpfad mit 21 aufeinander aufbauenden Kapiteln (K00 Werkzeugkasten bis K20) und über 850 Fragen und Karten
+- **Halbleiter-Packaging (Stufe F, K15–K20):** Aufgaben des Packages, Architekturen von Drahtbond bis Chiplet, Werkstoffe und Thermomechanik, IC-Substrat mit UKP-Microvias und Glaskern-TGVs, Dicing und Debonding, Qualität und Forschungslandschaft
 - **Lektionen als Seiten:** jede Frage auf einer eigenen Seite, Blättern per Wischen, Fortschrittsleiste mit Sprung zu offenen Fragen
 - **Laboralltag (K14) als Spiele:** Strahljustage, Fokussuche, Leistung einstellen, Pulskompressor mit Autokorrelator, Liu-Plot
 - **Diagramme lesen:** Fragen mit interaktiven Plots und Ablese-Cursor (Kaustik, Liu-Plot, Abtragskurven, Autokorrelation)
