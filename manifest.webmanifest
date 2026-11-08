@@ -1,7 +1,7 @@
 {
   "name": "UKP-Basics",
   "short_name": "UKP-Basics",
-  "description": "Lern-App zur Ultrakurzpuls-Laserablation harter Werkstoffe",
+  "description": "Lern-App zur Ultrakurzpuls-Laserablation im Halbleiter-Packaging",
   "lang": "de",
   "start_url": "./",
   "scope": "./",

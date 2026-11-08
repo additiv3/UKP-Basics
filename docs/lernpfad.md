@@ -11,7 +11,28 @@ Stand: Oktober 2026. Dieser Plan ersetzt den ersten Entwurf aus dem ursprünglic
 5. **Weiches Freischalten.** Kapitel bauen aufeinander auf; die App empfiehlt die Reihenfolge, sperrt aber nie hart. Wer ein Kapitel schon kann, schaltet es per Tippen frei.
 6. **Spielerisch, nicht kindisch.** XP, Level, Tagesserie und „gefestigt"-Anzeige; keine Herzen, keine Strafen, kein Zeitdruck.
 
-## 2. Stufen und Kapitel
+## 2. Forschungspfad (ab Version 0.6)
+
+Der Lernpfad ist auf das Promotionsthema **UKP-Ablation im Halbleiter-Packaging** ausgerichtet. Statt nach Fachgebieten (Fundament, Ultrakurzpulse, Abtrag, Praxis, Packaging) ist er seit Version 0.6 als **roter Faden** vom Anwendungsfeld zur eigenen Forschungsfrage geordnet. Die Kapitel-IDs bleiben unverändert, damit Lernstände erhalten bleiben; nur Etappe, Reihenfolge und einige Voraussetzungen haben sich geändert. Jedes Kapitel trägt im Index ein Feld `bezug` („Wofür du das brauchst“), das auf der Kapitelseite erscheint.
+
+| Etappe | Zweck | Kapitel |
+|---|---|---|
+| A Orientierung | Erst das *Wofür*: Thema, Anwendungsfeld, Fahrplan | K21, K15, K16 |
+| B Laser-Fundament | Handwerkszeug: Zahlen, Strahl, Licht-Materie | K00, K01, K02, K03 |
+| C UKP-Physik | Warum kurz anders ist | K04, K05, K06 |
+| D Abtrag und Werkstoffe | Schwelle, Mechanismen, Schichtverbund | K07, K08, K17 |
+| E Laser im Packaging | Microvias, Glaskern/TGV, Trennen und Lösen, SLE | K18, K19, K10 |
+| F Ins Labor | Parameter, Laborhandgriffe, Messtechnik, erste eigene Versuche | K09, K14, K11, K22 |
+| G Forschung | Qualität, Forschungslandkarte, wissenschaftliches Arbeiten | K20, K12 |
+| H Begleitend: Englisch | parallel zu allen Etappen | K13 |
+
+**Begründung der Reihenfolge.** K15 und K16 setzen kein Laserwissen voraus und stehen deshalb vorn: Wer weiß, wofür die Physik gebraucht wird, liest sie gezielter. K17 (Schichtverbund) braucht K08 und rückt in Etappe D. K10 (SLE, Bessel-Strahl) gehört inhaltlich zum TGV in Etappe E. Die Laborkapitel folgen erst nach den Anwendungskapiteln, damit die Versuche in K22 auf Packaging-Werkstoffe zielen. K20 und K12 schließen mit dem Übergang zur eigenen Frage.
+
+**Neue Kapitel.** K21 *Dein Forschungsthema* (Thema, UKP im Packaging, Lernpfad als Landkarte, Kette vom Thema zur Forschungsfrage, Fahrplan Grundlagen → Vorversuche → Recherche → Richtung). K22 *Erste Versuche* (Bohrstrategien, Versuch 1 Schwelle und Strahlradius am Si-Wafer, Versuch 2 und 3 Bohrungen und Abtragsfelder, Werkstoffvergleich mit Schwellenkontrast, Protokoll und Messtechnik). Zahlen in den Aufgaben sind frei gewählt; qualitative Erwartungen an die Werkstoffe sind als Hypothesen formuliert und als „ungeprüft“ markiert.
+
+Die folgenden Abschnitte beschreiben den ursprünglichen fachlichen Aufbau der Kapitel; die Etappenbuchstaben dort beziehen sich auf die Versionen bis 0.5.
+
+## 2a. Stufen und Kapitel (bis Version 0.5)
 
 Ergänzung in Version 0.5: neue **Stufe F · Halbleiter-Packaging** (K15 bis K20), siehe unten. Sie setzt die Stufen A bis D voraus, K15 und K16 lassen sich aber ohne Vorwissen lesen.
 

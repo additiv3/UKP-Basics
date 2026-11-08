@@ -4,11 +4,13 @@
 
 **Auf dem iPhone installieren:** Link in **Safari** öffnen, auf das Teilen-Symbol tippen, „Zum Home-Bildschirm" wählen. Danach startet die App wie eine normale App und läuft offline. Das Symbol aktualisiert iOS nicht selbst: Nach einem Icon-Wechsel die App vom Homescreen löschen und neu hinzufügen. Neue Versionen erscheinen beim Öffnen als Hinweis „Aktualisieren" (oder unter Profil → „Nach Update suchen"). Den Fortschritt unter Profil → „Backup exportieren" regelmäßig sichern.
 
-Persönliche Lern-App für den Einstieg in die **Ultrakurzpuls-(UKP-)Laserablation harter Werkstoffe** (Keramik, Quarzglas, Halbleiter). Statische PWA ohne Backend, offline-fähig, iPhone-first.
+Persönliche Lern-App für den Einstieg in das Promotionsthema **Ultrakurzpuls-(UKP-)Laserablation im Halbleiter-Packaging**. Statische PWA ohne Backend, offline-fähig, iPhone-first.
 
+- **Forschungspfad (ab Version 0.6):** 23 Kapitel in sieben Etappen mit rotem Faden, von der Orientierung (Was ist mein Thema, was braucht das Packaging?) über Laser-Fundament, UKP-Physik, Abtrag und Werkstoffe und Laser im Packaging bis ins Labor und zur Forschungsfrage; jedes Kapitel zeigt, wofür du es brauchst
+- **Neu in 0.6:** K21 „Dein Forschungsthema“ (Einstieg, Kette vom Thema zur Forschungsfrage, Fahrplan) und K22 „Erste Versuche“ (Bohrstrategien, Schwelle am Si-Wafer, Bohrungs- und Abtragsreihen, Werkstoffvergleich, Protokoll und Messtechnik)
 - **Zweisprachig (DE/EN-Schalter):** Oberfläche, alle Kapitel, Fragen und das Glossar; Vokabelkarten DE ↔ EN aus allen Fachbegriffen
-- Lernpfad mit 21 aufeinander aufbauenden Kapiteln (K00 Werkzeugkasten bis K20) und über 850 Fragen und Karten
-- **Halbleiter-Packaging (Stufe F, K15–K20):** Aufgaben des Packages, Architekturen von Drahtbond bis Chiplet, Werkstoffe und Thermomechanik, IC-Substrat mit UKP-Microvias und Glaskern-TGVs, Dicing und Debonding, Qualität und Forschungslandschaft
+- Über 900 Fragen und Karten, 181 Glossarbegriffe
+- **Halbleiter-Packaging (K15–K20):** Aufgaben des Packages, Architekturen von Drahtbond bis Chiplet, Werkstoffe und Thermomechanik, IC-Substrat mit UKP-Microvias und Glaskern-TGVs, Dicing und Debonding, Qualität und Forschungslandschaft
 - **Lektionen als Seiten:** jede Frage auf einer eigenen Seite, Blättern per Wischen, Fortschrittsleiste mit Sprung zu offenen Fragen
 - **Laboralltag (K14) als Spiele:** Strahljustage, Fokussuche, Leistung einstellen, Pulskompressor mit Autokorrelator, Liu-Plot
 - **Diagramme lesen:** Fragen mit interaktiven Plots und Ablese-Cursor (Kaustik, Liu-Plot, Abtragskurven, Autokorrelation)
