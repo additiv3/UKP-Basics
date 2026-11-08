@@ -20,11 +20,11 @@ function goalRing(done, goal) {
   });
 }
 
-/** Decorative scene: crystal hit by an ultrashort pulse train (CSS animated). */
+/** Decorative scene: crystal hit by a green ultrashort pulse train (CSS animated), matching the app icon. */
 const SCENE = `<svg viewBox="-40 -30 360 250" aria-hidden="true" focusable="false">
 <defs>
 <linearGradient id="hc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#40d0ff"/><stop offset="1" stop-color="#0868be"/></linearGradient>
-<radialGradient id="hg"><stop offset="0" stop-color="#ffd678" stop-opacity=".95"/><stop offset="1" stop-color="#ff6230" stop-opacity="0"/></radialGradient>
+<radialGradient id="hg"><stop offset="0" stop-color="#c8ffb0" stop-opacity=".95"/><stop offset="1" stop-color="#22de74" stop-opacity="0"/></radialGradient>
 </defs>
 <polygon points="27,39 114,6 183,51 174,138 81,171 18,114" fill="url(#hc)" stroke="url(#hc)" stroke-width="13" stroke-linejoin="round"/>
 <polygon points="27,39 114,6 102,87" fill="#fff" fill-opacity=".34"/>
@@ -32,14 +32,14 @@ const SCENE = `<svg viewBox="-40 -30 360 250" aria-hidden="true" focusable="fals
 <polygon points="174,138 81,171 102,87" fill="#001e3c" fill-opacity=".26"/>
 <polygon points="81,171 18,114 102,87" fill="#001e3c" fill-opacity=".34"/>
 <g stroke="#fff" stroke-opacity=".35" stroke-width="1.5"><line x1="102" y1="87" x2="27" y2="39"/><line x1="102" y1="87" x2="114" y2="6"/><line x1="102" y1="87" x2="183" y2="51"/><line x1="102" y1="87" x2="174" y2="138"/><line x1="102" y1="87" x2="81" y2="171"/><line x1="102" y1="87" x2="18" y2="114"/></g>
-<polygon points="-60,-40 -30,-70 58,21" fill="#ff6230" fill-opacity=".33"/>
+<polygon points="-60,-40 -30,-70 58,21" fill="#22de74" fill-opacity=".33"/>
 <g stroke-linecap="round" stroke="#fff" stroke-width="6" fill="none">
 <line class="hero-pulse" x1="-50" y1="-84" x2="58" y2="21" pathLength="166"/>
 <line class="hero-pulse p2" x1="-50" y1="-84" x2="58" y2="21" pathLength="166"/>
 <line class="hero-pulse p3" x1="-50" y1="-84" x2="58" y2="21" pathLength="166"/>
 </g>
 <g class="hero-spark"><circle cx="58" cy="21" r="26" fill="url(#hg)"/><polygon points="58,-4 62,17 83,21 62,25 58,46 54,25 33,21 54,17" fill="#fff"/></g>
-<g class="hero-plume"><circle cx="78" cy="2" r="2.6" fill="#ffd678"/><circle cx="92" cy="-14" r="2" fill="#ff6230"/><circle cx="66" cy="-12" r="1.8" fill="#fff"/><circle cx="104" cy="-4" r="2.2" fill="#ff6230" style="animation-delay:-.2s"/><circle cx="84" cy="-26" r="1.6" fill="#ffd678" style="animation-delay:-.4s"/></g>
+<g class="hero-plume"><circle cx="78" cy="2" r="2.6" fill="#ffd678"/><circle cx="92" cy="-14" r="2" fill="#22de74"/><circle cx="66" cy="-12" r="1.8" fill="#fff"/><circle cx="104" cy="-4" r="2.2" fill="#22de74" style="animation-delay:-.2s"/><circle cx="84" cy="-26" r="1.6" fill="#ffd678" style="animation-delay:-.4s"/></g>
 </svg>`;
 
 const STATUS_LABEL = { geplant: 'Bald verfügbar', gesperrt: 'Empfohlen: erst Voraussetzungen', offen: 'Bereit', laeuft: 'In Arbeit', fertig: 'Abgeschlossen' };
@@ -125,7 +125,7 @@ export async function render(_params, app) {
     'div',
     { class: 'hm-top' },
     h('img', { src: 'assets/brand/mark.svg', alt: '', width: 40, height: 40 }),
-    h('div', { class: 'hm-brand' }, h('span', { class: 'brand-name' }, 'UKP', h('b', {}, '-Basics')), h('span', { class: 'brand-sub' }, t('Laserablation harter Werkstoffe'))),
+    h('div', { class: 'hm-brand' }, h('span', { class: 'brand-name' }, 'UKP', h('b', {}, '-Basics')), h('span', { class: 'brand-sub' }, t('UKP-Ablation im Halbleiter-Packaging'))),
     h('span', { class: 'spacer' }),
     langSwitch(app),
     h('button', { type: 'button', class: 'icon-btn round', 'aria-label': t('Taschenrechner'), onClick: () => openCalculator(), html: icon('calc', 22) }),
@@ -172,9 +172,9 @@ export async function render(_params, app) {
       'div',
       { class: 'qa-grid' },
       tile('#/wiederholen', 'review', t('Wiederholen'), due.length ? t('{n} fällig', { n: due.length }) : t('Nichts fällig'), 'var(--accent)', due.length || null),
-      tile('#/vokabeln', 'vocab', t('Vokabeln'), dueVocab ? t('{n} fällig', { n: dueVocab }) : t('Englisch trainieren'), 'var(--st-b)', dueVocab || null),
+      tile('#/vokabeln', 'vocab', t('Vokabeln'), dueVocab ? t('{n} fällig', { n: dueVocab }) : t('Englisch trainieren'), 'var(--st-c)', dueVocab || null),
       tile('#/labor/spiel/rechenwerkstatt', 'calc', t('Rechenwerkstatt'), t('Aufgaben mit Taschenrechner'), 'var(--laser)'),
-      tile('#/labor', 'flask', t('Labor'), t('Simulationen und Formeln'), 'var(--st-d)'),
+      tile('#/labor', 'flask', t('Labor'), t('Simulationen und Formeln'), 'var(--st-f)'),
     ),
   );
 
