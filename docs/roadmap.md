@@ -53,6 +53,16 @@ Offen aus Phase 2: Karteikarten-Ansicht pro Kapitel (Blättern ohne SM-2), Stati
 
 Offen aus Phase 2d: Simulation „Microvia-Bohren“ (Taper aus Gauß- und Top-Hat-Profil, Wärmeakkumulation im Burst), Laborspiel zum Prozessfenster im Schichtverbund, Belege aus den Volltexten.
 
+## Phase 2e · Version 0.6 (erledigt)
+
+- [x] Lernpfad als **Forschungspfad** mit sieben Etappen und rotem Faden (Orientierung → Laser-Fundament → UKP-Physik → Abtrag und Werkstoffe → Laser im Packaging → Ins Labor → Forschung, Englisch begleitend); Kapitel-IDs und Lernstände bleiben erhalten
+- [x] Feld `bezug` je Kapitel, auf der Kapitelseite als „Wofür du das brauchst“
+- [x] Neues Kapitel K21 „Dein Forschungsthema: UKP im Packaging“ (4 Lektionen) und K22 „Erste Versuche: Bohren und Abtragen“ (5 Lektionen), zweisprachig, 51 neue Fragen und Karten
+- [x] Glossar: Trepanieren, Wendelbohren, Aspektverhältnis, Laser-Scanning-Mikroskop, Rasterelektronenmikroskop; Definition Perkussionsbohren präzisiert
+- [x] App-Icon und Startseiten-Szene mit grünem Laser (515 nm statt Orange), Untertitel „UKP-Ablation im Halbleiter-Packaging“, zwei neue Etappenfarben
+
+Offen aus Phase 2e: Kapitel zur Anlage selbst, sobald Aufbau und Datenblätter vorliegen; eigene Messbilder aus den Vorversuchen in K22.
+
 ## Phase 3 · Vertiefung
 
 - Weitere Simulationen: Bessel-Strahl und Filamentation, LIPSS-Periode, Wärmeakkumulation über Pulsfolgen

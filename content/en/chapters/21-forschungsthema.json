@@ -1,0 +1,288 @@
+{
+  "titel": "Your research topic: ultrafast lasers in packaging",
+  "einleitung": "The start of your learning path. You get a picture of what your topic is about, why semiconductor packaging needs ultrafast lasers, how the chapters of this app fit together and how a broad topic turns into a testable research question. The chapter is short and has no formulas; it is the compass for everything else.",
+  "ziele": [
+    "Explain the topic 'ultrafast laser ablation in semiconductor packaging' in your own words",
+    "Justify what makes ultrafast lasers interesting for packaging materials and where their limits are",
+    "Name the stages of the learning path and their purpose",
+    "Apply the chain from topic to research question and recognise weak questions",
+    "Describe the roadmap of basics, pilot experiments, literature research and direction"
+  ],
+  "lektionen": {
+    "k21.l01": "The topic in three steps",
+    "k21.l02": "The learning path as a map",
+    "k21.l03": "From topic to research question",
+    "k21.l04": "Your roadmap for the first months"
+  },
+  "blocks": {
+    "k21.l01.b01": {
+      "inhalt": [
+        "**1. The application field.** [[packaging|Semiconductor packaging]] is everything that happens after the chip is made: the [[die|chip]] is connected to the outside world, electrically, thermally and mechanically, and protected. The trend is called *advanced packaging*: several [[chiplet|chiplets]] in one package, [[interposer|interposers]] with fine wiring, new substrates such as glass. Structures get smaller and materials more diverse.",
+        "**2. The need.** In these build-ups, holes, trenches and openings have to be made, often through a stack of different materials: polymer on copper, glass, silicon, mould compound. A laser works without contact, without a mask and with digital positioning. That is why it has long been used in the back-end, for example for [[microvia|microvias]].",
+        "**3. The question about the tool.** What changes when the pulses last only pico- or femtoseconds? That is exactly your topic: the physics of [[ukp|ultrafast]] ablation applied to the materials and requirements of packaging."
+      ]
+    },
+    "k21.l01.b02": {
+      "inhalt": [
+        "What makes ultrafast lasers interesting for packaging:",
+        "- **Little heat input.** The energy is deposited faster than heat can flow away (K05). This protects polymers and thin layers.\n- **Transparent and brittle materials.** Via [[multiphotonenabsorption|nonlinear absorption]], glass and other dielectrics can be processed too (K06).\n- **Small structures.** Material is removed only where the fluence exceeds the threshold (K07). Structures smaller than the focus become possible.\n- **Selectivity.** Different materials have different thresholds. If the fluence lies between them, one is removed and the other stays (K17).",
+        "And where it gets difficult: **throughput** (industry counts holes per second), **heat accumulation** at high repetition rates, **cracks** in glass, **delamination** in the layer stack and the **cost** of the laser sources. Research questions arise exactly at these points."
+      ]
+    },
+    "k21.l01.b03": {
+      "inhalt": "Your topic connects two worlds: the **physics of ablation** (how does a pulse act on glass, silicon, copper and polymer?) and the **requirements of packaging** (how small, how clean, how fast, how reliable?). Good research questions sit on the border between the two."
+    },
+    "k21.q01": {
+      "frage": "What does semiconductor packaging cover?",
+      "optionen": [
+        "Everything after chip fabrication: connecting, protecting, cooling and integrating the chip",
+        "Only boxing the finished parts for shipping",
+        "Exposing the transistors on the wafer",
+        "Growing silicon single crystals"
+      ],
+      "erklaerung": "Packaging is the back-end part of semiconductor manufacturing. Lithography belongs to the front-end (K15)."
+    },
+    "k21.q02": {
+      "frage": "What makes ultrafast lasers interesting for packaging materials? (multiple choice)",
+      "optionen": [
+        "Little heat input, because the energy is deposited faster than heat flows away",
+        "Glass can be processed via nonlinear absorption",
+        "Different thresholds allow selective ablation in a layer stack",
+        "No heat is produced at all",
+        "They always have the highest throughput of all processes"
+      ],
+      "erklaerung": "'Cold' is only relative (K05): at high repetition rates heat accumulates. And on throughput, ultrafast lasers compete with CO₂ and UV ns lasers (K18)."
+    },
+    "k21.q03": {
+      "frage": "Match the problem to the chapter that provides the physics.",
+      "paare": [
+        [
+          "Voids in the polymer at high repetition rate",
+          "Heat accumulation (K05)"
+        ],
+        [
+          "Glass hardly absorbs the laser wavelength",
+          "Nonlinear absorption (K06)"
+        ],
+        [
+          "Hole diameter depends on the pulse energy",
+          "Gaussian beam and threshold (K02, K07)"
+        ],
+        [
+          "The copper pad under the polymer must survive",
+          "Threshold contrast in the layer stack (K17)"
+        ]
+      ],
+      "erklaerung": "This is how application and physics connect: every process problem has a mechanism that you learn in one of the chapters."
+    },
+    "k21.c01": {
+      "vorne": "Why ultrafast lasers in packaging? Four reasons, four limits.",
+      "hinten": "**Reasons:** little heat input, glass via nonlinear absorption, structures smaller than the focus, selectivity via threshold differences. **Limits:** throughput, heat accumulation, cracks in glass, delamination."
+    },
+    "k21.l02.b01": {
+      "inhalt": [
+        "The app takes you in seven stages from the application to your own research:",
+        "1. **Orientation:** this chapter and the basics of packaging (K15, K16). The *what for* comes first.\n2. **Laser foundation:** numbers, beam, light–matter interaction (K00 to K03). The toolkit.\n3. **Ultrafast physics:** pulse generation, time scales, nonlinear absorption (K04 to K06). Why short is different.\n4. **Ablation and materials:** threshold, mechanisms, materials and the layer stack in a package (K07, K08, K17).\n5. **Lasers in packaging:** microvias, glass core and TGVs, singulation and debonding, special processes (K18, K19, K10).\n6. **Into the lab:** process parameters, lab routines, metrology and your first experiments (K09, K14, K11, K22).\n7. **Research:** quality, research landscape, scientific practice (K20, K12).",
+        "**English** (K13) runs alongside. At the top of each chapter, *Why you need this* shows how it contributes to your topic."
+      ]
+    },
+    "k21.l02.b02": {
+      "inhalt": [
+        "How to get the most out of it:",
+        "- **Follow the order, but not slavishly.** The app recommends the order and never locks hard. Unlock what you already know.\n- **Review briefly every day.** The review (SM-2) brings questions back just when you have almost forgotten them.\n- **Calculate instead of only reading.** Each calculation training lesson practises the quantities you will need at the machine.\n- **Use the lab tab.** The simulations show how threshold, incubation or overlap respond to parameters."
+      ]
+    },
+    "k21.q04": {
+      "frage": "Put the stages of the learning path in the right order.",
+      "items": [
+        "Orientation",
+        "Laser foundation",
+        "Ultrafast physics",
+        "Ablation and materials",
+        "Lasers in packaging",
+        "Into the lab",
+        "Research"
+      ],
+      "oben": "first",
+      "unten": "last",
+      "erklaerung": "From the what-for via toolkit and physics to the application, then into practice and to your own question."
+    },
+    "k21.q05": {
+      "frage": "Why does packaging come first and not after the laser physics?",
+      "optionen": [
+        "So that you know what you need the physics for while learning it",
+        "Because packaging is easier than physics",
+        "Because physics is unimportant for the topic"
+      ],
+      "erklaerung": "If you know the goal, you read differently: for every formula you ask which process problem it explains."
+    },
+    "k21.q06": {
+      "frage": "In which stage do you find the answer?",
+      "paare": [
+        [
+          "What is a chiplet?",
+          "Orientation"
+        ],
+        [
+          "Why do cracks form at the hole edge in glass?",
+          "Ablation and materials"
+        ],
+        [
+          "How is a microvia drilled in industry?",
+          "Lasers in packaging"
+        ],
+        [
+          "How do I set pulse distance and hatch?",
+          "Into the lab"
+        ],
+        [
+          "How do I read a paper efficiently?",
+          "Research"
+        ]
+      ],
+      "erklaerung": "The stages are also a reference: when a question comes up at the machine, you know where to look."
+    },
+    "k21.c02": {
+      "vorne": "The seven stages of your learning path?",
+      "hinten": "Orientation, laser foundation, ultrafast physics, ablation and materials, lasers in packaging, into the lab, research. English runs alongside."
+    },
+    "k21.l03.b01": {
+      "inhalt": [
+        "'Ultrafast laser ablation in semiconductor packaging' is a **topic**, not yet a **question**. A dissertation needs a question that experiments and models can answer. The way there is a chain:",
+        "1. **Application:** where in the package? (e.g. glass core substrate)\n2. **Process step:** what does the laser have to do? (e.g. drill a through-glass via directly)\n3. **Problem:** what goes wrong today? (e.g. chipping at the exit side)\n4. **Material:** which materials, which stack? (e.g. a specific borosilicate glass)\n5. **Target quantity:** how do you measure success? (e.g. width of the chipping zone, taper, drilling time)\n6. **Control variables:** what do you vary? (e.g. pulse duration, burst, drilling strategy)\n7. **Gap:** what does the literature not know yet?",
+        "The example is freely chosen and not a recommendation. It only shows how concrete each step must become."
+      ]
+    },
+    "k21.l03.b02": {
+      "inhalt": [
+        "A sound research question is:",
+        "- **concrete:** one process, one material system, a clear target quantity\n- **measurable:** evaluable with your metrology (microscope, SEM, cross-section)\n- **feasible:** on your machine and within the time of a doctorate\n- **new:** not already answered, which the literature search shows\n- **relevant:** for industry or for understanding the mechanism\n- **productive:** big enough for several publications",
+        "Typical weak questions are too broad ('How do you drill glass with ultrafast lasers?'), pure parameter studies without a goal ('We vary five parameters and see what happens.'), not measurable ('Is USP better?') or already answered."
+      ]
+    },
+    "k21.l03.b03": {
+      "inhalt": "A **process window** is a result, but not yet an insight. A thesis becomes strong when it explains *why* the window lies where it does (mechanism) and shows how this transfers to other materials or machines."
+    },
+    "k21.q07": {
+      "frage": "Put the chain from topic to research question in the right order.",
+      "items": [
+        "Application",
+        "Process step",
+        "Problem",
+        "Material",
+        "Target quantity",
+        "Control variables",
+        "Gap in the literature"
+      ],
+      "oben": "topic",
+      "unten": "question",
+      "erklaerung": "From the outside in: first where and what for, then what goes wrong, then how to measure it and what to change. The gap checks whether the question is new."
+    },
+    "k21.q08": {
+      "frage": "Which question is the best starting point for a doctorate?",
+      "optionen": [
+        "How does the chipping zone at the exit side of TGVs in borosilicate glass depend on pulse duration and burst, and what mechanism is behind it?",
+        "How do you drill glass with ultrafast lasers?",
+        "Are ultrafast lasers better than all other lasers?",
+        "What happens if we vary all parameters on the machine?"
+      ],
+      "erklaerung": "The first question names application, material, target quantity and control variables, and asks for the mechanism. Whether it is new only the literature can tell."
+    },
+    "k21.q09": {
+      "frage": "Match the weak question to its weakness.",
+      "paare": [
+        [
+          "How do you drill glass with USP?",
+          "Too broad"
+        ],
+        [
+          "Is USP better?",
+          "Not measurable"
+        ],
+        [
+          "We vary five parameters and see.",
+          "No research goal"
+        ],
+        [
+          "Does percussion drilling work in FR-4?",
+          "Already answered"
+        ]
+      ],
+      "erklaerung": "On the last example: there is already work on ultrafast microvias in FR-4, including from Aschaffenburg (K18). The question would only hold with a new aspect."
+    },
+    "k21.c03": {
+      "vorne": "The chain from topic to research question?",
+      "hinten": "Application → process step → problem → material → target quantity → control variables → gap. Check: concrete, measurable, feasible, new, relevant, productive."
+    },
+    "k21.l04.b01": {
+      "inhalt": [
+        "The way to the research question has four phases:",
+        "1. **Basics:** this app and conversations, until you can plan experiments and interpret results physically.\n2. **Pilot experiments on the machine:** first holes and ablation fields in packaging materials to get a feel for the process. Still documented properly (K22).\n3. **Deep literature research:** evaluate the literature systematically and compare it with your own pilot experiments.\n4. **Set the direction:** two or three topic candidates with pros and cons, agreement with the supervisor, proposal.",
+        "Why practice before deep research? Once you have drilled a hole yourself and looked at it in the SEM, you read papers differently: you notice which information is missing, which images are flattering and which results would be reachable on your machine at all."
+      ]
+    },
+    "k21.l04.b02": {
+      "inhalt": [
+        "The most important research tool is a **literature matrix**: one row per paper, columns for material, process, laser (wavelength, pulse duration, repetition rate, burst), strategy, target quantity, result and open points. Empty or contradictory cells are candidates for your gap.",
+        "Habits from day one:",
+        "- One protocol per experiment, an **experiment ID** in every file name\n- Photos and micrographs always with a scale bar\n- Every source straight into the reference manager (K12)\n- A short **weekly note:** what did I learn, what is open, whom do I ask what?"
+      ]
+    },
+    "k21.l04.b03": {
+      "inhalt": "Data you document properly today will be figures in your first paper in a year. Data without a protocol are lost."
+    },
+    "k21.q10": {
+      "frage": "Put the four phases in the right order.",
+      "items": [
+        "Basics",
+        "Pilot experiments on the machine",
+        "Deep literature research",
+        "Set the direction"
+      ],
+      "oben": "first",
+      "unten": "last",
+      "erklaerung": "Understand, try out, read systematically, decide."
+    },
+    "k21.q11": {
+      "frage": "What is a literature matrix mainly for?",
+      "optionen": [
+        "Empty or contradictory cells show where the research gap might be",
+        "It replaces reading the papers",
+        "It counts how often a paper was cited"
+      ],
+      "erklaerung": "The matrix shows which combinations of material, laser and target quantity have been studied and which have not."
+    },
+    "k21.q12": {
+      "frage": "Fill in.",
+      "text": "Every file carries the ___ in its name. Micrographs always need a ___. Pilot experiments are for getting a feel for the process, but are still ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "experiment ID",
+            "time of day"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "scale bar",
+            "filter"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "documented",
+            "discarded"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "That way, a year from now you will find the parameters for every image."
+    },
+    "k21.c04": {
+      "vorne": "Four phases up to the research question?",
+      "hinten": "Basics → pilot experiments on the machine → deep research with a literature matrix → set the direction (candidates, agreement, proposal)."
+    }
+  }
+}

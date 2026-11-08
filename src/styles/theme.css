@@ -30,13 +30,16 @@
   --tabbar-h: 60px;
   --font-display: ui-rounded, 'SF Pro Rounded', 'Nunito', 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
 
-  /* stage colors (A fundament, B ultrakurzpulse, C abtrag, D praxis, E englisch, F packaging) */
-  --st-a: #0a8fd6;
-  --st-b: #6a5af0;
-  --st-c: #e2561f;
-  --st-d: #12a577;
-  --st-e: #d6458a;
-  --st-f: #b07800;
+  /* stage colors (A orientierung, B laser-fundament, C ukp-physik, D abtrag/werkstoffe,
+     E laser im packaging, F labor, G forschung, H englisch) */
+  --st-a: #b07800;
+  --st-b: #0a8fd6;
+  --st-c: #6a5af0;
+  --st-d: #e2561f;
+  --st-e: #0b8f9c;
+  --st-f: #12a577;
+  --st-g: #52607a;
+  --st-h: #d6458a;
 
   /* figure colors (SVG figures and canvases read these) */
   --fig-line: #34415e;
@@ -74,12 +77,14 @@
     --shadow: 0 1px 2px rgb(0 0 0 / 40%), 0 8px 22px rgb(0 0 0 / 32%);
     --shadow-lg: 0 2px 4px rgb(0 0 0 / 40%), 0 22px 50px rgb(0 0 0 / 50%);
 
-    --st-a: #3cc4ff;
-    --st-b: #9a8cff;
-    --st-c: #ff8a58;
-    --st-d: #3ee0b0;
-    --st-e: #ff7ab5;
-    --st-f: #ffc24d;
+    --st-a: #ffc24d;
+    --st-b: #3cc4ff;
+    --st-c: #9a8cff;
+    --st-d: #ff8a58;
+    --st-e: #45d6e3;
+    --st-f: #3ee0b0;
+    --st-g: #aab7d6;
+    --st-h: #ff7ab5;
 
     --fig-line: #c9d3ea;
     --fig-soft: #4a5680;

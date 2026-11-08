@@ -1,4 +1,4 @@
-// Chapter overview: goals, lesson list, soft-gating notice, further reading.
+// Chapter overview: research relevance, goals, lesson list, soft-gating notice, further reading.
 import { h } from '../dom.js';
 import { icon } from '../icons.js';
 import { inline } from '../../core/richtext.js';
@@ -78,9 +78,10 @@ export async function render({ id }, app) {
     'div',
     { class: 'page', dataset: { stage: meta.stufe } },
     back(),
-    h('p', { class: 'kicker' }, `${meta.id.toUpperCase()} · ${t('Stufe')} ${meta.stufe}`),
+    h('p', { class: 'kicker' }, `${meta.id.toUpperCase()} · ${t('Etappe')} ${meta.stufe}`),
     h('h1', {}, chapter.titel),
     h('p', { class: 'lead', html: inline(chapter.einleitung ?? meta.kurz) }),
+    meta.bezug ? h('div', { class: 'callout bezug' }, h('strong', { class: 'callout-title' }, t('Wofür du das brauchst')), h('p', { html: inline(meta.bezug) })) : null,
     h('div', { class: 'chips' }, h('span', { class: 'chip' }, t('{d}/{n} Lektionen', { d: stats.done, n: stats.lessons })), h('span', { class: 'chip' }, t('{d}/{n} gefestigt', { d: stats.mature, n: stats.items }))),
     unlock,
     h('section', {}, h('h2', {}, t('Lernziele')), h('ul', { class: 'goals' }, chapter.ziele.map((z) => h('li', { html: inline(z) })))),

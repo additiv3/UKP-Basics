@@ -107,6 +107,19 @@
       "quelle": "Definition"
     },
     {
+      "id": "aspektverhaeltnis",
+      "begriff": "Aspektverhältnis",
+      "englisch": "aspect ratio",
+      "kurz": "Verhältnis von Tiefe zu Durchmesser eines Lochs oder Grabens.",
+      "definition": "Ein hohes Aspektverhältnis bedeutet tiefe, enge Strukturen. Es begrenzt, wie gut Strahl und Partikel den Lochgrund erreichen bzw. verlassen, und wie gut sich das Loch von oben messen lässt.",
+      "siehe": [
+        "perkussionsbohren",
+        "tgv"
+      ],
+      "verifiziert": true,
+      "quelle": "Definition"
+    },
+    {
       "id": "autokorrelation",
       "begriff": "Autokorrelation",
       "englisch": "autocorrelation",
@@ -814,6 +827,19 @@
       "quelle": "Definition"
     },
     {
+      "id": "lsm",
+      "begriff": "Laser-Scanning-Mikroskop (LSM)",
+      "englisch": "laser scanning microscope",
+      "kurz": "Konfokales Mikroskop, das Oberflächen punktweise abrastert und 3D-Topografie liefert.",
+      "definition": "Liefert Höhenkarten für Durchmesser, Tiefe, Profil und [[rauheit|Rauheit]]. Steile Wände und tiefe, enge Löcher geben kaum Signal; bei transparenten Proben können Reflexe der Rückseite stören.",
+      "siehe": [
+        "rauheit",
+        "rem"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+    },
+    {
       "id": "zerstoerschwelle",
       "begriff": "Laserinduzierte Zerstörschwelle (LIDT)",
       "englisch": "laser-induced damage threshold (LIDT)",
@@ -1135,6 +1161,19 @@
       ],
       "verifiziert": true,
       "quelle": "Definition"
+    },
+    {
+      "id": "rem",
+      "begriff": "Rasterelektronenmikroskop (REM)",
+      "englisch": "scanning electron microscope (SEM)",
+      "kurz": "Mikroskop, das die Oberfläche mit einem Elektronenstrahl abrastert; hohe Vergrößerung und Schärfentiefe.",
+      "definition": "Zeigt Risse, [[debris|Debris]], Schmelze und [[lipss|LIPSS]] im Detail. Nichtleitende Proben (Glas, Polymer) laden sich auf und werden dünn leitfähig beschichtet oder im Niedervakuum untersucht.",
+      "siehe": [
+        "lsm",
+        "querschliff"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
     },
     {
       "id": "rauheit",
@@ -1551,6 +1590,19 @@
       "quelle": "Definition"
     },
     {
+      "id": "trepanieren",
+      "begriff": "Trepanieren",
+      "englisch": "trepanning",
+      "kurz": "Bohren durch Ausschneiden einer Kreiskontur; der Kern fällt heraus.",
+      "definition": "Der Strahl fährt eine Kreisbahn und trennt die Kontur durch. Der Durchmesser folgt aus der Bahn, nicht aus dem Fokus. Manche Arbeiten verwenden den Begriff auch für das [[wendelbohren|Wendelbohren]].",
+      "siehe": [
+        "perkussionsbohren",
+        "wendelbohren"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+    },
+    {
       "id": "ukp",
       "begriff": "Ultrakurzpuls (UKP)",
       "englisch": "ultra-short pulse, USP",
@@ -1684,6 +1736,20 @@
       ],
       "verifiziert": false,
       "quelle": "Projektnotizen"
+    },
+    {
+      "id": "wendelbohren",
+      "begriff": "Wendelbohren",
+      "englisch": "helical drilling",
+      "kurz": "Bohren mit vielen Kreisumläufen, schichtweise in die Tiefe.",
+      "definition": "Der Strahl kreist viele Male und trägt dabei Schicht für Schicht ab, oft mit einer Drehoptik, die zusätzlich den Anstellwinkel einstellt. Ergibt runde, präzise Löcher mit steuerbarer [[taper|Konizität]], ist aber langsamer als das [[perkussionsbohren|Perkussionsbohren]].",
+      "siehe": [
+        "perkussionsbohren",
+        "trepanieren",
+        "taper"
+      ],
+      "verifiziert": false,
+      "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
     },
     {
       "id": "zeit-bandbreite-produkt",
@@ -2278,10 +2344,11 @@
       "begriff": "Perkussionsbohren",
       "englisch": "percussion drilling",
       "kurz": "Bohren mit vielen Pulsen auf dieselbe Stelle.",
-      "definition": "Beim Perkussionsbohren bestimmt der Fokus den Durchmesser; beim Wendelbohren (Trepanieren) fährt der Strahl eine Kreisbahn.",
+      "definition": "Beim Perkussionsbohren bestimmen Fokus und Fluenz den Durchmesser. Davon abzugrenzen sind das [[trepanieren|Trepanieren]] (Kontur ausschneiden) und das [[wendelbohren|Wendelbohren]] (viele Kreisumläufe in die Tiefe).",
       "siehe": [
         "microvia",
-        "tgv"
+        "tgv",
+        "wendelbohren"
       ],
       "verifiziert": true,
       "quelle": "Definition"

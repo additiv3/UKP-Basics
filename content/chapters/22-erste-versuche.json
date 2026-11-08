@@ -1,0 +1,556 @@
+{
+  "id": "k22",
+  "titel": "Erste Versuche: Bohren und Abtragen",
+  "einleitung": "Hier wird aus dem Gelernten ein Versuchsplan für deine ersten Wochen an der Anlage. Du lernst die vier Bohrstrategien kennen, planst eine Schwellenmessung am Silizium-Wafer als Kalibrierung, dann Bohrungs- und Abtragsreihen und den Vergleich typischer Packaging-Werkstoffe. Zum Schluss: wie du protokollierst, misst und auswertest, damit aus Vorversuchen verwertbare Daten werden. Alle Zahlen in den Aufgaben sind frei gewählt; die echten Werte liefert deine Anlage.",
+  "ziele": [
+    "Einzelpuls-, Perkussions-, Trepanier- und Wendelbohren unterscheiden und Pulse pro Umlauf berechnen",
+    "Eine Schwellenmessung (Liu-Methode) mit Pulszahlserie als Kalibrierung der Anlage planen und auswerten",
+    "Bohrungs- und Abtragsreihen mit sinnvollen Faktoren, Stufen und Wiederholungen aufsetzen",
+    "Erwartungen an Silizium, Glas, Kupfer und Polymer als prüfbare Hypothesen formulieren",
+    "Für jede Zielgröße das passende Messverfahren wählen und ein vollständiges Protokoll führen"
+  ],
+  "weiterlesen": [
+    "liu1982",
+    "jee1988",
+    "franz2023",
+    "ostholt2014"
+  ],
+  "lektionen": [
+    {
+      "id": "k22.l01",
+      "titel": "Bohrstrategien: Perkussion, Trepanieren, Wendeln",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k22.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "Ein Loch lässt sich auf vier Arten bohren. Sie unterscheiden sich darin, ob und wie sich der Strahl bewegt:",
+            "1. **Einzelpulsbohren:** Ein Puls, ein Loch. Nur für sehr dünne Folien oder Schichten.\n2. **[[perkussionsbohren|Perkussionsbohren]]:** Viele Pulse auf dieselbe Stelle. Der Durchmesser folgt aus Fokus und Fluenz (Schwellenkontur, K07). Einfach und schnell, aber die Wand wird konisch, Partikel bleiben im Loch, und das [[aspektverhaeltnis|Aspektverhältnis]] ist begrenzt.\n3. **[[trepanieren|Trepanieren]]:** Der Strahl fährt eine Kreisbahn und schneidet die Kontur aus; der Kern fällt heraus. Der Durchmesser folgt aus der Bahn, nicht aus dem Fokus. Gut für größere Löcher.\n4. **[[wendelbohren|Wendelbohren]]:** Der Strahl kreist viele Male und arbeitet sich dabei Schicht für Schicht in die Tiefe, oft mit einer Drehoptik, die zusätzlich den Anstellwinkel einstellt. Rundere, präzisere Löcher, deren Konizität sich bis zum zylindrischen Loch steuern lässt. Dafür langsamer.",
+            "Die Begriffe werden nicht überall gleich verwendet; manche Arbeiten sagen *Trepanieren* auch zum Wendelbohren. Prüfe in jedem Paper, was gemeint ist."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k22.l01.b02",
+          "typ": "formel",
+          "latex": "\\Delta x=\\frac{v}{f},\\qquad N_\\mathrm{U}=\\frac{\\pi d_\\mathrm{B}}{\\Delta x},\\qquad t_\\mathrm{U}=\\frac{\\pi d_\\mathrm{B}}{v}",
+          "titel": "Kreisbahn: Pulsabstand, Pulse und Zeit pro Umlauf",
+          "erklaerung": "Pulsabstand $\\Delta x$ auf der Bahn bei Bahngeschwindigkeit $v$ und Repetitionsrate $f$ (K09), Pulse $N_\\mathrm{U}$ und Zeit $t_\\mathrm{U}$ für einen Umlauf auf einer Kreisbahn mit Durchmesser $d_\\mathrm{B}$.",
+          "sammlung": "Versuche",
+          "verifiziert": true,
+          "quelle": "Herleitung (Geometrie)"
+        },
+        {
+          "id": "k22.q01",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die Bohrstrategie ihrer Beschreibung zu.",
+          "paare": [
+            [
+              "Einzelpulsbohren",
+              "Ein Puls pro Loch, nur für dünne Folien"
+            ],
+            [
+              "Perkussionsbohren",
+              "Viele Pulse auf eine Stelle, Durchmesser aus Fokus und Fluenz"
+            ],
+            [
+              "Trepanieren",
+              "Kontur ausschneiden, der Kern fällt heraus"
+            ],
+            [
+              "Wendelbohren",
+              "Viele Umläufe, schichtweise in die Tiefe, Konizität steuerbar"
+            ]
+          ],
+          "erklaerung": "Von oben nach unten steigen Präzision und Bohrzeit."
+        },
+        {
+          "id": "k22.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wendelbohren auf einer Kreisbahn mit $d_\\mathrm{B}=40\\,\\mu\\mathrm{m}$ bei einem Pulsabstand von $\\Delta x=2\\,\\mu\\mathrm{m}$. Wie viele Pulse fallen auf einen Umlauf?",
+          "antwort": 62.83,
+          "einheit": "",
+          "toleranz": 0.03,
+          "erklaerung": "$N_\\mathrm{U}=\\pi\\cdot40/2=62{,}8$."
+        },
+        {
+          "id": "k22.q03",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Gleicher Pulsabstand von $2\\,\\mu\\mathrm{m}$ bei $f=200\\,\\mathrm{kHz}$. Wie schnell muss sich der Strahl auf der Bahn bewegen? Antwort in m/s.",
+          "antwort": 0.4,
+          "einheit": "m/s",
+          "toleranz": 0.02,
+          "erklaerung": "$v=\\Delta x\\cdot f=2\\cdot10^{-6}\\,\\mathrm{m}\\cdot2\\cdot10^{5}\\,\\mathrm{s^{-1}}=0{,}4\\,\\mathrm{m/s}$. Ein Umlauf dauert dann $\\pi\\cdot40\\,\\mu\\mathrm{m}/0{,}4\\,\\mathrm{m/s}\\approx0{,}31\\,\\mathrm{ms}$."
+        },
+        {
+          "id": "k22.q04",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Du sollst sehr viele kleine Microvias in einer dünnen Polymerlage bohren, Durchsatz zählt. Welche Strategie liegt nahe?",
+          "optionen": [
+            "Perkussionsbohren",
+            "Wendelbohren",
+            "Trepanieren"
+          ],
+          "richtig": 0,
+          "fest": true,
+          "erklaerung": "Perkussionsbohren ist am schnellsten und reicht für kleine Vias in dünnen Lagen; die Konizität steuert man über Strahlprofil und Burst (K18). Wendelbohren lohnt sich, wenn Rundheit und Wandwinkel wichtiger sind als Zeit."
+        },
+        {
+          "id": "k22.c01",
+          "typ": "karte",
+          "vorne": "Vier Bohrstrategien und ihr Kompromiss?",
+          "hinten": "Einzelpuls (dünne Folien), Perkussion (schnell, konisch), Trepanieren (Kontur, große Löcher), Wendeln (präzise, Konizität steuerbar, langsam). Präzision gegen Zeit.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k22.l02",
+      "titel": "Versuch 1: Schwelle und Strahlradius am Si-Wafer",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k22.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Der erste Versuch ist eine **Kalibrierung**. Ohne gemessenen Strahlradius im Fokus sind alle Fluenzangaben nur geschätzt, und ohne Fluenz kannst du deine Ergebnisse nicht mit der Literatur vergleichen.",
+            "**Warum Silizium?** Polierte Wafer sind eben, sauber und gut verfügbar, Silizium ist im Packaging allgegenwärtig, und es gibt viele Vergleichswerte in der Literatur.",
+            "**Aufbau als Punktmatrix:**",
+            "- **Zeilen:** Pulsenergie in acht bis zehn Stufen, logarithmisch gestuft, von knapp über der Schwelle bis deutlich darüber\n- **Spalten:** Pulszahl pro Punkt, zum Beispiel $N=1, 10, 100, 1000$\n- **Wiederholungen:** jede Bedingung mehrmals, damit du Mittelwert und Streuung bekommst\n- **Abstand:** Punkte weit genug auseinander, dass Debris und Wärme die Nachbarn nicht beeinflussen, also mehrere Kraterdurchmesser",
+            "Vorher bestimmst du die **Fokuslage** mit einer Fokusserie und misst die **Pulsenergie am Werkstück**, nicht am Laserausgang (K14)."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage"
+        },
+        {
+          "id": "k22.l02.b02",
+          "typ": "formel",
+          "latex": "D^2=2w_0^2\\ln\\frac{E_\\mathrm{p}}{E_\\mathrm{th}},\\qquad F_\\mathrm{th}=\\frac{2E_\\mathrm{th}}{\\pi w_0^2},\\qquad F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{S-1}",
+          "titel": "Auswertung von Versuch 1",
+          "erklaerung": "Liu-Methode: Steigung von $D^2$ über $\\ln E_\\mathrm{p}$ gibt $2w_0^2$, der Schnitt mit $D^2=0$ gibt $E_\\mathrm{th}$ (K07, K14). Daraus die Schwellfluenz. Über die Pulszahlserie bestimmst du den Inkubationskoeffizienten $S$.",
+          "sammlung": "Versuche",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        },
+        {
+          "id": "k22.l02.b03",
+          "typ": "sim",
+          "modell": "schwelle"
+        },
+        {
+          "id": "k22.l02.b04",
+          "typ": "merke",
+          "inhalt": "Versuch 1 liefert dir drei Zahlen, die du in jedem weiteren Versuch brauchst: den **Strahlradius** $w_0$, die **Schwellfluenz** und den **Inkubationskoeffizienten** $S$. Wiederhole ihn, wenn sich Optik oder Wellenlänge ändern.",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        },
+        {
+          "id": "k22.q05",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe den Ablauf von Versuch 1 in die richtige Reihenfolge.",
+          "items": [
+            "Fokuslage mit einer Fokusserie bestimmen",
+            "Pulsenergie am Werkstück messen",
+            "Punktmatrix setzen",
+            "Kraterdurchmesser messen",
+            "D² über ln E auftragen und auswerten"
+          ],
+          "oben": "zuerst",
+          "unten": "zuletzt",
+          "erklaerung": "Erst die Bedingungen sichern (Fokus, Energie), dann bearbeiten, dann messen und auswerten."
+        },
+        {
+          "id": "k22.q06",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Im Liu-Plot hat die Ausgleichsgerade von $D^2$ über $\\ln E_\\mathrm{p}$ die Steigung $800\\,\\mu\\mathrm{m}^2$. Wie groß ist der Strahlradius $w_0$ in µm?",
+          "antwort": 20,
+          "einheit": "µm",
+          "toleranz": 0.02,
+          "erklaerung": "Steigung $=2w_0^2$, also $w_0=\\sqrt{800/2}=20\\,\\mu\\mathrm{m}$."
+        },
+        {
+          "id": "k22.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Derselbe Plot schneidet die Achse $D^2=0$ bei $E_\\mathrm{th}=1{,}0\\,\\mu\\mathrm{J}$. Wie groß ist die Schwellfluenz in J/cm²?",
+          "antwort": 0.159,
+          "einheit": "J/cm²",
+          "toleranz": 0.03,
+          "erklaerung": "$F_\\mathrm{th}=2\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot(20\\cdot10^{-4}\\,\\mathrm{cm})^2)=2\\cdot10^{-6}/1{,}26\\cdot10^{-5}=0{,}16\\,\\mathrm{J/cm^2}$.",
+          "tipp": "µm in cm umrechnen: $1\\,\\mu\\mathrm{m}=10^{-4}\\,\\mathrm{cm}$."
+        },
+        {
+          "id": "k22.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel Inkubation: $F_\\mathrm{th}(1)=0{,}30\\,\\mathrm{J/cm^2}$, $S=0{,}8$. Wie groß ist die Schwelle bei $N=100$ Pulsen in J/cm²?",
+          "antwort": 0.119,
+          "einheit": "J/cm²",
+          "toleranz": 0.03,
+          "erklaerung": "$0{,}30\\cdot100^{-0{,}2}=0{,}30\\cdot0{,}398=0{,}12\\,\\mathrm{J/cm^2}$. Bei vielen Pulsen sinkt die Schwelle deutlich, das musst du bei jeder Bohrung mitdenken."
+        },
+        {
+          "id": "k22.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum setzt man die Punkte der Matrix weit auseinander?",
+          "optionen": [
+            "Debris, Wärme und Vormodifikation sollen die Nachbarkrater nicht verfälschen",
+            "Damit das Mikroskop schneller fokussiert",
+            "Weil der Scanner keine kleinen Sprünge kann"
+          ],
+          "richtig": 0,
+          "erklaerung": "Jeder Krater soll so entstehen, als wäre er allein auf der Probe. Sonst misst du Inkubation durch den Nachbarn mit."
+        },
+        {
+          "id": "k22.c02",
+          "typ": "karte",
+          "vorne": "Was liefert Versuch 1 (Schwelle am Si-Wafer)?",
+          "hinten": "Strahlradius $w_0$ aus der Steigung, $E_\\mathrm{th}$ und $F_\\mathrm{th}$ aus dem Achsenschnitt, Inkubationskoeffizient $S$ aus der Pulszahlserie. Damit sind alle späteren Fluenzen kalibriert.",
+          "verifiziert": true,
+          "quelle": "liu1982"
+        }
+      ]
+    },
+    {
+      "id": "k22.l03",
+      "titel": "Versuch 2 und 3: Bohrungen und Abtragsfelder",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k22.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "**Versuch 2: Perkussionsbohrungen.** Bei fester Fluenz bohrst du eine Reihe von Löchern mit logarithmisch gestufter Pulszahl. Du misst Eintrittsdurchmesser, Tiefe, bei Durchbohrung den Austrittsdurchmesser und daraus die Konizität (K18).",
+            "Erwartung als Hypothese: Die Tiefe wächst zuerst etwa proportional zur Pulszahl und dann immer langsamer, bis sie fast stehen bleibt. Gründe können sein, dass die Fluenz an der schrägen Wand sinkt, Partikel im Loch abschirmen und Energie an der Wand verloren geht. Wo diese Sättigung einsetzt, hängt von Werkstoff, Fluenz und Lochgeometrie ab.",
+            "Tiefe, enge Löcher kann das Mikroskop von oben oft nicht mehr auflösen. Dann hilft ein **Querschliff** (K11)."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k22.l03.b02",
+          "typ": "text",
+          "inhalt": [
+            "**Versuch 3: Abtragsfelder (Taschen).** Du scannst Linien mit Pulsabstand $\\Delta x$ und Linienabstand ([[hatch|Hatch]]) $\\Delta y$ über eine quadratische Fläche, mehrere Lagen übereinander (K09). Gemessen werden Tiefe pro Lage, Rauheit am Boden ($S_a$, K11), Abtragrate und Effizienz.",
+            "Ein kleiner Versuchsplan (K09, DoE): drei Fluenzstufen und drei Pulsabstände, Hatch gleich Pulsabstand. Das sind neun Felder, jedes mindestens doppelt. So siehst du, ob die Effizienz ein Maximum hat und wie die Rauheit mitläuft."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage"
+        },
+        {
+          "id": "k22.l03.b03",
+          "typ": "formel",
+          "latex": "\\dot V=\\frac{A\\,h}{t},\\qquad \\eta=\\frac{\\dot V}{P}",
+          "titel": "Abtragrate und Effizienz",
+          "erklaerung": "Abgetragenes Volumen (Fläche $A$ mal Tiefe $h$) pro Bearbeitungszeit $t$ und Effizienz pro mittlerer Leistung $P$, meist in $\\mathrm{mm^3/(min\\,W)}$ (K07).",
+          "sammlung": "Versuche",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k22.q10",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Ein Feld von $0{,}5\\times0{,}5\\,\\mathrm{mm}^2$ ist nach $6\\,\\mathrm{s}$ Bearbeitung $20\\,\\mu\\mathrm{m}$ tief, die mittlere Leistung war $10\\,\\mathrm{W}$. Wie groß ist die Effizienz in mm³/(min·W)?",
+          "antwort": 0.005,
+          "einheit": "mm³/(min·W)",
+          "toleranz": 0.03,
+          "erklaerung": "$V=0{,}25\\,\\mathrm{mm^2}\\cdot0{,}02\\,\\mathrm{mm}=0{,}005\\,\\mathrm{mm^3}$, $\\dot V=0{,}005/0{,}1\\,\\mathrm{min}=0{,}05\\,\\mathrm{mm^3/min}$, $\\eta=0{,}05/10=0{,}005\\,\\mathrm{mm^3/(min\\,W)}$.",
+          "tipp": "Alles in mm umrechnen und 6 s als 0,1 min schreiben."
+        },
+        {
+          "id": "k22.q11",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Vollfaktorieller Plan: drei Faktoren mit je drei Stufen, jede Kombination zweimal. Wie viele Felder musst du bearbeiten?",
+          "antwort": 54,
+          "einheit": "",
+          "toleranz": 0,
+          "erklaerung": "$3^3\\cdot2=54$. Der Aufwand wächst schnell; deshalb lohnt es, Faktoren vorher zu begründen oder einen teilfaktoriellen Plan zu nehmen (K09)."
+        },
+        {
+          "id": "k22.q12",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum wird die Tiefe beim Perkussionsbohren mit steigender Pulszahl langsamer größer? (Mehrfachauswahl)",
+          "optionen": [
+            "Die Fluenz verteilt sich auf die schräge Wand und sinkt",
+            "Partikel im Loch schirmen den Strahl ab",
+            "Der Laser wird mit der Zeit schwächer",
+            "Energie geht an der Wand verloren"
+          ],
+          "richtig": [
+            0,
+            1,
+            3
+          ],
+          "erklaerung": "Die Lochgeometrie selbst begrenzt den Abtrag. Ob die Laserleistung stabil ist, prüfst du trotzdem mit einer Messung vor und nach der Serie."
+        },
+        {
+          "id": "k22.c03",
+          "typ": "karte",
+          "vorne": "Versuch 2 und 3: was misst du jeweils?",
+          "hinten": "**Bohrungen:** Ein- und Austrittsdurchmesser, Tiefe über der Pulszahl, Konizität, Sättigung. **Abtragsfelder:** Tiefe pro Lage, Rauheit $S_a$, Abtragrate, Effizienz über Fluenz und Pulsabstand.",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage"
+        }
+      ]
+    },
+    {
+      "id": "k22.l04",
+      "titel": "Werkstoffvergleich: Silizium, Glas, Kupfer, Polymer",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k22.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Dieselben Versuche an mehreren Werkstoffen zeigen dir, was das Package so schwierig macht. Formuliere deine Erwartungen **vorher** als Hypothesen und prüfe sie dann:",
+            "- **Silizium** ([[halbleiter|Halbleiter]]): Bei $1030\\,\\mathrm{nm}$ liegt die Photonenenergie nur knapp über der [[bandluecke|Bandlücke]], linear absorbiert es dort schwach; bei $515\\,\\mathrm{nm}$ deutlich stärker. Achte auf Schmelzränder, [[lipss|LIPSS]] und Risse bei hoher Energie.\n- **Glas** ([[dielektrikum|Dielektrikum]]): transparent, Abtrag nur über nichtlineare Absorption (K06). Achte auf Ausbrüche ([[chipping|Chipping]]), Risse und Effekte an der Rückseite.\n- **Kupfer** (Metall): freie Elektronen, hohe Reflexion im Infraroten und hohe Wärmeleitfähigkeit. Achte auf Schmelze und Grat, besonders bei hoher Repetitionsrate.\n- **Polymer** (z. B. [[abf|ABF]] oder [[moldmasse|Moldmasse]]): niedrige Schwelle, wärmeempfindlich, oft mit Glasfüllstoff. Achte auf Verkohlung, Blasen und ungleichmäßigen Abtrag um Füllstoffpartikel."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k22.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "Für das Packaging ist der **Schwellenkontrast** der Kern: Soll ein Polymer über einem Kupferpad entfernt werden, muss die Fluenz über der Schwelle des Polymers und unter der des Kupfers liegen. Weil die Schwellen mit der Pulszahl sinken (Inkubation), wird dieses Fenster mit jedem Puls schmaler.",
+            "Deine Schwellenmessungen aus Versuch 1, wiederholt an jedem Werkstoff, liefern genau diese Zahlen. Damit hast du nach wenigen Wochen eigene Daten zu einer Frage, die im Package wirklich zählt."
+          ],
+          "verifiziert": true,
+          "quelle": "jee1988"
+        },
+        {
+          "id": "k22.l04.b03",
+          "typ": "formel",
+          "latex": "F_\\mathrm{th,P}(N)<F_0<F_\\mathrm{th,Cu}(N),\\qquad F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{S-1}",
+          "titel": "Selektives Fenster im Schichtverbund",
+          "erklaerung": "Polymer (P) abtragen, Kupfer (Cu) schonen: Die Spitzenfluenz muss nach $N$ Pulsen zwischen beiden Schwellen liegen. Inkubation nach K07.",
+          "sammlung": "Versuche",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k22.l04.b04",
+          "typ": "sim",
+          "modell": "inkubation"
+        },
+        {
+          "id": "k22.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Zahlenbeispiel: Kupfer hat $F_\\mathrm{th,Cu}(1)=1{,}0\\,\\mathrm{J/cm^2}$ und $S=0{,}85$. Welche Spitzenfluenz darf ein Prozess mit $N=100$ Pulsen höchstens haben, damit das Kupferpad nicht abgetragen wird? Antwort in J/cm².",
+          "antwort": 0.501,
+          "einheit": "J/cm²",
+          "toleranz": 0.03,
+          "erklaerung": "$1{,}0\\cdot100^{-0{,}15}=0{,}50\\,\\mathrm{J/cm^2}$. Nach 100 Pulsen ist die Kupferschwelle auf die Hälfte gesunken; ein Fenster aus Einzelpulsdaten wäre zu optimistisch."
+        },
+        {
+          "id": "k22.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "frage": "Wie groß ist die Photonenenergie bei $1030\\,\\mathrm{nm}$ in eV? (Faustformel $E\\,[\\mathrm{eV}]\\approx1240/\\lambda\\,[\\mathrm{nm}]$)",
+          "antwort": 1.204,
+          "einheit": "eV",
+          "toleranz": 0.02,
+          "erklaerung": "$1240/1030=1{,}20\\,\\mathrm{eV}$, nur wenig über der Bandlücke von Silizium. Bei $515\\,\\mathrm{nm}$ sind es $2{,}41\\,\\mathrm{eV}$."
+        },
+        {
+          "id": "k22.q15",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem Werkstoff das typische Risiko zu, auf das du achten solltest.",
+          "paare": [
+            [
+              "Glas",
+              "Ausbrüche und Risse"
+            ],
+            [
+              "Kupfer",
+              "Schmelze und Grat"
+            ],
+            [
+              "Polymer mit Füllstoff",
+              "Verkohlung und ungleichmäßiger Abtrag"
+            ],
+            [
+              "Silizium",
+              "Schmelzränder und LIPSS"
+            ]
+          ],
+          "erklaerung": "Das sind Hypothesen für deine ersten Bilder unter dem Mikroskop, keine festen Regeln. Welche davon an deiner Anlage auftreten, zeigt der Versuch."
+        },
+        {
+          "id": "k22.q16",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum wird das selektive Fenster mit steigender Pulszahl schmaler?",
+          "optionen": [
+            "Durch Inkubation sinken die Schwellen, auch die des Werkstoffs, der stehen bleiben soll",
+            "Weil der Laser mit der Zeit heißer wird",
+            "Weil das Polymer mit jedem Puls härter wird"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die obere Grenze des Fensters wandert nach unten. Je mehr Pulse das Pad sieht, desto knapper wird die Reserve."
+        },
+        {
+          "id": "k22.c04",
+          "typ": "karte",
+          "vorne": "Was ist der Schwellenkontrast und warum ist er im Package wichtig?",
+          "hinten": "Der Unterschied der Schwellfluenzen zweier Werkstoffe im Verbund. Liegt die Fluenz dazwischen, wird der eine abgetragen und der andere geschont. Inkubation verkleinert das Fenster mit der Pulszahl.",
+          "verifiziert": true,
+          "quelle": "jee1988"
+        }
+      ]
+    },
+    {
+      "id": "k22.l05",
+      "titel": "Protokoll, Messung, Auswertung",
+      "minuten": 13,
+      "blocks": [
+        {
+          "id": "k22.l05.b01",
+          "typ": "text",
+          "inhalt": [
+            "**Pflichtfelder im Protokoll**, für jeden Versuch:",
+            "- Datum, **Versuchs-ID**, Ziel des Versuchs in einem Satz\n- Werkstoff, Charge, Dicke, Vorbehandlung\n- Wellenlänge, Pulsdauer, Pulsenergie *am Werkstück*, Repetitionsrate, Burst\n- Optik, Spotgröße, Fokuslage\n- Pulsabstand, Hatch, Pulszahl, Bohrstrategie, Lagen\n- Umgebung: Absaugung, Gas, Raumtemperatur\n- Ergebnis, Dateinamen der Messungen, Auffälligkeiten",
+            "Die Versuchs-ID steht in jedem Dateinamen, zum Beispiel `V1-Si-003_LSM`. Rohdaten werden nie überschrieben. Pro Versuchsreihe gibt es eine Tabelle (CSV) mit allen Parametern und Ergebnissen, die du direkt mit Python auswerten kannst."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage"
+        },
+        {
+          "id": "k22.l05.b02",
+          "typ": "text",
+          "inhalt": [
+            "**Welches Messverfahren wofür?**",
+            "- **[[lsm|Laser-Scanning-Mikroskop]]:** 3D-Topografie, also Durchmesser, Tiefe, Profil und Rauheit von Kratern und Feldern. Grenzen: steile Wände und tiefe, enge Löcher liefern kein Signal; bei transparentem Glas können Reflexe der Rückseite stören.\n- **[[rem|Rasterelektronenmikroskop]]:** Morphologie im Detail: Risse, Debris, Schmelze, LIPSS. Nichtleitende Proben wie Glas und Polymer laden sich auf; sie werden dünn leitfähig beschichtet oder im Niedervakuum untersucht.\n- **[[querschliff|Querschliff]]:** Lochprofil, Wandwinkel und Schäden unter der Oberfläche. Hier hilft deine Erfahrung aus der Metallographie direkt.\n- **Leistungsmesskopf:** Pulsenergie am Werkstück, vor und nach jeder Serie."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k22.l05.b03",
+          "typ": "merke",
+          "inhalt": "Plane die Messung, bevor du den Laser einschaltest: Welche Zielgröße, welches Messgerät, wie viele Wiederholungen? Sonst bohrst du Löcher, die du später nicht auswerten kannst.",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage"
+        },
+        {
+          "id": "k22.q17",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Welches Messverfahren passt zur Frage?",
+          "paare": [
+            [
+              "Tiefe und Rauheit eines Abtragsfeldes",
+              "Laser-Scanning-Mikroskop"
+            ],
+            [
+              "Mikrorisse und Debris am Lochrand",
+              "Rasterelektronenmikroskop"
+            ],
+            [
+              "Lochprofil und Schäden unter der Oberfläche",
+              "Querschliff"
+            ],
+            [
+              "Pulsenergie am Werkstück",
+              "Leistungsmesskopf"
+            ]
+          ],
+          "erklaerung": "Oft brauchst du mehrere: das LSM für die Zahlen, das REM für die Bilder, den Querschliff für den Blick ins Innere."
+        },
+        {
+          "id": "k22.q18",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Eine Glasprobe zeigt im REM helle, verschmierte Bereiche und das Bild driftet. Was ist die wahrscheinlichste Ursache?",
+          "optionen": [
+            "Aufladung, weil Glas nicht leitet",
+            "Der Laser hat das Glas magnetisiert",
+            "Das REM ist für Glas zu schwach"
+          ],
+          "richtig": 0,
+          "erklaerung": "Abhilfe: dünne leitfähige Beschichtung, leitfähiges Klebeband zum Halter oder Niedervakuum-Modus."
+        },
+        {
+          "id": "k22.q19",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe einen Versuchstag in die richtige Reihenfolge.",
+          "items": [
+            "Ziel, Plan und Protokoll vorbereiten",
+            "Probe einspannen und Fokuslage bestimmen",
+            "Pulsenergie am Werkstück messen",
+            "Versuch fahren und protokollieren",
+            "Messen (LSM, REM)",
+            "Auswerten und Daten ablegen"
+          ],
+          "oben": "zuerst",
+          "unten": "zuletzt",
+          "erklaerung": "Planung und Kontrolle der Bedingungen kommen vor dem ersten Puls; Auswertung und Ablage gehören zum Versuch dazu."
+        },
+        {
+          "id": "k22.q20",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Die Pulsenergie wird am ___ gemessen. Rohdaten werden ___ überschrieben. Nichtleitende Proben werden für das REM ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "Werkstück",
+                "Laserausgang"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "nie",
+                "täglich"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "leitfähig beschichtet",
+                "erhitzt"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Zwischen Laserausgang und Werkstück gehen an Spiegeln, Abschwächer und Optik Verluste ab; zählen tut, was ankommt."
+        },
+        {
+          "id": "k22.c05",
+          "typ": "karte",
+          "vorne": "LSM, REM, Querschliff: wer misst was?",
+          "hinten": "**LSM:** Durchmesser, Tiefe, Profil, Rauheit. **REM:** Risse, Debris, Schmelze, LIPSS (Glas und Polymer leitfähig machen). **Querschliff:** Lochprofil und Schäden unter der Oberfläche.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k22.l05.b04",
+          "typ": "quelle",
+          "refs": [
+            "liu1982",
+            "jee1988",
+            "franz2023"
+          ]
+        }
+      ]
+    }
+  ]
+}

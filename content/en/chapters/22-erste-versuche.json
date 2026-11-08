@@ -1,0 +1,325 @@
+{
+  "titel": "First experiments: drilling and ablation",
+  "einleitung": "Here, what you have learned becomes a test plan for your first weeks on the machine. You get to know the four drilling strategies, plan a threshold measurement on a silicon wafer as calibration, then drilling and ablation series and a comparison of typical packaging materials. Finally: how to document, measure and evaluate so that pilot experiments turn into usable data. All numbers in the exercises are freely chosen; your machine supplies the real values.",
+  "ziele": [
+    "Distinguish single-pulse, percussion, trepanning and helical drilling and calculate pulses per revolution",
+    "Plan and evaluate a threshold measurement (Liu method) with a pulse-number series as calibration of the machine",
+    "Set up drilling and ablation series with sensible factors, levels and repetitions",
+    "Formulate expectations for silicon, glass, copper and polymer as testable hypotheses",
+    "Choose the right measurement for each target quantity and keep a complete protocol"
+  ],
+  "lektionen": {
+    "k22.l01": "Drilling strategies: percussion, trepanning, helical",
+    "k22.l02": "Experiment 1: threshold and beam radius on a Si wafer",
+    "k22.l03": "Experiments 2 and 3: holes and ablation fields",
+    "k22.l04": "Material comparison: silicon, glass, copper, polymer",
+    "k22.l05": "Protocol, measurement, evaluation"
+  },
+  "blocks": {
+    "k22.l01.b01": {
+      "inhalt": [
+        "A hole can be drilled in four ways. They differ in whether and how the beam moves:",
+        "1. **Single-pulse drilling:** one pulse, one hole. Only for very thin foils or layers.\n2. **[[perkussionsbohren|Percussion drilling]]:** many pulses on the same spot. The diameter follows from focus and fluence (threshold contour, K07). Simple and fast, but the wall becomes tapered, particles stay in the hole and the [[aspektverhaeltnis|aspect ratio]] is limited.\n3. **[[trepanieren|Trepanning]]:** the beam follows a circular path and cuts out the contour; the core drops out. The diameter follows from the path, not the focus. Good for larger holes.\n4. **[[wendelbohren|Helical drilling]]:** the beam circles many times and works its way down layer by layer, often with a rotating optic that also sets the angle of incidence. Rounder, more precise holes whose taper can be steered down to a cylindrical hole. Slower in return.",
+        "The terms are not used the same way everywhere; some papers also call helical drilling *trepanning*. Check in each paper what is meant."
+      ]
+    },
+    "k22.l01.b02": {
+      "titel": "Circular path: pulse distance, pulses and time per revolution",
+      "erklaerung": "Pulse distance $\\Delta x$ along the path at path speed $v$ and repetition rate $f$ (K09), pulses $N_\\mathrm{U}$ and time $t_\\mathrm{U}$ for one revolution on a circular path of diameter $d_\\mathrm{B}$.",
+      "sammlung": "Experiments"
+    },
+    "k22.q01": {
+      "frage": "Match the drilling strategy to its description.",
+      "paare": [
+        [
+          "Single-pulse drilling",
+          "One pulse per hole, only for thin foils"
+        ],
+        [
+          "Percussion drilling",
+          "Many pulses on one spot, diameter from focus and fluence"
+        ],
+        [
+          "Trepanning",
+          "Cut out the contour, the core drops out"
+        ],
+        [
+          "Helical drilling",
+          "Many revolutions, layer by layer, taper can be steered"
+        ]
+      ],
+      "erklaerung": "From top to bottom, precision and drilling time increase."
+    },
+    "k22.q02": {
+      "frage": "Helical drilling on a circular path with $d_\\mathrm{B}=40\\,\\mu\\mathrm{m}$ at a pulse distance of $\\Delta x=2\\,\\mu\\mathrm{m}$. How many pulses fall on one revolution?",
+      "erklaerung": "$N_\\mathrm{U}=\\pi\\cdot40/2=62.8$."
+    },
+    "k22.q03": {
+      "frage": "Same pulse distance of $2\\,\\mu\\mathrm{m}$ at $f=200\\,\\mathrm{kHz}$. How fast must the beam move along the path? Answer in m/s.",
+      "erklaerung": "$v=\\Delta x\\cdot f=2\\cdot10^{-6}\\,\\mathrm{m}\\cdot2\\cdot10^{5}\\,\\mathrm{s^{-1}}=0.4\\,\\mathrm{m/s}$. One revolution then takes $\\pi\\cdot40\\,\\mu\\mathrm{m}/0.4\\,\\mathrm{m/s}\\approx0.31\\,\\mathrm{ms}$."
+    },
+    "k22.q04": {
+      "frage": "You need to drill a very large number of small microvias in a thin polymer layer, and throughput counts. Which strategy is the obvious choice?",
+      "optionen": [
+        "Percussion drilling",
+        "Helical drilling",
+        "Trepanning"
+      ],
+      "erklaerung": "Percussion drilling is fastest and sufficient for small vias in thin layers; taper is controlled via beam profile and burst (K18). Helical drilling pays off when roundness and wall angle matter more than time."
+    },
+    "k22.c01": {
+      "vorne": "Four drilling strategies and their trade-off?",
+      "hinten": "Single pulse (thin foils), percussion (fast, tapered), trepanning (contour, large holes), helical (precise, taper adjustable, slow). Precision versus time."
+    },
+    "k22.l02.b01": {
+      "inhalt": [
+        "The first experiment is a **calibration**. Without a measured beam radius in the focus all fluence values are only estimates, and without fluence you cannot compare your results with the literature.",
+        "**Why silicon?** Polished wafers are flat, clean and readily available, silicon is everywhere in packaging and there are many reference values in the literature.",
+        "**Layout as a spot matrix:**",
+        "- **Rows:** pulse energy in eight to ten steps, logarithmically spaced, from just above the threshold to well above it\n- **Columns:** number of pulses per spot, for example $N=1, 10, 100, 1000$\n- **Repetitions:** each condition several times so that you get mean and scatter\n- **Spacing:** spots far enough apart that debris and heat do not affect the neighbours, i.e. several crater diameters",
+        "Beforehand you determine the **focal position** with a focus series and measure the **pulse energy at the workpiece**, not at the laser output (K14)."
+      ]
+    },
+    "k22.l02.b02": {
+      "titel": "Evaluation of experiment 1",
+      "erklaerung": "Liu method: the slope of $D^2$ over $\\ln E_\\mathrm{p}$ gives $2w_0^2$, the intercept at $D^2=0$ gives $E_\\mathrm{th}$ (K07, K14). From that the threshold fluence. The pulse-number series gives the incubation coefficient $S$.",
+      "sammlung": "Experiments"
+    },
+    "k22.l02.b04": {
+      "inhalt": "Experiment 1 gives you three numbers you need in every further experiment: the **beam radius** $w_0$, the **threshold fluence** and the **incubation coefficient** $S$. Repeat it whenever the optics or the wavelength change."
+    },
+    "k22.q05": {
+      "frage": "Put the steps of experiment 1 in the right order.",
+      "items": [
+        "Determine the focal position with a focus series",
+        "Measure the pulse energy at the workpiece",
+        "Write the spot matrix",
+        "Measure the crater diameters",
+        "Plot D² over ln E and evaluate"
+      ],
+      "oben": "first",
+      "unten": "last",
+      "erklaerung": "First secure the conditions (focus, energy), then process, then measure and evaluate."
+    },
+    "k22.q06": {
+      "frage": "In the Liu plot the best-fit line of $D^2$ over $\\ln E_\\mathrm{p}$ has a slope of $800\\,\\mu\\mathrm{m}^2$. What is the beam radius $w_0$ in µm?",
+      "erklaerung": "Slope $=2w_0^2$, so $w_0=\\sqrt{800/2}=20\\,\\mu\\mathrm{m}$."
+    },
+    "k22.q07": {
+      "frage": "The same plot crosses $D^2=0$ at $E_\\mathrm{th}=1.0\\,\\mu\\mathrm{J}$. What is the threshold fluence in J/cm²?",
+      "erklaerung": "$F_\\mathrm{th}=2\\cdot10^{-6}\\,\\mathrm{J}/(\\pi\\cdot(20\\cdot10^{-4}\\,\\mathrm{cm})^2)=2\\cdot10^{-6}/1.26\\cdot10^{-5}=0.16\\,\\mathrm{J/cm^2}$.",
+      "tipp": "Convert µm to cm: $1\\,\\mu\\mathrm{m}=10^{-4}\\,\\mathrm{cm}$."
+    },
+    "k22.q08": {
+      "frage": "Incubation example: $F_\\mathrm{th}(1)=0.30\\,\\mathrm{J/cm^2}$, $S=0.8$. What is the threshold for $N=100$ pulses in J/cm²?",
+      "erklaerung": "$0.30\\cdot100^{-0.2}=0.30\\cdot0.398=0.12\\,\\mathrm{J/cm^2}$. With many pulses the threshold drops markedly; keep that in mind for every hole."
+    },
+    "k22.q09": {
+      "frage": "Why are the spots of the matrix placed far apart?",
+      "optionen": [
+        "Debris, heat and pre-modification must not distort the neighbouring craters",
+        "So that the microscope focuses faster",
+        "Because the scanner cannot make small jumps"
+      ],
+      "erklaerung": "Each crater should form as if it were alone on the sample. Otherwise you measure incubation caused by the neighbour."
+    },
+    "k22.c02": {
+      "vorne": "What does experiment 1 (threshold on a Si wafer) deliver?",
+      "hinten": "Beam radius $w_0$ from the slope, $E_\\mathrm{th}$ and $F_\\mathrm{th}$ from the intercept, incubation coefficient $S$ from the pulse-number series. This calibrates all later fluences."
+    },
+    "k22.l03.b01": {
+      "inhalt": [
+        "**Experiment 2: percussion holes.** At fixed fluence you drill a series of holes with logarithmically spaced pulse numbers. You measure entrance diameter, depth, the exit diameter if drilled through, and from these the taper (K18).",
+        "Expectation as a hypothesis: depth first grows roughly in proportion to the pulse number and then more and more slowly until it almost stops. Possible reasons are that fluence drops on the inclined wall, particles in the hole shield the beam and energy is lost at the wall. Where this saturation sets in depends on material, fluence and hole geometry.",
+        "The microscope often cannot resolve deep, narrow holes from above. A **cross-section** helps then (K11)."
+      ]
+    },
+    "k22.l03.b02": {
+      "inhalt": [
+        "**Experiment 3: ablation fields (pockets).** You scan lines with pulse distance $\\Delta x$ and line distance ([[hatch|hatch]]) $\\Delta y$ over a square area, several layers on top of each other (K09). You measure depth per layer, roughness at the bottom ($S_a$, K11), removal rate and efficiency.",
+        "A small design (K09, DoE): three fluence levels and three pulse distances, hatch equal to pulse distance. That is nine fields, each at least twice. This shows whether efficiency has a maximum and how roughness follows."
+      ]
+    },
+    "k22.l03.b03": {
+      "titel": "Removal rate and efficiency",
+      "erklaerung": "Removed volume (area $A$ times depth $h$) per processing time $t$ and efficiency per average power $P$, usually in $\\mathrm{mm^3/(min\\,W)}$ (K07).",
+      "sammlung": "Experiments"
+    },
+    "k22.q10": {
+      "frage": "A field of $0.5\\times0.5\\,\\mathrm{mm}^2$ is $20\\,\\mu\\mathrm{m}$ deep after $6\\,\\mathrm{s}$ of processing at an average power of $10\\,\\mathrm{W}$. What is the efficiency in mm³/(min·W)?",
+      "erklaerung": "$V=0.25\\,\\mathrm{mm^2}\\cdot0.02\\,\\mathrm{mm}=0.005\\,\\mathrm{mm^3}$, $\\dot V=0.005/0.1\\,\\mathrm{min}=0.05\\,\\mathrm{mm^3/min}$, $\\eta=0.05/10=0.005\\,\\mathrm{mm^3/(min\\,W)}$.",
+      "tipp": "Convert everything to mm and write 6 s as 0.1 min."
+    },
+    "k22.q11": {
+      "frage": "Full factorial design: three factors with three levels each, every combination twice. How many fields do you have to process?",
+      "erklaerung": "$3^3\\cdot2=54$. The effort grows quickly; so it pays to justify factors in advance or use a fractional design (K09)."
+    },
+    "k22.q12": {
+      "frage": "Why does depth grow more slowly with increasing pulse number in percussion drilling? (multiple choice)",
+      "optionen": [
+        "Fluence spreads over the inclined wall and drops",
+        "Particles in the hole shield the beam",
+        "The laser gets weaker over time",
+        "Energy is lost at the wall"
+      ],
+      "erklaerung": "The hole geometry itself limits ablation. You still check that the laser power is stable with a measurement before and after the series."
+    },
+    "k22.c03": {
+      "vorne": "Experiments 2 and 3: what do you measure in each?",
+      "hinten": "**Holes:** entrance and exit diameter, depth over pulse number, taper, saturation. **Ablation fields:** depth per layer, roughness $S_a$, removal rate, efficiency over fluence and pulse distance."
+    },
+    "k22.l04.b01": {
+      "inhalt": [
+        "The same experiments on several materials show you what makes a package so difficult. Formulate your expectations **beforehand** as hypotheses and then test them:",
+        "- **Silicon** ([[halbleiter|semiconductor]]): at $1030\\,\\mathrm{nm}$ the photon energy is only just above the [[bandluecke|band gap]], so linear absorption is weak there; at $515\\,\\mathrm{nm}$ it is much stronger. Watch for melt rims, [[lipss|LIPSS]] and cracks at high energy.\n- **Glass** ([[dielektrikum|dielectric]]): transparent, ablation only via nonlinear absorption (K06). Watch for [[chipping|chipping]], cracks and effects at the rear side.\n- **Copper** (metal): free electrons, high reflectance in the infrared and high thermal conductivity. Watch for melt and burrs, especially at high repetition rates.\n- **Polymer** (e.g. [[abf|ABF]] or [[moldmasse|mould compound]]): low threshold, sensitive to heat, often with glass filler. Watch for charring, bubbles and uneven removal around filler particles."
+      ]
+    },
+    "k22.l04.b02": {
+      "inhalt": [
+        "For packaging the core is the **threshold contrast**: if a polymer is to be removed above a copper pad, the fluence must lie above the threshold of the polymer and below that of the copper. Because thresholds drop with the number of pulses (incubation), this window narrows with every pulse.",
+        "Your threshold measurements from experiment 1, repeated on every material, deliver exactly these numbers. After a few weeks you will have your own data on a question that really matters in a package."
+      ]
+    },
+    "k22.l04.b03": {
+      "titel": "Selective window in a layer stack",
+      "erklaerung": "Remove polymer (P), spare copper (Cu): after $N$ pulses the peak fluence must lie between both thresholds. Incubation as in K07.",
+      "sammlung": "Experiments"
+    },
+    "k22.q13": {
+      "frage": "Example: copper has $F_\\mathrm{th,Cu}(1)=1.0\\,\\mathrm{J/cm^2}$ and $S=0.85$. What is the maximum peak fluence a process with $N=100$ pulses may have so that the copper pad is not ablated? Answer in J/cm².",
+      "erklaerung": "$1.0\\cdot100^{-0.15}=0.50\\,\\mathrm{J/cm^2}$. After 100 pulses the copper threshold has dropped to half; a window from single-pulse data would be too optimistic."
+    },
+    "k22.q14": {
+      "frage": "What is the photon energy at $1030\\,\\mathrm{nm}$ in eV? (rule of thumb $E\\,[\\mathrm{eV}]\\approx1240/\\lambda\\,[\\mathrm{nm}]$)",
+      "erklaerung": "$1240/1030=1.20\\,\\mathrm{eV}$, only slightly above the band gap of silicon. At $515\\,\\mathrm{nm}$ it is $2.41\\,\\mathrm{eV}$."
+    },
+    "k22.q15": {
+      "frage": "Match each material to the typical risk you should watch for.",
+      "paare": [
+        [
+          "Glass",
+          "Chipping and cracks"
+        ],
+        [
+          "Copper",
+          "Melt and burrs"
+        ],
+        [
+          "Filled polymer",
+          "Charring and uneven removal"
+        ],
+        [
+          "Silicon",
+          "Melt rims and LIPSS"
+        ]
+      ],
+      "erklaerung": "These are hypotheses for your first images under the microscope, not fixed rules. Which of them occur on your machine the experiment will show."
+    },
+    "k22.q16": {
+      "frage": "Why does the selective window narrow with increasing pulse number?",
+      "optionen": [
+        "Through incubation the thresholds drop, including that of the material that is meant to survive",
+        "Because the laser heats up over time",
+        "Because the polymer gets harder with every pulse"
+      ],
+      "erklaerung": "The upper limit of the window moves down. The more pulses the pad sees, the smaller the margin."
+    },
+    "k22.c04": {
+      "vorne": "What is threshold contrast and why does it matter in a package?",
+      "hinten": "The difference between the threshold fluences of two materials in a stack. If the fluence lies between them, one is removed and the other spared. Incubation shrinks the window with the number of pulses."
+    },
+    "k22.l05.b01": {
+      "inhalt": [
+        "**Mandatory fields in the protocol**, for every experiment:",
+        "- Date, **experiment ID**, aim of the experiment in one sentence\n- Material, batch, thickness, pre-treatment\n- Wavelength, pulse duration, pulse energy *at the workpiece*, repetition rate, burst\n- Optics, spot size, focal position\n- Pulse distance, hatch, number of pulses, drilling strategy, layers\n- Environment: extraction, gas, room temperature\n- Result, file names of the measurements, observations",
+        "The experiment ID is in every file name, for example `V1-Si-003_LSM`. Raw data are never overwritten. Each series has one table (CSV) with all parameters and results that you can evaluate directly in Python."
+      ]
+    },
+    "k22.l05.b02": {
+      "inhalt": [
+        "**Which measurement for what?**",
+        "- **[[lsm|Laser scanning microscope]]:** 3D topography, i.e. diameter, depth, profile and roughness of craters and fields. Limits: steep walls and deep, narrow holes give no signal; with transparent glass, reflections from the rear side can interfere.\n- **[[rem|Scanning electron microscope]]:** morphology in detail: cracks, debris, melt, LIPSS. Non-conductive samples such as glass and polymer charge up; they are coated with a thin conductive layer or examined in low vacuum.\n- **[[querschliff|Cross-section]]:** hole profile, wall angle and damage below the surface. Your experience from metallography helps directly here.\n- **Power meter:** pulse energy at the workpiece, before and after every series."
+      ]
+    },
+    "k22.l05.b03": {
+      "inhalt": "Plan the measurement before you switch on the laser: which target quantity, which instrument, how many repetitions? Otherwise you drill holes that you cannot evaluate later."
+    },
+    "k22.q17": {
+      "frage": "Which measurement fits the question?",
+      "paare": [
+        [
+          "Depth and roughness of an ablation field",
+          "Laser scanning microscope"
+        ],
+        [
+          "Microcracks and debris at the hole edge",
+          "Scanning electron microscope"
+        ],
+        [
+          "Hole profile and damage below the surface",
+          "Cross-section"
+        ],
+        [
+          "Pulse energy at the workpiece",
+          "Power meter"
+        ]
+      ],
+      "erklaerung": "Often you need several: the LSM for the numbers, the SEM for the images, the cross-section for the view inside."
+    },
+    "k22.q18": {
+      "frage": "A glass sample shows bright, smeared areas in the SEM and the image drifts. What is the most likely cause?",
+      "optionen": [
+        "Charging, because glass does not conduct",
+        "The laser has magnetised the glass",
+        "The SEM is too weak for glass"
+      ],
+      "erklaerung": "Remedy: thin conductive coating, conductive tape to the holder or low-vacuum mode."
+    },
+    "k22.q19": {
+      "frage": "Put an experiment day in the right order.",
+      "items": [
+        "Prepare aim, plan and protocol",
+        "Clamp the sample and determine the focal position",
+        "Measure the pulse energy at the workpiece",
+        "Run the experiment and document",
+        "Measure (LSM, SEM)",
+        "Evaluate and file the data"
+      ],
+      "oben": "first",
+      "unten": "last",
+      "erklaerung": "Planning and checking the conditions come before the first pulse; evaluation and filing are part of the experiment."
+    },
+    "k22.q20": {
+      "frage": "Fill in.",
+      "text": "The pulse energy is measured at the ___. Raw data are ___ overwritten. Non-conductive samples are ___ for the SEM.",
+      "luecken": [
+        {
+          "optionen": [
+            "workpiece",
+            "laser output"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "never",
+            "daily"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "coated conductively",
+            "heated"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "Between laser output and workpiece, losses occur at mirrors, attenuator and optics; what counts is what arrives."
+    },
+    "k22.c05": {
+      "vorne": "LSM, SEM, cross-section: which measures what?",
+      "hinten": "**LSM:** diameter, depth, profile, roughness. **SEM:** cracks, debris, melt, LIPSS (make glass and polymer conductive). **Cross-section:** hole profile and damage below the surface."
+    }
+  }
+}

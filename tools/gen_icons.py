@@ -1,8 +1,9 @@
 """Generate the app icon and the brand mark (own design).
 
 Concept: a faceted, rounded crystal block (hard material: ceramic, quartz, semiconductor) in laser-physics cyan,
-hit by a focused train of ultrashort pulses. The beam converges to a point, a starburst marks the ablation spot,
-and a plume of particles leaves the surface. The faceted crystal is a nod to the working group's mark;
+hit by a focused train of ultrashort pulses in green (515 nm, the visible line of frequency-doubled Yb lasers).
+The beam converges to a point, a starburst marks the ablation spot, and a plume of glowing particles leaves the surface.
+Version 0.6 switched the laser from orange to green. The faceted crystal is a nod to the working group's mark;
 the geometry and the beam are an own drawing.
 
 Writes assets/icons/icon.svg, the PNG sizes (192, 512, maskable 512, apple-touch 180)
@@ -21,8 +22,9 @@ N = 1024
 
 BG_TOP, BG_BOT = (16, 38, 82), (4, 8, 20)
 CRY_TOP, CRY_BOT = (64, 208, 255), (8, 104, 190)
-LASER = (255, 98, 48)
-LASER_HOT = (255, 214, 120)
+LASER = (34, 222, 116)
+LASER_HOT = (200, 255, 176)
+SPARK = (255, 214, 120)  # glowing debris stays warm
 
 OX, OY = 70, 100  # shift of the crystal so the beam has room
 VERTS = [(270 + OX, 360 + OY), (560 + OX, 250 + OY), (790 + OX, 400 + OY), (760 + OX, 690 + OY), (450 + OX, 800 + OY), (240 + OX, 610 + OY)]  # A..F
@@ -97,7 +99,7 @@ def rgb(c):
     return f"rgb({c[0]},{c[1]},{c[2]})"
 
 
-KIND_COLOR = {"hot": LASER_HOT, "laser": LASER, "white": (255, 255, 255)}
+KIND_COLOR = {"hot": SPARK, "laser": LASER, "white": (255, 255, 255)}
 
 
 def vgradient(size, top, bot, y0, y1):

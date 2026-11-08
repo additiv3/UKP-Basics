@@ -693,7 +693,7 @@
   },
   "perkussionsbohren": {
     "kurz": "Drilling with many pulses on the same spot.",
-    "definition": "In percussion drilling the focus determines the diameter; in helical drilling (trepanning) the beam follows a circular path."
+    "definition": "In percussion drilling, focus and fluence set the diameter. It is distinct from [[trepanieren|trepanning]] (cutting out a contour) and [[wendelbohren|helical drilling]] (many circular revolutions into depth)."
   },
   "csam": {
     "kurz": "Non-destructive imaging of delamination and voids with ultrasound.",
@@ -702,5 +702,25 @@
   "querschliff": {
     "kurz": "Prepared section through a sample for examination under the microscope.",
     "definition": "Cross-sections show via profiles, interfaces, voids and taper; they are destructive."
+  },
+  "trepanieren": {
+    "kurz": "Drilling by cutting out a circular contour; the core drops out.",
+    "definition": "The beam follows a circular path and cuts through the contour. The diameter follows from the path, not the focus. Some papers also use the term for [[wendelbohren|helical drilling]]."
+  },
+  "wendelbohren": {
+    "kurz": "Drilling with many circular revolutions, layer by layer into depth.",
+    "definition": "The beam circles many times and removes material layer by layer, often with a rotating optic that also sets the angle of incidence. Gives round, precise holes with adjustable [[taper|taper]], but is slower than [[perkussionsbohren|percussion drilling]]."
+  },
+  "aspektverhaeltnis": {
+    "kurz": "Ratio of depth to diameter of a hole or trench.",
+    "definition": "A high aspect ratio means deep, narrow structures. It limits how well the beam reaches and particles leave the hole bottom, and how well the hole can be measured from above."
+  },
+  "lsm": {
+    "kurz": "Confocal microscope that scans a surface point by point and delivers 3D topography.",
+    "definition": "Delivers height maps for diameter, depth, profile and [[rauheit|roughness]]. Steep walls and deep, narrow holes give hardly any signal; with transparent samples, reflections from the rear side can interfere."
+  },
+  "rem": {
+    "kurz": "Microscope that scans the surface with an electron beam; high magnification and depth of field.",
+    "definition": "Shows cracks, [[debris|debris]], melt and [[lipss|LIPSS]] in detail. Non-conductive samples (glass, polymer) charge up and are coated with a thin conductive layer or examined in low vacuum."
   }
 }

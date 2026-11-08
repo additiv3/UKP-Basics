@@ -3,58 +3,100 @@
   "stufen": [
     {
       "id": "A",
-      "titel": "Fundament",
-      "beschreibung": "Größen, Strahloptik und die Grundlagen der Licht-Materie-Wechselwirkung."
+      "titel": "Orientierung",
+      "beschreibung": "Worum es in deiner Promotion geht: das Thema, das Anwendungsfeld Halbleiter-Packaging und dein Fahrplan."
     },
     {
       "id": "B",
-      "titel": "Ultrakurzpulse",
-      "beschreibung": "Wie Ultrakurzpulse entstehen und warum Zeitskalen den Abtrag verändern."
+      "titel": "Laser-Fundament",
+      "beschreibung": "Zahlen, Strahl und Licht-Materie: das Handwerkszeug für alles Weitere."
     },
     {
       "id": "C",
-      "titel": "Abtrag",
-      "beschreibung": "Ablationsschwelle, Mechanismen und das Verhalten der Werkstoffe."
+      "titel": "UKP-Physik",
+      "beschreibung": "Wie Ultrakurzpulse entstehen und warum ihre Zeitskalen den Abtrag verändern."
     },
     {
       "id": "D",
-      "titel": "Prozess und Praxis",
-      "beschreibung": "Anlagentechnik, Sonderverfahren, Messtechnik und wissenschaftliches Arbeiten."
+      "titel": "Abtrag und Werkstoffe",
+      "beschreibung": "Schwelle, Mechanismen und wie sich Glas, Silizium, Metall und Polymer im Schichtverbund verhalten."
     },
     {
       "id": "E",
-      "titel": "Englisch",
-      "beschreibung": "Wissenschaftliches Englisch: sprechen, schreiben, lesen."
+      "titel": "Laser im Packaging",
+      "beschreibung": "Microvias, Glaskern und TGV, Trennen und Lösen: wo UKP-Laser im Packaging gebraucht werden."
     },
     {
       "id": "F",
-      "titel": "Halbleiter-Packaging",
-      "beschreibung": "Vom Chip zum System: Packaging-Architekturen, Werkstoffe, Microvias, Glaskern, Trennen und Qualität."
+      "titel": "Ins Labor",
+      "beschreibung": "Anlage, Laborhandgriffe, Messtechnik und deine ersten eigenen Versuche."
+    },
+    {
+      "id": "G",
+      "titel": "Forschung",
+      "beschreibung": "Qualität, Forschungslandschaft und wissenschaftliches Arbeiten: von der Lücke zur eigenen Frage."
+    },
+    {
+      "id": "H",
+      "titel": "Begleitend: Englisch",
+      "beschreibung": "Wissenschaftliches Englisch zum Sprechen, Schreiben und Lesen, parallel zu allen Etappen."
     }
   ],
   "kapitel": [
     {
+      "id": "k21",
+      "datei": "chapters/21-forschungsthema.json",
+      "stufe": "A",
+      "titel": "Dein Forschungsthema: UKP im Packaging",
+      "kurz": "Das Thema, warum Packaging UKP-Laser braucht, der Lernpfad als Landkarte, vom Thema zur Frage",
+      "bezug": "Der Kompass für alles Weitere: Hier siehst du, wie jedes Kapitel zu deiner Forschungsfrage beiträgt.",
+      "voraussetzungen": []
+    },
+    {
+      "id": "k15",
+      "datei": "chapters/15-packaging-grundlagen.json",
+      "stufe": "A",
+      "titel": "Halbleiter-Packaging: vom Chip zum System",
+      "kurz": "Aufgaben des Packages, Front-End und Back-End, Sägestraße, Chips pro Wafer",
+      "bezug": "Ohne das Anwendungsfeld zu kennen, kannst du keine relevante Forschungsfrage stellen. Hier lernst du, was ein Package leisten muss.",
+      "voraussetzungen": []
+    },
+    {
+      "id": "k16",
+      "datei": "chapters/16-packaging-architekturen.json",
+      "stufe": "A",
+      "titel": "Packaging-Architekturen: von Drahtbond bis Chiplet",
+      "kurz": "Drahtbond, Flip-Chip, BGA, Fan-out, 2.5D, 3D, Hybrid Bonding",
+      "bezug": "Jede Architektur bringt eigene Laserschritte mit (Vias, Interposer, Trennen). Das bestimmt, wo deine Arbeit ansetzen kann.",
+      "voraussetzungen": [
+        "k15"
+      ]
+    },
+    {
       "id": "k00",
       "datei": "chapters/00-werkzeugkasten.json",
-      "stufe": "A",
+      "stufe": "B",
       "titel": "Werkzeugkasten: Zahlen, Einheiten, Rechnen",
       "kurz": "Zehnerpotenzen, Einheiten, Logarithmus, Abschätzen, Taschenrechner",
+      "bezug": "Fluenz, Schwelle und Durchsatz rechnest du ständig, im Kopf und im Laborbuch. Hier sitzt das Werkzeug dafür.",
       "voraussetzungen": []
     },
     {
       "id": "k01",
       "datei": "chapters/01-pulsgroessen.json",
-      "stufe": "A",
+      "stufe": "B",
       "titel": "Pulsgrößen und Zahlengefühl",
       "kurz": "Zeitskalen, Pulsenergie, Spitzenleistung, Fluenz, Intensität, Photonenenergie",
+      "bezug": "Jede Einstellung an der Anlage (Pulsenergie, Repetitionsrate, Leistung) übersetzt du hiermit in physikalische Größen wie die Fluenz.",
       "voraussetzungen": []
     },
     {
       "id": "k02",
       "datei": "chapters/02-strahloptik.json",
-      "stufe": "A",
+      "stufe": "B",
       "titel": "Strahloptik: vom Laser zum Fokus",
       "kurz": "Gauß-Strahl, Fokussierung, Rayleighlänge, Strahlqualität M²",
+      "bezug": "Spotgröße und Fokuslage bestimmen Lochdurchmesser und Konizität deiner Bohrungen.",
       "voraussetzungen": [
         "k01"
       ]
@@ -62,9 +104,10 @@
     {
       "id": "k03",
       "datei": "chapters/03-licht-materie.json",
-      "stufe": "A",
+      "stufe": "B",
       "titel": "Licht trifft Materie",
       "kurz": "Bänder, Absorption, Reflexion, lineare und nichtlineare Absorption",
+      "bezug": "Erklärt, warum Kupfer, Silizium, Glas und Polymer im selben Package so unterschiedlich auf denselben Puls reagieren.",
       "voraussetzungen": [
         "k01"
       ]
@@ -72,9 +115,10 @@
     {
       "id": "k04",
       "datei": "chapters/04-ukp-erzeugen.json",
-      "stufe": "B",
+      "stufe": "C",
       "titel": "Ultrakurzpulse erzeugen",
       "kurz": "Bandbreite, Modenkopplung, Chirp, CPA, Verstärkerarchitekturen",
+      "bezug": "Pulsdauer, Burst und Repetitionsrate sind Stellhebel an deiner Anlage. Hier lernst du, woher sie kommen.",
       "voraussetzungen": [
         "k01",
         "k02"
@@ -83,9 +127,10 @@
     {
       "id": "k05",
       "datei": "chapters/05-zeitskalen-ttm.json",
-      "stufe": "B",
+      "stufe": "C",
       "titel": "Zeitskalen und Zwei-Temperatur-Modell",
       "kurz": "Wärmediffusion vs. Pulsdauer, Elektronen- und Gittersystem, TTM",
+      "bezug": "Wärmeakkumulation ist der Hauptgegner bei Polymeren und dünnen Schichten im Package. Hier steckt die Physik dazu.",
       "voraussetzungen": [
         "k03"
       ]
@@ -93,9 +138,10 @@
     {
       "id": "k06",
       "datei": "chapters/06-nichtlineare-absorption.json",
-      "stufe": "B",
+      "stufe": "C",
       "titel": "Nichtlineare Absorption in Dielektrika",
       "kurz": "Mehrphotonen- und Tunnelionisation, Keldysh, Avalanche, Plasma",
+      "bezug": "Glas für Interposer und Glaskern absorbiert nur nichtlinear. Ohne dieses Kapitel bleibt das Bohren von TGVs eine Blackbox.",
       "voraussetzungen": [
         "k03"
       ]
@@ -103,9 +149,10 @@
     {
       "id": "k07",
       "datei": "chapters/07-ablation-schwelle.json",
-      "stufe": "C",
+      "stufe": "D",
       "titel": "Ablationsmechanismen und Schwelle",
       "kurz": "Schwelle, Abtragtiefe, Spallation, Phasenexplosion, Inkubation, Burst",
+      "bezug": "Schwelle und Abtragtiefe sind die Kenngrößen deiner ersten eigenen Versuchsreihe.",
       "voraussetzungen": [
         "k02",
         "k05",
@@ -114,99 +161,23 @@
     },
     {
       "id": "k08",
-      "stufe": "C",
+      "datei": "chapters/08-werkstoffe.json",
+      "stufe": "D",
       "titel": "Werkstoffe: Quarzglas, Keramik, Halbleiter",
       "kurz": "Bandlücke, Absorptionsregime, Rissbildung, Eigenspannung",
+      "bezug": "Werkstoffklassen und Rissbildung: die Grundlage, um Glas, Silizium und Keramik im Package gezielt zu bearbeiten.",
       "voraussetzungen": [
         "k03",
         "k07"
-      ],
-      "datei": "chapters/08-werkstoffe.json"
-    },
-    {
-      "id": "k09",
-      "datei": "chapters/09-prozess-anlage.json",
-      "stufe": "D",
-      "titel": "Prozessparameter und Anlagentechnik",
-      "kurz": "Pulsabstand, Hatch, Scanner, Strahlführung, Pulsformung, DoE",
-      "voraussetzungen": [
-        "k04",
-        "k07"
-      ]
-    },
-    {
-      "id": "k10",
-      "stufe": "D",
-      "titel": "Sonderverfahren",
-      "kurz": "LIPSS, Selective Laser Etching, Bessel-Strahl, Wellenleiter",
-      "voraussetzungen": [
-        "k06",
-        "k08"
-      ],
-      "datei": "chapters/10-sonderverfahren.json"
-    },
-    {
-      "id": "k11",
-      "datei": "chapters/11-messtechnik-normen.json",
-      "stufe": "D",
-      "titel": "Messtechnik, Normen und Diagnostik",
-      "kurz": "Pulsdauer, Strahlprofil, Messunsicherheit, Rauheit, Normen, In-situ-Überwachung",
-      "voraussetzungen": [
-        "k09"
-      ]
-    },
-    {
-      "id": "k14",
-      "datei": "chapters/14-laboralltag.json",
-      "stufe": "D",
-      "titel": "Laboralltag an der UKP-Anlage",
-      "kurz": "Sicherheit, Strahljustage, Fokussuche, Leistung, Pulsdauer und Liu-Auswertung als Spiele",
-      "voraussetzungen": [
-        "k09"
-      ]
-    },
-    {
-      "id": "k12",
-      "stufe": "D",
-      "titel": "Wissenschaftliche Praxis in der Photonik",
-      "kurz": "Journals, Konferenzen, Paper lesen, Literaturverwaltung, Vortrag",
-      "voraussetzungen": [
-        "k09"
-      ],
-      "datei": "chapters/12-wissenschaftliche-praxis.json"
-    },
-    {
-      "id": "k13",
-      "datei": "chapters/13-englisch.json",
-      "stufe": "E",
-      "titel": "Wissenschaftliches Englisch für die Photonik",
-      "kurz": "Zahlen aussprechen, Aufbauten und Diagramme beschreiben, Abstracts, Gespräche",
-      "voraussetzungen": []
-    },
-    {
-      "id": "k15",
-      "datei": "chapters/15-packaging-grundlagen.json",
-      "stufe": "F",
-      "titel": "Halbleiter-Packaging: vom Chip zum System",
-      "kurz": "Aufgaben des Packages, Front-End und Back-End, Sägestraße, Chips pro Wafer",
-      "voraussetzungen": []
-    },
-    {
-      "id": "k16",
-      "datei": "chapters/16-packaging-architekturen.json",
-      "stufe": "F",
-      "titel": "Packaging-Architekturen: von Drahtbond bis Chiplet",
-      "kurz": "Drahtbond, Flip-Chip, BGA, Fan-out, 2.5D, 3D, Hybrid Bonding",
-      "voraussetzungen": [
-        "k15"
       ]
     },
     {
       "id": "k17",
       "datei": "chapters/17-packaging-werkstoffe.json",
-      "stufe": "F",
+      "stufe": "D",
       "titel": "Werkstoffe und Thermomechanik im Package",
       "kurz": "Gefüllte Polymere, CTE-Fehlanpassung, Chipfestigkeit, Weibull, Schichtverbund",
+      "bezug": "Im Package liegen Werkstoffe mit sehr unterschiedlichen Schwellen und Wärmeausdehnungen übereinander. Selektivität und Delamination sind typische Forschungsfragen.",
       "voraussetzungen": [
         "k15",
         "k08"
@@ -215,9 +186,10 @@
     {
       "id": "k18",
       "datei": "chapters/18-substrat-microvias-glaskern.json",
-      "stufe": "F",
+      "stufe": "E",
       "titel": "IC-Substrat, Microvias und Glaskern",
       "kurz": "Aufbaulagen, CO₂/UV/UKP-Bohren, Burst, Top-Hat, TGV",
+      "bezug": "Das Kernkapitel: Microvias und Through-Glass Vias sind Prozesse, zu denen die AG alp schon veröffentlicht hat, und naheliegende Kandidaten für dein Thema.",
       "voraussetzungen": [
         "k16",
         "k17",
@@ -227,24 +199,104 @@
     {
       "id": "k19",
       "datei": "chapters/19-trennen-loesen.json",
-      "stufe": "F",
+      "stufe": "E",
       "titel": "Trennen und Lösen: Dicing und Debonding",
       "kurz": "Säge, Laser-Grooving, Stealth Dicing, Plasma, Laser-Debonding",
+      "bezug": "Dicing, Grooving und Debonding sind weitere Laserschritte im Back-End und mögliche Alternativen für dein Thema.",
       "voraussetzungen": [
         "k16",
         "k07"
       ]
     },
     {
+      "id": "k10",
+      "datei": "chapters/10-sonderverfahren.json",
+      "stufe": "E",
+      "titel": "Sonderverfahren",
+      "kurz": "LIPSS, Selective Laser Etching, Bessel-Strahl, Wellenleiter",
+      "bezug": "Selective Laser Etching und Bessel-Strahl sind die Basis für laserinduziertes Ätzen von Through-Glass Vias.",
+      "voraussetzungen": [
+        "k06",
+        "k08"
+      ]
+    },
+    {
+      "id": "k09",
+      "datei": "chapters/09-prozess-anlage.json",
+      "stufe": "F",
+      "titel": "Prozessparameter und Anlagentechnik",
+      "kurz": "Pulsabstand, Hatch, Scanner, Strahlführung, Pulsformung, DoE",
+      "bezug": "Pulsabstand, Hatch und Scanstrategie stellst du bei jedem Versuch an der Anlage ein.",
+      "voraussetzungen": [
+        "k04",
+        "k07"
+      ]
+    },
+    {
+      "id": "k14",
+      "datei": "chapters/14-laboralltag.json",
+      "stufe": "F",
+      "titel": "Laboralltag an der UKP-Anlage",
+      "kurz": "Sicherheit, Strahljustage, Fokussuche, Leistung, Pulsdauer und Liu-Auswertung als Spiele",
+      "bezug": "Die Handgriffe vor jedem Versuch: Sicherheit, Justage, Fokuslage, Leistung, Schwelle.",
+      "voraussetzungen": [
+        "k09"
+      ]
+    },
+    {
+      "id": "k11",
+      "datei": "chapters/11-messtechnik-normen.json",
+      "stufe": "F",
+      "titel": "Messtechnik, Normen und Diagnostik",
+      "kurz": "Pulsdauer, Strahlprofil, Messunsicherheit, Rauheit, Normen, In-situ-Überwachung",
+      "bezug": "Was du nicht sauber messen kannst, kannst du nicht publizieren: Mikroskopie, Oberflächenkennwerte und Normen für deine Ergebnisse.",
+      "voraussetzungen": [
+        "k09"
+      ]
+    },
+    {
+      "id": "k22",
+      "datei": "chapters/22-erste-versuche.json",
+      "stufe": "F",
+      "titel": "Erste Versuche: Bohren und Abtragen",
+      "kurz": "Bohrstrategien, Schwelle am Si-Wafer, Bohr- und Abtragsreihen, Werkstoffvergleich, Protokoll",
+      "bezug": "Hier wird aus dem Gelernten dein erster Versuchsplan an der Anlage.",
+      "voraussetzungen": [
+        "k14",
+        "k18"
+      ]
+    },
+    {
       "id": "k20",
       "datei": "chapters/20-qualitaet-forschung.json",
-      "stufe": "F",
+      "stufe": "G",
       "titel": "Qualität, Zuverlässigkeit und Forschungslandschaft",
       "kurz": "Messmethoden, Ausfallmechanismen, Ausbeute, Konferenzen, Leseliste",
+      "bezug": "Qualitätsmerkmale, Leseliste und offene Fragen: der Übergang von der Einarbeitung zur eigenen Forschungsfrage.",
       "voraussetzungen": [
         "k18",
         "k19"
       ]
+    },
+    {
+      "id": "k12",
+      "datei": "chapters/12-wissenschaftliche-praxis.json",
+      "stufe": "G",
+      "titel": "Wissenschaftliche Praxis in der Photonik",
+      "kurz": "Journals, Konferenzen, Paper lesen, Literaturverwaltung, Vortrag",
+      "bezug": "Paper lesen, Literatur verwalten, eigene Ergebnisse einordnen: das Handwerk der Promotion.",
+      "voraussetzungen": [
+        "k09"
+      ]
+    },
+    {
+      "id": "k13",
+      "datei": "chapters/13-englisch.json",
+      "stufe": "H",
+      "titel": "Wissenschaftliches Englisch für die Photonik",
+      "kurz": "Zahlen aussprechen, Aufbauten und Diagramme beschreiben, Abstracts, Gespräche",
+      "bezug": "Paper, Konferenzen und Gespräche mit Partnern laufen auf Englisch. Das Kapitel begleitet alle Etappen.",
+      "voraussetzungen": []
     }
   ]
 }
