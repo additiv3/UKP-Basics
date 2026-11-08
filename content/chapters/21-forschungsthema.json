@@ -1,0 +1,422 @@
+{
+  "id": "k21",
+  "titel": "Dein Forschungsthema: UKP im Packaging",
+  "einleitung": "Der Einstieg in deinen Lernpfad. Du bekommst ein Bild davon, worum es in deinem Thema geht, warum das Halbleiter-Packaging UKP-Laser braucht, wie die Kapitel dieser App zusammenhängen und wie aus einem Oberthema eine prüfbare Forschungsfrage wird. Das Kapitel ist kurz und kommt ohne Formeln aus; es ist der Kompass für alles Weitere.",
+  "ziele": [
+    "Das Thema „UKP-Ablation im Halbleiter-Packaging“ in eigenen Worten erklären",
+    "Begründen, was UKP-Laser für Packaging-Werkstoffe interessant macht und wo ihre Grenzen liegen",
+    "Die Etappen des Lernpfads und ihren Zweck benennen",
+    "Die Kette vom Thema zur Forschungsfrage anwenden und schwache Fragen erkennen",
+    "Den Fahrplan Grundlagen, Vorversuche, Recherche und Richtung beschreiben"
+  ],
+  "weiterlesen": [
+    "lau2022",
+    "franz2023",
+    "rung2025",
+    "ostholt2014"
+  ],
+  "lektionen": [
+    {
+      "id": "k21.l01",
+      "titel": "Das Thema in drei Schritten",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k21.l01.b01",
+          "typ": "text",
+          "inhalt": [
+            "**1. Das Anwendungsfeld.** [[packaging|Halbleiter-Packaging]] ist alles, was nach der Chipfertigung passiert: Der [[die|Chip]] wird mit der Außenwelt verbunden, elektrisch, thermisch und mechanisch, und geschützt. Der Trend heißt *Advanced Packaging*: mehrere [[chiplet|Chiplets]] in einem Gehäuse, [[interposer|Interposer]] mit feiner Verdrahtung, neue Substrate wie Glas. Die Strukturen werden kleiner und die Werkstoffe vielfältiger.",
+            "**2. Der Bedarf.** In diesen Aufbauten müssen Löcher, Gräben und Öffnungen entstehen, oft durch einen Stapel verschiedener Werkstoffe: Polymer auf Kupfer, Glas, Silizium, Moldmasse. Ein Laser arbeitet berührungslos, ohne Maske und digital positionierbar. Deshalb ist er im Back-End seit Langem im Einsatz, etwa für [[microvia|Microvias]].",
+            "**3. Die Frage nach dem Werkzeug.** Was ändert sich, wenn die Pulse nur Piko- oder Femtosekunden dauern? Genau das ist dein Thema: die Physik des [[ukp|UKP]]-Abtrags angewandt auf die Werkstoffe und Anforderungen des Packagings."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging und Lasertechnik, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k21.l01.b02",
+          "typ": "text",
+          "inhalt": [
+            "Was UKP-Laser für das Packaging interessant macht:",
+            "- **Wenig Wärmeeinfluss.** Die Energie wird schneller deponiert, als Wärme abfließt (K05). Das schont Polymere und dünne Schichten.\n- **Transparente und spröde Werkstoffe.** Über [[multiphotonenabsorption|nichtlineare Absorption]] lassen sich auch Glas und andere Dielektrika bearbeiten (K06).\n- **Kleine Strukturen.** Abgetragen wird nur, wo die Fluenz über der Schwelle liegt (K07). Damit sind Strukturen kleiner als der Fokus möglich.\n- **Selektivität.** Verschiedene Werkstoffe haben verschiedene Schwellen. Liegt die Fluenz dazwischen, wird der eine abgetragen und der andere bleibt stehen (K17).",
+            "Und wo es hakt: **Durchsatz** (Industrie zählt Löcher pro Sekunde), **Wärmeakkumulation** bei hoher Repetitionsrate, **Risse** in Glas, **Delamination** im Schichtverbund und **Kosten** der Laserquellen. Genau an diesen Stellen entstehen Forschungsfragen."
+          ],
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging und Lasertechnik, nicht an der Primärquelle geprüft"
+        },
+        {
+          "id": "k21.l01.b03",
+          "typ": "merke",
+          "inhalt": "Dein Thema verbindet zwei Welten: die **Physik des Abtrags** (Wie wirkt ein Puls auf Glas, Silizium, Kupfer und Polymer?) und die **Anforderungen des Packagings** (Wie klein, wie sauber, wie schnell, wie zuverlässig?). Gute Forschungsfragen liegen an der Grenze zwischen beiden.",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.q01",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was umfasst Halbleiter-Packaging?",
+          "optionen": [
+            "Alles nach der Chipfertigung: Verbinden, Schützen, Entwärmen und Integrieren des Chips",
+            "Nur das Verpacken der fertigen Bauteile für den Versand",
+            "Die Belichtung der Transistoren auf dem Wafer",
+            "Das Züchten von Silizium-Einkristallen"
+          ],
+          "richtig": 0,
+          "erklaerung": "Packaging ist der Back-End-Teil der Halbleiterfertigung. Die Belichtung gehört zum Front-End (K15)."
+        },
+        {
+          "id": "k21.q02",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Was macht UKP-Laser für Packaging-Werkstoffe interessant? (Mehrfachauswahl)",
+          "optionen": [
+            "Wenig Wärmeeinfluss, weil die Energie schneller deponiert wird, als Wärme abfließt",
+            "Glas lässt sich über nichtlineare Absorption bearbeiten",
+            "Unterschiedliche Schwellen ermöglichen selektiven Abtrag im Schichtverbund",
+            "Es entsteht überhaupt keine Wärme",
+            "Sie haben immer den höchsten Durchsatz aller Verfahren"
+          ],
+          "richtig": [
+            0,
+            1,
+            2
+          ],
+          "erklaerung": "„Kalt“ ist nur relativ (K05): Bei hoher Repetitionsrate sammelt sich Wärme an. Und beim Durchsatz konkurrieren UKP-Laser mit CO₂- und UV-ns-Lasern (K18)."
+        },
+        {
+          "id": "k21.q03",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne das Problem dem Kapitel zu, das die Physik dazu liefert.",
+          "paare": [
+            [
+              "Hohlräume im Polymer bei hoher Repetitionsrate",
+              "Wärmeakkumulation (K05)"
+            ],
+            [
+              "Glas absorbiert die Laserwellenlänge kaum",
+              "Nichtlineare Absorption (K06)"
+            ],
+            [
+              "Lochdurchmesser hängt von der Pulsenergie ab",
+              "Gauß-Strahl und Schwelle (K02, K07)"
+            ],
+            [
+              "Das Kupferpad unter dem Polymer soll stehen bleiben",
+              "Schwellenkontrast im Schichtverbund (K17)"
+            ]
+          ],
+          "erklaerung": "So hängen Anwendung und Physik zusammen: Jedes Prozessproblem hat einen Mechanismus, den du in einem Kapitel lernst."
+        },
+        {
+          "id": "k21.c01",
+          "typ": "karte",
+          "vorne": "Warum UKP-Laser im Packaging? Vier Gründe, vier Grenzen.",
+          "hinten": "**Gründe:** wenig Wärmeeinfluss, Glas über nichtlineare Absorption, Strukturen kleiner als der Fokus, Selektivität über Schwellenunterschiede. **Grenzen:** Durchsatz, Wärmeakkumulation, Risse in Glas, Delamination.",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Packaging und Lasertechnik, nicht an der Primärquelle geprüft"
+        }
+      ]
+    },
+    {
+      "id": "k21.l02",
+      "titel": "Der Lernpfad als Landkarte",
+      "minuten": 8,
+      "blocks": [
+        {
+          "id": "k21.l02.b01",
+          "typ": "text",
+          "inhalt": [
+            "Die App führt dich in sieben Etappen von der Anwendung zur eigenen Forschung:",
+            "1. **Orientierung:** dieses Kapitel und die Grundlagen des Packagings (K15, K16). Erst das *Wofür*.\n2. **Laser-Fundament:** Zahlen, Strahl, Licht-Materie (K00 bis K03). Das Handwerkszeug.\n3. **UKP-Physik:** Pulserzeugung, Zeitskalen, nichtlineare Absorption (K04 bis K06). Warum kurz anders ist.\n4. **Abtrag und Werkstoffe:** Schwelle, Mechanismen, Werkstoffe und der Schichtverbund im Package (K07, K08, K17).\n5. **Laser im Packaging:** Microvias, Glaskern und TGV, Trennen und Lösen, Sonderverfahren (K18, K19, K10).\n6. **Ins Labor:** Prozessparameter, Laborhandgriffe, Messtechnik und deine ersten Versuche (K09, K14, K11, K22).\n7. **Forschung:** Qualität, Forschungslandkarte, wissenschaftliches Arbeiten (K20, K12).",
+            "**Englisch** (K13) läuft nebenher. Jedes Kapitel zeigt oben unter *Wofür du das brauchst*, wie es zu deinem Thema beiträgt."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.l02.b02",
+          "typ": "text",
+          "inhalt": [
+            "So holst du am meisten heraus:",
+            "- **Reihenfolge einhalten, aber nicht sklavisch.** Die App empfiehlt die Reihenfolge und sperrt nie hart. Was du schon kannst, schaltest du frei.\n- **Täglich kurz wiederholen.** Die Wiederholung (SM-2) bringt Fragen dann zurück, wenn du sie fast vergessen hast.\n- **Rechnen statt lesen.** Jede Rechentraining-Lektion übt die Größen, die du später an der Anlage brauchst.\n- **Labor-Tab nutzen.** Die Simulationen zeigen, wie Schwelle, Inkubation oder Überlapp auf Parameter reagieren."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.q04",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Etappen des Lernpfads in die richtige Reihenfolge.",
+          "items": [
+            "Orientierung",
+            "Laser-Fundament",
+            "UKP-Physik",
+            "Abtrag und Werkstoffe",
+            "Laser im Packaging",
+            "Ins Labor",
+            "Forschung"
+          ],
+          "oben": "zuerst",
+          "unten": "zuletzt",
+          "erklaerung": "Vom Wofür über Werkzeug und Physik zur Anwendung, dann in die Praxis und zur eigenen Frage."
+        },
+        {
+          "id": "k21.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Warum steht das Packaging am Anfang und nicht erst nach der Laserphysik?",
+          "optionen": [
+            "Damit du beim Lernen der Physik weißt, wofür du sie brauchst",
+            "Weil Packaging einfacher ist als Physik",
+            "Weil die Physik für das Thema unwichtig ist"
+          ],
+          "richtig": 0,
+          "erklaerung": "Wer das Ziel kennt, liest anders: Bei jeder Formel fragst du dich, welches Prozessproblem sie erklärt."
+        },
+        {
+          "id": "k21.q06",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "In welcher Etappe findest du die Antwort?",
+          "paare": [
+            [
+              "Was ist ein Chiplet?",
+              "Orientierung"
+            ],
+            [
+              "Warum entstehen Risse am Lochrand im Glas?",
+              "Abtrag und Werkstoffe"
+            ],
+            [
+              "Wie wird eine Microvia industriell gebohrt?",
+              "Laser im Packaging"
+            ],
+            [
+              "Wie stelle ich Pulsabstand und Hatch ein?",
+              "Ins Labor"
+            ],
+            [
+              "Wie lese ich ein Paper effizient?",
+              "Forschung"
+            ]
+          ],
+          "erklaerung": "Die Etappen sind auch ein Nachschlagewerk: Wenn dir an der Anlage eine Frage kommt, weißt du, wo du suchst."
+        },
+        {
+          "id": "k21.c02",
+          "typ": "karte",
+          "vorne": "Die sieben Etappen deines Lernpfads?",
+          "hinten": "Orientierung, Laser-Fundament, UKP-Physik, Abtrag und Werkstoffe, Laser im Packaging, Ins Labor, Forschung. Englisch läuft nebenher.",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        }
+      ]
+    },
+    {
+      "id": "k21.l03",
+      "titel": "Vom Thema zur Forschungsfrage",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k21.l03.b01",
+          "typ": "text",
+          "inhalt": [
+            "„UKP-Ablation im Semiconductor Packaging“ ist ein **Thema**, noch keine **Frage**. Eine Dissertation braucht eine Frage, die man mit Versuchen und Modellen beantworten kann. Der Weg dahin ist eine Kette:",
+            "1. **Anwendung:** Wo im Package? (z. B. Glaskern-Substrat)\n2. **Prozessschritt:** Was muss der Laser tun? (z. B. Through-Glass Via direkt bohren)\n3. **Problem:** Was geht heute schief? (z. B. Ausbrüche an der Austrittsseite)\n4. **Werkstoff:** Welche Werkstoffe, welcher Verbund? (z. B. ein bestimmtes Borosilikatglas)\n5. **Zielgröße:** Woran misst du Erfolg? (z. B. Breite der Ausbruchzone, Konizität, Bohrzeit)\n6. **Stellgrößen:** Was variierst du? (z. B. Pulsdauer, Burst, Bohrstrategie)\n7. **Lücke:** Was weiß die Literatur noch nicht?",
+            "Das Beispiel ist frei gewählt und keine Empfehlung. Es zeigt nur, wie konkret jede Stufe werden muss."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.l03.b02",
+          "typ": "text",
+          "inhalt": [
+            "Eine tragfähige Forschungsfrage ist:",
+            "- **konkret:** ein Prozess, ein Werkstoffsystem, eine klare Zielgröße\n- **messbar:** mit deiner Messtechnik (Mikroskop, REM, Querschliff) auswertbar\n- **machbar:** an deiner Anlage und in der Zeit einer Promotion\n- **neu:** nicht schon beantwortet, das zeigt die Literaturrecherche\n- **relevant:** für die Industrie oder für das Verständnis des Mechanismus\n- **ergiebig:** groß genug für mehrere Veröffentlichungen",
+            "Typische schwache Fragen sind zu breit („Wie bohrt man Glas mit UKP?“), reine Parameterstudien ohne Erkenntnisziel („Wir variieren fünf Parameter und schauen, was passiert.“), nicht messbar („Ist UKP besser?“) oder schon beantwortet."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.l03.b03",
+          "typ": "merke",
+          "inhalt": "Ein **Prozessfenster** ist ein Ergebnis, aber noch keine Erkenntnis. Stark wird eine Arbeit, wenn sie erklärt, *warum* das Fenster dort liegt (Mechanismus), und zeigt, wie sich das auf andere Werkstoffe oder Anlagen übertragen lässt.",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.q07",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Kette vom Thema zur Forschungsfrage in die richtige Reihenfolge.",
+          "items": [
+            "Anwendung",
+            "Prozessschritt",
+            "Problem",
+            "Werkstoff",
+            "Zielgröße",
+            "Stellgrößen",
+            "Lücke in der Literatur"
+          ],
+          "oben": "Thema",
+          "unten": "Frage",
+          "erklaerung": "Von außen nach innen: Erst wo und wozu, dann was schiefgeht, dann woran man es misst und was man verändert. Die Lücke prüft, ob die Frage neu ist."
+        },
+        {
+          "id": "k21.q08",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Welche Frage eignet sich am besten als Ausgangspunkt einer Promotion?",
+          "optionen": [
+            "Wie hängt die Ausbruchzone an der Austrittsseite von TGVs in Borosilikatglas von Pulsdauer und Burst ab, und welcher Mechanismus steckt dahinter?",
+            "Wie bohrt man Glas mit UKP-Lasern?",
+            "Ist UKP besser als alle anderen Laser?",
+            "Was passiert, wenn wir an der Anlage alle Parameter variieren?"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die erste Frage nennt Anwendung, Werkstoff, Zielgröße, Stellgrößen und fragt nach dem Mechanismus. Ob sie neu ist, zeigt erst die Literatur."
+        },
+        {
+          "id": "k21.q09",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne die schwache Frage ihrer Schwäche zu.",
+          "paare": [
+            [
+              "Wie bohrt man Glas mit UKP?",
+              "Zu breit"
+            ],
+            [
+              "Ist UKP besser?",
+              "Nicht messbar"
+            ],
+            [
+              "Wir variieren fünf Parameter und schauen.",
+              "Kein Erkenntnisziel"
+            ],
+            [
+              "Funktioniert Perkussionsbohren in FR-4?",
+              "Schon beantwortet"
+            ]
+          ],
+          "erklaerung": "Zum letzten Beispiel: Zu UKP-Microvias in FR-4 gibt es bereits Arbeiten, auch aus Aschaffenburg (K18). Die Frage wäre erst mit einem neuen Aspekt tragfähig."
+        },
+        {
+          "id": "k21.c03",
+          "typ": "karte",
+          "vorne": "Die Kette vom Thema zur Forschungsfrage?",
+          "hinten": "Anwendung → Prozessschritt → Problem → Werkstoff → Zielgröße → Stellgrößen → Lücke. Prüfen: konkret, messbar, machbar, neu, relevant, ergiebig.",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        }
+      ]
+    },
+    {
+      "id": "k21.l04",
+      "titel": "Dein Fahrplan für die ersten Monate",
+      "minuten": 10,
+      "blocks": [
+        {
+          "id": "k21.l04.b01",
+          "typ": "text",
+          "inhalt": [
+            "Der Weg zur Forschungsfrage hat vier Phasen:",
+            "1. **Grundlagen:** diese App und Gespräche, bis du Versuche planen und Ergebnisse physikalisch deuten kannst.\n2. **Vorversuche an der Anlage:** erste Bohrungen und Abtragsfelder an Packaging-Werkstoffen, um ein Gefühl für den Prozess zu bekommen. Trotzdem sauber protokolliert (K22).\n3. **Tiefe Recherche:** Literatur systematisch auswerten und mit den eigenen Vorversuchen abgleichen.\n4. **Richtung festlegen:** zwei bis drei Themenkandidaten mit Pro und Contra, Abstimmung mit dem Betreuer, Exposé.",
+            "Warum Praxis vor der tiefen Recherche? Wer selbst ein Loch gebohrt und unter dem REM angesehen hat, liest Papers anders: Du erkennst, welche Angaben fehlen, welche Bilder geschönt sind und welche Ergebnisse an deiner Anlage überhaupt erreichbar wären."
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.l04.b02",
+          "typ": "text",
+          "inhalt": [
+            "Das wichtigste Werkzeug der Recherche ist eine **Literaturmatrix**: eine Zeile pro Paper, Spalten für Werkstoff, Prozess, Laser (Wellenlänge, Pulsdauer, Repetitionsrate, Burst), Strategie, Zielgröße, Ergebnis und offene Punkte. Leere oder widersprüchliche Felder sind Kandidaten für deine Lücke.",
+            "Gewohnheiten ab dem ersten Tag:",
+            "- Ein Protokoll pro Versuch, eine **Versuchs-ID** in jedem Dateinamen\n- Fotos und Mikroskopbilder immer mit Maßstab\n- Jede Quelle sofort in die Literaturverwaltung (K12)\n- Eine kurze **Wochennotiz:** Was habe ich gelernt, was ist offen, was frage ich wen?"
+          ],
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.l04.b03",
+          "typ": "merke",
+          "inhalt": "Daten, die du heute sauber protokollierst, sind in einem Jahr Abbildungen in deinem ersten Paper. Daten ohne Protokoll sind verloren.",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        },
+        {
+          "id": "k21.q10",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die vier Phasen in die richtige Reihenfolge.",
+          "items": [
+            "Grundlagen",
+            "Vorversuche an der Anlage",
+            "Tiefe Recherche",
+            "Richtung festlegen"
+          ],
+          "oben": "zuerst",
+          "unten": "zuletzt",
+          "erklaerung": "Verstehen, ausprobieren, systematisch lesen, entscheiden."
+        },
+        {
+          "id": "k21.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "frage": "Wozu dient eine Literaturmatrix vor allem?",
+          "optionen": [
+            "Leere oder widersprüchliche Felder zeigen, wo die Forschungslücke liegen könnte",
+            "Sie ersetzt das Lesen der Papers",
+            "Sie zählt, wie oft ein Paper zitiert wurde"
+          ],
+          "richtig": 0,
+          "erklaerung": "Die Matrix macht sichtbar, welche Kombinationen aus Werkstoff, Laser und Zielgröße schon untersucht sind und welche nicht."
+        },
+        {
+          "id": "k21.q12",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Jede Datei trägt die ___ im Namen. Mikroskopbilder brauchen immer einen ___. Vorversuche dienen dem Gefühl für den Prozess, werden aber trotzdem ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "Versuchs-ID",
+                "Uhrzeit"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Maßstab",
+                "Filter"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "protokolliert",
+                "verworfen"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "So findest du in einem Jahr zu jedem Bild die Parameter wieder."
+        },
+        {
+          "id": "k21.c04",
+          "typ": "karte",
+          "vorne": "Vier Phasen bis zur Forschungsfrage?",
+          "hinten": "Grundlagen → Vorversuche an der Anlage → tiefe Recherche mit Literaturmatrix → Richtung festlegen (Kandidaten, Abstimmung, Exposé).",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Lernpfad), keine Fachaussage"
+        }
+      ]
+    }
+  ]
+}
