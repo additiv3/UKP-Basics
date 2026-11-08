@@ -233,6 +233,25 @@
 .page[data-stage='F'] {
   --stage: var(--st-f);
 }
+.stage[data-stage='G'],
+.page[data-stage='G'] {
+  --stage: var(--st-g);
+}
+.stage[data-stage='H'],
+.page[data-stage='H'] {
+  --stage: var(--st-h);
+}
+.callout.bezug {
+  margin: 4px 0 18px;
+  background: color-mix(in srgb, var(--stage, var(--accent)) 12%, var(--surface));
+  border-left: 4px solid var(--stage, var(--accent));
+}
+.callout.bezug .callout-title {
+  color: var(--stage, var(--accent));
+}
+.callout.bezug p {
+  margin: 0;
+}
 .stage-id {
   background: var(--stage, var(--accent));
   color: #fff;

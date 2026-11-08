@@ -1,114 +1,153 @@
 {
   "stufen": {
     "A": {
-      "titel": "Foundation",
-      "beschreibung": "Quantities, beam optics and the basics of light–matter interaction."
+      "titel": "Orientation",
+      "beschreibung": "What your doctorate is about: the topic, the application field of semiconductor packaging and your roadmap."
     },
     "B": {
-      "titel": "Ultrashort pulses",
-      "beschreibung": "How ultrashort pulses are generated and why time scales change ablation."
+      "titel": "Laser foundation",
+      "beschreibung": "Numbers, beam and light–matter interaction: the toolkit for everything that follows."
     },
     "C": {
-      "titel": "Ablation",
-      "beschreibung": "Ablation threshold, mechanisms and the behaviour of the materials."
+      "titel": "Ultrafast physics",
+      "beschreibung": "How ultrashort pulses are generated and why their time scales change ablation."
     },
     "D": {
-      "titel": "Process and practice",
-      "beschreibung": "Equipment, special processes, metrology and scientific work."
+      "titel": "Ablation and materials",
+      "beschreibung": "Threshold, mechanisms and how glass, silicon, metal and polymer behave in a layer stack."
     },
     "E": {
-      "titel": "English",
-      "beschreibung": "Scientific English: speaking, writing, reading."
+      "titel": "Lasers in packaging",
+      "beschreibung": "Microvias, glass core and TGVs, singulation and debonding: where ultrafast lasers are needed in packaging."
     },
     "F": {
-      "titel": "Semiconductor packaging",
-      "beschreibung": "From chip to system: packaging architectures, materials, microvias, glass core, separation and quality."
+      "titel": "Into the lab",
+      "beschreibung": "Equipment, lab routines, metrology and your first own experiments."
+    },
+    "G": {
+      "titel": "Research",
+      "beschreibung": "Quality, research landscape and scientific practice: from the gap to your own question."
+    },
+    "H": {
+      "titel": "Alongside: English",
+      "beschreibung": "Scientific English for speaking, writing and reading, alongside all stages."
     }
   },
   "kapitel": {
-    "k00": {
-      "titel": "Toolkit: numbers, units, calculating",
-      "kurz": "Powers of ten, units, logarithm, estimation, pocket calculator"
-    },
-    "k01": {
-      "titel": "Pulse quantities and a feel for numbers",
-      "kurz": "Time scales, pulse energy, peak power, fluence, intensity, photon energy"
-    },
-    "k02": {
-      "titel": "Beam optics: from the laser to the focus",
-      "kurz": "Gaussian beam, focusing, Rayleigh length, beam quality M²"
-    },
-    "k03": {
-      "titel": "Light meets matter",
-      "kurz": "Bands, absorption, reflection, linear and nonlinear absorption"
-    },
-    "k04": {
-      "titel": "Generating ultrashort pulses",
-      "kurz": "Bandwidth, mode locking, chirp, CPA, amplifier architectures"
-    },
-    "k05": {
-      "titel": "Time scales and the two-temperature model",
-      "kurz": "Heat diffusion vs. pulse duration, electron and lattice systems, TTM"
-    },
-    "k06": {
-      "titel": "Nonlinear absorption in dielectrics",
-      "kurz": "Multiphoton and tunnel ionization, Keldysh, avalanche, plasma"
-    },
-    "k07": {
-      "titel": "Ablation mechanisms and threshold",
-      "kurz": "Threshold, ablation depth, spallation, phase explosion, incubation, burst"
-    },
-    "k08": {
-      "titel": "Materials: fused silica, ceramics, semiconductors",
-      "kurz": "Band gap, absorption regimes, cracking, residual stress"
-    },
-    "k09": {
-      "titel": "Process parameters and equipment",
-      "kurz": "Pulse spacing, hatch, scanner, beam delivery, pulse shaping, DoE"
-    },
-    "k10": {
-      "titel": "Special processes",
-      "kurz": "LIPSS, selective laser etching, Bessel beam, waveguides"
-    },
-    "k11": {
-      "titel": "Metrology, standards and diagnostics",
-      "kurz": "Pulse duration, beam profile, uncertainty, roughness, standards, in-situ monitoring"
-    },
-    "k12": {
-      "titel": "Scientific practice in photonics",
-      "kurz": "Journals, conferences, reading papers, reference management, presenting"
-    },
-    "k13": {
-      "titel": "Scientific English for photonics",
-      "kurz": "Numbers aloud, describing setups and graphs, abstracts, conversations"
-    },
-    "k14": {
-      "titel": "Everyday lab work at the USP system",
-      "kurz": "Safety, beam alignment, focus search, power, pulse duration and Liu evaluation as games"
+    "k21": {
+      "titel": "Your research topic: ultrafast lasers in packaging",
+      "kurz": "The topic, why packaging needs ultrafast lasers, the learning path as a map, from topic to question",
+      "bezug": "The compass for everything else: here you see how each chapter feeds into your research question."
     },
     "k15": {
       "titel": "Semiconductor packaging: from chip to system",
-      "kurz": "Tasks of the package, front end and back end, dicing street, dies per wafer"
+      "kurz": "Tasks of the package, front end and back end, dicing street, dies per wafer",
+      "bezug": "Without knowing the application field you cannot ask a relevant research question. Here you learn what a package has to do."
     },
     "k16": {
       "titel": "Packaging architectures: from wire bond to chiplet",
-      "kurz": "Wire bond, flip chip, BGA, fan-out, 2.5D, 3D, hybrid bonding"
+      "kurz": "Wire bond, flip chip, BGA, fan-out, 2.5D, 3D, hybrid bonding",
+      "bezug": "Every architecture brings its own laser steps (vias, interposers, singulation). That decides where your work can start."
+    },
+    "k00": {
+      "titel": "Toolkit: numbers, units, calculating",
+      "kurz": "Powers of ten, units, logarithm, estimation, pocket calculator",
+      "bezug": "You will calculate fluence, threshold and throughput all the time, in your head and in the lab notebook. This is the toolkit."
+    },
+    "k01": {
+      "titel": "Pulse quantities and a feel for numbers",
+      "kurz": "Time scales, pulse energy, peak power, fluence, intensity, photon energy",
+      "bezug": "With this you translate every machine setting (pulse energy, repetition rate, power) into physical quantities such as fluence."
+    },
+    "k02": {
+      "titel": "Beam optics: from the laser to the focus",
+      "kurz": "Gaussian beam, focusing, Rayleigh length, beam quality M²",
+      "bezug": "Spot size and focal position set the diameter and taper of your holes."
+    },
+    "k03": {
+      "titel": "Light meets matter",
+      "kurz": "Bands, absorption, reflection, linear and nonlinear absorption",
+      "bezug": "Explains why copper, silicon, glass and polymer in the same package react so differently to the same pulse."
+    },
+    "k04": {
+      "titel": "Generating ultrashort pulses",
+      "kurz": "Bandwidth, mode locking, chirp, CPA, amplifier architectures",
+      "bezug": "Pulse duration, burst and repetition rate are the levers on your machine. Here you learn where they come from."
+    },
+    "k05": {
+      "titel": "Time scales and the two-temperature model",
+      "kurz": "Heat diffusion vs. pulse duration, electron and lattice systems, TTM",
+      "bezug": "Heat accumulation is the main enemy for polymers and thin layers in a package. This is the physics behind it."
+    },
+    "k06": {
+      "titel": "Nonlinear absorption in dielectrics",
+      "kurz": "Multiphoton and tunnel ionization, Keldysh, avalanche, plasma",
+      "bezug": "Glass for interposers and glass cores absorbs only nonlinearly. Without this chapter, drilling TGVs stays a black box."
+    },
+    "k07": {
+      "titel": "Ablation mechanisms and threshold",
+      "kurz": "Threshold, ablation depth, spallation, phase explosion, incubation, burst",
+      "bezug": "Threshold and ablation depth are the key quantities of your first own test series."
+    },
+    "k08": {
+      "titel": "Materials: fused silica, ceramics, semiconductors",
+      "kurz": "Band gap, absorption regimes, cracking, residual stress",
+      "bezug": "Material classes and cracking: the basis for processing glass, silicon and ceramics in a package in a controlled way."
     },
     "k17": {
       "titel": "Materials and thermomechanics in the package",
-      "kurz": "Filled polymers, CTE mismatch, die strength, Weibull, layer stack"
+      "kurz": "Filled polymers, CTE mismatch, die strength, Weibull, layer stack",
+      "bezug": "A package stacks materials with very different thresholds and thermal expansion. Selectivity and delamination are typical research questions."
     },
     "k18": {
       "titel": "IC substrate, microvias and glass core",
-      "kurz": "Build-up layers, CO₂/UV/USP drilling, burst, top hat, TGV"
+      "kurz": "Build-up layers, CO₂/UV/USP drilling, burst, top hat, TGV",
+      "bezug": "The core chapter: microvias and through-glass vias are processes the AG alp has already published on, and obvious candidates for your topic."
     },
     "k19": {
       "titel": "Separating and releasing: dicing and debonding",
-      "kurz": "Saw, laser grooving, stealth dicing, plasma, laser debonding"
+      "kurz": "Saw, laser grooving, stealth dicing, plasma, laser debonding",
+      "bezug": "Dicing, grooving and debonding are further laser steps in the back-end and possible alternatives for your topic."
+    },
+    "k10": {
+      "titel": "Special processes",
+      "kurz": "LIPSS, selective laser etching, Bessel beam, waveguides",
+      "bezug": "Selective laser etching and Bessel beams are the basis of laser-induced etching of through-glass vias."
+    },
+    "k09": {
+      "titel": "Process parameters and equipment",
+      "kurz": "Pulse spacing, hatch, scanner, beam delivery, pulse shaping, DoE",
+      "bezug": "You set pulse distance, hatch and scan strategy for every experiment on the machine."
+    },
+    "k14": {
+      "titel": "Everyday lab work at the USP system",
+      "kurz": "Safety, beam alignment, focus search, power, pulse duration and Liu evaluation as games",
+      "bezug": "The routines before every experiment: safety, alignment, focal position, power, threshold."
+    },
+    "k11": {
+      "titel": "Metrology, standards and diagnostics",
+      "kurz": "Pulse duration, beam profile, uncertainty, roughness, standards, in-situ monitoring",
+      "bezug": "What you cannot measure properly you cannot publish: microscopy, surface parameters and standards for your results."
+    },
+    "k22": {
+      "titel": "First experiments: drilling and ablation",
+      "kurz": "Drilling strategies, threshold on a Si wafer, drilling and ablation series, material comparison, protocol",
+      "bezug": "Here, what you have learned becomes your first test plan on the machine."
     },
     "k20": {
       "titel": "Quality, reliability and research landscape",
-      "kurz": "Measurement methods, failure mechanisms, yield, conferences, reading list"
+      "kurz": "Measurement methods, failure mechanisms, yield, conferences, reading list",
+      "bezug": "Quality criteria, reading list and open questions: the transition from getting started to your own research question."
+    },
+    "k12": {
+      "titel": "Scientific practice in photonics",
+      "kurz": "Journals, conferences, reading papers, reference management, presenting",
+      "bezug": "Reading papers, managing literature, positioning your results: the craft of a doctorate."
+    },
+    "k13": {
+      "titel": "Scientific English for photonics",
+      "kurz": "Numbers aloud, describing setups and graphs, abstracts, conversations",
+      "bezug": "Papers, conferences and talks with partners are in English. This chapter runs alongside all stages."
     }
   }
 }
