@@ -30,6 +30,7 @@
           "id": "k03.l01.b02",
           "typ": "bild",
           "src": "assets/figures/baender.svg",
+          "src_en": "assets/figures/baender.en.svg",
           "alt": "Bänderschema für Metall, Halbleiter und Dielektrikum mit unterschiedlicher Bandlücke",
           "unterschrift": "Bänderschema (nicht maßstäblich): Metall ohne Lücke, Halbleiter mit kleiner, Dielektrikum mit großer Bandlücke.",
           "quelle": "selbst erzeugt"
@@ -140,6 +141,15 @@
           "erklaerung": "Lambert-Beer: Intensität in der Tiefe $z$ nach der Reflexion ($R$ = Reflexionsgrad). Der Absorptionskoeffizient $\\alpha$ hat die Einheit 1/m; die Eindringtiefe $\\delta=1/\\alpha$ ist die Tiefe, bei der die Intensität auf $1/e$ gefallen ist.",
           "verifiziert": true,
           "quelle": "saleh2019"
+        },
+        {
+          "id": "k03.l02.fig1",
+          "typ": "bild",
+          "src": "assets/figures/lambert-beer.svg",
+          "src_en": "assets/figures/lambert-beer.en.svg",
+          "alt": "Intensität über der Tiefe: An der Oberfläche wird R mal I0 reflektiert, im Material fällt die Intensität exponentiell ab, bei der Tiefe delta auf 1/e",
+          "unterschrift": "Erst Reflexion, dann Abschwächung: In der Schicht bis $\\delta=1/\\alpha$ wird der Großteil der eindringenden Energie absorbiert.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
         },
         {
           "id": "k03.l02.b03",
@@ -324,6 +334,15 @@
           ],
           "verifiziert": true,
           "quelle": "Gegenüberstellung aus den Definitionen (Faktor 10^6 bis 10^12 aus ms…µs vs ps…fs)"
+        },
+        {
+          "id": "k03.l04.fig1",
+          "typ": "bild",
+          "src": "assets/figures/ns-vs-ukp.svg",
+          "src_en": "assets/figures/ns-vs-ukp.en.svg",
+          "alt": "Schematischer Vergleich zweier Kraterquerschnitte: langer Puls mit Schmelzauswurf, großer Wärmeeinflusszone und Rissen, Ultrakurzpuls mit scharfer Kante und kleiner Wärmeeinflusszone",
+          "unterschrift": "Schematische Tendenz, kein Maßstab: Wie ausgeprägt Schmelze, Wärmeeinflusszone und Risse sind, hängt stark von Werkstoff, Fluenz und Pulszahl ab.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
         },
         {
           "id": "k03.l04.b03",

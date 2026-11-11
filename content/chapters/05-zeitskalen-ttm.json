@@ -115,6 +115,7 @@
           "id": "k05.l02.b02",
           "typ": "bild",
           "src": "assets/figures/zeitskalen-prozesse.svg",
+          "src_en": "assets/figures/zeitskalen-prozesse.en.svg",
           "alt": "Zeitachse von Femtosekunden bis Nanosekunden mit Balken für Absorption, Elektronenthermalisierung, Elektron-Gitter-Kopplung, Wärmeleitung und Materialabtrag",
           "unterschrift": "Qualitative Abfolge der Prozesse nach dem Puls (logarithmische Zeitachse, Größenordnungen). Die Zeitfenster hängen stark von Material und Fluenz ab.",
           "verifiziert": false,

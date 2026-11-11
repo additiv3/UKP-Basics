@@ -40,7 +40,7 @@ async function loadRaw() {
 async function loadEn(raw) {
   if (enCache.loaded) return enCache;
   enCache.index = await getJson('content/en/index.json', true);
-  enCache.glossar = await getJson('content/en/glossar.json', true);
+  enCache.glossar ??= await getJson('content/en/glossar.json', true);
   enCache.quellen = await getJson('content/en/quellen.json', true);
   await Promise.all(
     raw.index.kapitel
@@ -78,18 +78,42 @@ function localizeIndex(index, ov) {
   };
 }
 
-/** Glossary term with display fields: name (UI language) and alt (the other language's term). */
-function localizeTerm(term, ov, lang) {
+/** Glossary term with display fields: name (UI language) and alt (the other language's term).
+ *  de / en hold the texts of both languages (kurz, definition, mehr), so look-ups and vocab cards can offer the other one. */
+function localizeTerm(term, ov, lang, enGloss) {
   const merged = { ...term, ...(ov ?? {}) };
   const en = term.englisch || term.begriff;
-  return lang === 'en' ? { ...merged, name: en, alt: term.begriff } : { ...merged, name: term.begriff, alt: term.englisch ?? '' };
+  const pickText = (o) => (o ? { kurz: o.kurz, definition: o.definition, mehr: o.mehr } : null);
+  const texts = { de: pickText(term), en: pickText(enGloss?.[term.id]) };
+  return lang === 'en' ? { ...merged, ...texts, name: en, alt: term.begriff } : { ...merged, ...texts, name: term.begriff, alt: term.englisch ?? '' };
+}
+
+const para = (...parts) => parts.filter(Boolean).join('\n\n');
+
+/** Answer side of a vocab card: the term, its meaning, the longer explanation and an English example sentence. */
+function vocabBack(term, answer) {
+  return para(
+    `**${answer}**`,
+    term.kurz,
+    term.definition,
+    term.mehr ? `**${t('Genauer erklärt')}:** ${term.mehr}` : null,
+    term.beispiel ? `*${t('Im Satz')}:* ${t('„{s}“', { s: term.beispiel })}` : null,
+  );
+}
+
+/** The same texts in the other language, shown folded on the card. */
+function vocabOther(term, lang) {
+  const o = lang === 'en' ? term.de : term.en;
+  if (!o?.definition) return null;
+  return { label: lang === 'en' ? 'Auf Deutsch lesen' : 'Read in English', text: para(o.kurz, o.definition, o.mehr) };
 }
 
 /** Synthetic flashcards (DE->EN and EN->DE) for every glossary term; ids are v.<term>.de / v.<term>.en. */
-function vocabCards(terms) {
+function vocabCards(terms, lang) {
   const out = [];
   for (const term of terms.values()) {
     if (!term.englisch) continue;
+    const other = vocabOther(term, lang);
     out.push(
       {
         id: `v.${term.id}.de`,
@@ -97,7 +121,8 @@ function vocabCards(terms) {
         vok: true,
         term: term.id,
         vorne: `**${term.begriff}**\n\n${t('Wie heißt das auf Englisch?')}`,
-        hinten: `**${term.englisch}**\n\n${term.kurz}`,
+        hinten: vocabBack(term, term.englisch),
+        extra: other,
       },
       {
         id: `v.${term.id}.en`,
@@ -105,7 +130,8 @@ function vocabCards(terms) {
         vok: true,
         term: term.id,
         vorne: `**${term.englisch}**\n\n${t('Was bedeutet das? Wie heißt es auf Deutsch?')}`,
-        hinten: `**${term.begriff}**\n\n${term.kurz}`,
+        hinten: vocabBack(term, term.begriff),
+        extra: other,
       },
     );
   }
@@ -127,7 +153,10 @@ export async function loadAll(lang = 'de') {
   const chapters = new Map();
   for (const [id, ch] of raw.chapters) chapters.set(id, lang === 'en' ? localizeChapter(ch, en.chapters.get(id)) : ch);
 
-  const terms = new Map(raw.glossar.begriffe.map((b) => [b.id, localizeTerm(b, lang === 'en' ? en.glossar?.[b.id] : null, lang)]));
+  // the English glossary is small and always loaded, so both languages are at hand in look-ups and vocab cards
+  if (!enCache.glossar) enCache.glossar = await getJson('content/en/glossar.json', true);
+  const enGloss = enCache.glossar;
+  const terms = new Map(raw.glossar.begriffe.map((b) => [b.id, localizeTerm(b, lang === 'en' ? enGloss?.[b.id] : null, lang, enGloss)]));
   const glossaryNames = new Map([...terms.values()].map((b) => [b.id, b.name]));
   setGlossary(glossaryNames);
 
@@ -148,7 +177,7 @@ export async function loadAll(lang = 'de') {
   }
   const vocabChapter = { id: 'vok', titel: t('Vokabeln'), lektionen: [] };
   const vocabLesson = { id: 'vok.l', titel: t('Fachbegriffe DE ↔ EN') };
-  const vocab = vocabCards(terms);
+  const vocab = vocabCards(terms, lang);
   for (const card of vocab) items.set(card.id, { chapter: vocabChapter, lesson: vocabLesson, block: card });
 
   const sources = new Map(raw.quellen.quellen.map((q) => [q.id, lang === 'en' ? { ...q, ...(en.quellen?.[q.id] ?? {}) } : q]));

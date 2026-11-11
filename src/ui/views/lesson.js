@@ -9,9 +9,12 @@ import { chapterMeta } from '../../core/content.js';
 import { renderBlock } from '../../blocks/registry.js';
 import { attachSwipe, slide } from '../swipe.js';
 import { paginate } from '../../core/paginate.js';
-import { t } from '../../core/i18n.js';
+import { t, isEn } from '../../core/i18n.js';
 
 const isItem = (b) => b.typ === 'quiz' || b.typ === 'karte';
+
+// Set right before a language switch so the re-rendered lesson opens on the same page and scroll position.
+let resume = null;
 
 const posKey = (id) => `ukp.pos.${id}`;
 const loadPos = (id) => {
@@ -46,17 +49,40 @@ export async function render({ id, lektion }, app) {
   const quizNo = new Map(items.map((b, i) => [b.id, i + 1]));
 
   let cur = Math.min(lessonDone(store.get(), lesson.id) ? 0 : loadPos(lesson.id), pages.length - 1);
+  let restoreY = 0;
+  if (resume?.id === lesson.id) {
+    cur = Math.min(resume.cur, pages.length - 1);
+    restoreY = resume.y;
+  }
+  resume = null;
   const visited = new Set([cur]);
   const ctx = { data, mode: 'lesson', onScored: () => refresh(true) };
 
   /* ---------- top bar: close, page segments, counter ---------- */
   const segs = pages.map((p, i) => h('button', { type: 'button', class: `pg-seg pg-${p.kind}`, 'aria-label': t('Seite {n}', { n: i + 1 }), onClick: () => go(i) }));
   const label = h('span', { class: 'topbar-count' });
+  // read the same page in the other language: switches content and UI, keeps page and scroll position
+  const flip = h(
+    'button',
+    {
+      type: 'button',
+      class: 'lang-flip',
+      'aria-label': isEn() ? 'Auf Deutsch lesen' : 'Read in English',
+      title: isEn() ? 'Auf Deutsch lesen' : 'Read in English',
+      onClick: () => {
+        resume = { id: lesson.id, cur, y: window.scrollY };
+        app.setLang(isEn() ? 'de' : 'en');
+      },
+    },
+    h('span', { class: isEn() ? '' : 'on' }, 'DE'),
+    h('span', { class: isEn() ? 'on' : '' }, 'EN'),
+  );
   const topbar = h(
     'header',
     { class: 'topbar pager-top' },
     h('a', { class: 'back icon-only', href: `#/kapitel/${id}`, 'aria-label': t('Zurück zum Kapitel'), html: icon('close', 22) }),
     h('div', { class: 'pg-segs grow', role: 'progressbar', 'aria-label': t('Fortschritt in der Lektion') }, segs),
+    flip,
     label,
   );
 
@@ -231,6 +257,8 @@ export async function render({ id, lektion }, app) {
   stage.replaceChildren(await build(cur));
   refresh();
   build(cur + 1);
+  // after the shell has mounted the view (it scrolls to the top)
+  if (restoreY) setTimeout(() => window.scrollTo(0, restoreY), 30);
 
   return h('div', { class: 'page lesson pager', dataset: { stage: chapterMeta(data, id)?.stufe ?? 'A' } }, topbar, stage, bar);
 }

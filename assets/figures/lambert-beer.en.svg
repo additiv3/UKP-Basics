@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 258" role="img" aria-label="Beer–Lambert: reflection at the surface and exponential decay of intensity with penetration depth"><title>Beer–Lambert: reflection at the surface and exponential decay of intensity with penetration depth</title><style>
+.fg-line{stroke:var(--fig-line,#3a465f);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fg-soft{stroke:var(--fig-soft,#aab4cb);fill:none;stroke-width:1.5}
+.fg-accent{stroke:var(--fig-accent,#0b7e9b);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-warm{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-dasharray:6 5}
+.fg-warm-s{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.fg-fill{fill:var(--fig-fill,#dcf1f7);stroke:none}
+.fg-bar-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-bar-w{fill:var(--fig-warm,#d9822b)}
+.fg-bar-s{fill:var(--fig-soft,#aab4cb)}
+.fg-text{fill:var(--fig-line,#3a465f);font:13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-muted{fill:var(--muted,#566078);font:12px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-small{fill:var(--muted,#566078);font:11px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-bold{font-weight:700}
+.fg-pill{fill:var(--fig-fill,#dcf1f7)}
+.fg-pilltext{fill:var(--fig-accent,#0b7e9b);font:700 11px -apple-system,system-ui,sans-serif}
+.fg-laser{stroke:var(--fig-laser,#ee4f1c);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-laser-f{fill:var(--fig-laser,#ee4f1c)}
+.fg-laser-t{fill:var(--fig-laser,#ee4f1c);font:700 12px -apple-system,system-ui,sans-serif}
+.fg-band{fill:var(--fig-accent,#0b7e9b);fill-opacity:.35;stroke:var(--fig-accent,#0b7e9b);stroke-width:2}
+.fg-empty{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:2;stroke-dasharray:5 4}
+.fg-box{fill:var(--fig-fill,#dcf1f7);stroke:var(--fig-accent,#0b7e9b);stroke-width:1.5}
+.fg-solid{fill:var(--fig-grid,#dbe3f0);stroke:var(--fig-line,#3a465f);stroke-width:1.5}
+.fg-heat{fill:var(--fig-warm,#d9822b);fill-opacity:.28;stroke:none}
+.fg-dot-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-dot-w{fill:var(--fig-warm,#d9822b)}
+.fg-ring{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:1.5}
+</style><rect class="fg-solid" x="70" y="30" width="270" height="166" opacity=".45"/><text class="fg-small" x="76" y="44">Material</text><line class="fg-soft" x1="70.0" y1="196.0" x2="346.0" y2="196.0"/><path class="fg-soft" d="M340.6 198.6 L346.0 196.0 L340.6 193.4"/><line class="fg-soft" x1="70.0" y1="196.0" x2="70.0" y2="22.0"/><path class="fg-soft" d="M72.6 27.4 L70.0 22.0 L67.4 27.4"/><text class="fg-muted" x="346" y="214" text-anchor="end">Depth z</text><text class="fg-muted" x="76" y="26"></text><text class="fg-muted" x="8" y="20">Intensity</text><line class="fg-laser" x1="18" y1="54" x2="70" y2="54"/><text class="fg-laser-t" x="18" y="48">I₀</text><line class="fg-warm-s" x1="66.0" y1="60.0" x2="30.0" y2="84.0"/><path class="fg-warm-s" d="M33.0 78.8 L30.0 84.0 L35.9 83.2"/><text class="fg-small" x="20" y="100">R·I₀</text><polyline class="fg-accent" points="70.0,90.0 73.0,95.0 76.0,99.8 79.0,104.3 82.0,108.7 85.0,112.8 88.0,116.7 91.0,120.5 94.0,124.0 97.0,127.4 100.0,130.7 103.0,133.7 106.0,136.7 109.0,139.5 112.0,142.2 115.0,144.7 118.0,147.1 121.0,149.4 124.0,151.6 127.0,153.7 130.0,155.7 133.0,157.6 136.0,159.4 139.0,161.2 142.0,162.8 145.0,164.4 148.0,165.9 151.0,167.3 154.0,168.7 157.0,169.9 160.0,171.2 163.0,172.3 166.0,173.5 169.0,174.5 172.0,175.5 175.0,176.5 178.0,177.4 181.0,178.3 184.0,179.1 187.0,179.9 190.0,180.7 193.0,181.4 196.0,182.1 199.0,182.8 202.0,183.4 205.0,184.0 208.0,184.6 211.0,185.1 214.0,185.6 217.0,186.1 220.0,186.6 223.0,187.0 226.0,187.4 229.0,187.8 232.0,188.2 235.0,188.6 238.0,188.9 241.0,189.3 244.0,189.6 247.0,189.9 250.0,190.2 253.0,190.5 256.0,190.7 259.0,191.0 262.0,191.2 265.0,191.4 268.0,191.7 271.0,191.9 274.0,192.1 277.0,192.2 280.0,192.4 283.0,192.6 286.0,192.7 289.0,192.9 292.0,193.0 295.0,193.2 298.0,193.3 301.0,193.4 304.0,193.6 307.0,193.7 310.0,193.8 313.0,193.9 316.0,194.0 319.0,194.1 322.0,194.2 325.0,194.3 328.0,194.3 331.0,194.4 334.0,194.5 337.0,194.6 340.0,194.6"/><text class="fg-text fg-bold" x="78" y="84">(1−R)·I₀</text><line class="fg-soft" x1="70" y1="157.0" x2="132" y2="157.0" stroke-dasharray="3 3"/><line class="fg-soft" x1="132" y1="157.0" x2="132" y2="196" stroke-dasharray="3 3"/><text class="fg-muted" x="138" y="153.0">dropped to 1/e</text><rect class="fg-heat" x="70" y="30" width="62" height="166"/><text class="fg-text fg-bold" x="132" y="214" text-anchor="middle">δ = 1/α</text><text class="fg-text" x="70" y="214" text-anchor="middle">0</text><text class="fg-small" x="8" y="236">orange: layer in which about 63 % of the transmitted</text><text class="fg-small" x="8" y="250">energy is absorbed</text></svg>

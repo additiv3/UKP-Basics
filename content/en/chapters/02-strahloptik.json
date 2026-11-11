@@ -365,6 +365,10 @@
     "k02.c09": {
       "vorne": "What do you read from a caustic $w(z)$?",
       "hinten": "Minimum = $w_0$ and focal position; $w=\\sqrt2w_0$ at $z_\\mathrm{R}$; slope far out = divergence $\\theta$."
+    },
+    "k02.l02.fig1": {
+      "alt": "Caustic of a Gaussian beam: narrowest point with radius w0, at plus/minus zR the radius is root 2 times w0, dashed asymptotes show the divergence",
+      "unterschrift": "Beam caustic: around the waist the beam stays almost the same size over about $2z_\\mathrm{R}$; further away it grows linearly with the divergence angle $\\theta$."
     }
   }
 }

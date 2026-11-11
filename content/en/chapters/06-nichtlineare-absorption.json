@@ -281,6 +281,14 @@
     "k06.c06": {
       "vorne": "How do you recognise the number of photons in a plot?",
       "hinten": "Plot log-log: signal $\\propto I^n$ is a straight line, the slope is $n$."
+    },
+    "k06.l01.fig1": {
+      "alt": "Band diagram: a single photon cannot bridge the band gap, n photons absorbed at once lift the electron into the conduction band",
+      "unterschrift": "A single photon cannot bridge the band gap $E_\\mathrm{g}$. Only $n$ photons absorbed at once with $n\\,h\\nu\\ge E_\\mathrm{g}$ lift the electron into the conduction band."
+    },
+    "k06.l03.fig1": {
+      "alt": "Tree diagram: one seed electron becomes 2, then 4, then 8 free electrons by impact ionization",
+      "unterschrift": "Avalanche: ideally, each step doubles the number of free electrons. Seed electrons are needed, for example from multiphoton ionization."
     }
   }
 }

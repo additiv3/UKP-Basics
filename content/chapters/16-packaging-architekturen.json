@@ -131,6 +131,7 @@
           "id": "k16.l02.b02",
           "typ": "bild",
           "src": "assets/figures/package-querschnitt.svg",
+          "src_en": "assets/figures/package-querschnitt.en.svg",
           "alt": "Schnitt durch ein Flip-Chip-BGA: Chip mit Bumps und Underfill auf einem Substrat aus Kern und Aufbaulagen mit Microvias, darunter Lotkugeln auf der Leiterplatte.",
           "unterschrift": "Schematisch, nicht maßstäblich. Die Raster werden von oben nach unten gröber: Bumps, Microvias, Lotkugeln."
         },

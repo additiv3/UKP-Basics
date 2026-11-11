@@ -107,6 +107,15 @@
           "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
         },
         {
+          "id": "k10.l02.fig1",
+          "typ": "bild",
+          "src": "assets/figures/sle-ablauf.svg",
+          "src_en": "assets/figures/sle-ablauf.en.svg",
+          "alt": "Zwei Schritte des SLE: Links schreibt ein Femtosekundenfokus eine Spur ins Glas, die bis zur Oberfläche reicht, rechts hat das Ätzbad daraus einen offenen Kanal gemacht",
+          "unterschrift": "SLE schematisch: Die modifizierte Spur muss mit der Oberfläche verbunden sein, damit das Ätzmittel sie erreicht.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
           "id": "k10.l02.b02",
           "typ": "formel",
           "latex": "S=\\frac{r_\\mathrm{mod}}{r_\\mathrm{unmod}},\\qquad \\ell=r_\\mathrm{mod}\\cdot t",

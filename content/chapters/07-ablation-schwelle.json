@@ -139,6 +139,15 @@
           "quelle": "liu1982"
         },
         {
+          "id": "k07.l02.fig1",
+          "typ": "bild",
+          "src": "assets/figures/d2-plot.svg",
+          "src_en": "assets/figures/d2-plot.en.svg",
+          "alt": "Diagramm D-Quadrat über ln der Pulsenergie: Beispielpunkte liegen auf einer Geraden mit Steigung 2 w0 Quadrat, die die Achse bei ln E_th schneidet",
+          "unterschrift": "So sieht die Auswertung aus (Beispieldaten): Steigung der Geraden ergibt $2w_0^2$, der Schnittpunkt mit $D^2=0$ die Schwellenenergie $E_\\mathrm{th}$.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
           "id": "k07.l02.b03",
           "typ": "formel",
           "latex": "F_\\mathrm{th}=\\frac{2E_\\mathrm{th}}{\\pi w_0^2}",

@@ -541,3 +541,158 @@ body.modal-open {
   flex: 1 0 auto;
   padding: 0 11px;
 }
+
+/* ---------- Language flip in the lesson top bar ---------- */
+.lang-flip {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  min-height: 40px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  cursor: pointer;
+}
+.lang-flip span {
+  padding: 5px 7px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+.lang-flip span.on {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------- Glossary look-up sheet ---------- */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgb(5 10 25 / 50%);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  animation: fade-in 0.18s ease-out;
+}
+.term-sheet {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 560px);
+  max-height: 86dvh;
+  padding: 6px 16px calc(12px + env(safe-area-inset-bottom));
+  border-radius: 24px 24px 0 0;
+  background: var(--bg);
+  box-shadow: var(--shadow-lg);
+  animation: sheet-up 0.22s ease-out;
+}
+.sheet-grip {
+  width: 40px;
+  height: 5px;
+  margin: 2px auto 4px;
+  border-radius: 99px;
+  background: var(--surface-3);
+}
+.term-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.term-head .icon-btn {
+  width: 40px;
+  height: 40px;
+}
+.term-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+.term-title {
+  margin: 2px 0 2px;
+  font-size: 1.45rem;
+}
+.term-alt {
+  margin: 0 0 8px;
+  color: var(--muted);
+}
+.term-kurz {
+  font-weight: 600;
+}
+.term-more {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+}
+.term-more-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+}
+.term-more .prose p:first-child {
+  margin-top: 6px;
+}
+.term-example {
+  margin: 12px 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--laser);
+  background: var(--surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.term-example p {
+  margin: 2px 0 0;
+  font-style: italic;
+}
+.term-example-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.term-other,
+.fc-extra {
+  margin: 12px 0;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+.term-other summary,
+.fc-extra summary {
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--accent);
+  cursor: pointer;
+}
+.term-see {
+  margin-top: 12px;
+}
+.term-see button.chip {
+  border: 0;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.term-actions {
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.term-actions .btn {
+  flex: 1 1 0;
+}

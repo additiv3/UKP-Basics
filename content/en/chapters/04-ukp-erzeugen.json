@@ -300,6 +300,10 @@
     "k04.c06": {
       "vorne": "How do you calculate the minimum wavelength width of a pulse?",
       "hinten": "First $\\Delta\\nu=K/\\tau$ (Gaussian: $K=0.441$), then $\\Delta\\lambda=\\lambda_0^2\\Delta\\nu/c$."
+    },
+    "k04.l04.fig1": {
+      "alt": "CPA chain: oscillator, stretcher, amplifier, compressor, with the pulse shape below each: short and weak, long and weak, long and energetic, short with a very high peak",
+      "unterschrift": "CPA in four stages. The key is the third step: the pulse is amplified while it is stretched and its peak power stays low."
     }
   }
 }

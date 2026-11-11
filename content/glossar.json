@@ -25,7 +25,9 @@
         "phasenexplosion"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Anschaulich ist Ablation „Abtragen mit Licht“. Welcher Mechanismus dominiert, hängt vor allem von Fluenz und Pulsdauer ab: knapp über der Schwelle eher sanftes Ablösen dünner Schichten, bei hoher Fluenz ein explosionsartiger Auswurf von Dampf und Tröpfchen. Vergleich mit dem PBF-LB/M: Dort ist Verdampfen ein Störeffekt (Spritzer, Rauch), hier ist der Materialauswurf das Ziel.",
+      "beispiel": "Ablation was carried out in air using a galvanometer scanner."
     },
     {
       "id": "ablationsschwelle",
@@ -38,7 +40,9 @@
         "inkubation"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Stell dir die Schwelle wie eine Wasserlinie vor: Nur der Teil des Strahlprofils, der über ihr liegt, trägt ab. Deshalb ist der Krater beim Gauß-Strahl kleiner als der Spot, und nahe der Schwelle ändern schon kleine Fluenzänderungen den Krater stark. Die Schwelle ist kein fester Materialkennwert: Sie hängt u. a. von Pulsdauer, Wellenlänge und Pulszahl ab ([[inkubation]]).",
+      "beispiel": "The single-pulse ablation threshold was determined using the D² method."
     },
     {
       "id": "abschwaecher",
@@ -78,7 +82,9 @@
         "eindringtiefe"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Der Koeffizient sagt, welcher Anteil der Intensität pro Wegstück verloren geht. Großes $\\alpha$: Die Energie bleibt in einer dünnen Oberflächenschicht (typisch für Metalle). Kleines $\\alpha$: Das Licht durchdringt das Material (transparentes Glas). Bei UKP auf Dielektrika ist $\\alpha$ nicht konstant, sondern wächst während des Pulses, weil freie Elektronen entstehen.",
+      "beispiel": "The absorption coefficient increases strongly once free electrons are generated."
     },
     {
       "id": "abstract",
@@ -130,7 +136,9 @@
         "zeit-bandbreite-produkt"
       ],
       "verifiziert": true,
-      "quelle": "diels"
+      "quelle": "diels",
+      "mehr": "Das Problem: Kein Detektor ist schnell genug, um einen fs-Puls direkt aufzulösen. Der Trick: Man misst den Puls mit sich selbst. Das SHG-Signal entsteht nur, wenn sich beide Kopien zeitlich überlappen; verschiebt man eine Kopie schrittweise, tastet man so die Pulsdauer ab. Nachteil: Die Kurve ist immer symmetrisch und verrät nichts über den Chirp. Deshalb muss man eine Pulsform annehmen, um aus der Breite die Pulsdauer zu berechnen.",
+      "beispiel": "The pulse duration was measured with an intensity autocorrelator assuming a sech² pulse shape."
     },
     {
       "id": "avalanche-ionisation",
@@ -142,7 +150,9 @@
         "multiphotonenabsorption"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Wie ein Schneeball, der eine Lawine auslöst: Ein freies Elektron nimmt im Laserfeld Energie auf (es absorbiert Photonen als freier Ladungsträger), bis es genug Energie hat, um per Stoß ein zweites Elektron aus dem Valenzband zu befreien. Beide wiederholen das, die Elektronenzahl wächst exponentiell. Die Lawine braucht Startelektronen und etwas Zeit; deshalb ist ihr Anteil bei längeren Pulsen größer, während bei sehr kurzen Pulsen die Mehrphotonenionisation mehr beiträgt.",
+      "beispiel": "Avalanche ionization requires seed electrons in the conduction band."
     },
     {
       "id": "axicon",
@@ -168,7 +178,9 @@
         "multiphotonenabsorption"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Bild: Das Valenzband ist ein voll besetztes Parkdeck, das Leitungsband ein leeres Deck darüber, dazwischen gibt es keine Stellplätze. Ein Elektron kommt nur nach oben, wenn es auf einmal genug Energie bekommt. Ein einzelnes Photon mit zu wenig Energie hilft nicht, egal wie viele Photonen ankommen; erst bei sehr hoher Intensität können mehrere Photonen gleichzeitig wirken. Deshalb ist die Bandlücke die Schlüsselgröße, um Glas, Keramik und Halbleiter beim UKP-Abtrag zu verstehen.",
+      "beispiel": "Fused silica has a wide band gap and is transparent at 1030 nm."
     },
     {
       "id": "peer-review",
@@ -191,7 +203,9 @@
       "definition": "Bessel-Strahl und Filamentation sind Strahlformungskonzepte, mit denen Glas über die gesamte Dicke geschnitten werden kann.",
       "siehe": [],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Ein [[axicon]] lässt den Strahl kegelförmig zusammenlaufen; die Teilstrahlen interferieren entlang der Achse über eine lange Strecke. So entsteht eine lange, dünne Fokuslinie statt eines kurzen Fokuspunkts. Ein Schuss kann damit einen Kanal durch die ganze Glasdicke modifizieren, ideal zum Glastrennen. Filamentation erreicht Ähnliches durch ein Gleichgewicht aus Selbstfokussierung und Defokussierung durch das Plasma.",
+      "beispiel": "A Bessel beam generated by an axicon was used to cut the glass in a single pass."
     },
     {
       "id": "beugung",
@@ -204,7 +218,9 @@
         "doe-element"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Jede Begrenzung einer Welle führt zu ihrer Aufweitung. Deshalb kann man nicht beliebig klein fokussieren: Der kleinste Fokus liegt in der Größenordnung der Wellenlänge. Für kleinere Spots braucht man eine kürzere Wellenlänge oder eine größere numerische Apertur (größerer Strahl auf der Linse, kürzere Brennweite).",
+      "beispiel": "The spot size is limited by diffraction."
     },
     {
       "id": "m2",
@@ -217,7 +233,9 @@
         "rayleighlaenge"
       ],
       "verifiziert": true,
-      "quelle": "siegman1986"
+      "quelle": "siegman1986",
+      "mehr": "$M^2$ sagt, wie viel schlechter sich ein realer Strahl fokussieren lässt als ein idealer Gauß-Strahl. Mit derselben Optik wird der Fokusradius um den Faktor $M^2$ größer; hält man stattdessen den Fokusradius gleich, schrumpft die Rayleighlänge um $M^2$. Für das Abtragen heißt das: Ein hohes $M^2$ kostet Spitzenfluenz oder Schärfentiefe.",
+      "beispiel": "The laser provides a nearly diffraction-limited beam with an M² close to 1."
     },
     {
       "id": "brechungsindex",
@@ -230,7 +248,9 @@
         "fresnel"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Im Material läuft die Lichtwelle langsamer; die Frequenz bleibt gleich, also wird die Wellenlänge kürzer. Daraus folgen Brechung an Grenzflächen, die Reflexion (Fresnel) und, weil $n$ von der Wellenlänge abhängt, die Dispersion, die UKP-Pulse zeitlich auseinanderzieht. Der Imaginärteil $\\kappa$ beschreibt die Absorption.",
+      "beispiel": "The refractive index of the modified region is slightly higher than that of the pristine glass."
     },
     {
       "id": "brennweite",
@@ -269,7 +289,9 @@
         "inkubation"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Statt einen großen Puls zu schicken, teilt man die Energie auf mehrere dicht aufeinanderfolgende Teilpulse auf. Jeder Teilpuls liegt näher an der günstigsten Fluenz, und spätere Teilpulse treffen auf Material, das vom vorigen noch angeregt oder warm ist. Ob das Abtragrate und Qualität verbessert, hängt stark von Werkstoff, Teilpulszahl und Teilpulsabstand ab; die Literatur ist hier nicht einheitlich.",
+      "beispiel": "Each burst consisted of several sub-pulses with an intra-burst repetition rate in the GHz range."
     },
     {
       "id": "chirp",
@@ -282,7 +304,9 @@
         "zeit-bandbreite-produkt"
       ],
       "verifiziert": true,
-      "quelle": "diels"
+      "quelle": "diels",
+      "mehr": "Der Name kommt vom Vogelzwitschern: ein Ton, dessen Höhe sich ändert. Nach normalem Glas läuft der rote (langwellige) Anteil vorne und der blaue hinten, weil rotes Licht dort schneller ist (positiver Chirp). Das Spektrum bleibt gleich, nur die Farben sind zeitlich sortiert. Genau das nutzt CPA: absichtlich chirpen (strecken), verstärken, wieder entchirpen (komprimieren).",
+      "beispiel": "The pulse acquires a positive chirp after passing through the glass window."
     },
     {
       "id": "coulomb-explosion",
@@ -295,7 +319,9 @@
         "phasenexplosion"
       ],
       "verifiziert": false,
-      "quelle": "gamaly2002"
+      "quelle": "gamaly2002",
+      "mehr": "Ablauf: Der Laser löst in kurzer Zeit viele Elektronen aus der Oberfläche. In Dielektrika und Halbleitern fließen nicht schnell genug Elektronen nach (anders als im Metall), die Oberflächenschicht bleibt positiv geladen. Gleich geladene Ionen stoßen sich ab, die Schicht „explodiert“ elektrostatisch. Das wäre ein besonders sanfter Abtrag sehr dünner Schichten nahe der Schwelle; wie wichtig er in der Praxis ist, wird in der Literatur diskutiert.",
+      "beispiel": "Coulomb explosion has been proposed as the dominant mechanism in the gentle ablation phase."
     },
     {
       "id": "cpa",
@@ -307,7 +333,9 @@
         "ukp"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Das Grundproblem: Ein energiereicher fs-Puls hätte im Verstärker eine so hohe Spitzenintensität, dass Kristall oder Faser durch Selbstfokussierung und andere Nichtlinearitäten Schaden nähmen. Der Kniff: den Puls zeitlich um Größenordnungen strecken, wodurch die Spitzenleistung im gleichen Verhältnis sinkt, dann gefahrlos verstärken und am Ende wieder komprimieren. Bild: Ein sperriges Möbelstück trägst du zerlegt durch die enge Tür und baust es dahinter wieder zusammen.",
+      "beispiel": "The laser is based on chirped pulse amplification in an ytterbium-doped fibre."
     },
     {
       "id": "dielektrikum",
@@ -321,7 +349,9 @@
         "volumenmodifikation"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Für dich die wichtigste Umstellung gegenüber Metallen: Ein Dielektrikum hat praktisch keine freien Elektronen. Der Laser muss sie erst selbst erzeugen (Mehrphotonen- und Lawinenionisation), bevor nennenswert Energie absorbiert wird. Deshalb hängt hier alles an der Intensität.",
+      "beispiel": "In dielectrics, free electrons must first be generated by the laser itself."
     },
     {
       "id": "doe-element",
@@ -348,7 +378,9 @@
         "gdd"
       ],
       "verifiziert": true,
-      "quelle": "diels"
+      "quelle": "diels",
+      "mehr": "Ein UKP-Puls ist kein einfarbiges Licht, sondern ein ganzes Spektrum, und je kürzer der Puls, desto breiter das Spektrum. Laufen die Farben im Material verschieden schnell, kommen sie nicht mehr gleichzeitig an: Der Puls wird länger und gechirpt. Jede Linse, jedes Fenster und jeder Kristall im Strahlengang trägt dazu bei. Deshalb kann der Puls auf dem Werkstück länger sein als direkt am Laserausgang.",
+      "beispiel": "Dispersion in the focusing optics stretches the pulse slightly."
     },
     {
       "id": "divergenz",
@@ -388,7 +420,9 @@
         "strahlradius"
       ],
       "verifiziert": true,
-      "quelle": "liu1982"
+      "quelle": "liu1982",
+      "mehr": "Warum $D^2$ über $\\ln E_\\mathrm{p}$? Der Gauß-Strahl fällt nach außen exponentiell ab, und der Kraterrand liegt dort, wo die lokale Fluenz genau die Schwelle erreicht. Logarithmiert man die Gauß-Funktion, wird aus der Exponentialfunktion eine Gerade. Praktisch: Krater bei mehreren Pulsenergien erzeugen, Durchmesser messen, $D^2$ gegen $\\ln E_\\mathrm{p}$ auftragen, Gerade anpassen. Steigung ergibt den Strahlradius, der Schnitt mit $D^2=0$ die Schwellenenergie. Voraussetzung ist ein nahezu gaußsches Profil.",
+      "beispiel": "The squared crater diameters were plotted against the logarithm of the pulse energy."
     },
     {
       "id": "eigenspannung",
@@ -414,7 +448,9 @@
         "lambert-beer"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Die Eindringtiefe ist die Dicke der Schicht, in der der Großteil der Energie landet: Bis zur Tiefe $\\delta$ sind rund 63 % absorbiert ($1-1/e$). Je dünner diese Schicht, desto höher die Energiedichte dort und desto weniger Fluenz braucht man zum Abtragen. Bei Dielektrika ist die optische Eindringtiefe zunächst sehr groß (transparent); erst die erzeugten freien Elektronen machen sie während des Pulses klein.",
+      "beispiel": "For ultrashort pulses, the thermal diffusion length is smaller than the optical penetration depth."
     },
     {
       "id": "elektron-phonon-kopplung",
@@ -427,7 +463,9 @@
         "phonon"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Die Elektronen nehmen die Laserenergie zuerst auf und werden sehr heiß, während die Atome (das Gitter) noch kalt sind. Die Kopplung ist der „Wärmetauscher“ zwischen beiden: Über Stöße geben die Elektronen Energie als Gitterschwingungen ([[phonon|Phononen]]) ab. Ist der Puls kürzer als diese Übertragungszeit, ist er vorbei, bevor das Gitter heiß wird. Das ist der Kern, warum UKP anders wirkt als ns-Pulse.",
+      "beispiel": "The pulse is shorter than the electron–phonon coupling time."
     },
     {
       "id": "f-theta",
@@ -440,7 +478,9 @@
         "brennweite"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Eine gewöhnliche Linse fokussiert schräg einfallende Strahlen auf eine gekrümmte Fläche, und die Spotposition wächst mit $\\tan\\theta$. Die f-Theta-Linse ist so korrigiert, dass der Fokus in einer Ebene bleibt und die Position linear mit dem Spiegelwinkel wächst. So erzeugt der Scanner mit konstanter Winkelgeschwindigkeit eine konstante Bahngeschwindigkeit auf dem Werkstück.",
+      "beispiel": "The beam was focused onto the sample surface by an f-theta lens."
     },
     {
       "id": "faserlaser",
@@ -467,7 +507,9 @@
         "gauss-strahl"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Der Unterschied zu deiner bisherigen Welt: Im PBF-LB/M denkst du in Energie pro Länge oder Volumen über viele Mikro- bis Millisekunden. Bei UKP zählt die Energie pro Fläche in einem einzelnen Puls: „Wie viel Energie trifft einen Quadratzentimeter mit einem Schuss?“ Vorsicht bei Angaben in Papern: Die Spitzenfluenz $F_0=2E_\\mathrm{p}/(\\pi w_0^2)$ ist doppelt so groß wie die mittlere Fluenz $E_\\mathrm{p}/(\\pi w_0^2)$; immer prüfen, welche gemeint ist.",
+      "beispiel": "The peak fluence was varied between the threshold and five times the threshold."
     },
     {
       "id": "fokuslage",
@@ -493,7 +535,9 @@
         "chirp"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Je kürzer ein Puls, desto breiter muss sein Spektrum sein (Fourier-Transformation). Umgekehrt legt ein gegebenes Spektrum eine Mindestdauer fest. Ein Puls am Fourier-Limit nutzt sein Spektrum optimal: Alle Farben kommen gleichzeitig an. Jeder Chirp macht ihn länger.",
+      "beispiel": "The compressed pulses are close to the Fourier limit."
     },
     {
       "id": "frequenz",
@@ -519,7 +563,9 @@
         "wellenlaenge"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Ein starkes Lichtfeld bringt die Elektronen im Kristall zu nichtlinearen Schwingungen, dabei entsteht auch Licht der doppelten Frequenz. Effizient klappt das nur, wenn Grund- und Oberwelle im Kristall im Takt bleiben (Phasenanpassung); deshalb müssen Kristallwinkel oder Temperatur passen. Für die Bearbeitung heißt grünes Licht: kleinerer Fokus und andere Absorption als bei der Grundwelle.",
+      "beispiel": "The second harmonic was generated in a nonlinear crystal behind the amplifier."
     },
     {
       "id": "thg",
@@ -546,7 +592,9 @@
         "reflexion"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Wie viel Licht an der Oberfläche verloren geht, hängt vom Winkel und von der Polarisation ab. Bei schrägem Einfall wird p-polarisiertes Licht (Feld in der Einfallsebene) weniger reflektiert als s-polarisiertes, an transparenten Medien beim Brewster-Winkel sogar gar nicht. Das spielt eine Rolle, sobald der Strahl auf schräge Flächen trifft, etwa an steilen Kraterwänden oder beim Bohren.",
+      "beispiel": "Fresnel losses at the uncoated surface reduce the transmitted energy."
     },
     {
       "id": "frog",
@@ -559,7 +607,9 @@
         "spider"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Die Autokorrelation liefert nur eine Breite. FROG zerlegt das Signal zusätzlich spektral: Für jede Verzögerung wird ein Spektrum aufgenommen. Aus diesem 2D-Bild (Spektrogramm) rekonstruiert ein Algorithmus Intensität und Phase des Pulses, also auch den Chirp.",
+      "beispiel": "FROG measurements revealed a residual chirp after the compressor."
     },
     {
       "id": "galvo-scanner",
@@ -585,7 +635,9 @@
         "fluenz"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Fast alle UKP-Laser liefern näherungsweise einen Gauß-Strahl. Wichtig ist das Profil, weil die Fluenz in der Mitte doppelt so hoch ist wie die mittlere Fluenz und nach außen schnell abfällt. Deshalb trägt der Strahl in der Mitte tief ab und am Rand gar nicht, und der Krater ist kleiner als der Spot. Beim Fokussieren bleibt ein Gauß-Strahl gaußförmig, nur seine Größe ändert sich.",
+      "beispiel": "The Gaussian beam was focused onto the sample surface."
     },
     {
       "id": "gdd",
@@ -598,7 +650,9 @@
         "chirp"
       ],
       "verifiziert": true,
-      "quelle": "diels"
+      "quelle": "diels",
+      "mehr": "Die GDD ist das Maß dafür, wie stark ein optisches Element einen Puls auseinanderzieht; die Werte addieren sich entlang des Strahlwegs. Kurze Pulse reagieren empfindlicher: Dieselbe GDD verlängert einen Puls mit breitem Spektrum (kurzer Puls) viel stärker als einen mit schmalem Spektrum (längerer Puls).",
+      "beispiel": "The compressor compensates the positive GDD of the amplifier."
     },
     {
       "id": "halbleiter",
@@ -611,7 +665,9 @@
         "silizium"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Bei Halbleitern entscheidet die Wellenlänge, welches Regime du bekommst: Liegt die Photonenenergie über der Bandlücke, absorbiert das Material linear wie ein „Metall auf Zeit“; liegt sie darunter, ist es transparent und nur nichtlinear bearbeitbar. So kann derselbe Werkstoff bei 515 nm und bei 2 µm ganz unterschiedlich reagieren.",
+      "beispiel": "Silicon is transparent at wavelengths beyond its band-gap absorption edge."
     },
     {
       "id": "halbwertsbreite",
@@ -637,7 +693,9 @@
         "fluenz"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Wie im PBF-LB/M liegen Spuren mit dem Abstand $h$ nebeneinander. Bei UKP wählt man den Hatch kleiner als den Spotdurchmesser, damit sich die Spuren überlappen und der Boden eben wird. Zu großer Hatch gibt Rillen, zu kleiner kostet Zeit und bringt mehr Wärme ein.",
+      "beispiel": "A hatch distance smaller than the spot diameter yields a flat ablation floor."
     },
     {
       "id": "inkubation",
@@ -650,7 +708,9 @@
         "burst-mode"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Jeder Puls unterhalb der Schwelle hinterlässt kleine Spuren: Defekte, Farbzentren, Spannungen oder Oberflächenveränderungen. Sie erleichtern die Absorption beim nächsten Puls. Folge: Treffen viele Pulse dieselbe Stelle, sinkt die Schwelle und nähert sich einem Grenzwert. Für die Praxis wichtig: Beim Scannen trifft jede Stelle viele Pulse, also ist die Mehrpuls-Schwelle maßgeblich, nicht die Einzelpulsschwelle.",
+      "beispiel": "Due to incubation, the threshold fluence decreases with the number of pulses."
     },
     {
       "id": "intensitaet",
@@ -663,7 +723,9 @@
         "spitzenleistung"
       ],
       "verifiziert": true,
-      "quelle": "Definition, Näherung"
+      "quelle": "Definition, Näherung",
+      "mehr": "Fluenz sagt, wie viel Energie ankommt, Intensität, wie schnell sie ankommt. Bei gleicher Fluenz hat ein hundertmal kürzerer Puls die hundertfache Intensität. Für transparente Werkstoffe ist das entscheidend, weil die nichtlineare Absorption mit einer hohen Potenz der Intensität wächst, nicht mit der Fluenz.",
+      "beispiel": "The peak intensity in the focus is high enough to trigger multiphoton ionization."
     },
     {
       "id": "interferenz",
@@ -704,7 +766,9 @@
         "kritische-dichte"
       ],
       "verifiziert": false,
-      "quelle": "keldysh1965"
+      "quelle": "keldysh1965",
+      "mehr": "Zwei Bilder für dieselbe Ionisation: Bei schwächerem, schnell schwingendem Feld „sammelt“ das Elektron mehrere Photonen auf einmal (Mehrphotonen, $\\gamma$ groß). Bei sehr starkem Feld wird die Potenzialbarriere so stark verbogen, dass das Elektron hindurchtunneln kann, bevor das Feld umkehrt (Tunneln, $\\gamma$ klein). $\\gamma$ sinkt mit steigender Intensität und mit größerer Wellenlänge.",
+      "beispiel": "At these intensities the Keldysh parameter is close to unity."
     },
     {
       "id": "keramik",
@@ -731,7 +795,9 @@
         "interferenz"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Zeitliche Kohärenz beschreibt, wie lange eine Welle „im Takt“ bleibt, räumliche Kohärenz, über welchen Querschnitt. Laserlicht ist hochkohärent; deshalb kann man es auf einen beugungsbegrenzten Fleck fokussieren und Interferenzmuster erzeugen. Eine Glühlampe kann das nicht.",
+      "beispiel": "High spatial coherence allows the beam to be focused tightly."
     },
     {
       "id": "kollimation",
@@ -758,7 +824,9 @@
         "gdd"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Der Kompressor ist das Spiegelbild des [[strecker|Streckers]]: Meist sind zwei Gitter so angeordnet, dass die vorauslaufenden Farben einen längeren Weg haben und die nachlaufenden aufholen. Er muss die gesamte GDD des Systems ausgleichen. Ein falsch eingestellter Kompressor ist eine häufige Ursache für zu lange Pulse auf dem Werkstück.",
+      "beispiel": "The grating distance in the compressor was adjusted to minimize the pulse duration."
     },
     {
       "id": "krater",
@@ -797,7 +865,9 @@
         "avalanche-ionisation"
       ],
       "verifiziert": true,
-      "quelle": "Herleitung (ε(ω) = 1 − ω_p²/ω²)"
+      "quelle": "Herleitung (ε(ω) = 1 − ω_p²/ω²)",
+      "mehr": "Solange wenige freie Elektronen da sind, kann Licht ins Material. Mit wachsender Elektronendichte steigt die Eigenfrequenz des Elektronengases. Ab der kritischen Dichte folgt es dem Lichtfeld und schirmt es ab wie ein Metall: Das Licht wird reflektiert oder stark absorbiert. Darum gilt das Erreichen der kritischen Dichte oft als Kriterium für Durchbruch bzw. Schädigung im Dielektrikum. Sie skaliert mit $1/\\lambda^2$.",
+      "beispiel": "Once the electron density reaches the critical density, the plasma becomes strongly absorbing."
     },
     {
       "id": "lambert-beer",
@@ -810,7 +880,9 @@
         "multiphotonenabsorption"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Jede Schicht schwächt das Licht um denselben Anteil, nicht um denselben Betrag; daraus folgt der exponentielle Abfall. Halblogarithmisch aufgetragen ist er eine Gerade mit der Steigung $-\\alpha$. Bei UKP in Glas gilt das Gesetz während des Pulses nicht, weil $\\alpha$ selbst mit der Intensität wächst.",
+      "beispiel": "Linear absorption follows the Beer–Lambert law."
     },
     {
       "id": "laser",
@@ -850,7 +922,9 @@
         "inkubation"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Die LIDT ist das Gegenstück zur Ablationsschwelle für Optiken: bis hierhin darfst du belasten, mit Sicherheitsabstand. Vorsicht beim Vergleichen: Angaben gelten nur für eine bestimmte Pulsdauer, Wellenlänge und Pulszahl; bei vielen Pulsen liegt die Schwelle oft niedriger ([[inkubation]]).",
+      "beispiel": "The fluence on the mirror must stay well below its laser-induced damage threshold."
     },
     {
       "id": "leitungsband",
@@ -873,7 +947,9 @@
       "definition": "LIPSS (Laser-Induced Periodic Surface Structures) sind selbstorganisierte, periodische Nanostrukturen, die bei Laserbestrahlung auf der Oberfläche entstehen.",
       "siehe": [],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "LIPSS entstehen, wenn das einfallende Licht mit an der Oberfläche gestreutem Licht oder angeregten Oberflächenwellen interferiert. Das ergibt ein periodisches Energiemuster, das sich über viele Pulse einprägt. Man unterscheidet grob Strukturen mit einer Periode nahe der Wellenlänge (LSFL) und deutlich feinere (HSFL). Ihre Ausrichtung folgt der Polarisation. Nutzen: Funktionsoberflächen (Benetzung, Reibung, Farbe). Störung: unerwünschte Rauheit am Kraterboden.",
+      "beispiel": "The orientation of the LIPSS changed when the polarization was rotated."
     },
     {
       "id": "knife-edge",
@@ -912,7 +988,9 @@
         "repetitionsrate"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Die Zahl auf dem Datenblatt (etwa „50 W“) ist fast immer die mittlere Leistung. Sie bestimmt, wie viel Material pro Zeit du abtragen kannst und wie viel Wärme insgesamt anfällt. Für die Wirkung eines einzelnen Pulses zählen dagegen Pulsenergie und Fluenz.",
+      "beispiel": "The average power was measured with a thermal power meter behind the scanner."
     },
     {
       "id": "modenkopplung",
@@ -925,7 +1003,9 @@
         "cpa"
       ],
       "verifiziert": true,
-      "quelle": "diels"
+      "quelle": "diels",
+      "mehr": "Ein Laserresonator kann viele Frequenzen (Moden) gleichzeitig führen. Schwingen sie mit zufälligen Phasen, ergibt sich ein verrauschtes Dauersignal. Koppelt man die Phasen fest, addieren sich die Moden nur einmal pro Umlauf konstruktiv: Es entsteht ein kurzer Puls, der im Resonator hin- und herläuft und bei jedem Umlauf am Auskoppelspiegel einen Teil abgibt. Bild: viele Läufer, die alle genau gleichzeitig an der Ziellinie ankommen.",
+      "beispiel": "Passive mode locking is achieved with a semiconductor saturable absorber mirror (SESAM)."
     },
     {
       "id": "multiphotonenabsorption",
@@ -939,7 +1019,9 @@
         "photonenenergie"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Warum „gleichzeitig“? In der Bandlücke gibt es keinen Zwischenzustand, in dem das Elektron warten könnte. Die Photonen müssen in extrem kurzer Zeit zusammenkommen, und die Wahrscheinlichkeit dafür wächst mit $I^{\\,n}$. Zwei wichtige Folgen: Die Absorption findet nur dort statt, wo die Intensität am höchsten ist (im Fokus), und so lässt sich Glas im Inneren bearbeiten, ohne die Oberfläche zu treffen.",
+      "beispiel": "Multiphoton absorption confines the energy deposition to the focal volume."
     },
     {
       "id": "nichtthermischer-abtrag",
@@ -953,7 +1035,9 @@
         "haz"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Der Begriff ist missverständlich: Gemeint ist nicht „kalt“, sondern „schneller als die Wärmeleitung“. Die Energie wird so schnell deponiert und das Material so schnell entfernt, dass kaum Wärme ins umliegende Material fließt. Bei vielen Pulsen mit hoher Rate kann sich trotzdem Wärme ansammeln ([[waermeakkumulation]]).",
+      "beispiel": "The term non-thermal ablation should be used with care."
     },
     {
       "id": "oszillator",
@@ -979,7 +1063,9 @@
         "coulomb-explosion"
       ],
       "verifiziert": false,
-      "quelle": "gamaly2002"
+      "quelle": "gamaly2002",
+      "mehr": "Normales Sieden braucht Zeit für die Blasenbildung. Bei UKP wird die Oberflächenschicht so schnell erhitzt, dass sie weit über den Siedepunkt überhitzt, ohne zu sieden. Nahe der kritischen Temperatur zerfällt die Flüssigkeit schlagartig in Dampf und Tröpfchen. Das erklärt den kräftigen Materialauswurf bei hohen Fluenzen.",
+      "beispiel": "Phase explosion dominates at fluences well above the threshold."
     },
     {
       "id": "phonon",
@@ -992,14 +1078,16 @@
         "gitter"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Die Atome im Kristall verhalten sich wie Kugeln an Federn und schwingen gemeinsam in Wellen. Ein Phonon ist das kleinste Paket dieser Schwingungsenergie. „Gittertemperatur“ heißt anschaulich: wie stark diese Schwingungen angeregt sind.",
+      "beispiel": "Energy is transferred from the electrons to the lattice by phonon emission."
     },
     {
       "id": "photon",
       "begriff": "Photon",
       "englisch": "photon",
       "kurz": "Lichtquant mit der Energie $h\\nu$.",
-      "definition": "Ein Photon ist das Energiequant des Lichts. Es trägt die Energie $h\nu=hc/\\lambda$ und den Impuls $p=h/\\lambda$.",
+      "definition": "Ein Photon ist das Energiequant des Lichts. Es trägt die Energie $h\\nu=hc/\\lambda$ und den Impuls $p=h/\\lambda$.",
       "siehe": [
         "photonenenergie"
       ],
@@ -1016,7 +1104,9 @@
         "multiphotonenabsorption"
       ],
       "verifiziert": true,
-      "quelle": "Definition, Naturkonstanten"
+      "quelle": "Definition, Naturkonstanten",
+      "mehr": "Die Faustformel $E\\,[\\mathrm{eV}]\\approx1240/\\lambda\\,[\\mathrm{nm}]$ ist die wichtigste Zahl für Absorptionsfragen: Vergleiche sie mit der Bandlücke. Kürzere Wellenlänge heißt mehr Energie pro Photon und weniger Photonen, um die Bandlücke zu überbrücken. Höhere Intensität ändert nicht die Energie eines Photons, nur die Zahl der Photonen.",
+      "beispiel": "At 343 nm the photon energy is about 3.6 eV."
     },
     {
       "id": "plasma",
@@ -1029,7 +1119,9 @@
         "avalanche-ionisation"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Sind so viele Elektronen frei, dass sie sich gemeinsam bewegen, verhält sich das Material optisch wie ein Metall. Für den Prozess wichtig: Ein Plasma bzw. eine Abtragswolke über der Oberfläche oder im Krater kann nachfolgendes Licht abschirmen, besonders bei hohen Raten und im Burst-Mode.",
+      "beispiel": "Plasma shielding reduces the energy that reaches the surface."
     },
     {
       "id": "plasmafrequenz",
@@ -1042,7 +1134,9 @@
         "kritische-dichte"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Bild: Das Elektronengas ist ein Feder-Masse-System. Ausgelenkt schwingt es mit $\\omega_\\mathrm{p}$ zurück. Schwingt das Licht langsamer ($\\omega<\\omega_\\mathrm{p}$), folgen die Elektronen dem Feld und reflektieren es. Schwingt es schneller, kommen sie nicht hinterher, und das Licht geht hindurch.",
+      "beispiel": "The plasma frequency increases with the square root of the electron density."
     },
     {
       "id": "polarisation",
@@ -1055,7 +1149,9 @@
         "lipss"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Für die Bearbeitung zählt die Polarisation an zwei Stellen: An schrägen Flächen (Kraterwände, Bohrungen) werden p- und s-Licht unterschiedlich absorbiert, und LIPSS richten sich nach ihr aus. Beim Bohren nutzt man deshalb oft zirkulare Polarisation, um runde, richtungsunabhängige Ergebnisse zu bekommen.",
+      "beispiel": "Circular polarization was used to obtain round holes."
     },
     {
       "id": "preprint",
@@ -1146,7 +1242,9 @@
         "inkubation"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Bei 0 % berühren sich die Spots gerade. Bei 90 % rückt jeder Puls nur um ein Zehntel des Durchmessers weiter, jede Stelle auf der Linie wird von etwa zehn Pulsen getroffen. Der Überlapp ist der Hebel, mit dem du Pulszahl pro Stelle, Inkubation und Wärmeakkumulation steuerst. Vorsicht: Manche Paper rechnen ihn mit dem Kraterdurchmesser statt mit $2w_0$.",
+      "beispiel": "The pulse overlap was set to 90 % by adjusting the scan speed."
     },
     {
       "id": "quarzglas",
@@ -1200,7 +1298,9 @@
         "m2"
       ],
       "verifiziert": true,
-      "quelle": "saleh2019"
+      "quelle": "saleh2019",
+      "mehr": "Die Rayleighlänge ist das Maß für die Toleranz in Strahlrichtung: Innerhalb $\\pm z_\\mathrm{R}$ bleibt der Strahl nahezu gleich groß. Ein kleiner Fokus bedeutet eine kurze Rayleighlänge, und zwar quadratisch: Halbierst du $w_0$, schrumpft $z_\\mathrm{R}$ auf ein Viertel. Deshalb muss man bei kleinen Spots die Fokuslage sehr genau einstellen und beim Tiefenabtrag nachführen.",
+      "beispiel": "A tighter focus reduces the Rayleigh length and thus the depth of focus."
     },
     {
       "id": "reflexion",
@@ -1226,7 +1326,9 @@
         "burst-mode"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Höhere Rate heißt mehr Pulse pro Sekunde, also mehr Durchsatz, aber auch weniger Zeit zum Abkühlen zwischen den Pulsen. Bei fester mittlerer Leistung sinkt mit steigender Rate die Pulsenergie. Und der Scanner muss schneller fahren, um denselben Pulsabstand zu halten.",
+      "beispiel": "The repetition rate was reduced with a pulse picker."
     },
     {
       "id": "resonator",
@@ -1317,7 +1419,9 @@
         "bessel-strahl"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Der Brechungsindex steigt leicht mit der Intensität (Kerr-Effekt). In der Strahlmitte ist die Intensität am höchsten, also auch $n$: Das Material wirkt wie eine Sammellinse und bündelt den Strahl weiter, was die Intensität noch mehr erhöht. Ab einer kritischen Leistung gewinnt dieser Effekt gegen die Beugung. Er kann Optiken zerstören, wird aber für Filamente gezielt genutzt.",
+      "beispiel": "Above the critical power, self-focusing leads to filament formation."
     },
     {
       "id": "selbstphasenmodulation",
@@ -1330,7 +1434,9 @@
         "cpa"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Ein intensiver Puls ändert den Brechungsindex im Takt seiner eigenen Intensität. Dadurch verschiebt sich seine Phase zeitabhängig, an den Flanken entstehen neue Frequenzen, und das Spektrum wird breiter. Im Verstärker stört das die Pulsqualität; in Pulskompressionsstufen nutzt man es gezielt, um das Spektrum für noch kürzere Pulse zu verbreitern.",
+      "beispiel": "Self-phase modulation broadens the spectrum in the fibre amplifier."
     },
     {
       "id": "silizium",
@@ -1353,7 +1459,9 @@
       "definition": "Beim Selective Laser Etching (SLE) wird das Material zuerst mit Femtosekundenpulsen modifiziert und anschließend nasschemisch geätzt; vor allem in Quarzglas.",
       "siehe": [],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Zwei Schritte, die du getrennt optimieren kannst: Der Laser verändert das Glas im Fokus so, dass es sich schneller ätzen lässt, ohne schon Material zu entfernen. Das Ätzbad entfernt dann bevorzugt die modifizierten Bereiche. Vorteile gegenüber direktem Abtrag: kein Debris, kaum Risse, Innenkanäle und Hinterschnitte möglich. Wichtig: Jeder modifizierte Bereich muss mit der Oberfläche verbunden sein, sonst erreicht ihn das Ätzmittel nicht.",
+      "beispiel": "Microchannels were fabricated in fused silica by selective laser-induced etching."
     },
     {
       "id": "spallation",
@@ -1366,7 +1474,9 @@
         "ablationsschwelle"
       ],
       "verifiziert": false,
-      "quelle": "gamaly2002"
+      "quelle": "gamaly2002",
+      "mehr": "Anschaulich: Ein ultrakurzer Puls heizt eine dünne Schicht so schnell, dass sie sich nicht rechtzeitig ausdehnen kann; es entsteht ein hoher Druck. Die Druckwelle läuft ins Material, an der Oberfläche entsteht eine Zugwelle, und übersteigt die Zugspannung die Festigkeit, platzt eine Schicht ab. Ähnlich wie bei einem harten Schlag auf eine Platte, bei dem auf der Rückseite Material abplatzt.",
+      "beispiel": "Spallation occurs at fluences slightly above the threshold."
     },
     {
       "id": "spider",
@@ -1393,7 +1503,9 @@
         "intensitaet"
       ],
       "verifiziert": true,
-      "quelle": "Definition, Näherung"
+      "quelle": "Definition, Näherung",
+      "mehr": "Gleiche Energie in kürzerer Zeit heißt höhere Leistung. Ein Puls von 10 µJ und 1 ps hat bereits rund 10 MW Spitzenleistung, obwohl die mittlere Leistung des Lasers nur einige Watt betragen kann. Die Spitzenleistung entscheidet über nichtlineare Effekte (Selbstfokussierung, Mehrphotonenabsorption), die mittlere Leistung über Wärme und Durchsatz.",
+      "beispiel": "Peak powers in the megawatt range are reached with microjoule pulses."
     },
     {
       "id": "spotdurchmesser",
@@ -1445,7 +1557,9 @@
         "rayleighlaenge"
       ],
       "verifiziert": true,
-      "quelle": "siegman1986"
+      "quelle": "siegman1986",
+      "mehr": "Das BPP verhält sich wie eine Erhaltungsgröße der Optik: Mit Linsen kannst du den Fokus verkleinern, dann wächst aber die Divergenz, das Produkt bleibt gleich. Einen schlechten Strahl kann man mit Optik nicht verbessern, höchstens durch Filtern mit Leistungsverlust.",
+      "beispiel": "The beam parameter product is conserved by ideal optics."
     },
     {
       "id": "strahlprofil",
@@ -1483,7 +1597,9 @@
         "rayleighlaenge"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "An der Taille sind die Wellenfronten eben, davor und dahinter gekrümmt. Für die Bearbeitung ist sie der Bezugspunkt der Fokuslage: „Fokus auf der Oberfläche“ heißt, die Taille liegt in der Werkstückebene. Weil der Radius dort minimal ist, ist auch die Spitzenfluenz dort maximal.",
+      "beispiel": "The beam waist was positioned on the sample surface."
     },
     {
       "id": "strecker",
@@ -1496,7 +1612,9 @@
         "kompressor"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Im Strecker legen verschiedene Farben unterschiedlich lange Wege zurück (z. B. über Gitter oder in einer langen Faser): Die eine Seite des Spektrums kommt zuerst, die andere später. Der Puls wird so um Größenordnungen länger, seine Spitzenleistung entsprechend kleiner. Der [[kompressor]] kehrt das am Ende um.",
+      "beispiel": "The stretcher lengthens the seed pulses before amplification."
     },
     {
       "id": "tastverhaeltnis",
@@ -1522,7 +1640,9 @@
         "waermeakkumulation"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Die Wärmeleitfähigkeit allein sagt nicht, wie schnell sich ein Temperaturprofil ausbreitet; es kommt auch darauf an, wie viel Wärme das Material speichert. $D$ kombiniert beides. Hohe $D$ (Metalle): Die Wärme verteilt sich schnell. Niedrige $D$ (z. B. Glas): Die Wärme bleibt lokal, es entstehen steile Temperaturgradienten und damit Spannungen.",
+      "beispiel": "Fused silica has a low thermal diffusivity, so heat remains localized."
     },
     {
       "id": "thermalisierung",
@@ -1535,7 +1655,9 @@
         "elektron-phonon-kopplung"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Direkt nach der Absorption haben einzelne Elektronen sehr unterschiedliche Energien; von einer Temperatur kann man noch nicht sprechen. Durch Stöße untereinander verteilen sie die Energie, bis eine Gleichgewichtsverteilung entsteht. Erst dann ist die Elektronentemperatur im [[ttm]] sinnvoll definiert.",
+      "beispiel": "The electron distribution thermalizes before energy is transferred to the lattice."
     },
     {
       "id": "diffusionslaenge",
@@ -1548,7 +1670,9 @@
         "haz"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Faustregel: In der Zeit $\\tau$ kommt Wärme etwa $\\sqrt{D\\tau}$ weit. Wegen der Wurzel ergibt eine 1000-mal kürzere Pulsdauer eine etwa 30-mal kleinere Diffusionslänge. Vergleiche $L_\\mathrm{th}$ mit der Eindringtiefe: Ist $L_\\mathrm{th}$ kleiner, bleibt die Energie während des Pulses dort, wo sie absorbiert wurde.",
+      "beispiel": "The thermal diffusion length scales with the square root of the pulse duration."
     },
     {
       "id": "thermoschock",
@@ -1561,7 +1685,9 @@
         "keramik"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Heizt man eine Oberfläche schnell, will sie sich ausdehnen, das kühlere Material darunter hält dagegen: Es entstehen Spannungen. Spröde Werkstoffe können diese nicht durch plastisches Fließen abbauen, es bildet sich ein Riss. Der einzelne UKP-Puls ist dabei unkritischer, aber Wärmeakkumulation bei hoher Rate kann Thermoschock wieder relevant machen.",
+      "beispiel": "Thermal shock caused cracks at the edges of the ablated area."
     },
     {
       "id": "ti-saphir",
@@ -1614,7 +1740,9 @@
         "cpa"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Wo „ultrakurz“ beginnt, ist nicht scharf festgelegt. Entscheidend ist der Vergleich mit den Zeitskalen im Material: Ist der Puls kürzer als Elektron-Gitter-Kopplung und Wärmeleitung, läuft der Prozess grundlegend anders ab. Deshalb unterscheiden sich Piko- und Femtosekundenpulse je nach Werkstoff deutlich oder kaum.",
+      "beispiel": "Ultrashort pulse lasers enable precise ablation of brittle materials."
     },
     {
       "id": "valenzband",
@@ -1681,7 +1809,9 @@
         "quarzglas"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Weil die Absorption nichtlinear ist, passiert sie nur im Fokus; das Glas davor und dahinter bleibt unberührt. Je nach Pulsenergie entstehen sanfte Brechzahländerungen (Wellenleiter), nanoskalige Gitter (gut ätzbar, Grundlage von [[sle]]) oder Hohlräume. Das ist ein Alleinstellungsmerkmal der UKP-Bearbeitung transparenter Werkstoffe.",
+      "beispiel": "Depending on pulse energy, smooth index changes, nanogratings or voids are formed."
     },
     {
       "id": "wellenleiter",
@@ -1722,7 +1852,9 @@
         "burst-mode"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Bild: Wasser tropft in einen Eimer mit Loch. Kommen die Tropfen (Pulse) langsamer, als der Eimer leerläuft (Wärme abfließt), bleibt er leer. Kommen sie schneller, steigt der Pegel (die Temperatur) von Puls zu Puls. Bei hohen Raten und großem Überlapp wird so aus vielen „kalten“ Einzelpulsen ein thermischer Prozess.",
+      "beispiel": "Heat accumulation becomes significant at high repetition rates."
     },
     {
       "id": "haz",
@@ -1735,7 +1867,9 @@
         "ttm"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Bei Metallen sieht man die WEZ als Gefügeänderung, Anlauffarben oder Schmelzsaum; in Glas und Keramik eher als Mikrorisse, Spannungen oder veränderte Brechzahl. „Minimal“ heißt nicht null: Bei hoher Rate oder vielen Pulsen kann auch mit UKP eine messbare WEZ entstehen.",
+      "beispiel": "No heat-affected zone was visible in the cross-section."
     },
     {
       "id": "wendelbohren",
@@ -1763,7 +1897,9 @@
         "modenkopplung"
       ],
       "verifiziert": true,
-      "quelle": "diels"
+      "quelle": "diels",
+      "mehr": "Das ist sozusagen die Unschärferelation der Optik: Ein kurzes Ereignis braucht viele Frequenzen. Praktisch prüfst du mit gemessener Pulsdauer und Spektrum, ob der Puls gut komprimiert ist. Liegt $\\tau\\Delta\\nu$ deutlich über $K$, steckt noch Chirp im Puls.",
+      "beispiel": "A time–bandwidth product of 0.32 indicates nearly transform-limited sech² pulses."
     },
     {
       "id": "ttm",
@@ -1775,7 +1911,9 @@
         "ukp"
       ],
       "verifiziert": false,
-      "quelle": "Projektnotizen"
+      "quelle": "Projektnotizen",
+      "mehr": "Warum zwei Temperaturen? Direkt nach dem Puls sind die Elektronen extrem heiß, die Atomrümpfe noch kalt; eine gemeinsame Temperatur gibt es nicht. Das TTM beschreibt beide Systeme mit eigenen Wärmegleichungen, gekoppelt über $G(T_\\mathrm{e}-T_\\mathrm{l})$. Nach einigen Pikosekunden haben sich beide angeglichen. Für Dielektrika muss das Modell erweitert werden, weil die freien Elektronen erst erzeugt werden müssen.",
+      "beispiel": "The two-temperature model predicts a strong non-equilibrium between electrons and lattice."
     },
     {
       "id": "packaging",

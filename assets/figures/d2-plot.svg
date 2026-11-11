@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-label="D²-Methode: Quadrat des Kraterdurchmessers über ln der Pulsenergie, Steigung 2w0², Schnittpunkt bei der Schwellenenergie"><title>D²-Methode: Quadrat des Kraterdurchmessers über ln der Pulsenergie, Steigung 2w0², Schnittpunkt bei der Schwellenenergie</title><style>
+.fg-line{stroke:var(--fig-line,#3a465f);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fg-soft{stroke:var(--fig-soft,#aab4cb);fill:none;stroke-width:1.5}
+.fg-accent{stroke:var(--fig-accent,#0b7e9b);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-warm{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-dasharray:6 5}
+.fg-warm-s{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.fg-fill{fill:var(--fig-fill,#dcf1f7);stroke:none}
+.fg-bar-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-bar-w{fill:var(--fig-warm,#d9822b)}
+.fg-bar-s{fill:var(--fig-soft,#aab4cb)}
+.fg-text{fill:var(--fig-line,#3a465f);font:13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-muted{fill:var(--muted,#566078);font:12px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-small{fill:var(--muted,#566078);font:11px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-bold{font-weight:700}
+.fg-pill{fill:var(--fig-fill,#dcf1f7)}
+.fg-pilltext{fill:var(--fig-accent,#0b7e9b);font:700 11px -apple-system,system-ui,sans-serif}
+.fg-laser{stroke:var(--fig-laser,#ee4f1c);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-laser-f{fill:var(--fig-laser,#ee4f1c)}
+.fg-laser-t{fill:var(--fig-laser,#ee4f1c);font:700 12px -apple-system,system-ui,sans-serif}
+.fg-band{fill:var(--fig-accent,#0b7e9b);fill-opacity:.35;stroke:var(--fig-accent,#0b7e9b);stroke-width:2}
+.fg-empty{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:2;stroke-dasharray:5 4}
+.fg-box{fill:var(--fig-fill,#dcf1f7);stroke:var(--fig-accent,#0b7e9b);stroke-width:1.5}
+.fg-solid{fill:var(--fig-grid,#dbe3f0);stroke:var(--fig-line,#3a465f);stroke-width:1.5}
+.fg-heat{fill:var(--fig-warm,#d9822b);fill-opacity:.28;stroke:none}
+.fg-dot-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-dot-w{fill:var(--fig-warm,#d9822b)}
+.fg-ring{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:1.5}
+</style><line class="fg-soft" x1="50.0" y1="196.0" x2="346.0" y2="196.0"/><path class="fg-soft" d="M340.6 198.6 L346.0 196.0 L340.6 193.4"/><line class="fg-soft" x1="50.0" y1="196.0" x2="50.0" y2="22.0"/><path class="fg-soft" d="M52.6 27.4 L50.0 22.0 L47.4 27.4"/><text class="fg-muted" x="346" y="214" text-anchor="end">ln E_p</text><text class="fg-muted" x="56" y="26">D²</text><line class="fg-accent" x1="110.0" y1="196" x2="330.8" y2="47.2"/><circle class="fg-dot-w" cx="142.2" cy="178.3" r="4.5"/><circle class="fg-dot-w" cx="174.4" cy="147.6" r="4.5"/><circle class="fg-dot-w" cx="206.6" cy="133.9" r="4.5"/><circle class="fg-dot-w" cx="238.8" cy="107.2" r="4.5"/><circle class="fg-dot-w" cx="271.0" cy="92.5" r="4.5"/><circle class="fg-dot-w" cx="303.2" cy="62.8" r="4.5"/><circle class="fg-ring" cx="110.0" cy="196" r="6"/><text class="fg-text fg-bold" x="110.0" y="214" text-anchor="middle">ln E_th</text><path class="fg-soft" d="M192.8 140.2 L248.0 140.2 L248.0 103.0"/><text class="fg-text fg-bold" x="256.0" y="133.6">Steigung 2w₀²</text><text class="fg-small" x="58" y="40">Punkte: Beispieldaten (Krater)</text><text class="fg-small" x="58" y="56">Gerade: Ausgleichsgerade</text></svg>

@@ -19,7 +19,9 @@ export const intervalText = (days) => (days <= 0 ? t('heute') : days === 1 ? t('
 export function render(block, ctx) {
   const flags = { known: isKnown(block.id) };
   const today = toDay();
-  const back = h('div', { class: 'fc-back', hidden: true }, h('div', { class: 'prose', html: rich(block.hinten) }));
+  // block.extra = { label, text }: optional folded section on the answer side (e.g. the term in the other language)
+  const extra = block.extra?.text ? h('details', { class: 'fc-extra' }, h('summary', {}, block.extra.label), h('div', { class: 'prose', html: rich(block.extra.text) })) : null;
+  const back = h('div', { class: 'fc-back', hidden: true }, h('div', { class: 'prose', html: rich(block.hinten) }), extra);
   const controls = h('div', { class: 'fc-controls' });
   const revealBtn = h(
     'button',

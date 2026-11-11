@@ -264,6 +264,8 @@ def main():
                 elif typ == "bild":
                     if not (ROOT / b.get("src", "")).exists():
                         err(f"{where}: image {b.get('src')} missing")
+                    if b.get("src_en") and not (ROOT / b["src_en"]).exists():
+                        err(f"{where}: English image {b['src_en']} missing")
                     if not b.get("alt"):
                         err(f"{where}: image needs 'alt'")
                 elif typ == "rechner" and b.get("modell") not in rechner_models:

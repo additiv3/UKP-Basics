@@ -272,6 +272,14 @@
     "k03.c06": {
       "vorne": "How do you calculate the minimum photon number for the band gap?",
       "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$ with $h\\nu\\approx1239.84\\,\\mathrm{eV\\,nm}/\\lambda$; always round up."
+    },
+    "k03.l02.fig1": {
+      "alt": "Intensity versus depth: R times I0 is reflected at the surface, inside the material the intensity decays exponentially, at depth delta to 1/e",
+      "unterschrift": "First reflection, then attenuation: most of the transmitted energy is absorbed in the layer down to $\\delta=1/\\alpha$."
+    },
+    "k03.l04.fig1": {
+      "alt": "Schematic comparison of two crater cross-sections: long pulse with melt ejection, large heat-affected zone and cracks; ultrashort pulse with a sharp edge and small heat-affected zone",
+      "unterschrift": "Schematic tendency, not to scale: how pronounced melt, heat-affected zone and cracks are depends strongly on material, fluence and number of pulses."
     }
   }
 }

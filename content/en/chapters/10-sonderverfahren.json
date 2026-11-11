@@ -226,6 +226,10 @@
     "k10.c04": {
       "vorne": "Which three modification types are distinguished in the glass volume?",
       "hinten": "Type I: smooth index change (waveguides), type II: nanogratings (birefringent), type III: cavities (voids)."
+    },
+    "k10.l02.fig1": {
+      "alt": "Two steps of SLE: on the left a femtosecond focus writes a track into the glass that reaches the surface, on the right the etchant has turned it into an open channel",
+      "unterschrift": "SLE, schematic: the modified track must be connected to the surface so that the etchant can reach it."
     }
   }
 }

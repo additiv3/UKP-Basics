@@ -299,6 +299,10 @@
     "k09.c06": {
       "vorne": "How do you reliably calculate pulse spacing, overlap and dose?",
       "hinten": "$d=v/f$ (m), $O=1-d/(2w_0)$, $\\Phi=E_\\mathrm{p}/(d\\,h)$ (lengths in cm for J/cm²), $\\dot A=v\\,h$."
+    },
+    "k09.l02.fig1": {
+      "alt": "Two scan tracks of overlapping circles: pulse spacing along the track d equals v over f, track spacing h, spot diameter 2 w0",
+      "unterschrift": "Pulse spacing $d=v/f$ along the track and hatch $h$ between tracks, each compared with the spot diameter $2w_0$."
     }
   }
 }

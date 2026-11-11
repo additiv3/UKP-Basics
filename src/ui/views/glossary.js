@@ -50,6 +50,8 @@ export async function renderTerm({ id }, app) {
     x.alt && x.alt !== x.name ? h('p', { class: 'kicker' }, `${getLang() === 'en' ? 'DE' : 'EN'}: ${x.alt}`) : null,
     x.verifiziert === false ? h('span', { class: 'badge badge-warn static' }, t('ungeprüft')) : null,
     h('div', { class: 'prose', html: rich(x.definition) }),
+    x.mehr ? h('div', { class: 'term-more' }, h('strong', { class: 'term-more-title', html: `${icon('bulb', 16)} ${t('Genauer erklärt')}` }), h('div', { class: 'prose', html: rich(x.mehr) })) : null,
+    x.beispiel ? h('div', { class: 'term-example' }, h('span', { class: 'term-example-label' }, t('Im Satz (Englisch)')), h('p', { html: inline(x.beispiel) })) : null,
     see.length ? h('section', {}, h('h2', {}, t('Siehe auch')), h('div', { class: 'chips' }, see.map((s) => h('a', { class: 'chip link', href: `#/glossar/${s.id}` }, s.name)))) : null,
     chapters.length ? h('section', {}, h('h2', {}, t('Vorkommen in Kapiteln')), h('div', { class: 'chips' }, chapters.map((c) => h('a', { class: 'chip link', href: `#/kapitel/${c.id}` }, `${c.id.toUpperCase()} ${c.titel}`)))) : null,
     x.quelle ? h('p', { class: 'src-note' }, t('Quelle: {s}', { s: app.data.sources.get(x.quelle)?.kurz ?? t(x.quelle) })) : null,

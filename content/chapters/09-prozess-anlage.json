@@ -120,6 +120,15 @@
           ]
         },
         {
+          "id": "k09.l02.fig1",
+          "typ": "bild",
+          "src": "assets/figures/scanraster.svg",
+          "src_en": "assets/figures/scanraster.en.svg",
+          "alt": "Zwei Scanspuren aus überlappenden Kreisen: Abstand der Pulse entlang der Spur d gleich v durch f, Abstand der Spuren h, Spotdurchmesser 2 w0",
+          "unterschrift": "Pulsabstand $d=v/f$ entlang der Spur und Hatch $h$ zwischen den Spuren, jeweils verglichen mit dem Spotdurchmesser $2w_0$.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
           "id": "k09.l02.b02",
           "typ": "formel",
           "latex": "\\begin{gathered}N_\\mathrm{Fl}\\approx\\frac{\\pi w_0^2}{d\\,h},\\\\ \\Phi=\\frac{E_\\mathrm{p}}{d\\,h},\\\\ \\dot A=v\\,h\\end{gathered}",

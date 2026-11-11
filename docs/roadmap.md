@@ -63,6 +63,13 @@ Offen aus Phase 2d: Simulation „Microvia-Bohren“ (Taper aus Gauß- und Top-H
 
 Offen aus Phase 2e: Kapitel zur Anlage selbst, sobald Aufbau und Datenblätter vorliegen; eigene Messbilder aus den Vorversuchen in K22.
 
+## Phase 2f · Version 0.7 (erledigt)
+
+- [x] DE/EN-Schalter direkt in jeder Lektion und auf der Kapitelseite; Seite und Scrollposition bleiben beim Umschalten erhalten
+- [x] Glossar-Links öffnen ein Nachschlagefenster über der Lektion („Zurück zum Text“ führt an dieselbe Stelle)
+- [x] Ausführlichere Erklärungen („Genauer erklärt“, DE/EN) und englische Beispielsätze für 69 Fachbegriffe, auf Vokabelkarten mit Text in der anderen Sprache zum Aufklappen
+- [x] Neun neue Abbildungen (Kaustik, Lambert-Beer, ns vs. UKP, CPA, Mehrphotonen, Lawine, D²-Plot, Scanraster, SLE); alle Abbildungen zweisprachig (`src_en`)
+
 ## Phase 3 · Vertiefung
 
 - Weitere Simulationen: Bessel-Strahl und Filamentation, LIPSS-Periode, Wärmeakkumulation über Pulsfolgen

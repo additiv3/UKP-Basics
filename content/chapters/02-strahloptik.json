@@ -44,6 +44,7 @@
           "id": "k02.l01.b03",
           "typ": "bild",
           "src": "assets/figures/gauss-profil.svg",
+          "src_en": "assets/figures/gauss-profil.en.svg",
           "alt": "Gaußsches Fluenzprofil mit Spitzenfluenz, Strahlradius und Beispielschwelle",
           "unterschrift": "Das Gauß-Profil: Spitzenwert $F_0$, Radius $w_0$ bei $F_0/e^2$ und eine Beispielschwelle.",
           "quelle": "selbst erzeugt"
@@ -167,6 +168,15 @@
           "inhalt": [
             "Ein Gauß-Strahl hat eine engste Stelle, die **Strahltaille** (Fokus) mit Radius $w_0$. Von dort weitet er sich auf, zuerst langsam, dann linear. Die Strecke, über die sich der Strahlquerschnitt verdoppelt (Radius $\\times\\sqrt2$), heißt **Rayleighlänge** ([[rayleighlaenge]]) $z_\\mathrm{R}$."
           ]
+        },
+        {
+          "id": "k02.l02.fig1",
+          "typ": "bild",
+          "src": "assets/figures/kaustik.svg",
+          "src_en": "assets/figures/kaustik.en.svg",
+          "alt": "Strahlkaustik eines Gauß-Strahls: engste Stelle mit Radius w0, bei plus/minus zR ist der Radius Wurzel 2 mal w0, gestrichelte Asymptoten zeigen die Divergenz",
+          "unterschrift": "Strahlkaustik: Um die Taille bleibt der Strahl über etwa $2z_\\mathrm{R}$ nahezu gleich groß, weiter weg wächst er linear mit dem Divergenzwinkel $\\theta$.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
         },
         {
           "id": "k02.l02.b02",

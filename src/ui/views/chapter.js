@@ -7,6 +7,7 @@ import { chapterStatus, chapterStats, lessonDone } from '../../core/progress.js'
 import { chapterMeta } from '../../core/content.js';
 import { renderBlock } from '../../blocks/registry.js';
 import { t } from '../../core/i18n.js';
+import { langSwitch } from '../langswitch.js';
 
 const back = () => h('a', { class: 'back', href: '#/' }, h('span', { html: icon('back', 18) }), t('Lernpfad'));
 
@@ -77,7 +78,7 @@ export async function render({ id }, app) {
   return h(
     'div',
     { class: 'page', dataset: { stage: meta.stufe } },
-    back(),
+    h('div', { class: 'row-between' }, back(), langSwitch(app)),
     h('p', { class: 'kicker' }, `${meta.id.toUpperCase()} · ${t('Etappe')} ${meta.stufe}`),
     h('h1', {}, chapter.titel),
     h('p', { class: 'lead', html: inline(chapter.einleitung ?? meta.kurz) }),

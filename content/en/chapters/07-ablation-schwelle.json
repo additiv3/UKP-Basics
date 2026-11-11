@@ -329,6 +329,10 @@
     "k07.c09": {
       "vorne": "Which axes does which ablation plot need?",
       "hinten": "$d$ over $\\ln F$: straight line, intercept = $F_\\mathrm{th}$, slope = $\\ell$. $F_\\mathrm{th}$ over $N$ log-log: slope $S-1$. Efficiency over $F_0$: maximum at $e^2F_\\mathrm{th}$."
+    },
+    "k07.l02.fig1": {
+      "alt": "Plot of D squared versus ln of pulse energy: example points lie on a straight line with slope 2 w0 squared that crosses the axis at ln E_th",
+      "unterschrift": "This is what the evaluation looks like (example data): the slope of the line gives $2w_0^2$, the intercept with $D^2=0$ the threshold energy $E_\\mathrm{th}$."
     }
   }
 }

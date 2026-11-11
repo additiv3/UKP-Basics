@@ -314,6 +314,15 @@
           "quelle": "strickland1985"
         },
         {
+          "id": "k04.l04.fig1",
+          "typ": "bild",
+          "src": "assets/figures/cpa-schema.svg",
+          "src_en": "assets/figures/cpa-schema.en.svg",
+          "alt": "CPA-Kette: Oszillator, Strecker, Verstärker, Kompressor, darunter jeweils die Pulsform: kurz und schwach, lang und schwach, lang und energiereich, kurz mit sehr hoher Spitze",
+          "unterschrift": "CPA in vier Stationen. Entscheidend ist der dritte Schritt: Der Puls wird verstärkt, während er gestreckt ist und seine Spitzenleistung niedrig bleibt.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
           "id": "k04.l04.b02",
           "typ": "sim",
           "modell": "cpa"

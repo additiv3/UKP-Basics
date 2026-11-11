@@ -1,5 +1,6 @@
 import { h } from '../ui/dom.js';
 import { inline } from '../core/richtext.js';
+import { isEn } from '../core/i18n.js';
 
 const svgCache = new Map();
 
@@ -15,12 +16,14 @@ async function loadSvg(src) {
 }
 
 // Own SVGs are inlined so they follow the light/dark theme through CSS variables.
+// src_en (optional, set in the German file) is the variant with English labels.
 export async function render(block) {
+  const src = isEn() && block.src_en ? block.src_en : block.src;
   const box = h('div', { class: 'figure-box', role: 'img', 'aria-label': block.alt ?? '' });
   try {
-    box.innerHTML = await loadSvg(block.src);
+    box.innerHTML = await loadSvg(src);
   } catch {
-    box.append(h('img', { src: block.src, alt: block.alt ?? '', loading: 'lazy' }));
+    box.append(h('img', { src, alt: block.alt ?? '', loading: 'lazy' }));
   }
   return h('figure', {}, box, block.unterschrift ? h('figcaption', { html: inline(block.unterschrift) }) : null);
 }

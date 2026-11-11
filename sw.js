@@ -1,6 +1,6 @@
 // Service worker: precache app shell and content, serve cache-first (offline-capable).
 // VERSION and the PRECACHE block are maintained by tools/release.py - do not edit by hand.
-const VERSION = '0.6.0';
+const VERSION = '0.7.0';
 const CACHE = `ukp-basics-${VERSION}`;
 
 // BEGIN PRECACHE
@@ -73,6 +73,7 @@ const PRECACHE = [
   'src/ui/plotfig.js',
   'src/ui/shell.js',
   'src/ui/swipe.js',
+  'src/ui/termsheet.js',
   'src/ui/views/chapter.js',
   'src/ui/views/glossary.js',
   'src/ui/views/home.js',
@@ -139,12 +140,37 @@ const PRECACHE = [
   'content/quellen.json',
   'content/referenz.json',
   'assets/brand/mark.svg',
+  'assets/figures/avalanche.en.svg',
+  'assets/figures/avalanche.svg',
+  'assets/figures/baender.en.svg',
   'assets/figures/baender.svg',
+  'assets/figures/cpa-schema.en.svg',
+  'assets/figures/cpa-schema.svg',
+  'assets/figures/d2-plot.en.svg',
+  'assets/figures/d2-plot.svg',
+  'assets/figures/gauss-profil.en.svg',
   'assets/figures/gauss-profil.svg',
+  'assets/figures/kaustik.en.svg',
+  'assets/figures/kaustik.svg',
+  'assets/figures/lambert-beer.en.svg',
+  'assets/figures/lambert-beer.svg',
+  'assets/figures/microvia.en.svg',
   'assets/figures/microvia.svg',
+  'assets/figures/mpa-schema.en.svg',
+  'assets/figures/mpa-schema.svg',
+  'assets/figures/ns-vs-ukp.en.svg',
+  'assets/figures/ns-vs-ukp.svg',
+  'assets/figures/package-querschnitt.en.svg',
   'assets/figures/package-querschnitt.svg',
+  'assets/figures/pulszug.en.svg',
   'assets/figures/pulszug.svg',
+  'assets/figures/scanraster.en.svg',
+  'assets/figures/scanraster.svg',
+  'assets/figures/sle-ablauf.en.svg',
+  'assets/figures/sle-ablauf.svg',
+  'assets/figures/zeitleiter.en.svg',
   'assets/figures/zeitleiter.svg',
+  'assets/figures/zeitskalen-prozesse.en.svg',
   'assets/figures/zeitskalen-prozesse.svg',
   'assets/icons/apple-touch-icon.png',
   'assets/icons/icon-192.png',

@@ -39,6 +39,7 @@
           "id": "k18.l01.b02",
           "typ": "bild",
           "src": "assets/figures/microvia.svg",
+          "src_en": "assets/figures/microvia.en.svg",
           "alt": "Schnitt durch eine Microvia: Laserstrahl von oben, konische Bohrung durch das Dielektrikum mit oberem Durchmesser d_top, unterem Durchmesser d_bot und Tiefe h, darunter das Kupferpad.",
           "unterschrift": "Schematisch. Die Wand ist geneigt; die Konizität beschreibt, wie stark sich das Loch nach unten verengt."
         },

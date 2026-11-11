@@ -28,6 +28,15 @@
           ]
         },
         {
+          "id": "k06.l01.fig1",
+          "typ": "bild",
+          "src": "assets/figures/mpa-schema.svg",
+          "src_en": "assets/figures/mpa-schema.en.svg",
+          "alt": "Bänderschema: Ein einzelnes Photon reicht nicht über die Bandlücke, n gleichzeitig absorbierte Photonen heben das Elektron ins Leitungsband",
+          "unterschrift": "Ein Photon allein scheitert an der Bandlücke $E_\\mathrm{g}$. Erst $n$ gleichzeitig absorbierte Photonen mit $n\\,h\\nu\\ge E_\\mathrm{g}$ heben das Elektron ins Leitungsband.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
+        },
+        {
           "id": "k06.l01.b02",
           "typ": "formel",
           "latex": "\\begin{gathered}n=\\left\\lceil\\frac{E_\\mathrm{g}}{h\\nu}\\right\\rceil,\\\\ \\text{Rate}\\propto I^{\\,n}\\end{gathered}",
@@ -214,6 +223,15 @@
           ],
           "verifiziert": false,
           "quelle": "schaffer2001"
+        },
+        {
+          "id": "k06.l03.fig1",
+          "typ": "bild",
+          "src": "assets/figures/avalanche.svg",
+          "src_en": "assets/figures/avalanche.en.svg",
+          "alt": "Baumdiagramm: Aus einem Startelektron werden durch Stoßionisation 2, dann 4, dann 8 freie Elektronen",
+          "unterschrift": "Lawine: Jeder Schritt verdoppelt im Idealfall die Zahl der freien Elektronen. Dafür braucht es Startelektronen, z. B. aus der Mehrphotonenionisation.",
+          "quelle": "selbst erzeugt (tools/gen_figures.py)"
         },
         {
           "id": "k06.l03.b02",

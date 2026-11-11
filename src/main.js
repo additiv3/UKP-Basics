@@ -8,6 +8,7 @@ import { dueIds } from './core/progress.js';
 import { toDay } from './core/dates.js';
 import { h, toast } from './ui/dom.js';
 import { createShell } from './ui/shell.js';
+import { openTermSheet } from './ui/termsheet.js';
 import * as home from './ui/views/home.js';
 import * as chapter from './ui/views/chapter.js';
 import * as lesson from './ui/views/lesson.js';
@@ -88,6 +89,18 @@ async function boot() {
   const updateBadge = () => shell.setDueCount(dueIds(store.get(), toDay()).filter((id) => app.data.items.has(id)).length);
   store.subscribe(updateBadge);
   updateBadge();
+
+  // Glossary links open the term in a sheet on top of the current page, so closing it returns to the same spot.
+  // On the glossary pages themselves the links navigate as before.
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest?.('a.gl');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    if (currentPath().startsWith('/glossar') && !a.closest('.term-sheet')) return;
+    const id = /#\/glossar\/([^/?#]+)/.exec(a.getAttribute('href') ?? '')?.[1];
+    if (!id) return;
+    e.preventDefault();
+    openTermSheet(decodeURIComponent(id), app);
+  });
 
   start((m) => show(m));
   registerServiceWorker(app);

@@ -34,6 +34,7 @@
           "id": "k01.l01.b02",
           "typ": "bild",
           "src": "assets/figures/zeitleiter.svg",
+          "src_en": "assets/figures/zeitleiter.en.svg",
           "alt": "Zeitleiter von Femtosekunden bis Millisekunden mit der Strecke, die Licht in dieser Zeit zurücklegt",
           "unterschrift": "Zeitleiter: Jede Stufe ist ein Faktor $10^3$. Rechts steht jeweils der Lichtweg im Vakuum.",
           "quelle": "selbst erzeugt (tools/gen_figures.py)"
@@ -146,6 +147,7 @@
           "id": "k01.l02.b04",
           "typ": "bild",
           "src": "assets/figures/pulszug.svg",
+          "src_en": "assets/figures/pulszug.en.svg",
           "alt": "Pulszug: schmale hohe Pulse im Abstand 1/f, darunter die niedrige mittlere Leistung als gestrichelte Linie",
           "unterschrift": "Pulszug (nicht maßstäblich). Die gleiche Energie pro Sekunde ist in schmale, sehr hohe Spitzen gepackt.",
           "quelle": "selbst erzeugt (tools/gen_figures.py)"
@@ -284,6 +286,7 @@
           "id": "k01.l03.b03",
           "typ": "bild",
           "src": "assets/figures/gauss-profil.svg",
+          "src_en": "assets/figures/gauss-profil.en.svg",
           "alt": "Gaußsches Fluenzprofil über dem Radius mit Spitzenfluenz F0, Strahlradius w0 beim Wert 1/e² und einer eingezeichneten Beispielschwelle",
           "unterschrift": "Fluenzprofil eines Gauß-Strahls. Wo das Profil über einer (hier beispielhaft gewählten) Schwelle liegt, würde abgetragen.",
           "quelle": "selbst erzeugt (tools/gen_figures.py)"

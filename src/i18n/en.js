@@ -767,4 +767,12 @@ export default {
   "γ ≈ 1,5 (Übergang)": "γ ≈ 1.5 (transition)",
   "δ (Absorptionstiefe)": "δ (absorption depth)",
   "Übersichtswissen Packaging, nicht an der Primärquelle geprüft": "Packaging overview knowledge, not checked against the primary source",
+  "Genauer erklärt": "Explained in more detail",
+  "Im Satz (Englisch)": "In a sentence",
+  "Im Satz": "In a sentence",
+  "Glossareintrag": "Glossary entry",
+  "Begriff nachschlagen": "Look up term",
+  "Nachschlagen": "Look-up",
+  "Zurück zum Text": "Back to the text",
+  "„{s}“": "“{s}”",
 };

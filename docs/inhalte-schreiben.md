@@ -45,7 +45,7 @@ Jeder Block braucht eine **global eindeutige `id`** und einen `typ`. Frage- und 
 |---|---|
 | `text` | `inhalt`, optional `titel` |
 | `formel` | `latex`, optional `einheit` (LaTeX), `erklaerung`; mit `sammlung` (Kategorie) und `titel` landet die Formel in der Formelsammlung im Labor-Tab |
-| `bild` | `src` (SVG unter `assets/`), `alt`, optional `unterschrift` |
+| `bild` | `src` (SVG unter `assets/`), `alt`, optional `unterschrift`, optional `src_en` (Variante mit englischen Beschriftungen, erzeugt von `tools/gen_figures.py` als `<name>.en.svg`) |
 | `merke` | `inhalt`, optional `titel` |
 | `beispiel` | `aufgabe`, `schritte[]`, `ergebnis`; Lösung wird erst auf Tippen gezeigt |
 | `rechner` | `modell` (`fluenz`, `photon`), optional `titel` |
@@ -82,4 +82,4 @@ Normen, Konstanten und Faustformeln stehen in `content/referenz.json`.
 
 ## Glossar
 
-`content/glossar.json`, je Begriff `id` (nur `a-z`, `0-9`, `-`), `begriff`, `englisch`, `kurz`, `definition`, `siehe[]`, `verifiziert`, `quelle`.
+`content/glossar.json`, je Begriff `id` (nur `a-z`, `0-9`, `-`), `begriff`, `englisch`, `kurz`, `definition`, `siehe[]`, `verifiziert`, `quelle`. Optional: `mehr` (ausführlichere, anschauliche Erklärung, erscheint als „Genauer erklärt“ im Nachschlagefenster, im Glossar und auf den Vokabelkarten) und `beispiel` (englischer Beispielsatz). `content/en/glossar.json` übersetzt `kurz`, `definition` und `mehr`.

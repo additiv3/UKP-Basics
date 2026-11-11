@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 210" role="img" aria-label="SLE in zwei Schritten: Femtosekundenfokus schreibt eine Spur ins Glas, danach öffnet das Ätzbad den Kanal"><title>SLE in zwei Schritten: Femtosekundenfokus schreibt eine Spur ins Glas, danach öffnet das Ätzbad den Kanal</title><style>
+.fg-line{stroke:var(--fig-line,#3a465f);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.fg-soft{stroke:var(--fig-soft,#aab4cb);fill:none;stroke-width:1.5}
+.fg-accent{stroke:var(--fig-accent,#0b7e9b);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-warm{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-dasharray:6 5}
+.fg-warm-s{stroke:var(--fig-warm,#d9822b);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.fg-fill{fill:var(--fig-fill,#dcf1f7);stroke:none}
+.fg-bar-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-bar-w{fill:var(--fig-warm,#d9822b)}
+.fg-bar-s{fill:var(--fig-soft,#aab4cb)}
+.fg-text{fill:var(--fig-line,#3a465f);font:13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-muted{fill:var(--muted,#566078);font:12px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-small{fill:var(--muted,#566078);font:11px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+.fg-bold{font-weight:700}
+.fg-pill{fill:var(--fig-fill,#dcf1f7)}
+.fg-pilltext{fill:var(--fig-accent,#0b7e9b);font:700 11px -apple-system,system-ui,sans-serif}
+.fg-laser{stroke:var(--fig-laser,#ee4f1c);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.fg-laser-f{fill:var(--fig-laser,#ee4f1c)}
+.fg-laser-t{fill:var(--fig-laser,#ee4f1c);font:700 12px -apple-system,system-ui,sans-serif}
+.fg-band{fill:var(--fig-accent,#0b7e9b);fill-opacity:.35;stroke:var(--fig-accent,#0b7e9b);stroke-width:2}
+.fg-empty{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:2;stroke-dasharray:5 4}
+.fg-box{fill:var(--fig-fill,#dcf1f7);stroke:var(--fig-accent,#0b7e9b);stroke-width:1.5}
+.fg-solid{fill:var(--fig-grid,#dbe3f0);stroke:var(--fig-line,#3a465f);stroke-width:1.5}
+.fg-heat{fill:var(--fig-warm,#d9822b);fill-opacity:.28;stroke:none}
+.fg-dot-a{fill:var(--fig-accent,#0b7e9b)}
+.fg-dot-w{fill:var(--fig-warm,#d9822b)}
+.fg-ring{fill:none;stroke:var(--fig-accent,#0b7e9b);stroke-width:1.5}
+</style><rect class="fg-solid" x="14" y="70" width="150" height="92" rx="4" opacity=".55"/><path class="fg-warm" d="M14 116 L84 116 L114 140"/><path class="fg-laser" d="M92 22 L114 140 L136 22" stroke-width="2"/><circle class="fg-laser-f" cx="114" cy="140" r="3.5"/><text class="fg-laser-t" x="140" y="34">fs-Fokus</text><text class="fg-text fg-bold" x="14" y="16">1 Modifizieren</text><text class="fg-small" x="14" y="180">Spur muss die Oberfläche erreichen</text><line class="fg-line" x1="170.0" y1="116.0" x2="194.0" y2="116.0"/><path class="fg-line" d="M188.6 118.6 L194.0 116.0 L188.6 113.4"/><rect class="fg-solid" x="200" y="70" width="150" height="92" rx="4" opacity=".55"/><path d="M200 110 L272 110 L304 136 L296 144 L266 122 L200 122 Z" fill="var(--bg,#fff)" stroke="var(--fig-line,#3a465f)" stroke-width="1.5"/><text class="fg-text fg-bold" x="200" y="16">2 Ätzen</text><text class="fg-small" x="200" y="34">Ätzbad löst modifiziertes</text><text class="fg-small" x="200" y="48">Glas bevorzugt</text><text class="fg-small" x="200" y="180">offener Kanal im Volumen</text><text class="fg-small" x="14" y="202">schematisch, nicht maßstäblich</text></svg>
