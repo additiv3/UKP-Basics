@@ -1,0 +1,968 @@
+{
+  "id": "k23",
+  "titel": "Einstieg: erste Studien an Quarzglas und COC",
+  "einleitung": "Deine ersten eigenen Studien laufen voraussichtlich an zwei transparenten Werkstoffen: Quarzglas und dem Kunststoff COC. Beide absorbieren nur nichtlinear, verhalten sich im Prozess aber gegensätzlich. Das Kapitel baut auf den Veröffentlichungen der AG alp zu genau diesen Werkstoffen auf und macht daraus drei Einstiegsversuche, typische Fehlerbilder und einen Plan für die ersten sechs Wochen. Zahlen aus der Literatur tragen ihre Quelle, Zahlen in Rechenaufgaben sind Beispiele. Welche Proben, Laser und Wellenlängen im Labor tatsächlich verfügbar sind, klärst du in der ersten Woche.",
+  "ziele": [
+    "Quarzglas und COC nach Bandlücke, Wärmehaushalt und Hauptrisiko im UKP-Prozess einordnen",
+    "Eine Schwellenmessung an einem transparenten Werkstoff planen und Inkubation mit Sättigung auswerten",
+    "Flächenabtrag in Quarzglas aufsetzen und Abtragseffizienz und Rauheit gemeinsam bewerten",
+    "Wärmeakkumulation in COC mit der kritischen Repetitionsrate abschätzen und über die Strategie begrenzen",
+    "Fehlerbilder in Glas und Polymer deuten und einen Plan für die ersten sechs Wochen aufstellen"
+  ],
+  "weiterlesen": [
+    "schwarz2018",
+    "schwarz2021ghz",
+    "yang2023",
+    "yang2024",
+    "bischoff2022",
+    "franz2025",
+    "benyakar2004",
+    "ashkenasi1999",
+    "chimier2011",
+    "stuart1996"
+  ],
+  "lektionen": [
+    {
+      "id": "k23.l01",
+      "titel": "Zwei transparente Werkstoffe, zwei Welten",
+      "minuten": 14,
+      "blocks": [
+        {
+          "id": "k23.l01.b01",
+          "typ": "text",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "inhalt": [
+            "Quarzglas und [[coc|COC]] sind ein guter Einstieg, weil sie dieselbe Grundfrage auf zwei Arten stellen: Wie bringt man Energie in einen Werkstoff, der das Laserlicht eigentlich durchlässt? Beide absorbieren bei 1030 nm nur nichtlinear (K06). Was danach passiert, ist gegensätzlich: Quarzglas ist hart, spröde und temperaturfest, COC weich, zäh und wärmeempfindlich.",
+            "Der zweite Grund: Die AG alp hat zu beiden Werkstoffen veröffentlicht. Du startest also nicht bei null, sondern kannst bekannte Ergebnisse an der Anlage nachvollziehen:",
+            "- **Quarzglas:** schichtweiser Abtrag mit Pulsdauern von 230 fs bis 5 ps (Schwarz et al. 2018), GHz- und MHz-Bursts (Schwarz et al. 2021, Yang et al. 2023), UV gegen Infrarot (Yang et al. 2024), [[rueckseitenabtrag|Rückseitenabtrag]] (Schwarz et al. 2021) und [[lipss|LIPSS]] (Schwarz et al. 2016).\n- **COC:** Abtrag mit UV-Femtosekundenpulsen (Bischoff et al. 2022), Schweißen (Roth et al. 2017), Wellenleiter und Bragg-Gitter im Volumen (Roth et al. 2020).\n- **Borosilikatglas (Borofloat 33):** Through-Glass Vias für das Glaskern-Packaging (Franz et al. 2025, K18)."
+          ]
+        },
+        {
+          "id": "k23.q05",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": 1,
+          "frage": "Warum eignen sich Quarzglas und COC gut für den Einstieg in der AG alp?",
+          "optionen": [
+            "Weil beide bei 1030 nm stark linear absorbieren",
+            "Weil es zu beiden veröffentlichte Ergebnisse der Gruppe gibt, die du nachvollziehen kannst",
+            "Weil bei beiden keine Wärmeakkumulation auftritt"
+          ],
+          "erklaerung": "Ein bekanntes Ergebnis zu reproduzieren ist der schnellste Weg, Anlage, Messkette und Auswertung zu prüfen. Weicht dein Ergebnis ab, lernst du daraus mehr als aus einem neuen Parameterfeld."
+        },
+        {
+          "id": "k23.l01.b02",
+          "typ": "text",
+          "titel": "Steckbrief",
+          "verifiziert": false,
+          "quelle": "COC: Bischoff et al. 2022. Quarzglas und Borofloat: Literatur- und Datenblattwerte (Heraeus, SCHOTT), nicht an der Primärquelle geprüft",
+          "inhalt": [
+            "**[[quarzglas|Quarzglas]]** (fused silica)",
+            "- amorphes, sehr reines SiO₂\n- Bandlücke etwa 9 eV (gängiger Literaturwert)\n- Erweichungstemperatur um 1600 °C, Wärmeleitfähigkeit etwa 1,38 W/(m·K) (Datenblattwerte für synthetisches Quarzglas)\n- spröde: Das Risiko sind Risse und Ausbrüche",
+            "**[[coc|COC]]** (in der Arbeit der AG alp: TOPAS 6017S, Platten 1,5 mm dick)",
+            "- amorpher Thermoplast, glasklar\n- Bandlücke etwa 4 eV (aus Transmissionsmessung bestimmt)\n- [[glasuebergangstemperatur|Glasübergangstemperatur]] 175 °C\n- Temperaturleitfähigkeit $9\\cdot10^{-8}\\,\\mathrm{m^2/s}$, also sehr träge Wärmeabfuhr\n- zäh und schmelzbar: Das Risiko sind Schmelze, Verrundung und Verfärbung",
+            "Zum Vergleich **[[borosilikatglas|Borofloat 33]]**, das Glas der TGV-Versuche: Wärmeausdehnung $3{,}25\\cdot10^{-6}\\,\\mathrm{K^{-1}}$ und Transformationstemperatur 525 °C laut Datenblatt. Es verträgt Wärme also deutlich schlechter als Quarzglas. Prüfe für deine Proben immer das Datenblatt der tatsächlichen Sorte."
+          ]
+        },
+        {
+          "id": "k23.q04",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem Werkstoff sein Hauptrisiko im UKP-Prozess zu.",
+          "paare": [
+            [
+              "Quarzglas",
+              "Risse und Ausbrüche, sehr temperaturfest"
+            ],
+            [
+              "COC",
+              "Schmelze und Verfärbung durch Wärmeakkumulation"
+            ],
+            [
+              "Borofloat 33",
+              "Mikrorisse durch Thermoschock, dünne Scheiben für TGVs"
+            ],
+            [
+              "Silizium",
+              "Schmelzränder, absorbiert bei 1030 nm schwach linear"
+            ]
+          ],
+          "erklaerung": "Das sind Erwartungen für deine ersten Mikroskopbilder. Ob sie an deiner Anlage so auftreten, zeigt der Versuch."
+        },
+        {
+          "id": "k23.l01.b03",
+          "typ": "formel",
+          "titel": "Mindestzahl der Photonen",
+          "latex": "n_\\mathrm{min}=\\left\\lceil\\frac{E_\\mathrm{g}}{h\\nu}\\right\\rceil,\\qquad h\\nu\\,[\\mathrm{eV}]\\approx\\frac{1240}{\\lambda\\,[\\mathrm{nm}]}",
+          "erklaerung": "Kleinste ganze Zahl von Photonen, deren Energie zusammen die Bandlücke $E_\\mathrm{g}$ überbrückt (K06). Mit jeder Harmonischen (515 nm, 343 nm) sinkt $n_\\mathrm{min}$, und die Absorption wird wahrscheinlicher.",
+          "verifiziert": true,
+          "quelle": "Herleitung"
+        },
+        {
+          "id": "k23.l01.b04",
+          "typ": "merke",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "inhalt": "Beide Werkstoffe sind bei 1030 nm transparent, und beide lassen sich trotzdem abtragen. Der Unterschied liegt nicht in der Absorption, sondern in dem, was die deponierte Energie anrichtet: Im Quarzglas sind **Spannungen und Risse** der Gegner, im COC ist es die **Wärme**."
+        },
+        {
+          "id": "k23.q01",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 8,
+          "einheit": "",
+          "toleranz": 0,
+          "frage": "Wie viele Photonen braucht es bei $1030\\,\\mathrm{nm}$ mindestens, um in Quarzglas ($E_\\mathrm{g}\\approx9\\,\\mathrm{eV}$, Literaturwert) ein Elektron ins Leitungsband zu heben?",
+          "erklaerung": "$h\\nu=1240/1030=1{,}20\\,\\mathrm{eV}$, $9/1{,}20=7{,}5$, also 8 Photonen. Bei $343\\,\\mathrm{nm}$ ($3{,}6\\,\\mathrm{eV}$) wären es nur noch 3.",
+          "tipp": "Aufrunden: Halbe Photonen gibt es nicht."
+        },
+        {
+          "id": "k23.q02",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 4,
+          "einheit": "",
+          "toleranz": 0,
+          "frage": "Für COC wurde eine Bandlücke von etwa $4\\,\\mathrm{eV}$ bestimmt. Wie viele Photonen sind bei $1030\\,\\mathrm{nm}$ rechnerisch mindestens nötig?",
+          "erklaerung": "$4/1{,}20=3{,}3$, also 4 Photonen. Achtung beim Lesen: In der Arbeit von Bischoff et al. (2022) steht für 1030 nm die Zahl sechs. Aus der dort genannten Bandlücke folgen rechnerisch vier. Solche Stellen notierst du dir und klärst sie in der Gruppe; Papers kritisch nachzurechnen gehört zum Handwerk."
+        },
+        {
+          "id": "k23.q03",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 2,
+          "einheit": "",
+          "toleranz": 0,
+          "frage": "Und bei der dritten Harmonischen, $343\\,\\mathrm{nm}$: Wie viele Photonen braucht COC ($E_\\mathrm{g}\\approx4\\,\\mathrm{eV}$) mindestens?",
+          "erklaerung": "$h\\nu=1240/343=3{,}6\\,\\mathrm{eV}$, $4/3{,}6=1{,}1$, also 2 Photonen. Der Schritt von vier auf zwei Photonen ist ein Grund, warum der UV-Abtrag von COC effizienter und sauberer ausfiel."
+        },
+        {
+          "id": "k23.c01",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "vorne": "Quarzglas gegen COC: gleiche Absorption, anderer Gegner?",
+          "hinten": "Beide absorbieren bei 1030 nm nur nichtlinear. Quarzglas: spröde und temperaturfest, Gegner sind Spannungen und Risse. COC: Glasübergang bei 175 °C und sehr träge Wärmeabfuhr, Gegner ist die Wärmeakkumulation."
+        },
+        {
+          "id": "k23.c02",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "Herleitung",
+          "vorne": "Wie rechnest du die Mindestzahl der Photonen aus?",
+          "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$ mit $h\\nu\\,[\\mathrm{eV}]\\approx1240/\\lambda\\,[\\mathrm{nm}]$. Kürzere Wellenlänge heißt weniger Photonen und stärkere Absorption."
+        }
+      ]
+    },
+    {
+      "id": "k23.l02",
+      "titel": "Versuch A: Schwelle und Inkubation an Quarzglas",
+      "minuten": 16,
+      "blocks": [
+        {
+          "id": "k23.l02.b01",
+          "typ": "text",
+          "verifiziert": false,
+          "quelle": "Übersichtswissen Lasermaterialbearbeitung, nicht an der Primärquelle geprüft",
+          "inhalt": [
+            "Versuch A ist die Schwellenmessung aus K22, übertragen auf einen transparenten Werkstoff. Den Strahlradius hast du vorher am Silizium-Wafer bestimmt (K22, Versuch 1). An Glas kommen vier Dinge hinzu, auf die du dich einstellen solltest:",
+            "1. **Fokuslage finden:** Die Oberfläche einer polierten, klaren Probe sieht man kaum. Bewährt ist eine Fokusserie direkt auf der Probe (K14) oder ein Antasten auf einer aufgerauten Ecke.\n2. **Flache Krater:** Einzelpulskrater sind in Glas oft nur wenige zehn bis hundert Nanometer tief und im Lichtmikroskop schwer zu erkennen. Plane das Laser-Scanning-Mikroskop oder ein Rasterkraftmikroskop ein.\n3. **Die Rückseite:** Der größte Teil der Pulsenergie geht durch die Probe hindurch. Prüfe nach jedem Versuch auch die Rückseite und die Auflage auf Schäden ([[rueckseitenabtrag|Rückseitenabtrag]]).\n4. **Sauberkeit:** Staub und Fingerabdrücke absorbieren linear und senken die Schwelle lokal. Proben reinigen und nur am Rand anfassen.",
+            "Formuliere das als Hypothesen und prüfe sie an deinen ersten Bildern."
+          ]
+        },
+        {
+          "id": "k23.q11",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": [
+            0,
+            1,
+            3
+          ],
+          "frage": "Worauf musst du bei der Schwellenmessung an einer klaren Glasprobe besonders achten? (Mehrfachauswahl)",
+          "optionen": [
+            "Rückseite und Auflage auf Schäden prüfen",
+            "Sehr flache Krater: passendes Messverfahren einplanen",
+            "Die Probe vor dem Versuch magnetisieren",
+            "Saubere Oberfläche, weil Schmutz linear absorbiert"
+          ],
+          "erklaerung": "Transparenz bringt drei eigene Fehlerquellen mit: Energie kommt an der Rückseite an, Krater sind flach, und jede absorbierende Verunreinigung verfälscht die Schwelle."
+        },
+        {
+          "id": "k23.l02.b02",
+          "typ": "text",
+          "titel": "Was die Literatur dazu sagt",
+          "verifiziert": true,
+          "quelle": "benyakar2004",
+          "inhalt": [
+            "- **Pulsdauer:** Unterhalb von etwa 10 ps weicht die Schwelle von Dielektrika von der Wurzel-Skalierung langer Pulse ab; der Schaden entsteht dann durch Ablation statt durch Schmelzen, Sieden und Bruch (Stuart et al. 1996, 1053 und 526 nm, 140 fs bis 1 ns).\n- **Zwei Schwellen:** Die Schwelle für eine bleibende Veränderung (*damage*) und die für Materialabtrag (*ablation*) sind bei Quarzglas nicht dasselbe. Erst bei extrem kurzen Pulsen von 7 fs fallen sie zusammen (Chimier et al. 2011, Einzelpulse von 7 bis 300 fs).\n- **Methode:** Ben-Yakar und Byer (2004) bestimmten an Borosilikatglas (200 fs, 780 nm) die Einzelpulsschwelle aus dem Kraterdurchmesser und die Mehrpulsschwelle aus der Kratertiefe. Sie fanden eine Mehrpulsschwelle von etwa 1,7 J/cm² und eine effektive Eindringtiefe von etwa 238 nm.\n- **Quarzglas an der Anlage der AG alp:** Beim Fräsen mit 1030-nm-Femtosekundenpulsen lag die Schwelle ohne Burst bei 0,64 J/cm² (Schwarz et al. 2021). Das ist ein Mehrpulswert auf bereits bearbeiteter Oberfläche, kein Einzelpulswert.",
+            "Für deine Auswertung heißt das: Lege vorher fest, **welche** Schwelle du misst (sichtbare Veränderung oder messbarer Abtrag), und gib Pulszahl, Pulsdauer, Wellenlänge und Methode immer mit an."
+          ]
+        },
+        {
+          "id": "k23.l02.b03",
+          "typ": "formel",
+          "titel": "Zwei Wege zur Schwelle",
+          "sammlung": "Versuche",
+          "latex": "\\begin{gathered}D^2=2w_0^2\\,\\ln\\frac{F_0}{F_\\mathrm{th}(1)},\\\\ h=\\alpha_\\mathrm{eff}^{-1}\\,\\ln\\frac{F_0}{F_\\mathrm{th}(N)}\\end{gathered}",
+          "erklaerung": "Oben die Durchmesser-Methode nach Liu für Einzelpulskrater (K07). Unten die Tiefen-Methode: Die Kratertiefe $h$ wächst linear mit $\\ln F_0$; die Steigung ist die effektive Eindringtiefe $\\alpha_\\mathrm{eff}^{-1}$, der Achsenschnitt die Mehrpulsschwelle (Ben-Yakar und Byer 2004).",
+          "verifiziert": true,
+          "quelle": "benyakar2004"
+        },
+        {
+          "id": "k23.q06",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 12.73,
+          "einheit": "J/cm²",
+          "toleranz": 0.03,
+          "frage": "Zahlenbeispiel: Du misst am Werkstück $E_\\mathrm{p}=20\\,\\mu\\mathrm{J}$ und hast am Si-Wafer $w_0=10\\,\\mu\\mathrm{m}$ bestimmt. Wie groß ist die Spitzenfluenz in J/cm²?",
+          "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)\\approx63{,}7\\cdot20/10^2=12{,}7\\,\\mathrm{J/cm^2}$ (Faustformel aus Labor → Referenz).",
+          "tipp": "$F_0\\,[\\mathrm{J/cm^2}]\\approx63{,}7\\cdot E_\\mathrm{p}\\,[\\mu\\mathrm{J}]/w_0^2\\,[\\mu\\mathrm{m}^2]$"
+        },
+        {
+          "id": "k23.q07",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 12000000000000.0,
+          "einheit": "W/cm²",
+          "toleranz": 0.05,
+          "frage": "Zahlenbeispiel: $F_0=3\\,\\mathrm{J/cm^2}$ bei $\\tau=250\\,\\mathrm{fs}$. Wie groß ist die Spitzenintensität in W/cm² (Näherung $I_0\\approx F_0/\\tau$)?",
+          "erklaerung": "$I_0\\approx3/(250\\cdot10^{-15})=1{,}2\\cdot10^{13}\\,\\mathrm{W/cm^2}$. Das ist die Größenordnung, in der Dielektrika mit Sub-Pikosekundenpulsen abgetragen werden (K01)."
+        },
+        {
+          "id": "k23.l02.b04",
+          "typ": "text",
+          "verifiziert": true,
+          "quelle": "ashkenasi1999",
+          "inhalt": [
+            "**Inkubation in Dielektrika.** In K07 hast du das Potenzgesetz kennengelernt. Es wurde an Metallen aufgestellt. Für Quarzglas zeigen Messungen mit 100-fs-Pulsen bei 800 nm ein anderes Bild: Die Schwelle fällt nach den **ersten** Pulsen stark ab und erreicht dann einen **nahezu konstanten Wert** (Ashkenasi et al. 1999; Rosenfeld et al. 1999). Als Ursache werden laserinduzierte Defekte (Farbzentren) diskutiert, die die Absorption für den nächsten Puls erleichtern.",
+            "Für die Versuchsplanung folgt daraus: Stufe die Pulszahl am unteren Ende fein, zum Beispiel $N=1, 2, 5, 10, 20, 50, 100$. Dort passiert am meisten."
+          ]
+        },
+        {
+          "id": "k23.l02.b05",
+          "typ": "formel",
+          "titel": "Inkubation mit Sättigung (Modell)",
+          "latex": "F_\\mathrm{th}(N)=F_\\infty+\\left(F_1-F_\\infty\\right)e^{-k\\,(N-1)}",
+          "erklaerung": "Exponentielles Sättigungsmodell für Dielektrika: Start bei der Einzelpulsschwelle $F_1$, Grenzwert $F_\\infty$ für viele Pulse, $k$ beschreibt, wie schnell die Schwelle fällt. Die Form wird in der Literatur Ashkenasi et al. (1999) zugeschrieben; Gleichung am Volltext prüfen.",
+          "verifiziert": false,
+          "quelle": "ashkenasi1999"
+        },
+        {
+          "id": "k23.l02.b06",
+          "typ": "merke",
+          "verifiziert": true,
+          "quelle": "chimier2011",
+          "inhalt": "Eine Schwellfluenz ohne Angabe von **Pulszahl, Pulsdauer, Wellenlänge, Kriterium und Methode** ist nicht vergleichbar. Für Quarzglas können zwischen Einzelpuls- und Mehrpulswert leicht Faktoren liegen."
+        },
+        {
+          "id": "k23.q08",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 1.0,
+          "einheit": "J/cm²",
+          "toleranz": 0.1,
+          "plot": {
+            "x": {
+              "label": "N",
+              "min": 1,
+              "max": 40,
+              "sym": "N"
+            },
+            "y": {
+              "label": "F_th / (J/cm²)",
+              "min": 0,
+              "max": 4
+            },
+            "kurven": [
+              {
+                "f": "1+2.5*exp(-0.25*(x-1))",
+                "label": "F_th(N)",
+                "sym": "F"
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 5
+          },
+          "frage": "Schwelle über der Pulszahl für ein Dielektrikum (Zahlenbeispiel). Gegen welchen Wert läuft die Schwelle für viele Pulse? Antwort in J/cm².",
+          "erklaerung": "Die Kurve startet bei $F_1=3{,}5\\,\\mathrm{J/cm^2}$ und sättigt bei $F_\\infty=1{,}0\\,\\mathrm{J/cm^2}$. Schon nach rund zehn Pulsen ist der größte Teil des Abfalls passiert."
+        },
+        {
+          "id": "k23.q09",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": 0,
+          "fest": true,
+          "plot": {
+            "x": {
+              "label": "N",
+              "min": 1,
+              "max": 1000,
+              "log": true,
+              "sym": "N"
+            },
+            "y": {
+              "label": "F_th / (J/cm²)",
+              "min": 0,
+              "max": 4
+            },
+            "kurven": [
+              {
+                "f": "1+2.5*exp(-0.25*(x-1))",
+                "label": "A",
+                "sym": "A"
+              },
+              {
+                "f": "3.5*x^(-0.3)",
+                "label": "B",
+                "sym": "B",
+                "gestrichelt": true
+              }
+            ],
+            "cursor": true,
+            "cursor_start": 100
+          },
+          "frage": "Zwei Modelle für die Schwelle über der Pulszahl (x logarithmisch, Zahlenbeispiel). Welche Kurve passt zu dem, was für Quarzglas berichtet wird?",
+          "optionen": [
+            "Kurve A: schneller Abfall, dann nahezu konstant",
+            "Kurve B: Potenzgesetz, fällt immer weiter",
+            "Keine von beiden, die Schwelle steigt mit der Pulszahl"
+          ],
+          "erklaerung": "Ashkenasi et al. (1999) berichten einen starken Abfall nach den ersten Pulsen und danach ein nahezu konstantes Niveau. Das Potenzgesetz (Kurve B) würde bei 1000 Pulsen eine viel zu niedrige Schwelle vorhersagen. Welches Modell deine Daten besser beschreibt, entscheidest du am Fit."
+        },
+        {
+          "id": "k23.q10",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe Versuch A in die richtige Reihenfolge.",
+          "items": [
+            "Strahlradius am Si-Wafer bestimmen (K22)",
+            "Glasprobe reinigen und einspannen",
+            "Fokuslage auf der Glasoberfläche bestimmen",
+            "Punktmatrix aus Pulsenergie und Pulszahl setzen",
+            "Vorder- und Rückseite mikroskopieren",
+            "D² und Kratertiefe über ln F auswerten"
+          ],
+          "oben": "zuerst",
+          "unten": "zuletzt",
+          "erklaerung": "Die Kalibrierung am Wafer kommt zuerst, weil sie den Strahlradius unabhängig vom Glas liefert. So kannst du später prüfen, ob die Steigung im Glas denselben Radius ergibt."
+        },
+        {
+          "id": "k23.c03",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "ashkenasi1999",
+          "vorne": "Wie verläuft die Inkubation in Quarzglas?",
+          "hinten": "Die Schwelle fällt nach den ersten Pulsen stark und erreicht dann ein nahezu konstantes Niveau (fs-Pulse, Ashkenasi et al. 1999). Pulszahl am unteren Ende fein stufen."
+        },
+        {
+          "id": "k23.c04",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "benyakar2004",
+          "vorne": "Durchmesser-Methode und Tiefen-Methode: was liefert welche?",
+          "hinten": "$D^2$ über $\\ln F_0$: Strahlradius und Einzelpulsschwelle. Kratertiefe $h$ über $\\ln F_0$: effektive Eindringtiefe $\\alpha_\\mathrm{eff}^{-1}$ und Mehrpulsschwelle."
+        }
+      ]
+    },
+    {
+      "id": "k23.l03",
+      "titel": "Versuch B: Flächenabtrag in Quarzglas",
+      "minuten": 16,
+      "blocks": [
+        {
+          "id": "k23.l03.b01",
+          "typ": "text",
+          "verifiziert": true,
+          "quelle": "schwarz2018",
+          "inhalt": [
+            "Taschen, Kanäle und 3D-Formen entstehen durch **schichtweisen Abtrag**: Der Scanner rastert die Fläche Lage für Lage ab (K09). Aus den Arbeiten der AG alp lässt sich ein Grundrezept ablesen:",
+            "1. **Erst aufrauen.** Die polierte Oberfläche wird mit einer ersten Überfahrt aus parallelen Linien aufgeraut. An einer transparenten, glatten Probe würden sich die optischen Eigenschaften sonst während des Abtrags ändern; die aufgeraute Fläche hat eine niedrigere Schwelle. Bei längeren Pulsen treten in diesem Schritt Ausbrüche und Risse auf (Schwarz et al. 2018).\n2. **Gleichmäßig überlappen.** Pulsabstand und Linienabstand gleich wählen. Ab mehr als 50 % Überlapp glätten sich die Fluenzspitzen der einzelnen Gauß-Spots; in der Gruppe hat sich 65 % als Kompromiss aus Oberfläche und Prozesszeit etabliert (Bischoff et al. 2022, nach Schwarz et al.).\n3. **Hatch drehen.** Die Linienrichtung von Lage zu Lage drehen, damit keine Vorzugsrichtung entsteht.\n4. **Fokus nachführen.** Mit wachsender Tiefe wandert der Boden aus dem Fokus; die z-Achse gleicht das pro Lage aus."
+          ]
+        },
+        {
+          "id": "k23.q17",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": 0,
+          "frage": "Warum wird eine polierte, transparente Probe vor dem eigentlichen Flächenabtrag aufgeraut?",
+          "optionen": [
+            "Damit sich die optischen Eigenschaften der Oberfläche während des Abtrags nicht ändern; die aufgeraute Fläche hat eine niedrigere Schwelle",
+            "Damit der Scanner die Probe besser erkennt",
+            "Weil poliertes Glas das Laserlicht vollständig reflektiert"
+          ],
+          "erklaerung": "Ohne diesen Schritt startet die erste Lage auf polierter und alle weiteren auf rauer Fläche, also mit verschiedenen Schwellen. Das Aufrauen macht die Lagen vergleichbar."
+        },
+        {
+          "id": "k23.l03.b02",
+          "typ": "formel",
+          "titel": "Pulsabstand, Abtragrate und Effizienz",
+          "sammlung": "Versuche",
+          "latex": "\\begin{gathered}P_\\mathrm{d}=(1-O)\\,d_\\mathrm{f},\\qquad V_\\mathrm{sp}=\\frac{d\\,H_\\mathrm{d}\\,P_\\mathrm{d}}{N_\\mathrm{l}},\\\\ \\mathrm{MRR}=V_\\mathrm{sp}\\,f,\\qquad \\mathrm{AE}=\\frac{\\mathrm{MRR}}{P_\\mathrm{av}}\\end{gathered}",
+          "erklaerung": "Pulsabstand $P_\\mathrm{d}$ aus Überlapp $O$ und Fokusdurchmesser $d_\\mathrm{f}$. Abtrag pro Puls $V_\\mathrm{sp}$ aus Gesamttiefe $d$, Linienabstand $H_\\mathrm{d}$, Pulsabstand und Zahl der Lagen $N_\\mathrm{l}$. Abtragrate MRR mit der Repetitionsrate $f$, [[abtragseffizienz|Abtragseffizienz]] AE mit der mittleren Leistung am Werkstück, üblich in $\\mathrm{mm^3/(min\\,W)}$. So werten die Arbeiten der AG alp aus.",
+          "verifiziert": true,
+          "quelle": "bischoff2022"
+        },
+        {
+          "id": "k23.q12",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 5.25,
+          "einheit": "µm",
+          "toleranz": 0.02,
+          "frage": "Fokusdurchmesser $d_\\mathrm{f}=15\\,\\mu\\mathrm{m}$, Überlapp 65 %. Wie groß ist der Pulsabstand in µm?",
+          "erklaerung": "$P_\\mathrm{d}=(1-0{,}65)\\cdot15\\,\\mu\\mathrm{m}=5{,}25\\,\\mu\\mathrm{m}$. Der Linienabstand wird gleich groß gewählt."
+        },
+        {
+          "id": "k23.q13",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 262.5,
+          "einheit": "mm/s",
+          "toleranz": 0.02,
+          "frage": "Mit diesem Pulsabstand von $5{,}25\\,\\mu\\mathrm{m}$ und $f=50\\,\\mathrm{kHz}$: Welche Scangeschwindigkeit stellst du ein? Antwort in mm/s.",
+          "erklaerung": "$v=P_\\mathrm{d}\\cdot f=5{,}25\\cdot10^{-3}\\,\\mathrm{mm}\\cdot5\\cdot10^{4}\\,\\mathrm{s^{-1}}=262{,}5\\,\\mathrm{mm/s}$."
+        },
+        {
+          "id": "k23.q14",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 0.331,
+          "einheit": "mm³/(min·W)",
+          "toleranz": 0.04,
+          "frage": "Zahlenbeispiel: Nach $N_\\mathrm{l}=10$ Lagen ist ein Feld $d=20\\,\\mu\\mathrm{m}$ tief. $H_\\mathrm{d}=P_\\mathrm{d}=5{,}25\\,\\mu\\mathrm{m}$, $f=50\\,\\mathrm{kHz}$, $P_\\mathrm{av}=0{,}5\\,\\mathrm{W}$. Wie groß ist die Abtragseffizienz in mm³/(min·W)?",
+          "erklaerung": "$V_\\mathrm{sp}=20\\cdot5{,}25\\cdot5{,}25/10=55{,}1\\,\\mu\\mathrm{m}^3=5{,}51\\cdot10^{-8}\\,\\mathrm{mm^3}$. $\\mathrm{MRR}=5{,}51\\cdot10^{-8}\\cdot5\\cdot10^{4}\\cdot60=0{,}165\\,\\mathrm{mm^3/min}$. $\\mathrm{AE}=0{,}165/0{,}5=0{,}33\\,\\mathrm{mm^3/(min\\,W)}$. Zum Einordnen: Schwarz et al. (2021) berichten für Quarzglas ohne Burst maximal 0,41.",
+          "tipp": "$1\\,\\mu\\mathrm{m}^3=10^{-9}\\,\\mathrm{mm^3}$; pro Minute heißt mal 60."
+        },
+        {
+          "id": "k23.l03.b03",
+          "typ": "text",
+          "titel": "Drei Stellhebel und was die Gruppe dazu gefunden hat",
+          "verifiziert": true,
+          "quelle": "schwarz2021ghz",
+          "inhalt": [
+            "- **Pulsdauer** (230 fs bis 5 ps, Schwarz et al. 2018): Für alle Pulsdauern zeigten sich zwei Abtragsregime über der Fluenz. Längere Pulse trugen effizienter ab, die Oberfläche wurde aber rauer. Die 3D-Geometrien der Arbeit (Axikon, Linsen) wurden mit 230 fs gefertigt.\n- **Burst** (Schwarz et al. 2021, Yang et al. 2023): Mit GHz-Bursts (2,17 GHz) stieg die maximale Effizienz bei zehn Teilpulsen von 0,41 auf 3,05 mm³/(min·W), mit MHz-Bursts (40 MHz) um etwa das 1,6-Fache. Der Preis ist Rauheit: Bei hohen Teilpulszahlen wechselt der Prozess von einem sanften in ein grobes Regime, in dem die Oberfläche eher herausbricht als abgetragen wird. Zwei Teilpulse hielten bei MHz-Bursts und hohen Fluenzen die Rauheit auf dem Niveau ohne Burst.\n- **Wellenlänge** (Yang et al. 2024): Im UV blieb die Effizienz mit steigender Fluenz stabil, im Infraroten sank sie bei hohen Fluenzen. Die Oberfläche war im UV glatter ($R_a$ bis 0,45 µm gegenüber 0,56 µm im Infraroten).",
+            "Angaben aus den Kurzfassungen; die genauen Bedingungen stehen in den Volltexten."
+          ]
+        },
+        {
+          "id": "k23.l03.b04",
+          "typ": "merke",
+          "verifiziert": true,
+          "quelle": "yang2023",
+          "inhalt": "Berichte **Effizienz und Rauheit immer zusammen**. Fast jeder Hebel, der den Abtrag in Quarzglas schneller macht (längere Pulse, mehr Teilpulse), macht die Oberfläche rauer. Dein Versuch B sollte deshalb für jedes Feld Tiefe **und** $R_a$ liefern."
+        },
+        {
+          "id": "k23.q15",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 7.44,
+          "einheit": "",
+          "toleranz": 0.03,
+          "frage": "Schwarz et al. (2021) berichten 3,05 mm³/(min·W) mit zehn Teilpulsen im GHz-Burst gegenüber 0,41 mm³/(min·W) ohne Burst. Um welchen Faktor ist die Effizienz gestiegen?",
+          "erklaerung": "$3{,}05/0{,}41\\approx7{,}4$. Gleichzeitig sank die Schwelle je Teilpuls von 0,64 auf 0,15 J/cm², und die Oberfläche wurde rauer."
+        },
+        {
+          "id": "k23.q16",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem Stellhebel den Befund der AG alp an Quarzglas zu.",
+          "paare": [
+            [
+              "Längere Pulsdauer",
+              "effizienterer Abtrag, aber rauere Oberfläche"
+            ],
+            [
+              "GHz-Burst mit zehn Teilpulsen",
+              "Effizienz etwa 7,4-fach"
+            ],
+            [
+              "MHz-Burst mit zehn Teilpulsen",
+              "Effizienz etwa 1,6-fach"
+            ],
+            [
+              "UV statt Infrarot",
+              "stabile Effizienz bei hoher Fluenz, glattere Oberfläche"
+            ]
+          ],
+          "erklaerung": "Quellen: Schwarz et al. 2018, Schwarz et al. 2021, Yang et al. 2023, Yang et al. 2024. Jede Zahl gilt für die Bedingungen der jeweiligen Arbeit."
+        },
+        {
+          "id": "k23.c05",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "schwarz2018",
+          "vorne": "Grundrezept für Flächenabtrag in Quarzglas?",
+          "hinten": "Erst aufrauen, dann schichtweise abtragen: Pulsabstand gleich Linienabstand (65 % Überlapp), Hatch von Lage zu Lage drehen, Fokus nachführen. Tiefe und Rauheit je Feld messen."
+        },
+        {
+          "id": "k23.c06",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "schwarz2021ghz",
+          "vorne": "Was bringen Bursts beim Abtrag von Quarzglas, und was kosten sie?",
+          "hinten": "Gewinn: höhere Effizienz (GHz, zehn Teilpulse: 0,41 auf 3,05 mm³/(min·W); MHz: etwa 1,6-fach) und niedrigere Schwelle je Teilpuls. Kosten: rauere Oberfläche, bei vielen Teilpulsen grobes Herausbrechen."
+        }
+      ]
+    },
+    {
+      "id": "k23.l04",
+      "titel": "Versuch C: COC abtragen, ohne es zu schmelzen",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k23.l04.b01",
+          "typ": "text",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "inhalt": [
+            "Für COC gibt es eine Arbeit der AG alp, die du fast als Versuchsanleitung lesen kannst (Bischoff et al. 2022, frei zugänglich). Der Aufbau dort:",
+            "- **Laser:** Femtosekundenlaser mit 1030 nm Grundwellenlänge (kürzeste Pulsdauer 220 fs) und dritter Harmonischer bei 343 nm\n- **Optik:** Galvanometer-Scanner mit telezentrischer f-Theta-Linse (100 mm), Fokusdurchmesser rund 15 µm für beide Wellenlängen\n- **Probe:** TOPAS 6017S, Platten 20 mm × 20 mm × 1,5 mm\n- **Strategie:** Felder von 1 mm², zehn Lagen, Hatch je Lage um 100° gedreht, 65 % Puls- und Linienüberlapp, Oberfläche vorher aufgeraut, Fokus pro Lage nachgeführt\n- **Repetitionsrate:** 50 kHz",
+            "Der entscheidende Unterschied zu Quarzglas ist die Wärme. COC leitet sie so schlecht ab, dass sie sich zwischen zwei Pulsen kaum verteilt."
+          ]
+        },
+        {
+          "id": "k23.l04.b02",
+          "typ": "formel",
+          "titel": "Kritische Repetitionsrate",
+          "sammlung": "Versuche",
+          "latex": "f_\\mathrm{cr}=\\frac{D_\\mathrm{th}}{d_\\mathrm{spot}^{\\,2}}",
+          "erklaerung": "Abschätzung: Oberhalb von $f_\\mathrm{cr}$ kann die Wärme zwischen zwei Pulsen nicht mehr aus dem Fleck mit Durchmesser $d_\\mathrm{spot}$ abfließen, [[waermeakkumulation|Wärmeakkumulation]] ist zu erwarten. $D_\\mathrm{th}$ ist die Temperaturleitfähigkeit. Gleiche Idee wie das Kriterium in K07, hier auf den Durchmesser bezogen.",
+          "verifiziert": true,
+          "quelle": "bischoff2022"
+        },
+        {
+          "id": "k23.q18",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 428,
+          "einheit": "Hz",
+          "toleranz": 0.03,
+          "frage": "COC: $D_\\mathrm{th}=9\\cdot10^{-8}\\,\\mathrm{m^2/s}$, Fleckdurchmesser $14{,}5\\,\\mu\\mathrm{m}$. Wie groß ist die kritische Repetitionsrate in Hz?",
+          "erklaerung": "$f_\\mathrm{cr}=9\\cdot10^{-8}/(14{,}5\\cdot10^{-6})^2=9\\cdot10^{-8}/2{,}1\\cdot10^{-10}\\approx428\\,\\mathrm{Hz}$. Gearbeitet wurde bei 50 kHz, also mehr als hundertfach darüber: Wärmeakkumulation prägt den Prozess."
+        },
+        {
+          "id": "k23.q19",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 100,
+          "einheit": "Hz",
+          "toleranz": 0.03,
+          "frage": "Derselbe Werkstoff, aber defokussiert mit $30\\,\\mu\\mathrm{m}$ Fleckdurchmesser. Wie groß ist $f_\\mathrm{cr}$ jetzt in Hz?",
+          "erklaerung": "$f_\\mathrm{cr}=9\\cdot10^{-8}/(30\\cdot10^{-6})^2=100\\,\\mathrm{Hz}$. Ein größerer Fleck kühlt langsamer aus: Die Arbeit beobachtete mit dem defokussierten Strahl Schmelzeffekte schon bei kleineren Fluenzen."
+        },
+        {
+          "id": "k23.l04.b03",
+          "typ": "text",
+          "titel": "Was die Arbeit gefunden hat",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "inhalt": [
+            "- **Abkühlzeit zählt:** Mit schnellen Sprüngen zwischen den Linien (1000 mm/s) verschmolz die Oberfläche großflächig. Mit unidirektionalem Scannen und langsamen Sprüngen (100 mm/s) blieb genug Zeit zum Abkühlen. In der Literatur werden für Polymere deshalb oft niedrige Repetitionsraten verwendet.\n- **Infrarot (1030 nm):** Abtrag ab 1,3 J/cm², größte Tiefe pro Lage 50,7 µm bei 22,4 J/cm², Effizienz 1,5 bis 2 mm³/(min·W), mehr und größere Ablagerungen.\n- **UV (343 nm):** Effizienz steigt mit der Fluenz bis 3,2 mm³/(min·W), bis rund 70 µm pro Lage, Rauheit $R_a$ ab etwa 0,6 µm (Infrarot: 0,8 µm). Mit defokussiertem Strahl (30 µm) setzte der Abtrag schon ab 0,3 J/cm² ein.\n- **Grenze nach oben:** Bei hoher Fluenz bilden sich Grate an den Kanten und Gräben am Fuß der Flanken, die auf Mehrfachreflexion an den Flanken zurückgeführt werden; die Rauheit steigt durch Schmelze sprunghaft.",
+            "Als Demonstrator entstand ein Tesla-Mischer für die Mikrofluidik: 200 µm tief, 15 Lagen bei 4,6 J/cm², ohne Nachfokussieren."
+          ]
+        },
+        {
+          "id": "k23.l04.b04",
+          "typ": "merke",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "inhalt": "Bei Polymeren ist die **Zeit zwischen den Energieeinträgen** ein eigener Prozessparameter: Repetitionsrate, Sprunggeschwindigkeit, Feldgröße und Pausen zwischen den Lagen. Protokolliere sie genauso sorgfältig wie die Fluenz."
+        },
+        {
+          "id": "k23.q20",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": [
+            0,
+            1,
+            3
+          ],
+          "frage": "Dein COC-Feld ist großflächig verschmolzen. Welche Maßnahmen geben dem Werkstoff mehr Zeit zum Abkühlen? (Mehrfachauswahl)",
+          "optionen": [
+            "Repetitionsrate senken",
+            "Unidirektional scannen und langsamer zwischen den Linien springen",
+            "Die Fluenz verdoppeln",
+            "Pausen zwischen den Lagen einfügen oder ein größeres Feld bearbeiten"
+          ],
+          "erklaerung": "Alle drei richtigen Maßnahmen verlängern die Zeit, bis dieselbe Stelle wieder Energie bekommt. Mehr Fluenz bringt mehr Wärme ein und verschlimmert das Bild."
+        },
+        {
+          "id": "k23.q21",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne den Befund aus der COC-Arbeit der Bedingung zu.",
+          "paare": [
+            [
+              "Abtrag setzt bei 1,3 J/cm² ein",
+              "1030 nm, fokussiert"
+            ],
+            [
+              "Abtrag setzt bei 0,3 J/cm² ein",
+              "343 nm, defokussiert auf 30 µm"
+            ],
+            [
+              "Effizienz bis 3,2 mm³/(min·W)",
+              "343 nm, fokussiert"
+            ],
+            [
+              "Großflächiges Verschmelzen",
+              "Sprunggeschwindigkeit 1000 mm/s im kleinen Feld"
+            ]
+          ],
+          "erklaerung": "Alle Werte aus Bischoff et al. 2022 für TOPAS 6017S bei 50 kHz auf vorher aufgerauter Oberfläche."
+        },
+        {
+          "id": "k23.q22",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "COC leitet Wärme sehr ___ ab. Deshalb liegt die kritische Repetitionsrate bei wenigen hundert ___. Im Vergleich zu 1030 nm war der Abtrag mit 343 nm ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "schlecht",
+                "gut"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Hertz",
+                "Megahertz"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "effizienter und glatter",
+                "langsamer und rauer"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Die schlechte Wärmeabfuhr ist der Grund, warum Scanstrategie und Wellenlänge bei COC so viel ausmachen."
+        },
+        {
+          "id": "k23.c07",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "vorne": "Kritische Repetitionsrate: Formel und Wert für COC?",
+          "hinten": "$f_\\mathrm{cr}=D_\\mathrm{th}/d_\\mathrm{spot}^2$. Für COC ($9\\cdot10^{-8}\\,\\mathrm{m^2/s}$) und einen 14,5-µm-Fleck etwa 428 Hz. Darüber ist Wärmeakkumulation zu erwarten."
+        },
+        {
+          "id": "k23.c08",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "vorne": "UV oder Infrarot für COC?",
+          "hinten": "UV (343 nm): höhere Effizienz (bis 3,2 gegenüber 1,5 bis 2 mm³/(min·W)), glattere Flächen, weniger Ablagerungen, größere Rayleighlänge. Infrarot: mehr Pulsenergie verfügbar, kein Harmonischen-Modul nötig."
+        }
+      ]
+    },
+    {
+      "id": "k23.l05",
+      "titel": "Fehlerbilder lesen und richtig messen",
+      "minuten": 15,
+      "blocks": [
+        {
+          "id": "k23.l05.b01",
+          "typ": "text",
+          "titel": "Fehlerbilder in Glas",
+          "verifiziert": true,
+          "quelle": "franz2025",
+          "inhalt": [
+            "Wenn du die ersten Glasproben unter dem Mikroskop hast, hilft eine Liste dessen, was andere schon gesehen haben:",
+            "- **Ausbrüche und Risse** beim Aufrauen und Abtragen, vor allem mit längeren Pulsen (Schwarz et al. 2018).\n- **Grobes Herausbrechen** statt Abtrag bei Bursts mit vielen Teilpulsen (Schwarz et al. 2021).\n- **Mikrorisse und [[rueckseitenabtrag|Rückseitenabtrag]]** beim Durchbohren von Borofloat 33 mit Femtosekundenpulsen; mit 5 ps gelang es rissfrei (Franz et al. 2025).\n- **[[lipss|LIPSS]]** am Boden, auf Quarzglas parallel zur Polarisation ausgerichtet (Höhm et al. 2012). Sie verraten dir die Polarisationsrichtung und dass du nahe der Schwelle arbeitest.\n- **Sinkende Effizienz** im Infraroten bei hoher Fluenz (Yang et al. 2024).",
+            "Beachte den scheinbaren Widerspruch: Beim Flächenabtrag in Quarzglas waren kurze Pulse die saubereren, beim Durchbohren von Borofloat die längeren. Werkstoff, Geometrie und Strategie entscheiden mit. Genau solche Widersprüche sind Ansatzpunkte für Forschungsfragen."
+          ]
+        },
+        {
+          "id": "k23.q26",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": 1,
+          "frage": "Was zeigte die TGV-Arbeit der AG alp (Franz et al. 2025) zum Einfluss der Pulsdauer in Borofloat 33?",
+          "optionen": [
+            "Femtosekundenpulse waren in jeder Hinsicht besser",
+            "Femtosekundenpulse gaben den kleinsten Taper, aber Mikrorisse und Rückseitenabtrag; mit 5 ps gelangen rissfreie Löcher",
+            "Die Pulsdauer hatte keinen Einfluss"
+          ],
+          "erklaerung": "6 ± 0,3° Taper mit Femtosekundenpulsen gegenüber 7,3 ± 0,1° mit 5 ps, dafür ohne Risse. Kürzer ist nicht automatisch besser: Es kommt auf die Zielgröße an."
+        },
+        {
+          "id": "k23.q27",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": 2,
+          "frage": "Wie liegen die groben LIPSS (LSFL) auf Quarzglas relativ zur Polarisation?",
+          "optionen": [
+            "Senkrecht, wie bei den meisten Metallen",
+            "Unter 45°",
+            "Parallel, anders als bei den meisten anderen Werkstoffen"
+          ],
+          "erklaerung": "Höhm et al. (2012) erklären die parallele Ausrichtung auf Quarzglas mit einem Sipe-Drude-Modell, das die Anregung freier Ladungsträger berücksichtigt."
+        },
+        {
+          "id": "k23.l05.b02",
+          "typ": "text",
+          "verifiziert": true,
+          "quelle": "milam1998",
+          "inhalt": [
+            "**Fokus im Glas: [[selbstfokussierung|Selbstfokussierung]].** Sobald du durch das Glas hindurch oder ins Volumen fokussierst (Rückseitenabtrag, Volumenmodifikation, TGV), läuft der Puls durch Material. Dort hängt der Brechungsindex von der Intensität ab: $n=n_0+n_2I$. Für Quarzglas wird $n_2\\approx2{,}74\\cdot10^{-16}\\,\\mathrm{cm^2/W}$ bei 1053 nm empfohlen (Milam 1998). Oberhalb einer **kritischen Leistung** $P_\\mathrm{cr}$ gewinnt die Selbstfokussierung gegen die Beugung, und der Fokus liegt nicht mehr dort, wo die Optik ihn hinrechnet."
+          ]
+        },
+        {
+          "id": "k23.l05.b03",
+          "typ": "formel",
+          "titel": "Kritische Leistung der Selbstfokussierung",
+          "sammlung": "Versuche",
+          "latex": "P_\\mathrm{cr}=\\frac{3{,}77\\,\\lambda^2}{8\\pi\\,n_0\\,n_2}",
+          "erklaerung": "Kritische Leistung für einen Gauß-Strahl (in der Literatur Marburger 1975 zugeschrieben; Vorfaktor am Volltext prüfen). Sie hängt nur von Wellenlänge und Werkstoff ab, nicht von der Fokussierung. $n_2$ in $\\mathrm{m^2/W}$ einsetzen: $1\\,\\mathrm{cm^2/W}=10^{-4}\\,\\mathrm{m^2/W}$.",
+          "verifiziert": false,
+          "quelle": "marburger1975"
+        },
+        {
+          "id": "k23.q23",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 4.0,
+          "einheit": "MW",
+          "toleranz": 0.05,
+          "frage": "Berechne $P_\\mathrm{cr}$ für Quarzglas bei $\\lambda=1030\\,\\mathrm{nm}$ mit $n_0\\approx1{,}45$ und $n_2=2{,}74\\cdot10^{-20}\\,\\mathrm{m^2/W}$. Antwort in MW.",
+          "erklaerung": "$P_\\mathrm{cr}=3{,}77\\cdot(1{,}03\\cdot10^{-6})^2/(8\\pi\\cdot1{,}45\\cdot2{,}74\\cdot10^{-20})=4{,}0\\cdot10^{-12}/1{,}0\\cdot10^{-18}\\approx4{,}0\\,\\mathrm{MW}$.",
+          "tipp": "Zähler: $3{,}77\\cdot1{,}06\\cdot10^{-12}$. Nenner: $8\\pi\\approx25{,}1$."
+        },
+        {
+          "id": "k23.q24",
+          "typ": "quiz",
+          "art": "zahl",
+          "antwort": 1.0,
+          "einheit": "µJ",
+          "toleranz": 0.05,
+          "frage": "Ab welcher Pulsenergie erreicht ein Puls mit $\\tau=250\\,\\mathrm{fs}$ diese $4{,}0\\,\\mathrm{MW}$ (Näherung $P\\approx E_\\mathrm{p}/\\tau$)? Antwort in µJ.",
+          "erklaerung": "$E_\\mathrm{p}=4{,}0\\cdot10^{6}\\,\\mathrm{W}\\cdot250\\cdot10^{-15}\\,\\mathrm{s}=1{,}0\\,\\mu\\mathrm{J}$. Schon ein Mikrojoule reicht. Beim Abtrag an der Oberfläche läuft der Puls durch Luft und es stört nicht; sobald du durch Glas fokussierst, musst du damit rechnen."
+        },
+        {
+          "id": "k23.l05.b04",
+          "typ": "text",
+          "titel": "Fehlerbilder in COC",
+          "verifiziert": true,
+          "quelle": "bischoff2022",
+          "inhalt": [
+            "- **Großflächiges Verschmelzen:** zu wenig Abkühlzeit zwischen Linien oder Lagen.\n- **Verrundete Strukturen und sprunghaft steigende Rauheit:** Schmelze bei hoher Fluenz.\n- **Gräben am Fuß der Flanken und Grate an den Kanten:** hohe Fluenz, auf Mehrfachreflexion an den Flanken zurückgeführt.\n- **Ablagerungen:** mit 1030 nm mehr und größer als mit 343 nm.\n- **Leichte Verfärbung** an den Kanten feiner Strukturen. Für andere Cyclo-Olefin-Polymere wird in der Literatur eine deutliche Dunkelfärbung durch Oxidation und Dehydrierung beschrieben (Suriano et al. 2011, Kurzfassung)."
+          ]
+        },
+        {
+          "id": "k23.q25",
+          "typ": "quiz",
+          "art": "zuordnung",
+          "frage": "Ordne dem Fehlerbild die wahrscheinlichste Ursache zu.",
+          "paare": [
+            [
+              "COC-Feld großflächig verschmolzen",
+              "zu wenig Abkühlzeit zwischen den Linien"
+            ],
+            [
+              "Gräben am Fuß der Flanken",
+              "Mehrfachreflexion bei hoher Fluenz"
+            ],
+            [
+              "Glasoberfläche bricht grob heraus",
+              "Burst mit vielen Teilpulsen"
+            ],
+            [
+              "Schaden an der Probenrückseite",
+              "transmittierte Pulsenergie"
+            ],
+            [
+              "Feine Riefen parallel zur Polarisation auf Quarzglas",
+              "LIPSS nahe der Schwelle"
+            ]
+          ],
+          "erklaerung": "Die Zuordnungen stammen aus den zitierten Arbeiten. An deiner Anlage sind sie Hypothesen: Ändere jeweils nur einen Parameter und prüfe, ob das Fehlerbild verschwindet."
+        },
+        {
+          "id": "k23.l05.b05",
+          "typ": "text",
+          "titel": "Messen an transparenten Proben",
+          "verifiziert": false,
+          "quelle": "Vorgehen aus Bischoff et al. 2022, ergänzt um gängige Praxis (ungeprüft)",
+          "inhalt": [
+            "- **Reinigen:** Vor dem Messen ins Ultraschallbad (in der COC-Arbeit etwa zehn Minuten), sonst misst du lose Partikel mit.\n- **Laser-Scanning-Mikroskop:** Tiefe über eine Fläche mitteln, Rauheit auf einer kleineren Fläche am Boden bestimmen. Bei sehr tiefen Taschen kommt das Mikroskop nicht mehr an den Boden; in der COC-Arbeit wurden die Proben dafür nach der Tiefenmessung abgeschliffen.\n- **Rasterelektronenmikroskop:** Glas und COC sind Isolatoren und werden vorher leitfähig besputtert.\n- **Spannungsoptik:** Glasproben zwischen gekreuzten Polarisatoren zeigen Eigenspannungen als Aufhellung. Ein schneller Test, bevor Risse sichtbar werden.\n- **Beide Seiten:** Bei Glas gehört die Rückseite immer zum Messprogramm."
+          ]
+        },
+        {
+          "id": "k23.c09",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "franz2025",
+          "vorne": "Typische Fehlerbilder in Glas und in COC?",
+          "hinten": "**Glas:** Ausbrüche und Risse, grobes Herausbrechen bei Bursts, Rückseitenabtrag, LIPSS. **COC:** Verschmelzen, verrundete Strukturen, Gräben und Grate bei hoher Fluenz, Ablagerungen, Verfärbung."
+        },
+        {
+          "id": "k23.c10",
+          "typ": "karte",
+          "verifiziert": false,
+          "quelle": "marburger1975",
+          "vorne": "Wann musst du mit Selbstfokussierung rechnen?",
+          "hinten": "Wenn der Puls durch das Glas läuft und seine Spitzenleistung über $P_\\mathrm{cr}=3{,}77\\lambda^2/(8\\pi n_0n_2)$ liegt. Für Quarzglas bei 1030 nm rechnerisch rund 4 MW, bei 250 fs also schon ab etwa 1 µJ."
+        }
+      ]
+    },
+    {
+      "id": "k23.l06",
+      "titel": "Dein Plan für die ersten sechs Wochen",
+      "minuten": 12,
+      "blocks": [
+        {
+          "id": "k23.l06.b01",
+          "typ": "text",
+          "titel": "Fragen für die erste Woche",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage",
+          "inhalt": [
+            "Dieses Kapitel kennt die Literatur, aber nicht euer Labor. Kläre deshalb früh, am besten mit einer vorbereiteten Liste:",
+            "- **Anlage:** Welche Laser stehen zur Verfügung? Wellenlängen (1030, 515, 343 nm), Pulsdauerbereich, Repetitionsrate, Burst-Modus?\n- **Optik:** Welche Brennweiten und Fokusdurchmesser? Gibt es eine Strahlkamera oder nutzt die Gruppe die Liu-Methode?\n- **Proben:** Welches Glas genau (Quarzglas-Sorte, Borofloat 33 oder ein anderes), welche Dicke, poliert oder nicht? Welcher COC-Typ?\n- **Rezepte:** Gibt es bewährte Parametersätze der Gruppe, etwa für das Aufrauen und den Flächenabtrag?\n- **Messtechnik:** Welche Mikroskope (LSM, REM), wer weist ein, wie werden Daten abgelegt?\n- **Sicherheit:** Unterweisung, Laserschutzbrille je Wellenlänge, Absaugung. Abtragsprodukte von Glas und Polymer sind Feinstaub."
+          ]
+        },
+        {
+          "id": "k23.q29",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": 0,
+          "frage": "Welche Frage solltest du vor dem ersten Glasversuch unbedingt geklärt haben?",
+          "optionen": [
+            "Welche Glassorte und Dicke die Proben haben",
+            "Welche Farbe das Laborbuch hat",
+            "Wie viele Zitate das wichtigste Paper hat"
+          ],
+          "erklaerung": "Quarzglas und Borosilikatglas verhalten sich thermisch sehr verschieden, und die Dicke entscheidet, ob Energie an der Rückseite Schaden anrichtet. Ohne diese Angaben sind deine Ergebnisse nicht einzuordnen."
+        },
+        {
+          "id": "k23.l06.b02",
+          "typ": "text",
+          "titel": "Sechs Wochen, sechs Ergebnisse",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage",
+          "inhalt": [
+            "1. **Woche 1:** Unterweisung, Anlage kennenlernen, Fragenliste klären, die ersten zwei Arbeiten der Leseliste lesen.\n2. **Woche 2:** Kalibrierung: Leistung am Werkstück, Fokuslage, Strahlradius am Silizium-Wafer (K22, Versuch 1).\n3. **Woche 3:** Versuch A: Schwelle und Inkubation an Quarzglas.\n4. **Woche 4:** Versuch B: Flächenabtrag in Quarzglas, Fluenzreihe mit Tiefe, Effizienz und Rauheit.\n5. **Woche 5:** Versuch C: COC, Variation von Fluenz und Abkühlzeit.\n6. **Woche 6:** Auswerten, mit den Arbeiten der Gruppe vergleichen, in zehn Minuten vorstellen, nächste Fragen festhalten.",
+            "Der Plan ist ein Vorschlag. Wenn die Proben oder die Anlagenzeit etwas anderes vorgeben, tausche die Wochen, aber behalte die Reihenfolge Kalibrieren, Schwelle, Fläche bei."
+          ]
+        },
+        {
+          "id": "k23.q28",
+          "typ": "quiz",
+          "art": "sortieren",
+          "frage": "Bringe die Bausteine der ersten Wochen in eine sinnvolle Reihenfolge.",
+          "items": [
+            "Unterweisung und Fragenliste",
+            "Kalibrierung am Silizium-Wafer",
+            "Schwelle an Quarzglas",
+            "Flächenabtrag in Quarzglas",
+            "Abtrag von COC",
+            "Auswerten und in der Gruppe vorstellen"
+          ],
+          "oben": "zuerst",
+          "unten": "zuletzt",
+          "erklaerung": "Jeder Schritt liefert, was der nächste braucht: Strahlradius, dann Schwelle, dann Fluenzbereich für die Fläche."
+        },
+        {
+          "id": "k23.l06.b03",
+          "typ": "text",
+          "titel": "Leseliste in sinnvoller Reihenfolge",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage",
+          "inhalt": [
+            "1. Schwarz et al. 2018: Pulsdauer und schichtweiser Abtrag von Quarzglas. Kurz, erklärt das Grundrezept.\n2. Schwarz et al. 2021: GHz-Bursts in Quarzglas. Vier Seiten, klare Aussage.\n3. Yang et al. 2023 und 2024: MHz-Bursts sowie UV gegen Infrarot in Quarzglas.\n4. Bischoff et al. 2022: COC mit UV-Femtosekundenpulsen. Frei zugänglich, ausführlicher Methodenteil.\n5. Franz et al. 2025: TGVs in Borofloat 33. Die Brücke zum Packaging.\n6. Zur Methode: Ben-Yakar und Byer 2004 (Schwellen aus Durchmesser und Tiefe) und Ashkenasi et al. 1999 (Inkubation in Dielektrika).",
+            "Trage jede Arbeit in deine Literaturmatrix ein (K21): Werkstoff, Wellenlänge, Pulsdauer, Repetitionsrate, Fokus, Strategie, Zielgröße, Ergebnis, offene Punkte. Die bibliografischen Angaben stehen unter „Weiterlesen“."
+          ]
+        },
+        {
+          "id": "k23.l06.b04",
+          "typ": "merke",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage",
+          "inhalt": "Das Ziel der ersten Wochen ist kein neues Ergebnis, sondern **Reproduzierbarkeit**: Du kannst ein veröffentlichtes Ergebnis der Gruppe an der Anlage nachstellen und erklären, warum deine Zahlen passen oder abweichen. Darauf baut alles Weitere auf."
+        },
+        {
+          "id": "k23.q30",
+          "typ": "quiz",
+          "art": "luecke",
+          "frage": "Ergänze.",
+          "text": "Zuerst wird ___, dann die Schwelle gemessen, dann die Fläche abgetragen. Ein Ergebnis der Gruppe zu ___ ist das Ziel der ersten Wochen. Jede gelesene Arbeit kommt in die ___.",
+          "luecken": [
+            {
+              "optionen": [
+                "kalibriert",
+                "publiziert"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "reproduzieren",
+                "übertreffen"
+              ],
+              "richtig": 0
+            },
+            {
+              "optionen": [
+                "Literaturmatrix",
+                "Schublade"
+              ],
+              "richtig": 0
+            }
+          ],
+          "erklaerung": "Kalibrieren, reproduzieren, dokumentieren: Damit hast du nach sechs Wochen eine belastbare Grundlage."
+        },
+        {
+          "id": "k23.q31",
+          "typ": "quiz",
+          "art": "multiple-choice",
+          "richtig": 1,
+          "frage": "Dein Ergebnis weicht deutlich von einer veröffentlichten Zahl der Gruppe ab. Was ist der beste nächste Schritt?",
+          "optionen": [
+            "Die Abweichung ignorieren und weitermachen",
+            "Die Bedingungen vergleichen: Fluenz am Werkstück, Fokus, Pulsdauer, Strategie, Probe",
+            "Die Messpunkte weglassen, die nicht passen"
+          ],
+          "erklaerung": "Eine Abweichung ist eine Information. Meist steckt eine Bedingung dahinter, die anders ist als gedacht, und genau das zu finden trainiert den Blick für den Prozess."
+        },
+        {
+          "id": "k23.c11",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage",
+          "vorne": "Welche Fragen klärst du in der ersten Woche im Labor?",
+          "hinten": "Laser (Wellenlängen, Pulsdauer, Repetitionsrate, Burst), Optik und Fokus, Proben (Glassorte, Dicke, COC-Typ), Rezepte der Gruppe, Messtechnik und Datenablage, Sicherheit."
+        },
+        {
+          "id": "k23.c12",
+          "typ": "karte",
+          "verifiziert": true,
+          "quelle": "Didaktischer Leitfaden (Versuchsplanung), keine Fachaussage",
+          "vorne": "Drei Einstiegsversuche an Quarzglas und COC?",
+          "hinten": "**A:** Schwelle und Inkubation an Quarzglas. **B:** Flächenabtrag in Quarzglas mit Tiefe, Effizienz und Rauheit. **C:** COC mit Variation von Fluenz und Abkühlzeit. Vorher: Kalibrierung am Si-Wafer."
+        },
+        {
+          "id": "k23.l06.b05",
+          "typ": "quelle",
+          "refs": [
+            "schwarz2018",
+            "schwarz2021ghz",
+            "yang2023",
+            "yang2024",
+            "bischoff2022",
+            "franz2025",
+            "benyakar2004",
+            "ashkenasi1999"
+          ]
+        }
+      ]
+    }
+  ]
+}

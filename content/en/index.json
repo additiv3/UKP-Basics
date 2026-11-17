@@ -148,6 +148,11 @@
       "titel": "Scientific English for photonics",
       "kurz": "Numbers aloud, describing setups and graphs, abstracts, conversations",
       "bezug": "Papers, conferences and talks with partners are in English. This chapter runs alongside all stages."
+    },
+    "k23": {
+      "titel": "Getting started: first studies on fused silica and COC",
+      "kurz": "Profile of both materials, threshold and incubation, area ablation, heat in COC, defect patterns, six-week plan",
+      "bezug": "Your first own studies: fused silica and COC, built on the publications of the AG alp on exactly these materials."
     }
   }
 }

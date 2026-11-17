@@ -267,6 +267,17 @@
       ]
     },
     {
+      "id": "k23",
+      "datei": "chapters/23-quarzglas-coc.json",
+      "stufe": "F",
+      "titel": "Einstieg: erste Studien an Quarzglas und COC",
+      "kurz": "Steckbrief beider Werkstoffe, Schwelle und Inkubation, Flächenabtrag, Wärme in COC, Fehlerbilder, Sechs-Wochen-Plan",
+      "bezug": "Deine ersten eigenen Studien: Quarzglas und COC, aufgebaut auf den Veröffentlichungen der AG alp zu genau diesen Werkstoffen.",
+      "voraussetzungen": [
+        "k22"
+      ]
+    },
+    {
       "id": "k20",
       "datei": "chapters/20-qualitaet-forschung.json",
       "stufe": "G",

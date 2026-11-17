@@ -1,0 +1,541 @@
+{
+  "titel": "Getting started: first studies on fused silica and COC",
+  "einleitung": "Your first own studies will probably run on two transparent materials: fused silica and the plastic COC. Both absorb only nonlinearly but behave in opposite ways in the process. The chapter builds on the publications of the AG alp on exactly these materials and turns them into three starter experiments, typical defect patterns and a plan for the first six weeks. Numbers from the literature carry their source, numbers in calculation exercises are examples. Which samples, lasers and wavelengths are actually available in the lab is something you clarify in the first week.",
+  "ziele": [
+    "Classify fused silica and COC by band gap, heat balance and main risk in the ultrashort pulse process",
+    "Plan a threshold measurement on a transparent material and evaluate incubation with saturation",
+    "Set up area ablation in fused silica and assess ablation efficiency and roughness together",
+    "Estimate heat accumulation in COC with the critical repetition rate and limit it via the strategy",
+    "Interpret defect patterns in glass and polymer and draw up a plan for the first six weeks"
+  ],
+  "lektionen": {
+    "k23.l01": "Two transparent materials, two worlds",
+    "k23.l02": "Experiment A: threshold and incubation on fused silica",
+    "k23.l03": "Experiment B: area ablation in fused silica",
+    "k23.l04": "Experiment C: ablating COC without melting it",
+    "k23.l05": "Reading defect patterns and measuring correctly",
+    "k23.l06": "Your plan for the first six weeks"
+  },
+  "blocks": {
+    "k23.l01.b01": {
+      "inhalt": [
+        "Fused silica and [[coc|COC]] are a good starting point because they pose the same basic question in two ways: how do you get energy into a material that actually transmits the laser light? At 1030 nm both absorb only nonlinearly (K06). What happens afterwards is opposite: fused silica is hard, brittle and temperature resistant, COC is soft, tough and heat sensitive.",
+        "The second reason: the AG alp has published on both materials. So you do not start from zero but can reproduce known results on the machine:",
+        "- **Fused silica:** layer-wise ablation with pulse durations from 230 fs to 5 ps (Schwarz et al. 2018), GHz and MHz bursts (Schwarz et al. 2021, Yang et al. 2023), UV versus infrared (Yang et al. 2024), [[rueckseitenabtrag|backside ablation]] (Schwarz et al. 2021) and [[lipss|LIPSS]] (Schwarz et al. 2016).\n- **COC:** ablation with UV femtosecond pulses (Bischoff et al. 2022), welding (Roth et al. 2017), waveguides and Bragg gratings in the volume (Roth et al. 2020).\n- **Borosilicate glass (Borofloat 33):** through-glass vias for glass core packaging (Franz et al. 2025, K18)."
+      ]
+    },
+    "k23.q05": {
+      "frage": "Why are fused silica and COC well suited for getting started in the AG alp?",
+      "optionen": [
+        "Because both absorb strongly and linearly at 1030 nm",
+        "Because the group has published results on both that you can reproduce",
+        "Because no heat accumulation occurs in either"
+      ],
+      "erklaerung": "Reproducing a known result is the fastest way to check machine, measurement chain and evaluation. If your result deviates, you learn more from that than from a new parameter field."
+    },
+    "k23.l01.b02": {
+      "titel": "Profile",
+      "inhalt": [
+        "**[[quarzglas|Fused silica]]**",
+        "- amorphous, very pure SiO₂\n- band gap about 9 eV (common literature value)\n- softening temperature around 1600 °C, thermal conductivity about 1.38 W/(m·K) (data sheet values for synthetic fused silica)\n- brittle: the risk is cracks and chipping",
+        "**[[coc|COC]]** (in the AG alp paper: TOPAS 6017S, plates 1.5 mm thick)",
+        "- amorphous thermoplastic, crystal clear\n- band gap about 4 eV (determined from a transmission measurement)\n- [[glasuebergangstemperatur|glass transition temperature]] 175 °C\n- thermal diffusivity $9\\cdot10^{-8}\\,\\mathrm{m^2/s}$, so heat is removed very slowly\n- tough and meltable: the risk is melt, rounding and discoloration",
+        "For comparison **[[borosilikatglas|Borofloat 33]]**, the glass of the TGV experiments: thermal expansion $3.25\\cdot10^{-6}\\,\\mathrm{K^{-1}}$ and transformation temperature 525 °C according to the data sheet. So it tolerates heat much less well than fused silica. Always check the data sheet of the actual grade for your samples."
+      ]
+    },
+    "k23.q04": {
+      "frage": "Match each material with its main risk in the ultrashort pulse process.",
+      "paare": [
+        [
+          "Fused silica",
+          "Cracks and chipping, very temperature resistant"
+        ],
+        [
+          "COC",
+          "Melt and discoloration from heat accumulation"
+        ],
+        [
+          "Borofloat 33",
+          "Microcracks from thermal shock, thin sheets for TGVs"
+        ],
+        [
+          "Silicon",
+          "Melt rims, absorbs weakly and linearly at 1030 nm"
+        ]
+      ],
+      "erklaerung": "These are expectations for your first micrographs. Whether they appear like this on your machine is shown by the experiment."
+    },
+    "k23.l01.b03": {
+      "titel": "Minimum number of photons",
+      "erklaerung": "Smallest whole number of photons whose combined energy bridges the band gap $E_\\mathrm{g}$ (K06). With each harmonic (515 nm, 343 nm) $n_\\mathrm{min}$ falls and absorption becomes more likely."
+    },
+    "k23.l01.b04": {
+      "inhalt": "Both materials are transparent at 1030 nm, and both can still be ablated. The difference is not in the absorption but in what the deposited energy does: in fused silica the opponent is **stress and cracks**, in COC it is **heat**."
+    },
+    "k23.q01": {
+      "frage": "How many photons are needed at least at $1030\\,\\mathrm{nm}$ to lift an electron into the conduction band of fused silica ($E_\\mathrm{g}\\approx9\\,\\mathrm{eV}$, literature value)?",
+      "erklaerung": "$h\\nu=1240/1030=1.20\\,\\mathrm{eV}$, $9/1.20=7.5$, so 8 photons. At $343\\,\\mathrm{nm}$ ($3.6\\,\\mathrm{eV}$) it would only be 3.",
+      "tipp": "Round up: there are no half photons."
+    },
+    "k23.q02": {
+      "frage": "For COC a band gap of about $4\\,\\mathrm{eV}$ was determined. How many photons are needed at least at $1030\\,\\mathrm{nm}$ by calculation?",
+      "erklaerung": "$4/1.20=3.3$, so 4 photons. Careful when reading: the paper by Bischoff et al. (2022) gives the number six for 1030 nm. From the band gap stated there, four follow by calculation. Note such points and clarify them in the group; recalculating papers critically is part of the craft."
+    },
+    "k23.q03": {
+      "frage": "And at the third harmonic, $343\\,\\mathrm{nm}$: how many photons does COC ($E_\\mathrm{g}\\approx4\\,\\mathrm{eV}$) need at least?",
+      "erklaerung": "$h\\nu=1240/343=3.6\\,\\mathrm{eV}$, $4/3.6=1.1$, so 2 photons. The step from four to two photons is one reason why UV ablation of COC turned out more efficient and cleaner."
+    },
+    "k23.c01": {
+      "vorne": "Fused silica versus COC: same absorption, different opponent?",
+      "hinten": "Both absorb only nonlinearly at 1030 nm. Fused silica: brittle and temperature resistant, the opponents are stress and cracks. COC: glass transition at 175 °C and very slow heat removal, the opponent is heat accumulation."
+    },
+    "k23.c02": {
+      "vorne": "How do you calculate the minimum number of photons?",
+      "hinten": "$n_\\mathrm{min}=\\lceil E_\\mathrm{g}/h\\nu\\rceil$ with $h\\nu\\,[\\mathrm{eV}]\\approx1240/\\lambda\\,[\\mathrm{nm}]$. A shorter wavelength means fewer photons and stronger absorption."
+    },
+    "k23.l02.b01": {
+      "inhalt": [
+        "Experiment A is the threshold measurement from K22, transferred to a transparent material. You determined the beam radius beforehand on the silicon wafer (K22, experiment 1). With glass there are four additional things to be prepared for:",
+        "1. **Finding the focal position:** the surface of a polished, clear sample is hardly visible. A focus series directly on the sample (K14) or touching off on a roughened corner has proved useful.\n2. **Shallow craters:** single-pulse craters in glass are often only a few tens to a hundred nanometres deep and hard to see in a light microscope. Plan for the laser scanning microscope or an atomic force microscope.\n3. **The rear side:** most of the pulse energy passes through the sample. After each experiment also check the rear side and the support for damage ([[rueckseitenabtrag|backside ablation]]).\n4. **Cleanliness:** dust and fingerprints absorb linearly and lower the threshold locally. Clean the samples and only touch them at the edge.",
+        "Formulate these as hypotheses and check them against your first images."
+      ]
+    },
+    "k23.q11": {
+      "frage": "What do you have to watch out for in particular when measuring the threshold on a clear glass sample? (Multiple choice)",
+      "optionen": [
+        "Check rear side and support for damage",
+        "Very shallow craters: plan a suitable measurement method",
+        "Magnetise the sample before the experiment",
+        "Clean surface, because dirt absorbs linearly"
+      ],
+      "erklaerung": "Transparency brings three error sources of its own: energy arrives at the rear side, craters are shallow, and any absorbing contamination distorts the threshold."
+    },
+    "k23.l02.b02": {
+      "titel": "What the literature says",
+      "inhalt": [
+        "- **Pulse duration:** below about 10 ps the threshold of dielectrics departs from the square-root scaling of long pulses; damage then occurs by ablation instead of melting, boiling and fracture (Stuart et al. 1996, 1053 and 526 nm, 140 fs to 1 ns).\n- **Two thresholds:** the threshold for a permanent change (*damage*) and the one for material removal (*ablation*) are not the same for fused silica. Only for extremely short pulses of 7 fs do they coincide (Chimier et al. 2011, single pulses from 7 to 300 fs).\n- **Method:** Ben-Yakar and Byer (2004) determined on borosilicate glass (200 fs, 780 nm) the single-pulse threshold from the crater diameter and the multi-pulse threshold from the crater depth. They found a multi-pulse threshold of about 1.7 J/cm² and an effective penetration depth of about 238 nm.\n- **Fused silica on the AG alp machine:** when milling with 1030 nm femtosecond pulses the threshold without burst was 0.64 J/cm² (Schwarz et al. 2021). That is a multi-pulse value on an already processed surface, not a single-pulse value.",
+        "For your evaluation this means: decide beforehand **which** threshold you measure (visible change or measurable removal), and always state pulse number, pulse duration, wavelength and method."
+      ]
+    },
+    "k23.l02.b03": {
+      "titel": "Two routes to the threshold",
+      "sammlung": "Experiments",
+      "erklaerung": "Top: the diameter method after Liu for single-pulse craters (K07). Bottom: the depth method: the crater depth $h$ grows linearly with $\\ln F_0$; the slope is the effective penetration depth $\\alpha_\\mathrm{eff}^{-1}$, the axis intercept the multi-pulse threshold (Ben-Yakar and Byer 2004)."
+    },
+    "k23.q06": {
+      "frage": "Numerical example: you measure $E_\\mathrm{p}=20\\,\\mu\\mathrm{J}$ on the workpiece and determined $w_0=10\\,\\mu\\mathrm{m}$ on the Si wafer. What is the peak fluence in J/cm²?",
+      "erklaerung": "$F_0=2E_\\mathrm{p}/(\\pi w_0^2)\\approx63.7\\cdot20/10^2=12.7\\,\\mathrm{J/cm^2}$ (rule of thumb from Lab → Reference).",
+      "tipp": "$F_0\\,[\\mathrm{J/cm^2}]\\approx63.7\\cdot E_\\mathrm{p}\\,[\\mu\\mathrm{J}]/w_0^2\\,[\\mu\\mathrm{m}^2]$"
+    },
+    "k23.q07": {
+      "frage": "Numerical example: $F_0=3\\,\\mathrm{J/cm^2}$ at $\\tau=250\\,\\mathrm{fs}$. What is the peak intensity in W/cm² (approximation $I_0\\approx F_0/\\tau$)?",
+      "erklaerung": "$I_0\\approx3/(250\\cdot10^{-15})=1.2\\cdot10^{13}\\,\\mathrm{W/cm^2}$. This is the order of magnitude at which dielectrics are ablated with sub-picosecond pulses (K01)."
+    },
+    "k23.l02.b04": {
+      "inhalt": [
+        "**Incubation in dielectrics.** In K07 you met the power law. It was established on metals. For fused silica, measurements with 100 fs pulses at 800 nm show a different picture: the threshold drops strongly after the **first** pulses and then reaches an **almost constant value** (Ashkenasi et al. 1999; Rosenfeld et al. 1999). Laser-induced defects (colour centres), which make absorption easier for the next pulse, are discussed as the cause.",
+        "For planning the experiment this means: use fine steps of the pulse number at the lower end, for example $N=1, 2, 5, 10, 20, 50, 100$. That is where most happens."
+      ]
+    },
+    "k23.l02.b05": {
+      "titel": "Incubation with saturation (model)",
+      "erklaerung": "Exponential saturation model for dielectrics: start at the single-pulse threshold $F_1$, limit $F_\\infty$ for many pulses, $k$ describes how fast the threshold falls. In the literature this form is attributed to Ashkenasi et al. (1999); check the equation against the full text."
+    },
+    "k23.l02.b06": {
+      "inhalt": "A threshold fluence without **pulse number, pulse duration, wavelength, criterion and method** is not comparable. For fused silica the single-pulse and multi-pulse values can easily differ by factors."
+    },
+    "k23.q08": {
+      "frage": "Threshold versus pulse number for a dielectric (numerical example). Which value does the threshold approach for many pulses? Answer in J/cm².",
+      "erklaerung": "The curve starts at $F_1=3.5\\,\\mathrm{J/cm^2}$ and saturates at $F_\\infty=1.0\\,\\mathrm{J/cm^2}$. After about ten pulses most of the drop has already happened."
+    },
+    "k23.q09": {
+      "frage": "Two models for the threshold versus pulse number (x logarithmic, numerical example). Which curve matches what is reported for fused silica?",
+      "optionen": [
+        "Curve A: fast drop, then almost constant",
+        "Curve B: power law, keeps falling",
+        "Neither, the threshold rises with the pulse number"
+      ],
+      "erklaerung": "Ashkenasi et al. (1999) report a strong drop after the first pulses and then an almost constant level. The power law (curve B) would predict far too low a threshold at 1000 pulses. Which model describes your data better is decided by the fit."
+    },
+    "k23.q10": {
+      "frage": "Put experiment A into the correct order.",
+      "items": [
+        "Determine the beam radius on the Si wafer (K22)",
+        "Clean and clamp the glass sample",
+        "Determine the focal position on the glass surface",
+        "Place a dot matrix of pulse energy and pulse number",
+        "Inspect front and rear side under the microscope",
+        "Evaluate D² and crater depth versus ln F"
+      ],
+      "oben": "first",
+      "unten": "last",
+      "erklaerung": "The calibration on the wafer comes first because it gives the beam radius independently of the glass. Later you can check whether the slope in glass yields the same radius."
+    },
+    "k23.c03": {
+      "vorne": "How does incubation proceed in fused silica?",
+      "hinten": "The threshold drops strongly after the first pulses and then reaches an almost constant level (fs pulses, Ashkenasi et al. 1999). Use fine steps of the pulse number at the lower end."
+    },
+    "k23.c04": {
+      "vorne": "Diameter method and depth method: which gives what?",
+      "hinten": "$D^2$ versus $\\ln F_0$: beam radius and single-pulse threshold. Crater depth $h$ versus $\\ln F_0$: effective penetration depth $\\alpha_\\mathrm{eff}^{-1}$ and multi-pulse threshold."
+    },
+    "k23.l03.b01": {
+      "inhalt": [
+        "Pockets, channels and 3D shapes are made by **layer-wise ablation**: the scanner rasters the area layer by layer (K09). From the papers of the AG alp a basic recipe can be read off:",
+        "1. **Roughen first.** The polished surface is roughened with a first pass of parallel lines. On a transparent, smooth sample the optical properties would otherwise change during ablation; the roughened surface has a lower threshold. With longer pulses, chipping and cracks occur in this step (Schwarz et al. 2018).\n2. **Overlap evenly.** Choose pulse spacing and line spacing equal. Above 50 % overlap the fluence peaks of the individual Gaussian spots are smoothed; in the group 65 % has become established as a compromise between surface and process time (Bischoff et al. 2022, after Schwarz et al.).\n3. **Rotate the hatch.** Rotate the line direction from layer to layer so that no preferred direction arises.\n4. **Track the focus.** With growing depth the floor moves out of focus; the z axis compensates this per layer."
+      ]
+    },
+    "k23.q17": {
+      "frage": "Why is a polished, transparent sample roughened before the actual area ablation?",
+      "optionen": [
+        "So that the optical properties of the surface do not change during ablation; the roughened surface has a lower threshold",
+        "So that the scanner recognises the sample better",
+        "Because polished glass reflects the laser light completely"
+      ],
+      "erklaerung": "Without this step the first layer starts on a polished surface and all further ones on a rough surface, that is with different thresholds. Roughening makes the layers comparable."
+    },
+    "k23.l03.b02": {
+      "titel": "Pulse spacing, removal rate and efficiency",
+      "sammlung": "Experiments",
+      "erklaerung": "Pulse spacing $P_\\mathrm{d}$ from overlap $O$ and focus diameter $d_\\mathrm{f}$. Removal per pulse $V_\\mathrm{sp}$ from total depth $d$, line spacing $H_\\mathrm{d}$, pulse spacing and number of layers $N_\\mathrm{l}$. Removal rate MRR with the repetition rate $f$, [[abtragseffizienz|ablation efficiency]] AE with the average power on the workpiece, usually in $\\mathrm{mm^3/(min\\,W)}$. This is how the AG alp papers evaluate."
+    },
+    "k23.q12": {
+      "frage": "Focus diameter $d_\\mathrm{f}=15\\,\\mu\\mathrm{m}$, overlap 65 %. What is the pulse spacing in µm?",
+      "erklaerung": "$P_\\mathrm{d}=(1-0.65)\\cdot15\\,\\mu\\mathrm{m}=5.25\\,\\mu\\mathrm{m}$. The line spacing is chosen equal."
+    },
+    "k23.q13": {
+      "frage": "With this pulse spacing of $5.25\\,\\mu\\mathrm{m}$ and $f=50\\,\\mathrm{kHz}$: which scan speed do you set? Answer in mm/s.",
+      "erklaerung": "$v=P_\\mathrm{d}\\cdot f=5.25\\cdot10^{-3}\\,\\mathrm{mm}\\cdot5\\cdot10^{4}\\,\\mathrm{s^{-1}}=262.5\\,\\mathrm{mm/s}$."
+    },
+    "k23.q14": {
+      "frage": "Numerical example: after $N_\\mathrm{l}=10$ layers a field is $d=20\\,\\mu\\mathrm{m}$ deep. $H_\\mathrm{d}=P_\\mathrm{d}=5.25\\,\\mu\\mathrm{m}$, $f=50\\,\\mathrm{kHz}$, $P_\\mathrm{av}=0.5\\,\\mathrm{W}$. What is the ablation efficiency in mm³/(min·W)?",
+      "erklaerung": "$V_\\mathrm{sp}=20\\cdot5.25\\cdot5.25/10=55.1\\,\\mu\\mathrm{m}^3=5.51\\cdot10^{-8}\\,\\mathrm{mm^3}$. $\\mathrm{MRR}=5.51\\cdot10^{-8}\\cdot5\\cdot10^{4}\\cdot60=0.165\\,\\mathrm{mm^3/min}$. $\\mathrm{AE}=0.165/0.5=0.33\\,\\mathrm{mm^3/(min\\,W)}$. For orientation: Schwarz et al. (2021) report a maximum of 0.41 for fused silica without burst.",
+      "tipp": "$1\\,\\mu\\mathrm{m}^3=10^{-9}\\,\\mathrm{mm^3}$; per minute means times 60."
+    },
+    "k23.l03.b03": {
+      "titel": "Three levers and what the group found",
+      "inhalt": [
+        "- **Pulse duration** (230 fs to 5 ps, Schwarz et al. 2018): for all pulse durations two ablation regimes appeared as a function of fluence. Longer pulses ablated more efficiently, but the surface became rougher. The 3D geometries of the paper (axicon, lenses) were made with 230 fs.\n- **Burst** (Schwarz et al. 2021, Yang et al. 2023): with GHz bursts (2.17 GHz) the maximum efficiency for ten sub-pulses rose from 0.41 to 3.05 mm³/(min·W), with MHz bursts (40 MHz) by a factor of about 1.6. The price is roughness: at high sub-pulse numbers the process changes from a gentle to a coarse regime in which the surface breaks out rather than being ablated. Two sub-pulses kept the roughness at the non-burst level for MHz bursts at high fluences.\n- **Wavelength** (Yang et al. 2024): in the UV the efficiency stayed stable with increasing fluence, in the infrared it fell at high fluences. The surface was smoother in the UV ($R_a$ down to 0.45 µm compared with 0.56 µm in the infrared).",
+        "Information from the abstracts; the exact conditions are given in the full texts."
+      ]
+    },
+    "k23.l03.b04": {
+      "inhalt": "Always report **efficiency and roughness together**. Almost every lever that makes ablation of fused silica faster (longer pulses, more sub-pulses) makes the surface rougher. Your experiment B should therefore deliver depth **and** $R_a$ for every field."
+    },
+    "k23.q15": {
+      "frage": "Schwarz et al. (2021) report 3.05 mm³/(min·W) with ten sub-pulses in the GHz burst compared with 0.41 mm³/(min·W) without burst. By what factor did the efficiency rise?",
+      "erklaerung": "$3.05/0.41\\approx7.4$. At the same time the threshold per sub-pulse fell from 0.64 to 0.15 J/cm², and the surface became rougher."
+    },
+    "k23.q16": {
+      "frage": "Match each lever with the finding of the AG alp on fused silica.",
+      "paare": [
+        [
+          "Longer pulse duration",
+          "more efficient ablation, but rougher surface"
+        ],
+        [
+          "GHz burst with ten sub-pulses",
+          "efficiency about 7.4 times"
+        ],
+        [
+          "MHz burst with ten sub-pulses",
+          "efficiency about 1.6 times"
+        ],
+        [
+          "UV instead of infrared",
+          "stable efficiency at high fluence, smoother surface"
+        ]
+      ],
+      "erklaerung": "Sources: Schwarz et al. 2018, Schwarz et al. 2021, Yang et al. 2023, Yang et al. 2024. Each number holds for the conditions of the respective paper."
+    },
+    "k23.c05": {
+      "vorne": "Basic recipe for area ablation in fused silica?",
+      "hinten": "Roughen first, then ablate layer by layer: pulse spacing equal to line spacing (65 % overlap), rotate the hatch from layer to layer, track the focus. Measure depth and roughness per field."
+    },
+    "k23.c06": {
+      "vorne": "What do bursts gain in ablating fused silica, and what do they cost?",
+      "hinten": "Gain: higher efficiency (GHz, ten sub-pulses: 0.41 to 3.05 mm³/(min·W); MHz: about 1.6 times) and a lower threshold per sub-pulse. Cost: rougher surface, coarse breaking out at many sub-pulses."
+    },
+    "k23.l04.b01": {
+      "inhalt": [
+        "For COC there is a paper of the AG alp that you can read almost as an experimental manual (Bischoff et al. 2022, open access). The setup there:",
+        "- **Laser:** femtosecond laser with 1030 nm fundamental wavelength (shortest pulse duration 220 fs) and third harmonic at 343 nm\n- **Optics:** galvanometer scanner with telecentric f-theta lens (100 mm), focus diameter about 15 µm for both wavelengths\n- **Sample:** TOPAS 6017S, plates 20 mm × 20 mm × 1.5 mm\n- **Strategy:** fields of 1 mm², ten layers, hatch rotated by 100° per layer, 65 % pulse and line overlap, surface roughened beforehand, focus tracked per layer\n- **Repetition rate:** 50 kHz",
+        "The decisive difference from fused silica is heat. COC conducts it away so poorly that it hardly spreads between two pulses."
+      ]
+    },
+    "k23.l04.b02": {
+      "titel": "Critical repetition rate",
+      "sammlung": "Experiments",
+      "erklaerung": "Estimate: above $f_\\mathrm{cr}$ the heat can no longer flow out of the spot of diameter $d_\\mathrm{spot}$ between two pulses, [[waermeakkumulation|heat accumulation]] is to be expected. $D_\\mathrm{th}$ is the thermal diffusivity. Same idea as the criterion in K07, here referred to the diameter."
+    },
+    "k23.q18": {
+      "frage": "COC: $D_\\mathrm{th}=9\\cdot10^{-8}\\,\\mathrm{m^2/s}$, spot diameter $14.5\\,\\mu\\mathrm{m}$. What is the critical repetition rate in Hz?",
+      "erklaerung": "$f_\\mathrm{cr}=9\\cdot10^{-8}/(14.5\\cdot10^{-6})^2=9\\cdot10^{-8}/2.1\\cdot10^{-10}\\approx428\\,\\mathrm{Hz}$. The work was done at 50 kHz, more than a hundred times above: heat accumulation shapes the process."
+    },
+    "k23.q19": {
+      "frage": "The same material, but defocused with a spot diameter of $30\\,\\mu\\mathrm{m}$. What is $f_\\mathrm{cr}$ now in Hz?",
+      "erklaerung": "$f_\\mathrm{cr}=9\\cdot10^{-8}/(30\\cdot10^{-6})^2=100\\,\\mathrm{Hz}$. A larger spot cools more slowly: with the defocused beam the paper observed melting effects already at lower fluences."
+    },
+    "k23.l04.b03": {
+      "titel": "What the paper found",
+      "inhalt": [
+        "- **Cooling time counts:** with fast jumps between the lines (1000 mm/s) the surface fused over large areas. With unidirectional scanning and slow jumps (100 mm/s) enough time remained for cooling. In the literature, low repetition rates are therefore often used for polymers.\n- **Infrared (1030 nm):** ablation from 1.3 J/cm², largest depth per layer 50.7 µm at 22.4 J/cm², efficiency 1.5 to 2 mm³/(min·W), more and larger debris.\n- **UV (343 nm):** efficiency rises with fluence up to 3.2 mm³/(min·W), up to about 70 µm per layer, roughness $R_a$ from about 0.6 µm (infrared: 0.8 µm). With a defocused beam (30 µm) ablation already set in at 0.3 J/cm².\n- **Upper limit:** at high fluence burrs form at the edges and troughs at the foot of the flanks, which are attributed to multiple reflections at the flanks; the roughness rises abruptly because of melt.",
+        "As a demonstrator a Tesla mixer for microfluidics was made: 200 µm deep, 15 layers at 4.6 J/cm², without refocusing."
+      ]
+    },
+    "k23.l04.b04": {
+      "inhalt": "With polymers the **time between energy inputs** is a process parameter in its own right: repetition rate, jump speed, field size and pauses between the layers. Record them just as carefully as the fluence."
+    },
+    "k23.q20": {
+      "frage": "Your COC field has fused over a large area. Which measures give the material more time to cool? (Multiple choice)",
+      "optionen": [
+        "Lower the repetition rate",
+        "Scan unidirectionally and jump more slowly between the lines",
+        "Double the fluence",
+        "Insert pauses between the layers or process a larger field"
+      ],
+      "erklaerung": "All three correct measures lengthen the time until the same spot receives energy again. More fluence brings in more heat and makes things worse."
+    },
+    "k23.q21": {
+      "frage": "Match the finding from the COC paper with the condition.",
+      "paare": [
+        [
+          "Ablation sets in at 1.3 J/cm²",
+          "1030 nm, focused"
+        ],
+        [
+          "Ablation sets in at 0.3 J/cm²",
+          "343 nm, defocused to 30 µm"
+        ],
+        [
+          "Efficiency up to 3.2 mm³/(min·W)",
+          "343 nm, focused"
+        ],
+        [
+          "Fusion over large areas",
+          "Jump speed 1000 mm/s in the small field"
+        ]
+      ],
+      "erklaerung": "All values from Bischoff et al. 2022 for TOPAS 6017S at 50 kHz on a previously roughened surface."
+    },
+    "k23.q22": {
+      "frage": "Complete.",
+      "text": "COC conducts heat away very ___. That is why the critical repetition rate is a few hundred ___. Compared with 1030 nm, ablation with 343 nm was ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "poorly",
+            "well"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "hertz",
+            "megahertz"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "more efficient and smoother",
+            "slower and rougher"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "The poor heat removal is the reason why scan strategy and wavelength matter so much for COC."
+    },
+    "k23.c07": {
+      "vorne": "Critical repetition rate: formula and value for COC?",
+      "hinten": "$f_\\mathrm{cr}=D_\\mathrm{th}/d_\\mathrm{spot}^2$. For COC ($9\\cdot10^{-8}\\,\\mathrm{m^2/s}$) and a 14.5 µm spot about 428 Hz. Above it heat accumulation is to be expected."
+    },
+    "k23.c08": {
+      "vorne": "UV or infrared for COC?",
+      "hinten": "UV (343 nm): higher efficiency (up to 3.2 compared with 1.5 to 2 mm³/(min·W)), smoother surfaces, less debris, longer Rayleigh length. Infrared: more pulse energy available, no harmonic module needed."
+    },
+    "k23.l05.b01": {
+      "titel": "Defect patterns in glass",
+      "inhalt": [
+        "Once you have the first glass samples under the microscope, a list of what others have already seen helps:",
+        "- **Chipping and cracks** during roughening and ablation, especially with longer pulses (Schwarz et al. 2018).\n- **Coarse breaking out** instead of ablation for bursts with many sub-pulses (Schwarz et al. 2021).\n- **Microcracks and [[rueckseitenabtrag|backside ablation]]** when drilling through Borofloat 33 with femtosecond pulses; with 5 ps it worked crack free (Franz et al. 2025).\n- **[[lipss|LIPSS]]** on the floor, on fused silica aligned parallel to the polarization (Höhm et al. 2012). They tell you the polarization direction and that you are working near the threshold.\n- **Falling efficiency** in the infrared at high fluence (Yang et al. 2024).",
+        "Note the apparent contradiction: for area ablation in fused silica the short pulses were the cleaner ones, for drilling through Borofloat the longer ones. Material, geometry and strategy all play a part. Exactly such contradictions are starting points for research questions."
+      ]
+    },
+    "k23.q26": {
+      "frage": "What did the TGV paper of the AG alp (Franz et al. 2025) show about the influence of pulse duration in Borofloat 33?",
+      "optionen": [
+        "Femtosecond pulses were better in every respect",
+        "Femtosecond pulses gave the smallest taper but microcracks and backside ablation; with 5 ps crack-free holes were achieved",
+        "The pulse duration had no influence"
+      ],
+      "erklaerung": "6 ± 0.3° taper with femtosecond pulses compared with 7.3 ± 0.1° with 5 ps, but without cracks. Shorter is not automatically better: it depends on the target quantity."
+    },
+    "k23.q27": {
+      "frage": "How are the coarse LIPSS (LSFL) on fused silica oriented relative to the polarization?",
+      "optionen": [
+        "Perpendicular, as for most metals",
+        "At 45°",
+        "Parallel, unlike most other materials"
+      ],
+      "erklaerung": "Höhm et al. (2012) explain the parallel orientation on fused silica with a Sipe-Drude model that takes the excitation of free carriers into account."
+    },
+    "k23.l05.b02": {
+      "inhalt": [
+        "**Focus inside the glass: [[selbstfokussierung|self-focusing]].** As soon as you focus through the glass or into the volume (backside ablation, volume modification, TGV), the pulse travels through material. There the refractive index depends on the intensity: $n=n_0+n_2I$. For fused silica $n_2\\approx2.74\\cdot10^{-16}\\,\\mathrm{cm^2/W}$ at 1053 nm is recommended (Milam 1998). Above a **critical power** $P_\\mathrm{cr}$ self-focusing wins against diffraction, and the focus is no longer where the optics calculates it to be."
+      ]
+    },
+    "k23.l05.b03": {
+      "titel": "Critical power for self-focusing",
+      "sammlung": "Experiments",
+      "erklaerung": "Critical power for a Gaussian beam (attributed in the literature to Marburger 1975; check the prefactor against the full text). It depends only on wavelength and material, not on the focusing. Insert $n_2$ in $\\mathrm{m^2/W}$: $1\\,\\mathrm{cm^2/W}=10^{-4}\\,\\mathrm{m^2/W}$."
+    },
+    "k23.q23": {
+      "frage": "Calculate $P_\\mathrm{cr}$ for fused silica at $\\lambda=1030\\,\\mathrm{nm}$ with $n_0\\approx1.45$ and $n_2=2.74\\cdot10^{-20}\\,\\mathrm{m^2/W}$. Answer in MW.",
+      "erklaerung": "$P_\\mathrm{cr}=3.77\\cdot(1.03\\cdot10^{-6})^2/(8\\pi\\cdot1.45\\cdot2.74\\cdot10^{-20})=4.0\\cdot10^{-12}/1.0\\cdot10^{-18}\\approx4.0\\,\\mathrm{MW}$.",
+      "tipp": "Numerator: $3.77\\cdot1.06\\cdot10^{-12}$. Denominator: $8\\pi\\approx25.1$."
+    },
+    "k23.q24": {
+      "frage": "From which pulse energy does a pulse with $\\tau=250\\,\\mathrm{fs}$ reach these $4.0\\,\\mathrm{MW}$ (approximation $P\\approx E_\\mathrm{p}/\\tau$)? Answer in µJ.",
+      "erklaerung": "$E_\\mathrm{p}=4.0\\cdot10^{6}\\,\\mathrm{W}\\cdot250\\cdot10^{-15}\\,\\mathrm{s}=1.0\\,\\mu\\mathrm{J}$. One microjoule is already enough. In surface ablation the pulse travels through air and it does not matter; as soon as you focus through glass you have to reckon with it."
+    },
+    "k23.l05.b04": {
+      "titel": "Defect patterns in COC",
+      "inhalt": [
+        "- **Fusion over large areas:** too little cooling time between lines or layers.\n- **Rounded structures and abruptly rising roughness:** melt at high fluence.\n- **Troughs at the foot of the flanks and burrs at the edges:** high fluence, attributed to multiple reflections at the flanks.\n- **Debris:** more and larger with 1030 nm than with 343 nm.\n- **Slight discoloration** at the edges of fine structures. For other cyclic olefin polymers the literature describes marked darkening due to oxidation and dehydrogenation (Suriano et al. 2011, abstract)."
+      ]
+    },
+    "k23.q25": {
+      "frage": "Match each defect pattern with its most likely cause.",
+      "paare": [
+        [
+          "COC field fused over a large area",
+          "too little cooling time between the lines"
+        ],
+        [
+          "Troughs at the foot of the flanks",
+          "multiple reflections at high fluence"
+        ],
+        [
+          "Glass surface breaks out coarsely",
+          "burst with many sub-pulses"
+        ],
+        [
+          "Damage at the rear side of the sample",
+          "transmitted pulse energy"
+        ],
+        [
+          "Fine ripples parallel to the polarization on fused silica",
+          "LIPSS near the threshold"
+        ]
+      ],
+      "erklaerung": "The assignments come from the cited papers. On your machine they are hypotheses: change only one parameter at a time and check whether the defect pattern disappears."
+    },
+    "k23.l05.b05": {
+      "titel": "Measuring transparent samples",
+      "inhalt": [
+        "- **Cleaning:** put the sample into the ultrasonic bath before measuring (about ten minutes in the COC paper), otherwise you measure loose particles as well.\n- **Laser scanning microscope:** average the depth over an area, determine the roughness on a smaller area on the floor. For very deep pockets the microscope no longer reaches the floor; in the COC paper the samples were ground down for this after the depth measurement.\n- **Scanning electron microscope:** glass and COC are insulators and are sputter coated with a conductive layer beforehand.\n- **Photoelasticity:** glass samples between crossed polarisers show residual stress as brightening. A quick test before cracks become visible.\n- **Both sides:** with glass the rear side is always part of the measurement programme."
+      ]
+    },
+    "k23.c09": {
+      "vorne": "Typical defect patterns in glass and in COC?",
+      "hinten": "**Glass:** chipping and cracks, coarse breaking out with bursts, backside ablation, LIPSS. **COC:** fusion, rounded structures, troughs and burrs at high fluence, debris, discoloration."
+    },
+    "k23.c10": {
+      "vorne": "When do you have to reckon with self-focusing?",
+      "hinten": "When the pulse travels through the glass and its peak power exceeds $P_\\mathrm{cr}=3.77\\lambda^2/(8\\pi n_0n_2)$. For fused silica at 1030 nm about 4 MW by calculation, so at 250 fs already from about 1 µJ."
+    },
+    "k23.l06.b01": {
+      "titel": "Questions for the first week",
+      "inhalt": [
+        "This chapter knows the literature but not your lab. So clarify early, ideally with a prepared list:",
+        "- **Machine:** which lasers are available? Wavelengths (1030, 515, 343 nm), pulse duration range, repetition rate, burst mode?\n- **Optics:** which focal lengths and focus diameters? Is there a beam camera or does the group use the Liu method?\n- **Samples:** which glass exactly (fused silica grade, Borofloat 33 or another), which thickness, polished or not? Which COC grade?\n- **Recipes:** are there proven parameter sets of the group, for instance for roughening and area ablation?\n- **Metrology:** which microscopes (LSM, SEM), who gives the introduction, how are data stored?\n- **Safety:** instruction, laser safety goggles per wavelength, extraction. Ablation products of glass and polymer are fine dust."
+      ]
+    },
+    "k23.q29": {
+      "frage": "Which question should you definitely have clarified before the first glass experiment?",
+      "optionen": [
+        "Which glass type and thickness the samples have",
+        "What colour the lab notebook is",
+        "How many citations the most important paper has"
+      ],
+      "erklaerung": "Fused silica and borosilicate glass behave very differently thermally, and the thickness decides whether energy causes damage at the rear side. Without this information your results cannot be classified."
+    },
+    "k23.l06.b02": {
+      "titel": "Six weeks, six results",
+      "inhalt": [
+        "1. **Week 1:** instruction, getting to know the machine, clarifying the list of questions, reading the first two papers of the reading list.\n2. **Week 2:** calibration: power on the workpiece, focal position, beam radius on the silicon wafer (K22, experiment 1).\n3. **Week 3:** experiment A: threshold and incubation on fused silica.\n4. **Week 4:** experiment B: area ablation in fused silica, fluence series with depth, efficiency and roughness.\n5. **Week 5:** experiment C: COC, variation of fluence and cooling time.\n6. **Week 6:** evaluate, compare with the group's papers, present in ten minutes, record the next questions.",
+        "The plan is a suggestion. If the samples or the machine time dictate something else, swap the weeks, but keep the order calibrate, threshold, area."
+      ]
+    },
+    "k23.q28": {
+      "frage": "Put the building blocks of the first weeks into a sensible order.",
+      "items": [
+        "Instruction and list of questions",
+        "Calibration on the silicon wafer",
+        "Threshold on fused silica",
+        "Area ablation in fused silica",
+        "Ablation of COC",
+        "Evaluate and present in the group"
+      ],
+      "oben": "first",
+      "unten": "last",
+      "erklaerung": "Each step supplies what the next one needs: beam radius, then threshold, then the fluence range for the area."
+    },
+    "k23.l06.b03": {
+      "titel": "Reading list in a sensible order",
+      "inhalt": [
+        "1. Schwarz et al. 2018: pulse duration and layer-wise ablation of fused silica. Short, explains the basic recipe.\n2. Schwarz et al. 2021: GHz bursts in fused silica. Four pages, clear message.\n3. Yang et al. 2023 and 2024: MHz bursts and UV versus infrared in fused silica.\n4. Bischoff et al. 2022: COC with UV femtosecond pulses. Open access, detailed methods section.\n5. Franz et al. 2025: TGVs in Borofloat 33. The bridge to packaging.\n6. On the method: Ben-Yakar and Byer 2004 (thresholds from diameter and depth) and Ashkenasi et al. 1999 (incubation in dielectrics).",
+        "Enter each paper in your literature matrix (K21): material, wavelength, pulse duration, repetition rate, focus, strategy, target quantity, result, open points. The bibliographic details are listed under “Further reading”."
+      ]
+    },
+    "k23.l06.b04": {
+      "inhalt": "The goal of the first weeks is not a new result but **reproducibility**: you can recreate a published result of the group on the machine and explain why your numbers match or deviate. Everything else builds on that."
+    },
+    "k23.q30": {
+      "frage": "Complete.",
+      "text": "First you ___, then measure the threshold, then ablate the area. To ___ a result of the group is the goal of the first weeks. Every paper you read goes into the ___.",
+      "luecken": [
+        {
+          "optionen": [
+            "calibrate",
+            "publish"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "reproduce",
+            "surpass"
+          ],
+          "richtig": 0
+        },
+        {
+          "optionen": [
+            "literature matrix",
+            "drawer"
+          ],
+          "richtig": 0
+        }
+      ],
+      "erklaerung": "Calibrate, reproduce, document: with that you have a solid basis after six weeks."
+    },
+    "k23.q31": {
+      "frage": "Your result deviates clearly from a published number of the group. What is the best next step?",
+      "optionen": [
+        "Ignore the deviation and carry on",
+        "Compare the conditions: fluence on the workpiece, focus, pulse duration, strategy, sample",
+        "Leave out the data points that do not fit"
+      ],
+      "erklaerung": "A deviation is information. Usually a condition is different from what you thought, and finding exactly that trains your eye for the process."
+    },
+    "k23.c11": {
+      "vorne": "Which questions do you clarify in the first week in the lab?",
+      "hinten": "Laser (wavelengths, pulse duration, repetition rate, burst), optics and focus, samples (glass type, thickness, COC grade), recipes of the group, metrology and data storage, safety."
+    },
+    "k23.c12": {
+      "vorne": "Three starter experiments on fused silica and COC?",
+      "hinten": "**A:** threshold and incubation on fused silica. **B:** area ablation in fused silica with depth, efficiency and roughness. **C:** COC with variation of fluence and cooling time. Before that: calibration on the Si wafer."
+    }
+  }
+}
