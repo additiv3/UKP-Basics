@@ -150,7 +150,7 @@
     "k14.l04.b01": {
       "inhalt": [
         "The power is usually not set via the pump current, because pulse properties can change as well. A common choice is an **attenuator** made of a **λ/2 plate** and a **polariser**: the plate rotates the polarisation, the polariser only lets a fraction through.",
-        "Rotating the λ/2 plate by $\\theta$ rotates the polarisation by $2\\theta$. That is why the curve repeats every 45° of the plate. You measure with a **thermal head** (slow, but for high average power) or a **photodiode** (fast, low power). Thermal heads need a few seconds until the value settles."
+        "Rotating the λ/2 plate by $\\theta$ rotates the polarisation by $2\\theta$. That is why maximum and minimum are only 45° of plate rotation apart, and the curve $P=P_\\mathrm{max}\\cos^2(2(\\theta-\\theta_0))$ repeats every 90°. You measure with a **thermal head** (slow, but for high average power) or a **photodiode** (fast, low power). Thermal heads need a few seconds until the value settles."
       ]
     },
     "k14.l04.b02": {

@@ -164,13 +164,14 @@
     },
     "k07.l04.b01": {
       "inhalt": [
-        "The second pulse at the same spot hits a modified material: defects, colour centres, roughness and stresses have formed. The threshold falls with the number of pulses. This phenomenon is called **incubation** ([[inkubation]]) and is often described with a power law (Jee et al. 1988):"
+        "The second pulse at the same spot hits a modified material: defects, colour centres, roughness and stresses have formed. The threshold falls with the number of pulses. This phenomenon is called **incubation** ([[inkubation]]) and is often described with a power law. It goes back to Jee et al. (1988), who established it on metal single crystals with nanosecond pulses (10 ns, 1064 nm). For ultrashort pulses it is adopted as an empirical description:",
+        "For dielectrics such as fused silica the power law only fits over a limited range of pulse numbers. Measurements with 100 fs pulses show that the threshold drops strongly after the first pulses and then reaches an almost constant value (Ashkenasi et al. 1999). More on this in K23."
       ]
     },
     "k07.l04.b02": {
       "titel": "Incubation (power law)",
       "sammlung": "Ablation",
-      "erklaerung": "Threshold after $N$ pulses at the same location. $S\\le1$ is the incubation coefficient; $S=1$ means no incubation. $S$ depends on the material."
+      "erklaerung": "Threshold after $N$ pulses at the same location. $S\\le1$ is the incubation coefficient; $S=1$ means no incubation. $S$ depends on the material; Jee et al. found $S\\approx0.92$ on copper and aluminium single crystals."
     },
     "k07.l04.b04": {
       "titel": "Worked example",
@@ -223,11 +224,13 @@
     },
     "k07.l05.b04": {
       "inhalt": [
-        "In **burst mode** ([[burst-mode]]) the pulse energy is split over a group of pulses that follow one another at nanosecond spacing. A burst group is then repeated at a low rate. From the literature: one study reports an ablation-cooling effect for bursts in the GHz range (Kerse et al. 2016); other works show that bursts can improve or worsen the efficiency depending on material and parameters. The results are not uniform."
+        "In **burst mode** ([[burst-mode]]) the pulse energy is split over a group of sub-pulses. Their spacing depends on the laser: at 40 MHz it is 25 ns (**MHz burst**), at about 2 GHz less than half a nanosecond (**GHz burst**). The burst group itself is repeated at the normal repetition rate.",
+        "Kerse et al. (2016) explain the gain at very high rates by **ablation cooling**: the next sub-pulse removes the material before the residual heat of the previous one has diffused into the depth. They report an efficiency higher by about an order of magnitude at lower pulse energies.",
+        "Two papers of the AG alp show this for fused silica (1030 nm, femtosecond pulses, milling of cavities). With GHz bursts (2.17 GHz) the maximum ablation efficiency for ten sub-pulses rose to 3.05 mm³/(min·W) compared with 0.41 mm³/(min·W) without burst, and the threshold per sub-pulse fell from 0.64 to 0.15 J/cm² (Schwarz et al. 2021). With MHz bursts (40 MHz) the gain for ten sub-pulses was about a factor of 1.6 (Yang et al. 2023). In both papers the surface became rougher as the number of sub-pulses increased."
       ]
     },
     "k07.l05.b05": {
-      "inhalt": "Burst is not a cure-all: it changes the **energy per individual pulse**, the time spacing and the heat balance at once. Only an experiment on your own material shows whether it helps."
+      "inhalt": "Burst is not a cure-all: it changes the **energy per sub-pulse**, the time spacing and the heat balance at once. More efficiency is often paid for with a rougher surface, and heat-sensitive materials are at risk of heat accumulation (K18: voids in ABF). Only an experiment on your own material shows whether it helps."
     },
     "k07.q09": {
       "frage": "A laser has $f=100\\,\\mathrm{kHz}$ and $D=0.1\\,\\mathrm{cm^2/s}$ (numerical example). What is the diffusion length $\\sqrt{D/f}$ within the pulse spacing, in µm?",
@@ -245,7 +248,7 @@
     },
     "k07.c07": {
       "vorne": "What is burst mode?",
-      "hinten": "Splitting the energy over a group of pulses at nanosecond spacing, which is repeated at a low rate."
+      "hinten": "Splitting the pulse energy over a group of sub-pulses. Spacing: a few tens of nanoseconds (MHz burst) down to less than a nanosecond (GHz burst). The group is repeated at the normal repetition rate."
     },
     "k07.l06.b01": {
       "inhalt": "The numbers in this lesson are **numerical examples**, not material values. You find the natural logarithm on the calculator as **ln**, the power with **xʸ**."

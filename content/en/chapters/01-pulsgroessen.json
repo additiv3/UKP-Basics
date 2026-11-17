@@ -191,7 +191,7 @@
       "titel": "Try it yourself: fluence and intensity"
     },
     "k01.l03.b08": {
-      "inhalt": "For orientation: the literature quotes intensities of roughly $10^{13}$ to $10^{14}\\,\\mathrm{W/cm^2}$ for the ablation of transparent materials. The project notes speak of more than $10^{15}\\,\\mathrm{W/cm^2}$; that does not fit this order of magnitude and has to be verified. The calculator shows how far the calculation above is from it."
+      "inhalt": "For orientation: for fused silica, threshold fluences of a few J/cm² are reported for pulses shorter than a picosecond. With $I\\approx F/\\tau$ that is about $10^{13}\\,\\mathrm{W/cm^2}$ at a few hundred femtoseconds. Only extremely short pulses below 10 fs reach more than $10^{14}\\,\\mathrm{W/cm^2}$ just below the damage threshold (Lenzner et al. 1998). The more than $10^{15}\\,\\mathrm{W/cm^2}$ from the project notes is therefore too high for materials processing. The calculator shows how far the calculation above is from it."
     },
     "k01.q08": {
       "frage": "A pulse with $E_\\mathrm{p}=5\\,\\mu\\mathrm{J}$ hits a Gaussian spot with $w_0=10\\,\\mu\\mathrm{m}$. What is the peak fluence in J/cm²?",

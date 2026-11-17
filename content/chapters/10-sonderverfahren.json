@@ -24,11 +24,11 @@
           "typ": "text",
           "inhalt": [
             "Bei Fluenzen nahe der Schwelle bilden sich auf vielen Oberflächen **periodische Wellen** ([[lipss]], laser-induced periodic surface structures). Sie entstehen von selbst, ohne dass die Struktur im Strahl steckt. Man unterscheidet grob:",
-            "- **LSFL** (low spatial frequency LIPSS): Periode in der Größenordnung der Wellenlänge, bei Metallen und Halbleitern meist **senkrecht** zur Polarisationsrichtung.\n- **HSFL** (high spatial frequency LIPSS): Periode deutlich unter der halben Wellenlänge.",
-            "Als Ursache wird vor allem die **Interferenz** des einfallenden Lichts mit Streuwellen bzw. Oberflächenplasmonen diskutiert (Sipe-Modell). Die Rückkopplung über viele Pulse (Inkubation) verstärkt die Struktur."
+            "- **LSFL** (low spatial frequency LIPSS): Periode in der Größenordnung der Wellenlänge, bei Metallen und Halbleitern meist **senkrecht** zur Polarisationsrichtung. Auf Quarzglas liegen die LSFL dagegen **parallel** zur Polarisation (Höhm et al. 2012).\n- **HSFL** (high spatial frequency LIPSS): Periode deutlich unter der halben Wellenlänge.",
+            "Als Ursache wird vor allem die **Interferenz** des einfallenden Lichts mit Streuwellen bzw. Oberflächenplasmonen diskutiert (Sipe-Modell, für angeregte Dielektrika um ein Drude-Modell erweitert). Die Rückkopplung über viele Pulse (Inkubation) verstärkt die Struktur. Die AG alp hat Periode und Ausrichtung der LSFL auf Quarzglas für 1030-nm-fs-Pulse so berechnet und im Versuch bestätigt (Schwarz et al. 2016)."
           ],
           "verifiziert": false,
-          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+          "quelle": "hoehm2012"
         },
         {
           "id": "k10.l01.b02",
@@ -100,11 +100,11 @@
           "id": "k10.l02.b01",
           "typ": "text",
           "inhalt": [
-            "[[sle]] ist ein **Zweischrittverfahren** für Quarzglas: (1) Ein fs-Laser schreibt im Volumen entlang einer 3D-Bahn eine Modifikation. (2) In einem Ätzbad (z. B. KOH oder HF) wird das modifizierte Material viel schneller abgetragen als das unveränderte. Zurück bleiben Hohlräume und Kanäle, die du gezielt in 3D entworfen hast.",
-            "Die Güte des Verfahrens beschreibt die **Selektivität** $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$ (Ätzrate modifiziert zu unmodifiziert). In der Literatur werden Werte von mehreren hundert und mehr berichtet (ungeprüft). Vorteile: keine thermische Schädigung, glatte Wände nach dem Ätzen, echte 3D-Geometrien. Grenzen: Das Ätzmittel muss den Kanal erreichen, und lange Kanäle ätzen langsamer."
+            "[[sle]] ist ein **Zweischrittverfahren** für Quarzglas: (1) Ein fs-Laser schreibt im Volumen entlang einer 3D-Bahn eine Modifikation. (2) In einem Ätzbad (z. B. KOH oder HF) wird das modifizierte Material viel schneller abgetragen als das unveränderte. Zurück bleiben Hohlräume und Kanäle, die du gezielt in 3D entworfen hast. Eine frühe Arbeit dazu ist Marcinkevičius et al. (2001).",
+            "Die Güte des Verfahrens beschreibt die **Selektivität** $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$ (Ätzrate modifiziert zu unmodifiziert). Für Quarzglas in KOH werden Werte bis etwa 1400 berichtet (Hermans et al. 2014, Zahl aus einer Sekundärangabe, am Volltext prüfen). Zwei Befunde, die man nicht erwartet: Nicht die kürzeste Pulsdauer ist am besten geeignet, und schnelleres Schreiben erhöht die Selektivität (Gottmann et al. 2017). Vorteile: keine thermische Schädigung, glatte Wände nach dem Ätzen, echte 3D-Geometrien. Grenzen: Das Ätzmittel muss den Kanal erreichen, und lange Kanäle ätzen langsamer."
           ],
           "verifiziert": false,
-          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+          "quelle": "hermans2014"
         },
         {
           "id": "k10.l02.fig1",
@@ -303,11 +303,11 @@
           "typ": "text",
           "inhalt": [
             "Im Volumen von Glas verändert der fs-Fokus je nach Pulsenergie und Pulszahl die Struktur. In der Literatur werden grob drei Typen unterschieden:",
-            "- **Typ I:** glatte, lokale Brechungsindexänderung (meist leichte Erhöhung): geeignet für **Wellenleiter**.\n- **Typ II:** doppelbrechende Nanogitter, deren Orientierung von der Polarisation abhängt; erhöhen die Ätzrate (Grundlage von [[sle]]).\n- **Typ III:** Hohlräume (Voids) durch Mikroexplosionen, z. B. für optische Speicherung.",
-            "Wellenleiter schreibt man, indem der Fokus mit geringer Geschwindigkeit durch das Glas bewegt wird. Entlang der Bahn bleibt eine Spur mit leicht **erhöhtem Brechungsindex** zurück (Erstbeschreibung: Davis et al. 1996, Literatur prüfen)."
+            "- **Typ I:** glatte, lokale Brechungsindexänderung (meist leichte Erhöhung): geeignet für **Wellenleiter**.\n- **Typ II:** doppelbrechende Nanogitter, deren Orientierung von der Polarisation abhängt (Shimotsuma et al. 2003); erhöhen die Ätzrate (Grundlage von [[sle]]).\n- **Typ III:** Hohlräume (Voids) durch Mikroexplosionen, z. B. für optische Speicherung.",
+            "Wellenleiter schreibt man, indem der Fokus mit geringer Geschwindigkeit durch das Glas bewegt wird. Entlang der Bahn bleibt eine Spur mit leicht **erhöhtem Brechungsindex** zurück (Erstbeschreibung: Davis et al. 1996). Bei hohen Repetitionsraten kommt Wärmeakkumulation hinzu und vergrößert die modifizierte Zone; in Borosilikatgläsern wurde das oberhalb von etwa 200 kHz beobachtet (Eaton et al. 2005)."
           ],
           "verifiziert": false,
-          "quelle": "Projektnotizen und gängige Literaturaussagen, nicht an der Primärquelle geprüft"
+          "quelle": "davis1996"
         },
         {
           "id": "k10.l04.b02",

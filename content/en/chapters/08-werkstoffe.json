@@ -23,7 +23,8 @@
     "k08.l01.b02": {
       "inhalt": [
         "As an **order of magnitude** the literature often quotes the following band gaps (numbers not checked against the primary source):",
-        "- Fused silica and sapphire: about 9 eV\n- Silicon nitride: about 5 eV\n- Silicon carbide (4H): about 3.3 eV\n- Silicon: about 1.1 eV"
+        "- Fused silica and sapphire: about 9 eV\n- Silicon nitride: about 5 eV\n- Silicon carbide (4H): about 3.3 eV\n- Silicon: about 1.1 eV",
+        "For comparison, a transparent polymer: for the cyclic olefin copolymer TOPAS 6017 ([[coc|COC]]) the AG alp determined about 4 eV (Bischoff et al. 2022)."
       ]
     },
     "k08.l01.b03": {

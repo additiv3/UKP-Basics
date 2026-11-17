@@ -283,14 +283,14 @@
       "begriff": "Burst-Mode / GHz-Burst",
       "englisch": "burst mode",
       "kurz": "Pulspakete statt Einzelpulse.",
-      "definition": "Im Burst-Mode werden statt einzelner Pulse Pulspakete ausgesendet; bis in den GHz-Bereich der Pulsabstände. Laut Projektnotizen erhöht das Abtragrate und Effizienz.",
+      "definition": "Im Burst-Mode sendet der Laser statt einzelner Pulse Pakete aus mehreren Teilpulsen aus. Ihr Abstand liegt im Nanosekundenbereich (MHz-Burst) oder darunter (GHz-Burst). An Quarzglas wurde damit eine deutlich höhere Abtragseffizienz gemessen, zugleich aber eine rauere Oberfläche (Schwarz et al. 2021, Yang et al. 2023).",
       "siehe": [
         "repetitionsrate",
         "inkubation"
       ],
-      "verifiziert": false,
-      "quelle": "Projektnotizen",
-      "mehr": "Statt einen großen Puls zu schicken, teilt man die Energie auf mehrere dicht aufeinanderfolgende Teilpulse auf. Jeder Teilpuls liegt näher an der günstigsten Fluenz, und spätere Teilpulse treffen auf Material, das vom vorigen noch angeregt oder warm ist. Ob das Abtragrate und Qualität verbessert, hängt stark von Werkstoff, Teilpulszahl und Teilpulsabstand ab; die Literatur ist hier nicht einheitlich.",
+      "verifiziert": true,
+      "quelle": "schwarz2021ghz",
+      "mehr": "Statt einen großen Puls zu schicken, teilt man die Energie auf mehrere dicht aufeinanderfolgende Teilpulse auf. Jeder Teilpuls liegt näher an der günstigsten Fluenz, und spätere Teilpulse treffen auf Material, das vom vorigen noch angeregt oder warm ist. Bei sehr hohen Raten kommt die Ablationskühlung hinzu: Die Restwärme wird mit dem abgetragenen Material entfernt, bevor sie in die Tiefe diffundiert (Kerse et al. 2016). Ob ein Burst Abtragrate und Qualität verbessert, hängt stark von Werkstoff, Teilpulszahl und Teilpulsabstand ab; in wärmeempfindlichen Polymeren kann er Hohlräume und Delamination verursachen (K18).",
       "beispiel": "Each burst consisted of several sub-pulses with an intra-burst repetition rate in the GHz range."
     },
     {
@@ -702,13 +702,13 @@
       "begriff": "Inkubationseffekt",
       "englisch": "incubation",
       "kurz": "Absenkung der Ablationsschwelle durch vorangegangene Pulse.",
-      "definition": "Beim Inkubationseffekt sinkt die [[ablationsschwelle]], wenn dieselbe Stelle bereits von Vorpulsen getroffen wurde.",
+      "definition": "Beim Inkubationseffekt sinkt die [[ablationsschwelle]], wenn dieselbe Stelle bereits von Vorpulsen getroffen wurde. Üblich ist das Potenzgesetz $F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{S-1}$ (Jee et al. 1988); bei Dielektrika läuft die Schwelle nach den ersten Pulsen gegen einen nahezu konstanten Wert.",
       "siehe": [
         "ablationsschwelle",
         "burst-mode"
       ],
-      "verifiziert": false,
-      "quelle": "Projektnotizen",
+      "verifiziert": true,
+      "quelle": "jee1988",
       "mehr": "Jeder Puls unterhalb der Schwelle hinterlässt kleine Spuren: Defekte, Farbzentren, Spannungen oder Oberflächenveränderungen. Sie erleichtern die Absorption beim nächsten Puls. Folge: Treffen viele Pulse dieselbe Stelle, sinkt die Schwelle und nähert sich einem Grenzwert. Für die Praxis wichtig: Beim Scannen trifft jede Stelle viele Pulse, also ist die Mehrpuls-Schwelle maßgeblich, nicht die Einzelpulsschwelle.",
       "beispiel": "Due to incubation, the threshold fluence decreases with the number of pulses."
     },
@@ -947,8 +947,8 @@
       "definition": "LIPSS (Laser-Induced Periodic Surface Structures) sind selbstorganisierte, periodische Nanostrukturen, die bei Laserbestrahlung auf der Oberfläche entstehen.",
       "siehe": [],
       "verifiziert": false,
-      "quelle": "Projektnotizen",
-      "mehr": "LIPSS entstehen, wenn das einfallende Licht mit an der Oberfläche gestreutem Licht oder angeregten Oberflächenwellen interferiert. Das ergibt ein periodisches Energiemuster, das sich über viele Pulse einprägt. Man unterscheidet grob Strukturen mit einer Periode nahe der Wellenlänge (LSFL) und deutlich feinere (HSFL). Ihre Ausrichtung folgt der Polarisation. Nutzen: Funktionsoberflächen (Benetzung, Reibung, Farbe). Störung: unerwünschte Rauheit am Kraterboden.",
+      "quelle": "hoehm2012",
+      "mehr": "LIPSS entstehen, wenn das einfallende Licht mit an der Oberfläche gestreutem Licht oder angeregten Oberflächenwellen interferiert. Das ergibt ein periodisches Energiemuster, das sich über viele Pulse einprägt. Man unterscheidet grob Strukturen mit einer Periode nahe der Wellenlänge (LSFL) und deutlich feinere (HSFL). Ihre Ausrichtung hängt an der Polarisation: LSFL liegen bei Metallen und Halbleitern meist senkrecht dazu, auf Quarzglas dagegen parallel (Höhm et al. 2012). Nutzen: Funktionsoberflächen (Benetzung, Reibung, Farbe). Störung: unerwünschte Rauheit am Kraterboden.",
       "beispiel": "The orientation of the LIPSS changed when the polarization was rotated."
     },
     {
@@ -1255,10 +1255,14 @@
       "siehe": [
         "dielektrikum",
         "sle",
-        "wellenleiter"
+        "wellenleiter",
+        "borosilikatglas",
+        "rueckseitenabtrag"
       ],
       "verifiziert": true,
-      "quelle": "Definition"
+      "quelle": "Definition",
+      "mehr": "Quarzglas besteht praktisch nur aus SiO₂ und ist amorph. Daraus folgen seine Besonderheiten: eine sehr große Bandlücke, deshalb Transparenz bis ins UV und Absorption von UKP-Pulsen nur über nichtlineare Prozesse; eine sehr kleine Wärmeausdehnung, deshalb hohe Thermoschockbeständigkeit; und ein sehr hoher Erweichungspunkt. Verwechslungsgefahr: *Quarz* ist kristallines SiO₂, *Quarzglas* (fused silica) das Glas. Technische Gläser wie Borosilikatglas enthalten weitere Oxide und verhalten sich thermisch und im Laserprozess anders.",
+      "beispiel": "Fused silica samples were ablated layer by layer using femtosecond pulses."
     },
     {
       "id": "rem",
@@ -1457,9 +1461,13 @@
       "englisch": "selective laser etching",
       "kurz": "fs-Modifikation im Volumen plus nasschemisches Ätzen.",
       "definition": "Beim Selective Laser Etching (SLE) wird das Material zuerst mit Femtosekundenpulsen modifiziert und anschließend nasschemisch geätzt; vor allem in Quarzglas.",
-      "siehe": [],
-      "verifiziert": false,
-      "quelle": "Projektnotizen",
+      "siehe": [
+        "lide",
+        "volumenmodifikation",
+        "quarzglas"
+      ],
+      "verifiziert": true,
+      "quelle": "gottmann2017",
       "mehr": "Zwei Schritte, die du getrennt optimieren kannst: Der Laser verändert das Glas im Fokus so, dass es sich schneller ätzen lässt, ohne schon Material zu entfernen. Das Ätzbad entfernt dann bevorzugt die modifizierten Bereiche. Vorteile gegenüber direktem Abtrag: kein Debris, kaum Risse, Innenkanäle und Hinterschnitte möglich. Wichtig: Jeder modifizierte Bereich muss mit der Oberfläche verbunden sein, sonst erreicht ihn das Ätzmittel nicht.",
       "beispiel": "Microchannels were fabricated in fused silica by selective laser-induced etching."
     },
@@ -2515,6 +2523,87 @@
       ],
       "verifiziert": true,
       "quelle": "Definition"
+    },
+    {
+      "id": "coc",
+      "begriff": "COC (Cyclo-Olefin-Copolymer)",
+      "englisch": "cyclic olefin copolymer",
+      "kurz": "Amorpher, glasklarer technischer Kunststoff, z. B. für Mikrofluidik und Optik.",
+      "definition": "COC ist ein amorpher Thermoplast mit hoher optischer Transparenz, geringer Wasseraufnahme, hoher Glasübergangstemperatur und guter chemischer Beständigkeit (Handelsname z. B. TOPAS). Die AG alp bearbeitet ihn mit UKP-Lasern: Abtragen, Schweißen, Wellenleiter und Bragg-Gitter.",
+      "siehe": [
+        "glasuebergangstemperatur",
+        "waermeakkumulation",
+        "multiphotonenabsorption"
+      ],
+      "verifiziert": true,
+      "quelle": "bischoff2022",
+      "mehr": "Für den Laser ist COC das Gegenstück zu Quarzglas: ebenfalls transparent, also nur nichtlinear absorbierend, aber mit kleinerer Bandlücke (etwa 4 eV für TOPAS 6017) und vor allem mit sehr schlechter Wärmeleitung und niedriger Erweichungstemperatur. Die Folge: Wärmeakkumulation setzt rechnerisch schon bei einigen hundert Hertz ein (für einen 15-µm-Fleck), und die Qualität hängt an Abkühlpausen, Scanstrategie und Wellenlänge. Mit UV-Pulsen (343 nm) wurden deutlich bessere Ergebnisse erzielt als mit 1030 nm.",
+      "beispiel": "The microfluidic channels were ablated into a COC substrate using a UV femtosecond laser."
+    },
+    {
+      "id": "glasuebergangstemperatur",
+      "begriff": "Glasübergangstemperatur",
+      "englisch": "glass transition temperature",
+      "kurz": "Temperatur, oberhalb der ein amorpher Stoff weich und gummiartig wird.",
+      "definition": "Bei der Glasübergangstemperatur $T_\\mathrm{g}$ geht ein amorpher Stoff (Polymer oder Glas) vom harten, spröden in einen weichen, zähen Zustand über. Sie ist kein Schmelzpunkt, sondern ein Bereich. Für TOPAS 6017 liegt sie nach Bischoff et al. bei 175 °C.",
+      "siehe": [
+        "coc",
+        "waermeakkumulation"
+      ],
+      "verifiziert": true,
+      "quelle": "bischoff2022",
+      "mehr": "Für den Laserprozess ist $T_\\mathrm{g}$ die Marke, an der ein Polymer seine Form verliert: Kanten verrunden, Strukturen fließen zusammen. Bei einem Polymer liegt sie nur gut hundert Kelvin über Raumtemperatur, bei Gläsern viele hundert. Deshalb ist die Wärmebilanz bei COC so viel kritischer als bei Quarzglas.",
+      "beispiel": "The glass transition temperature of the polymer limits the tolerable heat accumulation."
+    },
+    {
+      "id": "rueckseitenabtrag",
+      "begriff": "Rückseitenabtrag",
+      "englisch": "backside ablation",
+      "kurz": "Abtrag an der Austrittsseite einer transparenten Probe.",
+      "definition": "Bei transparenten Werkstoffen kann der Strahl die Probe durchlaufen und an der Rückseite (Grenzfläche Glas/Luft) abtragen. Das passiert ungewollt, etwa beim Durchbohren, oder gezielt: Die AG alp hat so mit 515-nm-fs-Pulsen rechteckige Mikrokanäle mit senkrechten Wänden in Quarzglas erzeugt.",
+      "siehe": [
+        "quarzglas",
+        "chipping",
+        "tgv"
+      ],
+      "verifiziert": true,
+      "quelle": "schwarz2021backside",
+      "mehr": "Warum die Rückseite? Die Probe ist für den Strahl durchsichtig, also kommt fast die gesamte Energie hinten an. Beim gezielten Rückseitenabtrag fokussiert man durch das Glas auf die Rückseite; die Abtragsprodukte fliegen vom Strahl weg und schirmen ihn nicht ab. Ungewollt tritt der Effekt auf, wenn ein Loch fast durch ist oder die Probe dünner ist als die Schärfentiefe. Prüfe deshalb bei Glasproben immer beide Seiten.",
+      "beispiel": "Backside ablation was observed at the exit of the through-glass vias."
+    },
+    {
+      "id": "borosilikatglas",
+      "begriff": "Borosilikatglas",
+      "englisch": "borosilicate glass",
+      "kurz": "Technisches Glas aus SiO₂ und Boroxid, z. B. Borofloat 33.",
+      "definition": "Borosilikatglas enthält neben Siliziumdioxid vor allem Boroxid. Seine Wärmeausdehnung liegt nahe an der von Silizium, deshalb ist es ein Kandidat für Glaskern-Substrate und Interposer. Die AG alp bohrt TGVs in 200 µm dickes Borofloat 33.",
+      "siehe": [
+        "quarzglas",
+        "tgv",
+        "glaskern-substrat",
+        "cte"
+      ],
+      "verifiziert": false,
+      "quelle": "franz2025",
+      "mehr": "Im Vergleich zu Quarzglas ist Borosilikatglas billiger und in dünnen Scheiben und Panels verfügbar, hat aber eine größere Wärmeausdehnung und einen viel niedrigeren Erweichungspunkt. Für den Laser bedeutet das: empfindlicher gegen Thermoschock und Wärmeakkumulation, also eher Risse. Ergebnisse von Quarzglas lassen sich deshalb nicht eins zu eins übertragen.",
+      "beispiel": "Through-glass vias were drilled into 200 µm thick borosilicate glass."
+    },
+    {
+      "id": "abtragseffizienz",
+      "begriff": "Abtragseffizienz",
+      "englisch": "ablation efficiency",
+      "kurz": "Abgetragenes Volumen pro Zeit und mittlerer Leistung, in mm³/(min·W).",
+      "definition": "Die Abtragseffizienz ist die [[abtragrate|Abtragrate]] geteilt durch die mittlere Leistung am Werkstück. Sie sagt, wie gut die Laserenergie in Abtrag umgesetzt wird, und hat bei einer optimalen Fluenz ein Maximum (im Gauß-Modell bei $F_0=e^2F_\\mathrm{th}$).",
+      "siehe": [
+        "abtragrate",
+        "fluenz",
+        "ablationsschwelle",
+        "burst-mode"
+      ],
+      "verifiziert": true,
+      "quelle": "neuenschwander2014",
+      "mehr": "Unter der optimalen Fluenz liegt ein großer Teil des Strahlprofils unter der Schwelle und heizt nur; darüber wächst die Tiefe nur noch logarithmisch, der Überschuss wird zu Wärme. Wer mehr Leistung hat, sollte sie deshalb nicht in mehr Fluenz stecken, sondern in mehr Fläche pro Zeit: höhere Repetitionsrate mit schnellerem Scanner, größerer Spot, mehrere Teilstrahlen oder Bursts.",
+      "beispiel": "The ablation efficiency peaks at an optimum fluence and decreases above it."
     }
   ]
 }

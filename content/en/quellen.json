@@ -59,9 +59,9 @@
     "ort": "press release, Intel Newsroom, September 2023"
   },
   "lamp2025": {
-    "autoren": "AG alp, TH Aschaffenburg, with partners (check author list)",
-    "ort": "LAMP 2025, poster P-12 (check proceedings)",
-    "kurz": "LAMP 2025, poster P-12"
+    "autoren": "D. Franz, D. Schuster, S. Schwarz, S. Rung, C. Esen, R. Hellmann",
+    "ort": "Proceedings of LAMP2025, 9th International Congress on Laser Advanced Materials Processing, Ise, Japan, June 2025 (conference contribution, not peer reviewed; data from the publication server of TH Aschaffenburg)",
+    "kurz": "Franz et al. 2025 (LAMP)"
   },
   "disco2023": {
     "ort": "Technical Review TR23-01 (manufacturer report)"
@@ -78,5 +78,30 @@
   },
   "schoenfelder2007": {
     "kurz": "Schönfelder et al. 2007"
+  },
+  "strickland1985": {
+    "ort": "Optics Communications 56(3), 219–221 (also printed earlier in vol. 55(6), 447–449)"
+  },
+  "jee1988": {
+    "ort": "Journal of the Optical Society of America B 5(3), 648 ff. (ns pulses, 1064 nm, metal single crystals)"
+  },
+  "ostholt2014": {
+    "ort": "Proceedings of the 5th Electronics System-Integration Technology Conference (ESTC) 2014, IEEE, pp. 1–3"
+  },
+  "keldysh1965": {
+    "ort": "Soviet Physics JETP 20, 1307–1314 (no DOI)"
+  },
+  "anisimov1974": {
+    "ort": "Soviet Physics JETP 39, 375–377 (no DOI)"
+  },
+  "franz2023uv": {
+    "ort": "Publication server of TH Aschaffenburg (OPUS, document 2243); check journal or proceedings and DOI there",
+    "kurz": "Franz et al. 2023 (UV, top hat)"
+  },
+  "schwarz2021ghz": {
+    "kurz": "Schwarz et al. 2021 (GHz burst)"
+  },
+  "schwarz2021backside": {
+    "kurz": "Schwarz et al. 2021 (backside)"
   }
 }

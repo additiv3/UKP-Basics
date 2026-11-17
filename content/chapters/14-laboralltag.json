@@ -328,7 +328,7 @@
           "typ": "text",
           "inhalt": [
             "Die Leistung stellt man meist nicht über den Pumpstrom ein, weil sich dabei auch Pulseigenschaften ändern können. Üblich ist ein **Abschwächer** aus **λ/2-Platte** und **Polarisator**: Die Platte dreht die Polarisation, der Polarisator lässt nur einen Anteil durch.",
-            "Eine Drehung der λ/2-Platte um $\\theta$ dreht die Polarisation um $2\\theta$. Deshalb wiederholt sich die Kurve alle 45° der Platte. Gemessen wird mit einem **thermischen Messkopf** (träge, aber für hohe mittlere Leistung) oder einer **Photodiode** (schnell, kleine Leistung). Thermische Köpfe brauchen einige Sekunden, bis der Wert steht."
+            "Eine Drehung der λ/2-Platte um $\\theta$ dreht die Polarisation um $2\\theta$. Deshalb liegen zwischen Maximum und Minimum nur 45° Plattendrehung, und die Kurve $P=P_\\mathrm{max}\\cos^2(2(\\theta-\\theta_0))$ wiederholt sich alle 90°. Gemessen wird mit einem **thermischen Messkopf** (träge, aber für hohe mittlere Leistung) oder einer **Photodiode** (schnell, kleine Leistung). Thermische Köpfe brauchen einige Sekunden, bis der Wert steht."
           ],
           "verifiziert": false,
           "quelle": "Projektnotizen und gängige Praxis, nicht an der Primärquelle geprüft"

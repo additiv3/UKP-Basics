@@ -135,9 +135,9 @@
     },
     "k18.l03.b01": {
       "inhalt": [
-        "In **[[perkussionsbohren|percussion drilling]]** many pulses hit the same spot until the hole is finished. The number of pulses and their sequence determine quality and time. This is where the research of the AG alp at TH Aschaffenburg comes in (Franz, Rung, Hellmann and colleagues):",
-        "- **Circuit board material (FR-4):** comparison of ps and fs pulses when drilling microvias down to the inner copper layer. A pulse duration of 2 ps proved favourable: small glass fibre protrusions and a precise stop at the inner copper layer.\n- **ABF with MHz burst:** heat accumulation in the burst causes voids and delamination of the ABF layer. At comparable clearance, two pulses per burst reduced the taper by up to 19.5 % compared with single pulses, and the drilling time per via fell by 16.7 %.\n- **Top hat plus burst:** with a [[top-hat]] profile the drilling time fell by 18.2 % at similar taper.",
-        "The numbers come from the abstracts of the papers and only hold for their test conditions. Read the full texts before you cite them."
+        "In **[[perkussionsbohren|percussion drilling]]** many pulses hit the same spot until the hole is finished. The number of pulses and their sequence determine quality and time. This is where the research of the AG alp at TH Aschaffenburg comes in (Franz, Rung, Esen, Hellmann and colleagues):",
+        "- **Circuit board material (FR-4), green wavelength:** comparison of ps and fs pulses at repetition rates up to 400 kHz and fluences up to 11.5 J/cm². A pulse duration of 2 ps proved favourable: small glass fibre protrusions and a precise stop at the inner copper layer. Above 100 kHz, heat accumulation even improved the quality (Franz et al. 2022).\n- **ABF with MHz burst:** heat accumulation in the burst causes voids and delamination of the ABF layer. At comparable clearance, two pulses per burst reduced the taper by up to 19.5 % compared with single pulses, and the drilling time per via fell by 16.7 % (Franz et al. 2023).\n- **UV ps pulses, top hat and burst:** a [[top-hat|top-hat profile]] reduced the taper by up to 26.8 % on average compared with the Gaussian beam. Top hat and MHz burst together shortened the drilling time by 18.2 % at similar taper (Franz et al. 2023, UV paper).",
+        "The numbers were checked against the abstracts of the papers and only hold for their test conditions. Read the full texts before you cite them."
       ]
     },
     "k18.l03.b02": {
@@ -207,13 +207,14 @@
     "k18.l04.b01": {
       "inhalt": [
         "Organic cores reach their limits for very large packages: warpage, dimensional stability and hole density. The answer the industry has been working on for some years is a **[[glaskern-substrat|glass core substrate]]**: the core is a thin glass plate, the build-up layers remain organic. In 2023 Intel presented glass core substrates for the second half of the decade and named as advantages a thermal expansion closer to silicon, tunable stiffness, great flatness and an about ten times higher density of through holes than with organic cores.",
-        "Glass also appears as an **interposer** and as a carrier. As early as 2014, Ostholt and colleagues described glass as an interposer material with good mechanical strength, low losses and high chemical resistance and named **hole formation** as the main obstacle."
+        "Glass also appears as an **interposer** and as a carrier. As early as 2014, Ostholt and colleagues described glass as an interposer material with good mechanical strength, low losses and high chemical resistance and named **hole formation** as the main obstacle.",
+        "**Status 2026:** volume production has not yet started broadly. According to trade press reports, announced dates have slipped several times; market observers expect the ramp-up at several manufacturers only for 2027 to 2028. Reliable, crack-free formation of the vias is still regarded as one of the open tasks. So the topic is current and not solved (information from the trade press, unchecked)."
       ]
     },
     "k18.l04.b02": {
       "inhalt": [
         "For **[[tgv|through-glass vias]]** (TGV) there are three laser routes:",
-        "1. **Laser-induced etching** ([[lide|LIDE]], related to [[sle|SLE]] from K10): a single ultrashort pulse modifies the glass over its whole thickness, then hydrofluoric acid etches the modified regions much faster than the unchanged glass. Ostholt et al. report about 5000 TGV/s structuring speed, diameters of 10 to 50 µm depending on etching time and a taper below 5°.\n2. **Direct USP drilling:** percussion or helical drilling with fs or ps pulses, without wet chemistry. The challenges are **microcracks, chipping at the back side and residual stresses** from thermal shock. This is exactly where the AG alp works, on Borofloat 33 glass for glass core packaging.\n3. **Other lasers:** excimer (193 nm) for very small holes, CO₂ with the risk of thermally induced cracks.",
+        "1. **Laser-induced etching** ([[lide|LIDE]], related to [[sle|SLE]] from K10): a single ultrashort pulse modifies the glass over its whole thickness, followed by wet-chemical etching (in practice mostly with hydrofluoric acid); the modified regions etch much faster than the unchanged glass. Ostholt et al. report about 5000 TGV/s structuring speed, glass thicknesses of 50 to 200 µm, diameters of 10 to 50 µm depending on etching time and a taper below 5°.\n2. **Direct USP drilling:** percussion or helical drilling with fs or ps pulses, without wet chemistry. The challenges are **microcracks, chipping at the back side and residual stresses**. This is exactly where the AG alp works, on Borofloat 33 glass for glass core packaging (next section).\n3. **Other lasers:** excimer (193 nm) for very small holes, CO₂ with the risk of thermally induced cracks.",
         "A review from 2025 names laser-based processes as the most widely used method for via formation in glass."
       ]
     },
@@ -313,6 +314,14 @@
     "k18.c06": {
       "vorne": "How does the hole diameter depend on the fluence (Gaussian beam)?",
       "hinten": "$D=w_0\\sqrt{2\\ln(F_0/F_\\mathrm{th})}$: only logarithmic. Larger holes via more fluence get expensive quickly; better adapt the focus or the path (helical drilling)."
+    },
+    "k18.l04.b04": {
+      "titel": "Direct TGV drilling: the work of the AG alp (2025)",
+      "inhalt": [
+        "Franz et al. (2025) drilled TGVs into **200 µm thick Borofloat 33 glass** with an ultrashort pulsed laser in the **green** spectral range. Instead of percussion they used a **multi-path scanning strategy with a rotating start point** and varied pulse duration, pulse energy, number of passes and hole diameter.",
+        "- **Femtosecond pulses:** smallest taper (down to 6 ± 0.3°), but **microcracks and backside ablation**.\n- **5 ps, 25 µJ, 600 passes:** holes of 125 µm diameter with 7.3 ± 0.1° taper, **without cracks**. Smallest hole pitch 180 µm.\n- **Thermal tests** (thermal cycling and shock in a furnace up to 950 °C): no crack formation at the smallest hole pitch; the laser-induced stresses fell by 37.4 % on average to 8.2 MPa.",
+        "Two lessons for your own experiments: shorter is not automatically better for glass, and a hole is only good if it also survives the thermal load of later manufacturing. Information from the abstract; read the full text."
+      ]
     }
   }
 }

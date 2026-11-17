@@ -79,8 +79,8 @@
   },
   "burst-mode": {
     "kurz": "Pulse packets instead of single pulses.",
-    "definition": "In burst mode, pulse packets are emitted instead of single pulses, with pulse spacings down to the GHz range. According to the project notes this increases removal rate and efficiency.",
-    "mehr": "Instead of one large pulse, the energy is split into several closely spaced sub-pulses. Each sub-pulse is closer to the most favourable fluence, and later sub-pulses hit material that is still excited or warm from the previous one. Whether this improves removal rate and quality depends strongly on material, number of sub-pulses and their spacing; the literature is not uniform here."
+    "definition": "In burst mode the laser emits packets of several sub-pulses instead of single pulses. Their spacing is in the nanosecond range (MHz burst) or below (GHz burst). On fused silica a markedly higher ablation efficiency was measured this way, but also a rougher surface (Schwarz et al. 2021, Yang et al. 2023).",
+    "mehr": "Instead of one large pulse, the energy is split into several closely spaced sub-pulses. Each sub-pulse is closer to the most favourable fluence, and later sub-pulses hit material that is still excited or warm from the previous one. At very high rates ablation cooling comes in: the residual heat is removed with the ablated material before it diffuses into the depth (Kerse et al. 2016). Whether a burst improves removal rate and quality depends strongly on material, number of sub-pulses and their spacing; in heat-sensitive polymers it can cause voids and delamination (K18)."
   },
   "chirp": {
     "kurz": "Change of the instantaneous frequency within a pulse over time.",
@@ -223,7 +223,7 @@
   },
   "inkubation": {
     "kurz": "Lowering of the ablation threshold by preceding pulses.",
-    "definition": "In the incubation effect the [[ablationsschwelle]] falls when the same spot has already been hit by earlier pulses.",
+    "definition": "In the incubation effect the [[ablationsschwelle]] falls when the same spot has already been hit by earlier pulses. The usual description is the power law $F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{S-1}$ (Jee et al. 1988); for dielectrics the threshold approaches an almost constant value after the first pulses.",
     "mehr": "Every pulse below the threshold leaves small traces: defects, colour centres, stresses or surface changes. They make absorption easier for the next pulse. Consequence: when many pulses hit the same spot, the threshold drops and approaches a limiting value. Important in practice: when scanning, every spot is hit by many pulses, so the multi-pulse threshold is what matters, not the single-pulse threshold."
   },
   "intensitaet": {
@@ -291,7 +291,7 @@
   "lipss": {
     "kurz": "Self-organized periodic nanostructures on the surface.",
     "definition": "LIPSS (laser-induced periodic surface structures) are self-organized, periodic nanostructures that form on the surface under laser irradiation.",
-    "mehr": "LIPSS form when the incident light interferes with light scattered at the surface or with excited surface waves. This creates a periodic energy pattern that is imprinted over many pulses. Roughly, one distinguishes structures with a period close to the wavelength (LSFL) and much finer ones (HSFL). Their orientation follows the polarization. Use: functional surfaces (wetting, friction, colour). Nuisance: unwanted roughness on the crater floor."
+    "mehr": "LIPSS form when the incident light interferes with light scattered at the surface or with excited surface waves. This creates a periodic energy pattern that is imprinted over many pulses. Roughly, one distinguishes structures with a period close to the wavelength (LSFL) and much finer ones (HSFL). Their orientation is tied to the polarization: on metals and semiconductors LSFL are mostly perpendicular to it, on fused silica by contrast parallel (Höhm et al. 2012). Use: functional surfaces (wetting, friction, colour). Nuisance: unwanted roughness on the crater floor."
   },
   "m2": {
     "kurz": "Measure of beam quality: $M^2=1$ is ideally Gaussian, larger values focus worse.",
@@ -390,7 +390,8 @@
   },
   "quarzglas": {
     "kurz": "Amorphous, very pure silicon dioxide (SiO₂).",
-    "definition": "Fused silica is transparent from UV to near infrared and has a very low thermal expansion. It is the standard material for volume processing with fs pulses and for [[sle]]."
+    "definition": "Fused silica is transparent from UV to near infrared and has a very low thermal expansion. It is the standard material for volume processing with fs pulses and for [[sle]].",
+    "mehr": "Fused silica consists practically only of SiO₂ and is amorphous. This explains its special features: a very large band gap, hence transparency into the UV and absorption of ultrashort pulses only via nonlinear processes; a very small thermal expansion, hence high thermal shock resistance; and a very high softening point. Do not confuse: *quartz* is crystalline SiO₂, *fused silica* is the glass. Technical glasses such as borosilicate glass contain further oxides and behave differently thermally and in the laser process."
   },
   "rauheit": {
     "kurz": "Short-wavelength deviation of the surface from the ideal shape, e.g. $Ra$ or $Sa$.",
@@ -791,5 +792,30 @@
   "rem": {
     "kurz": "Microscope that scans the surface with an electron beam; high magnification and depth of field.",
     "definition": "Shows cracks, [[debris|debris]], melt and [[lipss|LIPSS]] in detail. Non-conductive samples (glass, polymer) charge up and are coated with a thin conductive layer or examined in low vacuum."
+  },
+  "coc": {
+    "kurz": "Amorphous, crystal-clear engineering plastic, e.g. for microfluidics and optics.",
+    "definition": "COC is an amorphous thermoplastic with high optical transparency, low water absorption, a high glass transition temperature and good chemical resistance (trade name e.g. TOPAS). The AG alp processes it with ultrashort pulsed lasers: ablation, welding, waveguides and Bragg gratings.",
+    "mehr": "For the laser, COC is the counterpart of fused silica: also transparent, so it only absorbs nonlinearly, but with a smaller band gap (about 4 eV for TOPAS 6017) and above all with very poor heat conduction and a low softening temperature. The consequence: by calculation, heat accumulation sets in at a few hundred hertz (for a 15 µm spot), and quality depends on cooling pauses, scan strategy and wavelength. With UV pulses (343 nm) clearly better results were obtained than with 1030 nm."
+  },
+  "glasuebergangstemperatur": {
+    "kurz": "Temperature above which an amorphous material becomes soft and rubbery.",
+    "definition": "At the glass transition temperature $T_\\mathrm{g}$ an amorphous material (polymer or glass) changes from a hard, brittle to a soft, tough state. It is not a melting point but a range. For TOPAS 6017 it is 175 °C according to Bischoff et al.",
+    "mehr": "For the laser process, $T_\\mathrm{g}$ marks the point where a polymer loses its shape: edges round off, structures flow together. For a polymer it is only a good hundred kelvin above room temperature, for glasses many hundred. That is why the heat balance is so much more critical for COC than for fused silica."
+  },
+  "rueckseitenabtrag": {
+    "kurz": "Ablation at the exit side of a transparent sample.",
+    "definition": "With transparent materials the beam can pass through the sample and ablate at the rear side (glass/air interface). This happens unintentionally, for instance when drilling through, or deliberately: in this way the AG alp produced rectangular microchannels with vertical walls in fused silica using 515 nm fs pulses.",
+    "mehr": "Why the rear side? The sample is transparent for the beam, so almost all the energy arrives at the back. In deliberate backside ablation you focus through the glass onto the rear side; the ablation products fly away from the beam and do not shield it. The effect occurs unintentionally when a hole is almost through or the sample is thinner than the depth of focus. So always check both sides of glass samples."
+  },
+  "borosilikatglas": {
+    "kurz": "Technical glass made of SiO₂ and boron oxide, e.g. Borofloat 33.",
+    "definition": "Besides silicon dioxide, borosilicate glass mainly contains boron oxide. Its thermal expansion is close to that of silicon, which makes it a candidate for glass core substrates and interposers. The AG alp drills TGVs into 200 µm thick Borofloat 33.",
+    "mehr": "Compared with fused silica, borosilicate glass is cheaper and available as thin sheets and panels, but it has a larger thermal expansion and a much lower softening point. For the laser this means: more sensitive to thermal shock and heat accumulation, so cracks are more likely. Results from fused silica therefore cannot be transferred one to one."
+  },
+  "abtragseffizienz": {
+    "kurz": "Removed volume per time and average power, in mm³/(min·W).",
+    "definition": "The ablation efficiency is the [[abtragrate|removal rate]] divided by the average power on the workpiece. It tells how well the laser energy is converted into removal and has a maximum at an optimum fluence (in the Gaussian model at $F_0=e^2F_\\mathrm{th}$).",
+    "mehr": "Below the optimum fluence a large part of the beam profile lies under the threshold and only heats; above it the depth grows only logarithmically and the excess turns into heat. If you have more power you should therefore not put it into more fluence but into more area per time: higher repetition rate with a faster scanner, a larger spot, several beamlets or bursts."
   }
 }

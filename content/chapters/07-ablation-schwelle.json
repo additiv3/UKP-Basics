@@ -313,9 +313,10 @@
           "id": "k07.l04.b01",
           "typ": "text",
           "inhalt": [
-            "Der zweite Puls an der gleichen Stelle trifft ein verändertes Material: Defekte, Farbzentren, Rauheit und Spannungen haben sich gebildet. Die Schwelle sinkt mit der Pulszahl. Dieses Phänomen heißt **Inkubation** ([[inkubation]]) und wird oft mit einem Potenzgesetz beschrieben (Jee et al. 1988):"
+            "Der zweite Puls an der gleichen Stelle trifft ein verändertes Material: Defekte, Farbzentren, Rauheit und Spannungen haben sich gebildet. Die Schwelle sinkt mit der Pulszahl. Dieses Phänomen heißt **Inkubation** ([[inkubation]]) und wird oft mit einem Potenzgesetz beschrieben. Es stammt von Jee et al. (1988), die es an Metall-Einkristallen mit Nanosekundenpulsen (10 ns, 1064 nm) aufgestellt haben. Für Ultrakurzpulse wird es als empirische Beschreibung übernommen:",
+            "Für Dielektrika wie Quarzglas passt das Potenzgesetz nur über einen begrenzten Pulszahlbereich. Messungen mit 100-fs-Pulsen zeigen, dass die Schwelle nach den ersten Pulsen stark fällt und dann einen nahezu konstanten Wert erreicht (Ashkenasi et al. 1999). Mehr dazu in K23."
           ],
-          "verifiziert": false,
+          "verifiziert": true,
           "quelle": "jee1988"
         },
         {
@@ -324,8 +325,8 @@
           "latex": "F_\\mathrm{th}(N)=F_\\mathrm{th}(1)\\,N^{\\,S-1}",
           "titel": "Inkubation (Potenzgesetz)",
           "sammlung": "Ablation",
-          "erklaerung": "Schwelle nach $N$ Pulsen am selben Ort. $S\\le1$ ist der Inkubationskoeffizient; $S=1$ bedeutet keine Inkubation. $S$ ist materialabhängig.",
-          "verifiziert": false,
+          "erklaerung": "Schwelle nach $N$ Pulsen am selben Ort. $S\\le1$ ist der Inkubationskoeffizient; $S=1$ bedeutet keine Inkubation. $S$ ist materialabhängig; Jee et al. fanden an Kupfer- und Aluminium-Einkristallen $S\\approx0{,}92$.",
+          "verifiziert": true,
           "quelle": "jee1988"
         },
         {
@@ -427,17 +428,19 @@
           "id": "k07.l05.b04",
           "typ": "text",
           "inhalt": [
-            "Im **Burst-Mode** ([[burst-mode]]) wird die Pulsenergie auf eine Gruppe von Pulsen verteilt, die im Abstand von Nanosekunden aufeinander folgen. Eine Burst-Gruppe wird dann mit niedriger Rate wiederholt. Aus der Literatur: Eine Untersuchung berichtet vom Ablationskühlungs-Effekt bei Bursts im GHz-Bereich (Kerse et al. 2016); andere Arbeiten zeigen, dass Bursts je nach Material und Parametern die Effizienz verbessern oder verschlechtern können. Die Ergebnislage ist nicht einheitlich."
+            "Im **Burst-Mode** ([[burst-mode]]) wird die Pulsenergie auf eine Gruppe von Teilpulsen verteilt. Ihr Abstand hängt vom Laser ab: Bei 40 MHz sind es 25 ns (**MHz-Burst**), bei rund 2 GHz weniger als eine halbe Nanosekunde (**GHz-Burst**). Die Burst-Gruppe selbst wird mit der normalen Repetitionsrate wiederholt.",
+            "Kerse et al. (2016) erklären den Gewinn bei sehr hohen Raten mit **Ablationskühlung**: Der nächste Teilpuls trägt das Material ab, bevor die Restwärme des vorigen in die Tiefe diffundiert ist. Sie berichten eine um etwa eine Größenordnung höhere Effizienz bei kleineren Pulsenergien.",
+            "Zwei Arbeiten der AG alp zeigen das an Quarzglas (1030 nm, Femtosekundenpulse, Fräsen von Taschen). Mit GHz-Bursts (2,17 GHz) stieg die maximale Abtragseffizienz bei zehn Teilpulsen auf 3,05 mm³/(min·W) gegenüber 0,41 mm³/(min·W) ohne Burst, und die Schwelle je Teilpuls sank von 0,64 auf 0,15 J/cm² (Schwarz et al. 2021). Mit MHz-Bursts (40 MHz) betrug der Gewinn bei zehn Teilpulsen etwa das 1,6-Fache (Yang et al. 2023). In beiden Arbeiten wurde die Oberfläche mit steigender Teilpulszahl rauer."
           ],
-          "verifiziert": false,
-          "quelle": "kerse2016"
+          "verifiziert": true,
+          "quelle": "schwarz2021ghz"
         },
         {
           "id": "k07.l05.b05",
           "typ": "merke",
-          "inhalt": "Burst ist kein Allheilmittel: Er ändert die **Energie pro Einzelpuls**, den Zeitabstand und die Wärmebilanz gleichzeitig. Ob er hilft, zeigt nur der Versuch am eigenen Material.",
-          "verifiziert": false,
-          "quelle": "kerse2016"
+          "inhalt": "Burst ist kein Allheilmittel: Er ändert die **Energie pro Teilpuls**, den Zeitabstand und die Wärmebilanz gleichzeitig. Mehr Effizienz wird oft mit rauerer Oberfläche bezahlt, und bei wärmeempfindlichen Werkstoffen droht Wärmeakkumulation (K18: Hohlräume in ABF). Ob er hilft, zeigt nur der Versuch am eigenen Material.",
+          "verifiziert": true,
+          "quelle": "yang2023"
         },
         {
           "id": "k07.q09",
@@ -467,9 +470,9 @@
           "id": "k07.c07",
           "typ": "karte",
           "vorne": "Was ist Burst-Mode?",
-          "hinten": "Aufteilung der Energie auf eine Gruppe von Pulsen im Nanosekunden-Abstand, die mit niedriger Rate wiederholt wird.",
-          "verifiziert": false,
-          "quelle": "kerse2016"
+          "hinten": "Aufteilung der Pulsenergie auf eine Gruppe von Teilpulsen. Abstand: einige zehn Nanosekunden (MHz-Burst) bis unter eine Nanosekunde (GHz-Burst). Die Gruppe wird mit der normalen Repetitionsrate wiederholt.",
+          "verifiziert": true,
+          "quelle": "schwarz2021ghz"
         }
       ]
     },

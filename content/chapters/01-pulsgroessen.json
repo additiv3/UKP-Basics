@@ -328,9 +328,9 @@
         {
           "id": "k01.l03.b08",
           "typ": "text",
-          "inhalt": "Orientierung zur Größenordnung: In der Literatur werden für die Ablation transparenter Werkstoffe Intensitäten im Bereich von etwa $10^{13}$ bis $10^{14}\\,\\mathrm{W/cm^2}$ genannt. Die Projektnotizen sprechen von mehr als $10^{15}\\,\\mathrm{W/cm^2}$; das passt nicht zu dieser Größenordnung und ist zu verifizieren. Wie weit die Rechnung oben davon entfernt ist, zeigt dir der Rechner.",
+          "inhalt": "Orientierung zur Größenordnung: Für Quarzglas werden mit Pulsen unter einer Pikosekunde Schwellfluenzen von einigen J/cm² berichtet. Mit $I\\approx F/\\tau$ sind das bei einigen hundert Femtosekunden rund $10^{13}\\,\\mathrm{W/cm^2}$. Erst mit extrem kurzen Pulsen unter 10 fs werden knapp unter der Zerstörschwelle mehr als $10^{14}\\,\\mathrm{W/cm^2}$ erreicht (Lenzner et al. 1998). Die mehr als $10^{15}\\,\\mathrm{W/cm^2}$ aus den Projektnotizen sind für die Materialbearbeitung also zu hoch gegriffen. Wie weit die Rechnung oben davon entfernt ist, zeigt dir der Rechner.",
           "verifiziert": false,
-          "quelle": "Websuche-Treffer zu Rate-Equation-Modellen, nicht an der Primärquelle geprüft"
+          "quelle": "lenzner1998"
         },
         {
           "id": "k01.q08",

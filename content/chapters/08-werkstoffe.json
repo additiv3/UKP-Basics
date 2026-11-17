@@ -34,7 +34,8 @@
           "typ": "text",
           "inhalt": [
             "Als **Größenordnung** der Bandlücken werden in der Literatur häufig genannt (Zahlen nicht an der Primärquelle geprüft):",
-            "- Quarzglas und Saphir: etwa 9 eV\n- Siliziumnitrid: etwa 5 eV\n- Siliziumkarbid (4H): etwa 3,3 eV\n- Silizium: etwa 1,1 eV"
+            "- Quarzglas und Saphir: etwa 9 eV\n- Siliziumnitrid: etwa 5 eV\n- Siliziumkarbid (4H): etwa 3,3 eV\n- Silizium: etwa 1,1 eV",
+            "Zum Vergleich ein transparentes Polymer: Für das Cyclo-Olefin-Copolymer TOPAS 6017 ([[coc|COC]]) hat die AG alp etwa 4 eV bestimmt (Bischoff et al. 2022)."
           ],
           "verifiziert": false,
           "quelle": "gängige Literaturwerte, nicht an der Primärquelle geprüft"

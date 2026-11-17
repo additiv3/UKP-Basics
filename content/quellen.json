@@ -15,7 +15,8 @@
       "autoren": "B. C. Stuart, M. D. Feit, S. Herman, A. M. Rubenchik, B. W. Shore, M. D. Perry",
       "jahr": "1996",
       "titel": "Nanosecond-to-femtosecond laser-induced breakdown in dielectrics",
-      "ort": "Physical Review B 53, 1749"
+      "ort": "Physical Review B 53(4), 1749–1761",
+      "doi": "10.1103/PhysRevB.53.1749"
     },
     {
       "id": "schaffer2001",
@@ -23,7 +24,8 @@
       "autoren": "C. B. Schaffer, A. Brodeur, E. Mazur",
       "jahr": "2001",
       "titel": "Laser-induced breakdown and damage in bulk transparent materials induced by tightly focused femtosecond laser pulses",
-      "ort": "Measurement Science and Technology 12, 1784–1794"
+      "ort": "Measurement Science and Technology 12, 1784–1794",
+      "doi": "10.1088/0957-0233/12/11/305"
     },
     {
       "id": "sugioka2014",
@@ -31,7 +33,8 @@
       "autoren": "K. Sugioka, Y. Cheng",
       "jahr": "2014",
       "titel": "Ultrafast lasers – reliable tools for advanced materials processing",
-      "ort": "Light: Science & Applications 3, e149"
+      "ort": "Light: Science & Applications 3, e149",
+      "doi": "10.1038/lsa.2014.30"
     },
     {
       "id": "diels",
@@ -95,7 +98,8 @@
       "autoren": "D. Strickland, G. Mourou",
       "jahr": "1985",
       "titel": "Compression of amplified chirped optical pulses",
-      "ort": "Optics Communications 56, 219–221"
+      "ort": "Optics Communications 56(3), 219–221 (zuvor bereits in Band 55(6), 447–449 abgedruckt)",
+      "doi": "10.1016/0030-4018(85)90120-8"
     },
     {
       "id": "spence1991",
@@ -103,7 +107,8 @@
       "autoren": "D. E. Spence, P. N. Kean, W. Sibbett",
       "jahr": "1991",
       "titel": "60-fsec pulse generation from a self-mode-locked Ti:sapphire laser",
-      "ort": "Optics Letters 16, 42–44"
+      "ort": "Optics Letters 16, 42–44",
+      "doi": "10.1364/OL.16.000042"
     },
     {
       "id": "anisimov1974",
@@ -111,7 +116,7 @@
       "autoren": "S. I. Anisimov, B. L. Kapeliovich, T. L. Perel'man",
       "jahr": "1974",
       "titel": "Electron emission from metal surfaces exposed to ultrashort laser pulses",
-      "ort": "Soviet Physics JETP 39, 375–377"
+      "ort": "Soviet Physics JETP 39, 375–377 (kein DOI)"
     },
     {
       "id": "rethfeld2004",
@@ -119,7 +124,8 @@
       "autoren": "B. Rethfeld, K. Sokolowski-Tinten, D. von der Linde, S. I. Anisimov",
       "jahr": "2004",
       "titel": "Timescales in the response of materials to femtosecond laser excitation",
-      "ort": "Applied Physics A 79, 767–769"
+      "ort": "Applied Physics A 79, 767–769",
+      "doi": "10.1007/s00339-004-2805-9"
     },
     {
       "id": "keldysh1965",
@@ -127,7 +133,7 @@
       "autoren": "L. V. Keldysh",
       "jahr": "1965",
       "titel": "Ionization in the field of a strong electromagnetic wave",
-      "ort": "Soviet Physics JETP 20, 1307–1314"
+      "ort": "Soviet Physics JETP 20, 1307–1314 (kein DOI)"
     },
     {
       "id": "gattass2008",
@@ -135,7 +141,8 @@
       "autoren": "R. R. Gattass, E. Mazur",
       "jahr": "2008",
       "titel": "Femtosecond laser micromachining in transparent materials",
-      "ort": "Nature Photonics 2, 219–225"
+      "ort": "Nature Photonics 2, 219–225",
+      "doi": "10.1038/nphoton.2008.47"
     },
     {
       "id": "nolte1997",
@@ -143,7 +150,8 @@
       "autoren": "S. Nolte, C. Momma, H. Jacobs, A. Tünnermann, B. N. Chichkov, B. Wellegehausen, H. Welling",
       "jahr": "1997",
       "titel": "Ablation of metals by ultrashort laser pulses",
-      "ort": "Journal of the Optical Society of America B 14, 2716–2722"
+      "ort": "Journal of the Optical Society of America B 14, 2716–2722",
+      "doi": "10.1364/JOSAB.14.002716"
     },
     {
       "id": "gamaly2002",
@@ -151,7 +159,8 @@
       "autoren": "E. G. Gamaly, A. V. Rode, B. Luther-Davies, V. T. Tikhonchuk",
       "jahr": "2002",
       "titel": "Ablation of solids by femtosecond lasers: Ablation mechanism and ablation thresholds for metals and dielectrics",
-      "ort": "Physics of Plasmas 9, 949–957"
+      "ort": "Physics of Plasmas 9, 949–957",
+      "doi": "10.1063/1.1447555"
     },
     {
       "id": "liu1982",
@@ -159,15 +168,17 @@
       "autoren": "J. M. Liu",
       "jahr": "1982",
       "titel": "Simple technique for measurements of pulsed Gaussian-beam spot sizes",
-      "ort": "Optics Letters 7, 196–198"
+      "ort": "Optics Letters 7, 196–198",
+      "doi": "10.1364/OL.7.000196"
     },
     {
       "id": "kerse2016",
       "kurz": "Kerse et al. 2016",
-      "autoren": "C. Kerse et al.",
+      "autoren": "C. Kerse, H. Kalaycıoğlu, P. Elahi, B. Çetin, D. K. Kesim, Ö. Akçaalan, S. Yavaş, M. D. Aşık, B. Öktem, H. Hoogland, R. Holzwarth, F. Ö. Ilday",
       "jahr": "2016",
       "titel": "Ablation-cooled material removal with ultrafast bursts of pulses",
-      "ort": "Nature 537, 84–88"
+      "ort": "Nature 537, 84–88",
+      "doi": "10.1038/nature18619"
     },
     {
       "id": "jee1988",
@@ -175,7 +186,8 @@
       "autoren": "Y. Jee, M. F. Becker, R. M. Walser",
       "jahr": "1988",
       "titel": "Laser-induced damage on single-crystal metal surfaces",
-      "ort": "Journal of the Optical Society of America B 5, 648–659"
+      "ort": "Journal of the Optical Society of America B 5(3), 648 ff. (ns-Pulse, 1064 nm, Metall-Einkristalle)",
+      "doi": "10.1364/JOSAB.5.000648"
     },
     {
       "id": "codata2018",
@@ -183,7 +195,8 @@
       "autoren": "E. Tiesinga, P. J. Mohr, D. B. Newell, B. N. Taylor",
       "jahr": "2021",
       "titel": "CODATA recommended values of the fundamental physical constants: 2018",
-      "ort": "Reviews of Modern Physics 93, 025010"
+      "ort": "Reviews of Modern Physics 93, 025010",
+      "doi": "10.1103/RevModPhys.93.025010"
     },
     {
       "id": "tummala2001",
@@ -199,7 +212,8 @@
       "autoren": "J. H. Lau",
       "jahr": "2022",
       "titel": "Recent Advances and Trends in Advanced Packaging",
-      "ort": "IEEE Transactions on Components, Packaging and Manufacturing Technology 12(2), 228–252"
+      "ort": "IEEE Transactions on Components, Packaging and Manufacturing Technology 12(2), 228–252",
+      "doi": "10.1109/TCPMT.2022.3144461"
     },
     {
       "id": "lau2018",
@@ -238,10 +252,11 @@
     {
       "id": "schoenfelder2007",
       "kurz": "Schönfelder et al. 2007",
-      "autoren": "S. Schönfelder, J. Bagdahn et al.",
+      "autoren": "S. Schönfelder, M. Ebert, C. Landesberger, K. Bock, J. Bagdahn",
       "jahr": "2007",
       "titel": "Investigations of the influence of dicing techniques on the strength properties of thin silicon",
-      "ort": "Microelectronics Reliability 47, 168–178"
+      "ort": "Microelectronics Reliability 47(2–3), 168–178",
+      "doi": "10.1016/j.microrel.2006.09.002"
     },
     {
       "id": "semi-g86",
@@ -283,7 +298,8 @@
       "autoren": "R. Ostholt, N. Ambrosius, R. A. Krüger",
       "jahr": "2014",
       "titel": "High speed through glass via manufacturing technology for interposer",
-      "ort": "Electronics System-Integration Technology Conference (ESTC) 2014, IEEE"
+      "ort": "Proceedings of the 5th Electronics System-Integration Technology Conference (ESTC) 2014, IEEE, S. 1–3",
+      "doi": "10.1109/ESTC.2014.6962711"
     },
     {
       "id": "intel2023",
@@ -296,18 +312,19 @@
     {
       "id": "nimbalkar2025",
       "kurz": "Nimbalkar et al. 2025",
-      "autoren": "P. Nimbalkar et al.",
+      "autoren": "P. Nimbalkar, P. Bhaskar, L. Vijay Kumar, M. Narayanan, E. Torres, S. Ambi Venkataramanan, M. Kathaperumal",
       "jahr": "2025",
       "titel": "A Review of Glass Substrate Technologies",
-      "ort": "Chips 4(3), 37 (MDPI)"
+      "ort": "Chips 4(3), 37 (MDPI)",
+      "doi": "10.3390/chips4030037"
     },
     {
       "id": "lamp2025",
-      "kurz": "LAMP 2025, Beitrag P-12",
-      "autoren": "AG alp, TH Aschaffenburg, mit Partnern (Autorenliste prüfen)",
+      "kurz": "Franz et al. 2025 (LAMP)",
+      "autoren": "D. Franz, D. Schuster, S. Schwarz, S. Rung, C. Esen, R. Hellmann",
       "jahr": "2025",
       "titel": "Ultrashort pulsed laser drilling of through-glass vias for glass core packaging",
-      "ort": "LAMP 2025, Posterbeitrag P-12 (Tagungsband prüfen)"
+      "ort": "Proceedings of LAMP2025, 9th International Congress on Laser Advanced Materials Processing, Ise, Japan, Juni 2025 (Tagungsbeitrag, nicht begutachtet; Angaben laut Publikationsserver der TH Aschaffenburg)"
     },
     {
       "id": "kumagai2007",
@@ -359,6 +376,293 @@
       "jahr": "Datum prüfen",
       "titel": "Laser debonding for ultrathin and stacked fan out packages",
       "ort": "Online-Fachartikel"
+    },
+    {
+      "id": "codata2022",
+      "kurz": "Mohr et al. 2025 (CODATA 2022)",
+      "autoren": "P. J. Mohr, D. B. Newell, B. N. Taylor, E. Tiesinga",
+      "jahr": "2025",
+      "titel": "CODATA recommended values of the fundamental physical constants: 2022",
+      "ort": "Reviews of Modern Physics 97, 025002",
+      "doi": "10.1103/RevModPhys.97.025002"
+    },
+    {
+      "id": "franz2025",
+      "kurz": "Franz et al. 2025",
+      "autoren": "D. Franz, D. Schuster, S. Schwarz, S. Rung, C. Esen, R. Hellmann",
+      "jahr": "2025",
+      "titel": "Fabrication and analysis of through-glass vias for glass-based electronic packaging using an ultrashort pulsed laser",
+      "ort": "Optics and Lasers in Engineering 193, 109106",
+      "doi": "10.1016/j.optlaseng.2025.109106"
+    },
+    {
+      "id": "franz2023uv",
+      "kurz": "Franz et al. 2023 (UV, Top-Hat)",
+      "autoren": "D. Franz, D. Mücke, T. Kunz, S. Rung, C. Esen, R. Hellmann",
+      "jahr": "2023",
+      "titel": "UV picosecond laser drilling of ABF film material for printed circuit boards using laser burst mode and beam shaping",
+      "ort": "Publikationsserver der TH Aschaffenburg (OPUS, Dokument 2243); Zeitschrift bzw. Tagungsband und DOI dort prüfen"
+    },
+    {
+      "id": "bischoff2022",
+      "kurz": "Bischoff et al. 2022",
+      "autoren": "K. Bischoff, D. Mücke, G.-L. Roth, C. Esen, R. Hellmann",
+      "jahr": "2022",
+      "titel": "UV-Femtosecond-Laser Structuring of Cyclic Olefin Copolymer",
+      "ort": "Polymers 14(14), 2962 (Open Access)",
+      "doi": "10.3390/polym14142962"
+    },
+    {
+      "id": "yang2024",
+      "kurz": "Yang et al. 2024",
+      "autoren": "Y. Yang, K. Bischoff, D. Mücke, C. Esen, R. Hellmann",
+      "jahr": "2024",
+      "titel": "UV-ultrashort pulsed laser ablation of fused silica",
+      "ort": "Journal of Laser Applications 36(1), 012019",
+      "doi": "10.2351/7.0001197"
+    },
+    {
+      "id": "yang2023",
+      "kurz": "Yang et al. 2023",
+      "autoren": "Y. Yang, S. Schwarz, C. Esen, R. Hellmann",
+      "jahr": "2023",
+      "titel": "Influence of MHz bursts on the ablation efficiency of fused silica",
+      "ort": "Journal of Laser Applications 35(2), 022030",
+      "doi": "10.2351/7.0001002"
+    },
+    {
+      "id": "schwarz2021ghz",
+      "kurz": "Schwarz et al. 2021 (GHz-Burst)",
+      "autoren": "S. Schwarz, S. Rung, C. Esen, R. Hellmann",
+      "jahr": "2021",
+      "titel": "Enhanced ablation efficiency using GHz bursts in micromachining fused silica",
+      "ort": "Optics Letters 46(2), 282–285",
+      "doi": "10.1364/OL.415959"
+    },
+    {
+      "id": "schwarz2021backside",
+      "kurz": "Schwarz et al. 2021 (Rückseite)",
+      "autoren": "S. Schwarz, S. Rung, C. Esen, R. Hellmann",
+      "jahr": "2021",
+      "titel": "Ultrashort pulsed laser backside ablation of fused silica",
+      "ort": "Optics Express 29(15), 23477–23486",
+      "doi": "10.1364/OE.430516"
+    },
+    {
+      "id": "schwarz2018",
+      "kurz": "Schwarz et al. 2018",
+      "autoren": "S. Schwarz, S. Rung, C. Esen, R. Hellmann",
+      "jahr": "2018",
+      "titel": "Influence of Pulse Duration on High-Precision Manufacturing of 3D Geometries",
+      "ort": "Journal of Laser Micro/Nanoengineering 13(3), 292–295",
+      "doi": "10.2961/jlmn.2018.03.0025"
+    },
+    {
+      "id": "schwarz2016",
+      "kurz": "Schwarz et al. 2016",
+      "autoren": "S. Schwarz, S. Rung, R. Hellmann",
+      "jahr": "2016",
+      "titel": "Generation of laser-induced periodic surface structures on transparent material-fused silica",
+      "ort": "Applied Physics Letters 108(18), 181607",
+      "doi": "10.1063/1.4948522"
+    },
+    {
+      "id": "roth2017",
+      "kurz": "Roth et al. 2017",
+      "autoren": "G.-L. Roth, S. Rung, R. Hellmann",
+      "jahr": "2017",
+      "titel": "Ultrashort pulse laser micro-welding of cyclo-olefin copolymers",
+      "ort": "Optics and Lasers in Engineering 93, 178–181",
+      "doi": "10.1016/j.optlaseng.2017.02.006"
+    },
+    {
+      "id": "roth2020",
+      "kurz": "Roth et al. 2020",
+      "autoren": "G.-L. Roth, S. Hessler, S. Kefer, M. Girschikofsky, C. Esen, R. Hellmann",
+      "jahr": "2020",
+      "titel": "Femtosecond laser inscription of waveguides and Bragg gratings in transparent cyclic olefin copolymers",
+      "ort": "Optics Express 28(12), 18077",
+      "doi": "10.1364/OE.388364"
+    },
+    {
+      "id": "lenzner1998",
+      "kurz": "Lenzner et al. 1998",
+      "autoren": "M. Lenzner, J. Krüger, S. Sartania, Z. Cheng, C. Spielmann, G. Mourou, W. Kautek, F. Krausz",
+      "jahr": "1998",
+      "titel": "Femtosecond Optical Breakdown in Dielectrics",
+      "ort": "Physical Review Letters 80(18), 4076–4079",
+      "doi": "10.1103/PhysRevLett.80.4076"
+    },
+    {
+      "id": "chimier2011",
+      "kurz": "Chimier et al. 2011",
+      "autoren": "B. Chimier, O. Utéza, N. Sanner, M. Sentis, T. Itina, P. Lassonde, F. Légaré, F. Vidal, J. C. Kieffer",
+      "jahr": "2011",
+      "titel": "Damage and ablation thresholds of fused-silica in femtosecond regime",
+      "ort": "Physical Review B 84(9), 094104",
+      "doi": "10.1103/PhysRevB.84.094104"
+    },
+    {
+      "id": "rosenfeld1999",
+      "kurz": "Rosenfeld et al. 1999",
+      "autoren": "A. Rosenfeld, M. Lorenz, R. Stoian, D. Ashkenasi",
+      "jahr": "1999",
+      "titel": "Ultrashort-laser-pulse damage threshold of transparent materials and the role of incubation",
+      "ort": "Applied Physics A 69, S373–S376",
+      "doi": "10.1007/s003390051419"
+    },
+    {
+      "id": "ashkenasi1999",
+      "kurz": "Ashkenasi et al. 1999",
+      "autoren": "D. Ashkenasi, M. Lorenz, R. Stoian, A. Rosenfeld",
+      "jahr": "1999",
+      "titel": "Surface damage threshold and structuring of dielectrics using femtosecond laser pulses: the role of incubation",
+      "ort": "Applied Surface Science 150, 101–106",
+      "doi": "10.1016/S0169-4332(99)00228-7"
+    },
+    {
+      "id": "benyakar2004",
+      "kurz": "Ben-Yakar & Byer 2004",
+      "autoren": "A. Ben-Yakar, R. L. Byer",
+      "jahr": "2004",
+      "titel": "Femtosecond laser ablation properties of borosilicate glass",
+      "ort": "Journal of Applied Physics 96(9), 5316–5323",
+      "doi": "10.1063/1.1787145"
+    },
+    {
+      "id": "mannion2004",
+      "kurz": "Mannion et al. 2004",
+      "autoren": "P. Mannion, J. Magee, E. Coyne, G. O’Connor, T. Glynn",
+      "jahr": "2004",
+      "titel": "The effect of damage accumulation behaviour on ablation thresholds and damage morphology in ultrafast laser micro-machining of common metals in air",
+      "ort": "Applied Surface Science 233, 275–287",
+      "doi": "10.1016/j.apsusc.2004.03.229"
+    },
+    {
+      "id": "neuenschwander2014",
+      "kurz": "Neuenschwander et al. 2014",
+      "autoren": "B. Neuenschwander, B. Jaeggi, M. Schmid, G. Hennig",
+      "jahr": "2014",
+      "titel": "Surface Structuring with Ultra-short Laser Pulses: Basics, Limitations and Needs for High Throughput",
+      "ort": "Physics Procedia 56, 1047–1058 (Open Access)",
+      "doi": "10.1016/j.phpro.2014.08.017"
+    },
+    {
+      "id": "raciukaitis2009",
+      "kurz": "Račiukaitis et al. 2009",
+      "autoren": "G. Račiukaitis et al.",
+      "jahr": "2009",
+      "titel": "Use of High Repetition Rate and High Power Lasers in Microfabrication: How to Keep the Efficiency High?",
+      "ort": "Journal of Laser Micro/Nanoengineering 4(3), 186–191",
+      "doi": "10.2961/jlmn.2009.03.0008"
+    },
+    {
+      "id": "weber2014",
+      "kurz": "Weber et al. 2014",
+      "autoren": "R. Weber, T. Graf, P. Berger, V. Onuseit, M. Wiedenmann, C. Freitag, A. Feuer",
+      "jahr": "2014",
+      "titel": "Heat accumulation during pulsed laser materials processing",
+      "ort": "Optics Express 22(9), 11312",
+      "doi": "10.1364/OE.22.011312"
+    },
+    {
+      "id": "eaton2005",
+      "kurz": "Eaton et al. 2005",
+      "autoren": "S. M. Eaton, H. Zhang, P. R. Herman, F. Yoshino, L. Shah, J. Bovatsek, A. Y. Arai",
+      "jahr": "2005",
+      "titel": "Heat accumulation effects in femtosecond laser-written waveguides with variable repetition rate",
+      "ort": "Optics Express 13(12), 4708",
+      "doi": "10.1364/OPEX.13.004708"
+    },
+    {
+      "id": "hermans2014",
+      "kurz": "Hermans et al. 2014",
+      "autoren": "M. Hermans, J. Gottmann, F. Riedel",
+      "jahr": "2014",
+      "titel": "Selective, Laser-Induced Etching of Fused Silica at High Scan-Speeds Using KOH",
+      "ort": "Journal of Laser Micro/Nanoengineering 9(2), 126–131",
+      "doi": "10.2961/jlmn.2014.02.0009"
+    },
+    {
+      "id": "gottmann2017",
+      "kurz": "Gottmann et al. 2017",
+      "autoren": "J. Gottmann, M. Hermans, N. Repiev, J. Ortmann",
+      "jahr": "2017",
+      "titel": "Selective Laser-Induced Etching of 3D Precision Quartz Glass Components for Microfluidic Applications—Up-Scaling of Complexity and Speed",
+      "ort": "Micromachines 8(4), 110 (Open Access)",
+      "doi": "10.3390/mi8040110"
+    },
+    {
+      "id": "marcinkevicius2001",
+      "kurz": "Marcinkevičius et al. 2001",
+      "autoren": "A. Marcinkevičius, S. Juodkazis, M. Watanabe, M. Miwa, S. Matsuo, H. Misawa, J. Nishii",
+      "jahr": "2001",
+      "titel": "Femtosecond laser-assisted three-dimensional microfabrication in silica",
+      "ort": "Optics Letters 26(5), 277",
+      "doi": "10.1364/OL.26.000277"
+    },
+    {
+      "id": "davis1996",
+      "kurz": "Davis et al. 1996",
+      "autoren": "K. Davis, K. Miura, N. Sugimoto, K. Hirao",
+      "jahr": "1996",
+      "titel": "Writing waveguides in glass with a femtosecond laser",
+      "ort": "Optics Letters 21(21), 1729",
+      "doi": "10.1364/OL.21.001729"
+    },
+    {
+      "id": "shimotsuma2003",
+      "kurz": "Shimotsuma et al. 2003",
+      "autoren": "Y. Shimotsuma, P. Kazansky, J. Qiu, K. Hirao",
+      "jahr": "2003",
+      "titel": "Self-Organized Nanogratings in Glass Irradiated by Ultrashort Light Pulses",
+      "ort": "Physical Review Letters 91(24), 247405",
+      "doi": "10.1103/PhysRevLett.91.247405"
+    },
+    {
+      "id": "bonse2017",
+      "kurz": "Bonse et al. 2017",
+      "autoren": "J. Bonse, S. Höhm, S. Kirner, A. Rosenfeld, J. Krüger",
+      "jahr": "2017",
+      "titel": "Laser-Induced Periodic Surface Structures—A Scientific Evergreen",
+      "ort": "IEEE Journal of Selected Topics in Quantum Electronics 23(3)",
+      "doi": "10.1109/JSTQE.2016.2614183"
+    },
+    {
+      "id": "hoehm2012",
+      "kurz": "Höhm et al. 2012",
+      "autoren": "S. Höhm, A. Rosenfeld, J. Krüger, J. Bonse",
+      "jahr": "2012",
+      "titel": "Femtosecond laser-induced periodic surface structures on silica",
+      "ort": "Journal of Applied Physics 112(1), 014901",
+      "doi": "10.1063/1.4730902"
+    },
+    {
+      "id": "milam1998",
+      "kurz": "Milam 1998",
+      "autoren": "D. Milam",
+      "jahr": "1998",
+      "titel": "Review and assessment of measured values of the nonlinear refractive-index coefficient of fused silica",
+      "ort": "Applied Optics 37(3), 546",
+      "doi": "10.1364/AO.37.000546"
+    },
+    {
+      "id": "marburger1975",
+      "kurz": "Marburger 1975",
+      "autoren": "J. Marburger",
+      "jahr": "1975",
+      "titel": "Self-focusing: Theory",
+      "ort": "Progress in Quantum Electronics 4, 35–110",
+      "doi": "10.1016/0079-6727(75)90003-8"
+    },
+    {
+      "id": "suriano2011",
+      "kurz": "Suriano et al. 2011",
+      "autoren": "R. Suriano, A. Kuznetsov, S. M. Eaton, R. Kiyan, G. Cerullo, R. Osellame, B. N. Chichkov, M. Levi, S. Turri",
+      "jahr": "2011",
+      "titel": "Femtosecond laser ablation of polymeric substrates for the fabrication of microfluidic channels",
+      "ort": "Applied Surface Science 257(14), 6243–6250",
+      "doi": "10.1016/j.apsusc.2011.02.053"
     }
   ]
 }

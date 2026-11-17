@@ -17,8 +17,8 @@
     "k10.l01.b01": {
       "inhalt": [
         "At fluences near the threshold, **periodic ripples** ([[lipss]], laser-induced periodic surface structures) form on many surfaces. They arise by themselves, without the structure being in the beam. Roughly one distinguishes:",
-        "- **LSFL** (low spatial frequency LIPSS): period of the order of the wavelength, for metals and semiconductors usually **perpendicular** to the polarization direction.\n- **HSFL** (high spatial frequency LIPSS): period well below half the wavelength.",
-        "The cause discussed most is the **interference** of the incident light with scattered waves or surface plasmons (Sipe model). Feedback over many pulses (incubation) reinforces the structure."
+        "- **LSFL** (low spatial frequency LIPSS): period of the order of the wavelength, for metals and semiconductors usually **perpendicular** to the polarization direction. On fused silica, by contrast, LSFL lie **parallel** to the polarization (Höhm et al. 2012).\n- **HSFL** (high spatial frequency LIPSS): period well below half the wavelength.",
+        "The cause discussed most is the **interference** of the incident light with scattered waves or surface plasmons (Sipe model, extended by a Drude model for excited dielectrics). Feedback over many pulses (incubation) reinforces the structure. The AG alp calculated period and orientation of LSFL on fused silica for 1030 nm fs pulses in this way and confirmed them experimentally (Schwarz et al. 2016)."
       ]
     },
     "k10.l01.b02": {
@@ -61,8 +61,8 @@
     },
     "k10.l02.b01": {
       "inhalt": [
-        "[[sle]] is a **two-step process** for fused silica: (1) A fs laser writes a modification in the volume along a 3D path. (2) In an etching bath (e.g. KOH or HF) the modified material is removed much faster than the unmodified one. What remains are cavities and channels that you designed in 3D.",
-        "The quality of the process is described by the **selectivity** $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$ (etch rate modified to unmodified). In the literature values of several hundred and more are reported (unchecked). Advantages: no thermal damage, smooth walls after etching, true 3D geometries. Limits: the etchant has to reach the channel, and long channels etch more slowly."
+        "[[sle]] is a **two-step process** for fused silica: (1) A fs laser writes a modification in the volume along a 3D path. (2) In an etching bath (e.g. KOH or HF) the modified material is removed much faster than the unmodified one. What remains are cavities and channels that you designed in 3D. An early paper on this is Marcinkevičius et al. (2001).",
+        "The quality of the process is described by the **selectivity** $S=r_\\mathrm{mod}/r_\\mathrm{unmod}$ (etch rate modified to unmodified). For fused silica in KOH values up to about 1400 are reported (Hermans et al. 2014, number from a secondary source, check the full text). Two findings one would not expect: the shortest pulse duration is not the most suitable, and faster writing increases the selectivity (Gottmann et al. 2017). Advantages: no thermal damage, smooth walls after etching, true 3D geometries. Limits: the etchant has to reach the channel, and long channels etch more slowly."
       ]
     },
     "k10.l02.b02": {
@@ -169,8 +169,8 @@
     "k10.l04.b01": {
       "inhalt": [
         "In the volume of glass the fs focus changes the structure depending on pulse energy and pulse number. The literature roughly distinguishes three types:",
-        "- **Type I:** smooth, local change of the refractive index (mostly a slight increase): suited for **waveguides**.\n- **Type II:** birefringent nanogratings whose orientation depends on the polarization; they raise the etch rate (basis of [[sle]]).\n- **Type III:** cavities (voids) from micro-explosions, e.g. for optical storage.",
-        "Waveguides are written by moving the focus through the glass at low speed. Along the path a track with slightly **raised refractive index** remains (first description: Davis et al. 1996, check the literature)."
+        "- **Type I:** smooth, local change of the refractive index (mostly a slight increase): suited for **waveguides**.\n- **Type II:** birefringent nanogratings whose orientation depends on the polarization (Shimotsuma et al. 2003); they raise the etch rate (basis of [[sle]]).\n- **Type III:** cavities (voids) from micro-explosions, e.g. for optical storage.",
+        "Waveguides are written by moving the focus through the glass at low speed. Along the path a track with slightly **raised refractive index** remains (first description: Davis et al. 1996). At high repetition rates heat accumulation adds to this and enlarges the modified zone; in borosilicate glasses this was observed above about 200 kHz (Eaton et al. 2005)."
       ]
     },
     "k10.l04.b02": {

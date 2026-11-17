@@ -16,7 +16,9 @@
     "ostholt2014",
     "intel2023",
     "nimbalkar2025",
-    "lamp2025"
+    "lamp2025",
+    "franz2025",
+    "franz2023uv"
   ],
   "lektionen": [
     {
@@ -229,11 +231,11 @@
           "id": "k18.l03.b01",
           "typ": "text",
           "inhalt": [
-            "Beim **[[perkussionsbohren|Perkussionsbohren]]** treffen viele Pulse dieselbe Stelle, bis das Loch fertig ist. Die Pulszahl und die Folge der Pulse bestimmen Qualität und Zeit. Hier setzt die Forschung der AG alp an der TH Aschaffenburg an (Franz, Rung, Hellmann und Kollegen):",
-            "- **Leiterplattenmaterial (FR-4):** Vergleich von ps- und fs-Pulsen beim Bohren von Microvias bis zur inneren Kupferlage. Eine Pulsdauer von 2 ps erwies sich als günstig: kleine Glasfaserüberstände und ein präziser Stopp an der inneren Kupferlage.\n- **ABF mit MHz-Burst:** Wärmeakkumulation im Burst verursacht Hohlräume (*voids*) und Delamination der ABF-Lage. Bei vergleichbarem Freiraum (*clearance*) senkten zwei Pulse pro Burst den Taper gegenüber Einzelpulsen um bis zu 19,5 %, und die Bohrzeit pro Via sank um 16,7 %.\n- **Top-Hat plus Burst:** Mit einem [[top-hat|Top-Hat-Profil]] sank die Bohrzeit bei ähnlichem Taper um 18,2 %.",
-            "Die Zahlen stammen aus den Kurzfassungen der Arbeiten und gelten nur für deren Versuchsbedingungen. Lies die Volltexte, bevor du sie zitierst."
+            "Beim **[[perkussionsbohren|Perkussionsbohren]]** treffen viele Pulse dieselbe Stelle, bis das Loch fertig ist. Die Pulszahl und die Folge der Pulse bestimmen Qualität und Zeit. Hier setzt die Forschung der AG alp an der TH Aschaffenburg an (Franz, Rung, Esen, Hellmann und Kollegen):",
+            "- **Leiterplattenmaterial (FR-4), grüne Wellenlänge:** Vergleich von ps- und fs-Pulsen bei Repetitionsraten bis 400 kHz und Fluenzen bis 11,5 J/cm². Eine Pulsdauer von 2 ps erwies sich als günstig: kleine Glasfaserüberstände und ein präziser Stopp an der inneren Kupferlage. Oberhalb von 100 kHz verbesserte Wärmeakkumulation die Qualität sogar (Franz et al. 2022).\n- **ABF mit MHz-Burst:** Wärmeakkumulation im Burst verursacht Hohlräume (*voids*) und Delamination der ABF-Lage. Bei vergleichbarem Freiraum (*clearance*) senkten zwei Pulse pro Burst den Taper gegenüber Einzelpulsen um bis zu 19,5 %, und die Bohrzeit pro Via sank um 16,7 % (Franz et al. 2023).\n- **UV-ps-Pulse, Top-Hat und Burst:** Ein [[top-hat|Top-Hat-Profil]] senkte den Taper gegenüber dem Gauß-Strahl im Mittel um bis zu 26,8 %. Top-Hat und MHz-Burst zusammen verkürzten die Bohrzeit bei ähnlichem Taper um 18,2 % (Franz et al. 2023, UV-Arbeit).",
+            "Die Zahlen sind an den Kurzfassungen der Arbeiten geprüft und gelten nur für deren Versuchsbedingungen. Lies die Volltexte, bevor du sie zitierst."
           ],
-          "verifiziert": false,
+          "verifiziert": true,
           "quelle": "franz2023"
         },
         {
@@ -326,7 +328,7 @@
           "typ": "karte",
           "vorne": "Was zeigten die Aschaffenburger Arbeiten zu UKP-Microvias?",
           "hinten": "FR-4: 2 ps günstig (kleine Faserüberstände, präziser Kupferstopp). ABF-Burst: Wärmeakkumulation erzeugt Voids und Delamination; zwei Pulse pro Burst senken Taper und Bohrzeit. Top-Hat plus Burst: kürzere Bohrzeit bei ähnlichem Taper.",
-          "verifiziert": false,
+          "verifiziert": true,
           "quelle": "franz2023"
         }
       ]
@@ -341,7 +343,8 @@
           "typ": "text",
           "inhalt": [
             "Organische Kerne stoßen bei sehr großen Packages an Grenzen: Verzug, Formstabilität und Lochdichte. Die Antwort, an der die Industrie seit einigen Jahren arbeitet, ist ein **[[glaskern-substrat|Glaskern-Substrat]]**: Der Kern besteht aus einer dünnen Glasplatte, die Aufbaulagen bleiben organisch. Intel stellte 2023 Glaskern-Substrate für die zweite Hälfte des Jahrzehnts vor und nannte als Vorteile eine an Silizium angenäherte Wärmeausdehnung, einstellbare Steifigkeit, große Ebenheit und eine etwa zehnfach höhere Dichte von Durchgangslöchern als bei organischen Kernen.",
-            "Glas taucht auch als **Interposer** und als Träger auf. Schon 2014 beschrieben Ostholt und Kollegen Glas als Interposerwerkstoff mit guter mechanischer Festigkeit, geringen Verlusten und hoher chemischer Beständigkeit und nannten die **Lochherstellung** als Haupthindernis."
+            "Glas taucht auch als **Interposer** und als Träger auf. Schon 2014 beschrieben Ostholt und Kollegen Glas als Interposerwerkstoff mit guter mechanischer Festigkeit, geringen Verlusten und hoher chemischer Beständigkeit und nannten die **Lochherstellung** als Haupthindernis.",
+            "**Stand 2026:** Die Serienfertigung ist noch nicht breit angelaufen. Nach Berichten der Fachpresse haben sich angekündigte Termine mehrfach verschoben; Marktbeobachter erwarten den Hochlauf bei mehreren Herstellern erst für 2027 bis 2028. Als eine der offenen Aufgaben gilt weiterhin das zuverlässige, rissfreie Herstellen der Durchkontaktierungen. Das Thema ist also aktuell und nicht gelöst (Angaben aus der Fachpresse, ungeprüft)."
           ],
           "verifiziert": false,
           "quelle": "intel2023"
@@ -351,11 +354,23 @@
           "typ": "text",
           "inhalt": [
             "Für **[[tgv|Through-Glass Vias]]** (TGV) gibt es drei Laserwege:",
-            "1. **Laserinduziertes Ätzen** ([[lide|LIDE]], verwandt mit [[sle|SLE]] aus K10): Ein einzelner UKP-Puls modifiziert das Glas über die ganze Dicke, danach ätzt Flusssäure die modifizierten Bereiche viel schneller als das unveränderte Glas. Ostholt et al. berichten rund 5000 TGV/s Strukturiergeschwindigkeit, je nach Ätzdauer Durchmesser von 10 bis 50 µm und einen Taper unter 5°.\n2. **Direktes UKP-Bohren:** Perkussions- oder Wendelbohren mit fs- oder ps-Pulsen, ohne Nasschemie. Die Herausforderung sind **Mikrorisse, Ausbrüche an der Rückseite und Eigenspannungen** durch Thermoschock. Genau hier arbeitet die AG alp an Borofloat-33-Glas für Glaskern-Packaging.\n3. **Andere Laser:** Excimer (193 nm) für sehr kleine Löcher, CO₂ mit dem Risiko thermisch induzierter Risse.",
+            "1. **Laserinduziertes Ätzen** ([[lide|LIDE]], verwandt mit [[sle|SLE]] aus K10): Ein einzelner UKP-Puls modifiziert das Glas über die ganze Dicke, danach wird nasschemisch geätzt (in der Praxis meist mit Flusssäure); die modifizierten Bereiche ätzen viel schneller als das unveränderte Glas. Ostholt et al. berichten rund 5000 TGV/s Strukturiergeschwindigkeit, Glasdicken von 50 bis 200 µm, je nach Ätzdauer Durchmesser von 10 bis 50 µm und einen Taper unter 5°.\n2. **Direktes UKP-Bohren:** Perkussions- oder Wendelbohren mit fs- oder ps-Pulsen, ohne Nasschemie. Die Herausforderung sind **Mikrorisse, Ausbrüche an der Rückseite und Eigenspannungen**. Genau hier arbeitet die AG alp an Borofloat-33-Glas für Glaskern-Packaging (nächster Abschnitt).\n3. **Andere Laser:** Excimer (193 nm) für sehr kleine Löcher, CO₂ mit dem Risiko thermisch induzierter Risse.",
             "Eine Übersichtsarbeit von 2025 nennt laserbasierte Verfahren die am weitesten verbreitete Methode zur Via-Herstellung in Glas."
           ],
           "verifiziert": false,
           "quelle": "ostholt2014"
+        },
+        {
+          "id": "k18.l04.b04",
+          "typ": "text",
+          "titel": "Direktes TGV-Bohren: die Arbeit der AG alp (2025)",
+          "inhalt": [
+            "Franz et al. (2025) bohrten TGVs in **200 µm dickes Borofloat-33-Glas** mit einem UKP-Laser im **grünen** Spektralbereich. Statt Perkussion nutzten sie eine **Mehrbahn-Scanstrategie mit rotierendem Startpunkt** und variierten Pulsdauer, Pulsenergie, Zahl der Überfahrten und Lochdurchmesser.",
+            "- **Femtosekundenpulse:** kleinster Taper (bis 6 ± 0,3°), aber **Mikrorisse und Rückseitenabtrag**.\n- **5 ps, 25 µJ, 600 Überfahrten:** Löcher mit 125 µm Durchmesser und 7,3 ± 0,1° Taper, **ohne Risse**. Kleinster Lochabstand 180 µm.\n- **Thermische Tests** (Temperaturwechsel und Schock im Ofen bis 950 °C): keine Rissbildung beim kleinsten Lochabstand; die laserinduzierten Spannungen sanken im Mittel um 37,4 % auf 8,2 MPa.",
+            "Zwei Lehren für deine eigenen Versuche: Kürzer ist bei Glas nicht automatisch besser, und ein Loch ist erst gut, wenn es auch die Temperaturbelastung der späteren Fertigung übersteht. Angaben aus der Kurzfassung; Volltext lesen."
+          ],
+          "verifiziert": true,
+          "quelle": "franz2025"
         },
         {
           "id": "k18.l04.b03",
