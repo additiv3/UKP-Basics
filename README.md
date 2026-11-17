@@ -6,10 +6,11 @@
 
 Persönliche Lern-App für den Einstieg in das Promotionsthema **Ultrakurzpuls-(UKP-)Laserablation im Halbleiter-Packaging**. Statische PWA ohne Backend, offline-fähig, iPhone-first.
 
-- **Forschungspfad (ab Version 0.6):** 23 Kapitel in sieben Etappen mit rotem Faden, von der Orientierung (Was ist mein Thema, was braucht das Packaging?) über Laser-Fundament, UKP-Physik, Abtrag und Werkstoffe und Laser im Packaging bis ins Labor und zur Forschungsfrage; jedes Kapitel zeigt, wofür du es brauchst
+- **Neu in 0.8:** K23 „Einstieg: erste Studien an Quarzglas und COC“ (Steckbrief, Schwelle und Inkubation, Flächenabtrag, Wärme in COC, Fehlerbilder, Sechs-Wochen-Plan), aufgebaut auf den Veröffentlichungen der AG alp; Faktencheck aller Kapitel gegen die Literatur, Quellenliste mit geprüften DOIs (76 Einträge)
+- **Forschungspfad (ab Version 0.6):** 24 Kapitel in sieben Etappen mit rotem Faden, von der Orientierung (Was ist mein Thema, was braucht das Packaging?) über Laser-Fundament, UKP-Physik, Abtrag und Werkstoffe und Laser im Packaging bis ins Labor und zur Forschungsfrage; jedes Kapitel zeigt, wofür du es brauchst
 - **Neu in 0.6:** K21 „Dein Forschungsthema“ (Einstieg, Kette vom Thema zur Forschungsfrage, Fahrplan) und K22 „Erste Versuche“ (Bohrstrategien, Schwelle am Si-Wafer, Bohrungs- und Abtragsreihen, Werkstoffvergleich, Protokoll und Messtechnik)
 - **Zweisprachig (DE/EN-Schalter):** Oberfläche, alle Kapitel, Fragen und das Glossar; Vokabelkarten DE ↔ EN aus allen Fachbegriffen
-- Über 900 Fragen und Karten, 181 Glossarbegriffe
+- Fast 1000 Fragen und Karten, 186 Glossarbegriffe
 - **Halbleiter-Packaging (K15–K20):** Aufgaben des Packages, Architekturen von Drahtbond bis Chiplet, Werkstoffe und Thermomechanik, IC-Substrat mit UKP-Microvias und Glaskern-TGVs, Dicing und Debonding, Qualität und Forschungslandschaft
 - **Lektionen als Seiten:** jede Frage auf einer eigenen Seite, Blättern per Wischen, Fortschrittsleiste mit Sprung zu offenen Fragen
 - **Laboralltag (K14) als Spiele:** Strahljustage, Fokussuche, Leistung einstellen, Pulskompressor mit Autokorrelator, Liu-Plot

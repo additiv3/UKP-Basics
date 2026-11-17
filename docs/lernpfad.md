@@ -22,13 +22,15 @@ Der Lernpfad ist auf das Promotionsthema **UKP-Ablation im Halbleiter-Packaging*
 | C UKP-Physik | Warum kurz anders ist | K04, K05, K06 |
 | D Abtrag und Werkstoffe | Schwelle, Mechanismen, Schichtverbund | K07, K08, K17 |
 | E Laser im Packaging | Microvias, Glaskern/TGV, Trennen und Lösen, SLE | K18, K19, K10 |
-| F Ins Labor | Parameter, Laborhandgriffe, Messtechnik, erste eigene Versuche | K09, K14, K11, K22 |
+| F Ins Labor | Parameter, Laborhandgriffe, Messtechnik, erste eigene Versuche | K09, K14, K11, K22, K23 |
 | G Forschung | Qualität, Forschungslandkarte, wissenschaftliches Arbeiten | K20, K12 |
 | H Begleitend: Englisch | parallel zu allen Etappen | K13 |
 
 **Begründung der Reihenfolge.** K15 und K16 setzen kein Laserwissen voraus und stehen deshalb vorn: Wer weiß, wofür die Physik gebraucht wird, liest sie gezielter. K17 (Schichtverbund) braucht K08 und rückt in Etappe D. K10 (SLE, Bessel-Strahl) gehört inhaltlich zum TGV in Etappe E. Die Laborkapitel folgen erst nach den Anwendungskapiteln, damit die Versuche in K22 auf Packaging-Werkstoffe zielen. K20 und K12 schließen mit dem Übergang zur eigenen Frage.
 
 **Neue Kapitel.** K21 *Dein Forschungsthema* (Thema, UKP im Packaging, Lernpfad als Landkarte, Kette vom Thema zur Forschungsfrage, Fahrplan Grundlagen → Vorversuche → Recherche → Richtung). K22 *Erste Versuche* (Bohrstrategien, Versuch 1 Schwelle und Strahlradius am Si-Wafer, Versuch 2 und 3 Bohrungen und Abtragsfelder, Werkstoffvergleich mit Schwellenkontrast, Protokoll und Messtechnik). Zahlen in den Aufgaben sind frei gewählt; qualitative Erwartungen an die Werkstoffe sind als Hypothesen formuliert und als „ungeprüft“ markiert.
+
+**Version 0.8: K23 *Einstieg: erste Studien an Quarzglas und COC*.** Die ersten eigenen Studien laufen voraussichtlich an Quarzglas und am Kunststoff COC. K23 folgt deshalb auf K22 und baut auf den Arbeiten der AG alp zu genau diesen Werkstoffen auf (Schwarz et al. 2018 und 2021, Yang et al. 2023 und 2024, Bischoff et al. 2022, Franz et al. 2025). Sechs Lektionen: Steckbrief der Werkstoffe, Versuch A (Schwelle und Inkubation an Quarzglas), Versuch B (Flächenabtrag in Quarzglas), Versuch C (COC und Wärmeakkumulation), Fehlerbilder und Messen an transparenten Proben, Plan für die ersten sechs Wochen mit Fragenliste und Leseliste. Die COC-Arbeit wurde im Volltext gelesen, die übrigen Arbeiten in der Kurzfassung.
 
 Die folgenden Abschnitte beschreiben den ursprünglichen fachlichen Aufbau der Kapitel; die Etappenbuchstaben dort beziehen sich auf die Versionen bis 0.5.
 

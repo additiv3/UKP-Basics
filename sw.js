@@ -1,6 +1,6 @@
 // Service worker: precache app shell and content, serve cache-first (offline-capable).
 // VERSION and the PRECACHE block are maintained by tools/release.py - do not edit by hand.
-const VERSION = '0.7.0';
+const VERSION = '0.8.0';
 const CACHE = `ukp-basics-${VERSION}`;
 
 // BEGIN PRECACHE
@@ -106,6 +106,7 @@ const PRECACHE = [
   'content/chapters/20-qualitaet-forschung.json',
   'content/chapters/21-forschungsthema.json',
   'content/chapters/22-erste-versuche.json',
+  'content/chapters/23-quarzglas-coc.json',
   'content/en/chapters/00-werkzeugkasten.json',
   'content/en/chapters/01-pulsgroessen.json',
   'content/en/chapters/02-strahloptik.json',
@@ -129,6 +130,7 @@ const PRECACHE = [
   'content/en/chapters/20-qualitaet-forschung.json',
   'content/en/chapters/21-forschungsthema.json',
   'content/en/chapters/22-erste-versuche.json',
+  'content/en/chapters/23-quarzglas-coc.json',
   'content/en/glossar.json',
   'content/en/index.json',
   'content/en/quellen.json',

@@ -70,6 +70,15 @@ Offen aus Phase 2e: Kapitel zur Anlage selbst, sobald Aufbau und Datenblätter v
 - [x] Ausführlichere Erklärungen („Genauer erklärt“, DE/EN) und englische Beispielsätze für 69 Fachbegriffe, auf Vokabelkarten mit Text in der anderen Sprache zum Aufklappen
 - [x] Neun neue Abbildungen (Kaustik, Lambert-Beer, ns vs. UKP, CPA, Mehrphotonen, Lawine, D²-Plot, Scanraster, SLE); alle Abbildungen zweisprachig (`src_en`)
 
+## Phase 2g · Version 0.8 (erledigt)
+
+- [x] Faktencheck aller Kapitel gegen die Literatur (November 2026): Quellenliste per Crossref geprüft und um DOIs ergänzt, 33 neue Quellen, Korrekturen in K01, K07, K08, K10, K14, K18, K20 und im Glossar (Details in `docs/offene-punkte.md`)
+- [x] Neues Kapitel K23 „Einstieg: erste Studien an Quarzglas und COC“ (6 Lektionen, 31 Fragen, 12 Karten, zweisprachig) auf Basis der Veröffentlichungen der AG alp
+- [x] K18 um die TGV-Arbeit der AG alp (Franz et al. 2025) und den Stand der Glaskern-Substrate 2026 ergänzt
+- [x] Glossar: COC, Glasübergangstemperatur, Rückseitenabtrag, Borosilikatglas, Abtragseffizienz; Burst-Mode, Inkubation, LIPSS, SLE und Quarzglas überarbeitet
+
+Offen aus Phase 2g: Angaben zur eigenen Anlage und zu den Proben (Glassorte, COC-Typ) in K23 eintragen, sobald sie bekannt sind; eigene Messbilder der Einstiegsversuche.
+
 ## Phase 3 · Vertiefung
 
 - Weitere Simulationen: Bessel-Strahl und Filamentation, LIPSS-Periode, Wärmeakkumulation über Pulsfolgen
